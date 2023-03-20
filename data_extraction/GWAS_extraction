@@ -1,0 +1,166 @@
+#first steps here were to go through some data harmonization
+#GWAS reported target genes with multiple diseases associated with it in one cell
+#the reverse was also true with one disease having multiple mapped genes to it
+#so the data was split so each row had one gene and one disease associated with it but the other information remained the same
+#if there were multiple genes/disease in one cell
+
+df_split = df['MAPPED_GENE'].str.split(',', expand=True)
+
+df_stacked = df_split.stack().reset_index(level=1, drop=True).rename('Biomarker')
+
+# Concatenate the original and stacked dataframes
+df_result = pd.concat([df, df_stacked], axis=1)
+
+# Drop the original column
+df_result = df_result.drop(['MAPPED_GENE'], axis=1)
+df_result.to_csv('gwas.csv')
+df = pd.read_csv('gwas.csv')
+
+df_split = df['DISEASE/TRAIT'].str.split(',', expand=True)
+
+df_stacked = df_split.stack().reset_index(level=1, drop=True).rename('DISEASE')
+
+# Concatenate the original and stacked dataframes
+df_result = pd.concat([df, df_stacked], axis=1)
+
+# Drop the original column
+df_result = df_result.drop(['DISEASE/TRAIT'], axis=1)
+
+#the same old format was used as was used for OpenTarget
+lst = ['Assessed biomarker entity ID', 'Main x-ref',
+       'Assessed biomarker entity', 'Biomarker', 'BEST biomarker type',
+       'Specimen type', 'LOINC code', 'Disease name', 'Assessed entity type',
+       'Evidence', 'Notes']
+biomarkerdb = pd.DataFrame(columns = lst)
+
+
+biomarkerdb['Biomarker'] = df_result['Biomarker'] + ' (' + df_result['SNPS'] + ')'
+biomarkerdb['Assessed biomarker entity'] = df_result['Biomarker']
+biomarkerdb['Evidence'] = 'https://www.ebi.ac.uk/gwas/search?query=' + df_result['Biomarker']
+biomarkerdb['Notes'] = 'GRCh38' 
+biomarkerdb['Disease name'] = df_result['DISEASE'].apply(str.lower)
+biomarkerdb['Assessed entity type'] = 'gene or protein'
+
+loinc_codes = pd.read_csv("Loinc.csv")
+loinc_codes['first'] = loinc_codes['COMPONENT'].str.split(' ').str[0]
+
+biomarkerdb['LOINC code'] = ''
+
+for index, row in biomarkerdb.iterrows():
+    # get the ID for that row
+    id = row["Assessed biomarker entity"]
+    # check if that ID exists in the ID column of table 2
+    matching_row = loinc_codes.loc[loinc_codes["first"] == id]
+    # if it does, retrieve the corresponding protein ID from table 2
+    if not matching_row.empty:
+        loinc_id = matching_row.iloc[0]["LOINC_NUM"]
+        # insert the protein ID into the appropriate column of table 1
+        biomarkerdb.at[index, "LOINC code"] = loinc_id
+        
+loinc_dict = loinc_codes.set_index("LOINC_NUM")["SYSTEM"].to_dict()
+
+# Iterate through the rows of your biomarkerdb table
+for i, row in biomarkerdb.iterrows():
+    # Get the value of the "Uberon ID" column for this row
+    LOINC = row["LOINC code"]
+    if pd.notnull(LOINC) and LOINC in loinc_dict:
+        # Use the dictionary to look up the corresponding label
+        SYSTEM = loinc_dict[LOINC]
+        # Assign the label to the "Label" column in this row
+        biomarkerdb.at[i, "SYSTEM"] = SYSTEM
+        
+        
+uberon_map = pd.read_csv("uberon_system.csv", dtype={"uberon_value": "str"})
+biomarkerdb['Specimen type'] = ''
+
+for index, row in biomarkerdb.iterrows():
+    # get the ID for that row
+    id = row["SYSTEM"]
+    # check if that ID exists in the ID column of table 2
+    matching_row = uberon_map.loc[uberon_map["system"] == id]
+    # if it does, retrieve the corresponding protein ID from table 2
+    if not matching_row.empty:
+        protein_id = matching_row.iloc[0]["uberon_value"]
+        name_id = matching_row.iloc[0]["name"]
+        # insert the protein ID into the appropriate column of table 1
+        biomarkerdb.at[index, "Specimen type"] = name_id + " (UN:" + protein_id + ")"
+        
+#uniprot identifiers along with gene symbol and names were taken from the uniprot website
+#made a dictionary to make it easy to map UPKB identifers to the database
+uniprot_acc = pd.read_table('uniprot_names.tsv')        
+for index, row in biomarkerdb.iterrows():
+    id = row["Assessed biomarker entity"]
+    matching_rows = uniprot_acc.loc[uniprot_acc["Gene Names"].str.lower().str.strip() == id.lower().strip()]
+    if not matching_rows.empty:
+        protein_id = matching_rows.iloc[0]["Entry"]
+        biomarkerdb.at[index, "Main x-ref"] = protein_id
+        
+#map names of the genes to the biomarker entity        
+biomarkerdb['Names'] = ''
+
+for index, row in biomarkerdb.iterrows():
+    id = row["Assessed biomarker entity"]
+    matching_rows = uniprot_acc.loc[uniprot_acc["Gene Names"].str.lower().str.strip() == id.lower().strip()]
+    if not matching_rows.empty:
+        protein_id = matching_rows.iloc[0]["Protein names"]
+        biomarkerdb.at[index, "Names"] = protein_id 
+        
+# Create a dictionary of DOIDs with disease name as key and synonyms as values
+doid_dict = doid_table.set_index("Disease Name")[["DOID", "Exact Synonyms"]].to_dict("index")
+
+# Add a new column to your biomarkerdb table called "DOID"
+biomarkerdb["DOID"] = None
+
+# Iterate through the rows of your biomarkerdb table
+for i, row in biomarkerdb.iterrows():
+    disease_name = row["Disease name"].lower()
+    if disease_name in doid_dict:
+        biomarkerdb.at[i, "DOID"] = doid_dict[disease_name]["DOID"]
+    else:
+        for name, value in doid_dict.items():
+            if disease_name in value["Exact Synonyms"]:
+                biomarkerdb.at[i, "DOID"] = value["DOID"]
+                break
+def format_doid(row):
+    if pd.notnull(row["Names"]):
+        return "{} ({})".format(row["Names"], row["Assessed biomarker entity"])
+    else:
+        return row["Assessed biomarker entity"]
+
+# apply function to "disease name" column
+biomarkerdb["Assessed biomarker entity"] = biomarkerdb.apply(format_doid, axis=1)
+
+biomarkerdb['Evidence'] = 'GWAS Catalog|' + biomarkerdb['Evidence']
+
+biomarkerdb.to_csv('GWAS_biomarkers.csv')
+biomarker_r = pd.read_csv('GWAS_biomarkers.csv')
+
+#refomratting to the current structure
+biomarker_r.columns = ['X', 'biomarker_ID', 'main_Xref', 'assessed_biomarker_entity', 'biomarker_status', 
+                       'best_biomarker_type', 'specimen_type', 'loinc_code', 'condition_name', 'assessed_entity_type',
+                       'evidence_source', 'notes', 'system', 'DOID', 'Names']
+def format_doid(row):
+    if pd.notnull(row["main_Xref"]):
+        return "UPKB:{}|GRCh38 ".format(row['main_Xref'])
+    else:
+        return row['notes']
+
+
+biomarker_r["notes"] = biomarker_r.apply(format_doid, axis=1)
+
+biomarker_r["main_Xref"] = 'dbSNP:rs' + biomarker_r["biomarker_status"].str.extract(r"\(rs(\d+)\)")
+biomarker_r['rsID'] = 'rs' + biomarker_r["biomarker_status"].str.extract(r"\(rs(\d+)\)")
+
+def format_doid(row):
+    if pd.notnull(row["rsID"]):
+        return "{} mutation in {} ".format(row['rsID'], row['assessed_biomarker_entity'])
+    else:
+        return row['assessed_biomarker_entity']
+
+
+biomarker_r["assessed_biomarker_entity"] = biomarker_r.apply(format_doid, axis=1)
+
+
+biomarker_r['biomarker_status'] = 'presence of'
+biomarker_r['best_biomarker_type'] = 'risk_biomarker'
+biomarker_r['assessed_entity_type'] = 'gene'
