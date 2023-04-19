@@ -1,1 +1,3 @@
 Results files for all resources: OpenTargets, GWAS Catalog, ClinVar, MarkerDB, and OncoMX.
+
+The main result file (biomarkers_rsID.tsv) with over 176,000 rows compiles all data from all resources together that have a reported rsID attached to the biomarker. This data that has been extracted and mapped into this database is still in the preliminary phase as more harmonization is still needed. As of now we have not inferred or deduced which of these biomarkers are related to gene expression or protein expression. More harmonization and work needs to be done to infer this kind of information about the biomarkers whether it is directly from the source extracted or from an external source as we have used to map other details. 
