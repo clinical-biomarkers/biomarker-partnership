@@ -33,5 +33,9 @@ class DataExtractionEngine:
             File type of the input file (default value is csv). 
         '''
 
+        # make sure inputs are valid 
+        if input_type not in self.file_types:
+            raise ValueError('Input file type invalid.')
+
 
 
