@@ -1,5 +1,6 @@
 import pandas as pd 
 import os 
+import numpy as np
 
 class DataExtractionHelper: 
     ''' Class for the data extraction helper. 
@@ -10,6 +11,27 @@ class DataExtractionHelper:
         Column names for the final biomarker Dataframe. 
     file_types : List[str]
         File types that this helper supports. 
+    uniprot_map : str
+        File path to the Uniprot mapping file. 
+    loinc_map : str
+        File path to the loinc mapping file. 
+    uberon_map : str
+        File path to the uberon mapping file.   
+    doid_map : str
+        File path to the doid mapping file. 
+
+    Instance Attributes
+    -------------------
+    biomarker_df : pd.Dataframe
+        Target dataframe.
+    uniprot_df : pd.Dataframe
+        Uniprot mapping data. 
+    loinc_df : pd.Dataframe
+        Loinc mapping data. 
+    uberon_df : pd.Dataframe
+        Uberon mapping data.
+    doid_df : pd.Dataframe
+        Doid mapping data. 
 
     Methods
     -------
@@ -27,18 +49,39 @@ class DataExtractionHelper:
 
     format_doid(source, prefix)
         Formats the Disease Ontology Identifiers (DOIDs) and populates into main_x_ref column in biomarker dataframe.
+    
+    map_uniprot()
+        Maps the corresponding uniprot entry for each gene. 
+
+    map_loinc()
+        Map the corresponding loinc data. 
+    
+    map_uberon()
+        Map the corresponding uberon data. 
+    
+    map_doid()
+        Map the corresponding doid based on the disease column and populate the condition name.
     '''
 
     column_names = ['biomarker_id', 'main_x_ref', 'assessed_biomarker_entity', 'biomarker_status',
                     'best_biomarker_type', 'specimen_type', 'loinc_code', 'condition_name',
-                    'assessed_entity_type', 'evidence_source', 'notes', 'rs_id']
+                    'assessed_entity_type', 'evidence_source', 'notes', 'rs_id', 'gene', 'disease', 
+                    'uniprot', 'name', 'system', 'doid']
     file_types = {'csv', 'txt'}
+    uniprot_map = '../mapping_data/uniprot_names.tsv' # path is set for jupyter notebook (notebooks have a different default cwd vs .py files)
+    loinc_map = '../mapping_data/Loinc.csv' # path is set for jupyter notebook (notebooks have a different default cwd vs .py files)
+    uberon_map = '../mapping_data/uberon_system.csv' # path is set for jupyter notebook (notebooks have a different default cwd vs .py files)
+    doid_map = '../mapping_data/doid_table.csv' # path is set for jupyter notebook (notebooks have a different default cwd vs .py files)
 
     def __init__(self) -> None:
         ''' Constructor, creates the initial empty biomarker dataframe. 
         '''
 
         self.biomarker_df = pd.DataFrame(columns = self.column_names)
+        self.uniprot_df = self.read_in_data(input_file = self.uniprot_map, input_type = 'csv', delim = '\t')
+        self.loinc_df = self.read_in_data(input_file = self.loinc_map, input_type = 'csv')
+        self.uberon_map = self.read_in_data(input_file = self.uberon_map, input_type = 'csv')
+        self.doid_map = self.read_in_data(input_file = self.doid_map, input_type = 'csv')
     
     def read_in_data(self, input_file: str, input_type: str, delim: str = ',') -> pd.DataFrame:
         ''' Reads in the data from the user inputted file path and returns a Pandas Dataframe. 
@@ -64,7 +107,7 @@ class DataExtractionHelper:
             raise ValueError(f'Input file does not exist. Recheck inputted file path/name.')
         
         if input_type.strip().lower() == 'csv':
-            return pd.read_csv(input_file)
+            return pd.read_csv(input_file, sep = delim)
         elif input_type.strip().lower() == 'txt':
             return pd.read_csv(input_file, sep = delim)
     
@@ -114,7 +157,7 @@ class DataExtractionHelper:
         
         self.biomarker_df[target_col] = source.astype(dtype)
     
-    def format_doid(self, source: str, prefix: str):
+    def format_doid(self, source: str, prefix: str) -> None:
         ''' Formats the Disease Ontology Identifiers (DOIDs) and populates into main_x_ref column in biomarker dataframe.
 
         Parameters
@@ -128,4 +171,79 @@ class DataExtractionHelper:
         mask = self.biomarker_df[source].isna()
         formatted_series = prefix + self.biomarker_df[source].astype('str')
         formatted_series[mask] = prefix + '<NA>'
-        self.biomarker_dfk['main_x_ref'] = formatted_series
+        self.biomarker_df['main_x_ref'] = formatted_series
+
+    def map_uniprot(self) -> None:
+        ''' Maps the corresponding uniprot entry for each gene. 
+        '''
+
+        if self.biomarker_df['gene'].isna().all():
+            raise AttributeError('Gene column must be populated first.')
+
+        gene_to_uniprot = dict(zip(self.uniprot_df['Gene Names'].str.lower().str.strip(), self.uniprot_df['Entry']))
+        gene_to_uniprot_series = self.biomarker_df['gene'].str.lower().str.strip().map(gene_to_uniprot).fillna('Null')
+        self.populate_col(source = gene_to_uniprot_series, target_col = 'uniprot')
+
+        name_to_uniprot = dict(zip(self.uniprot_df['Gene Names'].str.lower().str.strip(), self.uniprot_df['Protein names']))
+        name_to_uniprot_series = self.biomarker_df['gene'].str.lower().str.strip().map(name_to_uniprot)
+        self.populate_col(source = name_to_uniprot_series, target_col = 'name')
+    
+    def map_loinc(self) -> None:
+        ''' Map the corresponding loinc data. 
+        '''
+
+        if self.biomarker_df['gene'].isna().all():
+            raise AttributeError('Gene column must be populated first.')
+        
+        self.loinc_df['first_word'] = self.loinc_df['COMPONENT'].str.split(' ').str[0]
+        loinc_dict = self.loinc_df.set_index('first_word')['LOINC_NUM'].to_dict()
+        loinc_series = self.biomarker_df['gene'].map(loinc_dict)
+        self.populate_col(source = loinc_series, target_col = 'loinc_code')
+
+        system_dict = self.loinc_df.set_index('LOINC_NUM')['SYSTEM'].to_dict()
+        system_series = self.biomarker_df['loinc_code'].map(system_dict)
+        self.populate_col(source = system_series, target_col = 'system')
+
+    def map_uberon(self) -> None:
+        ''' Map the corresponding uberon data. 
+        '''
+
+        if self.biomarker_df['system'].isna().all():
+            raise AttributeError('System column must be populated first')
+        
+        uberon_dict = self.uberon_map.set_index('system').apply(lambda row: row['name'] + ' (UN:' + str(row['uberon_value']) + ')', axis = 1).to_dict()
+        uberon_series = self.biomarker_df['system'].map(uberon_dict)
+        self.populate_col(source = uberon_series, target_col = 'specimen_type')
+    
+    def map_doid(self) -> None:
+        ''' Map the corresponding DOID based on the disease column and populate the condition name. 
+        '''
+
+        if self.biomarker_df['disease'].isna().all():
+            raise AttributeError('Disease column must be populated first')
+        
+        doid_dict = self.doid_map.set_index('Disease Name')['DOID'].to_dict()
+        for idx, row in self.doid_map.iterrows():
+            synonyms = str(row['Exact Synonyms']).split('|')
+            for synonym in synonyms:
+                doid_dict[synonym.lower()] = row['DOID']
+        
+        doid_series = self.biomarker_df['disease'].str.lower().map(doid_dict)
+        self.populate_col(source = doid_series, target_col = 'doid')
+
+        condition_name_series = self.biomarker_df['disease'].str.lower() + '(DOID:' + self.biomarker_df['doid'].astype(str) + ')'
+        condition_name_series = np.where(self.biomarker_df['doid'].notna(), condition_name_series, self.biomarker_df['disease'].str.lower())
+        self.populate_col(source = condition_name_series, target_col = 'condition_name') 
+
+    def map_mutations(self) -> None:
+        ''' Map mutations using the rs_id column.
+        '''
+
+        if self.biomarker_df['rs_id'].isna().all():
+            raise AttributeError('Rs_id column must be populated first.')
+
+        mutations_dict = self.variant.set_index("rsID")["Name"].to_dict()
+        mutations_series = self.biomarker_df['rsID'].map(mutations_dict).fillna('')
+
+        # Update mutation column
+        self.populate_col(source=mutations_series, target_col='mutation')
