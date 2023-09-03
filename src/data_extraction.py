@@ -61,12 +61,15 @@ class DataExtractionHelper:
     
     map_doid()
         Map the corresponding doid based on the disease column and populate the condition name.
+
+    map_mutations(mutation_map: dict, variant_map: dict)
+        Map mutations and variants using the rs_id column.       
     '''
 
     column_names = ['biomarker_id', 'main_x_ref', 'assessed_biomarker_entity', 'biomarker_status',
                     'best_biomarker_type', 'specimen_type', 'loinc_code', 'condition_name',
                     'assessed_entity_type', 'evidence_source', 'notes', 'rs_id', 'gene', 'disease', 
-                    'uniprot', 'name', 'system', 'doid']
+                    'uniprot', 'name', 'system', 'doid', 'mutation', 'variation']
     file_types = {'csv', 'txt'}
     uniprot_map = '../mapping_data/uniprot_names.tsv' # path is set for jupyter notebook (notebooks have a different default cwd vs .py files)
     loinc_map = '../mapping_data/Loinc.csv' # path is set for jupyter notebook (notebooks have a different default cwd vs .py files)
@@ -171,7 +174,7 @@ class DataExtractionHelper:
         mask = self.biomarker_df[source].isna()
         formatted_series = prefix + self.biomarker_df[source].astype('str')
         formatted_series[mask] = prefix + '<NA>'
-        self.biomarker_df['main_x_ref'] = formatted_series
+        self.populate_col(source = formatted_series, target_col = 'main_x_ref')
 
     def map_uniprot(self) -> None:
         ''' Maps the corresponding uniprot entry for each gene. 
@@ -235,15 +238,26 @@ class DataExtractionHelper:
         condition_name_series = np.where(self.biomarker_df['doid'].notna(), condition_name_series, self.biomarker_df['disease'].str.lower())
         self.populate_col(source = condition_name_series, target_col = 'condition_name') 
 
-    def map_mutations(self) -> None:
-        ''' Map mutations using the rs_id column.
+    def map_mutations(self, mutation_map: dict, variant_map: dict) -> None:
+        ''' Map mutations and variants using the rs_id column.
+
+        Parameters
+        ----------
+        mutation_map: dict
+            Dictionary mapping the rs_id to the mutation names.
+        variant_map: dict
+            Dictionary mapping the rs_id to the variant names. 
         '''
 
         if self.biomarker_df['rs_id'].isna().all():
             raise AttributeError('Rs_id column must be populated first.')
 
-        mutations_dict = self.variant.set_index("rsID")["Name"].to_dict()
-        mutations_series = self.biomarker_df['rsID'].map(mutations_dict).fillna('')
+        mutations_series = self.biomarker_df['rs_id'].map(mutation_map).fillna('Null')
+        self.populate_col(source = mutations_series, target_col = 'mutation')
 
-        # Update mutation column
-        self.populate_col(source=mutations_series, target_col='mutation')
+        variation_series = self.biomarker_df['rs_id'].map(variant_map).fillna('Null')
+        self.populate_col(source = variation_series, target_col = 'variation')
+
+        mask = self.biomarker_df['variation'].notna()
+        self.biomarker_df['evidence_source'] = 'ClinVar'
+        self.biomarker_df.loc[mask, 'evidence_source'] = "ClinVar|https://www.ncbi.nlm.nih.gov/clinvar/variation/" + self.biomarker_df['variation'] + "/?new_evidence=true"
