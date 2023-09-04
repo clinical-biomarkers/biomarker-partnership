@@ -44,26 +44,8 @@ class DataExtractionHelper:
     split_col_on_delim(df, split_column, new_col_name, delim)
         Expands indicated column on a delimiter into multiple rows.  
 
-    populate_col(source, target_col)
-        Populates the biomarker dataframe.
-
-    format_doid(source, prefix)
-        Formats the Disease Ontology Identifiers (DOIDs) and populates into main_x_ref column in biomarker dataframe.
-    
-    map_uniprot()
-        Maps the corresponding uniprot entry for each gene. 
-
-    map_loinc()
-        Map the corresponding loinc data. 
-    
-    map_uberon()
-        Map the corresponding uberon data. 
-    
-    map_doid()
-        Map the corresponding doid based on the disease column and populate the condition name.
-
-    map_mutations(mutation_map: dict, variant_map: dict)
-        Map mutations and variants using the rs_id column.       
+    populate_col(source, target_col, dtype)
+        Populates the biomarker dataframe.    
     '''
 
     column_names = ['biomarker_id', 'main_x_ref', 'assessed_biomarker_entity', 'biomarker_status',
@@ -83,8 +65,10 @@ class DataExtractionHelper:
         self.biomarker_df = pd.DataFrame(columns = self.column_names)
         self.uniprot_df = self.read_in_data(input_file = self.uniprot_map, input_type = 'csv', delim = '\t')
         self.loinc_df = self.read_in_data(input_file = self.loinc_map, input_type = 'csv')
+        self.loinc_df['first_word'] = self.loinc_df['COMPONENT'].str.split(' ').str[0]
         self.uberon_map = self.read_in_data(input_file = self.uberon_map, input_type = 'csv')
         self.doid_map = self.read_in_data(input_file = self.doid_map, input_type = 'csv')
+        self.doid_map = self.split_col_on_delim(self.doid_map, 'Exact Synonyms', 'synonym', drop = False)
     
     def read_in_data(self, input_file: str, input_type: str, delim: str = ',') -> pd.DataFrame:
         ''' Reads in the data from the user inputted file path and returns a Pandas Dataframe. 
@@ -114,7 +98,7 @@ class DataExtractionHelper:
         elif input_type.strip().lower() == 'txt':
             return pd.read_csv(input_file, sep = delim)
     
-    def split_col_on_delim(self, df: pd.DataFrame, split_column: str, new_col_name: str, delim: str = ',') -> pd.DataFrame:
+    def split_col_on_delim(self, df: pd.DataFrame, split_column: str, new_col_name: str, delim: str = ',', drop: bool = True) -> pd.DataFrame:
         ''' Expands indicated column on a delimiter into multiple rows.  
 
         Parameters
@@ -127,6 +111,8 @@ class DataExtractionHelper:
             The name of the new column.
         delim : str
             The delimiter to split on (default value comma).
+        drop : bool
+            Whether to drop the original column or not. 
 
         Returns
         -------
@@ -140,7 +126,10 @@ class DataExtractionHelper:
         df = df.copy()
         df[new_col_name] = df[split_column].str.split(delim)
         df = df.explode(new_col_name)
-        return df.drop(split_column, axis = 1)
+        if drop:
+                return df.drop(split_column, axis = 1)
+        else:
+            return df
         
     def populate_col(self, source: pd.Series, target_col: str, dtype: str = 'str') -> None:
         ''' Populates the biomarker dataframe. 
@@ -159,105 +148,3 @@ class DataExtractionHelper:
             raise ValueError('Target column invalid.')
         
         self.biomarker_df[target_col] = source.astype(dtype)
-    
-    def format_doid(self, source: str, prefix: str) -> None:
-        ''' Formats the Disease Ontology Identifiers (DOIDs) and populates into main_x_ref column in biomarker dataframe.
-
-        Parameters
-        ----------
-        source: str
-            The source column in the biomarker_df. 
-        prefix: str
-            Prefix for the DOID. 
-        '''
-
-        mask = self.biomarker_df[source].isna()
-        formatted_series = prefix + self.biomarker_df[source].astype('str')
-        formatted_series[mask] = prefix + '<NA>'
-        self.populate_col(source = formatted_series, target_col = 'main_x_ref')
-
-    def map_uniprot(self) -> None:
-        ''' Maps the corresponding uniprot entry for each gene. 
-        '''
-
-        if self.biomarker_df['gene'].isna().all():
-            raise AttributeError('Gene column must be populated first.')
-
-        gene_to_uniprot = dict(zip(self.uniprot_df['Gene Names'].str.lower().str.strip(), self.uniprot_df['Entry']))
-        gene_to_uniprot_series = self.biomarker_df['gene'].str.lower().str.strip().map(gene_to_uniprot).fillna('Null')
-        self.populate_col(source = gene_to_uniprot_series, target_col = 'uniprot')
-
-        name_to_uniprot = dict(zip(self.uniprot_df['Gene Names'].str.lower().str.strip(), self.uniprot_df['Protein names']))
-        name_to_uniprot_series = self.biomarker_df['gene'].str.lower().str.strip().map(name_to_uniprot)
-        self.populate_col(source = name_to_uniprot_series, target_col = 'name')
-    
-    def map_loinc(self) -> None:
-        ''' Map the corresponding loinc data. 
-        '''
-
-        if self.biomarker_df['gene'].isna().all():
-            raise AttributeError('Gene column must be populated first.')
-        
-        self.loinc_df['first_word'] = self.loinc_df['COMPONENT'].str.split(' ').str[0]
-        loinc_dict = self.loinc_df.set_index('first_word')['LOINC_NUM'].to_dict()
-        loinc_series = self.biomarker_df['gene'].map(loinc_dict)
-        self.populate_col(source = loinc_series, target_col = 'loinc_code')
-
-        system_dict = self.loinc_df.set_index('LOINC_NUM')['SYSTEM'].to_dict()
-        system_series = self.biomarker_df['loinc_code'].map(system_dict)
-        self.populate_col(source = system_series, target_col = 'system')
-
-    def map_uberon(self) -> None:
-        ''' Map the corresponding uberon data. 
-        '''
-
-        if self.biomarker_df['system'].isna().all():
-            raise AttributeError('System column must be populated first')
-        
-        uberon_dict = self.uberon_map.set_index('system').apply(lambda row: row['name'] + ' (UN:' + str(row['uberon_value']) + ')', axis = 1).to_dict()
-        uberon_series = self.biomarker_df['system'].map(uberon_dict)
-        self.populate_col(source = uberon_series, target_col = 'specimen_type')
-    
-    def map_doid(self) -> None:
-        ''' Map the corresponding DOID based on the disease column and populate the condition name. 
-        '''
-
-        if self.biomarker_df['disease'].isna().all():
-            raise AttributeError('Disease column must be populated first')
-        
-        doid_dict = self.doid_map.set_index('Disease Name')['DOID'].to_dict()
-        for idx, row in self.doid_map.iterrows():
-            synonyms = str(row['Exact Synonyms']).split('|')
-            for synonym in synonyms:
-                doid_dict[synonym.lower()] = row['DOID']
-        
-        doid_series = self.biomarker_df['disease'].str.lower().map(doid_dict)
-        self.populate_col(source = doid_series, target_col = 'doid')
-
-        condition_name_series = self.biomarker_df['disease'].str.lower() + '(DOID:' + self.biomarker_df['doid'].astype(str) + ')'
-        condition_name_series = np.where(self.biomarker_df['doid'].notna(), condition_name_series, self.biomarker_df['disease'].str.lower())
-        self.populate_col(source = condition_name_series, target_col = 'condition_name') 
-
-    def map_mutations(self, mutation_map: dict, variant_map: dict) -> None:
-        ''' Map mutations and variants using the rs_id column.
-
-        Parameters
-        ----------
-        mutation_map: dict
-            Dictionary mapping the rs_id to the mutation names.
-        variant_map: dict
-            Dictionary mapping the rs_id to the variant names. 
-        '''
-
-        if self.biomarker_df['rs_id'].isna().all():
-            raise AttributeError('Rs_id column must be populated first.')
-
-        mutations_series = self.biomarker_df['rs_id'].map(mutation_map).fillna('Null')
-        self.populate_col(source = mutations_series, target_col = 'mutation')
-
-        variation_series = self.biomarker_df['rs_id'].map(variant_map).fillna('Null')
-        self.populate_col(source = variation_series, target_col = 'variation')
-
-        mask = self.biomarker_df['variation'].notna()
-        self.biomarker_df['evidence_source'] = 'ClinVar'
-        self.biomarker_df.loc[mask, 'evidence_source'] = "ClinVar|https://www.ncbi.nlm.nih.gov/clinvar/variation/" + self.biomarker_df['variation'] + "/?new_evidence=true"
