@@ -2,3 +2,4 @@ __pycache__
 test.ipynb
 BiomarkerDB*project/
 data/variant_summary.txt
+results/clinvar.csv
