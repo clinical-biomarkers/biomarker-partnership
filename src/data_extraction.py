@@ -18,7 +18,11 @@ class DataExtractionHelper:
     uberon_map : str
         File path to the uberon mapping file.   
     doid_map : str
-        File path to the doid mapping file. 
+        File path to the doid mapping file.
+    disease_map : dict
+        Map for exact match common disease terms.  
+    disease_prefix_map : dict
+        Map for disease terms tha tare identified by prefixes rather than exact matches. 
 
     Instance Attributes
     -------------------
@@ -57,6 +61,32 @@ class DataExtractionHelper:
     loinc_map = '../mapping_data/Loinc.csv' # path is set for jupyter notebook (notebooks have a different default cwd vs .py files)
     uberon_map = '../mapping_data/uberon_system.csv' # path is set for jupyter notebook (notebooks have a different default cwd vs .py files)
     doid_map = '../mapping_data/doid_table.csv' # path is set for jupyter notebook (notebooks have a different default cwd vs .py files)
+    disease_map = {
+        'hereditary cancer-predisposing syndrome': 'cancer',
+        'familial cancer of breast': 'breast cancer',
+        'breast adenocarcinoma': 'breast cancer',
+        'carcinoma of colon': 'colon cancer',
+        'gastric cancer': 'stomach cancer',
+        'hepatocellular carcinoma': 'liver cancer',
+        'palmoplantar keratoderma-XX sex reversal-predisposition to squamous cell carcinoma syndrome': 'squamous cell carcinoma',
+        'hurthle cell carcinoma of thyroid': 'thyroid gland cancer',
+        'endometrial carcinoma': 'endometrial cancer',
+        'gastric cancer': 'stomach cancer',
+        'familial colorectal cancer': 'colorectal cancer'
+    }
+    disease_prefix_map = {
+        'breast cancer, susceptibility to': 'breast cancer',
+        'breast cancer': 'breast cancer',
+        'colorectal cancer': 'colorectal cancer',
+        'pancreatic cancer, susceptibility to': 'pancreatic cancer',
+        'prostate cancer, hereditary': 'prostate cancer', 
+        'lung cancer, susceptibility to': 'lung cancer', 
+        'lung cancer': 'lung cancer', 
+        'mismatch repair cancer syndrome': 'mismatch repair cancer syndrome', 
+        'papillary renal cell carcinoma type': 'kidney cancer',
+        'esophageal squamous cell carcinoma': 'esophageal cancer',
+        'thyroid cancer, nonmedullary': 'thyroid gland cancer'
+    }
 
     def __init__(self) -> None:
         ''' Constructor, creates the initial empty biomarker dataframe. 
