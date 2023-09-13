@@ -19,10 +19,6 @@ class DataExtractionHelper:
         File path to the uberon mapping file.   
     doid_map : str
         File path to the doid mapping file.
-    disease_map : dict
-        Map for exact match common disease terms.  
-    disease_prefix_map : dict
-        Map for disease terms tha tare identified by prefixes rather than exact matches. 
 
     Instance Attributes
     -------------------
@@ -45,11 +41,17 @@ class DataExtractionHelper:
     read_in_data(input_file, input_type, delim) 
         Reads in the data from the user inputted file path and returns it as a Pandas DataFrame. 
 
-    split_col_on_delim(df, split_column, new_col_name, delim)
+    split_col_on_delim(df, split_column, new_col_name, delim, drop)
         Expands indicated column on a delimiter into multiple rows.  
 
     populate_col(source, target_col, dtype)
         Populates the biomarker dataframe.    
+
+    _map_loinc()
+        Map the corresponding loinc data based on the gene column (gene column must be populated first).
+
+    _map_specimen()
+        Map the specimen type based on the system column (system column must be populated first).
     '''
 
     column_names = ['biomarker_id', 'main_x_ref', 'assessed_biomarker_entity', 'biomarker_status',
@@ -61,32 +63,6 @@ class DataExtractionHelper:
     loinc_map = '../mapping_data/Loinc.csv' # path is set for jupyter notebook (notebooks have a different default cwd vs .py files)
     uberon_map = '../mapping_data/uberon_system.csv' # path is set for jupyter notebook (notebooks have a different default cwd vs .py files)
     doid_map = '../mapping_data/doid_table.csv' # path is set for jupyter notebook (notebooks have a different default cwd vs .py files)
-    disease_map = {
-        'hereditary cancer-predisposing syndrome': 'cancer',
-        'familial cancer of breast': 'breast cancer',
-        'breast adenocarcinoma': 'breast cancer',
-        'carcinoma of colon': 'colon cancer',
-        'gastric cancer': 'stomach cancer',
-        'hepatocellular carcinoma': 'liver cancer',
-        'palmoplantar keratoderma-XX sex reversal-predisposition to squamous cell carcinoma syndrome': 'squamous cell carcinoma',
-        'hurthle cell carcinoma of thyroid': 'thyroid gland cancer',
-        'endometrial carcinoma': 'endometrial cancer',
-        'gastric cancer': 'stomach cancer',
-        'familial colorectal cancer': 'colorectal cancer'
-    }
-    disease_prefix_map = {
-        'breast cancer, susceptibility to': 'breast cancer',
-        'breast cancer': 'breast cancer',
-        'colorectal cancer': 'colorectal cancer',
-        'pancreatic cancer, susceptibility to': 'pancreatic cancer',
-        'prostate cancer, hereditary': 'prostate cancer', 
-        'lung cancer, susceptibility to': 'lung cancer', 
-        'lung cancer': 'lung cancer', 
-        'mismatch repair cancer syndrome': 'mismatch repair cancer syndrome', 
-        'papillary renal cell carcinoma type': 'kidney cancer',
-        'esophageal squamous cell carcinoma': 'esophageal cancer',
-        'thyroid cancer, nonmedullary': 'thyroid gland cancer'
-    }
 
     def __init__(self) -> None:
         ''' Constructor, creates the initial empty biomarker dataframe. 
@@ -95,6 +71,8 @@ class DataExtractionHelper:
         self.biomarker_df = pd.DataFrame(columns = self.column_names)
         self.uniprot_df = self.read_in_data(input_file = self.uniprot_map, input_type = 'csv', delim = '\t')
         self.loinc_df = self.read_in_data(input_file = self.loinc_map, input_type = 'csv')
+        _target_rows = self.loinc_df['COMPONENT'].str.contains('gene targeted mutation analysis', case = False, na = False)
+        self.loinc_df = self.loinc_df[_target_rows]
         self.loinc_df['first_word'] = self.loinc_df['COMPONENT'].str.split(' ').str[0]
         self.uberon_map = self.read_in_data(input_file = self.uberon_map, input_type = 'csv')
         self.doid_map = self.read_in_data(input_file = self.doid_map, input_type = 'csv')
@@ -156,6 +134,7 @@ class DataExtractionHelper:
         df = df.copy()
         df[new_col_name] = df[split_column].str.split(delim)
         df = df.explode(new_col_name)
+        df[new_col_name] = df[new_col_name].str.strip()
         if drop:
                 return df.drop(split_column, axis = 1)
         else:
@@ -178,3 +157,73 @@ class DataExtractionHelper:
             raise ValueError('Target column invalid.')
         
         self.biomarker_df[target_col] = source.astype(dtype)
+
+        if target_col == 'gene': 
+            self._map_loinc()
+            self._map_uniprot()
+            self._map_specimen()
+        elif target_col == 'disease': 
+            self._map_disease()
+            self._map_doid()
+    
+    def _map_loinc(self) -> None: 
+        ''' Map the corresponding loinc data based on the gene column (gene column must be populated first).
+        '''
+
+        if self.biomarker_df['gene'].isna().all():
+            raise AttributeError('Gene column must be populated first.')
+
+        loinc_dict = self.loinc_df.set_index('first_word')['LOINC_NUM'].to_dict() 
+        loinc_series = self.biomarker_df['gene'].map(loinc_dict)
+        self.populate_col(source = loinc_series, target_col = 'loinc_code')
+
+        system_dict = self.loinc_df.set_index('LOINC_NUM')['SYSTEM'].to_dict()
+        system_series = self.biomarker_df['loinc_code'].map(system_dict)
+        self.populate_col(source = system_series, target_col = 'system')
+    
+    def _map_uniprot(self) -> None:
+        '''
+        '''
+
+        if self.biomarker_df['gene'].isna().all():
+            raise AttributeError('Gene column must be populated first.')
+
+        gene_to_uniprot_dict = dict(zip(self.uniprot_df['Gene Names'].str.lower().str.strip(), self.uniprot_df['Entry']))
+        gene_to_uniprot_series = self.biomarker_df['gene'].str.lower().str.strip().map(gene_to_uniprot_dict).fillna('Null')
+        self.populate_col(source = gene_to_uniprot_series, target_col = 'uniprot')
+
+        name_to_uniprot_dict = dict(zip(self.uniprot_df['Gene Names'].str.lower().str.strip(), self.uniprot_df['Protein names']))
+        name_to_uniprot_series = self.biomarker_df['gene'].str.lower().str.strip().map(name_to_uniprot_dict)
+        self.populate_col(source = name_to_uniprot_series, target_col = 'name')
+    
+    def _map_specimen(self) -> None: 
+        ''' Map the specimen type based on the system column (system column must be populated first).
+        '''
+
+        if self.biomarker_df['system'].isna().all():
+            raise AttributeError('System column must be populated first.')
+        
+        uberon_dict = self.uberon_map.set_index('system').apply(lambda row: f"{row['name']} (UN:{row['uberon_value']})", axis = 1).to_dict()
+        uberon_series = self.biomarker_df['system'].map(uberon_dict)
+        self.populate_col(source = uberon_series, target_col = 'specimen_type')
+
+    def _map_disease(self) -> None:
+        '''
+        '''
+    
+    def _map_doid(self) -> None:
+        '''
+        '''
+
+        if self.biomarker_df['disease'].isna().all():
+            raise AttributeError('Disease column must be populated first.')
+
+        doid_dict = self.doid_map.set_index('Disease Name')['DOID'].to_dict()
+        doid_series = self.biomarker_df['disease'].str.lower().map(doid_dict)
+
+        doid_synonym_dict = self.doid_map.set_index('synonym')['DOID'].to_dict()
+        doid_synonym_series = self.biomarker_df['disease'].str.lower().map(doid_synonym_dict)
+        
+        combined_doid_series = doid_series.combine_first(doid_synonym_series)
+        self.populate_col(source = combined_doid_series, target_col = 'doid')
+    
