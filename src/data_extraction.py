@@ -56,9 +56,10 @@ class DataExtractionHelper:
         self.loinc_df['first_word'] = self.loinc_df['COMPONENT'].str.split(' ').str[0]
         self.uberon_map = self.read_in_data(input_file = self.uberon_map, input_type = 'csv')
         self.doid_map = self.read_in_data(input_file = self.doid_map, input_type = 'csv')
+        self.doid_map['Exact Synonyms'] = self.doid_map['Exact Synonyms'].str.replace(r'[\[\]\'"]', '', regex = True)
         self.doid_map = self.split_col_on_delim(self.doid_map, 'Exact Synonyms', 'synonym', drop = False)
     
-    def read_in_data(self, input_file: str, input_type: str, delim: str = ',') -> pd.DataFrame:
+    def read_in_data(self, input_file: str, input_type: str, delim: str = ',', **kwargs) -> pd.DataFrame:
         ''' Reads in the data from the user inputted file path and returns a Pandas Dataframe. 
 
         Parameters
@@ -81,10 +82,8 @@ class DataExtractionHelper:
         if not os.path.isfile(f'{input_file}'):
             raise ValueError(f'Input file does not exist. Recheck inputted file path/name.')
         
-        if input_type.strip().lower() == 'csv':
-            return pd.read_csv(input_file, sep = delim)
-        elif input_type.strip().lower() == 'txt':
-            return pd.read_csv(input_file, sep = delim)
+        if input_type.strip().lower() == 'csv' or input_type.strip().lower() == 'txt':
+            return pd.read_csv(input_file, sep = delim, **kwargs)
     
     def split_col_on_delim(self, df: pd.DataFrame, split_column: str, new_col_name: str, delim: str = ',', drop: bool = True) -> pd.DataFrame:
         ''' Expands indicated column on a delimiter into multiple rows.  
