@@ -1,9 +1,10 @@
 # BiomarkerKB 
 
-The goal of this project is to develop a community-based biomarker-centric data model to harvest and organize biomarker knowledge for diverse biological data types. Importantly, biomarker discovery <ins>is not</ins> the goal of this project. 
+The goal of this project is to develop a community-based biomarker-centric data model to harvest and organize biomarker knowledge for diverse biological data types. 
 
 - [Intro](#intro)
     - [Background](#background)
+    - [Scope and Goal of the Project](#scope-and-goal-of-the-project)
     - [Initial Biomarker Database Curation](#initial-biomarker-database-curation)
 - [Biomarker Defition](#biomarker-definition)
 - [Getting Started](#getting-started)
@@ -14,8 +15,11 @@ The goal of this project is to develop a community-based biomarker-centric data 
 ### Background 
 The FDA-NIH Biomarker Working Group (FNBWG) BEST resource<sup>1</sup> defines a biomarker as a "characteristic that is measured as an indicator of normal biological processes, pathogenic processes, or responses to an exposure or intervention, including therapeutic interventions". Biomarkers, measured in body fluids or tissues, are useful instrements for clinical inquiry and a growing focus of research. Biomarkers comprise important tools in the transition toward Predictive, Preventive, Personalized, Participatory medicine<sup>2</sup> and serve as valuable indicators in drug development, as well as surrogate endpoints in clinical trials.
 
+### Scope and Goal of the Project
+Biomarker research has led to distributed sets of data and the overall collection of relevant biomarker data in many different resources. The goal of this project is to provide systematic harmonization and organization of biomarker data by mapping biomarker data from public sources to Common Fund data elements. Importantly, biomarker discovery <ins>is not</ins> the goal of this project. 
+
 ### Initial Biomarker Database Curation
-This project focuses on creating a biomarker database from different, relevant resources. So far we have extracted biomarkers from 4 different resources: OpenTargets, ClinVar, GWAS Catalog, MarkerDB. We also added previously curated data from OncoMX. The information and data extracted from the resources was done based on an agreed upon defintion of biomarkers and what the core elements were for a biomarker (indicated in Figure 1).
+This project focuses on creating a biomarker database from different, relevant resources. So far we have extracted biomarkers from 5 different resources: OpenTargets, ClinVar, GWAS Catalog, MarkerDB (automated curation), and OncoMX (manual curation). The information and data extracted from the resources was done based on an agreed upon defintion of biomarkers and what the core elements were for a biomarker (indicated in Figure 1).
 
 ## Biomarker Definition
 
@@ -48,7 +52,7 @@ conda activate biomarkerkb
 
 ## Repository Structure 
 
-| Directory        | Description                                                                           |
+| Directory             | Description                                                                           |
 |-----------------------|---------------------------------------------------------------------------------------|
 | `mapping_data`        | Contains the supporting data that is used to map contextual data to the biomarkers.   |
 | `results`             | Contains the processed and formatted output csv files.                                |
