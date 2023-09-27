@@ -7,7 +7,6 @@ The goal of this project is to develop a community-based biomarker-centric data 
     - [Scope and Goal of the Project](#scope-and-goal-of-the-project)
     - [Initial Biomarker Database Curation](#initial-biomarker-database-curation)
 - [Biomarker Defition](#biomarker-definition)
-- [Getting Started](#getting-started)
 - [Repository Structure](#repository-structure)
 - [References](#references)
 
@@ -31,24 +30,6 @@ The elements highlighted in green are data types that would need to be extracted
 There is also a notes section present in this databse and that includes extra/miscellaneous deatils of the biomarker. This can include the exact mutation/amino acid change/expression data, Uniprot identifier, panel information, and the genome build. This data could be mapped from an outside resource or could be extracted directly from the reource the biomarker is being extracted from.
 
 Based on the resource that was being studied there can be some variation in how the data was extracted, manipulted, and harmonized to fit the structre of the above figure. This repository will provide examples of this alonsgide the table generated and other resources needed to gain information/data for the biomarker.
-
-## Getting Started
-
-### Clone the Repository
-
-Clone this repository to your local machine:
-```bash
-git clone https://github.com/biomarker-ontology/BiomarkerKB.git
-```
-
-### Conda Setup 
-
-Create a `conda` environment using the `conda_environment.yml` file and activate the environment.
-
-```bash
-conda env create -f <PATH/TO/conda_environment.yml>
-conda activate biomarkerkb
-```
 
 ## Repository Structure 
 
