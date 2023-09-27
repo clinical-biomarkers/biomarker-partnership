@@ -7,6 +7,7 @@ The goal of this project is to develop a community-based biomarker-centric data 
     - [Scope and Goal of the Project](#scope-and-goal-of-the-project)
     - [Initial Biomarker Database Curation](#initial-biomarker-database-curation)
 - [Biomarker Defition](#biomarker-definition)
+- [Data Dictionary](#data-dictionary)
 - [Repository Structure](#repository-structure)
 - [References](#references)
 
@@ -30,6 +31,22 @@ The elements highlighted in green are data types that would need to be extracted
 There is also a notes section present in this databse and that includes extra/miscellaneous deatils of the biomarker. This can include the exact mutation/amino acid change/expression data, Uniprot identifier, panel information, and the genome build. This data could be mapped from an outside resource or could be extracted directly from the reource the biomarker is being extracted from.
 
 Based on the resource that was being studied there can be some variation in how the data was extracted, manipulted, and harmonized to fit the structre of the above figure. This repository will provide examples of this alonsgide the table generated and other resources needed to gain information/data for the biomarker.
+
+## Data Dictionary 
+
+| Field                         | Description                                                                                   |
+|-------------------------------|-----------------------------------------------------------------------------------------------|
+| biomarker_id                  | Biomarker identifier.                                                                         |
+| main_x_ref                    | Accession or identifier that most closely matches the biomarker term.                         |
+| assessed_biomarker_entity     | Change in entity and common name/gene symbol/short name.                                      |
+| biomarker_status              | Change measured in disease versus healthy individual.                                         |    
+| best_biomarker_type           | Category of BEST biomarker.                                                                   |    
+| specimen_type                 | Type of specimen used to access the biomarker (with Uberon ID).                               |
+| loinc_code                    | Lab test ID associated with biomarker. Loinc ID.                                              |
+| condition_name                | Condition name with DOID.                                                                     |
+| assessed_entity_type          | Entity type of the biomarker.                                                                 |
+| evidence_source               | Source of biomarker with corresponding link to data page of biomarker within the source.      |
+| notes                         | Free text to add meta data to the entry.                                                      |
 
 ## Repository Structure 
 
