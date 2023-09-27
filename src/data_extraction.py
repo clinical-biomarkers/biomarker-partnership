@@ -132,9 +132,6 @@ class DataExtractionHelper:
             Data type of target column (default value string). 
         '''
         
-        if target_col not in self.column_names:
-            raise ValueError('Target column invalid.')
-        
         self.biomarker_df[target_col] = source.astype(dtype)
 
         if target_col == 'gene': 
