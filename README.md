@@ -7,7 +7,8 @@ The goal of this project is to develop a community-based biomarker-centric data 
     - [Scope and Goal of the Project](#scope-and-goal-of-the-project)
     - [Initial Biomarker Database Curation](#initial-biomarker-database-curation)
 - [Biomarker Defition](#biomarker-definition)
-- [Data Dictionary](#data-dictionary)
+- [Data Model](#data-model)
+    - [Data Validation](#validating-a-data-file-against-a-schema)
 - [Repository Structure](#repository-structure)
 - [References](#references)
 
@@ -32,7 +33,7 @@ There is also a notes section present in this databse and that includes extra/mi
 
 Based on the resource that was being studied there can be some variation in how the data was extracted, manipulted, and harmonized to fit the structre of the above figure. This repository will provide examples of this alonsgide the table generated and other resources needed to gain information/data for the biomarker.
 
-## Data Dictionary 
+## Data Model 
 
 | Field                         | Description                                                                                   |
 |-------------------------------|-----------------------------------------------------------------------------------------------|
@@ -48,13 +49,16 @@ Based on the resource that was being studied there can be some variation in how 
 | evidence_source               | Source of biomarker with corresponding link to data page of biomarker within the source.      |
 | notes                         | Free text to add meta data to the entry.                                                      |
 
+### Validating a Data File Against a Schema
+
 ## Repository Structure 
 
 | Directory             | Description                                                                           |
 |-----------------------|---------------------------------------------------------------------------------------|
-| `mapping_data`        | Contains the supporting data that is used to map contextual data to the biomarkers.   |
-| `results`             | Contains the processed and formatted output csv files.                                |
-| `src`                 | Contains the initial scripts.                                                         |
+| `data_dictionary`     | Will eventaully hold the information for the agreed upon data dictionary.             |
+| `mapping_data`        | Contains some supporting data that can be used to map contextual data to the biomarkers.   |
+| `src`                 | Contains the scripts used for data extraction.                                                         |
+| `supplementary_files` | Supplementary documents for the project.                                              | 
 
 ## References
 

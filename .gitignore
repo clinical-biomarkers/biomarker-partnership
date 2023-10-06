@@ -1,5 +1,4 @@
 __pycache__
 test.ipynb
-BiomarkerDB*project/
-data/
-results/clinvar.csv
+home/
+env/
