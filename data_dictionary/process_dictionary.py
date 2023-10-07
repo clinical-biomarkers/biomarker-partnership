@@ -2,12 +2,12 @@
 ''' BiomarkerKB data dictionary processor. Reads in the data dictionary TSV and converts it to 
 a JSON validation schema. 
 
-Usage: python dictionary_utils [options]
+Usage: python dictionary_utils.py [options]
 
     Positional arguments:
         file_path           filepath of the data dictionary TSV to convert
 
-    optional arguments 
+    Optional arguments 
         -h --help           show the help message and exit
         -v --version        show current version number and exit
 
