@@ -58,7 +58,13 @@ Based on the resource that was being studied there can be some variation in how 
 
 You can run the project locally or through the virtual environment. The environment is recommended to avoid potential dependency and/or versioning issues. 
 
-To start the virtual environment on Windows:
+If your virtual environment has not been created yet, you can do so with:
+
+```bash
+virtualenv env 
+```
+
+To activate the virtual environment on Windows:
 
 ```bash 
 env/Scripts/activate
