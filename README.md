@@ -8,6 +8,8 @@ The goal of this project is to develop a community-based biomarker-centric data 
     - [Initial Biomarker Database Curation](#initial-biomarker-database-curation)
 - [Biomarker Defition](#biomarker-definition)
 - [Data Dictionary](#data-dictionary-v10)
+- [Usage](#usage)
+    - [Start Environment](#starting-up-the-virtual-environment)
     - [Schema Generation](#generating-a-schema)
     - [Data Validation](#validating-a-data-file-against-a-schema)
 - [Repository Structure](#repository-structure)
@@ -50,7 +52,48 @@ Based on the resource that was being studied there can be some variation in how 
 | evidence_source               | Source of biomarker with corresponding link to data page of biomarker within the source.      |
 | notes                         | Free text to add meta data to the entry.                                                      |
 
+## Usage
+
+### Starting up the Virtual Environment
+
+You can run the project locally or through the virtual environment. The environment is recommended to avoid potential dependency and/or versioning issues. 
+
+To start the virtual environment on Windows:
+
+```bash 
+env/Scripts/activate
+```
+
+To start the virtual environemnt on MacOS/Linus:
+
+```bash
+source env/bin/activate
+```
+
+Then install the project dependencies using:
+
+```bash
+pip install -r requirements.txt
+```
+
 ### Generating a Schema
+
+In the `data_dictionary` directory, update the `conf.json` file with the updated version number. 
+
+Make sure the corresponding schema directories exist prior to running `process_dictionary.py`. 
+
+While inside the project root directory:
+
+```bash
+mkdir schema/<VERSION>
+```
+
+Move you current working directory to `data_dictionary/` and run the `process_dictonary.py` script passing in the filepath to the data dictionary TSV you want to process. 
+
+```bash
+cd data_dictionary
+python process_dictionary.py <FILEPATH/TO/DICTIONARY>
+```
 
 ### Validating a Data File Against a Schema
 
