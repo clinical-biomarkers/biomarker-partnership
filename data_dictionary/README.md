@@ -32,7 +32,7 @@ pip install -r requirements.txt
 
 ## Generating a Schema
 
-In the `data_dictionary` directory, update the `conf.json` file with the updated version number. 
+In the project root directory, update the `conf.json` file with the updated version number. 
 
 Make sure the corresponding schema directories exist prior to running `process_dictionary.py`. 
 
