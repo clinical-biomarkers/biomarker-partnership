@@ -1,1 +1,119 @@
-{"$schema": "http://json-schema.org/draft-07/schema#", "$id": "https://raw.githubusercontent.com/biomarker-ontology/BiomarkerKB/main/schema/v1.0/biomarkerkb_schema.json", "type": "object", "title": "biomarkerkb_schema.json", "required": ["biomarker_id", "main_x_ref", "accessed_biomarker_entity", "biomarker_status", "best_biomarker_type", "specimen_type", "loinc_code", "condition_name", "assessed_entity_type", "evidence_source"], "properties": {"biomarker_id": {"title": "biomarker_id", "description": "Biomarker identifier.", "type": "string", "examples": [""], "pattern": "^.*$"}, "main_x_ref": {"title": "main_x_ref", "description": "Accession or identifier that most closely matches the biomarker term.", "type": "string", "examples": ["dbSNP:rs1800562"], "pattern": "^[a-zA-Z]+:rs\\d+$"}, "accessed_biomarker_entity": {"title": "accessed_biomarker_entity", "description": "Change in entity and common name/gene symbole/short name.", "type": "string", "examples": ["rs1800562 mutation in hereditary haemochromatosis protein (hereditary hemochromatosis protein) (HFE)"], "pattern": "^.*$"}, "biomarker_status": {"title": "biomarker_status", "description": "Change measured in disease versus healthy individual.", "type": "string", "examples": ["presence of"], "pattern": "^.*$"}, "best_biomarker_type": {"title": "best_biomarker_type", "description": "Category of BEST biomarker.", "type": "string", "examples": ["risk_biomarker"], "pattern": "^.*$"}, "specimen_type": {"title": "specimen_type", "description": "Type of specimen used to access the biomarker (with Uberon ID).", "type": "string", "examples": ["blood (UN:178)"], "pattern": "^.+ \\(UN:\\d+\\)$"}, "loinc_code": {"title": "loinc_code", "description": "Lab test ID associated with biomarker.", "type": "string", "examples": ["34519-9"], "pattern": "^\\d+-\\d+$"}, "condition_name": {"title": "condition_name", "description": "Condition name with DOID.", "type": "string", "examples": ["cancer (DOID:162)"], "pattern": "^.+ \\(DOID:[^\\)]+\\)$"}, "assessed_entity_type": {"title": "assessed_entity_type", "description": "Entity type of the biomarker.", "type": "string", "examples": ["gene"], "pattern": "^.*$"}, "evidence_source": {"title": "evidence_source", "description": "Source of biomarker with corresponding link to data page of biomarker within the source.", "type": "string", "examples": ["ClinVar | https://www.ncbi.nlm.nih.gov/clinvar/variation/9/?new_evidence=true"], "pattern": "^.+ \\| .+$"}, "notes": {"title": "notes", "description": "Free text to add meta data to the entry.", "type": "string", "examples": ["UPKB:Q9UK37 (NM_000410.4(HFE):c.845G>A (p.Cys282Tyr))"], "pattern": "^.*$"}}}
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/biomarker-ontology/BiomarkerKB/main/schema/v1.0/biomarkerkb_schema.json",
+    "type": "object",
+    "title": "biomarkerkb_schema.json",
+    "required": [
+        "biomarker_id",
+        "main_x_ref",
+        "accessed_biomarker_entity",
+        "biomarker_status",
+        "best_biomarker_type",
+        "specimen_type",
+        "loinc_code",
+        "condition_name",
+        "assessed_entity_type",
+        "evidence_source"
+    ],
+    "properties": {
+        "biomarker_id": {
+            "title": "biomarker_id",
+            "description": "Biomarker identifier.",
+            "type": "string",
+            "examples": [
+                ""
+            ],
+            "pattern": "^.*$"
+        },
+        "main_x_ref": {
+            "title": "main_x_ref",
+            "description": "Accession or identifier that most closely matches the biomarker term.",
+            "type": "string",
+            "examples": [
+                "dbSNP:rs1800562"
+            ],
+            "pattern": "^[a-zA-Z]+:rs\\d+$"
+        },
+        "accessed_biomarker_entity": {
+            "title": "accessed_biomarker_entity",
+            "description": "Change in entity and common name/gene symbole/short name.",
+            "type": "string",
+            "examples": [
+                "rs1800562 mutation in hereditary haemochromatosis protein (hereditary hemochromatosis protein) (HFE)"
+            ],
+            "pattern": "^.*$"
+        },
+        "biomarker_status": {
+            "title": "biomarker_status",
+            "description": "Change measured in disease versus healthy individual.",
+            "type": "string",
+            "examples": [
+                "presence of"
+            ],
+            "pattern": "^.*$"
+        },
+        "best_biomarker_type": {
+            "title": "best_biomarker_type",
+            "description": "Category of BEST biomarker.",
+            "type": "string",
+            "examples": [
+                "risk_biomarker"
+            ],
+            "pattern": "^.*$"
+        },
+        "specimen_type": {
+            "title": "specimen_type",
+            "description": "Type of specimen used to access the biomarker (with Uberon ID).",
+            "type": "string",
+            "examples": [
+                "blood (UN:178)"
+            ],
+            "pattern": "^.+ \\(UN:\\d+\\)$"
+        },
+        "loinc_code": {
+            "title": "loinc_code",
+            "description": "Lab test ID associated with biomarker.",
+            "type": "string",
+            "examples": [
+                "34519-9"
+            ],
+            "pattern": "^\\d+-\\d+$"
+        },
+        "condition_name": {
+            "title": "condition_name",
+            "description": "Condition name with DOID.",
+            "type": "string",
+            "examples": [
+                "cancer (DOID:162)"
+            ],
+            "pattern": "^.+ \\(DOID:[^\\)]+\\)$"
+        },
+        "assessed_entity_type": {
+            "title": "assessed_entity_type",
+            "description": "Entity type of the biomarker.",
+            "type": "string",
+            "examples": [
+                "gene"
+            ],
+            "pattern": "^.*$"
+        },
+        "evidence_source": {
+            "title": "evidence_source",
+            "description": "Source of biomarker with corresponding link to data page of biomarker within the source.",
+            "type": "string",
+            "examples": [
+                "ClinVar | https://www.ncbi.nlm.nih.gov/clinvar/variation/9/?new_evidence=true"
+            ],
+            "pattern": "^.+ \\| .+$"
+        },
+        "notes": {
+            "title": "notes",
+            "description": "Free text to add meta data to the entry.",
+            "type": "string",
+            "examples": [
+                "UPKB:Q9UK37 (NM_000410.4(HFE):c.845G>A (p.Cys282Tyr))"
+            ],
+            "pattern": "^.*$"
+        }
+    }
+}
