@@ -7,7 +7,8 @@ The goal of this project is to develop a community-based biomarker-centric data 
     - [Scope and Goal of the Project](#scope-and-goal-of-the-project)
     - [Initial Biomarker Database Curation](#initial-biomarker-database-curation)
 - [Biomarker Defition](#biomarker-definition)
-- [Data Model](#data-model)
+- [Data Dictionary](#data-dictionary)
+    - [Schema Generation](#generating-a-schema)
     - [Data Validation](#validating-a-data-file-against-a-schema)
 - [Repository Structure](#repository-structure)
 - [References](#references)
@@ -33,7 +34,7 @@ There is also a notes section present in this databse and that includes extra/mi
 
 Based on the resource that was being studied there can be some variation in how the data was extracted, manipulted, and harmonized to fit the structre of the above figure. This repository will provide examples of this alonsgide the table generated and other resources needed to gain information/data for the biomarker.
 
-## Data Model 
+## Data Dictionary (v1.0)
 
 | Field                         | Description                                                                                   |
 |-------------------------------|-----------------------------------------------------------------------------------------------|
@@ -49,14 +50,17 @@ Based on the resource that was being studied there can be some variation in how 
 | evidence_source               | Source of biomarker with corresponding link to data page of biomarker within the source.      |
 | notes                         | Free text to add meta data to the entry.                                                      |
 
+### Generating a Schema
+
 ### Validating a Data File Against a Schema
 
 ## Repository Structure 
 
 | Directory             | Description                                                                           |
 |-----------------------|---------------------------------------------------------------------------------------|
-| `data_dictionary`     | Will eventaully hold the information for the agreed upon data dictionary.             |
+| `data_dictionary`     | Contains the information for the agreed upon data dictionary.             |
 | `mapping_data`        | Contains some supporting data that can be used to map contextual data to the biomarkers.   |
+| `schema`              | Contains the validation JSON schemas derived from the data dictonary.                 |
 | `src`                 | Contains the scripts used for data extraction.                                                         |
 | `supplementary_files` | Supplementary documents for the project.                                              | 
 
