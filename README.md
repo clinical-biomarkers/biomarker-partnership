@@ -7,7 +7,7 @@ The goal of this project is to develop a community-based biomarker-centric data 
     - [Scope and Goal of the Project](#scope-and-goal-of-the-project)
     - [Initial Biomarker Database Curation](#initial-biomarker-database-curation)
 - [Biomarker Defition](#biomarker-definition)
-- [Data Dictionary](#data-dictionary-v10)
+- [Data Dictionary](#data-dictionary-v10-overview)
 - [Usage](#usage)
     - [Start Environment](#starting-up-the-virtual-environment)
     - [Schema Generation](#generating-a-schema)
@@ -36,7 +36,7 @@ There is also a notes section present in this databse and that includes extra/mi
 
 Based on the resource that was being studied there can be some variation in how the data was extracted, manipulted, and harmonized to fit the structre of the above figure. This repository will provide examples of this alonsgide the table generated and other resources needed to gain information/data for the biomarker.
 
-## Data Dictionary (v1.0)
+## Data Dictionary (v1.0) Overview
 
 | Field                         | Description                                                                                   |
 |-------------------------------|-----------------------------------------------------------------------------------------------|
