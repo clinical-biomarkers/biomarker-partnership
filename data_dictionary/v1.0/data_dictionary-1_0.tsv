@@ -1,12 +1,12 @@
-properties	description	type	requirement	example
-biomarker_id	Biomarker identifier.	string	required	
-main_x_ref	Accession or identifier that most closely matches the biomarker term.	string	required	dbSNP:rs1800562
-accessed_biomarker_entity	Change in entity and common name/gene symbole/short name.	string	required	rs1800562 mutation in hereditary haemochromatosis protein (hereditary hemochromatosis protein) (HFE)
-biomarker_status	Change measured in disease versus healthy individual.	string	required	presence of
-best_biomarker_type	Category of BEST biomarker.	string	required	risk_biomarker
-specimen_type	Type of specimen used to access the biomarker (with Uberon ID).	string	required	blood (UN:178)
-loinc_code	Lab test ID associated with biomarker.	string	required	34519-9
-condition_name	Condition name with DOID.	string	required	cancer (DOID:162)
-assessed_entity_type	Entity type of the biomarker.	string	required	gene
-evidence_source	Source of biomarker with corresponding link to data page of biomarker within the source.	string	required	ClinVar | https://www.ncbi.nlm.nih.gov/clinvar/variation/9/?new_evidence=true
-notes	Free text to add meta data to the entry.	string	optional	UPKB:Q9UK37 (NM_000410.4(HFE):c.845G>A (p.Cys282Tyr))
+properties	description	type	requirement	example	pattern
+biomarker_id	Biomarker identifier.	string	required		^.*$
+main_x_ref	Accession or identifier that most closely matches the biomarker term.	string	required	dbSNP:rs1800562	^[a-zA-Z]+:rs\d+$
+accessed_biomarker_entity	Change in entity and common name/gene symbole/short name.	string	required	rs1800562 mutation in hereditary haemochromatosis protein (hereditary hemochromatosis protein) (HFE)	^.*$
+biomarker_status	Change measured in disease versus healthy individual.	string	required	presence of	^.*$
+best_biomarker_type	Category of BEST biomarker.	string	required	risk_biomarker	^.*$
+specimen_type	Type of specimen used to access the biomarker (with Uberon ID).	string	required	blood (UN:178)	^.+ \(UN:\d+\)$
+loinc_code	Lab test ID associated with biomarker.	string	required	34519-9	^\d+-\d+$
+condition_name	Condition name with DOID.	string	required	cancer (DOID:162)	^.+ \(DOID:[^\)]+\)$
+assessed_entity_type	Entity type of the biomarker.	string	required	gene	^.*$
+evidence_source	Source of biomarker with corresponding link to data page of biomarker within the source.	string	required	ClinVar | https://www.ncbi.nlm.nih.gov/clinvar/variation/9/?new_evidence=true	^.+ \| .+$
+notes	Free text to add meta data to the entry.	string	optional	UPKB:Q9UK37 (NM_000410.4(HFE):c.845G>A (p.Cys282Tyr))	^.*$
