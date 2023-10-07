@@ -46,9 +46,9 @@ def user_args():
         sys.argv.append('--help')
     
     options = parser.parse_args()
-    validate_filepath(options.filepath, 'input')
+    validate_filepath(options.file_path, 'input')
 
-    generate_schema(options.filepath)
+    generate_schema(options.file_path)
 
 def generate_schema(filepath):
     ''' Converts the data dictionary into a JSON schema. 
@@ -65,9 +65,27 @@ def generate_schema(filepath):
         '$schema': _schema,
         '$id': raw_url,
         'type': 'object',
-        'title': _output_file
+        'title': _output_file,
+        'required': [],
+        'properties': {}
     }
     
+    with open(filepath, 'r', encoding = 'utf8') as f:
+        data = csv.DictReader(f, delimiter = '\t')
+        for row in data:
+            if row['requirement'] == 'required':
+                biomarkerkb_schema['required'].append(row['properties'])
+            biomarkerkb_schema['properties'][row['properties']] = {
+                'title': row['properties'],
+                'description': row['description'],
+                'type': row['type'],
+                'examples': [row['example']],
+                'pattern': row['pattern']
+            }
+            
+    with open(f'{_output_path}/{_output_file}', 'w') as f:
+        json.dump(biomarkerkb_schema, f)
+
 
 def validate_filepath(filepath, mode):
     ''' Validates the filepaths for the user inputted source path and
@@ -103,9 +121,11 @@ def main():
         config = json.load(f)
         _version = config['version']
         _id_prefix = config['raw_url_prefix']
-        _output_path = f"{config['output_path']}/{_version}/{config['output_file']}"
+        _output_path = f"{config['output_path']}/v{_version}/"
         _output_file = config['output_file']
         _schema = config['schema']
+    
+    validate_filepath(_output_path, 'output')
 
     user_args() 
 
