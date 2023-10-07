@@ -7,7 +7,7 @@ The goal of this project is to develop a community-based biomarker-centric data 
     - [Scope and Goal of the Project](#scope-and-goal-of-the-project)
     - [Initial Biomarker Database Curation](#initial-biomarker-database-curation)
 - [Biomarker Defition](#biomarker-definition)
-- [Data Dictionary](#data-dictionary)
+- [Data Dictionary](#data-dictionary-v10)
     - [Schema Generation](#generating-a-schema)
     - [Data Validation](#validating-a-data-file-against-a-schema)
 - [Repository Structure](#repository-structure)
