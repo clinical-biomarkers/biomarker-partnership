@@ -22,6 +22,7 @@ import argparse
 import sys
 import os 
 
+_CONF_KEY = 'schema_generation'
 _version = None 
 _id_prefix = None
 _output_path = None
@@ -117,13 +118,13 @@ def main():
     global _schema
 
     # grab version number from the config file
-    with open('conf.json') as f:
+    with open('../conf.json') as f:
         config = json.load(f)
         _version = config['version']
-        _id_prefix = config['raw_url_prefix']
-        _output_path = f"{config['output_path']}/v{_version}/"
-        _output_file = config['output_file']
-        _schema = config['schema']
+        _id_prefix = config[_CONF_KEY]['raw_url_prefix']
+        _output_path = f"{config[_CONF_KEY]['output_path']}/v{_version}/"
+        _output_file = config[_CONF_KEY]['output_file']
+        _schema = config[_CONF_KEY]['schema']
     
     validate_filepath(_output_path, 'output')
 
