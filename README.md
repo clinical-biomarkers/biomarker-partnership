@@ -9,6 +9,7 @@ The goal of this project is to develop a community-based biomarker-centric data 
 - [Biomarker Defition](#biomarker-definition)
 - [Data Dictionary](#data-dictionary-v10-overview)
 - [Usage](#usage)
+    - [General Notes](#general-notes)
     - [Start Environment](#starting-up-the-virtual-environment)
     - [Schema Generation](#generating-a-schema)
     - [Data Validation](#validating-a-data-file-against-a-schema)
@@ -53,6 +54,10 @@ Based on the resource that was being studied there can be some variation in how 
 | notes                         | Free text to add meta data to the entry.                                                      |
 
 ## Usage
+
+### General Notes
+
+The `.gitignore` file includes entries for directories `home/` and `env/`. The `home/` directory can be used for any source files, temp files, files larger than Github's limit of 100 MiB, or any other files that don't need to be pushed to the upstream repository. The `env/` directory should be the name of your virtual environment (instructions in next section). 
 
 ### Starting up the Virtual Environment
 
