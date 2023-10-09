@@ -44,6 +44,10 @@ def user_args():
         sys.argv.append('--help')
     
     options = parser.parse_args()
+    # check that the filepath passed is a TSV file
+    if not (options.file_path.endswith('.tsv') or options.file_path.endswith('txt')):
+        raise ValueError(f'Error: Expects TSV file as input.')
+    # check that the user passed input filepath exists
     validate_filepath(options.file_path, 'input')
 
     generate_schema(options.file_path)
@@ -104,7 +108,7 @@ def validate_filepath(filepath, mode):
         if not os.path.isdir(filepath):
             raise ValueError(f'Error: The (output) directory {filepath} does not exist.')
     else:
-        raise ValueError(f'validate_filepath error: Invalid mode {mode}')
+        raise ValueError(f'Validate_filepath error: Invalid mode {mode}')
 
 def main():
 
@@ -114,7 +118,7 @@ def main():
     global _output_file
     global _schema
 
-    # grab version number from the config file
+    # grab configuration variables from config file  
     with open('../conf.json') as f:
         config = json.load(f)
         _version = config['version']
@@ -123,8 +127,10 @@ def main():
         _output_file = config[_CONF_KEY]['output_file']
         _schema = config[_CONF_KEY]['schema']
     
+    # make sure the schema output directory exists
     validate_filepath(_output_path, 'output')
 
+    # parse the user arguments 
     user_args() 
 
 if __name__ == '__main__':
