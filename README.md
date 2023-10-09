@@ -1,4 +1,4 @@
-# BiomarkerKB 
+# Biomarker Partnership  
 
 The goal of this project is to develop a community-based biomarker-centric data model to harvest and organize biomarker knowledge for diverse biological data types. 
 
