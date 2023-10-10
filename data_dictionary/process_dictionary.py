@@ -26,7 +26,7 @@ _output_path = None
 _output_file = None
 _schema = None
 
-def user_args():
+def user_args() -> None:
     ''' Parses the command line arguments. 
     '''
 
@@ -52,7 +52,7 @@ def user_args():
 
     generate_schema(options.file_path)
 
-def generate_schema(filepath):
+def generate_schema(filepath: str) -> None:
     ''' Converts the data dictionary into a JSON schema. 
 
     Parameters
@@ -89,7 +89,7 @@ def generate_schema(filepath):
         json.dump(biomarkerkb_schema, f)
 
 
-def validate_filepath(filepath, mode):
+def validate_filepath(filepath: str, mode: str) -> None:
     ''' Validates the filepaths for the user inputted source path and
     the destination path. 
 
@@ -110,7 +110,7 @@ def validate_filepath(filepath, mode):
     else:
         raise ValueError(f'Validate_filepath error: Invalid mode {mode}')
 
-def main():
+def main() -> None:
 
     global _version
     global _id_prefix
