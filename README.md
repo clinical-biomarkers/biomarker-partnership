@@ -58,15 +58,23 @@ Based on the resource that was being studied there can be some variation in how 
 
 ### Workflow
 
-The workflow starts with the most current data dictionary. The data dictionary can then be converted into a JSON schema following the steps in the [generating a schema](#generating-a-schema) section. Once the current version's schema has been generated, you can validate your data files against the schema to ensure they conform to the latest data dictionary. Instructions in the [validating a data file against a schema](#validating-a-data-file-against-a-schema) section. 
+The general workflow is as described in the flowchart below. It starts with the most current data dictionary. The data dictionary can then be converted into a JSON schema following the steps in the [generating a schema](#generating-a-schema) section. Once the current version's schema has been generated, you can validate your data files against the schema to ensure they conform to the latest data dictionary. Instructions for validation are in the [validating a data file against a schema](#validating-a-data-file-against-a-schema) section. 
+
+```mermaid
+flowchart TD
+    A[Data Dictionary] --> B{Generate JSON Schema}
+    B --> D
+    C[Data File] --> D{Validate Data File}
+    D --> E[Log File Output]
+```
 
 ### General Notes
 
-The `.gitignore` file includes entries for directories `home/` and `env/`. The `home/` directory can be used for any source files, temp files, log files, files larger than Github's limit of 100 MiB, or any other files that don't need to be pushed to the upstream repository. The `env/` directory should be the name of your virtual environment (instructions in next section). 
+The `.gitignore` file includes entries for the directories `home/` and `env/`. The `home/` directory can be used for any source files, temp files, log files, files larger than Github's limit of 100 MiB, or any other files that don't need to be pushed to the upstream repository. The `env/` directory should be the name of your virtual environment (instructions in next section). 
 
 ### Starting up the Virtual Environment
 
-You can run the project locally or through the virtual environment. The environment is recommended to avoid potential dependency and/or versioning issues. 
+You can run the project locally or through a virtual environment. A virtual environment is recommended to avoid potential dependency and/or versioning issues. 
 
 If your virtual environment has not been created yet, you can do so with:
 
@@ -103,6 +111,7 @@ While inside the project root directory:
 ```bash
 mkdir schema/<VERSION>
 ```
+
 The `process_dictionary.py` can take these arguments:
 
 ```
@@ -114,7 +123,7 @@ Optional arguments
     -v --version        show current version number and exit
 ```
 
-Move you current working directory to `data_dictionary/` and run the `process_dictonary.py` script passing in the filepath to the data dictionary TSV you want to process. 
+Move your current working directory to `data_dictionary/` and run the `process_dictonary.py` script passing in the filepath to the data dictionary TSV you want to process. 
 
 ```bash
 cd data_dictionary
