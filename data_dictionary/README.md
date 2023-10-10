@@ -2,11 +2,11 @@
 
 The data dictionary is used to aid in the integration of BiomarkerKB data from many disparate sources. The data dictionary sets the format and standard for all data incororated into the Biomarker Knowledge Base.
 
-### Starting up the Virtual Environment
+## Starting up the Virtual Environment
 
-You can run the project locally or through the virtual environment. The environment is recommended to avoid potential dependency and/or versioning issues. 
+You can run the project locally or through a virtual environment. A virtual environment is recommended to avoid potential dependency and/or versioning issues. 
 
-If your virtual environment has not been created yet, you can do so with:
+If your virtual environment has not been created yet, you can run the following command from the project's root directory:
 
 ```bash
 virtualenv env 
@@ -30,7 +30,7 @@ Then install the project dependencies using:
 pip install -r requirements.txt
 ```
 
-### Generating a Schema
+## Generating a Schema
 
 If applicable, in the project root directory, update the `conf.json` file with the updated version number. 
 
@@ -41,6 +41,7 @@ While inside the project root directory:
 ```bash
 mkdir schema/<VERSION>
 ```
+
 The `process_dictionary.py` can take these arguments:
 
 ```
@@ -52,7 +53,7 @@ Optional arguments
     -v --version        show current version number and exit
 ```
 
-Within this directory, run the `process_dictonary.py` script passing in the filepath to the data dictionary TSV you want to process. 
+Move your current working directory to this directory and run the `process_dictonary.py` script passing in the filepath to the data dictionary TSV you want to process. 
 
 ```bash
 cd data_dictionary
