@@ -9,6 +9,7 @@ The goal of this project is to develop a community-based biomarker-centric data 
 - [Biomarker Defition](#biomarker-definition)
 - [Data Dictionary](#data-dictionary-v10-overview)
 - [Usage](#usage)
+    - [Workflow](#workflow)
     - [General Notes](#general-notes)
     - [Start Environment](#starting-up-the-virtual-environment)
     - [Schema Generation](#generating-a-schema)
@@ -54,6 +55,10 @@ Based on the resource that was being studied there can be some variation in how 
 | notes                         | Free text to add meta data to the entry.                                                      |
 
 ## Usage
+
+### Workflow
+
+The workflow starts with the most current data dictionary. The data dictionary can then be converted into a JSON schema following the steps in the [generating a schema](#generating-a-schema) section. Once the current version's schema has been generated, you can validate your data files against the schema to ensure they conform to the latest data dictionary. Instructions in the [validating a data file against a schema](#validating-a-data-file-against-a-schema) section. 
 
 ### General Notes
 
