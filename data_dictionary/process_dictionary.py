@@ -66,7 +66,7 @@ def generate_schema(filepath: str) -> None:
     biomarkerkb_schema = {
         '$schema': _schema,
         '$id': raw_url,
-        'type': 'object',
+        'type': 'array',
         'title': _output_file,
         'required': [],
         'properties': {}
