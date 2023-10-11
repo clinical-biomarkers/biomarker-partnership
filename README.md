@@ -7,7 +7,7 @@ The goal of this project is to develop a community-based biomarker-centric data 
     - [Scope and Goal of the Project](#scope-and-goal-of-the-project)
     - [Initial Biomarker Database Curation](#initial-biomarker-database-curation)
 - [Biomarker Defition](#biomarker-definition)
-- [Data Dictionary](#data-dictionary-v10-overview)
+- [Data Dictionary](#data-dictionary-v20-overview)
 - [Usage](#usage)
     - [Workflow](#workflow)
     - [General Notes](#general-notes)
@@ -38,20 +38,23 @@ There is also a notes section present in this databse and that includes extra/mi
 
 Based on the resource that was being studied there can be some variation in how the data was extracted, manipulted, and harmonized to fit the structre of the above figure. This repository will provide examples of this alonsgide the table generated and other resources needed to gain information/data for the biomarker.
 
-## Data Dictionary (v1.0) Overview
+## Data Dictionary (v2.0) Overview
 
 | Field                         | Description                                                                                   |
 |-------------------------------|-----------------------------------------------------------------------------------------------|
-| biomarker_id                  | Biomarker identifier.                                                                         |
-| main_x_ref                    | Accession or identifier that most closely matches the biomarker term.                         |
+| biomarker_ID                  | Biomarker identifier.                                                                         |
+| assessed_biomarker_entity_ID  | Accession or identifier that most closely matches the biomarker term.                         |
 | assessed_biomarker_entity     | Change in entity and common name/gene symbol/short name.                                      |
-| biomarker_status              | Change measured in disease versus healthy individual.                                         |    
+| biomarker                     | Change measured in disease versus healthy individual.                                         |    
 | best_biomarker_type           | Category of BEST biomarker.                                                                   |    
-| specimen_type                 | Type of specimen used to access the biomarker (with Uberon ID).                               |
+| specimen_ID                   | Uberon ID.                                                                                    |
+| specimen                      | Type of specimen used to access the biomarker.                                                |
 | loinc_code                    | Lab test ID associated with biomarker. Loinc ID.                                              |
-| condition_name                | Condition name with DOID.                                                                     |
+| condition_ID                  | DOID.                                                                                         |
+| condition                     | Condition name.                                                                               |
 | assessed_entity_type          | Entity type of the biomarker.                                                                 |
-| evidence_source               | Source of biomarker with corresponding link to data page of biomarker within the source.      |
+| evidence_source               | Resource and identifier.                                                                      |
+| evidence                      | Some text that is populated through manual curation or NLP.                                   |
 | notes                         | Free text to add meta data to the entry.                                                      |
 
 ## Usage
