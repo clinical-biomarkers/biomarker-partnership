@@ -40,6 +40,8 @@ Based on the resource that was being studied there can be some variation in how 
 
 ## Data Dictionary (v2.0) Overview
 
+[Release Notes](https://github.com/biomarker-ontology/biomarker-partnership/tree/main/data_dictionary/v2.0)
+
 | Field                         | Description                                                                                   |
 |-------------------------------|-----------------------------------------------------------------------------------------------|
 | biomarker_ID                  | Biomarker identifier.                                                                         |
