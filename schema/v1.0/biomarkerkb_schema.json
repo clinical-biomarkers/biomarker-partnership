@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "https://raw.githubusercontent.com/biomarker-ontology/BiomarkerKB/main/schema/v1.0/biomarkerkb_schema.json",
-    "type": "object",
+    "type": "array",
     "title": "biomarkerkb_schema.json",
     "required": [
         "biomarker_id",
