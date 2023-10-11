@@ -66,11 +66,10 @@ def user_args(intermediate_path: str = None) -> None:
     output_flag = False
     if options.output:
         output_flag = True 
-        input_filename = options.data_filepath.split('/')
-        base, _ = os.path.splitext(input_filename[len(input_filename)])
+        input_filename = os.path.split(options.data_filepath)[1]
         intermediate_path += f'v{_version}/'
         validate_filepath(intermediate_path, 'output')
-        intermediate_path += f'{base}.json'
+        intermediate_path += f"{input_filename.split('.')[0]}.json"
     chunk_size = None
     if options.chunk:
         try:
@@ -182,7 +181,7 @@ def setup_logging(log_path: str) -> None:
         The path of the log file.
     '''
     logging.basicConfig(filename = log_path, level = logging.INFO, 
-                        format = '%(asctime)s - %(levelname)s - %(message)s')
+                        format = '%(asctime)s - %(levelname)s - %(message)s\n#############################################################################\n')
 
 def main() -> None:
     
@@ -196,8 +195,7 @@ def main() -> None:
         intermediate_path = config[_VAL_KEY]['intermediate_path']
     
     # make sure directory to dump logs in exists 
-    validate_filepath(log_path, 'output')
-
+    validate_filepath(os.path.split(log_path)[0], 'output')
     setup_logging(log_path)
 
     # parse the user arguments 
