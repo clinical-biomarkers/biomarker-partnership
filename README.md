@@ -54,6 +54,8 @@ Based on the resource that was being studied there can be some variation in how 
 | loinc_code                    | Lab test ID associated with biomarker. Loinc ID.                                              |
 | condition_ID                  | DOID.                                                                                         |
 | condition                     | Condition name.                                                                               |
+| exposure_agent_ID             |                                                                                               |
+| exposure_agent                |                                                                                               |
 | assessed_entity_type          | Entity type of the biomarker.                                                                 |
 | evidence_source               | Resource and identifier.                                                                      |
 | evidence                      | Some text that is populated through manual curation or NLP.                                   |
