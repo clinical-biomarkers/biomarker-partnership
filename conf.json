@@ -1,5 +1,5 @@
 {
-    "version": 1.0,
+    "version": 2.0,
     "schema_generation": {
         "raw_url_prefix": "https://raw.githubusercontent.com/biomarker-ontology/BiomarkerKB/main/schema/",
         "output_path": "../schema/",
