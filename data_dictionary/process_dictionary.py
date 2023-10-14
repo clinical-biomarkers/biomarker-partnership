@@ -69,14 +69,26 @@ def generate_schema(filepath: str) -> None:
         'type': 'array',
         'title': _output_file,
         'required': [],
-        'properties': {}
+        'properties': {},
+        'allOf': []
     }
     
     with open(filepath, 'r', encoding = 'utf8') as f:
         data = csv.DictReader(f, delimiter = '\t')
         for row in data:
+
+            # skip empty rows
+            if all(v == '' or v == '-' for v in row.values()):
+                continue 
+
+            # trim whitespace from each value
+            # row = {k: v.strip() for k, v in row.items()}
+
+            # handle required properties 
             if row['requirement'] == 'required':
                 biomarkerkb_schema['required'].append(row['properties'])
+            
+            # add property details 
             biomarkerkb_schema['properties'][row['properties']] = {
                 'title': row['properties'],
                 'description': row['description'],
@@ -84,6 +96,50 @@ def generate_schema(filepath: str) -> None:
                 'examples': [row['example']],
                 'pattern': row['pattern']
             }
+
+            # handle conditional properties 
+            if row['conditionals'] != '-':
+                conditional_reqs = [req.strip() for req in row['conditionals'].split(',')] 
+                conditional_fragment = {
+                    'if': {
+                        'properties': {
+                            row['properties']: {}
+                        },
+                        'required': [row['properties']]
+                    },
+                    'then': {
+                        'anyOf': [
+                            {
+                                'properties': {
+                                    conditional_req: {}
+                                },
+                                'required': [conditional_req]
+                            } for conditional_req in conditional_reqs
+                        ]
+                    }
+                }
+                biomarkerkb_schema['allOf'].append(conditional_fragment)
+
+            # handle exclusion properties
+            if row['exclusions'] != '-':
+                exclusions = [exclusion.strip() for exclusion in row['exclusions'].split(',')]
+                exclusion_fragment = {
+                    'if': {
+                        'properties': {
+                            row['properties']: {}
+                        },
+                        'required': [row['properties']]
+                    },
+                    'then': {
+                        'not': {
+                            'anyOf': [
+                                {'required': [exclusion]} for exclusion in exclusions
+                            ]
+                        }
+                    }
+                }
+                biomarkerkb_schema['allOf'].append(exclusion_fragment)
+
             
     with open(f'{_output_path}/{_output_file}', 'w') as f:
         json.dump(biomarkerkb_schema, f)
