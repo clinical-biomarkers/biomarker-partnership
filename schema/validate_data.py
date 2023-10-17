@@ -149,7 +149,7 @@ def validate_data(source: str, schema: str, output_flag: bool = False, intermedi
         logging.info('Validation successful.')
     except ValidationError as e:
         print(f'Validation error: check log file.')
-        logging.error(f'Validation error: {e.message}')
+        logging.error(f'Validation error:\n{e}')
 
 def validate_filepath(filepath: str, mode: str) -> None:
     ''' Validates the filepaths for the user inputted source path and
