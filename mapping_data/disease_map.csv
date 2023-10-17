@@ -1,0 +1,225 @@
+,original,mapped
+0,Hereditary cancer-predisposing syndrome,cancer
+1,"Colorectal cancer, susceptibility to",colorectal cancer
+2,Carcinoma of colon,colon cancer
+3,Gastric cancer,stomach cancer
+4,Hepatocellular carcinoma,liver cancer
+5,Colon adenocarcinoma,colon cancer
+6,Colorectal cancer,colorectal cancer
+7,"Breast cancer, susceptibility to",breast cancer
+8,Breast carcinoma,breast cancer
+9,Familial colorectal cancer,colorectal cancer
+10,Familial cancer of breast,breast cancer
+11,"Pancreatic cancer, susceptibility to, 3",pancreatic cancer
+12,"Colorectal cancer, susceptibility to, 1",colorectal cancer
+13,"Prostate cancer, hereditary, 12",prostate cancer
+14,Palmoplantar keratoderma-XX sex reversal-predisposition to squamous cell carcinoma syndrome,squamous cell carcinoma
+15,Hurthle cell carcinoma of thyroid,thyroid gland cancer
+16,"LUNG CANCER, SUSCEPTIBILITY TO",lung cancer
+17,Hereditary nonpolyposis colon cancer,colon cancer
+18,Mismatch repair cancer syndrome 2,cancer
+19,Papillary renal cell carcinoma type 1,kidney cancer
+20,Nonpapillary renal cell carcinoma,kidney cancer
+21,Renal cell carcinoma with paraneoplastic erythrocytosis,kidney cancer
+22,"Pancreatic cancer, susceptibility to, 1",pancreatic cancer
+23,Pancreatic adenocarcinoma,pancreatic cancer
+24,Breast and/or ovarian cancer,hereditary breast ovarian cancer syndrome
+25,Carcinoma of pancreas,pancreatic cancer
+26,Parathyroid carcinoma,parathyroid carcinoma
+27,Chromophobe renal cell carcinoma,kidney cancer
+28,"Lung cancer, protection against, in smokers",lung cancer
+29,Breast adenocarcinoma,breast cancer
+30,"Colorectal cancer, protection against",colorectal cancer
+31,"Esophageal squamous cell carcinoma, somatic",esophageal cancer
+32,"Breast cancer, early-onset",breast cancer
+33,"Thyroid cancer, nonmedullary, 2",thyroid gland cancer
+34,"Prostate cancer, hereditary, 2",prostate cancer
+35,Endometrial carcinoma,endometrial cancer
+36,Ovarian carcinoma,ovarian cancer
+37,Colon cancer,colon cancer
+38,"Colorectal cancer, hereditary nonpolyposis, type 7",colorectal cancer
+39,Endometrial cancer,endometrial cancer
+40,"Cancer of multiple types, susceptibility to",cancer
+41,"Prostate cancer, susceptibility to",prostate cancer
+42,"Breast and colorectal cancer, susceptibility to",breast cancer
+43,Gastrointestinal carcinoma,stomach cancer
+44,Adrenal cortex carcinoma,adrenal carcinoma
+45,CHEK2-Related Cancer Susceptibility,breast cancer
+46,Predisposition to cancer,cancer
+47,Hereditary breast ovarian cancer syndrome,breast cancer
+48,"Prostate cancer, somatic",prostate cancer
+49,CHEK2-related cancer risk,breast cancer
+50,Oligodontia-cancer predisposition syndrome,cancer
+51,"THYROID CANCER, NONMEDULLARY, 5, SUSCEPTIBILITY TO",thyroid gland cancer
+52,"Basal cell carcinoma, somatic",skin cancer
+53,Ductal breast carcinoma,breast cancer
+54,Squamous cell carcinoma of the head and neck,head and neck cancer
+55,"THYROID CARCINOMA WITH THYROTOXICOSIS, SOMATIC",thyroid gland cancer
+56,Lung carcinoma,lung cancer
+57,"Colon cancer, susceptibility to",colon cancer
+58,"Colorectal cancer, susceptibility to, 3",colorectal cancer
+59,"Breast-ovarian cancer, familial, susceptibility to, 3",hereditary breast ovarian cancer syndrome
+60,"Breast-ovarian cancer, familial, susceptibility to, 1",hereditary breast ovarian cancer syndrome
+61,Lung adenocarcinoma,lung cancer
+62,"Colorectal cancer with chromosomal instability, somatic",colorectal cancer
+63,Clear cell carcinoma of kidney,kidney cancer
+64,"Breast cancer, protection against",breast cancer
+65,"Lung cancer, protection against",lung cancer
+66,Non-small cell lung carcinoma,lung cancer
+67,Prostate adenocarcinoma,prostate cancer
+68,Gastric adenocarcinoma,stomach cancer
+69,Small cell lung carcinoma,lung cancer
+70,Squamous cell lung carcinoma,lung cancer
+71,"Basal cell carcinoma, susceptibility to, 1",skin cancer
+72,Prostate cancer/brain cancer susceptibility,prostate cancer
+73,Carcinoma of esophagus,esophageal cancer
+74,Colorectal / endometrial cancer,colorectal cancer
+75,Mismatch repair cancer syndrome 3,cancer
+76,Mismatch repair cancer syndrome 4,cancer
+77,Pituitary carcinoma,pituitary cancer
+78,"Breast-ovarian cancer, familial, susceptibility to, 2",hereditary breast ovarian cancer syndrome
+79,"Pancreatic cancer, susceptibility to, 2",pancreatic cancer
+80,Lip and oral cavity carcinoma,head and neck cancer
+81,Melanoma-pancreatic cancer syndrome,skin cancer
+82,"Androgen insensitivity, partial, with breast cancer",breast cancer
+83,Prostate cancer susceptibility,prostate cancer
+84,"Carcinoma, adrenocortical, androgen-secreting",adrenal cortex carcinoma
+85,Hereditary diffuse gastric adenocarcinoma,stomach cancer
+86,Breast lobular carcinoma,breast cancer
+87,"Gastric cancer, familial diffuse, and cleft lip with or without cleft palate",stomach cancer
+88,Familial medullary thyroid carcinoma,thyroid gland cancer
+89,Ovarian serous cystadenocarcinoma,ovarian cancer
+90,Transitional cell carcinoma of the bladder,urinary bladder cancer
+91,Squamous cell carcinoma of the skin,skin cancer
+92,Choroid plexus carcinoma,pancreatic cancer
+93,Gallbladder cancer,gallbladder cancer
+94,Cancer of cervix,cervix cancer
+95,Ductal carcinoma in situ,oral cavity cancer
+96,"Papillary renal cell carcinoma, sporadic",kidney cancer
+97,Gallbladder carcinoma,gallbladder cancer
+98,Adenocarcinoma,adenocarcinoma
+99,Familial ovarian cancer,ovarian cancer
+100,Lung cancer,lung cancer
+101,Thyroid gland undifferentiated (anaplastic) carcinoma,thyroid gland cancer
+102,Nasopharyngeal carcinoma,nasopharynx carcinoma
+103,Adenoid cystic carcinoma,oral cavity cancer
+104,"Adrenocortical carcinoma, pediatric",adrenal cortex carcinoma
+105,"Adrenocortical carcinoma, hereditary",adrenal cortex carcinoma
+106,"Colorectal cancer, hereditary nonpolyposis, type 6",colorectal cancer
+107,"Breast cancer, invasive, susceptibility to",breast cancer
+108,"Colon cancer, advanced",colon cancer
+109,"Bladder cancer, transitional cell, somatic",urinary bladder cancer
+110,Primary low grade serous adenocarcinoma of ovary,ovarian cancer
+111,"Prostate cancer, hereditary, 1",prostate cancer
+112,"Epidermal nevus with urothelial cancer, somatic",bladder cancer
+113,Urinary bladder carcinoma,urinary bladder cancer
+114,Vulvar adenocarcinoma of mammary gland type,breast cancer
+115,"Breast cancer, susceptibility to, in BRCA1 and BRCA2 carriers",breast cancer
+116,"Endometrial Endometrioid Adenocarcinoma, Variant with Squamous Differentiation",endometrial cancer
+117,"OVARIAN CANCER, EPITHELIAL, SOMATIC",ovarian cancer
+118,Ovarian adenocarcinoma,ovarian cancer
+119,Renal cell carcinoma,kidney cancer
+120,Carcinoma,cancer
+121,Renal carcinoma,kidney cancer
+122,Pediatric hepatocellular carcinoma,liver cancer
+123,Medullary thyroid carcinoma,thyroid gland cancer
+124,Thyroid gland carcinoma,thyroid gland cancer
+125,"Thyroid carcinoma, sporadic medullary",thyroid gland cancer
+126,Papillary thyroid carcinoma,thyroid gland cancer
+127,"Prostate cancer, hereditary, 13",prostate cancer
+128,Hereditary thrombocytopenia and hematological cancer predisposition syndrome associated with RUNX1,hematological cancer
+129,Gastric cancer susceptibility after h. pylori infection,stomach cancer
+130,Hereditary leiomyomatosis and renal cell cancer,kidney cancer
+131,Cancer progression and tumor cell motility,cancer
+132,"SQUAMOUS CELL CARCINOMA, BURN SCAR-RELATED, SOMATIC",squamous cell carcinoma
+133,"Nonsmall cell lung cancer, response to tyrosine kinase inhibitor in, somatic",lung cancer
+134,"Adenocarcinoma of lung, response to tyrosine kinase inhibitor in, somatic",lung cancer
+135,EGFR-related lung cancer,lung cancer
+136,"Nonsmall cell lung cancer, resistance to tyrosine kinase inhibitor in",lung cancer
+137,"Breast cancer, post-chemotherapy poor survival in",breast cancer
+138,"Esophageal carcinoma, somatic",esophageal cancer
+139,"Colorectal cancer, hereditary nonpolyposis, type 2",colorectal cancer
+140,"Colorectal cancer, sporadic, susceptibility to",colorectal cancer
+141,Lung cancer susceptibility 2,lung cancer
+142,"Pancreatic cancer, susceptibility to, 4",pancreatic cancer
+143,Invasive medullary breast carcinoma,breast cancer
+144,Ovarian cancer,ovarian cancer
+145,"Pancreatic cancer, susceptibility to",pancreatic cancer
+146,"Aerodigestive tract cancer, squamous cell, alcohol-related, protection against",squamous cell carcinoma
+147,"Esophageal cancer, alcohol-related, susceptibility to",esophageal cancer
+148,Barrett esophagus/esophageal adenocarcinoma,esophageal cancer
+149,Familial cutaneous telangiectasia and oropharyngeal predisposition cancer syndrome,oropharynx carcinoma
+150,"Breast-ovarian cancer, familial, susceptibility to, 4",hereditary breast ovarian cancer syndrome
+151,Palmoplantar keratoderma-esophageal carcinoma syndrome,esophageal cancer
+152,"Basal cell carcinoma, susceptibility to, 7",skin cancer
+153,bilateral breast cancer,breast cancer
+154,Infiltrating duct carcinoma of breast,breast cancer
+155,Ovarian serous surface papillary adenocarcinoma,ovarian cancer
+156,Cancer of the pancreas,pancreatic cancer
+157,Invasive lobular breast carcinoma,breast cancer
+158,Metastatic Prostate Small Cell Carcinoma,prostate cancer
+159,"Colorectal cancer, susceptibility to, 10",colorectal cancer
+160,"Colorectal cancer, susceptibility to, 12",colorectal cancer
+161,"Colorectal cancer, non-polyposis",colorectal cancer
+162,Bile duct cancer,stomach cancer
+163,Carcinoma of male breast,breast cancer
+164,Breast and colorectal cancer,breast cancer
+165,"Colorectal cancer, early onset",colorectal cancer
+166,Sigmoid colon cancer,colon cancer
+167,Hereditary nonpolyposis colorectal carcinoma,colorectal cancer
+168,Hereditary cancer,cancer
+169,Gastric adenocarcinoma and proximal polyposis of the stomach,stomach cancer
+170,Familial pancreatic carcinoma,pancreatic cancer
+171,Triple-Negative Breast Cancer Finding,breast cancer
+172,"Prostate cancer, hereditary, 9",prostate cancer
+173,Familial prostate carcinoma,prostate cancer
+174,Triple-negative breast cancer,breast cancer
+175,Hereditary site-specific ovarian cancer syndrome,ovarian cancer
+176,Breast and Ovarian Cancer Susceptibility,hereditary breast ovarian cancer syndrome
+177,Triple-negative breast carcinoma,breast cancer
+178,Intrahepatic cholangiocarcinoma,cholangiocarcinoma
+179,Rectum adenocarcinoma,colorectal cancer
+180,Bilateral breast carcinoma,breast cancer
+181,Progeroid features-hepatocellular carcinoma predisposition syndrome,breast cancer
+182,spino-cellular carcinoma,cancer
+183,"CANCER, ALOPECIA, PIGMENT DYSCRASIA, ONYCHODYSTROPHY, AND KERATODERMA",cancer
+184,Basal cell carcinoma,skin cancer
+185,Hereditary breast cancer,breast cancer
+186,Sessile serrated polyposis cancer syndrome,cancer
+187,Granular cell cancer,cancer
+188,"Thyroid cancer, nonmedullary, 1",thyroid gland cancer
+189,"Thyroid cancer, nonmedullary, 4",thyroid gland cancer
+190,Hereditary thrombocytopenia and hematologic cancer predisposition syndrome,hematological cancer
+191,APC-mutation negative familial colorectal cancer,colorectal cancer
+192,BAP1 Cancer Syndrome,breast cancer
+193,Hereditary renal cell carcinoma,cancer
+194,Duodenal adenocarcinoma,adenocarcinoma
+195,Invasive breast carcinoma,breast cancer
+196,BRIP1-associated familial cancer predisposition,cancer
+197,"Nasopharyngeal carcinoma, susceptibility to, 3",nasopharynx carcinoma
+198,Familial breast and ovarian cancer,hereditary breast ovarian cancer syndrome
+199,"Thyroid cancer, nonmedullary, 5",thyroid gland cancer
+200,Squamous cell carcinoma,squamous cell carcinoma
+201,Esophageal squamous cell carcinoma,esophageal cancer
+202,Trabecular adenocarcinoma,urinary bladder cancer
+203,Endometrioid adenocarcinoma,thyroid gland cancer
+204,HER2 positive breast carcinoma,breast cancer
+205,Ovarian Cancers,ovarian cancer
+206,Head and neck cancer,head and neck cancer
+207,CUP (carcinoma unknown primary) syndrome,cancer
+208,Hereditary papillary renal cell carcinoma,kidney cancer
+209,Colorectal carcinoma,colorectal cancer
+210,Family history of cancer,cancer
+211,Carcinoma of head of pancreas,pancreatic cancer
+212,"Small cell carcinoma of the ovary, hypercalcemic type",ovarian cancer
+213,Hereditary renal cancer,kidney cancer
+214,Cholangiocarcinoma,cholangiocarcinoma
+215,"Pancreatic cancer, susceptibility to, 5",pancreatic cancer
+216,Renal transitional cell carcinoma,kidney cancer
+217,Colorectal cancer susceptibility 12,colorectal cancer
+218,Familial ovarian carcinoma,ovarian cancer
+219,Multifocal breast carcinoma,breast cancer
+220,Primary peritoneal carcinoma,peritoneal cancer
+221,"Renal cell carcinoma, Xp11-associated",kidney cancer
+222,ATM-related cancer susceptibility,cancer
+223,Ovarian papillary adenocarcinoma,ovarian cancer
