@@ -103,15 +103,15 @@ def generate_schema(filepath: str) -> None:
                 conditional_fragment = {
                     'if': {
                         'properties': {
-                            row['properties']: {}
+                            row['properties']: {'not': {'const': None}}
                         },
                         'required': [row['properties']]
                     },
                     'then': {
-                        'anyOf': [
+                        'allOf': [
                             {
                                 'properties': {
-                                    conditional_req: {}
+                                    conditional_req: {'const': None}
                                 },
                                 'required': [conditional_req]
                             } for conditional_req in conditional_reqs
@@ -126,20 +126,22 @@ def generate_schema(filepath: str) -> None:
                 exclusion_fragment = {
                     'if': {
                         'properties': {
-                            row['properties']: {}
+                            row['properties']: {'not': {'const': None}}
                         },
                         'required': [row['properties']]
                     },
                     'then': {
-                        'not': {
-                            'anyOf': [
-                                {'required': [exclusion]} for exclusion in exclusions
-                            ]
-                        }
+                        'allOf': [
+                            {
+                                'properties': {
+                                    exclusion: {'const': None}
+                                },
+                                'required': [exclusion]
+                            } for exclusion in exclusions
+                        ]
                     }
                 }
                 biomarkerkb_schema['allOf'].append(exclusion_fragment)
-
             
     with open(f'{_output_path}/{_output_file}', 'w') as f:
         json.dump(biomarkerkb_schema, f)
