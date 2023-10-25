@@ -52,6 +52,9 @@ def user_args(intermediate_path: str = None) -> None:
     
     options = parser.parse_args()
 
+    # log the user passed arguments
+    logging.info(f'Arguments passed:\ndata_filepath = {options.data_filepath}\nschema_filepath = {options.schema_filepath}\noutput flag = {options.output}\nchunk = {options.chunk}')
+
     # check that the correct file types were passed
     if not (options.data_filepath.endswith('.tsv') or options.data_filepath.endswith('.txt')):
         raise ValueError(f'The source data filepath must be of type .tsv or .txt.')
@@ -149,7 +152,7 @@ def validate_data(source: str, schema: str, output_flag: bool = False, intermedi
         logging.info('Validation successful.')
     except ValidationError as e:
         print(f'Validation error: check log file.')
-        logging.error(f'Validation error: {e.message}')
+        logging.error(f'Validation error:\n{e}')
 
 def validate_filepath(filepath: str, mode: str) -> None:
     ''' Validates the filepaths for the user inputted source path and
@@ -181,12 +184,12 @@ def setup_logging(log_path: str) -> None:
         The path of the log file.
     '''
     logging.basicConfig(filename = log_path, level = logging.INFO, 
-                        format = '%(asctime)s - %(levelname)s - %(message)s\n#############################################################################\n')
+                        format = '%(asctime)s - %(levelname)s - %(message)s')
 
 def main() -> None:
     
     global _version
-    
+
     # grab version number from config file
     with open('../conf.json') as f:
         config = json.load(f)
@@ -198,8 +201,14 @@ def main() -> None:
     validate_filepath(os.path.split(log_path)[0], 'output')
     setup_logging(log_path)
 
+    # log start delimiter for a new run
+    logging.info('################################## Start ##################################')
+
     # parse the user arguments 
     user_args(intermediate_path)
+    
+    # log the end delimiter for the run 
+    logging.info('################################## End ##################################\n')
 
 if __name__ == '__main__':
     main()
