@@ -68,9 +68,12 @@ def generate_schema(filepath: str) -> None:
         '$id': raw_url,
         'type': 'array',
         'title': _output_file,
-        'required': [],
-        'properties': {},
-        'allOf': []
+        'items': {
+            'type': 'object',
+            'required': [],
+            'properties': {},
+            'allOf': []
+        }
     }
     
     with open(filepath, 'r', encoding = 'utf8') as f:
@@ -86,10 +89,10 @@ def generate_schema(filepath: str) -> None:
 
             # handle required properties 
             if row['requirement'] == 'required':
-                biomarkerkb_schema['required'].append(row['properties'])
+                biomarkerkb_schema['items']['required'].append(row['properties'])
             
             # add property details 
-            biomarkerkb_schema['properties'][row['properties']] = {
+            biomarkerkb_schema['items']['properties'][row['properties']] = {
                 'title': row['properties'],
                 'description': row['description'],
                 'type': row['type'],
@@ -118,7 +121,7 @@ def generate_schema(filepath: str) -> None:
                         ]
                     }
                 }
-                biomarkerkb_schema['allOf'].append(conditional_fragment)
+                biomarkerkb_schema['items']['allOf'].append(conditional_fragment)
 
             # handle exclusion properties
             if row['exclusions'] != '-':
@@ -141,7 +144,7 @@ def generate_schema(filepath: str) -> None:
                         ]
                     }
                 }
-                biomarkerkb_schema['allOf'].append(exclusion_fragment)
+                biomarkerkb_schema['items']['allOf'].append(exclusion_fragment)
             
     with open(f'{_output_path}/{_output_file}', 'w') as f:
         json.dump(biomarkerkb_schema, f)
