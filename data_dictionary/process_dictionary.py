@@ -95,7 +95,7 @@ def generate_schema(filepath: str) -> None:
             biomarkerkb_schema['items']['properties'][row['properties']] = {
                 'title': row['properties'],
                 'description': row['description'],
-                'type': row['type'],
+                'type': [row['type'], 'null'] if row['requirement'] != 'required' else row['type'],
                 'examples': [row['example']],
                 'pattern': row['pattern']
             }
@@ -114,7 +114,7 @@ def generate_schema(filepath: str) -> None:
                         'allOf': [
                             {
                                 'properties': {
-                                    conditional_req: {'const': None}
+                                    conditional_req: {'not': {'const': None}}
                                 },
                                 'required': [conditional_req]
                             } for conditional_req in conditional_reqs
@@ -129,7 +129,7 @@ def generate_schema(filepath: str) -> None:
                 exclusion_fragment = {
                     'if': {
                         'properties': {
-                            row['properties']: {'not': {'const': None}}
+                            row['properties']: {'not': {'type': "null"}}
                         },
                         'required': [row['properties']]
                     },
@@ -137,7 +137,7 @@ def generate_schema(filepath: str) -> None:
                         'allOf': [
                             {
                                 'properties': {
-                                    exclusion: {'const': None}
+                                    exclusion: {'anyOf': [{'type': 'null'}, {'const': None}]}
                                 },
                                 'required': [exclusion]
                             } for exclusion in exclusions

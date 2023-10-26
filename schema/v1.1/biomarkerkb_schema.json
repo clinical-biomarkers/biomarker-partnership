@@ -17,7 +17,10 @@
             "biomarker_ID": {
                 "title": "biomarker_ID",
                 "description": "Biomarker identifier. This will be automatically assigned when the data is incorporated.",
-                "type": "string",
+                "type": [
+                    "string",
+                    "null"
+                ],
                 "examples": [
                     "A0034"
                 ],
@@ -71,7 +74,10 @@
             "condition": {
                 "title": "condition",
                 "description": "Condition name.",
-                "type": "string",
+                "type": [
+                    "string",
+                    "null"
+                ],
                 "examples": [
                     "cancer"
                 ],
@@ -80,7 +86,10 @@
             "condition_ID": {
                 "title": "condition_ID",
                 "description": "Condition source and identifier",
-                "type": "string",
+                "type": [
+                    "string",
+                    "null"
+                ],
                 "examples": [
                     "DOID:162"
                 ],
@@ -89,7 +98,10 @@
             "exposure_agent": {
                 "title": "exposure_agent",
                 "description": "Environmental agent or medical intervention.",
-                "type": "string",
+                "type": [
+                    "string",
+                    "null"
+                ],
                 "examples": [
                     "placeholder"
                 ],
@@ -98,7 +110,10 @@
             "exposure_agent_ID": {
                 "title": "exposure_agent_ID",
                 "description": "Exposure agent source and identifier.",
-                "type": "string",
+                "type": [
+                    "string",
+                    "null"
+                ],
                 "examples": [
                     "placeholder"
                 ],
@@ -107,7 +122,10 @@
             "specimen": {
                 "title": "specimen",
                 "description": "Type of specimen used to access the biomarker.",
-                "type": "string",
+                "type": [
+                    "string",
+                    "null"
+                ],
                 "examples": [
                     "blood"
                 ],
@@ -116,7 +134,10 @@
             "specimen_ID": {
                 "title": "specimen_ID",
                 "description": "Specimen source and identifier",
-                "type": "string",
+                "type": [
+                    "string",
+                    "null"
+                ],
                 "examples": [
                     "UN:0000178"
                 ],
@@ -125,7 +146,10 @@
             "loinc_code": {
                 "title": "loinc_code",
                 "description": "Lab test ID associated with biomarker.",
-                "type": "string",
+                "type": [
+                    "string",
+                    "null"
+                ],
                 "examples": [
                     "34519-9"
                 ],
@@ -143,7 +167,10 @@
             "evidence": {
                 "title": "evidence",
                 "description": "Some text that is populated through manual curation or NLP.",
-                "type": "string",
+                "type": [
+                    "string",
+                    "null"
+                ],
                 "examples": [
                     "In multivariate analysis, however, the only two significant prognostic factors were EOD and IL-6. These results indicate that the serum IL-6 level is a significant prognostic factor for prostate cancer as well as EOD."
                 ],
@@ -152,7 +179,10 @@
             "notes": {
                 "title": "notes",
                 "description": "Free text to add meta data to the entry.",
-                "type": "string",
+                "type": [
+                    "string",
+                    "null"
+                ],
                 "examples": [
                     "UPKB:Q9UK37 (NM_000410.4(HFE):c.845G>A (p.Cys282Tyr))"
                 ],
@@ -178,7 +208,9 @@
                         {
                             "properties": {
                                 "condition_ID": {
-                                    "const": null
+                                    "not": {
+                                        "const": null
+                                    }
                                 }
                             },
                             "required": [
@@ -193,7 +225,7 @@
                     "properties": {
                         "condition": {
                             "not": {
-                                "const": null
+                                "type": "null"
                             }
                         }
                     },
@@ -206,7 +238,14 @@
                         {
                             "properties": {
                                 "exposure_agent": {
-                                    "const": null
+                                    "anyOf": [
+                                        {
+                                            "type": "null"
+                                        },
+                                        {
+                                            "const": null
+                                        }
+                                    ]
                                 }
                             },
                             "required": [
@@ -216,7 +255,14 @@
                         {
                             "properties": {
                                 "exposure_agent_ID": {
-                                    "const": null
+                                    "anyOf": [
+                                        {
+                                            "type": "null"
+                                        },
+                                        {
+                                            "const": null
+                                        }
+                                    ]
                                 }
                             },
                             "required": [
@@ -244,7 +290,9 @@
                         {
                             "properties": {
                                 "condition": {
-                                    "const": null
+                                    "not": {
+                                        "const": null
+                                    }
                                 }
                             },
                             "required": [
@@ -259,7 +307,7 @@
                     "properties": {
                         "condition_ID": {
                             "not": {
-                                "const": null
+                                "type": "null"
                             }
                         }
                     },
@@ -272,7 +320,14 @@
                         {
                             "properties": {
                                 "exposure_agent": {
-                                    "const": null
+                                    "anyOf": [
+                                        {
+                                            "type": "null"
+                                        },
+                                        {
+                                            "const": null
+                                        }
+                                    ]
                                 }
                             },
                             "required": [
@@ -282,7 +337,14 @@
                         {
                             "properties": {
                                 "exposure_agent_ID": {
-                                    "const": null
+                                    "anyOf": [
+                                        {
+                                            "type": "null"
+                                        },
+                                        {
+                                            "const": null
+                                        }
+                                    ]
                                 }
                             },
                             "required": [
@@ -310,7 +372,9 @@
                         {
                             "properties": {
                                 "exposure_agent_ID": {
-                                    "const": null
+                                    "not": {
+                                        "const": null
+                                    }
                                 }
                             },
                             "required": [
@@ -325,7 +389,7 @@
                     "properties": {
                         "exposure_agent": {
                             "not": {
-                                "const": null
+                                "type": "null"
                             }
                         }
                     },
@@ -338,7 +402,14 @@
                         {
                             "properties": {
                                 "condition": {
-                                    "const": null
+                                    "anyOf": [
+                                        {
+                                            "type": "null"
+                                        },
+                                        {
+                                            "const": null
+                                        }
+                                    ]
                                 }
                             },
                             "required": [
@@ -348,7 +419,14 @@
                         {
                             "properties": {
                                 "condition_ID": {
-                                    "const": null
+                                    "anyOf": [
+                                        {
+                                            "type": "null"
+                                        },
+                                        {
+                                            "const": null
+                                        }
+                                    ]
                                 }
                             },
                             "required": [
@@ -376,7 +454,9 @@
                         {
                             "properties": {
                                 "exposure_agent": {
-                                    "const": null
+                                    "not": {
+                                        "const": null
+                                    }
                                 }
                             },
                             "required": [
@@ -391,7 +471,7 @@
                     "properties": {
                         "exposure_agent_ID": {
                             "not": {
-                                "const": null
+                                "type": "null"
                             }
                         }
                     },
@@ -404,7 +484,14 @@
                         {
                             "properties": {
                                 "condition": {
-                                    "const": null
+                                    "anyOf": [
+                                        {
+                                            "type": "null"
+                                        },
+                                        {
+                                            "const": null
+                                        }
+                                    ]
                                 }
                             },
                             "required": [
@@ -414,7 +501,14 @@
                         {
                             "properties": {
                                 "condition_ID": {
-                                    "const": null
+                                    "anyOf": [
+                                        {
+                                            "type": "null"
+                                        },
+                                        {
+                                            "const": null
+                                        }
+                                    ]
                                 }
                             },
                             "required": [
