@@ -28,8 +28,8 @@ This project focuses on creating a biomarker database from different, relevant r
 
 ## Biomarker Definition
 
-![DataModel](https://user-images.githubusercontent.com/116293652/226414788-89e71a90-de6d-47d0-b3a7-f3baa4e667e7.png)  
-Figure 1
+![DataModel](/supplementary_files/imgs/model.png)  
+*Fig 1. Biomarker Data Model. Data types and relations (named boxes and arrows, respectively) in the biomarkers of clinical interest space; “core” biomarker data types (green boxes), additional data types (blue boxes) provide valuable contextual knowledge. References and additional annotations can be added to a database implementation of the model.*
 
 The elements highlighted in green are data types that would need to be extracted from the resources in order for a basic biomarker definition to be formed (assessed_biomarker_entity, condition_name, biomarker_status, evidence_source/type). Other data types such as loinc_code, specimen_type, and best_biomarker_type were not deemed as core elements but still provide context to the defintion of a particular biomarker (clinical lab measurements, where to measure the biomarker from, and what type of biomarker it is). These data types were mapped to the biomarker from outside resources such as LOINC and Uberon Ontology.
 
