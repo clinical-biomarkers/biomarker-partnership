@@ -1,0 +1,502 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/biomarker-ontology/BiomarkerKB/main/schema/v1.2/biomarkerkb_schema.json",
+    "type": "array",
+    "title": "biomarkerkb_schema.json",
+    "items": {
+        "type": "object",
+        "required": [
+            "biomarker",
+            "assessed_biomarker_entity",
+            "assessed_biomarker_entity_ID",
+            "assessed_entity_type",
+            "best_biomarker_role",
+            "evidence_source"
+        ],
+        "properties": {
+            "biomarker_ID": {
+                "title": "biomarker_ID",
+                "description": "Biomarker identifier. This will be automatically assigned when the data is incorporated.",
+                "type": "string",
+                "examples": [
+                    "A0034"
+                ],
+                "pattern": "^.*$"
+            },
+            "biomarker": {
+                "title": "biomarker",
+                "description": "Change observed in an entity that differs from normal processes.",
+                "type": "string",
+                "examples": [
+                    "presence of rs1800562 mutation"
+                ],
+                "pattern": "^.+$"
+            },
+            "assessed_biomarker_entity": {
+                "title": "assessed_biomarker_entity",
+                "description": "Biomarker entity and common name/gene symbol/short name.",
+                "type": "string",
+                "examples": [
+                    "rs1800562 mutation in hereditary haemochromatosis protein (hereditary hemochromatosis protein) (HFE)"
+                ],
+                "pattern": "^.+$"
+            },
+            "assessed_biomarker_entity_ID": {
+                "title": "assessed_biomarker_entity_ID",
+                "description": "Accession or identifier that matches the biomarker term.",
+                "type": "string",
+                "examples": [
+                    "dbSNP:rs1800562"
+                ],
+                "pattern": "^.+:.+$"
+            },
+            "assessed_entity_type": {
+                "title": "assessed_entity_type",
+                "description": "Entity type of the biomarker.",
+                "type": "string",
+                "examples": [
+                    "gene"
+                ],
+                "pattern": "^.+$"
+            },
+            "best_biomarker_role": {
+                "title": "best_biomarker_role",
+                "description": "Category of BEST biomarker.",
+                "type": "string",
+                "examples": [
+                    "risk_biomarker"
+                ],
+                "pattern": "^(risk_biomarker|diagnostic_biomarker|prognostic_biomarker|monitoring_biomarker|predictive_biomarker|response_biomarker|safety_biomarker)$"
+            },
+            "condition": {
+                "title": "condition",
+                "description": "Condition name.",
+                "type": "string",
+                "examples": [
+                    "cancer"
+                ],
+                "pattern": "^.*$"
+            },
+            "condition_ID": {
+                "title": "condition_ID",
+                "description": "Condition source and identifier",
+                "type": "string",
+                "examples": [
+                    "DOID:162"
+                ],
+                "pattern": "^(?:(?=\\S).+?:.+?|)$"
+            },
+            "exposure_agent": {
+                "title": "exposure_agent",
+                "description": "Environmental agent or medical intervention.",
+                "type": "string",
+                "examples": [
+                    "placeholder"
+                ],
+                "pattern": "^.*$"
+            },
+            "exposure_agent_ID": {
+                "title": "exposure_agent_ID",
+                "description": "Exposure agent source and identifier.",
+                "type": "string",
+                "examples": [
+                    "placeholder"
+                ],
+                "pattern": "^(?:(?=\\S).+?:.+?|)$"
+            },
+            "specimen": {
+                "title": "specimen",
+                "description": "Type of specimen used to access the biomarker.",
+                "type": "string",
+                "examples": [
+                    "blood"
+                ],
+                "pattern": "^.*$"
+            },
+            "specimen_ID": {
+                "title": "specimen_ID",
+                "description": "Specimen source and identifier",
+                "type": "string",
+                "examples": [
+                    "UN:0000178"
+                ],
+                "pattern": "^(?:(?=\\S).+?:.+?|)$"
+            },
+            "loinc_code": {
+                "title": "loinc_code",
+                "description": "Lab test ID associated with biomarker.",
+                "type": "array",
+                "examples": [
+                    "[34519-9]"
+                ],
+                "items": {
+                    "type": "string",
+                    "pattern": "^\\d+-\\d$"
+                }
+            },
+            "evidence_source": {
+                "title": "evidence_source",
+                "description": "Resource and identifier.",
+                "type": "array",
+                "examples": [
+                    "[ClinVar:rs2345667]"
+                ],
+                "items": {
+                    "type": "string",
+                    "pattern": "^.+:.+$"
+                }
+            },
+            "evidence": {
+                "title": "evidence",
+                "description": "Some text that is populated through manual curation or NLP.",
+                "type": "array",
+                "examples": [
+                    "[In multivariate analysis, however, the only two significant prognostic factors were EOD and IL-6. These results indicate that the serum IL-6 level is a significant prognostic factor for prostate cancer as well as EOD.]"
+                ],
+                "items": {
+                    "type": "string",
+                    "pattern": "^.*$"
+                }
+            },
+            "notes": {
+                "title": "notes",
+                "description": "Free text to add meta data to the entry.",
+                "type": "string",
+                "examples": [
+                    "UPKB:Q9UK37 (NM_000410.4(HFE):c.845G>A (p.Cys282Tyr))"
+                ],
+                "pattern": "^.*$"
+            }
+        },
+        "allOf": [
+            {
+                "if": {
+                    "properties": {
+                        "condition": {
+                            "not": {
+                                "const": null
+                            }
+                        }
+                    },
+                    "required": [
+                        "condition"
+                    ]
+                },
+                "then": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "condition_ID": {
+                                    "not": {
+                                        "const": null
+                                    }
+                                }
+                            },
+                            "required": [
+                                "condition_ID"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "if": {
+                    "properties": {
+                        "condition": {
+                            "not": {
+                                "type": "null"
+                            }
+                        }
+                    },
+                    "required": [
+                        "condition"
+                    ]
+                },
+                "then": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "exposure_agent": {
+                                    "anyOf": [
+                                        {
+                                            "type": "null"
+                                        },
+                                        {
+                                            "const": null
+                                        }
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "exposure_agent"
+                            ]
+                        },
+                        {
+                            "properties": {
+                                "exposure_agent_ID": {
+                                    "anyOf": [
+                                        {
+                                            "type": "null"
+                                        },
+                                        {
+                                            "const": null
+                                        }
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "exposure_agent_ID"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "if": {
+                    "properties": {
+                        "condition_ID": {
+                            "not": {
+                                "const": null
+                            }
+                        }
+                    },
+                    "required": [
+                        "condition_ID"
+                    ]
+                },
+                "then": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "condition": {
+                                    "not": {
+                                        "const": null
+                                    }
+                                }
+                            },
+                            "required": [
+                                "condition"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "if": {
+                    "properties": {
+                        "condition_ID": {
+                            "not": {
+                                "type": "null"
+                            }
+                        }
+                    },
+                    "required": [
+                        "condition_ID"
+                    ]
+                },
+                "then": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "exposure_agent": {
+                                    "anyOf": [
+                                        {
+                                            "type": "null"
+                                        },
+                                        {
+                                            "const": null
+                                        }
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "exposure_agent"
+                            ]
+                        },
+                        {
+                            "properties": {
+                                "exposure_agent_ID": {
+                                    "anyOf": [
+                                        {
+                                            "type": "null"
+                                        },
+                                        {
+                                            "const": null
+                                        }
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "exposure_agent_ID"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "if": {
+                    "properties": {
+                        "exposure_agent": {
+                            "not": {
+                                "const": null
+                            }
+                        }
+                    },
+                    "required": [
+                        "exposure_agent"
+                    ]
+                },
+                "then": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "exposure_agent_ID": {
+                                    "not": {
+                                        "const": null
+                                    }
+                                }
+                            },
+                            "required": [
+                                "exposure_agent_ID"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "if": {
+                    "properties": {
+                        "exposure_agent": {
+                            "not": {
+                                "type": "null"
+                            }
+                        }
+                    },
+                    "required": [
+                        "exposure_agent"
+                    ]
+                },
+                "then": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "condition": {
+                                    "anyOf": [
+                                        {
+                                            "type": "null"
+                                        },
+                                        {
+                                            "const": null
+                                        }
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "condition"
+                            ]
+                        },
+                        {
+                            "properties": {
+                                "condition_ID": {
+                                    "anyOf": [
+                                        {
+                                            "type": "null"
+                                        },
+                                        {
+                                            "const": null
+                                        }
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "condition_ID"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "if": {
+                    "properties": {
+                        "exposure_agent_ID": {
+                            "not": {
+                                "const": null
+                            }
+                        }
+                    },
+                    "required": [
+                        "exposure_agent_ID"
+                    ]
+                },
+                "then": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "exposure_agent": {
+                                    "not": {
+                                        "const": null
+                                    }
+                                }
+                            },
+                            "required": [
+                                "exposure_agent"
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "if": {
+                    "properties": {
+                        "exposure_agent_ID": {
+                            "not": {
+                                "type": "null"
+                            }
+                        }
+                    },
+                    "required": [
+                        "exposure_agent_ID"
+                    ]
+                },
+                "then": {
+                    "allOf": [
+                        {
+                            "properties": {
+                                "condition": {
+                                    "anyOf": [
+                                        {
+                                            "type": "null"
+                                        },
+                                        {
+                                            "const": null
+                                        }
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "condition"
+                            ]
+                        },
+                        {
+                            "properties": {
+                                "condition_ID": {
+                                    "anyOf": [
+                                        {
+                                            "type": "null"
+                                        },
+                                        {
+                                            "const": null
+                                        }
+                                    ]
+                                }
+                            },
+                            "required": [
+                                "condition_ID"
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
