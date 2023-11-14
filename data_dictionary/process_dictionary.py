@@ -99,7 +99,7 @@ def generate_schema(filepath: str) -> None:
                 'title': property_name,
                 'description': row['description'],
                 'type': property_type,
-                'examples': [row['examples']]
+                'examples': [row['example']]
             }
 
             # check if property type is an array 
@@ -113,6 +113,9 @@ def generate_schema(filepath: str) -> None:
             else:
                 if row['pattern'] and row['pattern'] != '-':
                     property_schema['pattern'] = row['pattern']
+
+            # add property details to schema
+            biomarkerkb_schema['items']['properties'][property_schema] = property_schema
 
             # biomarkerkb_schema['items']['properties'][row['properties']] = {
             #     'title': row['properties'],
