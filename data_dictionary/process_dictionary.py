@@ -1,8 +1,8 @@
 #!/usr/bin/env/python3
-''' BiomarkerKB data dictionary processor. Reads in the data dictionary TSV and converts it to 
+''' Biomarker-Partnership data dictionary processor. Reads in the data dictionary TSV and converts it to 
 a JSON validation schema. 
 
-Usage: python dictionary_utils.py [options]
+Usage: python process_dictionary.py [options]
 
     Positional arguments:
         file_path           filepath of the data dictionary TSV to convert
@@ -87,18 +87,40 @@ def generate_schema(filepath: str) -> None:
             # trim whitespace from each value
             # row = {k: v.strip() for k, v in row.items()}
 
+            property_name = row['properties']
+            property_type = row['type']
+
             # handle required properties 
             if row['requirement'] == 'required':
                 biomarkerkb_schema['items']['required'].append(row['properties'])
             
-            # add property details 
-            biomarkerkb_schema['items']['properties'][row['properties']] = {
-                'title': row['properties'],
+            # construct property schema 
+            property_schema = {
+                'title': property_name,
                 'description': row['description'],
-                'type': [row['type'], 'null'] if row['requirement'] != 'required' else row['type'],
-                'examples': [row['example']],
-                'pattern': row['pattern']
+                'type': property_type,
+                'examples': [row['examples']]
             }
+
+            # check if property type is an array 
+            if property_type == 'array':
+                item_type = row['content_type']
+                item_pattern = row['pattern'] if row['pattern'] and row['pattern'] != '-' else None 
+                property_schema['items'] = {'type': item_type}
+                if item_pattern:
+                    property_schema['items']['pattern'] = item_pattern
+            # for non-array properties 
+            else:
+                if row['pattern'] and row['pattern'] != '-':
+                    property_schema['pattern'] = row['pattern']
+
+            # biomarkerkb_schema['items']['properties'][row['properties']] = {
+            #     'title': row['properties'],
+            #     'description': row['description'],
+            #     'type': [row['type'], 'null'] if row['requirement'] != 'required' else row['type'],
+            #     'examples': [row['example']],
+            #     'pattern': row['pattern']
+            # }
 
             # handle conditional properties 
             if row['conditionals'] != '-':
