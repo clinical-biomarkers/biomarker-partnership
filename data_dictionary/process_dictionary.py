@@ -115,7 +115,7 @@ def generate_schema(filepath: str) -> None:
                     property_schema['pattern'] = row['pattern']
 
             # add property details to schema
-            biomarkerkb_schema['items']['properties'][property_schema] = property_schema
+            biomarkerkb_schema['items']['properties'][property_name] = property_schema
 
             # biomarkerkb_schema['items']['properties'][row['properties']] = {
             #     'title': row['properties'],
