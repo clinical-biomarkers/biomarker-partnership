@@ -45,10 +45,12 @@ The general workflow is as described in the flowchart below. It starts with the 
 
 ```mermaid
 flowchart TD
-    A[Data Dictionary] --> B{Generate JSON Schema}
+    A[Data Dictionary] --> B{Generate JSON Schema\nprocess_dictionary.py}
     B --> D
-    C[Data File] --> D{Validate Data File}
+    C[Data File] --> D{Validate Data File\nvalidate_data.py}
     D --> E[Log File Output]
+    D --> F[Incorporate Into MongoDB]
+    F --> G[Generate RDF Triples for Virtuoso]
 ```
 
 ### General Notes
@@ -106,7 +108,7 @@ Optional arguments
     -v --version        show current version number and exit
 ```
 
-Move your current working directory to `data_dictionary/` and run the `process_dictonary.py` script passing in the filepath to the data dictionary TSV you want to process. 
+Move your current working directory to `data_dictionary/` and run the `process_dictonary.py` script passing in the filepath to the data dictionary you want to process. 
 
 ```bash
 cd data_dictionary
@@ -121,26 +123,26 @@ In the `schema/` directory, the `validate_data.py` script can take multiple inpu
 
 ```
 Positional arguments:
-    data_filepath       filepath of the input data file to validate, accepts TSV or CSV
+    data_filepath       filepath of the input data file to validate, accepts tab delimited tsv or txt files or JSON
     schema_filepath     filepath to the schema file to validate against
 
 Optional arguments:
-    -o --output         whether to save the intermediate json (store_true argument)
-    -c --chunk          chunk size to process the source data
+    -o --output         whether to save the intermediate json, only applicable if input file is tsv or txt format (store_true argument)
+    -c --chunk          chunk size to process the source data, only applicable if input file is tsv or txt format
     -h --help           show the help message and exit
     -v --version        show current version number and exit
 ```
 
-The `-o` flag is a `store_true` argument, meaning just the presence of the flag will set the value to `True`. By omitting it, it will default to `False`. If set to `True`, by default the intermediate json will be saved in the `home/intermediate_data/<VERSION>/` directory (as specified in `conf.json`). If the `output` argument is passed, make sure this directory exists. 
+The `-o` flag is a `store_true` argument, meaning just the presence of the flag will set the value to `True`. By omitting it, it will default to `False`. If set to `True`, by default the intermediate json will be saved in the `home/intermediate_data/<VERSION>/` directory (as specified in `conf.json`). If the `output` argument is passed, make sure this directory exists. This is only applicable in the input file is in tsv or txt format.
 
-If processing a potentially very large source data file, the `-c` flag can be set to process the source data file in chunks. This can help prevent running out of system memory. 
+If processing a potentially very large source data file, the `-c` flag can be set to process the source data file in chunks. This can help prevent running out of system memory. This is only applicable in the input file is in tsv or txt format.
 
 The script also expects the `home/logs/` directory to exist. This is where the output logs will be dumped. 
 
-Validating a file schema (without saving the intermediate JSON or processing in chunks):
+Validating a file schema (without saving the intermediate json or processing in chunks):
 
 ```bash
-python validate_schema.py <FILEPATH/TO/SOURCE/DATA> <FILEPATH/TO/SCHEMA>
+python validate_data.py <FILEPATH/TO/SOURCE/DATA> <FILEPATH/TO/SCHEMA>
 ```
 
 ## Repository Structure 
