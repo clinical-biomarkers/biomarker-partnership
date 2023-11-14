@@ -101,7 +101,7 @@ The `process_dictionary.py` can take these arguments:
 
 ```
 Positional arguments:
-    file_path           filepath of the data dictionary TSV to convert
+    file_path           filepath of the data dictionary (in tsv format) to convert
 
 Optional arguments 
     -h --help           show the help message and exit
