@@ -88,7 +88,7 @@ def generate_schema(filepath: str) -> None:
             # row = {k: v.strip() for k, v in row.items()}
 
             property_name = row['properties']
-            property_type = row['type']
+            property_type = [row['type'], 'null'] if row['requirement'] != 'required' else row['type']
 
             # handle required properties 
             if row['requirement'] == 'required':
