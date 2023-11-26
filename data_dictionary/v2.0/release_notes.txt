@@ -4,4 +4,4 @@ Data Changes:
 - loinc_code, evidence_source, evidence changed to type array to allow for multiple entries
 
 Data Dictionary Structure Changes:
-- Added content_type field to accept types for array property elements 
+- Data dictionary file type changed to json to reflect more complex structure

@@ -1,0 +1,119 @@
+{
+    "biomarker_id": {
+        "description": "Biomarker identifier. This will be automatically assigned when the data is incorporated.",
+        "type": "string",
+        "required": {
+            "requirement": false,
+            "conditionals": [],
+            "exclusions": []
+        }, 
+        "example": ["A0034"],
+        "pattern": "^.*$",
+        "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
+    },
+    "biomarker_component": {
+        "description": "List of biomarker components.",
+        "type": "array",
+        "required": {
+            "requirement": true,
+            "conditionals": [],
+            "exclusions": []
+        },
+        "items": [
+            {
+                "biomarker": {
+                    "description": "Change observed in an entity that differs from normal processes.",
+                    "type": "string",
+                    "required":{
+                        "requirement": true,
+                        "conditionals": [],
+                        "exclusions":[]
+                    },
+                    "example": ["presence of rs1800562 mutation"],
+                    "pattern": "^.+$",
+                    "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                }
+            },
+            {
+                "assessed_biomarker_entity": {
+                    "description": "Biomarker entity and common name/gene symbol/short name.",
+                    "type": "string",
+                    "required": {
+                        "requirement": true,
+                        "conditionals": [],
+                        "exclusions": []
+                    },
+                    "example": ["rs1800562 mutation in hereditary haemochromatosis protein (hereditary hemochromatosis protein) (HFE)"],
+                    "pattern": "^.+$",
+                    "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                }
+            },
+            {
+                "assessed_biomarker_entity_id": {
+                    "description": "Accession or identifier that matches the biomarker term.",
+                    "type": "string",
+                    "required": {
+                        "requirement": true,
+                        "conditionals": [],
+                        "exclusions": []
+                    },
+                    "example": ["dbSNP:rs1800562"],
+                    "pattern": "^.+:.+$",
+                    "pattern_notes": "Matches on a value in the format of \"string:string\", not including empty strings."
+                }
+            },
+            {
+                "assessed_entity_type": {
+                    "description": "Entity type of the biomarker.",
+                    "type": "string",
+                    "required": {
+                        "requirement": true,
+                        "conditionals": [],
+                        "exclusions": []
+                    },
+                    "example": ["gene"],
+                    "pattern": "^.+$",
+                    "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                }
+            },
+            {
+                "loinc_code": {
+                    "description": "Lab test ID associated with biomarker.",
+                    "type": "string",
+                    "required": {
+                        "requirement": false,
+                        "conditionals": [],
+                        "exclusions": []
+                    },
+                    "example": ["34519-9"],
+                    "pattern": "^\\d+-\\d$",
+                    "pattern_notes": "Matches on a value in the format of \"number-single number\"."
+                }
+            }
+        ]   
+    },
+    "best_biomarker_role": {
+        "description": "Category of BEST biomarker.",
+        "type": "string",
+        "required": {
+            "requirement": true,
+            "conditionals": [],
+            "exclusions": []
+        },
+        "example": ["risk", "diagnostic"],
+        "pattern": "^(risk|diagnostic|prognostic|monitoring|predictive|response|safety)$",
+        "pattern_notes": "Matches one of these values: risk, diagnostic, prognostic, monitoring, predictive, response, safety"
+    },
+    "condition": {
+        "description": "Component for the condition data.",
+        "type": "object",
+        "required": {
+            "requirement": true,
+            "conditionals": [],
+            "exclusions": []
+        },
+        "items": {
+            
+        }
+    }
+}
