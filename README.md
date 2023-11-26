@@ -11,7 +11,7 @@ The goal of this project is to develop a community-based biomarker-centric data 
     - [Workflow](#workflow)
     - [General Notes](#general-notes)
     - [Start Environment](#starting-up-the-virtual-environment)
-    - [Schema Generation](#generating-a-schema)
+    - [Schema Generation](/data_dictionary/README.md)
     - [Data Validation](#validating-a-data-file-against-a-schema)
 - [Repository Structure](#repository-structure)
 - [References](#references)
@@ -41,7 +41,7 @@ Based on the resource that was being studied there can be some variation in how 
 
 ### Workflow
 
-The general workflow is as described in the flowchart below. It starts with the most current data dictionary. The data dictionary can then be converted into a JSON schema following the steps in the [generating a schema](#generating-a-schema) section. Once the current version's schema has been generated, you can validate your data files against the schema to ensure they conform to the latest data dictionary. Instructions for validation are in the [validating a data file against a schema](#validating-a-data-file-against-a-schema) section. 
+The general workflow is as described in the flowchart below. It starts with the most current data dictionary. The data dictionary can then be converted into a JSON schema format following the steps in the [generating a schema](#generating-a-schema) section. Once the current version's schema has been generated, you can validate your data files against the schema to ensure they conform to the latest data dictionary. Instructions for validation are in the [validating a data file against a schema](#validating-a-data-file-against-a-schema) section. 
 
 ```mermaid
 flowchart TD
@@ -83,36 +83,6 @@ Then install the project dependencies using:
 
 ```bash
 pip install -r requirements.txt
-```
-
-### Generating a Schema
-
-If applicable, in the project root directory, update the `conf.json` file with the updated version number. 
-
-Make sure the corresponding schema directories exist prior to running `process_dictionary.py`. 
-
-While inside the project root directory:
-
-```bash
-mkdir schema/<VERSION>
-```
-
-The `process_dictionary.py` can take these arguments:
-
-```
-Positional arguments:
-    file_path           filepath of the data dictionary (in tsv format) to convert
-
-Optional arguments 
-    -h --help           show the help message and exit
-    -v --version        show current version number and exit
-```
-
-Move your current working directory to `data_dictionary/` and run the `process_dictonary.py` script passing in the filepath to the data dictionary you want to process. 
-
-```bash
-cd data_dictionary
-python process_dictionary.py <FILEPATH/TO/DICTIONARY>
 ```
 
 ### Validating a Data File Against a Schema
