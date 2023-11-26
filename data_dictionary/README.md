@@ -5,6 +5,7 @@ The data dictionary is used to aid in the integration of biomarker partnership d
 - [Generating a Schema](#generating-a-schema)
 - [Data Dictionary Usage](#data-dictionary-structure)
     - [Basic Top Level Element](#basic-top-level-element)
+    - [Nested Elements](#nested-elements)
 
 ## Generating a Schema
 
@@ -69,3 +70,54 @@ The structure of a basic top level element in the data dictionary looks like thi
     - *Pattern* - A regex pattern to validate the data against.
     - *Pattern notes* - This field is optional (and is not used by the `process_dictionary.py` script), a description of the regex pattern. 
 
+#### Nested Elements 
+
+The data dictionary also supports nested elements. Nested elements can be either contained as objects or arrays. 
+
+The structure of a nested element in an array looks like this:
+
+```json
+"biomarker_component": {
+    "description": "List of biomarker components.",
+    "type": "array",
+    "required": {
+        "requirement": true,
+        "conditionals": [],
+        "exclusions": []
+    },
+    "items": [
+        {
+            "biomarker": {
+                "description": "Change observed in an entity that differs from normal processes.",
+                "type": "string",
+                "required":{
+                    "requirement": true,
+                    "conditionals": [],
+                    "exclusions":[]
+                },
+                "example": ["presence of rs1800562 mutation"],
+                "pattern": "^.+$",
+                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+            }
+        },
+        {
+            "assessed_biomarker_entity": {
+                "description": "Biomarker entity and common name/gene symbol/short name.",
+                "type": "string",
+                "required": {
+                    "requirement": true,
+                    "conditionals": [],
+                    "exclusions": []
+                },
+                "example": ["rs1800562 mutation in hereditary haemochromatosis protein (hereditary hemochromatosis protein) (HFE)"],
+                "pattern": "^.+$",
+                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+            }
+        },
+        ... // more elements here
+    ]
+}
+```
+
+**Elements:**  
+The basic structure is essentially the same as the single top level element with the only difference being the parent element metadata. The parent element still requires the `description`, `type`, and `required` data. The parent element also requires the `items` keyword that contains the nested elements. The `items` value must be an array, even if the parent `type` is an object. This is required because the `process_dictionary.py` script must be agnostic to the actual fields itself, allowing it to loop through nested objects and dynamically generate the JSON schema. 
