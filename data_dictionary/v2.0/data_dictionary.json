@@ -108,12 +108,285 @@
         "description": "Component for the condition data.",
         "type": "object",
         "required": {
-            "requirement": true,
+            "requirement": "conditional",
             "conditionals": [],
-            "exclusions": []
+            "exclusions": ["exposure_agent"]
         },
-        "items": {
-            
-        }
+        "items": [
+            {
+                "condition_id": {
+                    "description": "Condition identifier.",
+                    "type": "integer",
+                    "required": {
+                        "requirement": true,
+                        "conditionals": [],
+                        "exclusions": []
+                    },
+                    "example": [1612],
+                    "pattern": "^.*$",
+                    "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
+                }
+            },
+            {
+                "recommended_name": {
+                    "description": "Metadata for the recommended condition name.",
+                    "type": "object",
+                    "required": {
+                        "requirement": true,
+                        "conditionals": [],
+                        "exclusions": []
+                    },
+                    "items": [
+                        {
+                            "id": {
+                                "description": "Condition identifier.",
+                                "type": "integer",
+                                "required": {
+                                    "requirement": true,
+                                    "conditionals": [],
+                                    "exclusions": []
+                                },
+                                "example": [1612],
+                                "pattern": "^.+$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                            }
+                        },
+                        {
+                            "name": {
+                                "description": "Name of the condition.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true,
+                                    "conditionals": [],
+                                    "exclusions": []
+                                },
+                                "example": ["breast cancer"],
+                                "pattern": "^.+$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                            }
+                        },
+                        {
+                            "description": {
+                                "description": "Description of the condition",
+                                "type": "string",
+                                "required": {
+                                    "requirement": false,
+                                    "conditionals": [],
+                                    "exclusions": []
+                                },
+                                "example": ["A thoracic cancer that originates in the mammary gland."],
+                                "pattern": "^.+$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                            }
+                        },
+                        {
+                            "resource": {
+                                "description": "Resource the condition is defined in.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true,
+                                    "conditionals": [],
+                                    "exclusions": []
+                                },
+                                "example": ["DOID"],
+                                "pattern": "^.+$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                            }
+                        },
+                        {
+                            "url": {
+                                "description": "URL to the condition in the resource",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true,
+                                    "conditionals": [],
+                                    "exclusions": []
+                                },
+                                "example": ["https://disease-ontology.org/term/DOID:1612/"],
+                                "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                                "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "synonyms": {
+                    "description": "Metadata for synonyms to the condition name.",
+                    "type": "array",
+                    "required": {
+                        "requirement": false,
+                        "conditionals": [],
+                        "exclusions": []
+                    },
+                    "items": [
+                        {
+                            "id": {
+                                "description": "Identifier for the condition synonym.",
+                                "type": "integer",
+                                "required": {
+                                    "requirement": true,
+                                    "conditionals": [],
+                                    "exclusions": []
+                                },
+                                "example": [],
+                                "pattern": "^.+$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                            }
+                        },
+                        {
+                            "name": {
+                                "description": "Name of the condition synonym.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true,
+                                    "conditionals": [],
+                                    "exclusions": []
+                                },
+                                "example": [""],
+                                "pattern": "^.+$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                            }
+                        },
+                        {
+                            "resource": {
+                                "description": "Resource the condition is defined in.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true,
+                                    "conditionals": [],
+                                    "exclusions": []
+                                },
+                                "example": ["DOID"],
+                                "pattern": "^.+$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                            }
+                        },
+                        {
+                            "url": {
+                                "description": "URL to the condition synonym in the resource",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true,
+                                    "conditionals": [],
+                                    "exclusions": []
+                                },
+                                "example": ["https://disease-ontology.org/term/DOID:1612/"],
+                                "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                                "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "exposure_agent": {
+        "description": "Component for the exposure agent data.",
+        "type": "object",
+        "required": {
+            "requirement": "conditional",
+            "conditionals": [],
+            "exclusions": ["condition"]
+        },
+        "items": [
+            {
+                "exposure_agent_id": {
+                    "description": "Exposure agent identifier.",
+                    "type": "integer",
+                    "required": {
+                        "requirement": true,
+                        "conditionals": [],
+                        "exclusions": []
+                    },
+                    "example": [],
+                    "pattern": "^.+$",
+                    "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                }
+            },
+            {
+                "recommended_name": {
+                    "description": "Metadata for the recommended exposure agent name.",
+                    "type": "object",
+                    "required": {
+                        "requirement": true,
+                        "conditionals": [],
+                        "exclusions": []
+                    },
+                    "items": [
+                        {
+                            "id": {
+                                "description": "Exposure agent identifier.",
+                                "type": "integer",
+                                "required": {
+                                    "requirement": true,
+                                    "conditionals": [],
+                                    "exclusions": []
+                                },
+                                "example": [],
+                                "pattern": "^.+$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                            }
+                        },
+                        {
+                            "name": {
+                                "description": "Name of the exposure agent.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true,
+                                    "conditionals": [],
+                                    "exclusions": []
+                                },
+                                "example": [],
+                                "pattern": "^.+$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                            }
+                        },
+                        {
+                            "description": {
+                                "description": "Description of the exposure agent",
+                                "type": "string",
+                                "required": {
+                                    "requirement": false,
+                                    "conditionals": [],
+                                    "exclusions": []
+                                },
+                                "example": [],
+                                "pattern": "^.+$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                            }
+                        },
+                        {
+                            "resource": {
+                                "description": "Resource the exposure agent is defined in.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true,
+                                    "conditionals": [],
+                                    "exclusions": []
+                                },
+                                "example": [],
+                                "pattern": "^.+$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                            }
+                        },
+                        {
+                            "url": {
+                                "description": "URL to the exposure agent in the resource",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true,
+                                    "conditionals": [],
+                                    "exclusions": []
+                                },
+                                "example": [],
+                                "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                                "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
     }
 }
