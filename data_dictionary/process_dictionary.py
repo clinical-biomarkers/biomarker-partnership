@@ -1,11 +1,11 @@
 #!/usr/bin/env/python3
-''' Biomarker-Partnership data dictionary processor. Reads in the data dictionary TSV and converts it to 
+''' Biomarker-Partnership data dictionary processor. Reads in the data dictionary JSON and converts it to 
 a JSON validation schema. 
 
 Usage: python process_dictionary.py [options]
 
     Positional arguments:
-        file_path           filepath of the data dictionary TSV to convert
+        file_path           filepath of the data dictionary JSON to convert
 
     Optional arguments 
         -h --help           show the help message and exit
@@ -36,7 +36,7 @@ def user_args() -> None:
         usage = 'python process_dictionary.py [options]'
     )
     
-    parser.add_argument('file_path', help = 'filepath of the data dictionary TSV')
+    parser.add_argument('file_path', help = 'filepath of the data dictionary JSON')
     parser.add_argument('-v', '--version', action = 'version', version = f'%(prog)s {_version}')
 
     # print out help if script is called with no input arguments
@@ -44,13 +44,13 @@ def user_args() -> None:
         sys.argv.append('--help')
     
     options = parser.parse_args()
-    # check that the filepath passed is a TSV file
-    if not (options.file_path.endswith('.tsv') or options.file_path.endswith('txt')):
-        raise ValueError(f'Error: Expects TSV file as input.')
+    # check that the filepath passed is a JSON file
+    if not (options.file_path.endswith('.json')):
+        raise ValueError(f'Error: Expects JSON file as input.')
     # check that the user passed input filepath exists
     validate_filepath(options.file_path, 'input')
 
-    generate_schema(options.file_path)
+    generate_schema_json(options.file_path)
 
 def generate_schema(filepath: str) -> None:
     ''' Converts the data dictionary into a JSON schema. 
@@ -117,14 +117,6 @@ def generate_schema(filepath: str) -> None:
             # add property details to schema
             biomarkerkb_schema['items']['properties'][property_name] = property_schema
 
-            # biomarkerkb_schema['items']['properties'][row['properties']] = {
-            #     'title': row['properties'],
-            #     'description': row['description'],
-            #     'type': [row['type'], 'null'] if row['requirement'] != 'required' else row['type'],
-            #     'examples': [row['example']],
-            #     'pattern': row['pattern']
-            # }
-
             # handle conditional properties 
             if row['conditionals'] != '-':
                 conditional_reqs = [req.strip() for req in row['conditionals'].split(',')] 
@@ -174,6 +166,50 @@ def generate_schema(filepath: str) -> None:
     with open(f'{_output_path}/{_output_file}', 'w') as f:
         json.dump(biomarkerkb_schema, f)
 
+def generate_schema_json(filepath: str) -> None:
+    ''' Converts the data dictionary into a JSON schema. 
+
+    Parameters
+    ----------
+    filepath: str
+        Filepath to the source data dictionary file. 
+    '''
+
+    # construct root of json schema 
+    raw_url = _id_prefix + f'v{_version}/{_output_file}'
+    biomarker_schema = {
+        '$schema': _schema,
+        '$id': raw_url,
+        'type': 'array',
+        'title': _output_file,
+        'items': {
+            'type': 'object',
+            'required': [],
+            'properties': {},
+            'allOf': []
+        }
+    }
+
+    # read in data dictionary
+    with open(filepath, 'r') as f:
+        data = json.load(f)
+    
+    # iterate through top level keys
+    for key in data.keys():
+        
+        # grab property metadata
+        prop_description = data[key]['description']
+        prop_type = data[key]['type']
+        if prop_type != 'object' and prop_type != 'array':
+            prop_example = data[key]['example']
+            prop_pattern = data[key]['pattern']
+        prop_required = data[key]['required']['requirement'] 
+        if prop_required == 'conditional':
+            prop_conditionals = data[key]['required']['conditionals']
+            prop_exclusions = data[key]['required']['exclusions']
+        
+        # create property schema portion
+        # TODO 
 
 def validate_filepath(filepath: str, mode: str) -> None:
     ''' Validates the filepaths for the user inputted source path and
