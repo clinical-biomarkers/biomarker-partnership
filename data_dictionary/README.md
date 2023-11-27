@@ -85,41 +85,37 @@ The structure of a nested element in as an array looks like this:
         "conditionals": [],
         "exclusions": []
     },
-    "items": [
-        {
-            "biomarker": {
-                "description": "Change observed in an entity that differs from normal processes.",
-                "type": "string",
-                "required":{
-                    "requirement": true,
-                    "conditionals": [],
-                    "exclusions":[]
-                },
-                "example": ["presence of rs1800562 mutation"],
-                "pattern": "^.+$",
-                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-            }
+    "items": { 
+        "biomarker": {
+            "description": "Change observed in an entity that differs from normal processes.",
+            "type": "string",
+            "required":{
+                "requirement": true,
+                "conditionals": [],
+                "exclusions": []
+            },
+            "example": ["presence of rs1800562 mutation"],
+            "pattern": "^.+$",
+            "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
         },
-        {
-            "assessed_biomarker_entity": {
-                "description": "Biomarker entity and common name/gene symbol/short name.",
-                "type": "string",
-                "required": {
-                    "requirement": true,
-                    "conditionals": [],
-                    "exclusions": []
-                },
-                "example": ["rs1800562 mutation in hereditary haemochromatosis protein (hereditary hemochromatosis protein) (HFE)"],
-                "pattern": "^.+$",
-                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-            }
+        "assessed_biomarker_entity": {
+            "description": "Biomarker entity and common name/gene symbol/short name.",
+            "type": "string",
+            "required": {
+                "requirement": true,
+                "conditionals": [],
+                "exclusions": []
+            },
+            "example": ["rs1800562 mutation in hereditary haemochromatosis protein (hereditary hemochromatosis protein) (HFE)"],
+            "pattern": "^.+$",
+            "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
         },
         ... // more elements here
-    ]
+    }
 }
 ```
 
 **Elements:**  
-The basic structure is essentially the same as the single top level element with the only difference being the parent element metadata. The parent element still requires the `description`, `type`, and `required` fields. The parent element also requires the `items` keyword that contains the nested elements. The `items` value must be an array, even if the parent `type` is an object. This is required because the `process_dictionary.py` script must be agnostic to the actual fields itself, allowing it to loop through nested objects and dynamically generate the JSON schema.   
+The basic structure is essentially the same as the single top level element with the only difference being the parent element metadata. The parent element still requires the `description`, `type`, and `required` fields. The parent element also requires the `items` keyword that contains the nested elements. The `items` value must be an object, even if the parent `type` is an array. This is done for simplicity and readability's sake, especially when viewing and exploring the data dictionary in a [JSON viewer](https://jsonviewer.stack.hu/).
 
-The children elements can be conditionally required based on other nested elements or mutually exclusive with other children elements. However, the overall requirement is inherited from their ancestor elements. In this example, the `biomarker` field marked as required but the requirement of the field is inherently conditional on the presence of the `biomarker_component` parent element. If, for example, the `biomarker_component` was not required, then the requirement of its nested elements would be required if the `biomarker_component` was present, and not if the `biomarker_componenet` parent element was not included in the data. 
+The children elements can also be conditionally required based on other nested elements or mutually exclusive with other children elements. However, the overall requirement is inherited from their ancestor elements. In this example, the `biomarker` field marked as required but the requirement of the field is inherently conditional on the presence of the `biomarker_component` parent element. If, for example, the `biomarker_component` was not required, then the requirement of its nested elements would be required if the `biomarker_component` was present, and not if the `biomarker_componenet` parent element was not included in the data. 
