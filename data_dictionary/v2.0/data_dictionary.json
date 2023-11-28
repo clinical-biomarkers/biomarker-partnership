@@ -17,192 +17,202 @@
         "required": {
             "requirement": true
         },
-        "items": {
-            "biomarker": {
-                "description": "Change observed in an entity that differs from normal processes.",
-                "type": "string",
-                "required": {
-                    "requirement": true
+        "items": [
+            {
+                "biomarker": {
+                    "description": "Change observed in an entity that differs from normal processes.",
+                    "type": "string",
+                    "required": {
+                        "requirement": true
+                    },
+                    "example": [
+                        "presence of rs1800562 mutation"
+                    ],
+                    "pattern": "^.+$",
+                    "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
                 },
-                "example": [
-                    "presence of rs1800562 mutation"
-                ],
-                "pattern": "^.+$",
-                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-            },
-            "assessed_biomarker_entity": {
-                "description": "Biomarker entity and common name/gene symbol/short name.",
-                "type": "string",
-                "required": {
-                    "requirement": true
+                "assessed_biomarker_entity": {
+                    "description": "Biomarker entity and common name/gene symbol/short name.",
+                    "type": "string",
+                    "required": {
+                        "requirement": true
+                    },
+                    "example": [
+                        "rs1800562 mutation in hereditary haemochromatosis protein (hereditary hemochromatosis protein) (HFE)"
+                    ],
+                    "pattern": "^.+$",
+                    "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
                 },
-                "example": [
-                    "rs1800562 mutation in hereditary haemochromatosis protein (hereditary hemochromatosis protein) (HFE)"
-                ],
-                "pattern": "^.+$",
-                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-            },
-            "assessed_biomarker_entity_id": {
-                "description": "Accession or identifier that matches the biomarker term.",
-                "type": "string",
-                "required": {
-                    "requirement": true
+                "assessed_biomarker_entity_id": {
+                    "description": "Accession or identifier that matches the biomarker term.",
+                    "type": "string",
+                    "required": {
+                        "requirement": true
+                    },
+                    "example": [
+                        "dbSNP:rs1800562"
+                    ],
+                    "pattern": "^.+:.+$",
+                    "pattern_notes": "Matches on a value in the format of \"string:string\", not including empty strings."
                 },
-                "example": [
-                    "dbSNP:rs1800562"
-                ],
-                "pattern": "^.+:.+$",
-                "pattern_notes": "Matches on a value in the format of \"string:string\", not including empty strings."
-            },
-            "assessed_entity_type": {
-                "description": "Entity type of the biomarker.",
-                "type": "string",
-                "required": {
-                    "requirement": true
+                "assessed_entity_type": {
+                    "description": "Entity type of the biomarker.",
+                    "type": "string",
+                    "required": {
+                        "requirement": true
+                    },
+                    "example": [
+                        "gene"
+                    ],
+                    "pattern": "^.+$",
+                    "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
                 },
-                "example": [
-                    "gene"
-                ],
-                "pattern": "^.+$",
-                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-            },
-            "specimen": {
-                "description": "Component for specimen metadata.",
-                "type": "array",
-                "required": {
-                    "requirement": false
-                },
-                "items": {
-                    "name": {
-                        "description": "Name of the specimen.",
-                        "type": "string",
-                        "required": {
-                            "requirement": false
-                        },
-                        "example": [
-                            "blood"
-                        ],
-                        "pattern": "^.*$",
-                        "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
+                "specimen": {
+                    "description": "Component for specimen metadata.",
+                    "type": "array",
+                    "required": {
+                        "requirement": false
                     },
-                    "id": {
-                        "description": "Identifier for the specimen.",
-                        "type": "string",
-                        "required": {
-                            "requirement": false
-                        },
-                        "example": [
-                            "0000178"
-                        ],
-                        "pattern": "^.*$",
-                        "pattern_notes": "Matches on an entire line, regardless of content, including an empty line. Must be string as JSON does not support octal numbers (integers with leading zeroes)."
-                    },
-                    "name_space": {
-                        "description": "Name space for the specimen identifier.",
-                        "type": "string",
-                        "required": {
-                            "requirement": false
-                        },
-                        "example": [
-                            "UBERON"
-                        ],
-                        "pattern": "^.*$",
-                        "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
-                    },
-                    "url": {
-                        "description": "URL to the specimen in the resource.",
-                        "type": "string",
-                        "required": {
-                            "requirement": false
-                        },
-                        "example": [
-                            "http://purl.obolibrary.org/obo/UBERON_0000178"
-                        ],
-                        "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
-                        "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
-                    },
-                    "loinc_code": {
-                        "description": "Lab test ID associated with biomarker.",
-                        "type": "string",
-                        "required": {
-                            "requirement": false
-                        },
-                        "example": [
-                            "34519-9"
-                        ],
-                        "pattern": "^\\d+-\\d$",
-                        "pattern_notes": "Matches on a value in the format of \"number-single number\"."
-                    }
-                }
-            },
-            "evidence": {
-                "description": "Evidence data tied to specific biomarker component data.",
-                "type": "array",
-                "required": {
-                    "requirement": true
-                },
-                "items": {
-                    "id": {
-                        "description": "Identifier for evidence.",
-                        "type": "string",
-                        "required": {
-                            "requirement": true
-                        },
-                        "example": [
-                            "rs2345667",
-                            "10914713"
-                        ],
-                        "pattern": "^.+$",
-                        "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-                    },
-                    "database": {
-                        "description": "Database the evidence identifier relates to.",
-                        "type": "string",
-                        "required": {
-                            "requirement": true
-                        },
-                        "example": [
-                            "Clinvar",
-                            "Pubmed"
-                        ],
-                        "pattern": "^.+$",
-                        "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-                    },
-                    "url": {
-                        "description": "URL to the evidence in the resource.",
-                        "type": "string",
-                        "required": {
-                            "requirement": true
-                        },
-                        "example": [
-                            "http://purl.obolibrary.org/obo/UBERON_0000178"
-                        ],
-                        "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
-                        "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
-                    },
-                    "tags": {
-                        "description": "Tags indicating the fields the evidence points to.",
-                        "type": "array",
-                        "required": {
-                            "requirement": true
-                        },
-                        "items": {
-                            "description": "Data the evidence links to.",
-                            "type": "string",
-                            "required": {
-                                "requirement": true
+                    "items": [
+                        {
+                            "name": {
+                                "description": "Name of the specimen.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": false
+                                },
+                                "example": [
+                                    "blood"
+                                ],
+                                "pattern": "^.*$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
                             },
-                            "example": [
-                                "loinc_code:34519-9",
-                                "assessed_biomarker_entity"
-                            ],
-                            "pattern": "^(biomarker|assessed_biomarker_entity|assessed_biomarker_entity_id|assessed_entity_type|specimen:.*|loinc_code:.*|condition|exposure_agent)$",
-                            "pattern_notes": "Matches on \"biomarker\", \"assessed_biomarker_entity\", \"assessed_biomarker_entity_id\", \"assessed_entity_type\", \"specimen:[id]\", \"loinc_code:[code]\", \"condition\", \"exposure_agent\"."
+                            "id": {
+                                "description": "Identifier for the specimen.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": false
+                                },
+                                "example": [
+                                    "0000178"
+                                ],
+                                "pattern": "^.*$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, including an empty line. Must be string as JSON does not support octal numbers (integers with leading zeroes)."
+                            },
+                            "name_space": {
+                                "description": "Name space for the specimen identifier.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": false
+                                },
+                                "example": [
+                                    "UBERON"
+                                ],
+                                "pattern": "^.*$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
+                            },
+                            "url": {
+                                "description": "URL to the specimen in the resource.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": false
+                                },
+                                "example": [
+                                    "http://purl.obolibrary.org/obo/UBERON_0000178"
+                                ],
+                                "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                                "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
+                            },
+                            "loinc_code": {
+                                "description": "Lab test ID associated with biomarker.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": false
+                                },
+                                "example": [
+                                    "34519-9"
+                                ],
+                                "pattern": "^\\d+-\\d$",
+                                "pattern_notes": "Matches on a value in the format of \"number-single number\"."
+                            }
                         }
-                    }
+                    ]    
+                },
+                "evidence": {
+                    "description": "Evidence data tied to specific biomarker component data.",
+                    "type": "array",
+                    "required": {
+                        "requirement": true
+                    },
+                    "items": [
+                        {
+                            "id": {
+                                "description": "Identifier for evidence.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true
+                                },
+                                "example": [
+                                    "rs2345667",
+                                    "10914713"
+                                ],
+                                "pattern": "^.+$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                            },
+                            "database": {
+                                "description": "Database the evidence identifier relates to.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true
+                                },
+                                "example": [
+                                    "Clinvar",
+                                    "Pubmed"
+                                ],
+                                "pattern": "^.+$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                            },
+                            "url": {
+                                "description": "URL to the evidence in the resource.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true
+                                },
+                                "example": [
+                                    "http://purl.obolibrary.org/obo/UBERON_0000178"
+                                ],
+                                "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                                "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
+                            },
+                            "tags": {
+                                "description": "Tags indicating the fields the evidence points to.",
+                                "type": "array",
+                                "required": {
+                                    "requirement": true
+                                },
+                                "items": [
+                                    {
+                                        "tag": {
+                                            "description": "Data the evidence links to.",
+                                            "type": "string",
+                                            "required": {
+                                                "requirement": true
+                                            },
+                                            "example": [
+                                                "loinc_code:34519-9",
+                                                "assessed_biomarker_entity"
+                                            ],
+                                            "pattern": "^(biomarker|assessed_biomarker_entity|assessed_biomarker_entity_id|assessed_entity_type|specimen:.*|loinc_code:.*|condition|exposure_agent)$",
+                                            "pattern_notes": "Matches on \"biomarker\", \"assessed_biomarker_entity\", \"assessed_biomarker_entity_id\", \"assessed_entity_type\", \"specimen:[id]\", \"loinc_code:[code]\", \"condition\", \"exposure_agent\"."
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]   
                 }
             }
-        }
+        ]
     },
     "best_biomarker_role": {
         "description": "Category of BEST biomarker.",
@@ -227,7 +237,7 @@
                 "exposure_agent"
             ]
         },
-        "items": {
+        "properties": {
             "condition_id": {
                 "description": "Condition identifier.",
                 "type": "string",
@@ -246,7 +256,7 @@
                 "required": {
                     "requirement": true
                 },
-                "items": {
+                "properties": {
                     "id": {
                         "description": "Condition identifier.",
                         "type": "string",
@@ -315,54 +325,56 @@
                 "required": {
                     "requirement": false
                 },
-                "items": {
-                    "id": {
-                        "description": "Identifier for the condition synonym.",
-                        "type": "string",
-                        "required": {
-                            "requirement": true
+                "items": [
+                    {
+                        "id": {
+                            "description": "Identifier for the condition synonym.",
+                            "type": "string",
+                            "required": {
+                                "requirement": true
+                            },
+                            "example": ["DOID:1612"],
+                            "pattern": "^.+$",
+                            "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
                         },
-                        "example": ["DOID:1612"],
-                        "pattern": "^.+$",
-                        "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-                    },
-                    "name": {
-                        "description": "Name of the condition synonym.",
-                        "type": "string",
-                        "required": {
-                            "requirement": true
+                        "name": {
+                            "description": "Name of the condition synonym.",
+                            "type": "string",
+                            "required": {
+                                "requirement": true
+                            },
+                            "example": [
+                                "breast tumor"
+                            ],
+                            "pattern": "^.+$",
+                            "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
                         },
-                        "example": [
-                            "breast tumor"
-                        ],
-                        "pattern": "^.+$",
-                        "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-                    },
-                    "resource": {
-                        "description": "Resource the condition is defined in.",
-                        "type": "string",
-                        "required": {
-                            "requirement": true
+                        "resource": {
+                            "description": "Resource the condition is defined in.",
+                            "type": "string",
+                            "required": {
+                                "requirement": true
+                            },
+                            "example": [
+                                "DOID"
+                            ],
+                            "pattern": "^.+$",
+                            "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
                         },
-                        "example": [
-                            "DOID"
-                        ],
-                        "pattern": "^.+$",
-                        "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-                    },
-                    "url": {
-                        "description": "URL to the condition synonym in the resource",
-                        "type": "string",
-                        "required": {
-                            "requirement": true
-                        },
-                        "example": [
-                            "https://disease-ontology.org/term/DOID:1612/"
-                        ],
-                        "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
-                        "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
+                        "url": {
+                            "description": "URL to the condition synonym in the resource",
+                            "type": "string",
+                            "required": {
+                                "requirement": true
+                            },
+                            "example": [
+                                "https://disease-ontology.org/term/DOID:1612/"
+                            ],
+                            "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                            "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
+                        }
                     }
-                }
+                ]
             }
         }
     },
@@ -376,7 +388,7 @@
                 "condition"
             ]
         },
-        "items": {
+        "properties": {
             "exposure_agent_id": {
                 "description": "Exposure agent identifier.",
                 "type": "string",
@@ -393,7 +405,7 @@
                 "required": {
                     "requirement": true
                 },
-                "items": {
+                "properties": {
                     "id": {
                         "description": "Exposure agent identifier.",
                         "type": "string",
@@ -454,67 +466,73 @@
         "required": {
             "requirement": false
         },
-        "items": {
-            "id": {
-                "description": "Identifier for evidence.",
-                "type": "string",
-                "required": {
-                    "requirement": true
-                },
-                "example": [
-                    "rs2345667",
-                    "10914713"
-                ],
-                "pattern": "^.+$",
-                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-            },
-            "database": {
-                "description": "Database the evidence identifier relates to.",
-                "type": "string",
-                "required": {
-                    "requirement": true
-                },
-                "example": [
-                    "Clinvar",
-                    "Pubmed"
-                ],
-                "pattern": "^.+$",
-                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-            },
-            "url": {
-                "description": "URL to the evidence in the resource.",
-                "type": "string",
-                "required": {
-                    "requirement": true
-                },
-                "example": [
-                    "http://purl.obolibrary.org/obo/UBERON_0000178"
-                ],
-                "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
-                "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
-            },
-            "tags": {
-                "description": "Tags indicating the fields the evidence points to.",
-                "type": "array",
-                "required": {
-                    "requirement": false
-                },
-                "items": {
-                    "description": "Data the evidence links to.",
+        "items": [
+            {
+                "id": {
+                    "description": "Identifier for evidence.",
                     "type": "string",
                     "required": {
                         "requirement": true
                     },
                     "example": [
-                        "loinc_code:34519-9:0",
-                        "assessed_biomarker_entity:0",
-                        "condition"
+                        "rs2345667",
+                        "10914713"
                     ],
-                    "pattern": "^(biomarker:\\d+|assessed_biomarker_entity:\\d+|assessed_biomarker_entity_id:\\d+|assessed_entity_type:\\d+|specimen:.+:\\d+|loinc_code:.+:\\d+|condition|exposure_agent)$",
-                    "pattern_notes": "Matches on \"biomarker:[index]\", \"assessed_biomarker_entity:[index]\", \"assessed_biomarker_entity_id:[index]\", \"assessed_entity_type:[index]\", \"specimen:[id]:[index]\", \"loinc_code:[code]:[index]\", \"condition\", \"exposure_agent\"."
+                    "pattern": "^.+$",
+                    "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                },
+                "database": {
+                    "description": "Database the evidence identifier relates to.",
+                    "type": "string",
+                    "required": {
+                        "requirement": true
+                    },
+                    "example": [
+                        "Clinvar",
+                        "Pubmed"
+                    ],
+                    "pattern": "^.+$",
+                    "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                },
+                "url": {
+                    "description": "URL to the evidence in the resource.",
+                    "type": "string",
+                    "required": {
+                        "requirement": true
+                    },
+                    "example": [
+                        "http://purl.obolibrary.org/obo/UBERON_0000178"
+                    ],
+                    "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                    "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
+                },
+                "tags": {
+                    "description": "Tags indicating the fields the evidence points to.",
+                    "type": "array",
+                    "required": {
+                        "requirement": false
+                    },
+                    "items": [
+                        {
+                            "tag": {
+                                "description": "Data the evidence links to.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true
+                                },
+                                "example": [
+                                    "loinc_code:34519-9:0",
+                                    "assessed_biomarker_entity:0",
+                                    "condition"
+                                ],
+                                "pattern": "^(biomarker:\\d+|assessed_biomarker_entity:\\d+|assessed_biomarker_entity_id:\\d+|assessed_entity_type:\\d+|specimen:.+:\\d+|loinc_code:.+:\\d+|condition|exposure_agent)$",
+                                "pattern_notes": "Matches on \"biomarker:[index]\", \"assessed_biomarker_entity:[index]\", \"assessed_biomarker_entity_id:[index]\", \"assessed_entity_type:[index]\", \"specimen:[id]:[index]\", \"loinc_code:[code]:[index]\", \"condition\", \"exposure_agent\"."
+                            }
+                        }
+                    ]
                 }
             }
-        }
+        ]
     },
     "citation": {
         "description": "Citation data for publications used in evidence.",
@@ -522,145 +540,151 @@
         "required": {
             "requirement": false
         },
-        "items": {
-            "title": {
-                "description": "Publication title.",
-                "type": "string",
-                "required": {
-                    "requirement": true
-                },
-                "example": [
-                    "Serum interleukin 6 as a prognostic factor in patients with prostate cancer."
-                ],
-                "pattern": "^.+$",
-                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-            },
-            "journal": {
-                "description": "Publication journal.",
-                "type": "string",
-                "required": {
-                    "requirement": true
-                },
-                "example": [
-                    "Clinical cancer research : an official journal of the American Association for Cancer Research"
-                ],
-                "pattern": "^.+$",
-                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-            },
-            "authors": {
-                "description": "Publication authors.",
-                "type": "string",
-                "required": {
-                    "requirement": true
-                },
-                "example": [
-                   "Nakashima J, Tachibana M, Horiguchi Y, Oya M, Ohigashi T, Asakura H, Murai M" 
-                ],
-                "pattern": "^.+$",
-                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-            },
-            "date": {
-                "description": "Publication year.",
-                "type": "string",
-                "required": {
-                    "requirement": true
-                },
-                "example": [
-                    "2020"
-                ],
-                "pattern": "^.+$",
-                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-            },
-            "reference": {
-                "description": "### PLACEHOLDER ###",
-                "type": "object",
-                "required": {
-                    "requirement": "### PLACEHOLDER ###"
-                },
-                "items": {
-                    "id": {
-                        "description": "### PLACEHOLDER ###",
-                        "type": "### PLACEHOLDER ###",
-                        "required": {
-                            "requirement": "### PLACEHOLDER ###"
-                        },
-                        "example": [
-                            "### PLACEHOLDER ###"
-                        ],
-                        "pattern": "### PLACEHOLDER ###",
-                        "pattern_notes": "### PLACEHOLDER ###"
+        "items": [
+            {
+                "title": {
+                    "description": "Publication title.",
+                    "type": "string",
+                    "required": {
+                        "requirement": true
                     },
-                    "type": {
-                        "description": "### PLACEHOLDER ###",
-                        "type": "### PLACEHOLDER ###",
-                        "required": {
-                            "requirement": "### PLACEHOLDER ###"
-                        },
-                        "example": [
-                            "### PLACEHOLDER ###"
-                        ],
-                        "pattern": "### PLACEHOLDER ###",
-                        "pattern_notes": "### PLACEHOLDER ###"
-                    },
-                    "url": {
-                        "description": "### PLACEHOLDER ###",
-                        "type": "### PLACEHOLDER ###",
-                        "required": {
-                            "requirement": "### PLACEHOLDER ###"
-                        },
-                        "example": [
-                            "### PLACEHOLDER ###"
-                        ],
-                        "pattern": "### PLACEHOLDER ###",
-                        "pattern_notes": "### PLACEHOLDER ###"
-                    }
-                }
-            },
-            "evidence": {
-                "description": "### PLACEHOLDER ###",
-                "type": "array",
-                "required": {
-                    "requirement": "### PLACEHOLDER ###"
+                    "example": [
+                        "Serum interleukin 6 as a prognostic factor in patients with prostate cancer."
+                    ],
+                    "pattern": "^.+$",
+                    "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
                 },
-                "items": {
-                    "id": {
-                        "description": "### PLACEHOLDER ###",
-                        "type": "### PLACEHOLDER ###",
-                        "required": {
-                            "requirement": "### PLACEHOLDER ###"
-                        },
-                        "example": [
-                            "### PLACEHOLDER ###"
-                        ],
-                        "pattern": "### PLACEHOLDER ###",
-                        "pattern_notes": "### PLACEHOLDER ###"
+                "journal": {
+                    "description": "Publication journal.",
+                    "type": "string",
+                    "required": {
+                        "requirement": true
                     },
-                    "database": {
-                        "description": "### PLACEHOLDER ###",
-                        "type": "### PLACEHOLDER ###",
-                        "required": {
-                            "requirement": "### PLACEHOLDER ###"
-                        },
-                        "example": [
-                            "### PLACEHOLDER ###"
-                        ],
-                        "pattern": "### PLACEHOLDER ###",
-                        "pattern_notes": "### PLACEHOLDER ###"
+                    "example": [
+                        "Clinical cancer research : an official journal of the American Association for Cancer Research"
+                    ],
+                    "pattern": "^.+$",
+                    "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                },
+                "authors": {
+                    "description": "Publication authors.",
+                    "type": "string",
+                    "required": {
+                        "requirement": true
                     },
-                    "url": {
-                        "description": "### PLACEHOLDER ###",
-                        "type": "### PLACEHOLDER ###",
-                        "required": {
-                            "requirement": "### PLACEHOLDER ###"
-                        },
-                        "example": [
-                            "### PLACEHOLDER ###"
-                        ],
-                        "pattern": "### PLACEHOLDER ###",
-                        "pattern_notes": "### PLACEHOLDER ###"
-                    }
+                    "example": [
+                    "Nakashima J, Tachibana M, Horiguchi Y, Oya M, Ohigashi T, Asakura H, Murai M" 
+                    ],
+                    "pattern": "^.+$",
+                    "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                },
+                "date": {
+                    "description": "Publication year.",
+                    "type": "string",
+                    "required": {
+                        "requirement": true
+                    },
+                    "example": [
+                        "2020"
+                    ],
+                    "pattern": "^.+$",
+                    "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                },
+                "reference": {
+                    "description": "The evidence for the data.",
+                    "type": "array",
+                    "required": {
+                        "requirement": true
+                    },
+                    "items": [
+                        {
+                            "type": {
+                                "description": "The reference data source.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true
+                                },
+                                "example": [
+                                    "PubMed"
+                                ],
+                                "pattern": "^.+$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                            },
+                            "id": {
+                                "description": "Identifier for the reference data.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true
+                                },
+                                "example": [
+                                    "10914713"
+                                ],
+                                "pattern": "^.+$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                            },
+                            "url": {
+                                "description": "Link to the reference data.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true
+                                },
+                                "example": [
+                                    "https://glygen.org/publication/PubMed/10914713"
+                                ],
+                                "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                                "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
+                            }
+                        }
+                    ]
+                },
+                "evidence": {
+                    "description": "Links to the data to the reference.",
+                    "type": "array",
+                    "required": {
+                        "requirement": true
+                    },
+                    "items": [
+                        {
+                            "id": {
+                                "description": "Identifier for the evidence.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true
+                                },
+                                "example": [
+                                    "GLY_000625"
+                                ],
+                                "pattern": "^.+$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                            },
+                            "database": {
+                                "description": "Database name for the evidence.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true
+                                },
+                                "example": [
+                                    "GlyGen"
+                                ],
+                                "pattern": "^.+$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                            },
+                            "url": {
+                                "description": "Link to the evidence.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true
+                                },
+                                "example": [
+                                    "https://data.glygen.org/GLY_000625"
+                                ],
+                                "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                                "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
+                            }
+                        }
+                    ]
                 }
             }
-        }
+        ]
     }
 }

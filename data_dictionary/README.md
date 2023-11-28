@@ -60,7 +60,7 @@ Note: The `skeleton_dictionary.py` file utilizes union type hinting. This is a f
 
 ## Data Dictionary Structure 
 
-The data dictionary represents a simplified structure of the eventual JSON schema. The `process_dictionary.py` script is agnostic to the actual fields and nested structure of the data dictionary. 
+The data dictionary represents a simplified structure of the eventual JSON schema, allowing for clear viewing of all the data model fields in a [JSON viewer](https://jsonviewer.stack.hu/). The `process_dictionary.py` script used to convert the data dictionary into a JSON schema is agnostic to the actual fields and nested structure of the data dictionary.
 
 #### Basic Top Level Element
 
@@ -95,7 +95,7 @@ The structure of a basic top level element in the data dictionary looks like thi
 
 The data dictionary also supports nested elements.
 
-The structure of a nested element in as an array looks like this:
+The structure of nested elements as an array looks like this:
 
 ```json
 "biomarker_component": {
@@ -104,34 +104,79 @@ The structure of a nested element in as an array looks like this:
     "required": {
         "requirement": true
     },
-    "items": { 
-        "biomarker": {
-            "description": "Change observed in an entity that differs from normal processes.",
-            "type": "string",
-            "required":{
-                "requirement": true
+    "items": [
+        {
+            "biomarker": {
+                "description": "Change observed in an entity that differs from normal processes.",
+                "type": "string",
+                "required": {
+                    "requirement": true
+                },
+                "example": [
+                    "presence of rs1800562 mutation"
+                ],
+                "pattern": "^.+$",
+                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
             },
-            "example": ["presence of rs1800562 mutation"],
-            "pattern": "^.+$",
-            "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-        },
-        "assessed_biomarker_entity": {
-            "description": "Biomarker entity and common name/gene symbol/short name.",
+            "assessed_biomarker_entity": {
+                "description": "Biomarker entity and common name/gene symbol/short name.",
+                "type": "string",
+                "required": {
+                    "requirement": true
+                },
+                "example": [
+                    "rs1800562 mutation in hereditary haemochromatosis protein (hereditary hemochromatosis protein) (HFE)"
+                ],
+                "pattern": "^.+$",
+                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+            },
+            // ...more elements here
+        }
+    ]
+}
+```
+
+The structure of nested elements as objects looks like this:
+
+```json
+"recommended_name": {
+    "description": "Metadata for the recommended condition name.",
+    "type": "object",
+    "required": {
+        "requirement": true
+    },
+    "properties": {
+        "id": {
+            "description": "Condition identifier.",
             "type": "string",
             "required": {
                 "requirement": true
             },
-            "example": ["rs1800562 mutation in hereditary haemochromatosis protein (hereditary hemochromatosis protein) (HFE)"],
+            "example": [
+                "DOID:1612"
+            ],
             "pattern": "^.+$",
             "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
         },
-        // ...more elements here
+        "name": {
+            "description": "Name of the condition.",
+            "type": "string",
+            "required": {
+                "requirement": true
+            },
+            "example": [
+                "breast cancer"
+            ],
+            "pattern": "^.+$",
+            "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+        },
+        // ... more elements here
     }
 }
 ```
 
 **Elements:**  
-The basic structure is essentially the same as the single top level element with the only difference being the parent element metadata. The parent element still requires the `description`, `type`, and `required` fields. The parent element also requires the `items` keyword that contains the nested elements. The `items` value must be an object, even if the parent `type` is an array. This is done for simplicity and readability's sake, especially when viewing and exploring the data dictionary in a [JSON viewer](https://jsonviewer.stack.hu/).
+The basic structure is essentially the same as the single top level element with the only difference being the parent element metadata. The parent element still requires the `description`, `type`, and `required` fields. The parent element also requires either the `items` or `properties` keyword depending on the parent data type. Similar to the JSON schema format, `array` types have `items` and `object` types have `properties`.
 
 For children elements, the overall requirement is inherited from their ancestor elements. In this example, the `biomarker` field marked as required but the requirement of the field is inherently conditional on the presence of the `biomarker_component` parent element. If, for example, the `biomarker_component` was not required, then the requirement of its nested elements would be required if the `biomarker_component` was present, and not if the `biomarker_componenet` parent element was not included in the data. 
 
@@ -156,11 +201,13 @@ Fields can be set as conditionally dependent on the presence of other fields on 
 }
 ```
 
-Here, the `condition` field is set as mutually exclusive with the `exposure_agent` field. If the `exposure_agent` field is present in the data then the `condition` field should not exist (or be non-null). 
+Here, the `condition` field is set as mutually exclusive with the `exposure_agent` field. If the `condition` field is present in the data then the `exposure_agent` field should not exist (or be non-null). 
 
 Children elements on the same level can also be conditionally required based on other nested elements or mutually exclusive with other children elements in the same way. 
 
 ## Generating a Schema
+
+The `process_dictionary.py` script takes as input the data dictionary
 
 If applicable, in the project root directory, update the `conf.json` file with the updated version number. 
 
