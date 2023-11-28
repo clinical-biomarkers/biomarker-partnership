@@ -20,7 +20,11 @@
                     "id": "",
                     "database": "",
                     "url": "",
-                    "tags": [""]
+                    "tags": [
+                        {
+                            "tag": ""
+                        }
+                    ]
                 }                    
             ]
         }
@@ -59,7 +63,11 @@
             "id": "",
             "database": "",
             "url": "",
-            "tags": [""]
+            "tags": [
+                {
+                    "tag": ""
+                }
+            ]
         }
     ],
     "citation": [
@@ -68,11 +76,13 @@
             "journal": "",
             "authors": "",
             "date": "",
-            "reference": {
-                "id": "",
-                "type": "",
-                "url": ""
-            },
+            "reference": [
+                {
+                    "id": "",
+                    "type": "",
+                    "url": ""
+                }
+            ],
             "evidence": [
                 {
                     "id": "",
