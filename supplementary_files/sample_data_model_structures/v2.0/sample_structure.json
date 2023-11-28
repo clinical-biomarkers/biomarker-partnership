@@ -3,10 +3,26 @@
     "biomarker_component": [
         {
             "biomarker": "",
-            "assessed_biomarker_entity_id": "",
             "assessed_biomarker_entity": "",
+            "assessed_biomarker_entity_id": "",
             "assessed_entity_type": "",
-            "loinc_code": ""
+            "specimen": [
+                {
+                    "name": "",
+                    "id": "",
+                    "name_space": "",
+                    "url": "",
+                    "loinc": ""
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "",
+                    "database": "",
+                    "url": "",
+                    "tags": [""]
+                }                    
+            ]
         }
     ],
     "best_biomarker_role": "",
@@ -38,19 +54,12 @@
             "url": ""
         }
     },
-    "specimen": {
-        "id": "",
-        "name": "",
-        "name_space": "",
-        "url": ""
-    },
     "evidence": [
         {
             "id": "",
             "url": "",
-            "category_type": "",
-            "tags": "",
-            "details": ""
+            "database": "",
+            "tags": [""]
         }
     ],
     "citation": [
