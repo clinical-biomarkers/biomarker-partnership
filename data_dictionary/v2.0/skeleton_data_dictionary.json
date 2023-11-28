@@ -1,0 +1,664 @@
+{
+    "biomarker_id": {
+        "description": "### PLACEHOLDER ###",
+        "type": "### PLACEHOLDER ###",
+        "required": {
+            "requirement": "### PLACEHOLDER ###"
+        },
+        "example": [
+            "### PLACEHOLDER ###"
+        ],
+        "pattern": "### PLACEHOLDER ###",
+        "pattern_notes": "### PLACEHOLDER ###"
+    },
+    "biomarker_component": {
+        "description": "### PLACEHOLDER ###",
+        "type": "array",
+        "required": {
+            "requirement": "### PLACEHOLDER ###"
+        },
+        "items": {
+            "biomarker": {
+                "description": "### PLACEHOLDER ###",
+                "type": "### PLACEHOLDER ###",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "example": [
+                    "### PLACEHOLDER ###"
+                ],
+                "pattern": "### PLACEHOLDER ###",
+                "pattern_notes": "### PLACEHOLDER ###"
+            },
+            "assessed_biomarker_entity": {
+                "description": "### PLACEHOLDER ###",
+                "type": "### PLACEHOLDER ###",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "example": [
+                    "### PLACEHOLDER ###"
+                ],
+                "pattern": "### PLACEHOLDER ###",
+                "pattern_notes": "### PLACEHOLDER ###"
+            },
+            "assessed_biomarker_entity_id": {
+                "description": "### PLACEHOLDER ###",
+                "type": "### PLACEHOLDER ###",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "example": [
+                    "### PLACEHOLDER ###"
+                ],
+                "pattern": "### PLACEHOLDER ###",
+                "pattern_notes": "### PLACEHOLDER ###"
+            },
+            "assessed_entity_type": {
+                "description": "### PLACEHOLDER ###",
+                "type": "### PLACEHOLDER ###",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "example": [
+                    "### PLACEHOLDER ###"
+                ],
+                "pattern": "### PLACEHOLDER ###",
+                "pattern_notes": "### PLACEHOLDER ###"
+            },
+            "specimen": {
+                "description": "### PLACEHOLDER ###",
+                "type": "array",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "items": {
+                    "name": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "id": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "name_space": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "url": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "loinc": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    }
+                }
+            },
+            "evidence": {
+                "description": "### PLACEHOLDER ###",
+                "type": "array",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "items": {
+                    "id": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "database": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "url": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "tags": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "array",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "items": {
+                            "description": "### PLACEHOLDER ###",
+                            "type": "### PLACEHOLDER ###",
+                            "required": {
+                                "requirement": "### PLACEHOLDER ###"
+                            },
+                            "example": [
+                                "### PLACEHOLDER ###"
+                            ],
+                            "pattern": "### PLACEHOLDER ###",
+                            "pattern_notes": "### PLACEHOLDER ###"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "best_biomarker_role": {
+        "description": "### PLACEHOLDER ###",
+        "type": "### PLACEHOLDER ###",
+        "required": {
+            "requirement": "### PLACEHOLDER ###"
+        },
+        "example": [
+            "### PLACEHOLDER ###"
+        ],
+        "pattern": "### PLACEHOLDER ###",
+        "pattern_notes": "### PLACEHOLDER ###"
+    },
+    "condition": {
+        "description": "### PLACEHOLDER ###",
+        "type": "object",
+        "required": {
+            "requirement": "### PLACEHOLDER ###"
+        },
+        "items": {
+            "condition_id": {
+                "description": "### PLACEHOLDER ###",
+                "type": "### PLACEHOLDER ###",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "example": [
+                    "### PLACEHOLDER ###"
+                ],
+                "pattern": "### PLACEHOLDER ###",
+                "pattern_notes": "### PLACEHOLDER ###"
+            },
+            "recommended_name": {
+                "description": "### PLACEHOLDER ###",
+                "type": "object",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "items": {
+                    "id": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "name": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "description": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "resource": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "url": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    }
+                }
+            },
+            "synonyms": {
+                "description": "### PLACEHOLDER ###",
+                "type": "array",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "items": {
+                    "id": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "name": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "resource": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "url": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    }
+                }
+            }
+        }
+    },
+    "exposure_agent": {
+        "description": "### PLACEHOLDER ###",
+        "type": "object",
+        "required": {
+            "requirement": "### PLACEHOLDER ###"
+        },
+        "items": {
+            "exposure_agent_id": {
+                "description": "### PLACEHOLDER ###",
+                "type": "### PLACEHOLDER ###",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "example": [
+                    "### PLACEHOLDER ###"
+                ],
+                "pattern": "### PLACEHOLDER ###",
+                "pattern_notes": "### PLACEHOLDER ###"
+            },
+            "recommended_name": {
+                "description": "### PLACEHOLDER ###",
+                "type": "object",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "items": {
+                    "id": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "name": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "description": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "resource": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "url": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    }
+                }
+            }
+        }
+    },
+    "evidence": {
+        "description": "### PLACEHOLDER ###",
+        "type": "array",
+        "required": {
+            "requirement": "### PLACEHOLDER ###"
+        },
+        "items": {
+            "id": {
+                "description": "### PLACEHOLDER ###",
+                "type": "### PLACEHOLDER ###",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "example": [
+                    "### PLACEHOLDER ###"
+                ],
+                "pattern": "### PLACEHOLDER ###",
+                "pattern_notes": "### PLACEHOLDER ###"
+            },
+            "url": {
+                "description": "### PLACEHOLDER ###",
+                "type": "### PLACEHOLDER ###",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "example": [
+                    "### PLACEHOLDER ###"
+                ],
+                "pattern": "### PLACEHOLDER ###",
+                "pattern_notes": "### PLACEHOLDER ###"
+            },
+            "database": {
+                "description": "### PLACEHOLDER ###",
+                "type": "### PLACEHOLDER ###",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "example": [
+                    "### PLACEHOLDER ###"
+                ],
+                "pattern": "### PLACEHOLDER ###",
+                "pattern_notes": "### PLACEHOLDER ###"
+            },
+            "tags": {
+                "description": "### PLACEHOLDER ###",
+                "type": "array",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "items": {
+                    "description": "### PLACEHOLDER ###",
+                    "type": "### PLACEHOLDER ###",
+                    "required": {
+                        "requirement": "### PLACEHOLDER ###"
+                    },
+                    "example": [
+                        "### PLACEHOLDER ###"
+                    ],
+                    "pattern": "### PLACEHOLDER ###",
+                    "pattern_notes": "### PLACEHOLDER ###"
+                }
+            }
+        }
+    },
+    "citation": {
+        "description": "### PLACEHOLDER ###",
+        "type": "array",
+        "required": {
+            "requirement": "### PLACEHOLDER ###"
+        },
+        "items": {
+            "title": {
+                "description": "### PLACEHOLDER ###",
+                "type": "### PLACEHOLDER ###",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "example": [
+                    "### PLACEHOLDER ###"
+                ],
+                "pattern": "### PLACEHOLDER ###",
+                "pattern_notes": "### PLACEHOLDER ###"
+            },
+            "journal": {
+                "description": "### PLACEHOLDER ###",
+                "type": "### PLACEHOLDER ###",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "example": [
+                    "### PLACEHOLDER ###"
+                ],
+                "pattern": "### PLACEHOLDER ###",
+                "pattern_notes": "### PLACEHOLDER ###"
+            },
+            "authors": {
+                "description": "### PLACEHOLDER ###",
+                "type": "### PLACEHOLDER ###",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "example": [
+                    "### PLACEHOLDER ###"
+                ],
+                "pattern": "### PLACEHOLDER ###",
+                "pattern_notes": "### PLACEHOLDER ###"
+            },
+            "date": {
+                "description": "### PLACEHOLDER ###",
+                "type": "### PLACEHOLDER ###",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "example": [
+                    "### PLACEHOLDER ###"
+                ],
+                "pattern": "### PLACEHOLDER ###",
+                "pattern_notes": "### PLACEHOLDER ###"
+            },
+            "reference": {
+                "description": "### PLACEHOLDER ###",
+                "type": "object",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "items": {
+                    "id": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "type": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "url": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    }
+                }
+            },
+            "evidence": {
+                "description": "### PLACEHOLDER ###",
+                "type": "array",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "items": {
+                    "id": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "database": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "url": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -3,9 +3,7 @@
         "description": "Biomarker identifier. This will be automatically assigned when the data is incorporated.",
         "type": "string",
         "required": {
-            "requirement": false,
-            "conditionals": [],
-            "exclusions": []
+            "requirement": false
         }, 
         "example": ["A0034"],
         "pattern": "^.*$",
@@ -15,18 +13,14 @@
         "description": "List of biomarker components.",
         "type": "array",
         "required": {
-            "requirement": true,
-            "conditionals": [],
-            "exclusions": []
+            "requirement": true
         },
         "items": { 
             "biomarker": {
                 "description": "Change observed in an entity that differs from normal processes.",
                 "type": "string",
                 "required":{
-                    "requirement": true,
-                    "conditionals": [],
-                    "exclusions": []
+                    "requirement": true
                 },
                 "example": ["presence of rs1800562 mutation"],
                 "pattern": "^.+$",
@@ -36,9 +30,7 @@
                 "description": "Biomarker entity and common name/gene symbol/short name.",
                 "type": "string",
                 "required": {
-                    "requirement": true,
-                    "conditionals": [],
-                    "exclusions": []
+                    "requirement": true
                 },
                 "example": ["rs1800562 mutation in hereditary haemochromatosis protein (hereditary hemochromatosis protein) (HFE)"],
                 "pattern": "^.+$",
@@ -48,9 +40,7 @@
                 "description": "Accession or identifier that matches the biomarker term.",
                 "type": "string",
                 "required": {
-                    "requirement": true,
-                    "conditionals": [],
-                    "exclusions": []
+                    "requirement": true
                 },
                 "example": ["dbSNP:rs1800562"],
                 "pattern": "^.+:.+$",
@@ -60,27 +50,127 @@
                 "description": "Entity type of the biomarker.",
                 "type": "string",
                 "required": {
-                    "requirement": true,
-                    "conditionals": [],
-                    "exclusions": []
+                    "requirement": true
                 },
                 "example": ["gene"],
                 "pattern": "^.+$",
                 "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
             },
-            "loinc_code": {
-                "description": "Lab test ID associated with biomarker.",
-                "type": "string",
+            "specimen": {
+                "description": "Component for specimen metadata.",
+                "type": "array",
                 "required": {
-                    "requirement": false,
-                    "conditionals": [],
-                    "exclusions": []
+                    "requirement": false
                 },
-                "example": ["34519-9"],
-                "pattern": "^\\d+-\\d$",
-                "pattern_notes": "Matches on a value in the format of \"number-single number\"."
-            }
-        }   
+                "items": {
+                    "name": {
+                        "description": "Name of the specimen.",
+                        "type": "string",
+                        "required": {
+                            "requirement": false
+                        },
+                        "example": ["blood"],
+                        "pattern": "^.*$",
+                        "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
+                    },
+                    "id": {
+                        "description": "Identifier for the specimen.",
+                        "type": "string",
+                        "required": {
+                            "requirement": false
+                        },
+                        "example": ["0000178"],
+                        "pattern": "^.*$",
+                        "pattern_notes": "Matches on an entire line, regardless of content, including an empty line. Must be string as JSON does not support octal numbers (integers with leading zeroes)."
+                    },
+                    "name_space": {
+                        "description": "Name space for the specimen identifier.",
+                        "type": "string",
+                        "required": {
+                            "requirement": false
+                        },
+                        "example": ["UBERON"],
+                        "pattern": "^.*$",
+                        "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
+                    },
+                    "url": {
+                        "description": "URL to the specimen in the resource.",
+                        "type": "string",
+                        "required": {
+                            "requirement": false
+                        },
+                        "example": ["http://purl.obolibrary.org/obo/UBERON_0000178"],
+                        "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                        "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
+                    },
+                    "loinc_code": {
+                        "description": "Lab test ID associated with biomarker.",
+                        "type": "string",
+                        "required": {
+                            "requirement": false
+                        },
+                        "example": ["34519-9"],
+                        "pattern": "^\\d+-\\d$",
+                        "pattern_notes": "Matches on a value in the format of \"number-single number\"."
+                    }
+                }
+            },
+            "evidence": {
+                "description": "Evidence data tied to specific biomarker component data.",
+                "type": "array",
+                "required": {
+                    "requirement": true
+                },
+                "items": {
+                    "id": {
+                        "description": "Identifier for evidence.",
+                        "type": "string",
+                        "required": {
+                            "requirement": true 
+                        },
+                        "example": ["rs2345667", "10914713"],
+                        "pattern": "^.+$",
+                        "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                    },
+                    "database": {
+                        "description": "Database the evidence identifier relates to.",
+                        "type": "string",
+                        "required": {
+                            "requirement": true
+                        },
+                        "example": ["Clinvar", "Pubmed"],
+                        "pattern": "^.+$",
+                        "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                    },
+                    "url": {
+                        "description": "URL to the evidence in the resource.",
+                        "type": "string",
+                        "required": {
+                            "requirement": true
+                        },
+                        "example": ["http://purl.obolibrary.org/obo/UBERON_0000178"],
+                        "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                        "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
+                    },
+                    "tags": {
+                        "description": "Tags indicating the fields the evidence points to.",
+                        "type": "array",
+                        "required": {
+                            "requirement": true
+                        },
+                        "items": {
+                            "description": "Data the evidence links to.",
+                            "type": "string",
+                            "required": {
+                                "requirement": true
+                            },
+                            "pattern": "^(biomarker|assessed_biomarker_entity|assessed_biomarker_entity_id|assessed_entity_type|specimen:.*|loinc:.*|condition|exposure_agent)$",
+                            "pattern_notes": "Matches on \"biomarker\", \"assessed_biomarker_entity\", \"assessed_biomarker_entity_id\", \"assessed_entity_type\", \"specimen:<string>\", \"loinc:<string>\", \"condition\", \"exposure_agent\"."
+                        }
+                    }
+                }
+            }   
+        }
     },
     "best_biomarker_role": {
         "description": "Category of BEST biomarker.",
