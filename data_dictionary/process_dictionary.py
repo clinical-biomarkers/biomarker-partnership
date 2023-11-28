@@ -7,10 +7,9 @@ Usage: python process_dictionary.py [options]
     Positional arguments:
         file_path           filepath of the data dictionary JSON to convert
 
-    Optional arguments 
+    Optional arguments: 
         -h --help           show the help message and exit
         -v --version        show current version number and exit
-
 '''
 
 import csv 
@@ -197,19 +196,25 @@ def generate_schema_json(filepath: str) -> None:
     # iterate through top level keys
     for key in data.keys():
         
-        # grab property metadata
+        # parse property metadata
         prop_description = data[key]['description']
-        prop_type = data[key]['type']
-        if prop_type != 'object' and prop_type != 'array':
-            prop_example = data[key]['example']
-            prop_pattern = data[key]['pattern']
+        prop_type = [data[key]['type']]
         prop_required = data[key]['required']['requirement'] 
+        # if conditional requirement, parse conditional and exclusion fields
         if prop_required == 'conditional':
             prop_conditionals = data[key]['required']['conditionals']
             prop_exclusions = data[key]['required']['exclusions']
-        
-        # create property schema portion
-        # TODO 
+        # if top level property, parse examples and pattern  
+        if prop_type != 'object' and prop_type != 'array':
+            prop_example = data[key]['example']
+            prop_pattern = data[key]['pattern']
+            # create top level property schema portion
+            property_schema = {
+                'title': key, 
+                'description': prop_description,
+                'type': [prop_type, 'null'] if prop_required != True else prop_type,
+                'examples': prop_example
+            }
 
 def validate_filepath(filepath: str, mode: str) -> None:
     ''' Validates the filepaths for the user inputted source path and
@@ -241,7 +246,7 @@ def main() -> None:
     global _schema
 
     # grab configuration variables from config file  
-    with open('../conf.json') as f:
+    with open('../conf.json', 'r') as f:
         config = json.load(f)
         _version = config['version']
         _id_prefix = config[_CONF_KEY]['raw_url_prefix']
