@@ -37,11 +37,11 @@ There is also a notes section present in this databse and that includes extra/mi
 
 Based on the resource that was being studied there can be some variation in how the data was extracted, manipulted, and harmonized to fit the structre of the above figure. This repository will provide examples of this alonsgide the table generated and other resources needed to gain information/data for the biomarker.
 
-A sample skeleton JSON structure for the data model can be found [here](./supplementary_files/sample_data_model_structures/).
+A sample JSON structure for the data model can be found [here](./supplementary_files/sample_data_model_structures/).
 
 ## Workflow
 
-The general workflow is as described in the flowchart below. It starts with the most current data dictionary. The data dictionary can then be converted into a JSON schema format following the steps in the [generating a schema](#generating-a-schema) section. Once the current version's schema has been generated, you can validate your data files against the schema to ensure they conform to the latest data dictionary. Instructions for validation are in the [validating a data file against a schema](#validating-a-data-file-against-a-schema) section. 
+The general workflow is as described in the flowchart below. It starts with the most current data dictionary. The data dictionary can then be converted into a JSON schema format following the steps in the [generating a schema](./data_dictionary/README.md) documentation. Once the current version's schema has been generated, you can validate your data files against the schema to ensure they conform to the latest data dictionary. Instructions for validation are in the [validating a data file against a schema](./schema/README.md) documentation. 
 
 ```mermaid
 flowchart TD
