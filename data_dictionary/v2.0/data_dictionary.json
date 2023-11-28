@@ -187,17 +187,19 @@
                             "requirement": true
                         },
                         "items": {
-                            "description": "Data the evidence links to.",
-                            "type": "string",
-                            "required": {
-                                "requirement": true
-                            },
-                            "example": [
-                                "loinc_code:34519-9",
-                                "assessed_biomarker_entity"
-                            ],
-                            "pattern": "^(biomarker|assessed_biomarker_entity|assessed_biomarker_entity_id|assessed_entity_type|specimen:.*|loinc_code:.*|condition|exposure_agent)$",
-                            "pattern_notes": "Matches on \"biomarker\", \"assessed_biomarker_entity\", \"assessed_biomarker_entity_id\", \"assessed_entity_type\", \"specimen:[id]\", \"loinc_code:[code]\", \"condition\", \"exposure_agent\"."
+                            "tag": {
+                                "description": "Data the evidence links to.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": true
+                                },
+                                "example": [
+                                    "loinc_code:34519-9",
+                                    "assessed_biomarker_entity"
+                                ],
+                                "pattern": "^(biomarker|assessed_biomarker_entity|assessed_biomarker_entity_id|assessed_entity_type|specimen:.*|loinc_code:.*|condition|exposure_agent)$",
+                                "pattern_notes": "Matches on \"biomarker\", \"assessed_biomarker_entity\", \"assessed_biomarker_entity_id\", \"assessed_entity_type\", \"specimen:[id]\", \"loinc_code:[code]\", \"condition\", \"exposure_agent\"."
+                            }
                         }
                     }
                 }
@@ -500,18 +502,20 @@
                     "requirement": false
                 },
                 "items": {
-                    "description": "Data the evidence links to.",
-                    "type": "string",
-                    "required": {
-                        "requirement": true
-                    },
-                    "example": [
-                        "loinc_code:34519-9:0",
-                        "assessed_biomarker_entity:0",
-                        "condition"
-                    ],
-                    "pattern": "^(biomarker:\\d+|assessed_biomarker_entity:\\d+|assessed_biomarker_entity_id:\\d+|assessed_entity_type:\\d+|specimen:.+:\\d+|loinc_code:.+:\\d+|condition|exposure_agent)$",
-                    "pattern_notes": "Matches on \"biomarker:[index]\", \"assessed_biomarker_entity:[index]\", \"assessed_biomarker_entity_id:[index]\", \"assessed_entity_type:[index]\", \"specimen:[id]:[index]\", \"loinc_code:[code]:[index]\", \"condition\", \"exposure_agent\"."
+                    "tag": {
+                        "description": "Data the evidence links to.",
+                        "type": "string",
+                        "required": {
+                            "requirement": true
+                        },
+                        "example": [
+                            "loinc_code:34519-9:0",
+                            "assessed_biomarker_entity:0",
+                            "condition"
+                        ],
+                        "pattern": "^(biomarker:\\d+|assessed_biomarker_entity:\\d+|assessed_biomarker_entity_id:\\d+|assessed_entity_type:\\d+|specimen:.+:\\d+|loinc_code:.+:\\d+|condition|exposure_agent)$",
+                        "pattern_notes": "Matches on \"biomarker:[index]\", \"assessed_biomarker_entity:[index]\", \"assessed_biomarker_entity_id:[index]\", \"assessed_entity_type:[index]\", \"specimen:[id]:[index]\", \"loinc_code:[code]:[index]\", \"condition\", \"exposure_agent\"."
+                    }
                 }
             }
         }
@@ -572,92 +576,92 @@
                 "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
             },
             "reference": {
-                "description": "### PLACEHOLDER ###",
-                "type": "object",
+                "description": "The evidence for the data.",
+                "type": "array",
                 "required": {
-                    "requirement": "### PLACEHOLDER ###"
+                    "requirement": true
                 },
                 "items": {
-                    "id": {
-                        "description": "### PLACEHOLDER ###",
-                        "type": "### PLACEHOLDER ###",
-                        "required": {
-                            "requirement": "### PLACEHOLDER ###"
-                        },
-                        "example": [
-                            "### PLACEHOLDER ###"
-                        ],
-                        "pattern": "### PLACEHOLDER ###",
-                        "pattern_notes": "### PLACEHOLDER ###"
-                    },
                     "type": {
-                        "description": "### PLACEHOLDER ###",
-                        "type": "### PLACEHOLDER ###",
+                        "description": "The reference data source.",
+                        "type": "string",
                         "required": {
-                            "requirement": "### PLACEHOLDER ###"
+                            "requirement": true
                         },
                         "example": [
-                            "### PLACEHOLDER ###"
+                            "PubMed"
                         ],
-                        "pattern": "### PLACEHOLDER ###",
-                        "pattern_notes": "### PLACEHOLDER ###"
+                        "pattern": "^.+$",
+                        "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                    },
+                    "id": {
+                        "description": "Identifier for the reference data.",
+                        "type": "string",
+                        "required": {
+                            "requirement": true
+                        },
+                        "example": [
+                            "10914713"
+                        ],
+                        "pattern": "^.+$",
+                        "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
                     },
                     "url": {
-                        "description": "### PLACEHOLDER ###",
-                        "type": "### PLACEHOLDER ###",
+                        "description": "Link to the reference data.",
+                        "type": "string",
                         "required": {
-                            "requirement": "### PLACEHOLDER ###"
+                            "requirement": true
                         },
                         "example": [
-                            "### PLACEHOLDER ###"
+                            "https://glygen.org/publication/PubMed/10914713"
                         ],
-                        "pattern": "### PLACEHOLDER ###",
-                        "pattern_notes": "### PLACEHOLDER ###"
+                        "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                        "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
                     }
                 }
             },
             "evidence": {
-                "description": "### PLACEHOLDER ###",
+                "description": "Links to the data to the reference.",
                 "type": "array",
                 "required": {
-                    "requirement": "### PLACEHOLDER ###"
+                    "requirement": true
                 },
                 "items": {
                     "id": {
-                        "description": "### PLACEHOLDER ###",
-                        "type": "### PLACEHOLDER ###",
+                        "description": "Identifier for the evidence.",
+                        "type": "string",
                         "required": {
-                            "requirement": "### PLACEHOLDER ###"
+                            "requirement": true
                         },
                         "example": [
-                            "### PLACEHOLDER ###"
+                            "GLY_000625"
                         ],
-                        "pattern": "### PLACEHOLDER ###",
-                        "pattern_notes": "### PLACEHOLDER ###"
+                        "pattern": "^.+$",
+                        "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
                     },
                     "database": {
-                        "description": "### PLACEHOLDER ###",
-                        "type": "### PLACEHOLDER ###",
+                        "description": "Database name for the evidence.",
+                        "type": "string",
                         "required": {
-                            "requirement": "### PLACEHOLDER ###"
+                            "requirement": true
                         },
                         "example": [
-                            "### PLACEHOLDER ###"
+                            "GlyGen"
                         ],
-                        "pattern": "### PLACEHOLDER ###",
-                        "pattern_notes": "### PLACEHOLDER ###"
+                        "pattern": "^.+$",
+                        "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
                     },
                     "url": {
-                        "description": "### PLACEHOLDER ###",
-                        "type": "### PLACEHOLDER ###",
+                        "description": "Link to the evidence.",
+                        "type": "string",
                         "required": {
-                            "requirement": "### PLACEHOLDER ###"
+                            "requirement": true
                         },
                         "example": [
-                            "### PLACEHOLDER ###"
+                            "https://data.glygen.org/GLY_000625"
                         ],
-                        "pattern": "### PLACEHOLDER ###",
-                        "pattern_notes": "### PLACEHOLDER ###"
+                        "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                        "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
                     }
                 }
             }
