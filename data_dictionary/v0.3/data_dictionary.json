@@ -26,22 +26,54 @@
                         "requirement": true
                     },
                     "example": [
-                        "presence of rs1800562 mutation"
+                        "increased IL6 level"
                     ],
                     "pattern": "^.+$",
                     "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
                 },
                 "assessed_biomarker_entity": {
-                    "description": "Biomarker entity and common name/gene symbol/short name.",
-                    "type": "string",
+                    "description": "Data for the assessed biomarker entity.",
+                    "type": "object",
                     "required": {
                         "requirement": true
                     },
-                    "example": [
-                        "rs1800562 mutation in hereditary haemochromatosis protein (hereditary hemochromatosis protein) (HFE)"
-                    ],
-                    "pattern": "^.+$",
-                    "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                    "properties": {
+                        "recommended_name": {
+                            "description": "The recommended name for the assessed biomarker entity.",
+                            "type": "string",
+                            "required": {
+                                "requirement": true 
+                            },
+                            "example": [
+                                "Interleukin-6 (IL6)"
+                            ],
+                            "pattern": "^.+$",
+                            "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                        },
+                        "synonyms": {
+                            "description": "List of synonyms the assessed biomarker entity might have.",
+                            "type": "array",
+                            "required": {
+                                "requirement": false
+                            },
+                            "items": [
+                                {
+                                    "synonym": {
+                                        "description": "A single synonym for the assessed biomarker identity.",
+                                        "type": "string",
+                                        "required": {
+                                            "requirement": false
+                                        },
+                                        "example": [
+                                            "CDF"
+                                        ],
+                                        "pattern": "^.*$",
+                                        "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
+                                    }
+                                }
+                            ]
+                        }
+                    }
                 },
                 "assessed_biomarker_entity_id": {
                     "description": "Accession or identifier that matches the biomarker term.",
