@@ -182,8 +182,8 @@
                         }
                     ]    
                 },
-                "evidence": {
-                    "description": "Evidence data tied to specific biomarker component data.",
+                "evidence_source": {
+                    "description": "List of evidence sources tied to specific biomarker component data.",
                     "type": "array",
                     "required": {
                         "requirement": true
@@ -191,12 +191,12 @@
                     "items": [
                         {
                             "id": {
-                                "description": "Identifier for evidence.",
+                                "description": "Identifier for the evidence source.",
                                 "type": "string",
                                 "required": {
                                     "requirement": true
                                 },
-                                "domain": "Accepts a string that represents the identifier for the evidence within the evidence's corresponding database.",
+                                "domain": "Accepts a string that represents the identifier for the evidence source within the corresponding database.",
                                 "example": [
                                     "rs2345667",
                                     "10914713"
@@ -205,7 +205,7 @@
                                 "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
                             },
                             "database": {
-                                "description": "Database the evidence identifier relates to.",
+                                "description": "Database the evidence source identifier relates to.",
                                 "type": "string",
                                 "required": {
                                     "requirement": true
@@ -231,7 +231,7 @@
                                 "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
                                 "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
                             },
-                            "notes": {
+                            "evidence_list": {
                                 "description": "Free text relating to how the evidence supports the biomarker.",
                                 "type": "array",
                                 "required": {
@@ -239,13 +239,13 @@
                                 },
                                 "items": [
                                     {
-                                        "note": {
-                                            "description": "A single free text field about or from the evidence to support the biomarker.",
+                                        "evidence": {
+                                            "description": "A single free text field about or from the evidence source to support the biomarker.",
                                             "type": "string",
                                             "required": {
                                                 "requirement": false
                                             },
-                                            "domain": "Accepts a string that describes or is directly extracted from the evidence.",
+                                            "domain": "Accepts a string that describes or is directly extracted from the evidence source.",
                                             "example": [
                                                 "In multivariate analysis, however, the only two significant prognostic factors were EOD and IL-6. These results indicate that the serum IL-6 level is a significant prognostic factor for prostate cancer as well as EOD."
                                             ],
@@ -549,8 +549,8 @@
             }
         }
     },
-    "evidence": {
-        "description": "Evidence tied to specific biomarker data.",
+    "evidence_source": {
+        "description": "Evidence sources for the biomarker.",
         "type": "array",
         "required": {
             "requirement": false
@@ -598,7 +598,7 @@
                     "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
                     "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
                 },
-                "notes": {
+                "evidence_list": {
                     "description": "Free text relating to how the evidence supports the biomarker.",
                     "type": "array",
                     "required": {
@@ -606,7 +606,7 @@
                     },
                     "items": [
                         {
-                            "note": {
+                            "evidence": {
                                 "description": "A single free text field about or from the evidence to support the biomarker.",
                                 "type": "string",
                                 "required": {
@@ -761,7 +761,7 @@
                         }
                     ]
                 },
-                "evidence": {
+                "evidence_source": {
                     "description": "Links to the data to the reference.",
                     "type": "array",
                     "required": {

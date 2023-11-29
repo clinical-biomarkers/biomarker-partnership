@@ -22,14 +22,14 @@
                     "loinc_code": ""
                 }
             ],
-            "evidence": [
+            "evidence_source": [
                 {
                     "id": "",
                     "database": "",
                     "url": "",
-                    "notes": [
+                    "evidence_list": [
                         {
-                            "note": ""
+                            "evidence": ""
                         }
                     ],
                     "tags": [
@@ -70,14 +70,14 @@
             "url": ""
         }
     },
-    "evidence": [
+    "evidence_source": [
         {
             "id": "",
             "database": "",
             "url": "",
-            "notes": [
+            "evidence_list": [
                 {
-                    "note": ""
+                    "evidence": ""
                 }
             ],
             "tags": [
@@ -100,7 +100,7 @@
                     "url": ""
                 }
             ],
-            "evidence": [
+            "evidence_source": [
                 {
                     "id": "",
                     "database": "",
