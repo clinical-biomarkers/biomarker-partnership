@@ -62,6 +62,7 @@ def generate_leaf_metadata() -> dict:
         'description': PLACEHOLDER,
         'type': PLACEHOLDER,
         'required': {'requirement': PLACEHOLDER},
+        'domain': PLACEHOLDER,
         'example': [PLACEHOLDER],
         'pattern': PLACEHOLDER,
         'pattern_notes': PLACEHOLDER
