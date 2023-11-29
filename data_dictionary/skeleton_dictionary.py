@@ -82,7 +82,7 @@ def generate_skeleton_for_value(value: str | dict | list) -> dict:
     # if value is a list, check if it contains a dict or a primitive 
     elif isinstance(value, list):
         if value and isinstance(value[0], dict):
-            return generate_skeleton_for_value(value[0])
+            return [generate_skeleton_for_value(value[0])]
         else:
             return generate_leaf_metadata()
     # if primitive value, generate leaf metadata
@@ -121,7 +121,7 @@ def wrap_with_metadata(key: str, value: str | dict | list) -> dict:
             'description': PLACEHOLDER,
             'type': 'object',
             'required': {'requirement': PLACEHOLDER},
-            'items': generate_skeleton_for_value(value)
+            'properties': generate_skeleton_for_value(value)
         }
     # if a leaf value, generate the metadata
     else:
