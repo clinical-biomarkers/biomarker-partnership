@@ -5,6 +5,7 @@
         "required": {
             "requirement": false
         },
+        "domain": "Unique identifier assigned by backend logic based on the core fields as defined in the data model, not user passed or assigned.",
         "example": [
             "A0034"
         ],
@@ -25,6 +26,7 @@
                     "required": {
                         "requirement": true
                     },
+                    "domain": "Accepts a string that represents the change in the observed entity.",
                     "example": [
                         "increased IL6 level"
                     ],
@@ -44,6 +46,7 @@
                             "required": {
                                 "requirement": true 
                             },
+                            "domain": "Accepts a string that represents the vernacular common name/gene symbol/short name for the biomarker entity.",
                             "example": [
                                 "Interleukin-6 (IL6)"
                             ],
@@ -59,11 +62,12 @@
                             "items": [
                                 {
                                     "synonym": {
-                                        "description": "A single synonym for the assessed biomarker identity.",
+                                        "description": "A single synonym for the assessed biomarker entity.",
                                         "type": "string",
                                         "required": {
                                             "requirement": false
                                         },
+                                        "domain": "Accepts a string that represents one synonym for the biomarker entity common name/gene symbol/short name.",
                                         "example": [
                                             "CDF"
                                         ],
@@ -81,8 +85,9 @@
                     "required": {
                         "requirement": true
                     },
+                    "domain": "Accepts a string in the format of \"[namespace or source]:[identifier or accession]\", representing the source/namespace/database and the corresponding identifier.",
                     "example": [
-                        "dbSNP:rs1800562"
+                        "UPKB:P05231"
                     ],
                     "pattern": "^.+:.+$",
                     "pattern_notes": "Matches on a value in the format of \"string:string\", not including empty strings."
@@ -93,8 +98,10 @@
                     "required": {
                         "requirement": true
                     },
+                    "domain": "Accepts a string that describes the entity type of the biomarker.",
                     "example": [
-                        "gene"
+                        "gene",
+                        "protein"
                     ],
                     "pattern": "^.+$",
                     "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
@@ -113,6 +120,7 @@
                                 "required": {
                                     "requirement": false
                                 },
+                                "domain": "Accepts a string that represents the specimen tested.",
                                 "example": [
                                     "blood"
                                 ],
@@ -125,6 +133,7 @@
                                 "required": {
                                     "requirement": false
                                 },
+                                "domain": "Accepts a string that represents the specimen identifier within the namespace.",
                                 "example": [
                                     "0000178"
                                 ],
@@ -137,6 +146,7 @@
                                 "required": {
                                     "requirement": false
                                 },
+                                "domain": "Accepts a string that represents the namespace for the specimen identifier.",
                                 "example": [
                                     "UBERON"
                                 ],
@@ -149,6 +159,7 @@
                                 "required": {
                                     "requirement": false
                                 },
+                                "domain": "Accepts a string that represents the direct URL to the specimen identifier within the namespace.",
                                 "example": [
                                     "http://purl.obolibrary.org/obo/UBERON_0000178"
                                 ],
@@ -161,6 +172,7 @@
                                 "required": {
                                     "requirement": false
                                 },
+                                "domain": "Accepts a string that represents the loinc code related to the specimen.",
                                 "example": [
                                     "34519-9"
                                 ],
@@ -184,6 +196,7 @@
                                 "required": {
                                     "requirement": true
                                 },
+                                "domain": "Accepts a string that represents the identifier for the evidence within the evidence's corresponding database.",
                                 "example": [
                                     "rs2345667",
                                     "10914713"
@@ -197,6 +210,7 @@
                                 "required": {
                                     "requirement": true
                                 },
+                                "domain": "Accepts a string that represents the database the evidence comes from.",
                                 "example": [
                                     "Clinvar",
                                     "Pubmed"
@@ -210,11 +224,36 @@
                                 "required": {
                                     "requirement": true
                                 },
+                                "domain": "Accepts a string that represents the direct URL to the evidence.",
                                 "example": [
-                                    "http://purl.obolibrary.org/obo/UBERON_0000178"
+                                    "https://glygen.org/publication/PubMed/10914713"
                                 ],
                                 "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
                                 "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
+                            },
+                            "notes": {
+                                "description": "Free text relating to how the evidence supports the biomarker.",
+                                "type": "array",
+                                "required": {
+                                    "requirement": false
+                                },
+                                "items": [
+                                    {
+                                        "note": {
+                                            "description": "A single free text field about or from the evidence to support the biomarker.",
+                                            "type": "string",
+                                            "required": {
+                                                "requirement": false
+                                            },
+                                            "domain": "Accepts a string that describes or is directly extracted from the evidence.",
+                                            "example": [
+                                                "In multivariate analysis, however, the only two significant prognostic factors were EOD and IL-6. These results indicate that the serum IL-6 level is a significant prognostic factor for prostate cancer as well as EOD."
+                                            ],
+                                            "pattern": "^.*$",
+                                            "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
+                                        }
+                                    }
+                                ]
                             },
                             "tags": {
                                 "description": "Tags indicating the fields the evidence points to.",
@@ -230,6 +269,7 @@
                                             "required": {
                                                 "requirement": true
                                             },
+                                            "domain": "A predefined tag that links the evidence to a specific piece of the data. For singular value fields, the tag can be the field name such as \"biomarker\", \"assessed_biomarker_entity\", \"assessed_biomarker_entity_id\", \"assessed_entity_type\", \"condition\", or \"exposure_agent\". For linking to non-singular values such as \"specimen\" and \"loinc_code\", tags should be in the format of \"specimen:[id]\" and \"loinc_code:[code]\".",
                                             "example": [
                                                 "loinc_code:34519-9",
                                                 "assessed_biomarker_entity"
@@ -252,6 +292,7 @@
         "required": {
             "requirement": true
         },
+        "domain": "Accepts a string that represents one of the BEST categories as defined by the FDA-NIH Biomarker Working Group: risk, diagnostic, prognostic, monitoring, predictive, reponse, safety.",
         "example": [
             "risk",
             "diagnostic"
@@ -276,6 +317,7 @@
                 "required": {
                     "requirement": true
                 },
+                "domain": "Accepts a string in the format of \"[database]:[identifier or accession]\", representing the source/namespace/database and the corresponding identifier for the condition.",
                 "example": [
                     "DOID:1612"
                 ],
@@ -295,11 +337,12 @@
                         "required": {
                             "requirement": true
                         },
+                        "domain": "Accepts a string in the format of \"[database]:[identifier or accession]\", representing the source/namespace/database and the corresponding identifier for the condition.",
                         "example": [
                             "DOID:1612"
                         ],
-                        "pattern": "^.+$",
-                        "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                        "pattern": "^.+:.+$",
+                        "pattern_notes": "Matches on a value in the format of \"string:string\", not including empty strings."
                     },
                     "name": {
                         "description": "Name of the condition.",
@@ -307,6 +350,7 @@
                         "required": {
                             "requirement": true
                         },
+                        "domain": "Accepts a string that represents the recommended name for the condition.",
                         "example": [
                             "breast cancer"
                         ],
@@ -319,11 +363,12 @@
                         "required": {
                             "requirement": false
                         },
+                        "domain": "Accepts a string that describes the condition.",
                         "example": [
                             "A thoracic cancer that originates in the mammary gland."
                         ],
-                        "pattern": "^.+$",
-                        "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                        "pattern": "^.*$",
+                        "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
                     },
                     "resource": {
                         "description": "Resource the condition is defined in.",
@@ -331,6 +376,7 @@
                         "required": {
                             "requirement": true
                         },
+                        "domain": "Accepts a string that represents the namespace/database/resource the condition is defined in.",
                         "example": [
                             "DOID"
                         ],
@@ -343,6 +389,7 @@
                         "required": {
                             "requirement": true
                         },
+                        "domain": "Accepts a string that represents the direct URL to the condition.",
                         "example": [
                             "https://disease-ontology.org/term/DOID:1612/"
                         ],
@@ -365,6 +412,7 @@
                             "required": {
                                 "requirement": true
                             },
+                            "domain": "Accepts a string in the format of \"[database]:[identifier or accession]\", representing the source/namespace/database and the corresponding identifier for the condition synonym.",
                             "example": ["DOID:1612"],
                             "pattern": "^.+$",
                             "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
@@ -375,6 +423,7 @@
                             "required": {
                                 "requirement": true
                             },
+                            "domain": "Accepts a string that represents the name for the condition synonym.",
                             "example": [
                                 "breast tumor"
                             ],
@@ -387,6 +436,7 @@
                             "required": {
                                 "requirement": true
                             },
+                            "domain": "Accepts a string that represents the namespace/database/resource the condition synonym is defined in.",
                             "example": [
                                 "DOID"
                             ],
@@ -399,6 +449,7 @@
                             "required": {
                                 "requirement": true
                             },
+                            "domain": "Accepts a string that represents the direct URL to the condition synonym.",
                             "example": [
                                 "https://disease-ontology.org/term/DOID:1612/"
                             ],
@@ -427,6 +478,7 @@
                 "required": {
                     "requirement": true
                 },
+                "domain": "Accepts a string that represents the identifier or accession for the exposure agent.",
                 "example": [],
                 "pattern": "^.+$",
                 "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
@@ -444,6 +496,7 @@
                         "required": {
                             "requirement": true
                         },
+                        "domain": "Accepts a string that represents the identifier or accession for the exposure agent.",
                         "example": [],
                         "pattern": "^.+$",
                         "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
@@ -454,6 +507,7 @@
                         "required": {
                             "requirement": true
                         },
+                        "domain": "Accepts a string that represents the name of the exposure agent.",
                         "example": [],
                         "pattern": "^.+$",
                         "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
@@ -464,6 +518,7 @@
                         "required": {
                             "requirement": false
                         },
+                        "domain": "Accepts a string that describes the exposure_agent.",
                         "example": [],
                         "pattern": "^.+$",
                         "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
@@ -474,6 +529,7 @@
                         "required": {
                             "requirement": true
                         },
+                        "domain": "Accepts a string that represents the namespace/database/resource the exposure agent is defined in.",
                         "example": [],
                         "pattern": "^.+$",
                         "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
@@ -484,6 +540,7 @@
                         "required": {
                             "requirement": true
                         },
+                        "domain": "Accepts a string that represents the direct URL to the exposure agent.",
                         "example": [],
                         "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
                         "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
@@ -506,6 +563,7 @@
                     "required": {
                         "requirement": true
                     },
+                    "domain": "Accepts a string that represents the identifier for the evidence within the evidence's corresponding database.",
                     "example": [
                         "rs2345667",
                         "10914713"
@@ -519,6 +577,7 @@
                     "required": {
                         "requirement": true
                     },
+                    "domain": "Accepts a string that represents the database the evidence comes from.",
                     "example": [
                         "Clinvar",
                         "Pubmed"
@@ -532,11 +591,36 @@
                     "required": {
                         "requirement": true
                     },
+                    "domain": "Accepts a string that represents the direct URL to the evidence.",
                     "example": [
-                        "http://purl.obolibrary.org/obo/UBERON_0000178"
+                        "https://glygen.org/publication/PubMed/10914713"
                     ],
                     "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
                     "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
+                },
+                "notes": {
+                    "description": "Free text relating to how the evidence supports the biomarker.",
+                    "type": "array",
+                    "required": {
+                        "requirement": false
+                    },
+                    "items": [
+                        {
+                            "note": {
+                                "description": "A single free text field about or from the evidence to support the biomarker.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": false
+                                },
+                                "domain": "Accepts a string that describes or is directly extracted from the evidence.",
+                                "example": [
+                                    "In multivariate analysis, however, the only two significant prognostic factors were EOD and IL-6. These results indicate that the serum IL-6 level is a significant prognostic factor for prostate cancer as well as EOD."
+                                ],
+                                "pattern": "^.*$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
+                            }
+                        }
+                    ]
                 },
                 "tags": {
                     "description": "Tags indicating the fields the evidence points to.",
@@ -552,6 +636,7 @@
                                 "required": {
                                     "requirement": true
                                 },
+                                "domain": "A predefined tag that links the evidence to a specific piece of the data. For singular value fields, the tag can be just the field name such as \"condition\", or \"exposure_agent\". For singular value fields within the biomarker component, the tag should be formatted with the indices as well, such as \"biomarker[index]\", \"assessed_biomarker_entity[index]\", \"assessed_biomarker_entity_id[index]\", or \"assessed_entity_type[index]\". For linking to non-singular values within the biomarker componenet such as \"specimen\" and \"loinc_code\", tags should be in the format of \"specimen:[id]:[index]\" and \"loinc_code:[code]:[index]\".",
                                 "example": [
                                     "loinc_code:34519-9:0",
                                     "assessed_biomarker_entity:0",
@@ -580,6 +665,7 @@
                     "required": {
                         "requirement": true
                     },
+                    "domain": "Accepts a string that denotes the publication's title.",
                     "example": [
                         "Serum interleukin 6 as a prognostic factor in patients with prostate cancer."
                     ],
@@ -592,6 +678,7 @@
                     "required": {
                         "requirement": true
                     },
+                    "domain": "Accepts a string that denotes the publishing journal.",
                     "example": [
                         "Clinical cancer research : an official journal of the American Association for Cancer Research"
                     ],
@@ -604,6 +691,7 @@
                     "required": {
                         "requirement": true
                     },
+                    "domain": "Accepts a string that denotes all the publication's authors.",
                     "example": [
                     "Nakashima J, Tachibana M, Horiguchi Y, Oya M, Ohigashi T, Asakura H, Murai M" 
                     ],
@@ -616,6 +704,7 @@
                     "required": {
                         "requirement": true
                     },
+                    "domain": "Accepts a string that denotes the publication year.",
                     "example": [
                         "2020"
                     ],
@@ -636,6 +725,7 @@
                                 "required": {
                                     "requirement": true
                                 },
+                                "domain": "Accepts a string that represents the referenced publication's source.",
                                 "example": [
                                     "PubMed"
                                 ],
@@ -648,6 +738,7 @@
                                 "required": {
                                     "requirement": true
                                 },
+                                "domain": "Accepts a string that representes the publication's identifier within the publishing source.",
                                 "example": [
                                     "10914713"
                                 ],
@@ -660,6 +751,7 @@
                                 "required": {
                                     "requirement": true
                                 },
+                                "domain": "Accepts a string that represents the direct URL to the publication.",
                                 "example": [
                                     "https://glygen.org/publication/PubMed/10914713"
                                 ],
@@ -683,6 +775,7 @@
                                 "required": {
                                     "requirement": true
                                 },
+                                "domain": "Accepts a string that represents the evidence identifier linking the data to the reference publication.",
                                 "example": [
                                     "GLY_000625"
                                 ],
@@ -695,6 +788,7 @@
                                 "required": {
                                     "requirement": true
                                 },
+                                "domain": "Accepts a string that represents the evidence database name.",
                                 "example": [
                                     "GlyGen"
                                 ],
@@ -707,6 +801,7 @@
                                 "required": {
                                     "requirement": true
                                 },
+                                "domain": "Accepts a string that represents the direct URL to the evidence.",
                                 "example": [
                                     "https://data.glygen.org/GLY_000625"
                                 ],
