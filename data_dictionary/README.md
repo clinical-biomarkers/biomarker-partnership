@@ -17,8 +17,8 @@ The general workflow for generating a full JSON schema from the data dictionary 
 ```mermaid
 flowchart TD  
     A[Sample Overview of the JSON Data Model] --> B{Process to Skeleton Data Dictionary\nskeleton_dictionary.py}
-    B --> C{Fill in Metadata}
-    C --> D[Skeleton Data Dictionary Output]
+    B --> C[Skeleton Data Dictionary Output]
+    C --> D{Fill in Metadata}
     D --> E{Generate JSON Schema\nprocess_dictionary.py}
 ```
 
