@@ -207,7 +207,7 @@ Children elements on the same level can also be conditionally required based on 
 
 ## Generating a Schema
 
-The `process_dictionary.py` script takes as input the data dictionary
+The `process_dictionary.py` script takes as input the data dictionary JSON and produces a JSON schema.
 
 If applicable, in the project root directory, update the `conf.json` file with the updated version number. 
 
