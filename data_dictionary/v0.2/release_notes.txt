@@ -1,4 +1,4 @@
-v1.1 Release Notes
+v0.2 Release Notes
 
 Data Changes:
 - The "main_x_ref" field has been renamed to "assessed_biomarker_entity_ID".
