@@ -20,6 +20,7 @@ flowchart TD
     B --> C[Skeleton Data Dictionary Output]
     C --> D{Fill in Metadata}
     D --> E{Generate JSON Schema\nprocess_dictionary.py}
+    E --> F[JSON Schema]
 ```
 
 ## Generating a Skeleton Data Dictionary 
