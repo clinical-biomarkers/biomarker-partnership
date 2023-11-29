@@ -7,12 +7,12 @@ The goal of this project is to develop a community-based biomarker-centric data 
     - [Scope and Goal of the Project](#scope-and-goal-of-the-project)
     - [Initial Biomarker Database Curation](#initial-biomarker-database-curation)
 - [Biomarker Defition](#biomarker-definition)
-- [Usage](#usage)
-    - [Workflow](#workflow)
+- [Workflow](#workflow)
+- [Usage Guides](#usage-guides)
     - [General Notes](#general-notes)
     - [Start Environment](#starting-up-the-virtual-environment)
-    - [Schema Generation](#generating-a-schema)
-    - [Data Validation](#validating-a-data-file-against-a-schema)
+    - [Schema Generation](/data_dictionary/README.md)
+    - [Data Validation](/schema/README.md)
 - [Repository Structure](#repository-structure)
 - [References](#references)
 
@@ -37,19 +37,25 @@ There is also a notes section present in this databse and that includes extra/mi
 
 Based on the resource that was being studied there can be some variation in how the data was extracted, manipulted, and harmonized to fit the structre of the above figure. This repository will provide examples of this alonsgide the table generated and other resources needed to gain information/data for the biomarker.
 
-## Usage
+A sample JSON structure for the data model can be found [here](./supplementary_files/sample_data_model_structures/).
 
-### Workflow
+## Workflow
 
-The general workflow is as described in the flowchart below. It starts with the most current data dictionary. The data dictionary can then be converted into a JSON schema following the steps in the [generating a schema](#generating-a-schema) section. Once the current version's schema has been generated, you can validate your data files against the schema to ensure they conform to the latest data dictionary. Instructions for validation are in the [validating a data file against a schema](#validating-a-data-file-against-a-schema) section. 
+The general workflow is as described in the flowchart below. It starts with the most current data dictionary. The data dictionary can then be converted into a JSON schema format following the steps in the [generating a schema](./data_dictionary/README.md) documentation. Once the current version's schema has been generated, you can validate your data files against the schema to ensure they conform to the latest data dictionary. Instructions for validation are in the [validating a data file against a schema](./schema/README.md) documentation. 
 
 ```mermaid
 flowchart TD
-    A[Data Dictionary] --> B{Generate JSON Schema}
+    A[Data Dictionary] --> B{Generate JSON Schema\nprocess_dictionary.py}
     B --> D
-    C[Data File] --> D{Validate Data File}
+    C[Data File] --> D{Validate Data File\nvalidate_data.py}
     D --> E[Log File Output]
+    D --> F[Incorporate Into MongoDB]
+    F --> G[Generate RDF Triples for Virtuoso]
 ```
+
+## Usage Guides 
+
+The documentation for generating the JSON schema can be found [here](./data_dictionary/README.md). The documentation for validating data against the schema can be found [here](./schema/README.md).
 
 ### General Notes
 
@@ -83,66 +89,6 @@ Then install the project dependencies using:
 pip install -r requirements.txt
 ```
 
-### Generating a Schema
-
-If applicable, in the project root directory, update the `conf.json` file with the updated version number. 
-
-Make sure the corresponding schema directories exist prior to running `process_dictionary.py`. 
-
-While inside the project root directory:
-
-```bash
-mkdir schema/<VERSION>
-```
-
-The `process_dictionary.py` can take these arguments:
-
-```
-Positional arguments:
-    file_path           filepath of the data dictionary TSV to convert
-
-Optional arguments 
-    -h --help           show the help message and exit
-    -v --version        show current version number and exit
-```
-
-Move your current working directory to `data_dictionary/` and run the `process_dictonary.py` script passing in the filepath to the data dictionary TSV you want to process. 
-
-```bash
-cd data_dictionary
-python process_dictionary.py <FILEPATH/TO/DICTIONARY>
-```
-
-### Validating a Data File Against a Schema
-
-If applicable, in the project root directory, update the `conf.json` file with the updated version number. 
-
-In the `schema/` directory, the `validate_data.py` script can take multiple input arguments: 
-
-```
-Positional arguments:
-    data_filepath       filepath of the input data file to validate, accepts TSV or CSV
-    schema_filepath     filepath to the schema file to validate against
-
-Optional arguments:
-    -o --output         whether to save the intermediate json (store_true argument)
-    -c --chunk          chunk size to process the source data
-    -h --help           show the help message and exit
-    -v --version        show current version number and exit
-```
-
-The `-o` flag is a `store_true` argument, meaning just the presence of the flag will set the value to `True`. By omitting it, it will default to `False`. If set to `True`, by default the intermediate json will be saved in the `home/intermediate_data/<VERSION>/` directory (as specified in `conf.json`). If the `output` argument is passed, make sure this directory exists. 
-
-If processing a potentially very large source data file, the `-c` flag can be set to process the source data file in chunks. This can help prevent running out of system memory. 
-
-The script also expects the `home/logs/` directory to exist. This is where the output logs will be dumped. 
-
-Validating a file schema (without saving the intermediate JSON or processing in chunks):
-
-```bash
-python validate_schema.py <FILEPATH/TO/SOURCE/DATA> <FILEPATH/TO/SCHEMA>
-```
-
 ## Repository Structure 
 
 | Directory             | Description                                                                           |
@@ -151,7 +97,7 @@ python validate_schema.py <FILEPATH/TO/SOURCE/DATA> <FILEPATH/TO/SCHEMA>
 | `mapping_data`        | Contains some supporting data that can be used to map contextual data to the biomarkers.   |
 | `schema`              | Contains the validation JSON schemas derived from the data dictonary.                 |
 | `src`                 | Contains the scripts used for data extraction.                                                         |
-| `supplementary_files` | Supplementary documents for the project.                                              | 
+| `supplementary_files` | Supplementary files for the project.                                              | 
 
 ## References
 

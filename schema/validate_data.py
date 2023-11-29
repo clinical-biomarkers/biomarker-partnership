@@ -4,7 +4,7 @@
 Usage: python validate_data.py [options]
 
     Positional arguments:
-        data_filepath       filepath of the input data file to validate (accepts TSV or CSV)
+        data_filepath       filepath of the input data file to validate (accepts tab delimited tsv or txt files or JSON)
         schema_filepath     filepath to the schema file to validate against
     
     Optional arguments
@@ -40,10 +40,10 @@ def user_args(intermediate_path: str = None) -> None:
         usage = 'python validate_data.py [options]'
     )
 
-    parser.add_argument('data_filepath', help = 'filepath of the input file to validate (TSV or CSV)')
-    parser.add_argument('schema_filepath', help = 'filepath of the schema file to validate against (JSON)')
-    parser.add_argument('-o', '--output', action = 'store_true', help = 'whether to save the intermediate json (store_true argument)')
-    parser.add_argument('-c', '--chunk', action = 'store', help = 'chunk size to process the source data')
+    parser.add_argument('data_filepath', help = 'filepath of the input file to validate (tsv, txt, or json)')
+    parser.add_argument('schema_filepath', help = 'filepath of the schema file to validate against (json)')
+    parser.add_argument('-o', '--output', action = 'store_true', help = 'whether to save the intermediate json, only applicable if input file is tsv or txt format (store_true argument)')
+    parser.add_argument('-c', '--chunk', action = 'store', help = 'chunk size to process the source data, only applicable if input file is tsv or txt format')
     parser.add_argument('-v', '--version', action = 'version', version = f'%(prog)s {_version}')
 
     # print out help if script is called with no arguments 
@@ -56,8 +56,8 @@ def user_args(intermediate_path: str = None) -> None:
     logging.info(f'Arguments passed:\ndata_filepath = {options.data_filepath}\nschema_filepath = {options.schema_filepath}\noutput flag = {options.output}\nchunk = {options.chunk}')
 
     # check that the correct file types were passed
-    if not (options.data_filepath.endswith('.tsv') or options.data_filepath.endswith('.txt')):
-        raise ValueError(f'The source data filepath must be of type .tsv or .txt.')
+    if not (options.data_filepath.endswith('.tsv') or options.data_filepath.endswith('.txt') or options.data_filepath.endswith('.json')):
+        raise ValueError(f'The source data filepath must be of type .tsv, .txt, or .json.')
     if not options.schema_filepath.endswith('.json'):
         raise ValueError(f'The schema must be of type .json.')
     
@@ -67,20 +67,23 @@ def user_args(intermediate_path: str = None) -> None:
     validate_filepath(options.schema_filepath, 'input')
 
     output_flag = False
-    if options.output:
-        output_flag = True 
-        input_filename = os.path.split(options.data_filepath)[1]
-        intermediate_path += f'v{_version}/'
-        validate_filepath(intermediate_path, 'output')
-        intermediate_path += f"{input_filename.split('.')[0]}.json"
     chunk_size = None
-    if options.chunk:
-        try:
-            chunk_size = int(options.chunk)
-        except ValueError:
-            raise ValueError(f'Chunk value must be of type integer.')
+    source_type_json = True
+    if (options.data_filepath.endswith('.tsv') or options.data_filepath.endswith('.txt')):
+        source_type_json = False
+        if options.output:
+            output_flag = True 
+            input_filename = os.path.split(options.data_filepath)[1]
+            intermediate_path += f'v{_version}/'
+            validate_filepath(intermediate_path, 'output')
+            intermediate_path += f"{input_filename.split('.')[0]}.json"
+        if options.chunk:
+            try:
+                chunk_size = int(options.chunk)
+            except ValueError:
+                raise ValueError(f'Chunk value must be of type integer.')
 
-    validate_data(options.data_filepath, options.schema_filepath, output_flag, intermediate_path, chunk_size)
+    validate_data(options.data_filepath, source_type_json, options.schema_filepath, output_flag, intermediate_path, chunk_size)
 
 def convert_to_json(source: str, output_flag: bool = False, intermediate_path: str = None, chunk_size: int = None) -> dict:
     ''' Converts the input data to a JSON file for schema validation. In cases where the source 
@@ -123,13 +126,15 @@ def convert_to_json(source: str, output_flag: bool = False, intermediate_path: s
     
     return json_data
 
-def validate_data(source: str, schema: str, output_flag: bool = False, intermediate_path: str = None, chunk_size: int = None):
+def validate_data(source: str, source_type_json: bool, schema: str, output_flag: bool = False, intermediate_path: str = None, chunk_size: int = None):
     ''' Validates the user passed source file against the user passed schema file. 
 
     Parameters
     ----------
     source: str
         Filepath of the data file to validate. 
+    source_type: bool
+        Denotes whether the input file is json or not json (True for json, False for non json).
     schema: str
         Filepath of the schema file to validate against. 
     output_flag: bool
@@ -140,7 +145,12 @@ def validate_data(source: str, schema: str, output_flag: bool = False, intermedi
         Chunk size to process the source data with (optional, default None).
     '''
 
-    data = convert_to_json(source, output_flag, intermediate_path, chunk_size)
+    # if input is not json than no need to convert first
+    if not source_type_json:
+        data = convert_to_json(source, output_flag, intermediate_path, chunk_size)
+    elif source_type_json:
+        with open(source, 'r') as f:
+            data = json.load(f) 
 
     with open(schema, 'r') as f:
         schema_data = json.load(f)

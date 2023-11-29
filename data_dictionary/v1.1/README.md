@@ -38,7 +38,7 @@
 - "loinc_code" set to optional.
 - "evidence" set to optional. 
 
-## Structure Changes
+## Data Dictionary Structure Changes
 - Added ability to add conditional and exclusive requirements.
     - Conditionals: Properties that are conditionally required based on the presence of other properties. 
         - Example: In the row for the "condition" property, the property "condition_ID" is set as a conditional requirement. If the "condition" property is included, then the "condition_ID" property is required (and vice versa).

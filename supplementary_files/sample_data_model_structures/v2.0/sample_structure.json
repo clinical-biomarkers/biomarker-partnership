@@ -1,0 +1,95 @@
+{
+    "biomarker_id": "",
+    "biomarker_component": [
+        {
+            "biomarker": "",
+            "assessed_biomarker_entity": "",
+            "assessed_biomarker_entity_id": "",
+            "assessed_entity_type": "",
+            "specimen": [
+                {
+                    "name": "",
+                    "id": "",
+                    "name_space": "",
+                    "url": "",
+                    "loinc_code": ""
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "",
+                    "database": "",
+                    "url": "",
+                    "tags": [
+                        {
+                            "tag": ""
+                        }
+                    ]
+                }                    
+            ]
+        }
+    ],
+    "best_biomarker_role": "",
+    "condition": {
+        "condition_id": "",
+        "recommended_name": {
+            "id": "",
+            "name": "",
+            "description": "",
+            "resource": "",
+            "url": ""
+        },
+        "synonyms": [
+            {
+                "id": "",
+                "name": "",
+                "resource": "",
+                "url": ""
+            }
+        ]
+    },
+    "exposure_agent": {
+        "exposure_agent_id": "",
+        "recommended_name": {
+            "id": "",
+            "name": "",
+            "description": "",
+            "resource": "",
+            "url": ""
+        }
+    },
+    "evidence": [
+        {
+            "id": "",
+            "database": "",
+            "url": "",
+            "tags": [
+                {
+                    "tag": ""
+                }
+            ]
+        }
+    ],
+    "citation": [
+        {
+            "title": "",
+            "journal": "",
+            "authors": "",
+            "date": "",
+            "reference": [
+                {
+                    "id": "",
+                    "type": "",
+                    "url": ""
+                }
+            ],
+            "evidence": [
+                {
+                    "id": "",
+                    "database": "",
+                    "url": ""
+                }
+            ]
+        }
+    ]
+}
