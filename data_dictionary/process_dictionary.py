@@ -12,7 +12,6 @@ Usage: python process_dictionary.py [options]
         -v --version        show current version number and exit
 '''
 
-import csv 
 import json
 import argparse
 import sys
@@ -75,7 +74,7 @@ def generate_schema_json(filepath: str) -> None:
         }
     }
 
-    # read in data dictionary
+    # read in data dictionary from user passed filepath
     with open(filepath, 'r') as f:
         data = json.load(f)
     
@@ -90,24 +89,25 @@ def generate_schema_json(filepath: str) -> None:
             property_schema = process_nested_array(value)
         # handle primitive element
         else:
-            # basic property schema 
+            # build primitive element schema 
             property_schema = {
                 'description': value['description'],
                 'type': value['type']
             }
-            # if primitive value add examples
+            # add examples if available in data dictionary 
             if 'example' in value:
                 property_schema['examples'] = value['example']
-            # handling 'null' type for non-required fields 
+            # allow null values for non-required fields
             if not value['required']['requirement'] or value['required']['requirement'] == 'conditional': 
                 property_schema['type'] = [value['type'], 'null']
-            # add patterns if available
+            # add regex pattern if available
             if 'pattern' in value:
                 property_schema['pattern'] = value['pattern']
-            # add to 'required' if it's a required field 
-            if value['required']['requirement'] and value['required']['requirement'] != 'conditional':
-                biomarker_schema['items']['required'].append(key)
-        
+
+        # add to 'required' array if applicable 
+        if value['required']['requirement'] and value['required']['requirement'] != 'conditional':
+            biomarker_schema['items']['required'].append(key)
+    
         # handling conditionals and exclusions
         if value['required']['requirement'] == 'conditional' and len(value['required']['conditionals']) > 0:
             handle_conditionals(key, value, biomarker_schema)
@@ -122,7 +122,7 @@ def generate_schema_json(filepath: str) -> None:
         json.dump(biomarker_schema, f)
 
 def process_primitive_item(item: dict) -> dict:
-    ''' Function to handle generating the schema portion for the primitive elements. 
+    ''' Function to handle generating the schema portion for primitive elements. 
 
     Parameters
     ----------
@@ -166,20 +166,21 @@ def process_nested_object(nested_data: dict) -> dict:
     properties = nested_data.get('properties', {})
     required_fields = [key for key, value in properties.items() if value['required']['requirement'] and value['required']['requirement'] != 'conditional']
 
+    # build object schema
     nested_object_schema = {
         'description': nested_data['description'],
         'type': nested_data['type'],
         'required': required_fields,
         'properties': {}
     }
-    # handling 'null' type for non-required fields
+    # if not an explicitly required field allow null values
     if not nested_data['required']['requirement'] or nested_data['required']['requirement'] == 'conditional':
         nested_object_schema['type'] = [nested_data['type'], 'null']
     # add patterns if available
     if 'pattern' in nested_data:
         nested_object_schema['pattern'] = nested_data['pattern']
 
-    # loop through children and handle recursively 
+    # loop through children and recursively handle schema generation
     for child_key, child_value in nested_data['properties'].items():
         if child_value['type'] == 'object':
             nested_object_schema['properties'][child_key] = process_nested_object(child_value)
@@ -208,20 +209,21 @@ def process_nested_array(nested_data: dict) -> dict:
     properties = nested_data.get('items', {})
     required_fields = [key for key, value in properties.items() if value['required']['requirement'] and value['required']['requirement'] != 'conditional']
 
+    # build array schema
     nested_array_schema = {
         'description': nested_data['description'],
         'type': 'array',
         'required': required_fields,
         'items': {}
     }
-    # handling 'null' type for non-required fields
+    # if not explicitly required field allow null values
     if not nested_data['required']['requirement'] or nested_data['required']['requirement'] == 'conditional':
         nested_array_schema['type'] = [nested_data['type'], 'null']
     # add patterns if available
     if 'pattern' in nested_data:
         nested_array_schema['pattern'] = nested_data['pattern']
     
-    # loop through children and handle recursively 
+    # loop through children and handle recursively generation 
     for child_key, child_value in nested_data['items'].items():
         if child_value['type'] == 'object':
             nested_array_schema['items'][child_key] = process_nested_object(child_value)
