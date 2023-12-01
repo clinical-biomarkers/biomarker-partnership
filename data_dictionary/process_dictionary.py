@@ -51,120 +51,6 @@ def user_args() -> None:
 
     generate_schema_json(options.file_path)
 
-def generate_schema(filepath: str) -> None:
-    ''' Converts the data dictionary into a JSON schema. 
-
-    Parameters
-    ----------
-    filepath: str
-        Filepath to the source data dictionary file. 
-    '''
-
-    raw_url = _id_prefix + f'v{_version}/{_output_file}'
-
-    biomarkerkb_schema = {
-        '$schema': _schema,
-        '$id': raw_url,
-        'type': 'array',
-        'title': _output_file,
-        'items': {
-            'type': 'object',
-            'required': [],
-            'properties': {},
-            'allOf': []
-        }
-    }
-    
-    with open(filepath, 'r', encoding = 'utf8') as f:
-        data = csv.DictReader(f, delimiter = '\t')
-        for row in data:
-
-            # skip empty rows
-            if all(v == '' or v == '-' for v in row.values()):
-                continue 
-
-            # trim whitespace from each value
-            # row = {k: v.strip() for k, v in row.items()}
-
-            property_name = row['properties']
-            property_type = [row['type'], 'null'] if row['requirement'] != 'required' else row['type']
-
-            # handle required properties 
-            if row['requirement'] == 'required':
-                biomarkerkb_schema['items']['required'].append(row['properties'])
-            
-            # construct property schema 
-            property_schema = {
-                'title': property_name,
-                'description': row['description'],
-                'type': property_type,
-                'examples': [row['example']]
-            }
-
-            # check if property type is an array 
-            if property_type == 'array':
-                item_type = row['content_type']
-                item_pattern = row['pattern'] if row['pattern'] and row['pattern'] != '-' else None 
-                property_schema['items'] = {'type': item_type}
-                if item_pattern:
-                    property_schema['items']['pattern'] = item_pattern
-            # for non-array properties 
-            else:
-                if row['pattern'] and row['pattern'] != '-':
-                    property_schema['pattern'] = row['pattern']
-
-            # add property details to schema
-            biomarkerkb_schema['items']['properties'][property_name] = property_schema
-
-            # handle conditional properties 
-            if row['conditionals'] != '-':
-                conditional_reqs = [req.strip() for req in row['conditionals'].split(',')] 
-                conditional_fragment = {
-                    'if': {
-                        'properties': {
-                            row['properties']: {'not': {'const': None}}
-                        },
-                        'required': [row['properties']]
-                    },
-                    'then': {
-                        'allOf': [
-                            {
-                                'properties': {
-                                    conditional_req: {'not': {'const': None}}
-                                },
-                                'required': [conditional_req]
-                            } for conditional_req in conditional_reqs
-                        ]
-                    }
-                }
-                biomarkerkb_schema['items']['allOf'].append(conditional_fragment)
-
-            # handle exclusion properties
-            if row['exclusions'] != '-':
-                exclusions = [exclusion.strip() for exclusion in row['exclusions'].split(',')]
-                exclusion_fragment = {
-                    'if': {
-                        'properties': {
-                            row['properties']: {'not': {'type': "null"}}
-                        },
-                        'required': [row['properties']]
-                    },
-                    'then': {
-                        'allOf': [
-                            {
-                                'properties': {
-                                    exclusion: {'anyOf': [{'type': 'null'}, {'const': None}]}
-                                },
-                                'required': [exclusion]
-                            } for exclusion in exclusions
-                        ]
-                    }
-                }
-                biomarkerkb_schema['items']['allOf'].append(exclusion_fragment)
-            
-    with open(f'{_output_path}/{_output_file}', 'w') as f:
-        json.dump(biomarkerkb_schema, f)
-
 def generate_schema_json(filepath: str) -> None:
     ''' Converts the data dictionary into a JSON schema. 
 
@@ -184,8 +70,8 @@ def generate_schema_json(filepath: str) -> None:
         'items': {
             'type': 'object',
             'required': [],
-            'properties': {},
-            'allOf': []
+            'properties': {}
+            # 'allOf': []
         }
     }
 
@@ -193,28 +79,168 @@ def generate_schema_json(filepath: str) -> None:
     with open(filepath, 'r') as f:
         data = json.load(f)
     
-    # iterate through top level keys
-    for key in data.keys():
+    # iterate through top level items
+    for key, value in data.items():
         
-        # parse property metadata
-        prop_description = data[key]['description']
-        prop_type = [data[key]['type']]
-        prop_required = data[key]['required']['requirement'] 
-        # if conditional requirement, parse conditional and exclusion fields
-        if prop_required == 'conditional':
-            prop_conditionals = data[key]['required']['conditionals']
-            prop_exclusions = data[key]['required']['exclusions']
-        # if top level property, parse examples and pattern  
-        if prop_type != 'object' and prop_type != 'array':
-            prop_example = data[key]['example']
-            prop_pattern = data[key]['pattern']
-            # create top level property schema portion
+        # handle nested object element  
+        if value['type'] == 'object':
+            property_schema = process_nested_object(value)
+        # handle nested array element
+        elif value['type'] == 'array':
+            property_schema = process_nested_array(value)
+        # handle primitive element
+        else:
+            # basic property schema 
             property_schema = {
-                'title': key, 
-                'description': prop_description,
-                'type': [prop_type, 'null'] if prop_required != True else prop_type,
-                'examples': prop_example
+                'description': value['description'],
+                'type': value['type']
             }
+            # if primitive value add examples
+            if 'example' in value:
+                property_schema['examples'] = value['example']
+            # handling 'null' type for non-required fields 
+            if not value['required']['requirement'] or value['required']['requirement'] == 'conditional': 
+                property_schema['type'] = [value['type'], 'null']
+            # add patterns if available
+            if 'pattern' in value:
+                property_schema['pattern'] = value['pattern']
+            # add to 'required' if it's a required field 
+            if value['required']['requirement'] and value['required']['requirement'] != 'conditional':
+                biomarker_schema['items']['required'].append(key)
+        
+        # handling conditionals and exclusions
+        if value['required']['requirement'] == 'conditional' and len(value['required']['conditionals']) > 0:
+            handle_conditionals(key, value, biomarker_schema)
+        if value['required']['requirement'] == 'conditional' and len(value['required']['exclusions']) > 0:
+            handle_exclusions(key, value, biomarker_schema)
+        
+        # add the processed property to the schema
+        biomarker_schema['items']['properties'][key] = property_schema
+    
+    # write out schema
+    with open(f'{_output_path}/{_output_file}', 'w') as f:
+        json.dump(biomarker_schema, f)
+
+def process_primitive_item(item: dict) -> dict:
+    ''' Function to handle generating the schema portion for the primitive elements. 
+
+    Parameters
+    ----------
+    item: dict
+        The primitive element to generate the schema for. 
+    
+    Returns 
+    -------
+    dict
+        Schema portion for the primitive element. 
+    '''
+
+    item_schema = {
+        'description': item.get('description', ''),
+        'type': item['type']
+    }
+    if ('required' in item and item['required']['requirement']) or item['required']['requirement'] == 'conditional':
+        item_schema['type'] = [item['type'], 'null']
+    if 'pattern' in item:
+        item_schema['pattern'] = item['pattern']
+    if 'example' in item:
+        item_schema['examples'] = item['example']
+    
+    return item_schema
+
+def process_nested_object(nested_data: dict) -> dict:
+    ''' Function to handle recursively generating the schema for object type fields and its children elements.
+
+    Parameters
+    ----------
+    nested_data: dict
+        The nested data of type object to recursively process.
+
+    Returns
+    -------
+    dict
+        The schema for the nested object type schema and its children elements. 
+    '''
+
+    # handle required nested properties
+    properties = nested_data.get('properties', {})
+    required_fields = [key for key, value in properties.items() if value['required']['requirement'] and value['required']['requirement'] != 'conditional']
+
+    nested_object_schema = {
+        'description': nested_data['description'],
+        'type': nested_data['type'],
+        'required': required_fields,
+        'properties': {}
+    }
+    # handling 'null' type for non-required fields
+    if not nested_data['required']['requirement'] or nested_data['required']['requirement'] == 'conditional':
+        nested_object_schema['type'] = [nested_data['type'], 'null']
+    # add patterns if available
+    if 'pattern' in nested_data:
+        nested_object_schema['pattern'] = nested_data['pattern']
+
+    # loop through children and handle recursively 
+    for child_key, child_value in nested_data['properties'].items():
+        if child_value['type'] == 'object':
+            nested_object_schema['properties'][child_key] = process_nested_object(child_value)
+        elif child_value['type'] == 'array':
+            nested_object_schema['properties'][child_key] = process_nested_array(child_value)
+        else:
+            nested_object_schema['properties'][child_key] = process_primitive_item(child_value)
+    
+    return nested_object_schema
+
+def process_nested_array(nested_data: dict) -> dict:
+    ''' Function to handle recursively generating the schema for array type fields and its children elements.
+
+    Parameters
+    ----------
+    nested_data: dict
+        The nested data of type object to recursively process.
+
+    Returns
+    -------
+    dict
+        The schema for the nested object type schema and its children elements. 
+    '''
+
+    # handle required nested properties
+    properties = nested_data.get('items', {})
+    required_fields = [key for key, value in properties.items() if value['required']['requirement'] and value['required']['requirement'] != 'conditional']
+
+    nested_array_schema = {
+        'description': nested_data['description'],
+        'type': 'array',
+        'required': required_fields,
+        'items': {}
+    }
+    # handling 'null' type for non-required fields
+    if not nested_data['required']['requirement'] or nested_data['required']['requirement'] == 'conditional':
+        nested_array_schema['type'] = [nested_data['type'], 'null']
+    # add patterns if available
+    if 'pattern' in nested_data:
+        nested_array_schema['pattern'] = nested_data['pattern']
+    
+    # loop through children and handle recursively 
+    for child_key, child_value in nested_data['items'].items():
+        if child_value['type'] == 'object':
+            nested_array_schema['items'][child_key] = process_nested_object(child_value)
+        elif child_value['type'] == 'array':
+            nested_array_schema['items'][child_key] = process_nested_array(child_value)
+        else:
+            nested_array_schema['items'][child_key] = process_primitive_item(child_value)
+    
+    return nested_array_schema
+
+def handle_conditionals(property_key: str, property_value: dict, schema: dict) -> None:
+    '''
+    '''
+    pass 
+
+def handle_exclusions(property_key: str, property_value: dict, schema: dict) -> None:
+    '''
+    '''
+    pass 
 
 def validate_filepath(filepath: str, mode: str) -> None:
     ''' Validates the filepaths for the user inputted source path and
