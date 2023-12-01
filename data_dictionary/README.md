@@ -48,46 +48,53 @@ Optional arguments:
     -v --version        show the current version number and exit
 ```
 
-Move your current working directory to `data_dictionary/` adn run the `skeleton_dictionary.py` script passing in the filepath to the sample data model JSON file. 
+Move your current working directory to `data_dictionary/` and run the `skeleton_dictionary.py` script passing in the filepath to the sample data model JSON file. 
 
 ```
 cd data_dictionary
 python skeleton_dictionary.py <FILEPATH/TO/SAMPLE>
 ```
 
-This will create the general data dictionary structure, now you will have to fill in each field's metadata. 
+This will create the skeleton data dictionary structure, now you will have to fill in each field's metadata. 
 
-Note: The `skeleton_dictionary.py` file utilizes union type hinting. This is a feature introduced in Python 3.10. The script also requires a feature introduced in Python 3.7, when the regular `dict` type became order preserving. If using a version of Python older than this, `dict` keys were not guaranteed to be ordered and could result in undefined behaviour on a per execution basis when reading the JSON keys and dumping the output JSON.
+Note: The script requires a feature introduced in Python 3.7, when the regular `dict` type became order preserving. If using a version of Python older than this, `dict` keys were not guaranteed to be ordered and could result in undefined behaviour on a per execution basis when reading the JSON keys and dumping the output JSON.
 
 ## Data Dictionary Structure 
 
-The data dictionary represents a simplified structure of the eventual JSON schema, allowing for clear viewing of all the data model fields in a [JSON viewer](https://jsonviewer.stack.hu/). The `process_dictionary.py` script used to convert the data dictionary into a JSON schema is agnostic to the actual fields and nested structure of the data dictionary.
+The data dictionary represents a simplified structure of the eventual JSON schema, allowing for clear viewing of all the data model fields in a [JSON viewer](https://jsonviewer.stack.hu/). The `process_dictionary.py` script used to convert the data dictionary into a JSON schema is agnostic to the actual fields and nested structure of the data dictionary, allowing for maximum flexibility when the data model is changed and iterated on throughout the project. 
 
 #### Basic Top Level Element
 
 The structure of a basic top level element in the data dictionary looks like this:
 
 ```json
-"biomarker_id": {
-    "description": "Biomarker identifier. This will be automatically assigned when the data is incorporated.",
-    "type": "string",
-    "required": {
-        "requirement": false
-    }, 
-    "example": ["A0034"],
-    "pattern": "^.*$",
-    "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
+{
+    "biomarker_id": {
+        "description": "Biomarker identifier. This will be automatically assigned when the data is incorporated",
+        "type": "string",
+        "required": {
+            "requirement": false
+        },
+        "domain": "Unique identifier assigned by backend logic based on the core fields as defined in the data model, not user passed or assigned.",
+        "example": [
+            "A0034"
+        ],
+        "pattern": "^.*$",
+        "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
+    },
+    // ...additional elements
 }
 ```
 
 **Elements:**
 - *Field name* - The name of the field (Ex. `"biomarker_id"`).
     - *Description* - A description of the field. 
-    - *Type* - Type for the field. 
+    - *Type* - Data type for the field. 
     - *Required* - Metadata for the field requirement conditions.
         - *Requirement* - Whether the field is required or not. This value can accept `true`, `false`, or `conditional`. 
-        - *Conditionals* - If `requirement` is set to `conditional`, then conditional requirements can be added. If a field's requirement is conditional on another field (or fields) being present, you can add those field names here. 
-        - *Exclusions* - If `requirement` is set to `conditional`, then exclusion requirements can be added. If a field's presence is mutually exclusive based on another field (or fields) being present, you can add those field names here. 
+        - *Conditionals* - If `requirement` is set to `conditional`, then conditional requirements can be added by adding the key `conditionals` that takes as a value a list of the conditional fields.
+        - *Exclusions* - If `requirement` is set to `conditional`, then exclusion requirements can also be added. If a field's presence is mutually exclusive based on another field (or fields) being present, you can add those field names here. 
+    - *Domain* - A description of the values that the field accepts. This information is purely for readability/clarities sake and is not used in any of the code logic. 
     - *Example* - An example for the field (supports multiple examples).
     - *Pattern* - A regex pattern to validate the data against.
     - *Pattern notes* - This field is optional (and is not used by the `process_dictionary.py` script), a description of the regex pattern purely for readability/clarities sake. 
@@ -96,83 +103,77 @@ The structure of a basic top level element in the data dictionary looks like thi
 
 The data dictionary also supports nested elements.
 
-The structure of nested elements as an array looks like this:
+The structure of a complex nested element:
 
 ```json
-"biomarker_component": {
-    "description": "List of biomarker components.",
-    "type": "array",
-    "required": {
-        "requirement": true
-    },
-    "items": [
-        {
+{
+    "biomarker_component": {
+        "description": "List of biomarker components.",
+        "type": "array",
+        "required": {
+            "requirement": true
+        },
+        "items": {
             "biomarker": {
                 "description": "Change observed in an entity that differs from normal processes.",
                 "type": "string",
                 "required": {
                     "requirement": true
                 },
+                "domain": "Accepts a string that represents the change in the observed entity.",
                 "example": [
-                    "presence of rs1800562 mutation"
+                    "increased IL6 level"
                 ],
                 "pattern": "^.+$",
                 "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
             },
             "assessed_biomarker_entity": {
-                "description": "Biomarker entity and common name/gene symbol/short name.",
-                "type": "string",
+                "description": "Data for the assessed biomarker entity.",
+                "type": "object",
                 "required": {
                     "requirement": true
                 },
-                "example": [
-                    "rs1800562 mutation in hereditary haemochromatosis protein (hereditary hemochromatosis protein) (HFE)"
-                ],
-                "pattern": "^.+$",
-                "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-            },
-            // ...more elements here
+                "properties": {
+                    "recommended_name": {
+                        "description": "The recommended name for the assessed biomarker entity.",
+                        "type": "string",
+                        "required": {
+                            "requirement": true 
+                        },
+                        "domain": "Accepts a string that represents the vernacular common name/gene symbol/short name for the biomarker entity.",
+                        "example": [
+                            "Interleukin-6 (IL6)"
+                        ],
+                        "pattern": "^.+$",
+                        "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+                    },
+                    "synonyms": {
+                        "description": "List of synonyms the assessed biomarker entity might have.",
+                        "type": "array",
+                        "required": {
+                            "requirement": false
+                        },
+                        "items": {
+                            "synonym": {
+                                "description": "A single synonym for the assessed biomarker entity.",
+                                "type": "string",
+                                "required": {
+                                    "requirement": false
+                                },
+                                "domain": "Accepts a string that represents one synonym for the biomarker entity common name/gene symbol/short name.",
+                                "example": [
+                                    "CDF"
+                                ],
+                                "pattern": "^.*$",
+                                "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
+                            }
+                        }
+                    }
+                }
+            }
         }
-    ]
-}
-```
-
-The structure of nested elements as objects looks like this:
-
-```json
-"recommended_name": {
-    "description": "Metadata for the recommended condition name.",
-    "type": "object",
-    "required": {
-        "requirement": true
     },
-    "properties": {
-        "id": {
-            "description": "Condition identifier.",
-            "type": "string",
-            "required": {
-                "requirement": true
-            },
-            "example": [
-                "DOID:1612"
-            ],
-            "pattern": "^.+$",
-            "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-        },
-        "name": {
-            "description": "Name of the condition.",
-            "type": "string",
-            "required": {
-                "requirement": true
-            },
-            "example": [
-                "breast cancer"
-            ],
-            "pattern": "^.+$",
-            "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
-        },
-        // ... more elements here
-    }
+    // ...additional elements
 }
 ```
 

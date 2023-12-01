@@ -59,7 +59,7 @@ The documentation for generating the JSON schema can be found [here](./data_dict
 
 ### General Notes
 
-The `.gitignore` file includes entries for the directories `home/` and `env/`. The `home/` directory can be used for any source files, temp files, log files, files larger than Github's limit of 100 MiB, or any other files that don't need to be pushed to the upstream repository. The `env/` directory should be the name of your virtual environment (instructions in next section). 
+The `.gitignore` file includes entries for directories named `home/` and `env/`. The `home/` directory can be used for any source files, temp files, log files, files larger than Github's limit of 100 MiB, or any other files that don't need to be pushed to the upstream repository. The `env/` directory should be the name of your virtual environment (instructions in next section). 
 
 ### Starting up the Virtual Environment
 
@@ -86,7 +86,7 @@ source env/bin/activate
 Then install the project dependencies using:
 
 ```bash
-pip install -r requirements.txt
+(env) pip install -r requirements.txt
 ```
 
 ## Repository Structure 
