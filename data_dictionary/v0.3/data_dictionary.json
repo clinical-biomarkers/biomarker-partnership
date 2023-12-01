@@ -123,7 +123,7 @@
                         "pattern": "^.*$",
                         "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
                     },
-                    "id": {
+                    "specimen_id": {
                         "description": "Identifier for the specimen.",
                         "type": "string",
                         "required": {
@@ -159,7 +159,7 @@
                         "example": [
                             "http://purl.obolibrary.org/obo/UBERON_0000178"
                         ],
-                        "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                        "pattern": "^(https?:\/\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-:]*)*/?$",
                         "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
                     },
                     "loinc_code": {
@@ -184,7 +184,7 @@
                     "requirement": true
                 },
                 "items": {
-                    "id": {
+                    "evidence_id": {
                         "description": "Identifier for the evidence source.",
                         "type": "string",
                         "required": {
@@ -222,7 +222,7 @@
                         "example": [
                             "https://glygen.org/publication/PubMed/10914713"
                         ],
-                        "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                        "pattern": "^(https?:\/\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-:]*)*/?$",
                         "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
                     },
                     "evidence_list": {
@@ -260,13 +260,14 @@
                                 "required": {
                                     "requirement": true
                                 },
-                                "domain": "A predefined tag that links the evidence to a specific piece of the data. For singular value fields, the tag can be the field name such as \"biomarker\", \"assessed_biomarker_entity\", \"assessed_biomarker_entity_id\", \"assessed_entity_type\", \"condition\", or \"exposure_agent\". For linking to non-singular values such as \"specimen\" and \"loinc_code\", tags should be in the format of \"specimen:[id]\" and \"loinc_code:[code]\".",
+                                "domain": "A predefined tag that links the evidence to a specific piece of the data. For singular value fields, the tag can be the field name such as \"biomarker\", \"assessed_biomarker_entity\", \"assessed_biomarker_entity_id\", \"assessed_entity_type\", \"best_biomarker_role\", \"condition\", or \"exposure_agent\". For linking to non-singular values such as \"specimen\" and \"loinc_code\", tags should be in the format of \"specimen:[id]\" and \"loinc_code:[code]\".",
                                 "example": [
                                     "loinc_code:34519-9",
-                                    "assessed_biomarker_entity"
+                                    "assessed_biomarker_entity",
+                                    "best_biomarker_role"
                                 ],
-                                "pattern": "^(biomarker|assessed_biomarker_entity|assessed_biomarker_entity_id|assessed_entity_type|specimen:.*|loinc_code:.*|condition|exposure_agent)$",
-                                "pattern_notes": "Matches on \"biomarker\", \"assessed_biomarker_entity\", \"assessed_biomarker_entity_id\", \"assessed_entity_type\", \"specimen:[id]\", \"loinc_code:[code]\", \"condition\", \"exposure_agent\"."
+                                "pattern": "^(biomarker|assessed_biomarker_entity|assessed_biomarker_entity_id|assessed_entity_type|specimen:.*|loinc_code:.*|condition|exposure_agent|best_biomarker_role)$",
+                                "pattern_notes": "Matches on \"biomarker\", \"assessed_biomarker_entity\", \"assessed_biomarker_entity_id\", \"assessed_entity_type\", \"specimen:[id]\", \"loinc_code:[code]\", \"condition\", \"exposure_agent\", \"best_biomarker_role\"."
                             }
                         }
                     }
@@ -319,7 +320,7 @@
                     "requirement": true
                 },
                 "properties": {
-                    "id": {
+                    "condition_id": {
                         "description": "Condition identifier.",
                         "type": "string",
                         "required": {
@@ -381,7 +382,7 @@
                         "example": [
                             "https://disease-ontology.org/term/DOID:1612/"
                         ],
-                        "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                        "pattern": "^(https?:\/\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-:]*)*/?$",
                         "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
                     }
                 }
@@ -393,7 +394,7 @@
                     "requirement": false
                 },
                 "items": {
-                    "id": {
+                    "synonym_id": {
                         "description": "Identifier for the condition synonym.",
                         "type": "string",
                         "required": {
@@ -440,7 +441,7 @@
                         "example": [
                             "https://disease-ontology.org/term/DOID:1612/"
                         ],
-                        "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                        "pattern": "^(https?:\/\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-:]*)*/?$",
                         "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
                     }
                 }
@@ -476,7 +477,7 @@
                     "requirement": true
                 },
                 "properties": {
-                    "id": {
+                    "exposure_agent_id": {
                         "description": "Exposure agent identifier.",
                         "type": "string",
                         "required": {
@@ -528,7 +529,7 @@
                         },
                         "domain": "Accepts a string that represents the direct URL to the exposure agent.",
                         "example": [],
-                        "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                        "pattern": "^(https?:\/\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-:]*)*/?$",
                         "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
                     }
                 }
@@ -542,7 +543,7 @@
             "requirement": false
         },
         "items": {
-            "id": {
+            "evidence_id": {
                 "description": "Identifier for evidence.",
                 "type": "string",
                 "required": {
@@ -580,7 +581,7 @@
                 "example": [
                     "https://glygen.org/publication/PubMed/10914713"
                 ],
-                "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                "pattern": "^(https?:\/\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-:]*)*/?$",
                 "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
             },
             "evidence_list": {
@@ -624,8 +625,8 @@
                             "assessed_biomarker_entity:0",
                             "condition"
                         ],
-                        "pattern": "^(biomarker:\\d+|assessed_biomarker_entity:\\d+|assessed_biomarker_entity_id:\\d+|assessed_entity_type:\\d+|specimen:.+:\\d+|loinc_code:.+:\\d+|condition|exposure_agent)$",
-                        "pattern_notes": "Matches on \"biomarker:[index]\", \"assessed_biomarker_entity:[index]\", \"assessed_biomarker_entity_id:[index]\", \"assessed_entity_type:[index]\", \"specimen:[id]:[index]\", \"loinc_code:[code]:[index]\", \"condition\", \"exposure_agent\"."
+                        "pattern": "^(biomarker:\\d+|assessed_biomarker_entity:\\d+|assessed_biomarker_entity_id:\\d+|assessed_entity_type:\\d+|specimen:.+:\\d+|loinc_code:.+:\\d+|condition|exposure_agent|best_biomarker_role)$",
+                        "pattern_notes": "Matches on \"biomarker:[index]\", \"assessed_biomarker_entity:[index]\", \"assessed_biomarker_entity_id:[index]\", \"assessed_entity_type:[index]\", \"specimen:[id]:[index]\", \"loinc_code:[code]:[index]\", \"condition\", \"exposure_agent\", \"best_biomarker_role\"."
                     }
                 }
             }
@@ -638,7 +639,7 @@
             "requirement": false
         },
         "items": {
-            "title": {
+            "citation_title": {
                 "description": "Publication title.",
                 "type": "string",
                 "required": {
@@ -710,7 +711,7 @@
                         "pattern": "^.+$",
                         "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
                     },
-                    "id": {
+                    "reference_id": {
                         "description": "Identifier for the reference data.",
                         "type": "string",
                         "required": {
@@ -733,7 +734,7 @@
                         "example": [
                             "https://glygen.org/publication/PubMed/10914713"
                         ],
-                        "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                        "pattern": "^(https?:\/\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-:]*)*/?$",
                         "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
                     }
                 }
@@ -745,7 +746,7 @@
                     "requirement": true
                 },
                 "items": {
-                    "id": {
+                    "evidence_id": {
                         "description": "Identifier for the evidence.",
                         "type": "string",
                         "required": {
@@ -781,7 +782,7 @@
                         "example": [
                             "https://data.glygen.org/GLY_000625"
                         ],
-                        "pattern": "^(https?:\\/\\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([\/\\w \\.-]*)*\/?$",
+                        "pattern": "^(https?:\/\/)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-:]*)*/?$",
                         "pattern_notes": "Matches on a general URL format. The first part matches optionally on the inclusion of 'http://' or 'https://'. The second part matches on a domain name, allowing for digits, letters, dots, and hyphens. The third part matches the domain extension, like '.com' or '.org'. The last part allows for the URL to optionally end with a slash."
                     }
                 }
