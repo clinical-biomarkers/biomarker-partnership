@@ -1,9 +1,9 @@
 {
     "version": 0.3,
     "schema_generation": {
-        "raw_url_prefix": "https://raw.githubusercontent.com/biomarker-ontology/BiomarkerKB/main/schema/",
+        "raw_url_prefix": "https://raw.githubusercontent.com/biomarker-ontology/biomarker-partnership/main/schema/",
         "output_path": "../schema/",
-        "output_file": "biomarkerkb_schema.json",
+        "output_file": "biomarker_schema.json",
         "schema": "http://json-schema.org/draft-07/schema#"
     },
     "validation": {
