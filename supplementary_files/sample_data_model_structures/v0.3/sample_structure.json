@@ -16,7 +16,7 @@
             "specimen": [
                 {
                     "name": "",
-                    "id": "",
+                    "specimen_id": "",
                     "name_space": "",
                     "url": "",
                     "loinc_code": ""
@@ -24,7 +24,7 @@
             ],
             "evidence_source": [
                 {
-                    "id": "",
+                    "evidence_id": "",
                     "database": "",
                     "url": "",
                     "evidence_list": [
@@ -45,7 +45,7 @@
     "condition": {
         "condition_id": "",
         "recommended_name": {
-            "id": "",
+            "condition_id": "",
             "name": "",
             "description": "",
             "resource": "",
@@ -53,7 +53,7 @@
         },
         "synonyms": [
             {
-                "id": "",
+                "synonym_id": "",
                 "name": "",
                 "resource": "",
                 "url": ""
@@ -63,7 +63,7 @@
     "exposure_agent": {
         "exposure_agent_id": "",
         "recommended_name": {
-            "id": "",
+            "exposure_agent_id": "",
             "name": "",
             "description": "",
             "resource": "",
@@ -72,7 +72,7 @@
     },
     "evidence_source": [
         {
-            "id": "",
+            "evidence_id": "",
             "database": "",
             "url": "",
             "evidence_list": [
@@ -89,20 +89,20 @@
     ],
     "citation": [
         {
-            "title": "",
+            "citation_title": "",
             "journal": "",
             "authors": "",
             "date": "",
             "reference": [
                 {
-                    "id": "",
+                    "reference_id": "",
                     "type": "",
                     "url": ""
                 }
             ],
             "evidence_source": [
                 {
-                    "id": "",
+                    "evidence_id": "",
                     "database": "",
                     "url": ""
                 }

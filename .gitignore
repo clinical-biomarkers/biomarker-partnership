@@ -3,6 +3,7 @@ test.ipynb
 home/
 env/
 ~*
+.vscode/
 
 # temporary
 rdf_triples/
