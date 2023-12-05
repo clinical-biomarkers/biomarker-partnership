@@ -37,7 +37,7 @@ There is also a notes section present in this databse and that includes extra/mi
 
 Based on the resource that was being studied there can be some variation in how the data was extracted, manipulted, and harmonized to fit the structre of the above figure. This repository will provide examples of this alonsgide the table generated and other resources needed to gain information/data for the biomarker.
 
-A sample JSON structure for the data model can be found [here](./supplementary_files/sample_data_model_structures/).
+A sample JSON structure for the data model can be found [here](./supplementary_files/sample_data_model_structures/). The data model RFC can be found [here](./supplementary_files/documents/Master_Biomarker_Partnership_Data_Model_RFC.pdf).
 
 ## Workflow
 
