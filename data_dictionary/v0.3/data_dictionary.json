@@ -266,7 +266,7 @@
                                     "assessed_biomarker_entity",
                                     "best_biomarker_role"
                                 ],
-                                "pattern": "^(biomarker|assessed_biomarker_entity|assessed_biomarker_entity_id|assessed_entity_type|specimen:.*|loinc_code:.*|condition|exposure_agent|best_biomarker_role)$",
+                                "pattern": "^(biomarker|assessed_biomarker_entity|assessed_biomarker_entity_id|assessed_entity_type|specimen:.+:.+|loinc_code:.+|condition|exposure_agent|best_biomarker_role)$",
                                 "pattern_notes": "Matches on \"biomarker\", \"assessed_biomarker_entity\", \"assessed_biomarker_entity_id\", \"assessed_entity_type\", \"specimen:[id]\", \"loinc_code:[code]\", \"condition\", \"exposure_agent\", \"best_biomarker_role\"."
                             }
                         }
@@ -625,7 +625,7 @@
                             "assessed_biomarker_entity:0",
                             "condition"
                         ],
-                        "pattern": "^(biomarker:\\d+|assessed_biomarker_entity:\\d+|assessed_biomarker_entity_id:\\d+|assessed_entity_type:\\d+|specimen:.+:\\d+|loinc_code:.+:\\d+|condition|exposure_agent|best_biomarker_role)$",
+                        "pattern": "^(biomarker:\\d+|assessed_biomarker_entity:\\d+|assessed_biomarker_entity_id:\\d+|assessed_entity_type:\\d+|specimen:.+:.+:\\d+|loinc_code:.+:\\d+|condition|exposure_agent|best_biomarker_role)$",
                         "pattern_notes": "Matches on \"biomarker:[index]\", \"assessed_biomarker_entity:[index]\", \"assessed_biomarker_entity_id:[index]\", \"assessed_entity_type:[index]\", \"specimen:[id]:[index]\", \"loinc_code:[code]:[index]\", \"condition\", \"exposure_agent\", \"best_biomarker_role\"."
                     }
                 }
