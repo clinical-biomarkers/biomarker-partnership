@@ -17,7 +17,7 @@
         "specimen": [
           {
             "name": "blood",
-            "id": "0000178",
+            "id": "UBERON:0000178",
             "name_space": "UBERON",
             "url": "http://purl.obolibrary.org/obo/UBERON_0000178",
             "loinc_code": "26881-3"
@@ -38,7 +38,7 @@
                 "tag": "biomarker"
               },
               {
-                "tag": "specimen:0000178"
+                "tag": "specimen:UBERON:0000178"
               }
             ]
           }

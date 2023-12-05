@@ -124,14 +124,14 @@
                         "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
                     },
                     "specimen_id": {
-                        "description": "Identifier for the specimen.",
+                        "description": "Name space and identifier for the specimen.",
                         "type": "string",
                         "required": {
                             "requirement": false
                         },
                         "domain": "Accepts a string that represents the specimen identifier within the namespace.",
                         "example": [
-                            "0000178"
+                            "UBERON:0000178"
                         ],
                         "pattern": "^.*$",
                         "pattern_notes": "Matches on an entire line, regardless of content, including an empty line. Must be string as JSON does not support octal numbers (integers with leading zeroes)."
