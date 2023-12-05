@@ -5,10 +5,16 @@
       {
         "biomarker": "increased IL6 level",
         "assessed_biomarker_entity": {
-          "recommended_name": "Interleukin-6 (IL6)",
+          "recommended_name": "Interleukin-6",
           "synonyms": [
             {
-              "synonym": "Interferon-beta 2 (IFNB2)"
+              "synonym": "Interferon-beta 2"
+            },
+            {
+              "synonym": "IL6"
+            },
+            {
+              "synonym": "IFNB2"
             }
           ]
         },
@@ -82,7 +88,10 @@
         ],
         "tags": [
           {
-            "tag": ""
+            "tag": "biomarker:0"
+          },
+          {
+            "tag": "specimen:UBERON:0000178:0"
           }
         ]
       }
