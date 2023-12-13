@@ -23,7 +23,7 @@
         "specimen": [
           {
             "name": "blood",
-            "id": "UBERON:0000178",
+            "specimen_id": "UBERON:0000178",
             "name_space": "UBERON",
             "url": "http://purl.obolibrary.org/obo/UBERON_0000178",
             "loinc_code": "26881-3"
