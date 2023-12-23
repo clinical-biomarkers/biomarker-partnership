@@ -9,5 +9,8 @@
     "validation": {
         "log_path": "../home/logs/validation_log.log",
         "intermediate_path": "../home/intermediate_data/"
+    },
+    "format_conversion": {
+        "log_path": "../home/logs/conversion_log.log"
     }
 }

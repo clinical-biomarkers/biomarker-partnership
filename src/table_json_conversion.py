@@ -23,7 +23,9 @@ import json
 import argparse 
 import sys 
 import os 
+import logging
 
+_CONF_KEY = 'format_conversion'
 _version = None
 TSV_HEADERS = ['biomarker_id', 'biomarker', 'assessed_biomarker_entity', 'assessed_biomarker_entity_id', 
             'assessed_entity_type', 'condition', 'condition_id', 'exposure_agent', 'exposure_agent_id', 
@@ -72,6 +74,10 @@ def user_args() -> None:
     # check that the filepaths exist
     validate_filepath(options.source_filepath, 'input')
     validate_filepath(os.path.split(options.target_filepath)[0], 'output')
+
+    # log the user passed arguments 
+    logging.info(f'Arguments passed:\nsource_filepath = {options.source_filepath}\ntarget_filepath = {options.target_filepath}')
+
     # check that the source and target file types follow correct guidelines 
     if options.source_filepath.endswith('.json'): 
         if not (options.target_filepath.endswith('.tsv')):
@@ -102,7 +108,7 @@ def json_to_tsv(source: str, target: str) -> None:
     tsv_content = '\t'.join(TSV_HEADERS) + '\n'
 
     # loop through top level array 
-    for entry in data: 
+    for idx, entry in enumerate(data): 
         
         # get top level elements
         biomarker_id = entry.get('biomarker_id', '')
@@ -113,22 +119,43 @@ def json_to_tsv(source: str, target: str) -> None:
         best_biomarker_role = entry['best_biomarker_role']
 
         # loop through biomarker component
-        for component in entry['biomarker_component']:
+        for comp_idx, component in enumerate(entry['biomarker_component']):
 
             biomarker = component['biomarker']
             assessed_biomarker_entity = component['assessed_biomarker_entity']['recommended_name']
             assessed_biomarker_entity_id = component['assessed_biomarker_entity_id']
             assessed_entity_type = component['assessed_entity_type']
+            specimen = ''
+            specimen_id = ''
+            loinc_code = ''
+
+            # parse evidence from component 
+            component_evidence = component.get('evidence_source', [])
+            # singular evidence fields
+            single_evidence_fields = {
+                'biomarker',
+                'assessed_biomarker_entity',
+                'assessed_biomarker_entity_id',
+                'assessed_entity_type',
+                'condition',
+                'exposure_agent',
+                'best_biomarker_role'
+            }
 
             specimens = component.get('specimen', [])
+            # handle case where specimen data is available
             if specimens:
                 # loop through specimen array 
-                for specimen_entry in component.get('specimen', []):
+                for specimen_idx, specimen_entry in enumerate(specimens):
                         
                     specimen = specimen_entry.get('name', '')
                     specimen_id = specimen_entry.get('id', '')
                     loinc_code = specimen_entry.get('loinc_code', '')
-                
+                    object_evidence_fields = {
+                        'specimen': specimen_id,
+                        'loinc_code': loinc_code
+                    }
+
                     row_data = [
                         biomarker_id,
                         biomarker,
@@ -144,6 +171,40 @@ def json_to_tsv(source: str, target: str) -> None:
                         specimen_id,
                         loinc_code
                     ]
+                    # tsv_content += '\t'.join(row_data)
+
+                    evidence_columns = ['', '', '']
+                    add_evidence_values_flag = False
+                    
+                    # loop through componenet evidence data
+                    for evidence_source in component_evidence:
+                        evidence_source_value = f"{evidence_source['database']}:{evidence_source['id']}"
+                        evidence_values = []
+                        tag_values = []
+
+                        # iterate through tags
+                        for tag in evidence_source['tags']:
+                            # handle evidence for singlular field tags
+                            if tag['tag'].split(':')[0] in single_evidence_fields:
+                                tag_values.append(tag['tag'])
+                                add_evidence_values_flag = True
+                            # handle evidence for array/object field tags 
+                            if tag['tag'].split(':')[0] in set(object_evidence_fields.keys()):
+                                if tag['tag'][tag['tag'].find(':') + 1:] == object_evidence_fields[tag['tag'].split(':')[0]]:
+                                    tag_values.append(tag['tag'])
+                                    add_evidence_values_flag = True
+                        
+                        # add evidence if applicable
+                        if add_evidence_values_flag:
+                            for evidence_text in evidence_source['evidence_list']:
+                                evidence_values.append(evidence_text['evidence'])
+                        
+                        add_evidence_values_flag = False
+                            
+                        evidence_columns = [evidence_source_value, ' '.join(evidence_values), '; '.join(tag_values)]
+                        tsv_content += '\t'.join(row_data) + '\t' + '\t'.join(evidence_columns) + '\n'
+                        
+            # handle case where specimen data is not available
             else:
                 row_data = [
                         biomarker_id,
@@ -156,12 +217,15 @@ def json_to_tsv(source: str, target: str) -> None:
                         exposure_agent,
                         exposure_agent_id,
                         best_biomarker_role,
-                        '',
-                        '',
-                        ''
+                        specimen,
+                        specimen_id,
+                        loinc_code
                     ]
+                
+                tsv_content += '\t'.join(row_data) + '\n'
             
-            tsv_content += '\t'.join(row_data) + '\n'
+        # parse top level evidence    
+        top_level_evidence = entry.get('evidence_source', [])
     
     with open(target, 'w') as f:
         f.write(tsv_content)
@@ -178,6 +242,17 @@ def tsv_to_json(source: str, target: str) -> None:
         Filepath to the output file of type JSON. 
     '''
 
+def setup_logging(log_path: str) -> None:
+    ''' Configures the logger. 
+
+    Parameters
+    ----------
+    log_path: str 
+        The path to the log file.
+    '''
+    logging.basicConfig(filename = log_path, level = logging.INFO,
+                        format = '%(asctime)s - %(levelname)s - %(message)s')
+
 def main() -> None: 
 
     global _version 
@@ -185,9 +260,20 @@ def main() -> None:
     with open('../conf.json', 'r') as f:
         config = json.load(f) 
         _version = config['version']
+        log_path = config[_CONF_KEY]['log_path']
+    
+    # make sure directory to dump logs in exists
+    validate_filepath(os.path.split(log_path)[0], 'output')
+    setup_logging(log_path)
+
+    # log start delimiter for a new run
+    logging.info('################################## Start ##################################')
     
     # parse the user arguments
     user_args() 
+
+    # log the end delmiter for the run
+    logging.info('---------------------------------- End ----------------------------------')
 
 if __name__ == '__main__': 
     main() 
