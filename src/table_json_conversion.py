@@ -4,6 +4,8 @@ or JSON data to the table format. Script is not agnostic to the formatting of th
 format/structure or the current data model JSON schema. If those are updated in the future, this 
 script needs to be updated. 
 
+Currently written for the v0.3 data model schema. 
+
 Usage: table_json_conversion.py [options]
 
     If the source file passed is of type JSON, then it will assume the conversion is JSON -> TSV 
@@ -91,7 +93,11 @@ def user_args() -> None:
         tsv_to_json(options.source_filepath, options.target_filepath)
 
 def json_to_tsv(source: str, target: str) -> None:
-    ''' Logic to convert the source JSON file to a TSV format.
+    ''' Logic to convert the source JSON file to a TSV format. The function unrolls the JSON data model format
+    into a table format. Because of the nested/hierarchical nature of the data model format, each entry gets
+    unrolled into potentially many rows in the table (TSV) format. Essentially generates each permuation of the 
+    JSON data based on some conditional logic (such as making sure evidence values are only added for rows where
+    the tags fit).
 
     Parameters
     ----------
@@ -105,6 +111,7 @@ def json_to_tsv(source: str, target: str) -> None:
     with open(source, 'r') as f:
         data = json.load(f)
 
+    # create the header row for the TSV file
     tsv_content = '\t'.join(TSV_HEADERS) + '\n'
 
     # loop through top level array 
@@ -121,16 +128,20 @@ def json_to_tsv(source: str, target: str) -> None:
         # loop through biomarker component
         for comp_idx, component in enumerate(entry['biomarker_component']):
 
+            # get biomarker component elements for the current component entry
             biomarker = component['biomarker']
             assessed_biomarker_entity = component['assessed_biomarker_entity']['recommended_name']
             assessed_biomarker_entity_id = component['assessed_biomarker_entity_id']
             assessed_entity_type = component['assessed_entity_type']
+            # set specimen values to empty strings for the case specimen data is not provided
             specimen = ''
             specimen_id = ''
             loinc_code = ''
 
-            # parse evidence from component 
+            # get evidence from component 
             component_evidence = component.get('evidence_source', [])
+            # get top level evidence    
+            top_level_evidence = entry.get('evidence_source', [])
             # singular evidence fields
             single_evidence_fields = {
                 'biomarker',
@@ -142,20 +153,24 @@ def json_to_tsv(source: str, target: str) -> None:
                 'best_biomarker_role'
             }
 
+            # get the component specimen data
             specimens = component.get('specimen', [])
             # handle case where specimen data is available
             if specimens:
                 # loop through specimen array 
                 for specimen_idx, specimen_entry in enumerate(specimens):
                         
+                    # parse specimen data
                     specimen = specimen_entry.get('name', '')
-                    specimen_id = specimen_entry.get('id', '')
+                    specimen_id = specimen_entry.get('specimen_id', '')
                     loinc_code = specimen_entry.get('loinc_code', '')
+                    # set object/array dictionary that evidence can tag to
                     object_evidence_fields = {
                         'specimen': specimen_id,
                         'loinc_code': loinc_code
                     }
 
+                    # set the row data for everything up until the evidence columns
                     row_data = [
                         biomarker_id,
                         biomarker,
@@ -171,14 +186,21 @@ def json_to_tsv(source: str, target: str) -> None:
                         specimen_id,
                         loinc_code
                     ]
-                    # tsv_content += '\t'.join(row_data)
 
+                    # initialize evidence columns to empty strings 
                     evidence_columns = ['', '', '']
-                    add_evidence_values_flag = False
+                    # flag to confirm component evidence is applicable for current row data
+                    add_comp_evidence_values_flag = False
+                    # flag to confirm top level evidence is applicable for current row data 
+                    add_top_level_evidence_values_flag = False
+                    # set to make sure that evidence values aren't repeated between component and top level evidence in case of duplicates
+                    seen_evidence = set()
                     
-                    # loop through componenet evidence data
+                    # loop through component evidence data
                     for evidence_source in component_evidence:
-                        evidence_source_value = f"{evidence_source['database']}:{evidence_source['id']}"
+                        # create evidence source 
+                        evidence_source_value = f"{evidence_source['database']}:{evidence_source['evidence_id']}"
+                        # initialize evidence values and tag values to empty lists
                         evidence_values = []
                         tag_values = []
 
@@ -186,24 +208,67 @@ def json_to_tsv(source: str, target: str) -> None:
                         for tag in evidence_source['tags']:
                             # handle evidence for singlular field tags
                             if tag['tag'].split(':')[0] in single_evidence_fields:
+                                # if tag is a valid singular field tag add to tag values
                                 tag_values.append(tag['tag'])
-                                add_evidence_values_flag = True
+                                add_comp_evidence_values_flag = True
                             # handle evidence for array/object field tags 
+                            if tag['tag'].split(':')[0] in set(object_evidence_fields.keys()):
+                                # if tag specifies an array field, make sure it is applicable to current row data
+                                if tag['tag'][tag['tag'].find(':') + 1:] == object_evidence_fields[tag['tag'].split(':')[0]]:
+                                    tag_values.append(tag['tag'])
+                                    add_comp_evidence_values_flag = True
+                        
+                        if add_comp_evidence_values_flag:
+                            # if evidence is applicable, loop through evidence list and add to list 
+                            for evidence_text in evidence_source['evidence_list']:
+                                evidence_values.append(evidence_text['evidence'])
+                            # add evidence to set for reference in top level evidence handling
+                            seen_evidence.add(' '.join(evidence_values))
+                        
+                        # reset flag for next evidence entry 
+                        add_comp_evidence_values_flag = False
+                            
+                        # populate evidence columns and add to current row
+                        evidence_columns = [evidence_source_value, ' '.join(evidence_values), '; '.join(tag_values)]
+                        tsv_content += '\t'.join(row_data) + '\t' + '\t'.join(evidence_columns) + '\n'
+                    
+                    # re-initialize evidence column values to empty strings 
+                    evidence_columns = ['', '', '']
+
+                    # loop through top level evidence data
+                    for evidence_source in top_level_evidence:
+                        evidence_source_value = f"{evidence_source['database']}:{evidence_source['evidence_id']}"
+                        evidence_values = []
+                        tag_values = []
+
+                        # iterate through tags
+                        for tag in evidence_source['tags']:
+                            # handle evidence for singular field tags
+                            if tag['tag'].split(':')[0] in single_evidence_fields:
+                                tag_values.append(tag['tag'])
+                                add_top_level_evidence_values_flag = True
+                            # handle evidence for array/object field tags
                             if tag['tag'].split(':')[0] in set(object_evidence_fields.keys()):
                                 if tag['tag'][tag['tag'].find(':') + 1:] == object_evidence_fields[tag['tag'].split(':')[0]]:
                                     tag_values.append(tag['tag'])
-                                    add_evidence_values_flag = True
+                                    add_top_level_evidence_values_flag = True
                         
                         # add evidence if applicable
-                        if add_evidence_values_flag:
+                        if add_top_level_evidence_values_flag:
+                            # if evidence is applicable, loop through evidence list and add to list
                             for evidence_text in evidence_source['evidence_list']:
                                 evidence_values.append(evidence_text['evidence'])
+                            # check if evidence is already captured from component evidence
+                            if ' '.join(evidence_values) in seen_evidence:
+                                continue
                         
-                        add_evidence_values_flag = False
-                            
+                        # reset flag for next evidence entry
+                        add_top_level_evidence_values_flag = False 
+
+                        # populate evidence columns and add to current row
                         evidence_columns = [evidence_source_value, ' '.join(evidence_values), '; '.join(tag_values)]
                         tsv_content += '\t'.join(row_data) + '\t' + '\t'.join(evidence_columns) + '\n'
-                        
+
             # handle case where specimen data is not available
             else:
                 row_data = [
@@ -222,11 +287,75 @@ def json_to_tsv(source: str, target: str) -> None:
                         loinc_code
                     ]
                 
-                tsv_content += '\t'.join(row_data) + '\n'
+                object_evidence_fields = {
+                    'specimen': specimen_id,
+                    'loinc_code': loinc_code
+                }
+                evidence_columns = ['', '', '']
+                add_comp_evidence_values_flag = False
+                add_top_level_evidence_values_flag = False
+                seen_evidence = set()
+                
+                # loop through component evidence data
+                for evidence_source in component_evidence:
+                    evidence_source_value = f"{evidence_source['database']}:{evidence_source['id']}"
+                    evidence_values = []
+                    tag_values = []
+
+                    # iterate through tags
+                    for tag in evidence_source['tags']:
+                        # handle evidence for singlular field tags
+                        if tag['tag'].split(':')[0] in single_evidence_fields:
+                            tag_values.append(tag['tag'])
+                            add_comp_evidence_values_flag = True
+                        # handle evidence for array/object field tags 
+                        if tag['tag'].split(':')[0] in set(object_evidence_fields.keys()):
+                            if tag['tag'][tag['tag'].find(':') + 1:] == object_evidence_fields[tag['tag'].split(':')[0]]:
+                                tag_values.append(tag['tag'])
+                                add_comp_evidence_values_flag = True
+                    
+                    # add evidence if applicable
+                    if add_comp_evidence_values_flag:
+                        for evidence_text in evidence_source['evidence_list']:
+                            evidence_values.append(evidence_text['evidence'])
+                        seen_evidence.add(' '.join(evidence_values))
+                    
+                    add_comp_evidence_values_flag = False
+                    evidence_columns = [evidence_source_value, ' '.join(evidence_values), '; '.join(tag_values)]
+                    tsv_content += '\t'.join(row_data) + '\t' + '\t'.join(evidence_columns) + '\n'
+                
+                # re-initialize evidence column values to empty strings
+                evidence_columns = ['', '', '']
+
+                # loop through top level evidence data
+                for evidence_source in top_level_evidence:
+                    evidence_source_value = f"{evidence_source['database']}:{evidence_source['evidence_id']}"
+                    evidence_values = []
+                    tag_values = []
+
+                    # iterate through tags
+                    for tags in evidence_source['tags']:
+                        # handle evidence for singular field tags
+                        if tag['tag'].split(':')[0] in single_evidence_fields:
+                            tag_values.append(tag['tag'])
+                            add_top_level_evidence_values_flag = True
+                        # handle evidence for array/object field tags
+                        if tag['tag'].split(':')[0] in set(object_evidence_fields.keys()):
+                            if tag['tag'][tag['tag'].find(':') + 1:] == object_evidence_fields[tag['tag'].split(':')[0]]:
+                                tag_values.append(tag['tag'])
+                                add_top_level_evidence_values_flag = True
+                    
+                    # add evidence if applicable 
+                    if add_top_level_evidence_values_flag:
+                        for evidence_text in evidence_source['evidence_list']:
+                            evidence_values.append(evidence_text['evidence'])
+                        if ' '.join(evidence_values) in seen_evidence:
+                            continue
+                    
+                    add_top_level_evidence_values_flag = False
+                    evidence_columns = [evidence_source_value, ' '.join(evidence_values), '; '.join(tag_values)]
+                    tsv_content += '\t'.join(row_data) + '\t' + '\t'.join(evidence_columns) + '\n'
             
-        # parse top level evidence    
-        top_level_evidence = entry.get('evidence_source', [])
-    
     with open(target, 'w') as f:
         f.write(tsv_content)
 
