@@ -8,7 +8,7 @@ The goal of this project is to develop a community-based biomarker-centric data 
     - [Initial Biomarker Database Curation](#initial-biomarker-database-curation)
 - [Biomarker Defition](#biomarker-definition)
 - [Project Workflow](#workflow)
-- [Usage Guides](https://github.com/biomarker-ontology/biomarker-partnership/tree/main/supplementary_files/documentation)
+- [Usage Guides](./supplementary_files/documentation/README.md)
 - [Top Level Repository Structure](#top-level-repository-structure)
 - [References](#references)
 
