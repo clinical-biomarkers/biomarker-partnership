@@ -62,13 +62,18 @@ def get_test_files() -> dict:
     
     return result
 
-def validate_test_data_pairs(files: dict) -> None:
+def validate_test_data_pairs(files: dict) -> int:
     ''' Validates whether the matching assertion and test data file pairs exist. 
 
     Parameters
     ----------
     files: dict
         The file dictionary structure created from the get_test_files function.
+
+    Returns
+    -------
+    int 
+        0 if processing succesful, 1 if not. 
     '''
     error_count = 1
     for test_category in list(SOURCE_FILES):
@@ -81,6 +86,9 @@ def validate_test_data_pairs(files: dict) -> None:
                 error_count += 1 
     if error_count == 1:
         logging.info(f'Passed test data pair validation.')
+        return 0
+    else:
+        return 1
 
 def setup_logging(log_path: str) -> None:
     ''' Configures the logger to write to a file.
@@ -162,6 +170,7 @@ def skeleton_dict_tests(test_data: dict) -> str:
     test_files = [f"{test_tmp.replace('./', '../supplementary_files/tests/')}" for test_tmp in test_data["data_files"]]
     cwd = '../../data_dictionary'
     result = 'SKELETON DICT TEST RESULTS:'
+    fail_count = 0
 
     # run each test
     for test_num, test in enumerate(test_files):
@@ -175,8 +184,11 @@ def skeleton_dict_tests(test_data: dict) -> str:
         test_result = validate_assertion(generated_file, corresponding_assertion, filetype = 'json')
         # remove the generated file 
         os.remove(generated_file)
-        result += f"\n\tTEST #{test_num + 1}: {test_name}...RESULT: {'passed' if test_result else 'failed'}"
+        if not test_result: fail_count += 1 
+        result += f"\n\tTEST #{test_num + 1}: {test_name}...RESULT: {'passed' if test_result else 'FAILED'}"
     
+    result += f'\n\tOVERVIEW: Total skeleton_dictionary tests failed --> {fail_count}'
+
     return result 
 
 def main() -> None:
@@ -201,7 +213,11 @@ def main() -> None:
     # grab filepaths for test and assertion files
     test_data = get_test_files()
     # validate the structure of the test pairs 
-    validate_test_data_pairs(test_data)
+    pairs_result = validate_test_data_pairs(test_data)
+    if pairs_result == 1:
+        print(f'Error matching test and assertion files, check logs for more information.')
+        logging.info('---------------------------------- End ------------------------------------')
+        sys.exit(1)
 
     # run skeleton_dictionary.py tests
     skeleton_dict_results = skeleton_dict_tests(test_data['skeleton_dictionary'])
