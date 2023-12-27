@@ -7,13 +7,9 @@ The goal of this project is to develop a community-based biomarker-centric data 
     - [Scope and Goal of the Project](#scope-and-goal-of-the-project)
     - [Initial Biomarker Database Curation](#initial-biomarker-database-curation)
 - [Biomarker Defition](#biomarker-definition)
-- [Workflow](#workflow)
-- [Usage Guides](#usage-guides)
-    - [General Notes](#general-notes)
-    - [Start Environment](#starting-up-the-virtual-environment)
-    - [Schema Generation](/data_dictionary/README.md)
-    - [Data Validation](/schema/README.md)
-- [Repository Structure](#repository-structure)
+- [Project Workflow](#workflow)
+- [Usage Guides](/supplementary_files/documentation/toc.md)
+- [Top Level Repository Structure](#top-level-repository-structure)
 - [References](#references)
 
 ## Intro
@@ -37,11 +33,11 @@ There is also a notes section present in this databse and that includes extra/mi
 
 Based on the resource that was being studied there can be some variation in how the data was extracted, manipulted, and harmonized to fit the structre of the above figure. This repository will provide examples of this alonsgide the table generated and other resources needed to gain information/data for the biomarker.
 
-A sample JSON structure for the data model can be found [here](./supplementary_files/sample_data_model_structures/). The data model RFC can be found [here](./supplementary_files/documents/Master_Biomarker_Partnership_Data_Model_RFC.pdf).
+A sample single entry JSON structure for the data model can be found [here](./supplementary_files/sample_data_model_structures/). The data model RFC can be found [here](./supplementary_files/documents/Master_Biomarker_Partnership_Data_Model_RFC.pdf).
 
 ## Workflow
 
-The general workflow is as described in the flowchart below. It starts with the most current data dictionary. The data dictionary can then be converted into a JSON schema format following the steps in the [generating a schema](./data_dictionary/README.md) documentation. Once the current version's schema has been generated, you can validate your data files against the schema to ensure they conform to the latest data dictionary. Instructions for validation are in the [validating a data file against a schema](./schema/README.md) documentation. 
+The general workflow is as described in the flowchart below. It starts with the most current data dictionary. The data dictionary can then be converted into a JSON schema format. Once the current version's schema has been generated, you can validate your data files against the schema to ensure they conform to the latest data dictionary. The detailed usage guides and documentation can be found [here](/supplementary_files/documentation/toc.md).
 
 ```mermaid
 flowchart TD
@@ -53,51 +49,19 @@ flowchart TD
     F --> G[Generate RDF Triples for Virtuoso]
 ```
 
-## Usage Guides 
-
-The documentation for generating the JSON schema can be found [here](./data_dictionary/README.md). The documentation for validating data against the schema can be found [here](./schema/README.md).
-
 ### General Notes
 
 The `.gitignore` file includes entries for directories named `home/` and `env/`. The `home/` directory can be used for any source files, temp files, log files, files larger than Github's limit of 100 MiB, or any other files that don't need to be pushed to the upstream repository. The `env/` directory should be the name of your virtual environment (instructions in next section). 
 
-### Starting up the Virtual Environment
-
-You can run the project locally or through a virtual environment. A virtual environment is recommended to avoid potential dependency and/or versioning issues. 
-
-If your virtual environment has not been created yet, you can do so with:
-
-```bash
-virtualenv env 
-```
-
-To activate the virtual environment on Windows:
-
-```bash 
-env/Scripts/activate
-```
-
-To start the virtual environemnt on MacOS/Linus:
-
-```bash
-source env/bin/activate
-```
-
-Then install the project dependencies using:
-
-```bash
-(env) pip install -r requirements.txt
-```
-
-## Repository Structure 
+## Top Level Repository Structure 
 
 | Directory             | Description                                                                           |
 |-----------------------|---------------------------------------------------------------------------------------|
 | `data_dictionary`     | Contains the information for the agreed upon data dictionary.             |
 | `mapping_data`        | Contains some supporting data that can be used to map contextual data to the biomarkers.   |
 | `schema`              | Contains the validation JSON schemas derived from the data dictonary.                 |
-| `src`                 | Contains the scripts used for data extraction.                                                         |
-| `supplementary_files` | Supplementary files for the project.                                              | 
+| `src`                 | Contains the scripts used for data wrangling and extraction.                                                         |
+| `supplementary_files` | Supplementary, example, and documentation files for the project.                                              | 
 
 ## References
 
