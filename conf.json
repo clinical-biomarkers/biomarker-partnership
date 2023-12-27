@@ -13,6 +13,13 @@
     "format_conversion": {
         "log_path": "../home/logs/conversion_log.log"
     },
+    "testing": {
+        "log_path": "../../home/logs/test_log.log",
+        "source_files": {
+            "skeleton_dictionary": "../../data_dictionary/skeleton_dictionary.py"
+        },
+        "python_env": "../env/bin/python"
+    },
     "url_map": {
         "pubmed": "https://pubmed.ncbi.nlm.nih.gov/",
         "uberon": "http://purl.obolibrary.org/obo/UBERON_",
