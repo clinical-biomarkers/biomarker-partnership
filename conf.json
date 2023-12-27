@@ -9,5 +9,16 @@
     "validation": {
         "log_path": "../home/logs/validation_log.log",
         "intermediate_path": "../home/intermediate_data/"
+    },
+    "format_conversion": {
+        "log_path": "../home/logs/conversion_log.log"
+    },
+    "url_map": {
+        "pubmed": "https://pubmed.ncbi.nlm.nih.gov/",
+        "uberon": "http://purl.obolibrary.org/obo/UBERON_",
+        "doid": "http://disease-ontology.org/term/DOID:"
+    },
+    "name_space_map": {
+        "doid": "disease ontology"
     }
 }
