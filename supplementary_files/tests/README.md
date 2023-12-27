@@ -20,3 +20,5 @@ To run the tests, change your current working directory to the `tests/` director
 cd /supplementary_files/tests
 python test.py 
 ```
+
+The script expects to dump logs in the filepath set in the `conf.json` file. Make sure the directory path exists. 
