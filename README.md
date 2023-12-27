@@ -49,10 +49,6 @@ flowchart TD
     F --> G[Generate RDF Triples for Virtuoso]
 ```
 
-### General Notes
-
-The `.gitignore` file includes entries for directories named `home/` and `env/`. The `home/` directory can be used for any source files, temp files, log files, files larger than Github's limit of 100 MiB, or any other files that don't need to be pushed to the upstream repository. The `env/` directory should be the name of your virtual environment (instructions in next section). 
-
 ## Top Level Repository Structure 
 
 | Directory             | Description                                                                           |
@@ -62,6 +58,8 @@ The `.gitignore` file includes entries for directories named `home/` and `env/`.
 | `schema`              | Contains the validation JSON schemas derived from the data dictonary.                 |
 | `src`                 | Contains the scripts used for data wrangling and extraction.                                                         |
 | `supplementary_files` | Testing, example, and documentation files for the project.                                              | 
+
+The `.gitignore` file includes entries for directories named `home/` and `env/`. The `home/` directory can be used for any source files, temporary files, log files, files larger than Github's limit of 100 MiB, or any other files that don't need to be pushed to the upstream repository. The `env/` directory should be the name of your virtual environment. If using a different virtual environment name, update the `.gitignore`.  
 
 ## References
 
