@@ -1,0 +1,12 @@
+{
+    "element_1": {
+        "description": "### PLACEHOLDER ###",
+        "type": "array",
+        "required": {
+            "requirement": "### PLACEHOLDER ###"
+        },
+        "items": {
+            
+        }
+    }
+}
