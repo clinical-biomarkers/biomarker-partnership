@@ -26,6 +26,7 @@ import argparse
 import sys 
 import os 
 import logging
+import csv
 
 _CONF_KEY = 'format_conversion'
 _version = None
@@ -359,7 +360,6 @@ def json_to_tsv(source: str, target: str) -> None:
     with open(target, 'w') as f:
         f.write(tsv_content)
 
-
 def tsv_to_json(source: str, target: str) -> None:
     ''' Logic to convert the source TSV file to a JSON format.
 
@@ -370,6 +370,48 @@ def tsv_to_json(source: str, target: str) -> None:
     target: str 
         Filepath to the output file of type JSON. 
     '''
+
+    # flag for first row to check column headers are correct
+    header_check = False
+
+    with open(source, 'r') as f:
+        
+        data = csv.reader(f, delimiter = '\t', quotechar = '"')
+        # list to hold converted data 
+        result_data = []
+    
+        # iterate through tsv data
+        for row in data:
+
+            # top level structure
+            biomarker_entry = {
+                'biomarker_id': '',
+                'biomarker_component': [],
+                'best_biomarker_role': '',
+                'condition': None,
+                'exposure_agent': None,
+                'evidence_source': [],
+                'citation': []
+            }
+            
+            # make sure file headers are correct
+            if not header_check:
+                for header in row:
+                    if header not in TSV_HEADERS:
+                        logging.error(f'Incorrect column headers in TSV file: {row}')
+                header_check = True
+            # start conversion
+            else:
+                # start building biomarker component
+                biomarker_component = {
+                    'biomarker': row['biomarker'],
+                    'assessed_biomarker_entity': {
+                        'recommended_name': row['assessed_biomarker_entity'],
+                        'synonyms': []
+                    },
+                    'assessed_biomarker_entity_id': row['assessed_biomarker_entity_id'],
+                    'assessed_entity_type': row['assessed_entity_type']
+                }
 
 def setup_logging(log_path: str) -> None:
     ''' Configures the logger. 
