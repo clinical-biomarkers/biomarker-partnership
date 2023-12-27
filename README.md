@@ -61,7 +61,7 @@ The `.gitignore` file includes entries for directories named `home/` and `env/`.
 | `mapping_data`        | Contains some supporting data that can be used to map contextual data to the biomarkers.   |
 | `schema`              | Contains the validation JSON schemas derived from the data dictonary.                 |
 | `src`                 | Contains the scripts used for data wrangling and extraction.                                                         |
-| `supplementary_files` | Supplementary, example, and documentation files for the project.                                              | 
+| `supplementary_files` | Testing, example, and documentation files for the project.                                              | 
 
 ## References
 
