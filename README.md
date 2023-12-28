@@ -37,7 +37,7 @@ A sample single entry JSON structure for the data model can be found [here](./su
 
 ## Workflow
 
-The general workflow is as described in the flowchart below. It starts with the most current data dictionary. The data dictionary can then be converted into a JSON schema format. Once the current version's schema has been generated, you can validate your data files against the schema to ensure they conform to the latest data dictionary. The detailed usage guides and documentation can be found [here](/supplementary_files/documentation/toc.md).
+The general workflow is as described in the flowchart below. It starts with the most current data dictionary. The data dictionary can then be converted into a JSON schema format. Once the current version's schema has been generated, you can validate your data files against the schema to ensure they conform to the latest data dictionary. The detailed usage guides and documentation can be found [here](https://github.com/biomarker-ontology/biomarker-partnership/tree/main/supplementary_files/documentation).
 
 ```mermaid
 flowchart TD
