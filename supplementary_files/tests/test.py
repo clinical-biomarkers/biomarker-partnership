@@ -26,6 +26,7 @@ _CONF_KEY = 'testing'
 _version = None
 _log_path = None
 _python = None
+_tmp_output_path = None 
 SOURCE_FILES = None 
 
 def user_args() -> None:
@@ -188,7 +189,44 @@ def skeleton_dict_tests(test_data: dict) -> str:
         result += f"\n\tTEST #{test_num + 1}: {test_name}...RESULT: {'passed' if test_result else 'FAILED'}"
     
     result += f'\n\tOVERVIEW: Total skeleton_dictionary tests failed --> {fail_count}'
+    return result 
 
+def data_dictionary_tests(test_data: dict) -> str: 
+    ''' runs the tests for the process_dictionary.py script.
+
+    Parameters
+    ----------
+    test_data: dict 
+        The data for the data dictionary testing.
+    
+    Returrns 
+    --------
+    str
+        The output string for the test case results.
+    '''
+    script = os.path.split(test_data['script_path'])[1]
+    assertion_files = test_data['assertion_files']
+    test_files = [f"{test_tmp.replace('./', '../supplementary_files/tests/')}" for test_tmp in test_data['data_files']]
+    cwd = '../../data_dictionary'
+    result = 'DATA DICT TEST RESULTS:'
+    fail_count = 0 
+
+    # run each test
+    for test_num, test in enumerate(test_files):
+        test_name = os.path.split(os.path.splitext(test)[0])[1]
+        args = [test, '-o', f'{_tmp_output_path}/data_dict_test.json']
+        # run the script
+        _ = subprocess.run([_python, script] + args, cwd = cwd, capture_output = True, text = True)
+        generated_file = f'../../data_dictionary/data_dict_test.json'
+        # check the result
+        correspdonding_assertion = assertion_files[assertion_files.index(f"{test.replace('test_data', 'assertion_files').replace('../supplementary_files/tests/', './')}")]
+        test_result = validate_assertion(generated_file, correspdonding_assertion, filetype = 'json')
+        # remove the generated file
+        os.remove(generated_file)
+        if not test_result: fail_count += 1
+        result += f"\n\tTEST #{test_num + 1}: {test_name}...RESULT: {'passed' if test_result else 'FAILED'}"
+    
+    result += f'\n\tOVERVIEW: Total data_dictionary tests failed --> {fail_count}'
     return result 
 
 def main() -> None:
@@ -196,6 +234,7 @@ def main() -> None:
     global _version 
     global _log_path
     global _python
+    global _tmp_output_path
     global SOURCE_FILES
 
     # grab configuration variables from config file 
@@ -204,6 +243,7 @@ def main() -> None:
         _version = config['version']
         _log_path = config[_CONF_KEY]['log_path']
         _python = config[_CONF_KEY]['python_env']
+        _tmp_output_path = config[_CONF_KEY]['tmp_output_path']
         SOURCE_FILES = config[_CONF_KEY]['source_files']
     
     setup_logging(_log_path)
@@ -218,11 +258,22 @@ def main() -> None:
         print(f'Error matching test and assertion files, check logs for more information.')
         logging.info('---------------------------------- End ------------------------------------')
         sys.exit(1)
+    
+    # aggregated result log string
+    results = '\n'
 
     # run skeleton_dictionary.py tests
     skeleton_dict_results = skeleton_dict_tests(test_data['skeleton_dictionary'])
-    logging.info(skeleton_dict_results)
+    results += skeleton_dict_results
     print(skeleton_dict_results)
+
+    # run the process_dictionary.py tests 
+    data_dictionary_results = data_dictionary_tests(test_data['data_dictionary'])
+    results += '\n' + data_dictionary_results
+    print(data_dictionary_results)
+
+    # log aggregated results
+    logging.info(results)
 
     logging.info('---------------------------------- End ------------------------------------')
 
