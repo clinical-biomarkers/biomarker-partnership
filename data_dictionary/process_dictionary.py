@@ -8,6 +8,7 @@ Usage: python process_dictionary.py [options]
         file_path           filepath of the data dictionary JSON to convert
 
     Optional arguments: 
+        -o --output         alternate output path for dumping the schema (for testing)
         -h --help           show the help message and exit
         -v --version        show current version number and exit
 '''
@@ -36,6 +37,7 @@ def user_args() -> None:
     
     parser.add_argument('file_path', help = 'filepath of the data dictionary JSON')
     parser.add_argument('-v', '--version', action = 'version', version = f'%(prog)s {_version}')
+    parser.add_argument('-o', '--output', type = str, help = 'Output file path', default = None)
 
     # print out help if script is called with no input arguments
     if len(sys.argv) <= 1:
@@ -45,18 +47,30 @@ def user_args() -> None:
     # check that the filepath passed is a JSON file
     if not (options.file_path.endswith('.json')):
         raise ValueError(f'Error: Expects JSON file as input.')
+    # check if an output path argument was passed
+    custom_output_flag = False 
+    if options.output:
+        custom_output_flag = True
+        validate_filepath(os.path.split(options.output)[0], 'output')
     # check that the user passed input filepath exists
     validate_filepath(options.file_path, 'input')
 
-    generate_schema_json(options.file_path)
+    if custom_output_flag:
+        generate_schema_json(options.file_path, custom_output_flag = custom_output_flag, custom_output_path = options.output)
+    else:
+        generate_schema_json(options.file_path)
 
-def generate_schema_json(filepath: str) -> None:
+def generate_schema_json(filepath: str, custom_output_flag: bool = False, custom_output_path: str = None) -> None:
     ''' Converts the data dictionary into a JSON schema. 
 
     Parameters
     ----------
     filepath: str
         Filepath to the source data dictionary file. 
+    custom_output_flag: bool (default False)
+        Flag that determines if a custom output path was passed.
+    custom_output_path: str (default None)
+        Custom output path to write to. 
     '''
 
     # construct root of json schema 
@@ -117,8 +131,13 @@ def generate_schema_json(filepath: str) -> None:
         # add the processed property to the schema
         biomarker_schema['items']['properties'][key] = property_schema
     
+    # create output path
+    if custom_output_flag:
+        file_dump_path = custom_output_path
+    else:
+        file_dump_path = f'{_output_path}/{_output_file}'
     # write out schema
-    with open(f'{_output_path}/{_output_file}', 'w') as f:
+    with open(file_dump_path, 'w') as f:
         json.dump(biomarker_schema, f)
 
 def process_primitive_item(item: dict) -> dict:

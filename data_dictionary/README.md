@@ -213,7 +213,7 @@ The `process_dictionary.py` script takes as input the data dictionary JSON and p
 
 If applicable, in the project root directory, update the `conf.json` file with the updated version number. 
 
-Make sure the corresponding schema directory exist prior to running `process_dictionary.py`. While inside the project root directory:
+Make sure the corresponding schema directory exist prior to running `process_dictionary.py`. This is where the resulting schema file will be dumped. While inside the project root directory:
 
 ```bash
 mkdir schema/<VERSION>
@@ -226,6 +226,7 @@ Positional arguments:
     file_path           filepath of the data dictionary JSON to convert
 
 Optional arguments 
+    -o --output         alternate output path for dumping the generated schema (for testing)
     -h --help           show the help message and exit
     -v --version        show current version number and exit
 ```
