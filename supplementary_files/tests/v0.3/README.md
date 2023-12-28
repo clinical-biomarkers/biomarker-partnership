@@ -1,9 +1,12 @@
 # Sample Data for Testing
 
 - [skeleton_dictionary tests](#skeleton-dictionary)
+- [data_dictionary tests](#data-dictionary)
 - [data_conversion tests](#data-conversion)
 
 ## Skeleton Dictionary
+
+These files test the `skeleton_dictionary.py` script for generating skeleton data dictionaries. 
 
 | File                          | Testing For                                                       |
 |-------------------------------|-------------------------------------------------------------------|
@@ -12,6 +15,16 @@
 | `single_object_field.json`        | Testing for a single top level object element.                              |
 | `single_list_field.json`      | Testing for a single top level list element.    |
 | `single_object_single_child.json` | Testing for a single top level object field with a simple nested child field.  | 
+| `single_list_single_child.json`  | Testing for a single top level list field with a simple nested child field.    |
+| `list_and_object_fields.json` | Testing for both a top level list and object fields with simple nested child fields. |
+
+## Data Dictionary 
+
+These files test the `process_dictionary.py` script for generating the corresponding JSON schema's using the data dictionary. 
+
+| File                          | Testing For                                                   |
+|-------------------------------|---------------------------------------------------------------|
+| `simple_dict.json`            | Testing for the simplest possible data dictionary, a single top level element.    |
 
 ## Data Conversion
 
