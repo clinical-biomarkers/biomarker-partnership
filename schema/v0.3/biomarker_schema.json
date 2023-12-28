@@ -121,11 +121,11 @@
                                 ]
                             },
                             "specimen_id": {
-                                "description": "Identifier for the specimen.",
+                                "description": "Name space and identifier for the specimen.",
                                 "type": "string",
                                 "pattern": "^.*$",
                                 "examples": [
-                                    "0000178"
+                                    "UBERON:0000178"
                                 ]
                             },
                             "name_space": {
@@ -230,7 +230,7 @@
                                             "string",
                                             "null"
                                         ],
-                                        "pattern": "^(biomarker|assessed_biomarker_entity|assessed_biomarker_entity_id|assessed_entity_type|specimen:.*|loinc_code:.*|condition|exposure_agent|best_biomarker_role)$",
+                                        "pattern": "^(biomarker|assessed_biomarker_entity|assessed_biomarker_entity_id|assessed_entity_type|specimen:.+:.+|loinc_code:.+|condition|exposure_agent|best_biomarker_role)$",
                                         "examples": [
                                             "loinc_code:34519-9",
                                             "assessed_biomarker_entity",
@@ -556,7 +556,7 @@
                                     "string",
                                     "null"
                                 ],
-                                "pattern": "^(biomarker:\\d+|assessed_biomarker_entity:\\d+|assessed_biomarker_entity_id:\\d+|assessed_entity_type:\\d+|specimen:.+:\\d+|loinc_code:.+:\\d+|condition|exposure_agent|best_biomarker_role)$",
+                                "pattern": "^(biomarker:\\d+|assessed_biomarker_entity:\\d+|assessed_biomarker_entity_id:\\d+|assessed_entity_type:\\d+|specimen:.+:.+:\\d+|loinc_code:.+:\\d+|condition|exposure_agent|best_biomarker_role)$",
                                 "examples": [
                                     "loinc_code:34519-9:0",
                                     "assessed_biomarker_entity:0",
