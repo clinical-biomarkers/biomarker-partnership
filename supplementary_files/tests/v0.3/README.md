@@ -11,7 +11,7 @@ These files test the `skeleton_dictionary.py` script for generating skeleton dat
 | File                          | Testing For                                                       |
 |-------------------------------|-------------------------------------------------------------------|
 | `simple_structure.json`       | Testing for a simple top level single element.          |
-| `two_element_simple_structure.json` | Testing for a multiple simple top level element.  |
+| `two_element_simple_structure.json` | Testing for multiple, simple top level elements.  |
 | `single_object_field.json`        | Testing for a single top level object element.                              |
 | `single_list_field.json`      | Testing for a single top level list element.    |
 | `single_object_single_child.json` | Testing for a single top level object field with a simple nested child field.  | 
@@ -25,6 +25,7 @@ These files test the `process_dictionary.py` script for generating the correspon
 | File                          | Testing For                                                   |
 |-------------------------------|---------------------------------------------------------------|
 | `simple_dict.json`            | Testing for the simplest possible data dictionary, a single top level element.    |
+| `two_element_simple_structure.json` | Testing for multiple, simple, top level elements.   | 
 
 ## Data Conversion
 
