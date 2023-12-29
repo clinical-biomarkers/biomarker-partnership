@@ -1,0 +1,46 @@
+{
+    "parent_element": {
+        "description": "### PLACEHOLDER ###",
+        "type": "object", 
+        "required": {
+            "requirement": "### PLACEHOLDER ###"
+        },
+        "properties": {
+            "child_element": {
+                "description": "### PLACEHOLDER ###",
+                "type": "array",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "items": {
+                    "nested_child_1": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "domain": "### PLACEHOLDER ###",
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    },
+                    "nested_child_2": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "domain": "### PLACEHOLDER ###",
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    }
+                }
+            }
+        }
+    }
+}

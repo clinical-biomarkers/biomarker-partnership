@@ -17,6 +17,11 @@ These files test the `skeleton_dictionary.py` script for generating skeleton dat
 | `single_object_single_child.json` | Testing for a single top level object field with a simple nested child field.  | 
 | `single_list_single_child.json`  | Testing for a single top level list field with a simple nested child field.    |
 | `list_and_object_fields.json` | Testing for both a top level list and object fields with simple nested child fields. |
+| `parent_list_nested_list.json`            | Testing for a list element with a nested list element child.  |
+| `parent_object_nested_object.json` | Testing for an object element with a nested object element child. |
+| `parent_list_nested_objects.json` | Testing for a top level list element with multiple nested object children elements. | 
+| `parent_object_nested_list_of_objects.json` | Testing for a top level object element with a list child element containing primitive fields. |
+| `complex_structure.json`      | Testing for a complex structure example, encompassing all of the cases in the previous test cases. | 
 
 ## Data Dictionary 
 
