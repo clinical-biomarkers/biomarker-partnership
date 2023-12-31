@@ -158,7 +158,7 @@ def process_primitive_item(item: dict) -> dict:
         'description': item.get('description', ''),
         'type': item['type']
     }
-    if ('required' in item and item['required']['requirement']) or item['required']['requirement'] == 'conditional':
+    if ('required' in item and not item['required']['requirement']) or item['required']['requirement'] == 'conditional':
         item_schema['type'] = [item['type'], 'null']
     if 'pattern' in item:
         item_schema['pattern'] = item['pattern']
@@ -224,16 +224,15 @@ def process_nested_array(nested_data: dict) -> dict:
         The schema for the nested object type schema and its children elements. 
     '''
 
-    # handle required nested properties
-    properties = nested_data.get('items', {})
-    required_fields = [key for key, value in properties.items() if value['required']['requirement'] and value['required']['requirement'] != 'conditional']
-
     # build array schema
     nested_array_schema = {
         'description': nested_data['description'],
         'type': 'array',
-        'required': required_fields,
-        'items': {}
+        'items': {
+            "type": "object",
+            "required": [],
+            "properties": {}
+        }
     }
     # if not explicitly required field allow null values
     if not nested_data['required']['requirement'] or nested_data['required']['requirement'] == 'conditional':
@@ -243,13 +242,25 @@ def process_nested_array(nested_data: dict) -> dict:
         nested_array_schema['pattern'] = nested_data['pattern']
     
     # loop through children and handle recursively generation 
-    for child_key, child_value in nested_data['items'].items():
-        if child_value['type'] == 'object':
-            nested_array_schema['items'][child_key] = process_nested_object(child_value)
-        elif child_value['type'] == 'array':
-            nested_array_schema['items'][child_key] = process_nested_array(child_value)
+    for property_name, property_data in nested_data['items'].items():
+        # process each property according to its type 
+        if property_data['type'] == 'object':
+            nested_array_schema['items']['properties'][property_name] = process_nested_object(property_data)
+        elif property_data['type'] == 'array':
+            nested_array_schema['items']['properties'][property_name] = process_nested_array(property_data)
         else:
-            nested_array_schema['items'][child_key] = process_primitive_item(child_value)
+            nested_array_schema['items']['properties'][property_name] = process_primitive_item(property_data)
+        # add to required if applicable
+        if property_data.get('required', {}).get('requirement'):
+            nested_array_schema['items']['required'].append(property_name)
+
+    # for child_key, child_value in nested_data['items'].items():
+    #     if child_value['type'] == 'object':
+    #         nested_array_schema['items'][child_key] = process_nested_object(child_value)
+    #     elif child_value['type'] == 'array':
+    #         nested_array_schema['items'][child_key] = process_nested_array(child_value)
+    #     else:
+    #         nested_array_schema['items'][child_key] = process_primitive_item(child_value)
     
     return nested_array_schema
 
