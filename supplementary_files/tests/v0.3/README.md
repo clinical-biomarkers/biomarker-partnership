@@ -31,6 +31,8 @@ These files test the `process_dictionary.py` script for generating the correspon
 |-------------------------------|---------------------------------------------------------------|
 | `simple_dict.json`            | Testing for the simplest possible data dictionary, a single top level element.    |
 | `two_element_simple_structure.json` | Testing for multiple, simple, top level elements.   | 
+| `object_field_primitive_child_elements.json` | Testing for a single object field that contains multiple primitive child elements where one is required and the other is not. |
+| `object_field_array_child_elements.json`     | Testing for a single object field that contains an array field, which containing multiple child elements with various requirement levels. |
 
 ## Data Conversion
 
