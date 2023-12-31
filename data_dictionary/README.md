@@ -57,7 +57,9 @@ python skeleton_dictionary.py <FILEPATH/TO/SAMPLE>
 
 This will create the skeleton data dictionary structure, now you will have to fill in each field's metadata. 
 
-Note: The script requires a feature introduced in Python 3.7, when the regular `dict` type became order preserving. If using a version of Python older than this, `dict` keys were not guaranteed to be ordered and could result in undefined behaviour on a per execution basis when reading the JSON keys and dumping the output JSON.
+Notes: 
+- The script requires a feature introduced in Python 3.7, when the regular `dict` type became order preserving. If using a version of Python older than this, `dict` keys were not guaranteed to be ordered and could result in undefined behaviour on a per execution basis when reading the JSON keys and dumping the output JSON.
+- All array elements should contain objects. Direct primitive elements within arrays are not supported. 
 
 ## Data Dictionary Structure 
 
