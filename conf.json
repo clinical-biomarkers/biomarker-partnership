@@ -17,7 +17,8 @@
         "log_path": "../../home/logs/test_log.log",
         "source_files": {
             "skeleton_dictionary": "../../data_dictionary/skeleton_dictionary.py",
-            "data_dictionary": "../../data_dictionary/process_dictionary.py"
+            "data_dictionary": "../../data_dictionary/process_dictionary.py",
+            "schema": "../../schema/validate_data.py"
         },
         "tmp_output_path": "./",
         "python_env": "../env/bin/python"
