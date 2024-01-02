@@ -133,8 +133,8 @@
                         "example": [
                             "UBERON:0000178"
                         ],
-                        "pattern": "^.*$",
-                        "pattern_notes": "Matches on an entire line, regardless of content, including an empty line. Must be string as JSON does not support octal numbers (integers with leading zeroes)."
+                        "pattern": "^.+:.+$",
+                        "pattern_notes": "Matches on a value in the format of \"string:string\", not including empty strings."
                     },
                     "name_space": {
                         "description": "Name space for the specimen identifier.",
