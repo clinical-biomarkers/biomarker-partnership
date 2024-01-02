@@ -8,4 +8,4 @@
 
 Internal: 
 - [Version Update Checklist](./updating_version.md)
-- [Testing](../tests/README.md)
+- [Testing](https://github.com/biomarker-ontology/biomarker-partnership/tree/main/supplementary_files/tests)
