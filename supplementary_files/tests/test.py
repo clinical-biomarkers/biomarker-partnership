@@ -142,12 +142,13 @@ def validate_assertion(source_filepath: str, assertion_filepath: str, filetype: 
     bool
         True if the assertion check passed, False otherwise. 
     '''
+    # checks the assertion if both source and assertion file types are json
     if filetype.lower().strip() == 'json':
         with open(source_filepath, 'r') as f:
             source_data = json.load(f)
         with open(assertion_filepath, 'r') as f:
             assertion_data = json.load(f)
-    
+
     if source_data == assertion_data:
         return True
     else: 
@@ -192,7 +193,7 @@ def skeleton_dict_tests(test_data: dict) -> str:
     return result 
 
 def data_dictionary_tests(test_data: dict) -> str: 
-    ''' runs the tests for the process_dictionary.py script.
+    ''' Runs the tests for the process_dictionary.py script.
 
     Parameters
     ----------
@@ -228,6 +229,50 @@ def data_dictionary_tests(test_data: dict) -> str:
     
     result += f'\n\tOVERVIEW: Total data_dictionary tests failed --> {fail_count}'
     return result 
+
+def validate_data_tests(test_data: dict) -> str:
+    ''' Runs the tests for the validate_data.py script.
+
+    Parameters
+    ----------
+    test_data: dict 
+        The data for the data validation testing.
+
+    Returns
+    -------
+    str
+        The output string for the test case results.
+    '''
+    script = os.path.split(test_data['script_path'])[1]
+    assertion_files = test_data['assertion_files']
+    test_files = [f"{test_tmp.replace('./', '../supplementary_files/tests/')}" for test_tmp in test_data['data_files']]
+    cwd = '../../schema'
+    result = 'DATA VALIDATION (SCHEMA) RESULTS:'
+    fail_count = 0
+
+    # run each test
+    for test_num, test in enumerate(test_files):
+        test_name = os.path.split(os.path.splitext(test)[0])[1]
+        args = [test, f'v{_version}/biomarker_schema.json']
+        # run the script
+        output = subprocess.run([_python, script] + args, cwd = cwd, capture_output = True, text = True)
+        # check the stdout for the result
+        validation_result = True if 'Validation successful.' in output.stdout else False
+        # read in the assertion txt file 
+        correspdonding_assertion = assertion_files[assertion_files.index(f"{test.replace('test_data', 'assertion_files').replace('../supplementary_files/tests/', './').replace('.json', '.txt')}")]
+        with open(correspdonding_assertion, 'r') as f:
+            assertion = f.read()
+        # check if the result matches the assertion
+        if validation_result and 'Validation successful.' in assertion:
+            test_result = True
+        elif not validation_result and 'Validation successful.' not in assertion: 
+            test_result = True
+        else:
+            test_result = False
+        result += f"\n\tTEST #{test_num + 1}: {test_name}...RESULT: {'passed' if test_result else 'FAILED'}"
+    
+    result += f'\n\tOVERVIEW: Total validate_data tests failed --> {fail_count}'
+    return result
 
 def main() -> None:
 
@@ -271,6 +316,11 @@ def main() -> None:
     data_dictionary_results = data_dictionary_tests(test_data['data_dictionary'])
     results += '\n' + data_dictionary_results
     print(data_dictionary_results)
+
+    # run the validate_data.py tests 
+    validate_data_results = validate_data_tests(test_data['schema'])
+    results += '\n' + validate_data_results
+    print(validate_data_results)
 
     # log aggregated results
     logging.info(results)

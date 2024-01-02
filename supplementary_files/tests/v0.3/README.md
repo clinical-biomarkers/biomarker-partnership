@@ -39,11 +39,10 @@ These files test the `process_dictionary.py` script for generating the correspon
 
 ## Schema Validation
 
-These files test the `validate_data.py` script for validating data against the JSON schema.
+These files test the `validate_data.py` script for validating data against the JSON schema. The schema used for the validation tests is the version set in the `conf.json` file.
 
 | File                          | Testing For                                                   | 
 |-------------------------------|---------------------------------------------------------------|
-
 | `simple_entry_compliant.json` | Testing for a simple single entry dataset that is compliant with the JSON schema. |           
 
 ## Data Conversion
