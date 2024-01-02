@@ -1,0 +1,34 @@
+{
+    "top_element_1": "",
+    "list_element_1": [
+        {
+            "list_child_1": "",
+            "list_child_2": "",
+            "list_child_3": {
+                "nested_list_child_1": "",
+                "nested_list_child_2": [
+                    {
+                        "double_nested_child_1": "",
+                        "double_nested_child_2": ""
+                    }
+                ]
+            }
+        }
+    ],
+    "object_element_1": {
+        "object_child_1": "",
+        "object_child_2": [
+            {
+                "nested_object_child_1": {
+                    "double_nested_object_child_1": "",
+                    "double_nested_object_child_2": [
+                        {
+                            "triple_nested_object_child_1": ""
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "top_element_2": ""
+}

@@ -16,6 +16,7 @@ This is an internal documentation page for the steps that need to be taken when 
 - Create the new directories for the version in the `data_dictionary/` and `schema/` sub directories. 
     - Within the `data_dictionary/` sub directory for the new version, create the `release_notes.txt` and `README.md` files to log the new data dictionary changes from the previous version. 
 - Create the version directory in the path `supplementary_files/sample_data_model_structures/`. 
+- Create the version directory in the path `supplementary_files/tests/`.
 
 ## Update Sample/Reference Files
 
@@ -42,7 +43,7 @@ The scripts in the `src/` directory will have to be updated in order to generate
 
 ## Testing 
 
-After the data scripts have been updated, create new testing files in the file path `supplemtary_files/tests/`. 
+After the data scripts have been updated, create new testing files in the file path `supplemtary_files/tests/` for the new version. Follow the file structure outlined in the [testing documentation](../tests/README.md).
 
 ## Update Documentation 
 

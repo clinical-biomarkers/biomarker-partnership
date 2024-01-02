@@ -57,7 +57,9 @@ python skeleton_dictionary.py <FILEPATH/TO/SAMPLE>
 
 This will create the skeleton data dictionary structure, now you will have to fill in each field's metadata. 
 
-Note: The script requires a feature introduced in Python 3.7, when the regular `dict` type became order preserving. If using a version of Python older than this, `dict` keys were not guaranteed to be ordered and could result in undefined behaviour on a per execution basis when reading the JSON keys and dumping the output JSON.
+Notes: 
+- The script requires a feature introduced in Python 3.7, when the regular `dict` type became order preserving. If using a version of Python older than this, `dict` keys were not guaranteed to be ordered and could result in undefined behaviour on a per execution basis when reading the JSON keys and dumping the output JSON.
+- All array elements should contain objects. Direct primitive elements within arrays are not supported. 
 
 ## Data Dictionary Structure 
 
@@ -213,7 +215,7 @@ The `process_dictionary.py` script takes as input the data dictionary JSON and p
 
 If applicable, in the project root directory, update the `conf.json` file with the updated version number. 
 
-Make sure the corresponding schema directory exist prior to running `process_dictionary.py`. While inside the project root directory:
+Make sure the corresponding schema directory exist prior to running `process_dictionary.py`. This is where the resulting schema file will be dumped. While inside the project root directory:
 
 ```bash
 mkdir schema/<VERSION>
@@ -226,6 +228,7 @@ Positional arguments:
     file_path           filepath of the data dictionary JSON to convert
 
 Optional arguments 
+    -o --output         alternate output path for dumping the generated schema (for testing)
     -h --help           show the help message and exit
     -v --version        show current version number and exit
 ```

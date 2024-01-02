@@ -82,7 +82,10 @@ def generate_skeleton_for_value(value: str | dict | list) -> dict:
         return {k: wrap_with_metadata(k, v) for k, v in value.items()}
     # if value is a list, check if it contains a dict or a primitive 
     elif isinstance(value, list):
-        if value and isinstance(value[0], dict):
+        # base case
+        if not value:
+            return {}
+        elif value and isinstance(value[0], dict):
             return generate_skeleton_for_value(value[0])
         else:
             return generate_leaf_metadata()

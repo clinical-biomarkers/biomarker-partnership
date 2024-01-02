@@ -1,0 +1,28 @@
+{
+    "element_1": {
+        "description": "### PLACEHOLDER ###",
+        "type": "### PLACEHOLDER ###",
+        "required": {
+            "requirement": "### PLACEHOLDER ###"
+        },
+        "domain": "### PLACEHOLDER ###",
+        "example": [
+            "### PLACEHOLDER ###"
+        ],
+        "pattern": "### PLACEHOLDER ###",
+        "pattern_notes": "### PLACEHOLDER ###"
+    },
+    "element_2": {
+        "description": "### PLACEHOLDER ###",
+        "type": "### PLACEHOLDER ###",
+        "required": {
+            "requirement": "### PLACEHOLDER ###"
+        },
+        "domain": "### PLACEHOLDER ###",
+        "example": [
+            "### PLACEHOLDER ###"
+        ],
+        "pattern": "### PLACEHOLDER ###",
+        "pattern_notes": "### PLACEHOLDER ###"
+    }
+}
