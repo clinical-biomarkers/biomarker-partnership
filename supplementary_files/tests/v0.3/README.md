@@ -44,6 +44,15 @@ These files test the `validate_data.py` script for validating data against the J
 | File                          | Testing For                                                   | 
 |-------------------------------|---------------------------------------------------------------|
 | `simple_entry_compliant.json` | Testing for a simple single entry dataset that is compliant with the JSON schema. |           
+| `biomarker_component_fail.json` | Testing for failing the `biomarker_component` requirement.    | 
+| `two_entry_compliant.json` | Testing for a two entry dataset that is compliant with the JSON schema. | 
+| `biomarker_fail.json`     | Testing for failing the `biomarker` field requirement.      | 
+| `pattern_assessed_biomarker_entity_id_fail.json` | Testing for failing the regex pattern for the `assessed_biomarker_entity_id` field. |
+| `no_specimen_compliant.json` | Testing for no `specimen` entry that is compliant with the JSON schema. |
+| `loinc_no_specimen_compliant.json` | Testing for an entry with a `loinc_code` but no other `specimen` data that is compliant with the JSON schema. |
+| `invalid_best_biomarker_role.json` | Testing for passing an invalid `best_biomarker_role` value. | 
+| `invalid_biomarker_component_tag.json`    | Testing for an invalid biomarker componeent tag value. |  
+| `invalid_top_level_tag.json` | Testing for an invalid top level tag value. |
 
 ## Data Conversion
 
