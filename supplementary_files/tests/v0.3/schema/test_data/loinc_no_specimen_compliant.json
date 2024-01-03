@@ -1,0 +1,118 @@
+[
+    {
+        "biomarker_id": "A0001",
+        "biomarker_component": [
+            {
+                "biomarker": "increased IL6 level",
+                "assessed_biomarker_entity": {
+                    "recommended_name": "Interleukin-6",
+                    "synonyms": [
+                        {
+                            "synonym": "Interferon-beta 2"
+                        },
+                        {
+                            "synonym": "IL6"
+                        },
+                        {
+                            "synonym": "IFNB2"
+                        }
+                    ]
+                },
+                "assessed_biomarker_entity_id": "UPKB:p05231",
+                "assessed_entity_type": "protein",
+                "specimen": [
+                    {
+                        "loinc_code": "26881-3"
+                    }
+                ],
+                "evidence_source": [
+                    {
+                        "evidence_id": "10914713",
+                        "database": "PubMed",
+                        "url": "https://pubmed.ncbi.nlm.nih.gov/10914713/",
+                        "evidence_list": [
+                            {
+                                "evidence": "In multivariate analysis, however, the only two significant prognostic factors were EOD and IL-6. These results indicate that the serum IL-6 level is a significant prognostic factor for prostate cancer as well as EOD."
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "biomarker"
+                            },
+                            {
+                                "tag": "specimen:UBERON:0000178"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "best_biomarker_role": "prognostic",
+        "condition": {
+            "condition_id": "DOID:10283",
+            "recommended_name": {
+                "condition_id": "DOID:10283",
+                "name": "prostate cancer",
+                "description": "A male reproductive organ cancer that is located_in the prostate.",
+                "resource": "Disease Ontology",
+                "url": "http://disease-ontology.org/term/DOID:10283"
+            },
+            "synonyms": [
+                {
+                    "synonym_id": "DOID:10283",
+                    "name": "NGP - new growth of prostate",
+                    "resource": "Disease Ontology",
+                    "url": "http://disease-ontology.org/term/DOID:10283"
+                },
+                {
+                    "synonym_id": "DOID:10283",
+                    "name": "hereditary prostate cancer",
+                    "resource": "Disease Ontology",
+                    "url": "http://disease-ontology.org/term/DOID:10283"
+                }
+            ]
+        },
+        "evidence_source": [
+            {
+                "evidence_id": "10914713",
+                "database": "PubMed",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/10914713/",
+                "evidence_list": [
+                    {
+                        "evidence": "In multivariate analysis, however, the only two significant prognostic factors were EOD and IL-6. These results indicate that the serum IL-6 level is a significant prognostic factor for prostate cancer as well as EOD."
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "biomarker:0"
+                    },
+                    {
+                        "tag": "specimen:UBERON:0000178:0"
+                    }
+                ]
+            }
+        ],
+        "citation": [
+            {
+                "citation_title": "Serum interleukin 6 as a prognostic factor in patients with prostate cancer",
+                "journal": "Clin Cancer Res",
+                "authors": "J Nakashima, M Tachibana, Y Horiguchi, M Oya, T Ohigashi, H Asakura, M Murai",
+                "date": "July 6, 2000",
+                "reference": [
+                    {
+                        "reference_id": "10914713",
+                        "type": "PubMed",
+                        "url": "https://pubmed.ncbi.nlm.nih.gov/10914713/"
+                    }
+                ],
+                "evidence_source": [
+                    {
+                        "evidence_id": "10914713",
+                        "database": "PubMed",
+                        "url": "https://pubmed.ncbi.nlm.nih.gov/10914713/"
+                    }
+                ]
+            }
+        ]
+    }
+]
