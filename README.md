@@ -53,6 +53,7 @@ flowchart TD
 
 | Directory             | Description                                                                           |
 |-----------------------|---------------------------------------------------------------------------------------|
+| `data`                | Contains the raw data and resulting data after processing. |
 | `data_dictionary`     | Contains the information for the agreed upon data dictionary.             |
 | `mapping_data`        | Contains some supporting data that can be used to map contextual data to the biomarkers.   |
 | `schema`              | Contains the validation JSON schemas derived from the data dictonary.                 |
