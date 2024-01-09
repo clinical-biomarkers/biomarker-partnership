@@ -45,6 +45,8 @@ The scripts in the `src/` directory will have to be updated in order to generate
 
 After the data scripts have been updated, create new testing files in the file path `supplemtary_files/tests/` for the new version. Follow the file structure outlined in the [testing documentation](../tests/README.md).
 
+Note: If no changes were made to the `process_dictionary.py` file and the `data_dictionary` tests are being copied directly over make sure the `$id` field in the assertion files are updated with the new version number. Not doing this is an easy way to spend too long debugging a simple non-issue. 
+
 ## Update Documentation 
 
 If applicable, update any documentation needed. 
