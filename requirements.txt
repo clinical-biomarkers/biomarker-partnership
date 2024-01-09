@@ -1,3 +1,4 @@
 jsonschema==4.19.1
 pandas==2.1.1
 ipykernel==6.28.0
+pymed==0.8.9
