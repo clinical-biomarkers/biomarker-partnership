@@ -269,6 +269,7 @@ def validate_data_tests(test_data: dict) -> str:
             test_result = True
         else:
             test_result = False
+        if not test_result: fail_count += 1
         result += f"\n\tTEST #{test_num + 1}: {test_name}...RESULT: {'passed' if test_result else 'FAILED'}"
     
     result += f'\n\tOVERVIEW: Total validate_data tests failed --> {fail_count}'
