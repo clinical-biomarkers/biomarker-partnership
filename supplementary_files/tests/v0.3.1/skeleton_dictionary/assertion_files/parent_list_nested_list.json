@@ -1,0 +1,33 @@
+{
+    "parent_element": {
+        "description": "### PLACEHOLDER ###",
+        "type": "array",
+        "required": {
+            "requirement": "### PLACEHOLDER ###"
+        },
+        "items": {
+            "child_element": {
+                "description": "### PLACEHOLDER ###",
+                "type": "array",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "items": {
+                    "nested_child_element": {
+                        "description": "### PLACEHOLDER ###",
+                        "type": "### PLACEHOLDER ###",
+                        "required": {
+                            "requirement": "### PLACEHOLDER ###"
+                        },
+                        "domain": "### PLACEHOLDER ###",
+                        "example": [
+                            "### PLACEHOLDER ###"
+                        ],
+                        "pattern": "### PLACEHOLDER ###",
+                        "pattern_notes": "### PLACEHOLDER ###"
+                    }
+                }
+            }
+        }
+    }
+}

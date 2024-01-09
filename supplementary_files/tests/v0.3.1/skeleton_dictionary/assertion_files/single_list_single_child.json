@@ -1,0 +1,24 @@
+{
+    "element_1": {
+        "description": "### PLACEHOLDER ###",
+        "type": "array",
+        "required": {
+            "requirement": "### PLACEHOLDER ###"
+        },
+        "items": {
+            "child_element_1": {
+                "description":"### PLACEHOLDER ###",
+                "type": "### PLACEHOLDER ###",
+                "required": {
+                    "requirement": "### PLACEHOLDER ###"
+                },
+                "domain": "### PLACEHOLDER ###",
+                "example": [
+                    "### PLACEHOLDER ###"
+                ],
+                "pattern": "### PLACEHOLDER ###",
+                "pattern_notes": "### PLACEHOLDER ###"
+            }
+        }
+    }
+}
