@@ -1,0 +1,694 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/biomarker-ontology/biomarker-partnership/main/schema/v0.3.1/biomarker_schema.json",
+    "type": "array",
+    "title": "biomarker_schema.json",
+    "items": {
+        "type": "object",
+        "required": [
+            "biomarker_component",
+            "best_biomarker_role"
+        ],
+        "properties": {
+            "biomarker_id": {
+                "description": "Biomarker identifier. This will be automatically assigned when the data is incorporated.",
+                "type": [
+                    "string",
+                    "null"
+                ],
+                "examples": [
+                    "A0034"
+                ],
+                "pattern": "^.*$"
+            },
+            "biomarker_component": {
+                "description": "List of biomarker components.",
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "required": [
+                        "biomarker",
+                        "assessed_biomarker_entity",
+                        "assessed_biomarker_entity_id",
+                        "assessed_entity_type",
+                        "evidence_source"
+                    ],
+                    "properties": {
+                        "biomarker": {
+                            "description": "Change observed in an entity that differs from normal processes.",
+                            "type": "string",
+                            "pattern": "^.+$",
+                            "examples": [
+                                "increased IL6 level"
+                            ]
+                        },
+                        "assessed_biomarker_entity": {
+                            "description": "Data for the assessed biomarker entity.",
+                            "type": "object",
+                            "required": [
+                                "recommended_name"
+                            ],
+                            "properties": {
+                                "recommended_name": {
+                                    "description": "The recommended name for the assessed biomarker entity.",
+                                    "type": "string",
+                                    "pattern": "^.+$",
+                                    "examples": [
+                                        "Interleukin-6 (IL6)"
+                                    ]
+                                },
+                                "synonyms": {
+                                    "description": "List of synonyms the assessed biomarker entity might have.",
+                                    "type": [
+                                        "array",
+                                        "null"
+                                    ],
+                                    "items": {
+                                        "type": "object",
+                                        "required": [],
+                                        "properties": {
+                                            "synonym": {
+                                                "description": "A single synonym for the assessed biomarker entity.",
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ],
+                                                "pattern": "^.*$",
+                                                "examples": [
+                                                    "CDF"
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "assessed_biomarker_entity_id": {
+                            "description": "Accession or identifier that matches the biomarker term.",
+                            "type": "string",
+                            "pattern": "^.+:.+$",
+                            "examples": [
+                                "UPKB:P05231"
+                            ]
+                        },
+                        "assessed_entity_type": {
+                            "description": "Entity type of the biomarker.",
+                            "type": "string",
+                            "pattern": "^.+$",
+                            "examples": [
+                                "gene",
+                                "protein"
+                            ]
+                        },
+                        "specimen": {
+                            "description": "Component for specimen metadata.",
+                            "type": [
+                                "array",
+                                "null"
+                            ],
+                            "items": {
+                                "type": "object",
+                                "required": [],
+                                "properties": {
+                                    "name": {
+                                        "description": "Name of the specimen.",
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "pattern": "^.*$",
+                                        "examples": [
+                                            "blood"
+                                        ]
+                                    },
+                                    "specimen_id": {
+                                        "description": "Name space and identifier for the specimen.",
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "pattern": "^.+:.+$",
+                                        "examples": [
+                                            "UBERON:0000178"
+                                        ]
+                                    },
+                                    "name_space": {
+                                        "description": "Name space for the specimen identifier.",
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "pattern": "^.*$",
+                                        "examples": [
+                                            "UBERON"
+                                        ]
+                                    },
+                                    "url": {
+                                        "description": "URL to the specimen in the resource.",
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "pattern": "^(https?://)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-:]*)*/?$",
+                                        "examples": [
+                                            "http://purl.obolibrary.org/obo/UBERON_0000178"
+                                        ]
+                                    },
+                                    "loinc_code": {
+                                        "description": "Lab test ID associated with biomarker.",
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "pattern": "^\\d+-\\d$",
+                                        "examples": [
+                                            "34519-9"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "evidence_source": {
+                            "description": "List of evidence sources tied to specific biomarker component data.",
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "evidence_id",
+                                    "database",
+                                    "url",
+                                    "tags"
+                                ],
+                                "properties": {
+                                    "evidence_id": {
+                                        "description": "Identifier for the evidence source.",
+                                        "type": "string",
+                                        "pattern": "^.+$",
+                                        "examples": [
+                                            "rs2345667",
+                                            "10914713"
+                                        ]
+                                    },
+                                    "database": {
+                                        "description": "Database the evidence source identifier relates to.",
+                                        "type": "string",
+                                        "pattern": "^.+$",
+                                        "examples": [
+                                            "Clinvar",
+                                            "Pubmed"
+                                        ]
+                                    },
+                                    "url": {
+                                        "description": "URL to the evidence in the resource.",
+                                        "type": "string",
+                                        "pattern": "^(https?://)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-:]*)*/?$",
+                                        "examples": [
+                                            "https://glygen.org/publication/PubMed/10914713"
+                                        ]
+                                    },
+                                    "evidence_list": {
+                                        "description": "Free text relating to how the evidence supports the biomarker.",
+                                        "type": [
+                                            "array",
+                                            "null"
+                                        ],
+                                        "items": {
+                                            "type": "object",
+                                            "required": [],
+                                            "properties": {
+                                                "evidence": {
+                                                    "description": "A single free text field about or from the evidence source to support the biomarker.",
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "pattern": "^.*$",
+                                                    "examples": [
+                                                        "In multivariate analysis, however, the only two significant prognostic factors were EOD and IL-6. These results indicate that the serum IL-6 level is a significant prognostic factor for prostate cancer as well as EOD."
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "tags": {
+                                        "description": "Tags indicating the fields the evidence points to.",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "required": [
+                                                "tag"
+                                            ],
+                                            "properties": {
+                                                "tag": {
+                                                    "description": "Data the evidence links to.",
+                                                    "type": "string",
+                                                    "pattern": "^(biomarker|assessed_biomarker_entity|assessed_biomarker_entity_id|assessed_entity_type|specimen:.+:.+|loinc_code:.+|condition|exposure_agent|best_biomarker_role)$",
+                                                    "examples": [
+                                                        "loinc_code:34519-9",
+                                                        "assessed_biomarker_entity",
+                                                        "best_biomarker_role"
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "best_biomarker_role": {
+                "description": "Categories of BEST biomarker.",
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "required": [
+                        "role"
+                    ],
+                    "properties": {
+                        "role": {
+                            "description": "Category of BEST biomarker.",
+                            "type": "string",
+                            "pattern": "^(risk|diagnostic|prognostic|monitoring|predictive|response|safety)$",
+                            "examples": [
+                                "risk",
+                                "diagnostic"
+                            ]
+                        }
+                    }
+                }
+            },
+            "condition": {
+                "description": "Component for the condition data.",
+                "type": [
+                    "object",
+                    "null"
+                ],
+                "required": [
+                    "condition_id",
+                    "recommended_name"
+                ],
+                "properties": {
+                    "condition_id": {
+                        "description": "Condition identifier.",
+                        "type": "string",
+                        "pattern": "^.*$",
+                        "examples": [
+                            "DOID:1612"
+                        ]
+                    },
+                    "recommended_name": {
+                        "description": "Metadata for the recommended condition name.",
+                        "type": "object",
+                        "required": [
+                            "condition_id",
+                            "name",
+                            "resource",
+                            "url"
+                        ],
+                        "properties": {
+                            "condition_id": {
+                                "description": "Condition identifier.",
+                                "type": "string",
+                                "pattern": "^.+:.+$",
+                                "examples": [
+                                    "DOID:1612"
+                                ]
+                            },
+                            "name": {
+                                "description": "Name of the condition.",
+                                "type": "string",
+                                "pattern": "^.+$",
+                                "examples": [
+                                    "breast cancer"
+                                ]
+                            },
+                            "description": {
+                                "description": "Description of the condition",
+                                "type": [
+                                    "string",
+                                    "null"
+                                ],
+                                "pattern": "^.*$",
+                                "examples": [
+                                    "A thoracic cancer that originates in the mammary gland."
+                                ]
+                            },
+                            "resource": {
+                                "description": "Resource the condition is defined in.",
+                                "type": "string",
+                                "pattern": "^.+$",
+                                "examples": [
+                                    "DOID"
+                                ]
+                            },
+                            "url": {
+                                "description": "URL to the condition in the resource",
+                                "type": "string",
+                                "pattern": "^(https?://)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-:]*)*/?$",
+                                "examples": [
+                                    "https://disease-ontology.org/term/DOID:1612/"
+                                ]
+                            }
+                        }
+                    },
+                    "synonyms": {
+                        "description": "Metadata for synonyms to the condition name.",
+                        "type": [
+                            "array",
+                            "null"
+                        ],
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "synonym_id",
+                                "name",
+                                "resource",
+                                "url"
+                            ],
+                            "properties": {
+                                "synonym_id": {
+                                    "description": "Identifier for the condition synonym.",
+                                    "type": "string",
+                                    "pattern": "^.+$",
+                                    "examples": [
+                                        "DOID:1612"
+                                    ]
+                                },
+                                "name": {
+                                    "description": "Name of the condition synonym.",
+                                    "type": "string",
+                                    "pattern": "^.+$",
+                                    "examples": [
+                                        "breast tumor"
+                                    ]
+                                },
+                                "resource": {
+                                    "description": "Resource the condition is defined in.",
+                                    "type": "string",
+                                    "pattern": "^.+$",
+                                    "examples": [
+                                        "DOID"
+                                    ]
+                                },
+                                "url": {
+                                    "description": "URL to the condition synonym in the resource",
+                                    "type": "string",
+                                    "pattern": "^(https?://)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-:]*)*/?$",
+                                    "examples": [
+                                        "https://disease-ontology.org/term/DOID:1612/"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "exposure_agent": {
+                "description": "Component for the exposure agent data.",
+                "type": [
+                    "object",
+                    "null"
+                ],
+                "required": [
+                    "exposure_agent_id",
+                    "recommended_name"
+                ],
+                "properties": {
+                    "exposure_agent_id": {
+                        "description": "Exposure agent identifier.",
+                        "type": "string",
+                        "pattern": "^.+$",
+                        "examples": []
+                    },
+                    "recommended_name": {
+                        "description": "Metadata for the recommended exposure agent name.",
+                        "type": "object",
+                        "required": [
+                            "exposure_agent_id",
+                            "name",
+                            "resource",
+                            "url"
+                        ],
+                        "properties": {
+                            "exposure_agent_id": {
+                                "description": "Exposure agent identifier.",
+                                "type": "string",
+                                "pattern": "^.+$",
+                                "examples": []
+                            },
+                            "name": {
+                                "description": "Name of the exposure agent.",
+                                "type": "string",
+                                "pattern": "^.+$",
+                                "examples": []
+                            },
+                            "description": {
+                                "description": "Description of the exposure agent",
+                                "type": [
+                                    "string",
+                                    "null"
+                                ],
+                                "pattern": "^.+$",
+                                "examples": []
+                            },
+                            "resource": {
+                                "description": "Resource the exposure agent is defined in.",
+                                "type": "string",
+                                "pattern": "^.+$",
+                                "examples": []
+                            },
+                            "url": {
+                                "description": "URL to the exposure agent in the resource",
+                                "type": "string",
+                                "pattern": "^(https?://)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-:]*)*/?$",
+                                "examples": []
+                            }
+                        }
+                    }
+                }
+            },
+            "evidence_source": {
+                "description": "Evidence sources for the biomarker.",
+                "type": [
+                    "array",
+                    "null"
+                ],
+                "items": {
+                    "type": "object",
+                    "required": [
+                        "evidence_id",
+                        "database",
+                        "url"
+                    ],
+                    "properties": {
+                        "evidence_id": {
+                            "description": "Identifier for evidence.",
+                            "type": "string",
+                            "pattern": "^.+$",
+                            "examples": [
+                                "rs2345667",
+                                "10914713"
+                            ]
+                        },
+                        "database": {
+                            "description": "Database the evidence identifier relates to.",
+                            "type": "string",
+                            "pattern": "^.+$",
+                            "examples": [
+                                "Clinvar",
+                                "Pubmed"
+                            ]
+                        },
+                        "url": {
+                            "description": "URL to the evidence in the resource.",
+                            "type": "string",
+                            "pattern": "^(https?://)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-:]*)*/?$",
+                            "examples": [
+                                "https://glygen.org/publication/PubMed/10914713"
+                            ]
+                        },
+                        "evidence_list": {
+                            "description": "Free text relating to how the evidence supports the biomarker.",
+                            "type": [
+                                "array",
+                                "null"
+                            ],
+                            "items": {
+                                "type": "object",
+                                "required": [],
+                                "properties": {
+                                    "evidence": {
+                                        "description": "A single free text field about or from the evidence to support the biomarker.",
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "pattern": "^.*$",
+                                        "examples": [
+                                            "In multivariate analysis, however, the only two significant prognostic factors were EOD and IL-6. These results indicate that the serum IL-6 level is a significant prognostic factor for prostate cancer as well as EOD."
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "tags": {
+                            "description": "Tags indicating the fields the evidence points to.",
+                            "type": [
+                                "array",
+                                "null"
+                            ],
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "tag"
+                                ],
+                                "properties": {
+                                    "tag": {
+                                        "description": "Data the evidence links to.",
+                                        "type": "string",
+                                        "pattern": "^(biomarker:\\d+|assessed_biomarker_entity:\\d+|assessed_biomarker_entity_id:\\d+|assessed_entity_type:\\d+|specimen:.+:.+:\\d+|loinc_code:.+:\\d+|condition|exposure_agent|best_biomarker_role)$",
+                                        "examples": [
+                                            "loinc_code:34519-9:0",
+                                            "assessed_biomarker_entity:0",
+                                            "condition"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "citation": {
+                "description": "Citation data for publications used in evidence.",
+                "type": [
+                    "array",
+                    "null"
+                ],
+                "items": {
+                    "type": "object",
+                    "required": [
+                        "citation_title",
+                        "journal",
+                        "authors",
+                        "date",
+                        "reference",
+                        "evidence_source"
+                    ],
+                    "properties": {
+                        "citation_title": {
+                            "description": "Publication title.",
+                            "type": "string",
+                            "pattern": "^.+$",
+                            "examples": [
+                                "Serum interleukin 6 as a prognostic factor in patients with prostate cancer."
+                            ]
+                        },
+                        "journal": {
+                            "description": "Publication journal.",
+                            "type": "string",
+                            "pattern": "^.+$",
+                            "examples": [
+                                "Clinical cancer research : an official journal of the American Association for Cancer Research"
+                            ]
+                        },
+                        "authors": {
+                            "description": "Publication authors.",
+                            "type": "string",
+                            "pattern": "^.+$",
+                            "examples": [
+                                "Nakashima J, Tachibana M, Horiguchi Y, Oya M, Ohigashi T, Asakura H, Murai M"
+                            ]
+                        },
+                        "date": {
+                            "description": "Publication year.",
+                            "type": "string",
+                            "pattern": "^.+$",
+                            "examples": [
+                                "2020"
+                            ]
+                        },
+                        "reference": {
+                            "description": "The evidence for the data.",
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "type",
+                                    "reference_id",
+                                    "url"
+                                ],
+                                "properties": {
+                                    "type": {
+                                        "description": "The reference data source.",
+                                        "type": "string",
+                                        "pattern": "^.+$",
+                                        "examples": [
+                                            "PubMed"
+                                        ]
+                                    },
+                                    "reference_id": {
+                                        "description": "Identifier for the reference data.",
+                                        "type": "string",
+                                        "pattern": "^.+$",
+                                        "examples": [
+                                            "10914713"
+                                        ]
+                                    },
+                                    "url": {
+                                        "description": "Link to the reference data.",
+                                        "type": "string",
+                                        "pattern": "^(https?://)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-:]*)*/?$",
+                                        "examples": [
+                                            "https://glygen.org/publication/PubMed/10914713"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "evidence_source": {
+                            "description": "Links to the data to the reference.",
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "evidence_id",
+                                    "database",
+                                    "url"
+                                ],
+                                "properties": {
+                                    "evidence_id": {
+                                        "description": "Identifier for the evidence.",
+                                        "type": "string",
+                                        "pattern": "^.+$",
+                                        "examples": [
+                                            "GLY_000625"
+                                        ]
+                                    },
+                                    "database": {
+                                        "description": "Database name for the evidence.",
+                                        "type": "string",
+                                        "pattern": "^.+$",
+                                        "examples": [
+                                            "GlyGen"
+                                        ]
+                                    },
+                                    "url": {
+                                        "description": "Link to the evidence.",
+                                        "type": "string",
+                                        "pattern": "^(https?://)?([\\da-z\\.-]+)\\.([a-z\\.]{2,6})([/\\w \\.-:]*)*/?$",
+                                        "examples": [
+                                            "https://data.glygen.org/GLY_000625"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
