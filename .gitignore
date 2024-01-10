@@ -4,6 +4,7 @@ home/
 env/
 ~*
 .vscode/
+*OLD*
 
 # temporary
 rdf_triples/
