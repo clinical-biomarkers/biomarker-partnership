@@ -37,8 +37,6 @@ _CONF_KEY = 'data_conversion'
 _version = None
 URL_MAP = None
 NAMESPACE_MAP = None
-
-# if table format changes in the future this will need to be updated
 TSV_HEADERS = ['biomarker_id', 'biomarker', 'assessed_biomarker_entity', 'assessed_biomarker_entity_id', 
             'assessed_entity_type', 'condition', 'condition_id', 'exposure_agent', 'exposure_agent_id', 
             'best_biomarker_role', 'specimen', 'specimen_id', 'loinc_code', 'evidence_source', 'evidence',
@@ -81,7 +79,7 @@ def user_args() -> None:
             print(f'Error: Incorrect target_filepath file type for source type of JSON, expects TSV.')
             sys.exit(1)
         # if a valid source JSON conversion called, continue to processing
-        j_to_t.json_to_tsv(options.source_filepath, options.target_filepath)
+        j_to_t.json_to_tsv(options.source_filepath, options.target_filepath, TSV_HEADERS)
     
     # checking for the TSV -> JSON conversion
     if options.source_filepath.endswith('.tsv'):
@@ -90,7 +88,7 @@ def user_args() -> None:
             print(f'Error: Incorrect target_filepath file type for source type of TSV, expects JSON.')  
             sys.exit(1)
         # if a valid source TSV conversion called, continue to processing
-        t_to_j.tsv_to_json(options.source_filepath, options.target_filepath)
+        t_to_j.tsv_to_json(options.source_filepath, options.target_filepath, TSV_HEADERS, URL_MAP, NAMESPACE_MAP)
         
 def main():
     ''' Main entry point for the data conversion logic.
@@ -101,7 +99,7 @@ def main():
     global NAMESPACE_MAP
     
     # grab config information
-    config = misc_fns.load_json('../../config.json')
+    config = misc_fns.load_json('../../conf.json')
     _version = config['version']
     log_path = config[_CONF_KEY]['log_path']
     url_map_path = config[_CONF_KEY]['url_map_path']
