@@ -4,26 +4,32 @@ The project's data can be viewed in multiple formats. The main view (the JSON da
 
 ## Data Conversion 
 
-The `table_json_conversion.py` (up to date for version 0.3 of the schema) script in the `src/` directory can be used to convert the data between the two formats. The script takes these arguments: 
+The code in the `src/data_conversion/` directory handles the logic for the data conversion. The entry point is the
+`data_conversion.py` script. Right now the logic is written for the `v0.3.1` data model schema and supports the 
+following conversions:
+- JSON -> TSV
+- TSV -> JSON 
+
+The `data_conversion.py` script can take these arguments: 
 
 ``` 
 Positional arguments:
-    source_filepath     filepath of the source file (accepts JSON or TSV)
-    target_filepath     filepath of the target file (accepts JSON or TSV)
+    source_filepath     filepath of the source file
+    target_filepath     filepath of the target file to generate (including the filename and extension)
 
 Optional Arguments:
     -h --help           show the help message and exit 
     -v --version        show the current version number and exit
 ```
 
-Move your current working directory to `src/` and run the `table_json_conversion.py` script passing in the filepath to the source and target file path's: 
+Move your current working directory to `src/data_conversion/` and run the `data_conversion.py` script passing in the filepath to the source and target file path's: 
 
 ```
-cd src
-python table_json_conversion.py <FILEPATH/TO/SOURCE> <FILEPATH/TO/TARGET>
+cd src/data_conversion
+python data_conversion.py <FILEPATH/TO/SOURCE> <FILEPATH/TO/TARGET>
 ```
 
-The script will automatically detect the conversion direction. If a JSON file is passed as the source, it will check that a TSV file was passed as the output (or target) file and vice versa. The script expects the filepath to the log path to exist (set in the `conf.json` file). By default, the filepath is `../home/logs/conversion_log.log`. 
+The script will automatically detect the conversion direction. For example, if a JSON file is passed as the source, it will check that a TSV file was passed as the output (or target) file and vice versa. The script expects the filepath to the log path to exist (set in the `conf.json` file). By default, the filepath is `../../home/logs/conversion_log.log`. 
 
 Some notes for the JSON to TSV conversion: 
 - The output table will have the columns `biomarker_id`, `biomarker`, `assessed_biomarker_entity`, `assessed_biomarker_entity_id`, `assessed_entity_type`, `condition`, `condition_id`, `exposure_agent`, `exposure_agent_id`, `best_biomarker_role`, `specimen`, `specimen_id`, `loinc_code`, `evidence_source`, `evidence`, and `tag` in that exact order.
