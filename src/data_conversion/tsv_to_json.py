@@ -4,11 +4,14 @@
 import json
 import csv 
 import logging 
+import time 
 import api_calls as data_api
 
 COMP_SINGULAR_EVIDENCE_FIELDS = {'biomarker', 'assessed_biomarker_entity', 
                                 'assessed_biomarker_entity_id', 'assessed_entity_type'}
 TOP_LEVEL_EVIDENCE_FIELDS = {'condition', 'exposure_agent', 'best_biomarker_role'}
+UNIPROT_RATE_LIMIT_CHECK = 190
+UNIPROT_SLEEP_TIME = 0.75
 
 def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, url_map: dict, name_space_map: dict) -> None:
     ''' Entry point for the TSV -> JSON conversion.
@@ -28,6 +31,10 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
     '''
 
     header_check = False
+
+    uniprot_rate_limit_counter = 0
+    uniprot_rate_limit_check = UNIPROT_RATE_LIMIT_CHECK
+    uniprot_sleep_time = UNIPROT_SLEEP_TIME
 
     with open(source_filepath, 'r') as f:
         data = csv.DictReader(f, delimiter = '\t', quotechar = '"')
@@ -58,13 +65,18 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
             top_evidence_source = build_evidence_entry(row, top_evidence_tags, url_map)
 
             ### build biomarker component object
-            base_biomarker_component_object = build_base_biomarker_component_entry(row)
+            uniprot_count, base_biomarker_component_object = build_base_biomarker_component_entry(row, name_space_map)
+            uniprot_rate_limit_counter += uniprot_count
+            if uniprot_rate_limit_counter == uniprot_rate_limit_check:
+                logging.info(f'UniProt API rate limit check ({uniprot_rate_limit_check})reached, sleeping for {uniprot_sleep_time} seconds...')
+                time.sleep(uniprot_sleep_time)
+                uniprot_rate_limit_counter = 0
 
             ### build and add the spcimen entry to the biomarker component object
             biomarker_component = add_specimen_entry(row, base_biomarker_component_object, url_map)
 
             # add component evidence source to the biomarker component object
-            base_biomarker_component_object['evidence_source'] = comp_evidence_source
+            biomarker_component['evidence_source'] = comp_evidence_source
 
             ### build condition entry 
             condition_entry = build_condition_entry(row, url_map, name_space_map)
@@ -313,7 +325,7 @@ def add_specimen_entry(row: list, biomarker_component_object: dict, url_map: dic
     biomarker_component_object['specimen'].append(specimen)
     return biomarker_component_object
 
-def build_base_biomarker_component_entry(row: list) -> dict:
+def build_base_biomarker_component_entry(row: list, name_space_map: dict) -> tuple:
     ''' Builds a the base for a biomarker component entry. Everything up until the specimen and 
     evidence source fields.
 
@@ -321,23 +333,36 @@ def build_base_biomarker_component_entry(row: list) -> dict:
     ----------
     row : list
         The current row in the TSV file being processed.
+    name_space_map : dict
+        Dictionary that provides mappings for name space acronym's to full name space names.
     
     Returns
     -------
-    dict
-        Dictionary containing the biomarker component entry.
+    tuple
+        Returns an integer used for uniprot api rate limit control and the dictionary containing the biomarker component entry.
     '''
+    uniprot_call_counter = 0
+    assessed_entity_type = row['assessed_entity_type'].lower().strip()
+    assessed_entity_type_name_space = row['assessed_biomarker_entity_id'].split(':')[0].lower()
+    synonyms = []
+    if assessed_entity_type == 'protein' and assessed_entity_type_name_space in set(name_space_map.keys()):
+        if name_space_map[assessed_entity_type_name_space] == 'uniprot':
+            uniprot_data = data_api.get_uniprot_data(row['assessed_biomarker_entity_id'].split(':')[1])
+            uniprot_call_counter = 1
+            if uniprot_data:
+                synonyms = [{'synonym': synonym} for synonym in uniprot_data['synonyms']]
+
     entry = {
         'biomarker': row['biomarker'],
         'assessed_biomarker_entity': {
             'recommended_name': row['assessed_biomarker_entity'],
-            'synonyms': []
+            'synonyms': synonyms 
         },
         'assessed_biomarker_entity_id': row['assessed_biomarker_entity_id'],
         'assessed_entity_type': row['assessed_entity_type']
     }
 
-    return entry 
+    return uniprot_call_counter, entry 
 
 def build_evidence_entry(row: list, tag_list: list, url_map: dict) -> list:
     ''' Builds the evidence entry.

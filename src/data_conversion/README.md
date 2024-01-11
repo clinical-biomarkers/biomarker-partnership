@@ -6,6 +6,8 @@ The code in this directory handles the logic for the data conversion. The entry 
 - JSON -> TSV
 - TSV -> JSON 
 
+## Prerequisites / Notes
+
 In order for the TSV to JSON logic to fully fill out the supplementary information for the evidence source citation data, you will have to create a local environment `.env` file in this directory and include your email. This is required because the PubMed API requires an email in case of API rate limiting/abuse. For example:
 
 ```
@@ -13,6 +15,8 @@ EMAIL='example@example.com'
 ```
 
 The [pymed](https://github.com/gijswobben/pymed) wrapper library used for the PubMed API access *should* handle request batching so rate limiting is not exceeded. Due to the scrict rate limiting this might take a long time if you have a large TSV file. If performance becomes an issue, you can change the `add_citation_data` flag to `False` in the `tsv_to_json.py` file, which will skip the citation build. Note: the code does not fill in any of the reference data, that will have to be done manually. 
+
+The Uniprot KB API used to get the synonym names for a Uniprot accession has a more generous API rate limit that likely won't cause a significant bottleneck unless your TSV file is extremely large. There is some basic logic in place to make sure the rate limit is not hit during the TSV to JSON conversion. It is more likely that the PubMed API bottlenecks large file conversion. 
 
 ## Usage 
 

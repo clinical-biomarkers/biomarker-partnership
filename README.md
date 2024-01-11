@@ -53,11 +53,11 @@ flowchart TD
 
 | Directory             | Description                                                                           |
 |-----------------------|---------------------------------------------------------------------------------------|
-| `data`                | Contains the raw data and resulting data after processing. |
+| `data`                | Contains the raw data and resulting data before and after processing. |
 | `data_dictionary`     | Contains the information for the agreed upon data dictionary.             |
 | `mapping_data`        | Contains some supporting data that can be used to map contextual data to the biomarkers.   |
 | `schema`              | Contains the validation JSON schemas derived from the data dictonary.                 |
-| `src`                 | Contains the scripts used for data wrangling and extraction.                                                         |
+| `src`                 | Contains code for data wrangling, conversion, and extraction.                                                         |
 | `supplementary_files` | Testing, example, and documentation files for the project.                                              | 
 
 The `.gitignore` file includes entries for directories named `home/` and `env/`. The `home/` directory can be used for any source files, temporary files, log files, files larger than Github's limit of 100 MiB, or any other files that don't need to be pushed to the upstream repository. The `env/` directory should be the name of your virtual environment. If using a different virtual environment name, update the `.gitignore`.  
