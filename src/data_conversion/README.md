@@ -12,7 +12,7 @@ In order for the TSV to JSON logic to fully fill out the supplementary informati
 EMAIL='example@example.com'
 ```
 
-The [pymed](https://github.com/gijswobben/pymed) wrapper library used for the PubMed API access *should* handle request batching so rate limiting is not exceeded 
+The [pymed](https://github.com/gijswobben/pymed) wrapper library used for the PubMed API access *should* handle request batching so rate limiting is not exceeded.
 
 ## Usage 
 
