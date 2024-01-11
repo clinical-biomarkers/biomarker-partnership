@@ -137,6 +137,46 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
                     if add_top_evidence:
                         result_data[existing_entry_index]['evidence_source'].append(top_evidence_source[0])
         
+        ### add citation data
+        add_citation_data = True
+        if add_citation_data:
+            # holds the evidence sources to build the citation entries for
+            evidence_sources = []
+            # get the evidence source data for each biomarker entry
+            for entry_idx, entry in enumerate(result_data):
+                # get the evidence source data for each biomarker component entry
+                for biomarker_componennt_entry in entry['biomarker_component']:
+                    # get each component evidence source
+                    for evidence_source in biomarker_componennt_entry['evidence_source']:
+                        evidence_sources.append((entry_idx, evidence_source))
+                # get the evidence source data for the top level entry
+                for evidence_source in entry['evidence_source']:
+                    evidence_sources.append((entry_idx, evidence_source))
+            logging.info(f'Adding citation data for {len(evidence_sources)} evidence sources...')
+
+            # get the citation data for each evidence source
+            for evidence_source in evidence_sources:
+                if evidence_source[1]['database'].lower() != 'pubmed':
+                    continue 
+                pubmed_data = data_api.get_pubmed_data(evidence_source[1]['evidence_id'])
+                if not pubmed_data:
+                    continue
+                citation_entry = {
+                    'citation_title': pubmed_data['title'],
+                    'journal': pubmed_data['journal'],
+                    'authors': pubmed_data['authors'],
+                    'date': pubmed_data['publication_date'],
+                    'evidence_source': {
+                        'evidence_id': evidence_source[1]['evidence_id'],
+                        'database': evidence_source[1]['database'].title(),
+                        'url': evidence_source[1]['url']
+                    },
+                    'reference': []
+                }
+                result_data[evidence_source[0]]['citation'].append(citation_entry)
+
+            logging.info(f'Finished adding citation data!')
+        
         with open(target_filepath, 'w') as f:
             json.dump(result_data, f, indent = 4)
 
