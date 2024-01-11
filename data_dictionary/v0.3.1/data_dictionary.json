@@ -704,7 +704,7 @@
                 "description": "The evidence for the data.",
                 "type": "array",
                 "required": {
-                    "requirement": true
+                    "requirement": false
                 },
                 "items": {
                     "type": {
