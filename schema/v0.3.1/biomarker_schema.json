@@ -574,7 +574,6 @@
                         "journal",
                         "authors",
                         "date",
-                        "reference",
                         "evidence_source"
                     ],
                     "properties": {
@@ -612,7 +611,10 @@
                         },
                         "reference": {
                             "description": "The evidence for the data.",
-                            "type": "array",
+                            "type": [
+                                "array",
+                                "null"
+                            ],
                             "items": {
                                 "type": "object",
                                 "required": [
