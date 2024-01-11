@@ -72,4 +72,32 @@ def get_pubmed_data(pubmed_id: str) -> dict:
         print(f'Error: Failed to find EMAIL environment variable. Check .env file. Skipping PubMed API calls...')
         return None 
 
+    # query PubMed for the given PubMed ID
     pubmed = PubMed(tool = 'CFDE Biomarker-Partnership', email = email)
+    query = f'PMID: {pubmed_id}'
+    articles = pubmed.query(query)
+    try:
+        article = next(articles)
+    except StopIteration:
+        logging.error(f'Error: No articles found for PubMed ID {pubmed_id}')
+        print(f'Error: No articles found for PubMed ID {pubmed_id}')
+        return None
+
+    # parse return data
+    try:
+        title = article.title
+        journal = article.journal
+        authors = ', '.join([f"{author['lastname']} {author['initials']}" for author in article.authors])
+        publication_date = str(article.publication_date)
+    except Exception as e:
+        logging.error(f'Error: Failed to parse PubMed data for PubMed ID {pubmed_id}:\n\tReturn JSON: {article}\n\t{e}')
+        print(f'Error: Failed to parse PubMed data for PubMed ID {pubmed_id}:\n\tReturn JSON: {article}\n\t{e}')
+        return None
+    
+    return_data = {
+        'title': title,
+        'journal': journal,
+        'authors': authors,
+        'publication_date': publication_date
+    }
+    return return_data
