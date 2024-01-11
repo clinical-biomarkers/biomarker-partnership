@@ -65,5 +65,11 @@ def get_pubmed_data(pubmed_id: str) -> dict:
     
     # load local environment variables
     load_dotenv()
+    # get email from environment variables
+    email = os.getenv('EMAIL') 
+    if email is None:
+        logging.error(f'Error: Failed to find EMAIL environment variable. Check .env file.')
+        print(f'Error: Failed to find EMAIL environment variable. Check .env file. Skipping PubMed API calls...')
+        return None 
 
-    pubmed = PubMed(tool = 'CFDE Biomarker-Partnership', email = os.getenv('EMAIL'))
+    pubmed = PubMed(tool = 'CFDE Biomarker-Partnership', email = email)
