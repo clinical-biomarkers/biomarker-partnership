@@ -4,9 +4,7 @@
 import json
 import csv 
 import logging 
-import traceback
-import sys
-import misc_functions as misc_fns
+import api_calls as data_api
 
 COMP_SINGULAR_EVIDENCE_FIELDS = {'biomarker', 'assessed_biomarker_entity', 
                                 'assessed_biomarker_entity_id', 'assessed_entity_type'}
@@ -217,6 +215,22 @@ def build_condition_entry(row: list, url_map: dict, name_space_map: dict) -> dic
                 'synonyms': []
             }
         }
+
+        # handle getting the condition description and synonyms
+        if condition_name_space == 'doid':
+            doid_data = data_api.get_doid_data(row['condition_id'].split(':')[1])
+            if doid_data:
+                condition['recommended_name']['description'] = doid_data['description']
+                synonym_entries = []
+                for synonym in doid_data['synonyms']:
+                    synonym_entry = {
+                        'synonym_id': row['condition_id'],
+                        'name': synonym,
+                        'resource': condition_resource,
+                        'url': condition_url
+                    }
+                    synonym_entries.append(synonym_entry)
+                condition['synonyms'] = synonym_entries 
     
     return condition
 
