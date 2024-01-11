@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 import os
 
 DOID_API_ENDPOINT = 'https://www.disease-ontology.org/api/metadata/DOID:'
+UNIPROT_API_ENDPOINT = 'https://www.ebi.ac.uk/proteins/api/proteins/'
 
 def get_doid_data(doid_id: str) -> dict:
     ''' Gets the DOID data for the given DOID ID.
@@ -99,5 +100,42 @@ def get_pubmed_data(pubmed_id: str) -> dict:
         'journal': journal,
         'authors': authors,
         'publication_date': publication_date
+    }
+    return return_data
+
+def get_uniprot_data(uniprot_id: str) -> dict:
+    ''' Gets the UniProt data for the given UniProt ID.
+
+    Parameters
+    ----------
+    uniprot_id: str
+        The UniProt ID to get the data for.
+    
+    Returns
+    -------
+    dict
+        The UniProt name and synonym data for the given UniProt ID protein.
+    '''
+    uniprot_data = requests.get(UNIPROT_API_ENDPOINT + uniprot_id)
+
+    # handle errors
+    if uniprot_data.status_code != 200:
+        logging.error(f'Error during UniProt API call for id {uniprot_id}:\n\tStatus Code: {uniprot_data.status_code}\n\tReturn Data: {uniprot_data.text}')
+        print(f'Error during UniProt API call for id {uniprot_id}:\n\tStatus Code: {uniprot_data.status_code}\n\tReturn Data: {uniprot_data.text}')
+        return None
+    
+    # get protein name and synonyms
+    uniprot_data = uniprot_data.json()['protein']
+    synonyms = []
+    for recommended_short_name in uniprot_data.get('recommendedName', {}).get('shortName', []):
+        synonyms.append(recommended_short_name['value'])
+    for alternative_name in uniprot_data.get('alternativeName', []):
+        synonyms.append(alternative_name['fullName']['value'])
+        for alternative_short_name in alternative_name.get('shortName', []):
+            synonyms.append(alternative_short_name['value'])
+
+    return_data = {
+        'recommended_name': uniprot_data['recommendedName']['fullName']['value'],
+        'synonyms': synonyms
     }
     return return_data
