@@ -12,7 +12,7 @@ In order for the TSV to JSON logic to fully fill out the supplementary informati
 EMAIL='example@example.com'
 ```
 
-The [pymed](https://github.com/gijswobben/pymed) wrapper library used for the PubMed API access *should* handle request batching so rate limiting is not exceeded.
+The [pymed](https://github.com/gijswobben/pymed) wrapper library used for the PubMed API access *should* handle request batching so rate limiting is not exceeded. Due to the scrict rate limiting this might take a long time if you have a large TSV file. If performance becomes an issue, you can change the `add_citation_data` flag to `False` in the `tsv_to_json.py` file, which will skip the citation build. Note: the code does not fill in any of the reference data, that will have to be done manually. 
 
 ## Usage 
 
