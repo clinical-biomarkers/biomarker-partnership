@@ -1,0 +1,28 @@
+{
+    "element_1": {
+        "description": "description",
+        "type": "string",
+        "required": {
+            "requirement": true
+        },
+        "domain": "domain",
+        "example": [
+            "example"
+        ],
+        "pattern": "^.*$",
+        "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
+    },
+    "element_2": {
+        "description": "description 2",
+        "type": "string",
+        "required": {
+            "requirement": true
+        },
+        "domain": "domain 2",
+        "example": [
+            "example 2"
+        ],
+        "pattern": "^.+$",
+        "pattern_notes": "Matches on an entire line, regardless of content, not including an empty line."
+    }
+}

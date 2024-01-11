@@ -1,0 +1,15 @@
+{
+    "element_1": {
+        "description": "description",
+        "type": "string",
+        "required": {
+            "requirement": true
+        },
+        "domain": "domain",
+        "example": [
+            "example"
+        ],
+        "pattern": "^.*$",
+        "pattern_notes": "Matches on an entire line, regardless of content, including an empty line."
+    }
+}
