@@ -6,7 +6,7 @@ The code in this directory handles the logic for the data conversion. The entry 
 - JSON -> TSV
 - TSV -> JSON 
 
-In order for the TSV to JSON logic to fully fill out the supplementary information for the evidence source data, you will have to create a local environment `.env` file in this directory and include your email. This is required because the PubMed API requires an email in case of API rate limiting/abuse. For example:
+In order for the TSV to JSON logic to fully fill out the supplementary information for the evidence source citation data, you will have to create a local environment `.env` file in this directory and include your email. This is required because the PubMed API requires an email in case of API rate limiting/abuse. For example:
 
 ```
 EMAIL='example@example.com'
