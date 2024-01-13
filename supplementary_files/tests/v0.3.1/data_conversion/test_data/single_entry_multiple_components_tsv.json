@@ -68,7 +68,7 @@
             "id": "specimen id 2",
             "name_space": "specimen name space 2",
             "url": "http://purl.obolibrary.org/obo/UBERON_2",
-            "loinc_code": "loinc code 2"
+            "loinc_code": "12345-1"
           }
         ],
         "evidence_source": [
@@ -83,7 +83,7 @@
             ],
             "tags": [
               {
-                "tag": "tag component 2"
+                "tag": "loinc_code:12345-1"
               }
             ]
           }
