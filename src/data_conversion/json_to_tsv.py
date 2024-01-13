@@ -32,6 +32,9 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -
     # get the JSON source data
     json_data = misc_fns.load_json(source_filepath)
 
+    # avoid duplicate evidence values between component and top level evidence
+    overall_seen_evidence = set()
+
     # create the end result TSV content file and write the headers
     tsv_content = '\t'.join(tsv_headers) + '\n'
 
@@ -147,6 +150,7 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -
                         if add_evidence_flag:
                             evidence_values = aggregate_evidence_values(evidence_source['evidence_list'])
                             seen_evidence.add(evidence_values)
+                            overall_seen_evidence.add(evidence_values)
                             evidence_columns = [evidence_source_value, evidence_values, ';'.join(tag_values)]
 
                         # add evidence columns to row data
@@ -172,7 +176,7 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -
                         if add_evidence_flag:
                             evidence_values = aggregate_evidence_values(evidence_source['evidence_list'])
                             # check if evidence has already been captured from component evidence and skip if so
-                            if evidence_values in seen_evidence:
+                            if evidence_values in seen_evidence or evidence_values in overall_seen_evidence:
                                 continue
                             evidence_columns = [evidence_source_value, evidence_values, ';'.join(tag_values)]
 
@@ -219,6 +223,7 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -
                     if add_evidence_flag:
                         evidence_values = aggregate_evidence_values(evidence_source['evidence_list'])
                         seen_evidence.add(evidence_values)
+                        overall_seen_evidence.add(evidence_values)
                         evidence_columns = [evidence_source_value, evidence_values, ';'.join(tag_values)]
                     
                     tsv_content += '\t'.join(row_data) + '\t' + '\t'.join(evidence_columns) + '\n'
@@ -239,7 +244,7 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -
                     
                     if add_evidence_flag:
                         evidence_values = aggregate_evidence_values(evidence_source['evidence_list'])
-                        if evidence_values in seen_evidence:
+                        if evidence_values in seen_evidence or evidence_values in overall_seen_evidence:
                             continue
                         evidence_columns = [evidence_source_value, evidence_values, ';'.join(tag_values)]
                     
@@ -265,18 +270,18 @@ def tag_parse(tag: dict, object_evidence_fields: dict) -> tuple:
     tuple
         Tuple of the raw extracted tag value and a boolean flag indicating whether the evidence is applicable for the current row.
     '''
-
     add_evidence_flag = False
 
     # isolate the tag value from the index value
     tag_value = tag['tag'].split(':')[0]
+
     # check that tag is applicable to current row 
     if tag_value in SINGLE_EVIDENCE_FIELDS:
         add_evidence_flag = True
     if tag_value in set(object_evidence_fields.keys()):
         if tag['tag'][tag['tag'].find(':') + 1:] == object_evidence_fields[tag_value]:
             add_evidence_flag = True
-
+    
     return (tag_value, add_evidence_flag)
 
 def aggregate_evidence_values(evidence_list: list) -> str:
