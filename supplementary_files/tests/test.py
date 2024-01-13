@@ -21,6 +21,7 @@ import os
 import subprocess
 import glob 
 import logging
+import pandas as pd
 
 _CONF_KEY = 'testing'
 _version = None
@@ -154,6 +155,40 @@ def validate_assertion(source_filepath: str, assertion_filepath: str, filetype: 
     else: 
         return False
 
+def validate_conversion_assertion(source_filepath: str, assertion_filepath: str, source_filetype: str) -> bool:
+    ''' Validates a generated file against the corresponding assertion file.
+
+    Parameters
+    ----------
+    source_filepath: str
+        File path to the generated file to check.
+    assertion_filepath: str
+        File path to the assertion file to check against.
+    target_filetype: str
+        The file type of the target file.
+    
+    Returns
+    -------
+    bool
+        True if the assertion check passed, False otherwise.
+    '''
+    # checks the assertion if the target conversion format is tsv
+    if source_filetype.lower().strip() == 'tsv':
+        with open(source_filepath, 'r') as f:
+            source_data = pd.read_csv(f, sep = '\t')
+        with open(assertion_filepath, 'r') as f:
+            assertion_data = pd.read_csv(f, sep = '\t')
+        source_data = source_data.fillna('')
+        assertion_data = assertion_data.fillna('')
+        # sort the dataframes by the first and second column so ordering does not matter
+        source_data = source_data.sort_values(by = [source_data.columns[0], source_data.columns[1]]).reset_index(drop = True)
+        assertion_data = assertion_data.sort_values(by = assertion_data.columns[0]).reset_index(drop = True)
+        if source_data.equals(assertion_data):
+            return True
+        else:
+            return False
+    
+
 def skeleton_dict_tests(test_data: dict) -> str:
     ''' Runs the tests for the skeleton_dictionary.py script.
 
@@ -275,6 +310,47 @@ def validate_data_tests(test_data: dict) -> str:
     result += f'\n\tOVERVIEW: Total validate_data tests failed --> {fail_count}'
     return result
 
+def data_conversion_tests(test_data: dict) -> str:
+    ''' Runs the tests for the data_conversion.py script.
+    
+    Parameters
+    ----------
+    test_data: dict 
+        The data for the data conversion testing.
+    
+    Returns
+    -------
+    str
+        The output string for the test case results.
+    '''
+    script = os.path.split(test_data['script_path'])[1]
+    assertion_files = test_data['assertion_files']
+    test_files = [f"{test_tmp.replace('./', '../../supplementary_files/tests/')}" for test_tmp in test_data['data_files']]
+    cwd = '../../src/data_conversion'
+    result = 'DATA CONVERSION RESULTS:'
+    fail_count = 0
+    venv_python = f'../{_python}'
+
+    # run each test
+    for test_num, test in enumerate(test_files):
+        test_name = os.path.split(os.path.splitext(test)[0])[1]
+        target_file_format = os.path.splitext(test)[0].split('_')[-1]
+        test_file_format = os.path.splitext(test)[1]
+        generated_file = f'{_tmp_output_path}data_conversion_test.{target_file_format}'
+        args = [test, generated_file]
+        # run the script 
+        _ = subprocess.run([venv_python, script] + args, cwd = cwd, capture_output = True, text = True)
+        # check the result
+        correspdonding_assertion = assertion_files[assertion_files.index(f"{test.replace('test_data', 'assertion_files').replace('../../supplementary_files/tests/', './').replace(f'{test_file_format}', f'.{target_file_format}')}")]
+        test_result = validate_conversion_assertion(f"{generated_file.replace('./', '../../src/data_conversion/')}", correspdonding_assertion, target_file_format)
+        # remove the generated file
+        os.remove(generated_file.replace('./', '../../src/data_conversion/'))
+        if not test_result: fail_count += 1
+        result += f"\n\tTEST #{test_num + 1}: {test_name}...RESULT: {'passed' if test_result else 'FAILED'}"
+    
+    result += f'\n\tOVERVIEW: Total data_conversion tests failed --> {fail_count}'
+    return result
+
 def main() -> None:
 
     global _version 
@@ -322,6 +398,11 @@ def main() -> None:
     validate_data_results = validate_data_tests(test_data['schema'])
     results += '\n' + validate_data_results
     print(validate_data_results)
+
+    # run the data_conversion.py tests
+    data_conversion_results = data_conversion_tests(test_data['data_conversion'])
+    results += '\n' + data_conversion_results
+    print(data_conversion_results)
 
     # log aggregated results
     logging.info(results)
