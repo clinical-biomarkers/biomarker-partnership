@@ -9,8 +9,8 @@ PREFIX_MAP_PATH = '../mapping_data/prefix_map.json'
 with open(PREFIX_MAP_PATH) as f:
     PREFIX_MAP = json.load(f)
 
-def clean_prefixes(source_column: pd.Series) -> pd.Series:
-    ''' Cleans the prefixes in the given dataframe column.
+def map_prefixes(source_column: pd.Series) -> pd.Series:
+    ''' Maps the prefixes in the given dataframe column.
 
     Parameters
     ----------
@@ -38,3 +38,18 @@ def clean_parantheticals(source_column: pd.Series) -> pd.Series:
         The cleaned dataframe column.
     '''
     return source_column.apply(lambda x: re.sub(r'\([^)]*\)', '', x).strip() if isinstance(x, str) else x)
+
+def strip_values(source_column: pd.Series) -> pd.Series:
+    ''' Strips the leading and trailing whitespace from the given dataframe column.
+
+    Parameters
+    ----------
+    source_column: pd.Series
+        The dataframe column to clean.
+    
+    Returns
+    -------
+    pd.Series
+        The cleaned dataframe column.
+    '''
+    return source_column.apply(lambda x: x.strip() if isinstance(x, str) else x)
