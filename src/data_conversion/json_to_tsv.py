@@ -170,7 +170,7 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -
                         tag_values = []
 
                         for tag in evidence_source['tags']:
-                            raw_tag, tag_flag = tag_parse(tag, object_evidence_fields)
+                            raw_tag, tag_flag = tag_parse(tag, object_evidence_fields, component_idx)
                             if tag_flag:
                                 tag_values.append(raw_tag)
                                 add_evidence_flag = True
@@ -249,16 +249,18 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -
 
                     add_evidence_flag = False
                     evidence_columns = [''] * 3
+
                     evidence_source_value = f"{evidence_source['database']}:{evidence_source['evidence_id']}"
                     tag_values = []
 
                     for tag in evidence_source['tags']:
-                        raw_tag, tag_flag = tag_parse(tag, object_evidence_fields)
+                        raw_tag, tag_flag = tag_parse(tag, object_evidence_fields, component_idx)
                         if tag_flag:
                             tag_values.append(raw_tag)
                             add_evidence_flag = True
                     
                     if add_evidence_flag:
+                        evidence_values = aggregate_evidence_values(evidence_source['evidence_list'])
                         top_level_duplicate_flag = False
                         # check if evidence has already been captured from component evidence,
                         # if so, check if any new tags should be included in existing line or to skip the line entirely 
@@ -285,7 +287,7 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -
         f.write(tsv_content)
     logging.info(f'Conversion complete. TSV file written to {target_filepath}')
 
-def tag_parse(tag: dict, object_evidence_fields: dict) -> tuple:
+def tag_parse(tag: dict, object_evidence_fields: dict, component_idx: int = None) -> tuple:
     ''' Parses the evidence data in the JSON data model. 
 
     Parameters
@@ -294,6 +296,8 @@ def tag_parse(tag: dict, object_evidence_fields: dict) -> tuple:
         Dictionary containing the tag data.
     object_evidence_fields : dict 
         Dictionary containing the object/array evidence fields and their values.
+    component_idx : int, optional (default = None)
+        Index of the current component entry for top level evidence parsing.
     
     Returns
     -------
@@ -304,6 +308,11 @@ def tag_parse(tag: dict, object_evidence_fields: dict) -> tuple:
 
     # isolate the tag value from the index value
     tag_value = tag['tag'].split(':')[0]
+    # isolate index value 
+    tag_index = tag['tag'].split(':')[-1]
+
+    if component_idx and tag_value != tag_index and component_idx != tag_index:
+        return (None, add_evidence_flag) 
 
     # check that tag is applicable to current row 
     if tag_value in SINGLE_EVIDENCE_FIELDS:

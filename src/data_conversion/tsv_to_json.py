@@ -152,6 +152,18 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
                             if comp_evidence_source[0] == existing_comp_evidence:
                                 add_comp_evidence = False
                                 break
+                            existing_comp_evidence_no_tags = {k: v for k, v in existing_comp_evidence.items() if k != 'tags'}
+                            existing_comp_tags = [tag['tag'] for tag in existing_comp_evidence['tags']]
+                            new_comp_evidence_no_tags = {k: v for k, v in comp_evidence_source[0].items() if k != 'tags'}
+                            new_comp_tags = [tag['tag'] for tag in comp_evidence_source[0]['tags']]
+                            if existing_comp_evidence_no_tags == new_comp_evidence_no_tags:
+                                add_comp_evidence = False
+                                # handle case where evidence matches but tags do not 
+                                for tag in new_comp_tags:
+                                    if tag not in existing_comp_tags:
+                                        existing_comp_evidence['tags'].append({'tag': tag})
+                            else:
+                                continue
                         if add_comp_evidence:
                             result_data[existing_entry_index]['biomarker_component'][component_to_update_idx]['evidence_source'].append(comp_evidence_source[0])
 
@@ -162,6 +174,18 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
                         if top_evidence_source[0] == existing_top_evidence:
                             add_top_evidence = False
                             break
+                        existing_top_evidence_no_tags = {k: v for k, v in existing_top_evidence.items() if k != 'tags'}
+                        existing_top_tags = [tag['tag'] for tag in existing_top_evidence['tags']]
+                        new_top_evidence_no_tags = {k: v for k, v in top_evidence_source[0].items() if k != 'tags'}
+                        new_top_tags = [tag['tag'] for tag in top_evidence_source[0]['tags']]
+                        if existing_top_evidence_no_tags == new_top_evidence_no_tags:
+                            add_top_evidence = False
+                            # handle case where evidence matches but tags do not 
+                            for tag in new_top_tags:
+                                if tag not in existing_top_tags:
+                                    existing_top_evidence['tags'].append({'tag': tag})
+                        else:
+                            continue
                     if add_top_evidence:
                         result_data[existing_entry_index]['evidence_source'].append(top_evidence_source[0])
         
