@@ -13,7 +13,8 @@ SINGLE_EVIDENCE_FIELDS = {
     'assessed_biomarker_entity_id',
     'assessed_entity_type',
     'condition',
-    'exposure_agent'
+    'exposure_agent',
+    'best_biomarker_role'
 }
 
 def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -> None:
@@ -32,8 +33,6 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -
     # get the JSON source data
     json_data = misc_fns.load_json(source_filepath)
 
-    # avoid duplicate evidence values between component and top level evidence
-    overall_seen_evidence = set()
 
     # create the end result TSV content file and write the headers
     tsv_content = '\t'.join(tsv_headers) + '\n'
@@ -64,6 +63,9 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -
         ### loop through the biomarker component in the current entry 
 
         for component_idx, component_entry in enumerate(top_level_entry['biomarker_component']):
+
+            # avoid duplicate evidence values between components and top level evidence
+            overall_seen_evidence = set()
 
             # get the biomarker component elements for the current component entry
             try:
@@ -153,8 +155,8 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -
                             overall_seen_evidence.add(evidence_values)
                             evidence_columns = [evidence_source_value, evidence_values, ';'.join(tag_values)]
 
-                        # add evidence columns to row data
-                        tsv_content += '\t'.join(row_data) + '\t' + '\t'.join(evidence_columns) + '\n'
+                            # add evidence columns to row data
+                            tsv_content += '\t'.join(row_data) + '\t' + '\t'.join(evidence_columns) + '\n'
                     
                     # start handling top level evidence data
                     
@@ -175,12 +177,26 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -
                         
                         if add_evidence_flag:
                             evidence_values = aggregate_evidence_values(evidence_source['evidence_list'])
-                            # check if evidence has already been captured from component evidence and skip if so
+                            top_level_duplicate_flag = False
+                            # check if evidence has already been captured from component evidence,
+                            # if so, check if any new tags should be included in existing line or to skip the line entirely 
                             if evidence_values in seen_evidence or evidence_values in overall_seen_evidence:
-                                continue
-                            evidence_columns = [evidence_source_value, evidence_values, ';'.join(tag_values)]
-
-                        tsv_content += '\t'.join(row_data) + '\t' + '\t'.join(evidence_columns) + '\n'
+                                for line_idx, line in enumerate(tsv_content.split('\n')):
+                                    # create a dictionary of the line data
+                                    line_data = dict(zip(tsv_headers, line.split('\t')))
+                                    if line_data['biomarker_id'] not in [None, ''] and line_data['evidence'] == evidence_values and line_data['tag'] != 'tag':
+                                        existing_tags = set(line_data['tag'].split(';'))
+                                        tag_set = set(tag_values)
+                                        if tag_set.issubset(existing_tags):
+                                            top_level_duplicate_flag = True
+                                        else:
+                                            tsv_content = tsv_content.replace(line, line + ';' + ';'.join(tag_set.difference(existing_tags)))
+                                            break
+                                if top_level_duplicate_flag:
+                                    continue
+                            else:
+                                evidence_columns = [evidence_source_value, evidence_values, ';'.join(tag_values)]
+                                tsv_content += '\t'.join(row_data) + '\t' + '\t'.join(evidence_columns) + '\n'
 
             ### handle case where specimen data is NOT available
             else:
@@ -243,12 +259,26 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -
                             add_evidence_flag = True
                     
                     if add_evidence_flag:
-                        evidence_values = aggregate_evidence_values(evidence_source['evidence_list'])
+                        top_level_duplicate_flag = False
+                        # check if evidence has already been captured from component evidence,
+                        # if so, check if any new tags should be included in existing line or to skip the line entirely 
                         if evidence_values in seen_evidence or evidence_values in overall_seen_evidence:
-                            continue
-                        evidence_columns = [evidence_source_value, evidence_values, ';'.join(tag_values)]
-                    
-                    tsv_content += '\t'.join(row_data) + '\t' + '\t'.join(evidence_columns) + '\n'
+                            for line_idx, line in enumerate(tsv_content.split('\n')):
+                                # create a dictionary of the line data
+                                line_data = dict(zip(tsv_headers, line.split('\t')))
+                                if line_data['biomarker_id'] not in [None, ''] and line_data['evidence'] == evidence_values and line_data['tag'] != 'tag':
+                                    existing_tags = set(line_data['tag'].split(';'))
+                                    tag_set = set(tag_values)
+                                    if tag_set.issubset(existing_tags):
+                                        top_level_duplicate_flag = True
+                                    else:
+                                        tsv_content = tsv_content.replace(line, line + ';' + ';'.join(tag_set.difference(existing_tags)))
+                                        break
+                            if top_level_duplicate_flag:
+                                continue
+                        else:
+                            evidence_columns = [evidence_source_value, evidence_values, ';'.join(tag_values)]
+                            tsv_content += '\t'.join(row_data) + '\t' + '\t'.join(evidence_columns) + '\n'
     
     # write the TSV content to the target file
     with open(target_filepath, 'w') as f:
@@ -300,4 +330,4 @@ def aggregate_evidence_values(evidence_list: list) -> str:
     evidence_values = []
     for evidence_text in evidence_list:
         evidence_values.append(evidence_text['evidence'])
-    return ';'.join(evidence_values)    
+    return ';|'.join(evidence_values)    

@@ -41,6 +41,7 @@ def get_doid_data(doid_id: str) -> dict:
 
     # only keep the synonyms that have the EXACT qualifier and remove the qualifier
     synonyms = doid_data.get('synonyms', [])
+    synonyms = [] if synonyms is None else synonyms
     synonyms = [synonym.replace('EXACT', '').strip() for synonym in synonyms if 'EXACT' in synonym]
 
     return_data = {
