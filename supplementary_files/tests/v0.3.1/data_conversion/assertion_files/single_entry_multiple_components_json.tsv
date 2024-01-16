@@ -1,3 +1,0 @@
-biomarker_id	biomarker	assessed_biomarker_entity	assessed_biomarker_entity_id	assessed_entity_type	condition	condition_id	exposure_agent	exposure_agent_id	best_biomarker_role	specimen	specimen_id	loinc_code	evidence_source	evidence	tag
-A0001	increased IL6 level	Interleukin-6	UPKB:p05231	protein	prostate cancer	DOID:10283			prognostic	blood	UBERON:0000178	26881-3
-A0001	biomarker 2	assessed biomarker entity rec name 2	assessed biomarker entity id 2	assessed entity type 2	prostate cancer	DOID:10283			prognostic	specimen name 2	specimen id 2	loinc code 2

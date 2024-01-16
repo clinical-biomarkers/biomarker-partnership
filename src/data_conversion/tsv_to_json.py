@@ -10,8 +10,15 @@ import api_calls as data_api
 COMP_SINGULAR_EVIDENCE_FIELDS = {'biomarker', 'assessed_biomarker_entity', 
                                 'assessed_biomarker_entity_id', 'assessed_entity_type'}
 TOP_LEVEL_EVIDENCE_FIELDS = {'condition', 'exposure_agent', 'best_biomarker_role'}
-UNIPROT_RATE_LIMIT_CHECK = 190
-UNIPROT_SLEEP_TIME = 0.75
+
+UNIPROT_RATE_LIMIT_CHECK = 200
+UNIPROT_SLEEP_TIME = 1
+
+ADD_CITATION_DATA = True
+PUBMED_RATE_LIMIT_CHECK = 10 
+PUBMED_SLEEP_TIME = 1
+
+# TODO: multiple specimen issue 
 
 def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, url_map: dict, name_space_map: dict) -> None:
     ''' Entry point for the TSV -> JSON conversion.
@@ -32,9 +39,12 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
 
     header_check = False
 
+    # set rate limit variables to locals for better performance
     uniprot_rate_limit_counter = 0
     uniprot_rate_limit_check = UNIPROT_RATE_LIMIT_CHECK
     uniprot_sleep_time = UNIPROT_SLEEP_TIME
+    pubmed_rate_limit_check = PUBMED_RATE_LIMIT_CHECK
+    pubmed_sleep_time = PUBMED_SLEEP_TIME
 
     with open(source_filepath, 'r') as f:
         data = csv.DictReader(f, delimiter = '\t', quotechar = '"')
@@ -45,6 +55,9 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
         idx = 0
 
         for row in data:
+            
+            row = {key: value.strip() if isinstance(value, str) else value for key, value in row.items()}
+
             # make sure the headers are valid
             if not header_check:
                 for header in data.fieldnames:
@@ -120,22 +133,37 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
                     if biomarker_component['specimen'] != None:
                         add_specimen = True
                         # determine whether the the specimen entry should be added or if it already exists
-                        for existing_specimen in existing_entry['biomarker_component'][component_to_update_idx]['specimen']:
-                            specimen_found = (biomarker_component['specimen']['name'] == existing_specimen['name']) and \
-                                                (biomarker_component['specimen']['loinc_code'] == existing_specimen['loinc_code']) 
+                        specimen_list = existing_entry['biomarker_component'][component_to_update_idx]['specimen']
+                        for existing_specimen in specimen_list:
+                            specimen_found = existing_specimen in biomarker_component['specimen']
+                            # specimen_found = (biomarker_component['specimen']['name'] == existing_specimen['name']) and \
+                            #                    (biomarker_component['specimen']['loinc_code'] == existing_specimen['loinc_code']) 
                             if specimen_found:
                                 add_specimen = False
                                 break
                         if add_specimen:
-                            result_data[existing_entry_index]['biomarker_componennt'][component_to_update_idx]['specimen'].append(biomarker_component['specimen'])
+                            for specimen_to_add in biomarker_component['specimen']:
+                                result_data[existing_entry_index]['biomarker_component'][component_to_update_idx]['specimen'].append(specimen_to_add)
 
                     # add new component evidence source entry if applicable
                     if comp_evidence_source != []:
                         add_comp_evidence = True
                         for existing_comp_evidence in existing_entry['biomarker_component'][component_to_update_idx]['evidence_source']:
-                            if comp_evidence_source == existing_comp_evidence:
+                            if comp_evidence_source[0] == existing_comp_evidence:
                                 add_comp_evidence = False
                                 break
+                            existing_comp_evidence_no_tags = {k: v for k, v in existing_comp_evidence.items() if k != 'tags'}
+                            existing_comp_tags = [tag['tag'] for tag in existing_comp_evidence['tags']]
+                            new_comp_evidence_no_tags = {k: v for k, v in comp_evidence_source[0].items() if k != 'tags'}
+                            new_comp_tags = [tag['tag'] for tag in comp_evidence_source[0]['tags']]
+                            if existing_comp_evidence_no_tags == new_comp_evidence_no_tags:
+                                add_comp_evidence = False
+                                # handle case where evidence matches but tags do not 
+                                for tag in new_comp_tags:
+                                    if tag not in existing_comp_tags:
+                                        existing_comp_evidence['tags'].append({'tag': tag})
+                            else:
+                                continue
                         if add_comp_evidence:
                             result_data[existing_entry_index]['biomarker_component'][component_to_update_idx]['evidence_source'].append(comp_evidence_source[0])
 
@@ -143,15 +171,27 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
                 if top_evidence_source != []:
                     add_top_evidence = True
                     for existing_top_evidence in existing_entry['evidence_source']:
-                        if top_evidence_source == existing_top_evidence:
+                        if top_evidence_source[0] == existing_top_evidence:
                             add_top_evidence = False
                             break
+                        existing_top_evidence_no_tags = {k: v for k, v in existing_top_evidence.items() if k != 'tags'}
+                        existing_top_tags = [tag['tag'] for tag in existing_top_evidence['tags']]
+                        new_top_evidence_no_tags = {k: v for k, v in top_evidence_source[0].items() if k != 'tags'}
+                        new_top_tags = [tag['tag'] for tag in top_evidence_source[0]['tags']]
+                        if existing_top_evidence_no_tags == new_top_evidence_no_tags:
+                            add_top_evidence = False
+                            # handle case where evidence matches but tags do not 
+                            for tag in new_top_tags:
+                                if tag not in existing_top_tags:
+                                    existing_top_evidence['tags'].append({'tag': tag})
+                        else:
+                            continue
                     if add_top_evidence:
                         result_data[existing_entry_index]['evidence_source'].append(top_evidence_source[0])
         
         ### add citation data
-        add_citation_data = True
-        if add_citation_data:
+        if ADD_CITATION_DATA:
+            seen_pubmed_set = set()
             # holds the evidence sources to build the citation entries for
             evidence_sources = []
             # get the evidence source data for each biomarker entry
@@ -161,15 +201,22 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
                     # get each component evidence source
                     for evidence_source in biomarker_componennt_entry['evidence_source']:
                         evidence_sources.append((entry_idx, evidence_source))
+                        seen_pubmed_set.add(evidence_source['evidence_id'])
                 # get the evidence source data for the top level entry
                 for evidence_source in entry['evidence_source']:
-                    evidence_sources.append((entry_idx, evidence_source))
+                    if evidence_source['evidence_id'] not in seen_pubmed_set:
+                        evidence_sources.append((entry_idx, evidence_source))
             logging.info(f'Adding citation data for {len(evidence_sources)} evidence sources...')
 
+            pubmed_api_rate_limit_counter = 0
             # get the citation data for each evidence source
             for evidence_source in evidence_sources:
                 if evidence_source[1]['database'].lower() != 'pubmed':
                     continue 
+                if pubmed_api_rate_limit_counter == pubmed_rate_limit_check:
+                    logging.info(f'PubMed API rate limit check ({pubmed_rate_limit_check}) reached, sleeping for {pubmed_sleep_time} second...')
+                    time.sleep(pubmed_sleep_time)
+                    pubmed_api_rate_limit_counter = 0
                 pubmed_data = data_api.get_pubmed_data(evidence_source[1]['evidence_id'])
                 if not pubmed_data:
                     continue
@@ -186,6 +233,7 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
                     'reference': []
                 }
                 result_data[evidence_source[0]]['citation'].append(citation_entry)
+                pubmed_api_rate_limit_counter += 1
 
             logging.info(f'Finished adding citation data!')
         
@@ -263,9 +311,9 @@ def build_condition_entry(row: list, url_map: dict, name_space_map: dict) -> dic
                 'name': row['condition'],
                 'description': None,
                 'resource': condition_resource,
-                'url': condition_url,
-                'synonyms': []
-            }
+                'url': condition_url
+            },
+            'synonyms': []
         }
 
         # handle getting the condition description and synonyms
@@ -397,7 +445,7 @@ def build_evidence_entry(row: list, tag_list: list, url_map: dict) -> list:
                 'evidence_id': evidence_id,
                 'database': evidence_database.title(),
                 'url': evidence_url,
-                'evidence_list': [{'evidence': evidence_txt} for evidence_txt in row['evidence'].split(';')],
+                'evidence_list': [{'evidence': evidence_txt.strip()} for evidence_txt in row['evidence'].split(';|')],
                 'tags': tag_list
             }
         )

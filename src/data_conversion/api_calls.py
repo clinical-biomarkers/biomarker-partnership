@@ -41,6 +41,7 @@ def get_doid_data(doid_id: str) -> dict:
 
     # only keep the synonyms that have the EXACT qualifier and remove the qualifier
     synonyms = doid_data.get('synonyms', [])
+    synonyms = [] if synonyms is None else synonyms
     synonyms = [synonym.replace('EXACT', '').strip() for synonym in synonyms if 'EXACT' in synonym]
 
     return_data = {
@@ -68,6 +69,12 @@ def get_pubmed_data(pubmed_id: str) -> dict:
     load_dotenv()
     # get email from environment variables
     email = os.getenv('EMAIL') 
+    # try to get api key from environment variables
+    try:
+        api_key = os.getenv('API_KEY')
+    except Exception as e:
+        logging.warning(f'Warning: Failed to find API_KEY environment variable. Consider adding one.')
+        api_key = None
     if email is None:
         logging.error(f'Error: Failed to find EMAIL environment variable. Check .env file.')
         print(f'Error: Failed to find EMAIL environment variable. Check .env file. Skipping PubMed API calls...')
@@ -75,6 +82,8 @@ def get_pubmed_data(pubmed_id: str) -> dict:
 
     # query PubMed for the given PubMed ID
     pubmed = PubMed(tool = 'CFDE Biomarker-Partnership', email = email)
+    if api_key:
+        pubmed.parameters.update({'api_key': api_key})
     query = f'PMID: {pubmed_id}'
     articles = pubmed.query(query)
     try:
