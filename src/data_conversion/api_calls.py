@@ -75,7 +75,7 @@ def get_doid_data(doid_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
     logging.error(f'Failed to retrive DOID data after {max_retries} attempts.')
     return None
 
-def get_pubmed_data(pubmed_id: str) -> dict:
+def get_pubmed_data(pubmed_id: str) -> tuple:
     ''' Gets the PubMed data for the given PubMed ID.
 
     Parameters
@@ -85,8 +85,8 @@ def get_pubmed_data(pubmed_id: str) -> dict:
 
     Returns
     -------
-    dict
-        The PubMed data for the given PubMed ID.
+    tuple
+        Indicator if an api call was used and PubMed data for the given PubMed ID.
     '''
     pubmed_id = pubmed_id.strip()
     # check PubMed cache and see if information is there to avoid duplicate API calls
