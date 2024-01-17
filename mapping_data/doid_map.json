@@ -1,0 +1,238 @@
+{
+    "10283": {
+        "description": "A male reproductive organ cancer that is located_in the prostate.",
+        "synonyms": [
+            "hereditary prostate cancer",
+            "malignant tumor of the prostate",
+            "NGP - new growth of prostate",
+            "prostate cancer, familial",
+            "prostate neoplasm",
+            "prostatic cancer",
+            "prostatic neoplasm",
+            "tumor of the prostate"
+        ]
+    },
+    "0080600": {
+        "description": "A Coronavirus infectious disease that is characterized by fever, cough and shortness of breath and that has_material_basis_in SARS-CoV-2.",
+        "synonyms": [
+            "2019 Novel Coronavirus (2019-nCoV)",
+            "2019-nCoV infection",
+            "COVID19",
+            "SARS-CoV-2 infection",
+            "Wuhan coronavirus infection",
+            "Wuhan seafood market pneumonia virus infection"
+        ]
+    },
+    "1324": {
+        "description": "A respiratory system cancer that is located_in the lung.",
+        "synonyms": []
+    },
+    "11054": {
+        "description": "An urinary system cancer that results_in malignant growth located_in the urinary bladder.",
+        "synonyms": [
+            "bladder cancer",
+            "tumor of the bladder"
+        ]
+    },
+    "1612": {
+        "description": "A thoracic cancer that originates in the mammary gland.",
+        "synonyms": [
+            "breast tumor",
+            "malignant neoplasm of breast",
+            "malignant tumor of the breast",
+            "mammary cancer",
+            "mammary tumor",
+            "primary breast cancer"
+        ]
+    },
+    "9256": {
+        "description": "A large intestine cancer that is located_in the colon and/or located_in the rectum.",
+        "synonyms": []
+    },
+    "1781": {
+        "description": "An endocrine gland cancer located in the thryoid gland located in the neck below the thyroid cartilage.",
+        "synonyms": [
+            "malignant neoplasm of thyroid gland",
+            "malignant tumour of thyroid gland",
+            "neoplasm of thyroid gland",
+            "thyroid gland cancer",
+            "Thyroid gland neoplasm",
+            "thyroid neoplasm"
+        ]
+    },
+    "4362": {
+        "description": "A female reproductive organ cancer that is located_in the cervix.",
+        "synonyms": [
+            "cervical neoplasm",
+            "cervix cancer",
+            "cervix uteri cancer",
+            "neoplasm of uterine cervix",
+            "tumor of the Cervix Uteri",
+            "uterine cervical neoplasm"
+        ]
+    },
+    "263": {
+        "description": "A urinary system cancer that is located_in the kidney.",
+        "synonyms": [
+            "malignant neoplasm of kidney except pelvis",
+            "malignant tumour of kidney",
+            "renal cancer"
+        ]
+    },
+    "3571": {
+        "description": "A hepatobiliary system cancer that is located_in the liver.",
+        "synonyms": [
+            "Ca liver - primary",
+            "hepatic cancer",
+            "hepatic neoplasm",
+            "malignant hepato-biliary neoplasm",
+            "malignant neoplasm of liver",
+            "malignant neoplasm of liver, not specified as primary or secondary",
+            "malignant neoplasm of liver, primary",
+            "malignant tumor of liver",
+            "neoplasm of liver",
+            "non-resectable primary hepatic malignant neoplasm",
+            "primary liver cancer",
+            "primary malignant neoplasm of liver",
+            "Resectable malignant neoplasm of Liver",
+            "resectable malignant neoplasm of the liver"
+        ]
+    },
+    "2531": {
+        "description": "An organ system cancer located in the hematological system that is characterized by uncontrolled cellular proliferation in blood, bone marrow and lymph nodes.",
+        "synonyms": [
+            "blood cancer",
+            "Hematologic malignancy",
+            "Hematologic neoplasm",
+            "Hematological tumors",
+            "hematopoietic and lymphoid system tumor",
+            "hematopoietic cancer",
+            "hematopoietic neoplasm",
+            "hematopoietic tumors",
+            "malignant hematopoietic neoplasm"
+        ]
+    },
+    "5041": {
+        "description": "A gastrointestinal system cancer that is located_in the esophagus.",
+        "synonyms": [
+            "Ca lower third oesophagus",
+            "Ca middle third oesophagus",
+            "esophagus cancer",
+            "malignant neoplasm of distal third of esophagus",
+            "malignant neoplasm of lower third of oesophagus",
+            "malignant neoplasm of middle third of oesophagus",
+            "malignant neoplasm of proximal third of esophagus",
+            "malignant neoplasm of upper third esophagus",
+            "malignant tumor of abdominal esophagus",
+            "malignant tumor of Distal Third of esophagus",
+            "malignant tumor of Proximal Third of esophagus",
+            "malignant tumor of the middle Third of the esophagus"
+        ]
+    },
+    "9351": {
+        "description": "A glucose metabolism disease that is characterized by chronic hyperglycaemia with disturbances of carbohydrate, fat and protein metabolism resulting from defects in insulin secretion, insulin action, or both.",
+        "synonyms": [
+            "diabetes"
+        ]
+    },
+    "11934": {
+        "description": "An organ system cancer that arises in the head or neck region. This region includes the nasal cavity, sinuses, lips, mouth, salivary glands, throat, or larynx.",
+        "synonyms": [
+            "head and neck neoplasm",
+            "head and neck tumours",
+            "head/neck neoplasm",
+            "tumor of head and neck"
+        ]
+    },
+    "3119": {
+        "description": "An organ system cancer located_in gastrointestinal tract that is manifested in organs of the gastrointestinal system.",
+        "synonyms": [
+            "digestive system cancer",
+            "gastrointestinal tract cancer",
+            "GI tumor"
+        ]
+    },
+    "1793": {
+        "description": "An endocrine gland cancer located_in the pancreas.",
+        "synonyms": [
+            "Ca body of pancreas",
+            "Ca head of pancreas",
+            "Ca tail of pancreas",
+            "malignant neoplasm of body of pancreas",
+            "malignant neoplasm of head of pancreas",
+            "malignant neoplasm of tail of pancreas",
+            "pancreas neoplasm",
+            "pancreatic neoplasm",
+            "pancreatic tumor"
+        ]
+    },
+    "363": {
+        "description": "A female reproductive organ cancer that is located_in the uterus.",
+        "synonyms": [
+            "CA - cancer of uterus",
+            "malignant neoplasm of uterus",
+            "malignant uterine tumor",
+            "neoplasm of uterus",
+            "Tumour of uterus",
+            "uterine tumor",
+            "uterus neoplasm"
+        ]
+    },
+    "2394": {
+        "description": "A female reproductive organ cancer that is located_in the ovary.",
+        "synonyms": [
+            "malignant Ovarian tumor",
+            "malignant tumour of ovary",
+            "ovarian neoplasm",
+            "ovary neoplasm",
+            "primary ovarian cancer",
+            "tumor of the Ovary"
+        ]
+    },
+    "10534": {
+        "description": "A gastrointestinal system cancer that is located_in the stomach.",
+        "synonyms": [
+            "gastric cancer",
+            "gastric neoplasm"
+        ]
+    },
+    "8584": {
+        "description": "A mature B-cell neoplasm of B-cells found in the germinal center.",
+        "synonyms": [
+            "Burkitt lymphoma/leukaemia",
+            "Burkitt's Lymphoma",
+            "Burkitt's tumor",
+            "Burkitt's tumor or lymphoma",
+            "malignant lymphoma, Burkitt's type",
+            "small Non-Cleaved cell Lymphoma, Burkitt's type"
+        ]
+    },
+    "4159": {
+        "description": "An integumentary system cancer located_in the skin that is the uncontrolled growth of abnormal skin cells.",
+        "synonyms": [
+            "CA - skin cancer",
+            "malignant neoplasm of skin",
+            "melanoma and Non-melanoma skin cancer"
+        ]
+    },
+    "1319": {
+        "description": "A central nervous system cancer that is characterized by the growth of abnormal cells in the tissues of the brain.",
+        "synonyms": [
+            "adult brain tumor",
+            "adult malignant brain neoplasm",
+            "brain neoplasm",
+            "brain neoplasm, adult",
+            "BT - Brain tumour",
+            "malignant brain tumour",
+            "malignant primary brain neoplasm",
+            "malignant primary brain tumor",
+            "malignant tumor of adult brain",
+            "malignant tumor of Brain",
+            "neoplasm of brain",
+            "primary brain neoplasm",
+            "primary brain tumor",
+            "primary malignant neoplasm of brain",
+            "tumor of the Brain"
+        ]
+    }
+}
