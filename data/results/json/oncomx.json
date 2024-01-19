@@ -4139,7 +4139,7 @@
         ]
     },
     {
-        "biomarker_id": "512",
+        "biomarker_id": "511",
         "biomarker_component": [
             {
                 "biomarker": "increased WBC count",
@@ -4148,7 +4148,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000738",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -4483,7 +4483,7 @@
         ]
     },
     {
-        "biomarker_id": "515",
+        "biomarker_id": "514",
         "biomarker_component": [
             {
                 "biomarker": "increased WBC count",
@@ -4492,7 +4492,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000738",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -4604,7 +4604,7 @@
         ]
     },
     {
-        "biomarker_id": "516",
+        "biomarker_id": "515",
         "biomarker_component": [
             {
                 "biomarker": "increased WBC count",
@@ -4613,7 +4613,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000738",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -4751,7 +4751,7 @@
         ]
     },
     {
-        "biomarker_id": "514",
+        "biomarker_id": "513",
         "biomarker_component": [
             {
                 "biomarker": "increased WBC count",
@@ -4760,7 +4760,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000738",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -4971,7 +4971,7 @@
         ]
     },
     {
-        "biomarker_id": "513",
+        "biomarker_id": "512",
         "biomarker_component": [
             {
                 "biomarker": "increased WBC count",
@@ -4980,7 +4980,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000738",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -5164,7 +5164,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000542",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -5260,7 +5260,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000542",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -5356,7 +5356,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000542",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -6108,7 +6108,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000542",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -6241,7 +6241,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000542",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -6344,7 +6344,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000233",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -6878,7 +6878,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000624",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -7062,7 +7062,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000624",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -7171,7 +7171,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000624",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -7304,7 +7304,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000624",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -7400,7 +7400,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000624",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -7533,7 +7533,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000624",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -7629,7 +7629,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000624",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -7762,7 +7762,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000624",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -7877,7 +7877,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000624",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -8022,7 +8022,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000624",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -8203,7 +8203,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000624",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -8354,7 +8354,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000624",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -8523,7 +8523,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000624",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "oropharynx",
@@ -8644,7 +8644,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000795",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -8828,7 +8828,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000795",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "oropharynx",
@@ -11754,7 +11754,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CHEBI:17855",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -11989,7 +11989,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CHEBI:17855",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -12085,7 +12085,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CHEBI:17855",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -12834,14 +12834,10 @@
                 "biomarker": "increased SAA1 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Serum amyloid A protein",
-                    "synonyms": [
-                        {
-                            "synonym": "SAA"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P0DJI8",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "blood",
@@ -13801,26 +13797,10 @@
                 "biomarker": "increased CCL7 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Monocyte chemotactic protein-3",
-                    "synonyms": [
-                        {
-                            "synonym": "Monocyte chemoattractant protein 3"
-                        },
-                        {
-                            "synonym": "Monocyte chemotactic protein 3"
-                        },
-                        {
-                            "synonym": "MCP-3"
-                        },
-                        {
-                            "synonym": "NC28"
-                        },
-                        {
-                            "synonym": "Small-inducible cytokine A7"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P80098",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "blood",
@@ -13916,7 +13896,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000094",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -14049,7 +14029,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000094",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -18403,7 +18383,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000771",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -18638,7 +18618,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000771",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -19431,191 +19411,6 @@
         ]
     },
     {
-        "biomarker_id": "490",
-        "biomarker_component": [
-            {
-                "biomarker": "increased TNF level",
-                "assessed_biomarker_entity": {
-                    "recommended_name": "Tumor necrosis factor alpha",
-                    "synonyms": [
-                        {
-                            "synonym": "Cachectin"
-                        },
-                        {
-                            "synonym": "TNF-alpha"
-                        },
-                        {
-                            "synonym": "Tumor necrosis factor ligand superfamily member 2"
-                        },
-                        {
-                            "synonym": "TNF-a"
-                        }
-                    ]
-                },
-                "assessed_biomarker_entity_id": "UPKB:P01375",
-                "assessed_entity_type": "protein",
-                "specimen": [
-                    {
-                        "name": "blood",
-                        "specimen_id": "UBERON:0000178",
-                        "name_space": "Uberon",
-                        "url": "http://purl.obolibrary.org/obo/UBERON_0000178",
-                        "loinc_code": "3074-2"
-                    }
-                ],
-                "evidence_source": [
-                    {
-                        "evidence_id": "32479790",
-                        "database": "Pubmed",
-                        "url": "https://pubmed.ncbi.nlm.nih.gov/32479790",
-                        "evidence_list": [
-                            {
-                                "evidence": "When comparing biochemical indexes of COVID-19 between patients with and without cancer, we found that pro-inflammatory cytokines including TNF-alpha, IL-6, and IL-2R were higher in patients with cancer than in those without cancer."
-                            }
-                        ],
-                        "tags": [
-                            {
-                                "tag": "biomarker"
-                            },
-                            {
-                                "tag": "assessed_biomarker_entity"
-                            },
-                            {
-                                "tag": "specimen:UBERON:0000178"
-                            }
-                        ]
-                    },
-                    {
-                        "evidence_id": "24481866",
-                        "database": "Pubmed",
-                        "url": "https://pubmed.ncbi.nlm.nih.gov/24481866",
-                        "evidence_list": [
-                            {
-                                "evidence": "Elevated levels of TNF-alpha were found in patients with head and neck squamous cell carcinoma (HNSCC). An upregulated TNF-alpha, in combination with CRP, was significantly related to shorter patient survival, independent of clinical stage. Findings indicate that TNF-alpha might be suitable as biomarkers in combination with tumor TNM staging for predicting survival and individualized treatment."
-                            }
-                        ],
-                        "tags": [
-                            {
-                                "tag": "biomarker"
-                            },
-                            {
-                                "tag": "assessed_biomarker_entity"
-                            },
-                            {
-                                "tag": "specimen:UBERON:0000178"
-                            }
-                        ]
-                    }
-                ]
-            }
-        ],
-        "best_biomarker_role": [
-            {
-                "role": "prognostic"
-            }
-        ],
-        "condition": {
-            "condition_id": "DOID:11934",
-            "recommended_name": {
-                "condition_id": "DOID:11934",
-                "name": "head and neck cancer",
-                "description": "An organ system cancer that arises in the head or neck region. This region includes the nasal cavity, sinuses, lips, mouth, salivary glands, throat, or larynx.",
-                "resource": "Disease Ontology",
-                "url": "http://purl.obolibrary.org/obo/DOID:11934"
-            },
-            "synonyms": [
-                {
-                    "synonym_id": "DOID:11934",
-                    "name": "head and neck neoplasm",
-                    "resource": "Disease Ontology",
-                    "url": "http://purl.obolibrary.org/obo/DOID:11934"
-                },
-                {
-                    "synonym_id": "DOID:11934",
-                    "name": "head and neck tumours",
-                    "resource": "Disease Ontology",
-                    "url": "http://purl.obolibrary.org/obo/DOID:11934"
-                },
-                {
-                    "synonym_id": "DOID:11934",
-                    "name": "head/neck neoplasm",
-                    "resource": "Disease Ontology",
-                    "url": "http://purl.obolibrary.org/obo/DOID:11934"
-                },
-                {
-                    "synonym_id": "DOID:11934",
-                    "name": "tumor of head and neck",
-                    "resource": "Disease Ontology",
-                    "url": "http://purl.obolibrary.org/obo/DOID:11934"
-                }
-            ]
-        },
-        "evidence_source": [
-            {
-                "evidence_id": "32479790",
-                "database": "Pubmed",
-                "url": "https://pubmed.ncbi.nlm.nih.gov/32479790",
-                "evidence_list": [
-                    {
-                        "evidence": "When comparing biochemical indexes of COVID-19 between patients with and without cancer, we found that pro-inflammatory cytokines including TNF-alpha, IL-6, and IL-2R were higher in patients with cancer than in those without cancer."
-                    }
-                ],
-                "tags": [
-                    {
-                        "tag": "best_biomarker_role"
-                    },
-                    {
-                        "tag": "condition"
-                    }
-                ]
-            },
-            {
-                "evidence_id": "24481866",
-                "database": "Pubmed",
-                "url": "https://pubmed.ncbi.nlm.nih.gov/24481866",
-                "evidence_list": [
-                    {
-                        "evidence": "Elevated levels of TNF-alpha were found in patients with head and neck squamous cell carcinoma (HNSCC). An upregulated TNF-alpha, in combination with CRP, was significantly related to shorter patient survival, independent of clinical stage. Findings indicate that TNF-alpha might be suitable as biomarkers in combination with tumor TNM staging for predicting survival and individualized treatment."
-                    }
-                ],
-                "tags": [
-                    {
-                        "tag": "best_biomarker_role"
-                    },
-                    {
-                        "tag": "condition"
-                    }
-                ]
-            }
-        ],
-        "citation": [
-            {
-                "citation_title": "Clinical characteristics and risk factors associated with COVID-19 disease severity in patients with cancer in Wuhan, China: a multicentre, retrospective, cohort study.",
-                "journal": "The Lancet. Oncology",
-                "authors": "Tian J, Yuan X, Xiao J, Zhong Q, Yang C, Liu B, Cai Y, Lu Z, Wang J, Wang Y, Liu S, Cheng B, Wang J, Zhang M, Wang L, Niu S, Yao Z, Deng X, Zhou F, Wei W, Li Q, Chen X, Chen W, Yang Q, Wu S, Fan J, Shu B, Hu Z, Wang S, Yang XP, Liu W, Miao X, Wang Z",
-                "date": "2020-06-02",
-                "evidence_source": {
-                    "evidence_id": "32479790",
-                    "database": "Pubmed",
-                    "url": "https://pubmed.ncbi.nlm.nih.gov/32479790"
-                },
-                "reference": []
-            },
-            {
-                "citation_title": "Plasma tumor necrosis factor-\u03b1 and C-reactive protein as biomarker for survival in head and neck squamous cell carcinoma.",
-                "journal": "Journal of cancer research and clinical oncology",
-                "authors": "Andersson B\u00c5, Lewin F, Lundgren J, Nilsson M, Rutqvist LE, L\u00f6fgren S, Laytragoon-Lewin N",
-                "date": "2014-02-01",
-                "evidence_source": {
-                    "evidence_id": "24481866",
-                    "database": "Pubmed",
-                    "url": "https://pubmed.ncbi.nlm.nih.gov/24481866"
-                },
-                "reference": []
-            }
-        ]
-    },
-    {
         "biomarker_id": "488",
         "biomarker_component": [
             {
@@ -19915,7 +19710,7 @@
         ]
     },
     {
-        "biomarker_id": "491",
+        "biomarker_id": "490",
         "biomarker_component": [
             {
                 "biomarker": "increased TNF level",
@@ -20777,26 +20572,10 @@
                 "biomarker": "decreased ACE2 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Angiotensin-converting enzyme 2",
-                    "synonyms": [
-                        {
-                            "synonym": "Angiotensin-converting enzyme homolog"
-                        },
-                        {
-                            "synonym": "ACEH"
-                        },
-                        {
-                            "synonym": "Angiotensin-converting enzyme-related carboxypeptidase"
-                        },
-                        {
-                            "synonym": "ACE-related carboxypeptidase"
-                        },
-                        {
-                            "synonym": "Metalloprotease MPROT15"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q9BYF1",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "pancreas",
@@ -20938,7 +20717,7 @@
         ]
     },
     {
-        "biomarker_id": "520",
+        "biomarker_id": "519",
         "biomarker_component": [
             {
                 "biomarker": "increased WFDC2 level",
@@ -21183,7 +20962,7 @@
         ]
     },
     {
-        "biomarker_id": "518",
+        "biomarker_id": "517",
         "biomarker_component": [
             {
                 "biomarker": "increased WFDC2 level",
@@ -21326,7 +21105,7 @@
         ]
     },
     {
-        "biomarker_id": "517",
+        "biomarker_id": "516",
         "biomarker_component": [
             {
                 "biomarker": "increased WFDC2 level",
@@ -21571,7 +21350,7 @@
         ]
     },
     {
-        "biomarker_id": "519",
+        "biomarker_id": "518",
         "biomarker_component": [
             {
                 "biomarker": "increased WFDC2 level",
@@ -21677,7 +21456,7 @@
         ]
     },
     {
-        "biomarker_id": "521",
+        "biomarker_id": "520",
         "biomarker_component": [
             {
                 "biomarker": "increased WFDC2 level",
@@ -26658,7 +26437,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:643993",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -26754,7 +26533,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:643993",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -26887,7 +26666,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:643993",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -27029,23 +26808,16 @@
         ]
     },
     {
-        "biomarker_id": "536",
+        "biomarker_id": "535",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Interleukin-1 beta gene promoter polymorphism",
-                    "synonyms": [
-                        {
-                            "synonym": "IL-1 beta"
-                        },
-                        {
-                            "synonym": "Catabolin"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P01584",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "stomach",
@@ -29231,7 +29003,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:588",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -29406,7 +29178,7 @@
         ]
     },
     {
-        "biomarker_id": "501",
+        "biomarker_id": "500",
         "biomarker_component": [
             {
                 "biomarker": "increased UREA level",
@@ -29415,7 +29187,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:1176",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -29692,7 +29464,7 @@
         ]
     },
     {
-        "biomarker_id": "502",
+        "biomarker_id": "501",
         "biomarker_component": [
             {
                 "biomarker": "increased UREA level",
@@ -29701,7 +29473,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:1176",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -30089,7 +29861,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:5280352",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -30222,7 +29994,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:5280352",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -32660,7 +32432,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000775",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -32844,7 +32616,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000775",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -33004,7 +32776,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000775",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -33188,7 +32960,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000775",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -33335,7 +33107,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000775",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -33519,7 +33291,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000775",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -33666,7 +33438,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000775",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -33850,7 +33622,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000775",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -34016,7 +33788,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000775",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -34212,7 +33984,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000775",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -34444,7 +34216,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000775",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -34646,7 +34418,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000775",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -34866,7 +34638,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000576",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -35011,7 +34783,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000576",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -35144,7 +34916,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000576",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -35240,7 +35012,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000576",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -35343,7 +35115,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000767",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -35476,7 +35248,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000767",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -35572,7 +35344,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000912",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -35705,7 +35477,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000912",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -35808,7 +35580,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000898",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -35941,7 +35713,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000898",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -36037,7 +35809,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000813",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -36170,7 +35942,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000813",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -36273,7 +36045,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000815",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -36404,7 +36176,7 @@
         ]
     },
     {
-        "biomarker_id": "496",
+        "biomarker_id": "495",
         "biomarker_component": [
             {
                 "biomarker": "increased TREG count",
@@ -36413,7 +36185,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000815",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -36509,7 +36281,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "NCIt:C74611",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -36624,7 +36396,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "NCIt:C74611",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -37297,7 +37069,7 @@
         ]
     },
     {
-        "biomarker_id": "494",
+        "biomarker_id": "493",
         "biomarker_component": [
             {
                 "biomarker": "increased TNNI3 level",
@@ -37647,7 +37419,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:5462222",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "chemical element",
                 "specimen": [
                     {
                         "name": "blood",
@@ -38503,7 +38275,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "NCIt:C180931",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "DNA",
                 "specimen": [
                     {
                         "name": "blood",
@@ -38738,7 +38510,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "NCIt:C180931",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "DNA",
                 "specimen": [
                     {
                         "name": "blood",
@@ -41376,7 +41148,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:5360545",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "chemical element",
                 "specimen": [
                     {
                         "name": "blood",
@@ -41545,7 +41317,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:5360545",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -41678,7 +41450,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:5360545",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "chemical element",
                 "specimen": [
                     {
                         "name": "blood",
@@ -41774,7 +41546,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:5360545",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "chemical element",
                 "specimen": [
                     {
                         "name": "blood",
@@ -41877,7 +41649,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:9750",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -42010,7 +41782,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:9750",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -43033,7 +42805,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:5280352",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -43166,7 +42938,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:5280352",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -43350,7 +43122,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "NCIt:C38462",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "protein|lipid",
                 "specimen": [
                     {
                         "name": "blood",
@@ -43437,7 +43209,7 @@
         ]
     },
     {
-        "biomarker_id": "548",
+        "biomarker_id": "547",
         "biomarker_component": [
             {
                 "biomarker": "prolonged APTT",
@@ -43768,7 +43540,7 @@
         ]
     },
     {
-        "biomarker_id": "549",
+        "biomarker_id": "548",
         "biomarker_component": [
             {
                 "biomarker": "prolonged PT",
@@ -44098,20 +43870,16 @@
         ]
     },
     {
-        "biomarker_id": "534",
+        "biomarker_id": "533",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Angiopoietin-2 gene polymorphism rs12674822",
-                    "synonyms": [
-                        {
-                            "synonym": "ANG-2"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:O15123",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "blood",
@@ -45054,7 +44822,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "NCIt:C60832",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "chemical element",
                 "specimen": [
                     {
                         "name": "blood",
@@ -45178,7 +44946,7 @@
         ]
     },
     {
-        "biomarker_id": "506",
+        "biomarker_id": "505",
         "biomarker_component": [
             {
                 "biomarker": "increased VEGF-D level",
@@ -45372,7 +45140,7 @@
         ]
     },
     {
-        "biomarker_id": "507",
+        "biomarker_id": "506",
         "biomarker_component": [
             {
                 "biomarker": "increased VEGF-D level",
@@ -46698,7 +46466,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:7762",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "feces",
@@ -46794,7 +46562,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "PCCID:3776",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "feces",
@@ -47124,7 +46892,7 @@
         ]
     },
     {
-        "biomarker_id": "509",
+        "biomarker_id": "508",
         "biomarker_component": [
             {
                 "biomarker": "increased VWF level",
@@ -47261,7 +47029,7 @@
         ]
     },
     {
-        "biomarker_id": "510",
+        "biomarker_id": "509",
         "biomarker_component": [
             {
                 "biomarker": "increased VWF level",
@@ -48325,17 +48093,10 @@
                 "biomarker": "decreased THBD level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Thrombomodulin",
-                    "synonyms": [
-                        {
-                            "synonym": "TM"
-                        },
-                        {
-                            "synonym": "Fetomodulin"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P07204",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "blood",
@@ -48736,7 +48497,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "NCIt:C156117",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "DNA",
                 "specimen": [
                     {
                         "name": "blood",
@@ -48851,7 +48612,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "NCIt:C156117",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "DNA",
                 "specimen": [
                     {
                         "name": "blood",
@@ -49341,7 +49102,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "NCIt:C64800",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -50262,7 +50023,7 @@
         ]
     },
     {
-        "biomarker_id": "495",
+        "biomarker_id": "494",
         "biomarker_component": [
             {
                 "biomarker": "increased TNNT2 level",
@@ -51605,7 +51366,7 @@
         ]
     },
     {
-        "biomarker_id": "497",
+        "biomarker_id": "496",
         "biomarker_component": [
             {
                 "biomarker": "increased TXB2 level",
@@ -51614,7 +51375,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CHEBI:28728",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -51738,7 +51499,7 @@
         ]
     },
     {
-        "biomarker_id": "498",
+        "biomarker_id": "497",
         "biomarker_component": [
             {
                 "biomarker": "increased TXB2 level",
@@ -51747,7 +51508,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CHEBI:28728",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "urine",
@@ -51856,7 +51617,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "NCIt:C74730",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -51989,7 +51750,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "NCIt:C74730",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -52970,7 +52731,7 @@
         ]
     },
     {
-        "biomarker_id": "503",
+        "biomarker_id": "502",
         "biomarker_component": [
             {
                 "biomarker": "increased VCAM-1 level",
@@ -53113,7 +52874,7 @@
         ]
     },
     {
-        "biomarker_id": "504",
+        "biomarker_id": "503",
         "biomarker_component": [
             {
                 "biomarker": "increased VCAM-1 level",
@@ -54338,23 +54099,16 @@
         ]
     },
     {
-        "biomarker_id": "535",
+        "biomarker_id": "534",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Epidermal growth factor receptor gene mutation L858R",
-                    "synonyms": [
-                        {
-                            "synonym": "Proto-oncogene c-ErbB-1"
-                        },
-                        {
-                            "synonym": "Receptor tyrosine-protein kinase erbB-1"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P00533",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "lung",
@@ -54775,26 +54529,16 @@
         ]
     },
     {
-        "biomarker_id": "542",
+        "biomarker_id": "541",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Netrin receptor gene promoter methylation",
-                    "synonyms": [
-                        {
-                            "synonym": "Colorectal cancer suppressor"
-                        },
-                        {
-                            "synonym": "Immunoglobulin superfamily DCC subclass member 1"
-                        },
-                        {
-                            "synonym": "Tumor suppressor protein DCC"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P43146",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "oral cavity",
@@ -55049,26 +54793,16 @@
         ]
     },
     {
-        "biomarker_id": "539",
+        "biomarker_id": "538",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Endothelin receptor type B gene promoter methylation",
-                    "synonyms": [
-                        {
-                            "synonym": "ET-B"
-                        },
-                        {
-                            "synonym": "ET-BR"
-                        },
-                        {
-                            "synonym": "Endothelin receptor non-selective type"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P24530",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "oral cavity",
@@ -55502,20 +55236,16 @@
         ]
     },
     {
-        "biomarker_id": "543",
+        "biomarker_id": "542",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Transcription factor GATA-4 gene promoter methylation",
-                    "synonyms": [
-                        {
-                            "synonym": "GATA-binding factor 4"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P43694",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "oral cavity",
@@ -55684,14 +55414,10 @@
                 "biomarker": "increased HOXA9 meth-ctDNA level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Homeobox protein Hox-A9 gene",
-                    "synonyms": [
-                        {
-                            "synonym": "Homeobox protein Hox-1G"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P31269",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "DNA",
                 "specimen": [
                     {
                         "name": "blood",
@@ -55815,20 +55541,16 @@
         ]
     },
     {
-        "biomarker_id": "540",
+        "biomarker_id": "539",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Homeobox HoxA9 gene promoter methylation",
-                    "synonyms": [
-                        {
-                            "synonym": "Homeobox protein Hox-1G"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P31269",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "oral cavity",
@@ -55940,29 +55662,16 @@
         ]
     },
     {
-        "biomarker_id": "545",
+        "biomarker_id": "544",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Kinesin-like protein KIF1A gene promoter methylation",
-                    "synonyms": [
-                        {
-                            "synonym": "Axonal transporter of synaptic vesicles"
-                        },
-                        {
-                            "synonym": "Microtubule-based motor KIF1A"
-                        },
-                        {
-                            "synonym": "Unc-104- and KIF1A-related protein"
-                        },
-                        {
-                            "synonym": "hUnc-104"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q12756",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "oral cavity",
@@ -56250,23 +55959,16 @@
         ]
     },
     {
-        "biomarker_id": "546",
+        "biomarker_id": "545",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Nidogen-2 gene promoter methylation",
-                    "synonyms": [
-                        {
-                            "synonym": "NID-2"
-                        },
-                        {
-                            "synonym": "Osteonidogen"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q14112",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "oral cavity",
@@ -56387,7 +56089,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MI0003142",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "liver",
@@ -56565,20 +56267,10 @@
                 "biomarker": "decreased OGDHL level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Oxoglutarate dehydrogenase-like",
-                    "synonyms": [
-                        {
-                            "synonym": "2-oxoglutarate dehydrogenase complex component E1-like"
-                        },
-                        {
-                            "synonym": "OGDC-E1-like"
-                        },
-                        {
-                            "synonym": "Alpha-ketoglutarate dehydrogenase-like"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q9ULD0",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "liver",
@@ -56959,23 +56651,10 @@
                 "biomarker": "decreased SLC25A11 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Mitochondrial 2-oxoglutarate/malate carrier protein",
-                    "synonyms": [
-                        {
-                            "synonym": "OGCP"
-                        },
-                        {
-                            "synonym": "alpha-oxoglutarate carrier"
-                        },
-                        {
-                            "synonym": "Solute carrier family 25 member 11"
-                        },
-                        {
-                            "synonym": "SLC25A11"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q02978",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "liver",
@@ -57153,20 +56832,10 @@
                 "biomarker": "increased DCK level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Deoxycytidine kinase",
-                    "synonyms": [
-                        {
-                            "synonym": "dCK"
-                        },
-                        {
-                            "synonym": "Deoxyadenosine kinase"
-                        },
-                        {
-                            "synonym": "Deoxyguanosine kinase"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P27707",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "liver",
@@ -57487,7 +57156,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "NCIt:C113243",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "DNA",
                 "specimen": [
                     {
                         "name": "blood",
@@ -57574,7 +57243,7 @@
         ]
     },
     {
-        "biomarker_id": "532",
+        "biomarker_id": "531",
         "biomarker_component": [
             {
                 "biomarker": "increased of TRAF2 level",
@@ -57738,7 +57407,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MI0000290",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "urine",
@@ -58479,17 +58148,10 @@
                 "biomarker": "decreased P4HA1 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Prolyl 4-hydroxylase subunit alpha 1",
-                    "synonyms": [
-                        {
-                            "synonym": "4-PH alpha-1"
-                        },
-                        {
-                            "synonym": "Procollagen-proline,2-oxoglutarate-4-dioxygenase subunit alpha-1"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P13674",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "skin epidermis",
@@ -58914,7 +58576,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q9Y625",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "skin epidermis",
@@ -59029,7 +58691,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MIMAT0000443",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "skin epidermis",
@@ -59150,7 +58812,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q68CQ7",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "skin epidermis",
@@ -59265,7 +58927,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MI0006321",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "prostate gland",
@@ -59401,7 +59063,7 @@
         ]
     },
     {
-        "biomarker_id": "523",
+        "biomarker_id": "522",
         "biomarker_component": [
             {
                 "biomarker": "increased YAP1 level",
@@ -59568,17 +59230,10 @@
                 "biomarker": "increased ASPM level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Abnormal spindle-like microcephaly-associated protein",
-                    "synonyms": [
-                        {
-                            "synonym": "Abnormal spindle protein homolog"
-                        },
-                        {
-                            "synonym": "Asp homolog"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q8IZT6",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "urinary bladder",
@@ -59687,7 +59342,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q10587",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "urinary bladder",
@@ -60337,23 +59992,16 @@
         ]
     },
     {
-        "biomarker_id": "493",
+        "biomarker_id": "492",
         "biomarker_component": [
             {
                 "biomarker": "increased TNFSF9 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Tumor necrosis factor ligand superfamily member 9",
-                    "synonyms": [
-                        {
-                            "synonym": "4-1BB ligand"
-                        },
-                        {
-                            "synonym": "4-1BBL"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P41273",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "pancreas",
@@ -60501,23 +60149,10 @@
                 "biomarker": "increased NCEH1 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Neutral cholesterol ester hydrolase 1",
-                    "synonyms": [
-                        {
-                            "synonym": "NCEH"
-                        },
-                        {
-                            "synonym": "Acetylalkylglycerol acetylhydrolase"
-                        },
-                        {
-                            "synonym": "2-acetyl MAGE hydrolase"
-                        },
-                        {
-                            "synonym": "Arylacetamide deacetylase-like 1"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q6PIU2",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "pancreas",
@@ -61142,23 +60777,16 @@
         ]
     },
     {
-        "biomarker_id": "499",
+        "biomarker_id": "498",
         "biomarker_component": [
             {
                 "biomarker": "increased TYMS level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Thymidylate synthase",
-                    "synonyms": [
-                        {
-                            "synonym": "TS"
-                        },
-                        {
-                            "synonym": "TSase"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P04818",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "pancreas",
@@ -61306,29 +60934,10 @@
                 "biomarker": "increased ST6GALNAC6 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Alpha-N-acetylgalactosaminide alpha-2,6-sialyltransferase 6",
-                    "synonyms": [
-                        {
-                            "synonym": "GalNAc alpha-2,6-sialyltransferase VI"
-                        },
-                        {
-                            "synonym": "ST6GalNAc VI"
-                        },
-                        {
-                            "synonym": "ST6GalNAcVI"
-                        },
-                        {
-                            "synonym": "hST6GalNAc VI"
-                        },
-                        {
-                            "synonym": "Sialyltransferase 7F"
-                        },
-                        {
-                            "synonym": "SIAT7-F"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q969X2",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "blood",
@@ -61759,26 +61368,10 @@
                 "biomarker": "increased NFE2L2 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Nuclear factor erythroid 2-related factor 2",
-                    "synonyms": [
-                        {
-                            "synonym": "NF-E2-related factor 2"
-                        },
-                        {
-                            "synonym": "NFE2-related factor 2"
-                        },
-                        {
-                            "synonym": "Nrf-2"
-                        },
-                        {
-                            "synonym": "HEBP1"
-                        },
-                        {
-                            "synonym": "Nuclear factor, erythroid derived 2, like 2"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q16236",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "colon",
@@ -61871,23 +61464,10 @@
                 "biomarker": "increased KRT15 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Keratin-15",
-                    "synonyms": [
-                        {
-                            "synonym": "Cytokeratin-15"
-                        },
-                        {
-                            "synonym": "CK-15"
-                        },
-                        {
-                            "synonym": "Keratin-15"
-                        },
-                        {
-                            "synonym": "K15"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P19012",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "colon",
@@ -61983,7 +61563,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MIMAT0000428",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "blood",
@@ -62182,7 +61762,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MI0000267",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "saliva",
@@ -62351,7 +61931,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MI0000460",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "saliva",
@@ -62520,7 +62100,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MI0001729",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "saliva",
@@ -62689,7 +62269,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MI0000077",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "saliva",
@@ -62858,7 +62438,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MI0000077",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "blood",
@@ -62991,7 +62571,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MI0000077",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "thyroid gland",
@@ -63124,7 +62704,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CHEBI:17927",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -63257,7 +62837,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CHEBI:15725",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -63390,7 +62970,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CHEBI:17148",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -63523,7 +63103,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CHEBI:15746",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -64981,23 +64561,10 @@
                 "biomarker": "increased CDH1 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "E-cadherin",
-                    "synonyms": [
-                        {
-                            "synonym": "CAM 120/80"
-                        },
-                        {
-                            "synonym": "Epithelial cadherin"
-                        },
-                        {
-                            "synonym": "E-cadherin"
-                        },
-                        {
-                            "synonym": "Uvomorulin"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P12830",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "stomach",
@@ -65106,7 +64673,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CHEBI:76792",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -65248,14 +64815,10 @@
                 "biomarker": "increased ATOX1 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Copper chaperone ATOX1",
-                    "synonyms": [
-                        {
-                            "synonym": "Metal transport protein ATX1"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:O00244",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "breast",
@@ -65388,7 +64951,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MI0003137",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "ovary",
@@ -66340,26 +65903,16 @@
         ]
     },
     {
-        "biomarker_id": "530",
+        "biomarker_id": "529",
         "biomarker_component": [
             {
                 "biomarker": "increased mutation",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Tumor protein gene mutation",
-                    "synonyms": [
-                        {
-                            "synonym": "Antigen NY-CO-13"
-                        },
-                        {
-                            "synonym": "Phosphoprotein p53"
-                        },
-                        {
-                            "synonym": "Tumor suppressor p53"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P04637",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "ovary",
@@ -66483,7 +66036,7 @@
         ]
     },
     {
-        "biomarker_id": "505",
+        "biomarker_id": "504",
         "biomarker_component": [
             {
                 "biomarker": "increased VEGF level",
@@ -66667,7 +66220,7 @@
         ]
     },
     {
-        "biomarker_id": "508",
+        "biomarker_id": "507",
         "biomarker_component": [
             {
                 "biomarker": "increased VSIG4 level",
@@ -66813,7 +66366,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MI0003626",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "ovary",
@@ -66946,7 +66499,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MI0000783",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "esophagus",
@@ -67396,7 +66949,7 @@
         ]
     },
     {
-        "biomarker_id": "500",
+        "biomarker_id": "499",
         "biomarker_component": [
             {
                 "biomarker": "increased Th17 level",
@@ -67545,7 +67098,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P20700",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "blood",
@@ -68122,7 +67675,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CHEBI:89446",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "urine",
@@ -68267,7 +67820,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CHEBI:77462",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "urine",
@@ -68412,7 +67965,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CHEBI:90437",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "urine",
@@ -69160,7 +68713,7 @@
         ]
     },
     {
-        "biomarker_id": "511",
+        "biomarker_id": "510",
         "biomarker_component": [
             {
                 "biomarker": "increased WASF1 level",
@@ -69375,17 +68928,10 @@
                 "biomarker": "increased RSRC1 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Serine/arginine-related protein 53",
-                    "synonyms": [
-                        {
-                            "synonym": "SRrp53"
-                        },
-                        {
-                            "synonym": "Arginine/serine-rich coiled-coil protein 1"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q96IZ7",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "blood",
@@ -69472,32 +69018,16 @@
         ]
     },
     {
-        "biomarker_id": "528",
+        "biomarker_id": "527",
         "biomarker_component": [
             {
                 "biomarker": "increased methylation",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Pituitary homeobox 2 gene methylation",
-                    "synonyms": [
-                        {
-                            "synonym": "ALL1-responsive protein ARP1"
-                        },
-                        {
-                            "synonym": "Homeobox protein PITX2"
-                        },
-                        {
-                            "synonym": "Paired-like homeodomain transcription factor 2"
-                        },
-                        {
-                            "synonym": "RIEG bicoid-related homeobox transcription factor"
-                        },
-                        {
-                            "synonym": "Solurshin"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q99697",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "prostate gland",
@@ -69922,20 +69452,10 @@
                 "biomarker": "increased C1QTNF3 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Complement C1q tumor necrosis factor-related protein 3",
-                    "synonyms": [
-                        {
-                            "synonym": "Collagenous repeat-containing sequence 26 kDa protein"
-                        },
-                        {
-                            "synonym": "CORS26"
-                        },
-                        {
-                            "synonym": "Secretory protein CORS26"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q9BXJ4",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "prostate gland",
@@ -70077,14 +69597,10 @@
                 "biomarker": "decreased EIF2B5 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Translation initiation factor eIF-2B subunit epsilon",
-                    "synonyms": [
-                        {
-                            "synonym": "eIF-2B GDP-GTP exchange factor subunit epsilon"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q13144",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "ovary",
@@ -70354,7 +69870,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q6AZW8",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "prostate gland",
@@ -70496,29 +70012,10 @@
                 "biomarker": "decreased ST6GALNAC3 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Alpha-N-acetylgalactosaminide alpha-2,6-sialyltransferase 3",
-                    "synonyms": [
-                        {
-                            "synonym": "GalNAc alpha-2,6-sialyltransferase III"
-                        },
-                        {
-                            "synonym": "ST6GalNAc III"
-                        },
-                        {
-                            "synonym": "ST6GalNAcIII"
-                        },
-                        {
-                            "synonym": "STY"
-                        },
-                        {
-                            "synonym": "Sialyltransferase 7C"
-                        },
-                        {
-                            "synonym": "SIAT7-C"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q8NDV1",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "prostate gland",
@@ -70654,23 +70151,16 @@
         ]
     },
     {
-        "biomarker_id": "522",
+        "biomarker_id": "521",
         "biomarker_component": [
             {
                 "biomarker": "increased XPO6 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Exportin-6",
-                    "synonyms": [
-                        {
-                            "synonym": "Exp6"
-                        },
-                        {
-                            "synonym": "Ran-binding protein 20"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q96QU8",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "prostate gland",
@@ -70812,26 +70302,10 @@
                 "biomarker": "decreased ZFP36 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Tristetraprolin",
-                    "synonyms": [
-                        {
-                            "synonym": "G0/G1 switch regulatory protein 24"
-                        },
-                        {
-                            "synonym": "Growth factor-inducible nuclear protein NUP475"
-                        },
-                        {
-                            "synonym": "Tristetraprolin"
-                        },
-                        {
-                            "synonym": "Zinc finger protein 36"
-                        },
-                        {
-                            "synonym": "Zfp-36"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P26651",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "prostate gland",
@@ -71729,7 +71203,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MIMAT0000103",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "blood",
@@ -71862,7 +71336,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MI0003135",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "blood",
@@ -71995,7 +71469,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MIMAT0003885",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "blood",
@@ -72128,7 +71602,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MIMAT0000461",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "blood",
@@ -72258,26 +71732,10 @@
                 "biomarker": "decreased PLA2R1 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Secretory phospholipase A2 receptor",
-                    "synonyms": [
-                        {
-                            "synonym": "PLA2-R"
-                        },
-                        {
-                            "synonym": "PLA2R"
-                        },
-                        {
-                            "synonym": "180 kDa secretory phospholipase A2 receptor"
-                        },
-                        {
-                            "synonym": "C-type lectin domain family 13 member C"
-                        },
-                        {
-                            "synonym": "M-type receptor"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q13018",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "thyroid gland",
@@ -72407,35 +71865,10 @@
                 "biomarker": "increased KCNN4 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Intermediate conductance calcium-activated potassium channel protein 4",
-                    "synonyms": [
-                        {
-                            "synonym": "SK4"
-                        },
-                        {
-                            "synonym": "SKCa 4"
-                        },
-                        {
-                            "synonym": "SKCa4"
-                        },
-                        {
-                            "synonym": "IKCa1"
-                        },
-                        {
-                            "synonym": "IK1"
-                        },
-                        {
-                            "synonym": "KCa3.1"
-                        },
-                        {
-                            "synonym": "KCa4"
-                        },
-                        {
-                            "synonym": "Putative Gardos channel"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:O15554",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "thyroid gland",
@@ -72568,7 +72001,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "NCIT:C1297",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "blood",
@@ -72692,7 +72125,7 @@
         ]
     },
     {
-        "biomarker_id": "492",
+        "biomarker_id": "491",
         "biomarker_component": [
             {
                 "biomarker": "increased TNFRSF11B level",
@@ -72841,7 +72274,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "NCIT:C179394",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "DNA",
                 "specimen": [
                     {
                         "name": "blood",
@@ -72971,23 +72404,10 @@
                 "biomarker": "increased SPAG5 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Sperm-associated antigen 5",
-                    "synonyms": [
-                        {
-                            "synonym": "Astrin"
-                        },
-                        {
-                            "synonym": "Deepest"
-                        },
-                        {
-                            "synonym": "Mitotic spindle-associated protein p126"
-                        },
-                        {
-                            "synonym": "MAP126"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q96R06",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "ovary",
@@ -73704,7 +73124,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "RNAC:URS0000759B00",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "blood",
@@ -73837,7 +73257,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "RNAC:URS00008B9C5E",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "blood",
@@ -74280,14 +73700,10 @@
                 "biomarker": "increased SAMD5 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Sterile alpha motif domain-containing protein 5",
-                    "synonyms": [
-                        {
-                            "synonym": "SAM domain-containing protein 5"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q5TGI4",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "prostate gland",
@@ -74584,23 +74000,10 @@
                 "biomarker": "increased PNKD level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Myofibrillogenesis regulator 1",
-                    "synonyms": [
-                        {
-                            "synonym": "Myofibrillogenesis regulator 1"
-                        },
-                        {
-                            "synonym": "MR-1"
-                        },
-                        {
-                            "synonym": "Paroxysmal nonkinesiogenic dyskinesia protein"
-                        },
-                        {
-                            "synonym": "Trans-activated by hepatitis C virus core protein 2"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q8N490",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "ovary",
@@ -75131,20 +74534,10 @@
                 "biomarker": "increased PRSS8 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Serine protease prostasin",
-                    "synonyms": [
-                        {
-                            "synonym": "Channel-activating protease 1"
-                        },
-                        {
-                            "synonym": "CAP1"
-                        },
-                        {
-                            "synonym": "Serine protease 8"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q16651",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "ovary",
@@ -75420,26 +74813,10 @@
                 "biomarker": "increased IL1RN level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Interleukin-1 receptor antagonist",
-                    "synonyms": [
-                        {
-                            "synonym": "IL-1RN"
-                        },
-                        {
-                            "synonym": "IL-1ra"
-                        },
-                        {
-                            "synonym": "IRAP"
-                        },
-                        {
-                            "synonym": "ICIL-1RA"
-                        },
-                        {
-                            "synonym": "IL1 inhibitor"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P18510",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "thyroid gland",
@@ -76841,7 +76218,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "NCIT:C17961",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "DNA",
                 "specimen": [
                     {
                         "name": "blood",
@@ -77537,20 +76914,16 @@
         ]
     },
     {
-        "biomarker_id": "544",
+        "biomarker_id": "543",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Actin gamma 1 gene amplification",
-                    "synonyms": [
-                        {
-                            "synonym": "Gamma-actin"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P63261",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "uterus",
@@ -78121,29 +77494,16 @@
         ]
     },
     {
-        "biomarker_id": "538",
+        "biomarker_id": "537",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Fibroblast growth factor receptor 2 gene amplification",
-                    "synonyms": [
-                        {
-                            "synonym": "FGFR-2"
-                        },
-                        {
-                            "synonym": "K-sam"
-                        },
-                        {
-                            "synonym": "KGFR"
-                        },
-                        {
-                            "synonym": "Keratinocyte growth factor receptor"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P21802",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "stomach",
@@ -78243,35 +77603,16 @@
         ]
     },
     {
-        "biomarker_id": "525",
+        "biomarker_id": "524",
         "biomarker_component": [
             {
                 "biomarker": "increased copy number",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Hepatocyte growth factor receptor gene copy number",
-                    "synonyms": [
-                        {
-                            "synonym": "HGF receptor"
-                        },
-                        {
-                            "synonym": "HGF/SF receptor"
-                        },
-                        {
-                            "synonym": "Proto-oncogene c-Met"
-                        },
-                        {
-                            "synonym": "Scatter factor receptor"
-                        },
-                        {
-                            "synonym": "SF receptor"
-                        },
-                        {
-                            "synonym": "Tyrosine-protein kinase Met"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P08581",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "stomach",
@@ -78371,47 +77712,16 @@
         ]
     },
     {
-        "biomarker_id": "541",
+        "biomarker_id": "540",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit alpha isoform gene amplification",
-                    "synonyms": [
-                        {
-                            "synonym": "PI3-kinase subunit alpha"
-                        },
-                        {
-                            "synonym": "PI3K-alpha"
-                        },
-                        {
-                            "synonym": "PI3Kalpha"
-                        },
-                        {
-                            "synonym": "PtdIns-3-kinase subunit alpha"
-                        },
-                        {
-                            "synonym": "Phosphatidylinositol 4,5-bisphosphate 3-kinase 110 kDa catalytic subunit alpha"
-                        },
-                        {
-                            "synonym": "PtdIns-3-kinase subunit p110-alpha"
-                        },
-                        {
-                            "synonym": "p110alpha"
-                        },
-                        {
-                            "synonym": "Phosphoinositide 3-kinase alpha"
-                        },
-                        {
-                            "synonym": "Phosphoinositide-3-kinase catalytic alpha polypeptide"
-                        },
-                        {
-                            "synonym": "Serine/threonine protein kinase PIK3CA"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P42336",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "stomach",
@@ -78821,7 +78131,7 @@
         ]
     },
     {
-        "biomarker_id": "533",
+        "biomarker_id": "532",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
@@ -78830,7 +78140,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MI0000466",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "ovary",
@@ -78960,14 +78270,10 @@
                 "biomarker": "increased EMC1 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Extracellular matrix protein 1",
-                    "synonyms": [
-                        {
-                            "synonym": "Secretory component p85"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q16610",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "thyroid gland",
@@ -79091,35 +78397,16 @@
         ]
     },
     {
-        "biomarker_id": "537",
+        "biomarker_id": "536",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
                 "assessed_biomarker_entity": {
                     "recommended_name": "CYP17 A2 allele polymorphism",
-                    "synonyms": [
-                        {
-                            "synonym": "17-alpha-hydroxyprogesterone aldolase"
-                        },
-                        {
-                            "synonym": "CYPXVII"
-                        },
-                        {
-                            "synonym": "Cytochrome P450 17A1"
-                        },
-                        {
-                            "synonym": "Cytochrome P450-C17"
-                        },
-                        {
-                            "synonym": "Cytochrome P450c17"
-                        },
-                        {
-                            "synonym": "Steroid 17-alpha-monooxygenase"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P05093",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "blood",
@@ -79944,20 +79231,10 @@
                 "biomarker": "decreased GNK1 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Gastrokine 1",
-                    "synonyms": [
-                        {
-                            "synonym": "18 kDa antrum mucosa protein"
-                        },
-                        {
-                            "synonym": "AMP-18"
-                        },
-                        {
-                            "synonym": "Protein CA11"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q9NS71",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "stomach",
@@ -80057,29 +79334,16 @@
         ]
     },
     {
-        "biomarker_id": "527",
+        "biomarker_id": "526",
         "biomarker_component": [
             {
                 "biomarker": "increased methylation",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Nuclear receptor ROR-alpha gene promoter methylation",
-                    "synonyms": [
-                        {
-                            "synonym": "Nuclear receptor RZR-alpha"
-                        },
-                        {
-                            "synonym": "Nuclear receptor subfamily 1 group F member 1"
-                        },
-                        {
-                            "synonym": "RAR-related orphan receptor A"
-                        },
-                        {
-                            "synonym": "Retinoid-related orphan receptor-alpha"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P35398",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "stomach",
@@ -81523,14 +80787,10 @@
                 "biomarker": "increased ARPP-19 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "cAMP-regulated phosphoprotein 19",
-                    "synonyms": [
-                        {
-                            "synonym": "ARPP-19"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P56211",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "stomach",
@@ -81636,23 +80896,10 @@
                 "biomarker": "increased DSC2 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Desmocollin-2",
-                    "synonyms": [
-                        {
-                            "synonym": "Cadherin family member 2"
-                        },
-                        {
-                            "synonym": "Desmocollin-3"
-                        },
-                        {
-                            "synonym": "Desmosomal glycoprotein II"
-                        },
-                        {
-                            "synonym": "Desmosomal glycoprotein III"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q02487",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "stomach",
@@ -81877,26 +81124,10 @@
                 "biomarker": "decreased OLFM4 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Olfactomedin-4",
-                    "synonyms": [
-                        {
-                            "synonym": "OLM4"
-                        },
-                        {
-                            "synonym": "Antiapoptotic protein GW112"
-                        },
-                        {
-                            "synonym": "G-CSF-stimulated clone 1 protein"
-                        },
-                        {
-                            "synonym": "hGC-1"
-                        },
-                        {
-                            "synonym": "hOLfD"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q6UX06",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "stomach",
@@ -82124,7 +81355,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "RNAC:URS0000D3E92F",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "stomach",
@@ -83554,17 +82785,10 @@
                 "biomarker": "decreased ATP4B level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Potassium-transporting ATPase subunit beta",
-                    "synonyms": [
-                        {
-                            "synonym": "Gastric H(+)/K(+) ATPase subunit beta"
-                        },
-                        {
-                            "synonym": "Proton pump beta chain"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P51164",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "stomach",
@@ -83780,26 +83004,16 @@
         ]
     },
     {
-        "biomarker_id": "531",
+        "biomarker_id": "530",
         "biomarker_component": [
             {
                 "biomarker": "increased mutation",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Low-density lipoprotein receptor-related protein 1B gene mutation",
-                    "synonyms": [
-                        {
-                            "synonym": "LRP-1B"
-                        },
-                        {
-                            "synonym": "Low-density lipoprotein receptor-related protein-deleted in tumor"
-                        },
-                        {
-                            "synonym": "LRP-DIT"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q9NZR2",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "stomach",
@@ -84194,14 +83408,10 @@
                 "biomarker": "decreased FGFR3 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Fibroblast growth factor receptor 3",
-                    "synonyms": [
-                        {
-                            "synonym": "FGFR-3"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB: P22607",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "urinary bladder",
@@ -84301,7 +83511,7 @@
         ]
     },
     {
-        "biomarker_id": "529",
+        "biomarker_id": "528",
         "biomarker_component": [
             {
                 "biomarker": "increased methylation",
@@ -84310,7 +83520,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q9NY43",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "stomach",
@@ -84410,26 +83620,16 @@
         ]
     },
     {
-        "biomarker_id": "526",
+        "biomarker_id": "525",
         "biomarker_component": [
             {
                 "biomarker": "increased methylation",
                 "assessed_biomarker_entity": {
                     "recommended_name": "GDNF family receptor alpha-3 gene promoter methylation",
-                    "synonyms": [
-                        {
-                            "synonym": "GDNF receptor alpha-3"
-                        },
-                        {
-                            "synonym": "GDNFR-alpha-3"
-                        },
-                        {
-                            "synonym": "GFR-alpha-3"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:O60609",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "stomach",
@@ -84535,29 +83735,10 @@
                 "biomarker": "decreased GXP3 level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Glutathione peroxidase 3",
-                    "synonyms": [
-                        {
-                            "synonym": "GPx-3"
-                        },
-                        {
-                            "synonym": "GSHPx-3"
-                        },
-                        {
-                            "synonym": "Extracellular glutathione peroxidase"
-                        },
-                        {
-                            "synonym": "Plasma glutathione peroxidase"
-                        },
-                        {
-                            "synonym": "GPx-P"
-                        },
-                        {
-                            "synonym": "GSHPx-P"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P22352",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "stomach",
@@ -84666,7 +83847,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "RNAC:URS000075B42D",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "kidney",
@@ -84823,7 +84004,7 @@
         ]
     },
     {
-        "biomarker_id": "524",
+        "biomarker_id": "523",
         "biomarker_component": [
             {
                 "biomarker": "increased antigen level",
@@ -84832,7 +84013,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G78959US",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -84983,7 +84164,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G36521AS",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -85426,7 +84607,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MI0003583",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "kidney",
@@ -85541,7 +84722,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MI0003629",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "RNA",
                 "specimen": [
                     {
                         "name": "kidney",
@@ -85784,7 +84965,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "HGNC:25223",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "urine",
@@ -85899,7 +85080,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q330M9",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "metabolite",
                 "specimen": [
                     {
                         "name": "urine",
@@ -86330,17 +85511,10 @@
                 "biomarker": "decreased IL1B level",
                 "assessed_biomarker_entity": {
                     "recommended_name": "Interleukin-1 beta protein",
-                    "synonyms": [
-                        {
-                            "synonym": "IL-1 beta"
-                        },
-                        {
-                            "synonym": "Catabolin"
-                        }
-                    ]
+                    "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:P01584",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "blood",
@@ -86434,7 +85608,7 @@
         ]
     },
     {
-        "biomarker_id": "547",
+        "biomarker_id": "546",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
@@ -86443,7 +85617,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q9NS23",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "urine",
@@ -86588,7 +85762,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "CO:CL_0000233",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "cell",
                 "specimen": [
                     {
                         "name": "blood",
@@ -87114,7 +86288,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G35622MN",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -87247,7 +86421,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G03692CL (composition)",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -87380,7 +86554,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G28790AT",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -87513,7 +86687,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G20102QS",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -87646,7 +86820,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G72750GQ",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -87779,7 +86953,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G66374JF",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -87912,7 +87086,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G46440UD",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -88045,7 +87219,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G41793DV",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -88178,7 +87352,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G85767HW",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -88359,7 +87533,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G52069SB",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -88528,7 +87702,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G86265JV",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -88697,7 +87871,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G06014UR",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -88866,7 +88040,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G80966KZ",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "tissue",
@@ -88999,7 +88173,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G36059IK",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "tissue",
@@ -89132,7 +88306,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G66676MI",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "tissue",
@@ -89265,7 +88439,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "GTC:G26366JF",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "glycan",
                 "specimen": [
                     {
                         "name": "blood",
@@ -89398,7 +88572,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "MRB:MI0000466",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "ovary",
@@ -89531,7 +88705,7 @@
                     "synonyms": []
                 },
                 "assessed_biomarker_entity_id": "UPKB:Q9NS23",
-                "assessed_entity_type": "protein",
+                "assessed_entity_type": "gene",
                 "specimen": [
                     {
                         "name": "urine",
