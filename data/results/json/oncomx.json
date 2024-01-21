@@ -1,6 +1,6 @@
 [
     {
-        "biomarker_id": "307",
+        "biomarker_id": "AA0001",
         "biomarker_component": [
             {
                 "biomarker": "increased IL6 level",
@@ -272,7 +272,7 @@
         ]
     },
     {
-        "biomarker_id": "297",
+        "biomarker_id": "AA0002",
         "biomarker_component": [
             {
                 "biomarker": "increased IL6 level",
@@ -1144,7 +1144,7 @@
         ]
     },
     {
-        "biomarker_id": "306",
+        "biomarker_id": "AA0003",
         "biomarker_component": [
             {
                 "biomarker": "increased IL6 level",
@@ -1316,7 +1316,7 @@
         ]
     },
     {
-        "biomarker_id": "309",
+        "biomarker_id": "AA0004",
         "biomarker_component": [
             {
                 "biomarker": "increased IL6 level",
@@ -1501,7 +1501,7 @@
         ]
     },
     {
-        "biomarker_id": "298",
+        "biomarker_id": "AA0005",
         "biomarker_component": [
             {
                 "biomarker": "increased IL6 level",
@@ -1710,7 +1710,7 @@
         ]
     },
     {
-        "biomarker_id": "300",
+        "biomarker_id": "AA0006",
         "biomarker_component": [
             {
                 "biomarker": "increased IL6 level",
@@ -1882,7 +1882,7 @@
         ]
     },
     {
-        "biomarker_id": "308",
+        "biomarker_id": "AA0007",
         "biomarker_component": [
             {
                 "biomarker": "increased IL6 level",
@@ -2091,7 +2091,7 @@
         ]
     },
     {
-        "biomarker_id": "299",
+        "biomarker_id": "AA0008",
         "biomarker_component": [
             {
                 "biomarker": "increased IL6 level",
@@ -2300,7 +2300,7 @@
         ]
     },
     {
-        "biomarker_id": "304",
+        "biomarker_id": "AA0009",
         "biomarker_component": [
             {
                 "biomarker": "increased IL6 level",
@@ -2491,7 +2491,7 @@
         ]
     },
     {
-        "biomarker_id": "305",
+        "biomarker_id": "AA0010",
         "biomarker_component": [
             {
                 "biomarker": "increased IL6 level",
@@ -2748,7 +2748,7 @@
         ]
     },
     {
-        "biomarker_id": "303",
+        "biomarker_id": "AA0011",
         "biomarker_component": [
             {
                 "biomarker": "increased IL6 level",
@@ -2975,7 +2975,7 @@
         ]
     },
     {
-        "biomarker_id": "302",
+        "biomarker_id": "AA0012",
         "biomarker_component": [
             {
                 "biomarker": "increased IL6 level",
@@ -3220,7 +3220,7 @@
         ]
     },
     {
-        "biomarker_id": "301",
+        "biomarker_id": "AA0013",
         "biomarker_component": [
             {
                 "biomarker": "increased IL6 level",
@@ -3450,7 +3450,7 @@
         ]
     },
     {
-        "biomarker_id": "421",
+        "biomarker_id": "AA0014",
         "biomarker_component": [
             {
                 "biomarker": "increased PCT level",
@@ -3597,7 +3597,7 @@
         ]
     },
     {
-        "biomarker_id": "419",
+        "biomarker_id": "AA0015",
         "biomarker_component": [
             {
                 "biomarker": "increased PCT level",
@@ -4036,7 +4036,7 @@
         ]
     },
     {
-        "biomarker_id": "420",
+        "biomarker_id": "AA0016",
         "biomarker_component": [
             {
                 "biomarker": "increased PCT level",
@@ -4139,7 +4139,7 @@
         ]
     },
     {
-        "biomarker_id": "511",
+        "biomarker_id": "AA0017",
         "biomarker_component": [
             {
                 "biomarker": "increased WBC count",
@@ -4483,7 +4483,7 @@
         ]
     },
     {
-        "biomarker_id": "514",
+        "biomarker_id": "AA0018",
         "biomarker_component": [
             {
                 "biomarker": "increased WBC count",
@@ -4604,7 +4604,7 @@
         ]
     },
     {
-        "biomarker_id": "515",
+        "biomarker_id": "AA0019",
         "biomarker_component": [
             {
                 "biomarker": "increased WBC count",
@@ -4751,7 +4751,7 @@
         ]
     },
     {
-        "biomarker_id": "513",
+        "biomarker_id": "AA0020",
         "biomarker_component": [
             {
                 "biomarker": "increased WBC count",
@@ -4971,7 +4971,7 @@
         ]
     },
     {
-        "biomarker_id": "512",
+        "biomarker_id": "AA0021",
         "biomarker_component": [
             {
                 "biomarker": "increased WBC count",
@@ -5155,7 +5155,7 @@
         ]
     },
     {
-        "biomarker_id": "63",
+        "biomarker_id": "AA0022",
         "biomarker_component": [
             {
                 "biomarker": "decreased LYMP count",
@@ -5251,7 +5251,7 @@
         ]
     },
     {
-        "biomarker_id": "61",
+        "biomarker_id": "AA0023",
         "biomarker_component": [
             {
                 "biomarker": "decreased LYMP count",
@@ -5347,7 +5347,7 @@
         ]
     },
     {
-        "biomarker_id": "59",
+        "biomarker_id": "AA0024",
         "biomarker_component": [
             {
                 "biomarker": "decreased LYMP count",
@@ -6099,7 +6099,7 @@
         ]
     },
     {
-        "biomarker_id": "60",
+        "biomarker_id": "AA0025",
         "biomarker_component": [
             {
                 "biomarker": "decreased LYMP count",
@@ -6232,7 +6232,7 @@
         ]
     },
     {
-        "biomarker_id": "62",
+        "biomarker_id": "AA0026",
         "biomarker_component": [
             {
                 "biomarker": "decreased LYMP count",
@@ -6335,7 +6335,7 @@
         ]
     },
     {
-        "biomarker_id": "93",
+        "biomarker_id": "AA0027",
         "biomarker_component": [
             {
                 "biomarker": "decreased PLAT count",
@@ -6570,7 +6570,7 @@
         ]
     },
     {
-        "biomarker_id": "463",
+        "biomarker_id": "AA0028",
         "biomarker_component": [
             {
                 "biomarker": "increased SFER level",
@@ -6754,7 +6754,7 @@
         ]
     },
     {
-        "biomarker_id": "464",
+        "biomarker_id": "AA0029",
         "biomarker_component": [
             {
                 "biomarker": "increased SFER level",
@@ -6869,7 +6869,7 @@
         ]
     },
     {
-        "biomarker_id": "27",
+        "biomarker_id": "AA0030",
         "biomarker_component": [
             {
                 "biomarker": "decreased CD4+ T count",
@@ -7053,7 +7053,7 @@
         ]
     },
     {
-        "biomarker_id": "38",
+        "biomarker_id": "AA0031",
         "biomarker_component": [
             {
                 "biomarker": "decreased CD4+ T count",
@@ -7162,7 +7162,7 @@
         ]
     },
     {
-        "biomarker_id": "28",
+        "biomarker_id": "AA0032",
         "biomarker_component": [
             {
                 "biomarker": "decreased CD4+ T count",
@@ -7295,7 +7295,7 @@
         ]
     },
     {
-        "biomarker_id": "30",
+        "biomarker_id": "AA0033",
         "biomarker_component": [
             {
                 "biomarker": "decreased CD4+ T count",
@@ -7391,7 +7391,7 @@
         ]
     },
     {
-        "biomarker_id": "37",
+        "biomarker_id": "AA0034",
         "biomarker_component": [
             {
                 "biomarker": "decreased CD4+ T count",
@@ -7524,7 +7524,7 @@
         ]
     },
     {
-        "biomarker_id": "35",
+        "biomarker_id": "AA0035",
         "biomarker_component": [
             {
                 "biomarker": "decreased CD4+ T count",
@@ -7620,7 +7620,7 @@
         ]
     },
     {
-        "biomarker_id": "29",
+        "biomarker_id": "AA0036",
         "biomarker_component": [
             {
                 "biomarker": "decreased CD4+ T count",
@@ -7753,7 +7753,7 @@
         ]
     },
     {
-        "biomarker_id": "33",
+        "biomarker_id": "AA0037",
         "biomarker_component": [
             {
                 "biomarker": "decreased CD4+ T count",
@@ -7868,7 +7868,7 @@
         ]
     },
     {
-        "biomarker_id": "36",
+        "biomarker_id": "AA0038",
         "biomarker_component": [
             {
                 "biomarker": "decreased CD4+ T count",
@@ -8013,7 +8013,7 @@
         ]
     },
     {
-        "biomarker_id": "34",
+        "biomarker_id": "AA0039",
         "biomarker_component": [
             {
                 "biomarker": "decreased CD4+ T count",
@@ -8194,7 +8194,7 @@
         ]
     },
     {
-        "biomarker_id": "32",
+        "biomarker_id": "AA0040",
         "biomarker_component": [
             {
                 "biomarker": "decreased CD4+ T count",
@@ -8345,7 +8345,7 @@
         ]
     },
     {
-        "biomarker_id": "31",
+        "biomarker_id": "AA0041",
         "biomarker_component": [
             {
                 "biomarker": "decreased CD4+ T count",
@@ -8514,7 +8514,7 @@
         ]
     },
     {
-        "biomarker_id": "174",
+        "biomarker_id": "AA0042",
         "biomarker_component": [
             {
                 "biomarker": "increased CD4+ T count",
@@ -8635,7 +8635,7 @@
         ]
     },
     {
-        "biomarker_id": "39",
+        "biomarker_id": "AA0043",
         "biomarker_component": [
             {
                 "biomarker": "decreased CD8+ T count",
@@ -8819,7 +8819,7 @@
         ]
     },
     {
-        "biomarker_id": "178",
+        "biomarker_id": "AA0044",
         "biomarker_component": [
             {
                 "biomarker": "increased CD8+ T count",
@@ -8940,7 +8940,7 @@
         ]
     },
     {
-        "biomarker_id": "203",
+        "biomarker_id": "AA0045",
         "biomarker_component": [
             {
                 "biomarker": "increased CRP level",
@@ -10195,7 +10195,7 @@
         ]
     },
     {
-        "biomarker_id": "209",
+        "biomarker_id": "AA0046",
         "biomarker_component": [
             {
                 "biomarker": "increased CRP level",
@@ -10393,7 +10393,7 @@
         ]
     },
     {
-        "biomarker_id": "204",
+        "biomarker_id": "AA0047",
         "biomarker_component": [
             {
                 "biomarker": "increased CRP level",
@@ -10679,7 +10679,7 @@
         ]
     },
     {
-        "biomarker_id": "206",
+        "biomarker_id": "AA0048",
         "biomarker_component": [
             {
                 "biomarker": "increased CRP level",
@@ -10877,7 +10877,7 @@
         ]
     },
     {
-        "biomarker_id": "205",
+        "biomarker_id": "AA0049",
         "biomarker_component": [
             {
                 "biomarker": "increased CRP level",
@@ -11112,7 +11112,7 @@
         ]
     },
     {
-        "biomarker_id": "208",
+        "biomarker_id": "AA0050",
         "biomarker_component": [
             {
                 "biomarker": "increased CRP level",
@@ -11395,7 +11395,7 @@
         ]
     },
     {
-        "biomarker_id": "210",
+        "biomarker_id": "AA0051",
         "biomarker_component": [
             {
                 "biomarker": "increased CRP level",
@@ -11642,7 +11642,7 @@
         ]
     },
     {
-        "biomarker_id": "207",
+        "biomarker_id": "AA0052",
         "biomarker_component": [
             {
                 "biomarker": "increased CRP level",
@@ -11745,7 +11745,7 @@
         ]
     },
     {
-        "biomarker_id": "478",
+        "biomarker_id": "AA0053",
         "biomarker_component": [
             {
                 "biomarker": "increased TG level",
@@ -11980,7 +11980,7 @@
         ]
     },
     {
-        "biomarker_id": "480",
+        "biomarker_id": "AA0054",
         "biomarker_component": [
             {
                 "biomarker": "increased TG level",
@@ -12076,7 +12076,7 @@
         ]
     },
     {
-        "biomarker_id": "479",
+        "biomarker_id": "AA0055",
         "biomarker_component": [
             {
                 "biomarker": "increased TG level",
@@ -12179,7 +12179,7 @@
         ]
     },
     {
-        "biomarker_id": "223",
+        "biomarker_id": "AA0056",
         "biomarker_component": [
             {
                 "biomarker": "increased CYP3A4 level",
@@ -12352,7 +12352,7 @@
         ]
     },
     {
-        "biomarker_id": "43",
+        "biomarker_id": "AA0057",
         "biomarker_component": [
             {
                 "biomarker": "decreased CYP3A4 level",
@@ -12573,7 +12573,7 @@
         ]
     },
     {
-        "biomarker_id": "451",
+        "biomarker_id": "AA0058",
         "biomarker_component": [
             {
                 "biomarker": "increased SAA1 level",
@@ -12673,7 +12673,7 @@
         ]
     },
     {
-        "biomarker_id": "452",
+        "biomarker_id": "AA0059",
         "biomarker_component": [
             {
                 "biomarker": "increased SAA1 level",
@@ -12828,7 +12828,7 @@
         ]
     },
     {
-        "biomarker_id": "453",
+        "biomarker_id": "AA0060",
         "biomarker_component": [
             {
                 "biomarker": "increased SAA1 level",
@@ -12967,7 +12967,7 @@
         ]
     },
     {
-        "biomarker_id": "449",
+        "biomarker_id": "AA0061",
         "biomarker_component": [
             {
                 "biomarker": "increased SAA1 level",
@@ -13206,7 +13206,7 @@
         ]
     },
     {
-        "biomarker_id": "450",
+        "biomarker_id": "AA0062",
         "biomarker_component": [
             {
                 "biomarker": "increased SAA1 level",
@@ -13343,7 +13343,7 @@
         ]
     },
     {
-        "biomarker_id": "220",
+        "biomarker_id": "AA0063",
         "biomarker_component": [
             {
                 "biomarker": "increased CXCL10 level",
@@ -13591,7 +13591,7 @@
         ]
     },
     {
-        "biomarker_id": "168",
+        "biomarker_id": "AA0064",
         "biomarker_component": [
             {
                 "biomarker": "increased CCL7 level",
@@ -13791,7 +13791,7 @@
         ]
     },
     {
-        "biomarker_id": "169",
+        "biomarker_id": "AA0065",
         "biomarker_component": [
             {
                 "biomarker": "increased CCL7 level",
@@ -13887,7 +13887,7 @@
         ]
     },
     {
-        "biomarker_id": "263",
+        "biomarker_id": "AA0066",
         "biomarker_component": [
             {
                 "biomarker": "increased GRAN count",
@@ -14020,7 +14020,7 @@
         ]
     },
     {
-        "biomarker_id": "264",
+        "biomarker_id": "AA0067",
         "biomarker_component": [
             {
                 "biomarker": "increased GRAN count",
@@ -14153,7 +14153,7 @@
         ]
     },
     {
-        "biomarker_id": "224",
+        "biomarker_id": "AA0068",
         "biomarker_component": [
             {
                 "biomarker": "increased D-D level",
@@ -14898,7 +14898,7 @@
         ]
     },
     {
-        "biomarker_id": "225",
+        "biomarker_id": "AA0069",
         "biomarker_component": [
             {
                 "biomarker": "increased D-D level",
@@ -15103,7 +15103,7 @@
         ]
     },
     {
-        "biomarker_id": "226",
+        "biomarker_id": "AA0070",
         "biomarker_component": [
             {
                 "biomarker": "increased D-D level",
@@ -15301,7 +15301,7 @@
         ]
     },
     {
-        "biomarker_id": "326",
+        "biomarker_id": "AA0071",
         "biomarker_component": [
             {
                 "biomarker": "increased LDH level",
@@ -15791,7 +15791,7 @@
         ]
     },
     {
-        "biomarker_id": "334",
+        "biomarker_id": "AA0072",
         "biomarker_component": [
             {
                 "biomarker": "increased LDH level",
@@ -15989,7 +15989,7 @@
         ]
     },
     {
-        "biomarker_id": "337",
+        "biomarker_id": "AA0073",
         "biomarker_component": [
             {
                 "biomarker": "increased LDH level",
@@ -16200,7 +16200,7 @@
         ]
     },
     {
-        "biomarker_id": "327",
+        "biomarker_id": "AA0074",
         "biomarker_component": [
             {
                 "biomarker": "increased LDH level",
@@ -16435,7 +16435,7 @@
         ]
     },
     {
-        "biomarker_id": "329",
+        "biomarker_id": "AA0075",
         "biomarker_component": [
             {
                 "biomarker": "increased LDH level",
@@ -16633,7 +16633,7 @@
         ]
     },
     {
-        "biomarker_id": "336",
+        "biomarker_id": "AA0076",
         "biomarker_component": [
             {
                 "biomarker": "increased LDH level",
@@ -16868,7 +16868,7 @@
         ]
     },
     {
-        "biomarker_id": "328",
+        "biomarker_id": "AA0077",
         "biomarker_component": [
             {
                 "biomarker": "increased LDH level",
@@ -17103,7 +17103,7 @@
         ]
     },
     {
-        "biomarker_id": "332",
+        "biomarker_id": "AA0078",
         "biomarker_component": [
             {
                 "biomarker": "increased LDH level",
@@ -17320,7 +17320,7 @@
         ]
     },
     {
-        "biomarker_id": "335",
+        "biomarker_id": "AA0079",
         "biomarker_component": [
             {
                 "biomarker": "increased LDH level",
@@ -17567,7 +17567,7 @@
         ]
     },
     {
-        "biomarker_id": "333",
+        "biomarker_id": "AA0080",
         "biomarker_component": [
             {
                 "biomarker": "increased LDH level",
@@ -17850,7 +17850,7 @@
         ]
     },
     {
-        "biomarker_id": "331",
+        "biomarker_id": "AA0081",
         "biomarker_component": [
             {
                 "biomarker": "increased LDH level",
@@ -18103,7 +18103,7 @@
         ]
     },
     {
-        "biomarker_id": "330",
+        "biomarker_id": "AA0082",
         "biomarker_component": [
             {
                 "biomarker": "increased LDH level",
@@ -18374,7 +18374,7 @@
         ]
     },
     {
-        "biomarker_id": "46",
+        "biomarker_id": "AA0083",
         "biomarker_component": [
             {
                 "biomarker": "decreased EOSI count",
@@ -18609,7 +18609,7 @@
         ]
     },
     {
-        "biomarker_id": "47",
+        "biomarker_id": "AA0084",
         "biomarker_component": [
             {
                 "biomarker": "decreased EOSI count",
@@ -18705,7 +18705,7 @@
         ]
     },
     {
-        "biomarker_id": "425",
+        "biomarker_id": "AA0085",
         "biomarker_component": [
             {
                 "biomarker": "increased PLAUR level",
@@ -18950,7 +18950,7 @@
         ]
     },
     {
-        "biomarker_id": "426",
+        "biomarker_id": "AA0086",
         "biomarker_component": [
             {
                 "biomarker": "increased PLAUR level",
@@ -19093,7 +19093,7 @@
         ]
     },
     {
-        "biomarker_id": "417",
+        "biomarker_id": "AA0087",
         "biomarker_component": [
             {
                 "biomarker": "increased P-SEP level",
@@ -19226,7 +19226,7 @@
         ]
     },
     {
-        "biomarker_id": "489",
+        "biomarker_id": "AA0088",
         "biomarker_component": [
             {
                 "biomarker": "increased TNF level",
@@ -19411,7 +19411,7 @@
         ]
     },
     {
-        "biomarker_id": "488",
+        "biomarker_id": "AA0089",
         "biomarker_component": [
             {
                 "biomarker": "increased TNF level",
@@ -19710,7 +19710,7 @@
         ]
     },
     {
-        "biomarker_id": "490",
+        "biomarker_id": "AA0090",
         "biomarker_component": [
             {
                 "biomarker": "increased TNF level",
@@ -19870,7 +19870,7 @@
         ]
     },
     {
-        "biomarker_id": "486",
+        "biomarker_id": "AA0091",
         "biomarker_component": [
             {
                 "biomarker": "increased TMPRSS2 level",
@@ -20007,7 +20007,7 @@
         ]
     },
     {
-        "biomarker_id": "487",
+        "biomarker_id": "AA0092",
         "biomarker_component": [
             {
                 "biomarker": "increased TMPRSS2 level",
@@ -20156,7 +20156,7 @@
         ]
     },
     {
-        "biomarker_id": "123",
+        "biomarker_id": "AA0093",
         "biomarker_component": [
             {
                 "biomarker": "increased ACE2 level",
@@ -20268,7 +20268,7 @@
         ]
     },
     {
-        "biomarker_id": "122",
+        "biomarker_id": "AA0094",
         "biomarker_component": [
             {
                 "biomarker": "increased ACE2 level",
@@ -20417,7 +20417,7 @@
         ]
     },
     {
-        "biomarker_id": "4",
+        "biomarker_id": "AA0095",
         "biomarker_component": [
             {
                 "biomarker": "decreased ACE2 level",
@@ -20566,7 +20566,7 @@
         ]
     },
     {
-        "biomarker_id": "5",
+        "biomarker_id": "AA0096",
         "biomarker_component": [
             {
                 "biomarker": "decreased ACE2 level",
@@ -20717,7 +20717,7 @@
         ]
     },
     {
-        "biomarker_id": "519",
+        "biomarker_id": "AA0097",
         "biomarker_component": [
             {
                 "biomarker": "increased WFDC2 level",
@@ -20962,7 +20962,7 @@
         ]
     },
     {
-        "biomarker_id": "517",
+        "biomarker_id": "AA0098",
         "biomarker_component": [
             {
                 "biomarker": "increased WFDC2 level",
@@ -21105,7 +21105,7 @@
         ]
     },
     {
-        "biomarker_id": "516",
+        "biomarker_id": "AA0099",
         "biomarker_component": [
             {
                 "biomarker": "increased WFDC2 level",
@@ -21350,7 +21350,7 @@
         ]
     },
     {
-        "biomarker_id": "518",
+        "biomarker_id": "AA0100",
         "biomarker_component": [
             {
                 "biomarker": "increased WFDC2 level",
@@ -21456,7 +21456,7 @@
         ]
     },
     {
-        "biomarker_id": "520",
+        "biomarker_id": "AA0101",
         "biomarker_component": [
             {
                 "biomarker": "increased WFDC2 level",
@@ -21617,7 +21617,7 @@
         ]
     },
     {
-        "biomarker_id": "323",
+        "biomarker_id": "AA0102",
         "biomarker_component": [
             {
                 "biomarker": "increased KRT19 level",
@@ -21828,7 +21828,7 @@
         ]
     },
     {
-        "biomarker_id": "324",
+        "biomarker_id": "AA0103",
         "biomarker_component": [
             {
                 "biomarker": "increased KRT19 level",
@@ -21950,7 +21950,7 @@
         ]
     },
     {
-        "biomarker_id": "322",
+        "biomarker_id": "AA0104",
         "biomarker_component": [
             {
                 "biomarker": "increased KRT19 level",
@@ -22300,7 +22300,7 @@
         ]
     },
     {
-        "biomarker_id": "40",
+        "biomarker_id": "AA0105",
         "biomarker_component": [
             {
                 "biomarker": "decreased CEACAM5 level",
@@ -22443,7 +22443,7 @@
         ]
     },
     {
-        "biomarker_id": "183",
+        "biomarker_id": "AA0106",
         "biomarker_component": [
             {
                 "biomarker": "increased CEACAM5 level",
@@ -22549,7 +22549,7 @@
         ]
     },
     {
-        "biomarker_id": "185",
+        "biomarker_id": "AA0107",
         "biomarker_component": [
             {
                 "biomarker": "increased CEACAM5 level",
@@ -22692,7 +22692,7 @@
         ]
     },
     {
-        "biomarker_id": "182",
+        "biomarker_id": "AA0108",
         "biomarker_component": [
             {
                 "biomarker": "increased CEACAM5 level",
@@ -23141,7 +23141,7 @@
         ]
     },
     {
-        "biomarker_id": "184",
+        "biomarker_id": "AA0109",
         "biomarker_component": [
             {
                 "biomarker": "increased CEACAM5 level",
@@ -23349,7 +23349,7 @@
         ]
     },
     {
-        "biomarker_id": "372",
+        "biomarker_id": "AA0110",
         "biomarker_component": [
             {
                 "biomarker": "increased MUC16 level",
@@ -23501,7 +23501,7 @@
         ]
     },
     {
-        "biomarker_id": "368",
+        "biomarker_id": "AA0111",
         "biomarker_component": [
             {
                 "biomarker": "increased MUC16 level",
@@ -23749,7 +23749,7 @@
         ]
     },
     {
-        "biomarker_id": "369",
+        "biomarker_id": "AA0112",
         "biomarker_component": [
             {
                 "biomarker": "increased MUC16 level",
@@ -23858,7 +23858,7 @@
         ]
     },
     {
-        "biomarker_id": "370",
+        "biomarker_id": "AA0113",
         "biomarker_component": [
             {
                 "biomarker": "increased MUC16 level",
@@ -24004,7 +24004,7 @@
         ]
     },
     {
-        "biomarker_id": "371",
+        "biomarker_id": "AA0114",
         "biomarker_component": [
             {
                 "biomarker": "increased MUC16 level",
@@ -24168,7 +24168,7 @@
         ]
     },
     {
-        "biomarker_id": "364",
+        "biomarker_id": "AA0115",
         "biomarker_component": [
             {
                 "biomarker": "increased MUC1 level",
@@ -24353,7 +24353,7 @@
         ]
     },
     {
-        "biomarker_id": "363",
+        "biomarker_id": "AA0116",
         "biomarker_component": [
             {
                 "biomarker": "increased MUC1 level",
@@ -24691,7 +24691,7 @@
         ]
     },
     {
-        "biomarker_id": "365",
+        "biomarker_id": "AA0117",
         "biomarker_component": [
             {
                 "biomarker": "increased MUC1 level",
@@ -24839,7 +24839,7 @@
         ]
     },
     {
-        "biomarker_id": "366",
+        "biomarker_id": "AA0118",
         "biomarker_component": [
             {
                 "biomarker": "increased MUC1 level",
@@ -25024,7 +25024,7 @@
         ]
     },
     {
-        "biomarker_id": "367",
+        "biomarker_id": "AA0119",
         "biomarker_component": [
             {
                 "biomarker": "increased MUC1 level",
@@ -25227,7 +25227,7 @@
         ]
     },
     {
-        "biomarker_id": "455",
+        "biomarker_id": "AA0120",
         "biomarker_component": [
             {
                 "biomarker": "increased SART3 level",
@@ -25679,7 +25679,7 @@
         ]
     },
     {
-        "biomarker_id": "456",
+        "biomarker_id": "AA0121",
         "biomarker_component": [
             {
                 "biomarker": "increased SART3 level",
@@ -25825,7 +25825,7 @@
         ]
     },
     {
-        "biomarker_id": "457",
+        "biomarker_id": "AA0122",
         "biomarker_component": [
             {
                 "biomarker": "increased SART3 level",
@@ -25934,7 +25934,7 @@
         ]
     },
     {
-        "biomarker_id": "458",
+        "biomarker_id": "AA0123",
         "biomarker_component": [
             {
                 "biomarker": "increased SART3 level",
@@ -26080,7 +26080,7 @@
         ]
     },
     {
-        "biomarker_id": "459",
+        "biomarker_id": "AA0124",
         "biomarker_component": [
             {
                 "biomarker": "increased SART3 level",
@@ -26244,7 +26244,7 @@
         ]
     },
     {
-        "biomarker_id": "159",
+        "biomarker_id": "AA0125",
         "biomarker_component": [
             {
                 "biomarker": "increased CA199 level",
@@ -26428,7 +26428,7 @@
         ]
     },
     {
-        "biomarker_id": "160",
+        "biomarker_id": "AA0126",
         "biomarker_component": [
             {
                 "biomarker": "increased CA199 level",
@@ -26524,7 +26524,7 @@
         ]
     },
     {
-        "biomarker_id": "161",
+        "biomarker_id": "AA0127",
         "biomarker_component": [
             {
                 "biomarker": "increased CA199 level",
@@ -26657,7 +26657,7 @@
         ]
     },
     {
-        "biomarker_id": "162",
+        "biomarker_id": "AA0128",
         "biomarker_component": [
             {
                 "biomarker": "increased CA199 level",
@@ -26808,7 +26808,7 @@
         ]
     },
     {
-        "biomarker_id": "535",
+        "biomarker_id": "AA0129",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
@@ -26917,7 +26917,7 @@
         ]
     },
     {
-        "biomarker_id": "280",
+        "biomarker_id": "AA0130",
         "biomarker_component": [
             {
                 "biomarker": "increased IFNG level",
@@ -27057,7 +27057,7 @@
         ]
     },
     {
-        "biomarker_id": "281",
+        "biomarker_id": "AA0131",
         "biomarker_component": [
             {
                 "biomarker": "increased IFNG level",
@@ -27167,7 +27167,7 @@
         ]
     },
     {
-        "biomarker_id": "164",
+        "biomarker_id": "AA0132",
         "biomarker_component": [
             {
                 "biomarker": "increased CCL2 level",
@@ -27376,7 +27376,7 @@
         ]
     },
     {
-        "biomarker_id": "166",
+        "biomarker_id": "AA0133",
         "biomarker_component": [
             {
                 "biomarker": "increased CCL2 level",
@@ -27582,7 +27582,7 @@
         ]
     },
     {
-        "biomarker_id": "165",
+        "biomarker_id": "AA0134",
         "biomarker_component": [
             {
                 "biomarker": "increased CCL2 level",
@@ -27710,7 +27710,7 @@
         ]
     },
     {
-        "biomarker_id": "213",
+        "biomarker_id": "AA0135",
         "biomarker_component": [
             {
                 "biomarker": "increased CSF3 level",
@@ -27813,7 +27813,7 @@
         ]
     },
     {
-        "biomarker_id": "212",
+        "biomarker_id": "AA0136",
         "biomarker_component": [
             {
                 "biomarker": "increased CSF3 level",
@@ -28004,7 +28004,7 @@
         ]
     },
     {
-        "biomarker_id": "167",
+        "biomarker_id": "AA0137",
         "biomarker_component": [
             {
                 "biomarker": "increased CCL3 level",
@@ -28210,7 +28210,7 @@
         ]
     },
     {
-        "biomarker_id": "295",
+        "biomarker_id": "AA0138",
         "biomarker_component": [
             {
                 "biomarker": "increased IL4 level",
@@ -28362,7 +28362,7 @@
         ]
     },
     {
-        "biomarker_id": "296",
+        "biomarker_id": "AA0139",
         "biomarker_component": [
             {
                 "biomarker": "increased IL4 level",
@@ -28526,7 +28526,7 @@
         ]
     },
     {
-        "biomarker_id": "288",
+        "biomarker_id": "AA0140",
         "biomarker_component": [
             {
                 "biomarker": "increased IL10 level",
@@ -28687,7 +28687,7 @@
         ]
     },
     {
-        "biomarker_id": "287",
+        "biomarker_id": "AA0141",
         "biomarker_component": [
             {
                 "biomarker": "increased IL10 level",
@@ -28881,7 +28881,7 @@
         ]
     },
     {
-        "biomarker_id": "55",
+        "biomarker_id": "AA0142",
         "biomarker_component": [
             {
                 "biomarker": "decreased IL10 level",
@@ -28994,7 +28994,7 @@
         ]
     },
     {
-        "biomarker_id": "202",
+        "biomarker_id": "AA0143",
         "biomarker_component": [
             {
                 "biomarker": "increased CREA level",
@@ -29178,7 +29178,7 @@
         ]
     },
     {
-        "biomarker_id": "500",
+        "biomarker_id": "AA0144",
         "biomarker_component": [
             {
                 "biomarker": "increased UREA level",
@@ -29464,7 +29464,7 @@
         ]
     },
     {
-        "biomarker_id": "501",
+        "biomarker_id": "AA0145",
         "biomarker_component": [
             {
                 "biomarker": "increased UREA level",
@@ -29560,7 +29560,7 @@
         ]
     },
     {
-        "biomarker_id": "214",
+        "biomarker_id": "AA0146",
         "biomarker_component": [
             {
                 "biomarker": "increased CST3 level",
@@ -29706,7 +29706,7 @@
         ]
     },
     {
-        "biomarker_id": "215",
+        "biomarker_id": "AA0147",
         "biomarker_component": [
             {
                 "biomarker": "increased CST3 level",
@@ -29852,7 +29852,7 @@
         ]
     },
     {
-        "biomarker_id": "228",
+        "biomarker_id": "AA0148",
         "biomarker_component": [
             {
                 "biomarker": "increased DBIL level",
@@ -29985,7 +29985,7 @@
         ]
     },
     {
-        "biomarker_id": "229",
+        "biomarker_id": "AA0149",
         "biomarker_component": [
             {
                 "biomarker": "increased DBIL level",
@@ -30081,7 +30081,7 @@
         ]
     },
     {
-        "biomarker_id": "146",
+        "biomarker_id": "AA0150",
         "biomarker_component": [
             {
                 "biomarker": "increased BCHE level",
@@ -30227,7 +30227,7 @@
         ]
     },
     {
-        "biomarker_id": "147",
+        "biomarker_id": "AA0151",
         "biomarker_component": [
             {
                 "biomarker": "increased BCHE level",
@@ -30336,7 +30336,7 @@
         ]
     },
     {
-        "biomarker_id": "148",
+        "biomarker_id": "AA0152",
         "biomarker_component": [
             {
                 "biomarker": "increased BCHE level",
@@ -30452,7 +30452,7 @@
         ]
     },
     {
-        "biomarker_id": "6",
+        "biomarker_id": "AA0153",
         "biomarker_component": [
             {
                 "biomarker": "decreased ALB level",
@@ -30738,7 +30738,7 @@
         ]
     },
     {
-        "biomarker_id": "17",
+        "biomarker_id": "AA0154",
         "biomarker_component": [
             {
                 "biomarker": "decreased ALB level",
@@ -30847,7 +30847,7 @@
         ]
     },
     {
-        "biomarker_id": "7",
+        "biomarker_id": "AA0155",
         "biomarker_component": [
             {
                 "biomarker": "decreased ALB level",
@@ -30980,7 +30980,7 @@
         ]
     },
     {
-        "biomarker_id": "9",
+        "biomarker_id": "AA0156",
         "biomarker_component": [
             {
                 "biomarker": "decreased ALB level",
@@ -31076,7 +31076,7 @@
         ]
     },
     {
-        "biomarker_id": "16",
+        "biomarker_id": "AA0157",
         "biomarker_component": [
             {
                 "biomarker": "decreased ALB level",
@@ -31209,7 +31209,7 @@
         ]
     },
     {
-        "biomarker_id": "13",
+        "biomarker_id": "AA0158",
         "biomarker_component": [
             {
                 "biomarker": "decreased ALB level",
@@ -31305,7 +31305,7 @@
         ]
     },
     {
-        "biomarker_id": "8",
+        "biomarker_id": "AA0159",
         "biomarker_component": [
             {
                 "biomarker": "decreased ALB level",
@@ -31438,7 +31438,7 @@
         ]
     },
     {
-        "biomarker_id": "11",
+        "biomarker_id": "AA0160",
         "biomarker_component": [
             {
                 "biomarker": "decreased ALB level",
@@ -31553,7 +31553,7 @@
         ]
     },
     {
-        "biomarker_id": "15",
+        "biomarker_id": "AA0161",
         "biomarker_component": [
             {
                 "biomarker": "decreased ALB level",
@@ -31698,7 +31698,7 @@
         ]
     },
     {
-        "biomarker_id": "12",
+        "biomarker_id": "AA0162",
         "biomarker_component": [
             {
                 "biomarker": "decreased ALB level",
@@ -31879,7 +31879,7 @@
         ]
     },
     {
-        "biomarker_id": "14",
+        "biomarker_id": "AA0163",
         "biomarker_component": [
             {
                 "biomarker": "decreased ALB level",
@@ -32012,7 +32012,7 @@
         ]
     },
     {
-        "biomarker_id": "10",
+        "biomarker_id": "AA0164",
         "biomarker_component": [
             {
                 "biomarker": "decreased ALB level",
@@ -32181,7 +32181,7 @@
         ]
     },
     {
-        "biomarker_id": "285",
+        "biomarker_id": "AA0165",
         "biomarker_component": [
             {
                 "biomarker": "increased IL-2R level",
@@ -32314,7 +32314,7 @@
         ]
     },
     {
-        "biomarker_id": "286",
+        "biomarker_id": "AA0166",
         "biomarker_component": [
             {
                 "biomarker": "increased IL-2R level",
@@ -32423,7 +32423,7 @@
         ]
     },
     {
-        "biomarker_id": "393",
+        "biomarker_id": "AA0167",
         "biomarker_component": [
             {
                 "biomarker": "increased NEUT count",
@@ -32607,7 +32607,7 @@
         ]
     },
     {
-        "biomarker_id": "404",
+        "biomarker_id": "AA0168",
         "biomarker_component": [
             {
                 "biomarker": "increased NEUT count",
@@ -32767,7 +32767,7 @@
         ]
     },
     {
-        "biomarker_id": "394",
+        "biomarker_id": "AA0169",
         "biomarker_component": [
             {
                 "biomarker": "increased NEUT count",
@@ -32951,7 +32951,7 @@
         ]
     },
     {
-        "biomarker_id": "396",
+        "biomarker_id": "AA0170",
         "biomarker_component": [
             {
                 "biomarker": "increased NEUT count",
@@ -33098,7 +33098,7 @@
         ]
     },
     {
-        "biomarker_id": "403",
+        "biomarker_id": "AA0171",
         "biomarker_component": [
             {
                 "biomarker": "increased NEUT count",
@@ -33282,7 +33282,7 @@
         ]
     },
     {
-        "biomarker_id": "401",
+        "biomarker_id": "AA0172",
         "biomarker_component": [
             {
                 "biomarker": "increased NEUT count",
@@ -33429,7 +33429,7 @@
         ]
     },
     {
-        "biomarker_id": "395",
+        "biomarker_id": "AA0173",
         "biomarker_component": [
             {
                 "biomarker": "increased NEUT count",
@@ -33613,7 +33613,7 @@
         ]
     },
     {
-        "biomarker_id": "399",
+        "biomarker_id": "AA0174",
         "biomarker_component": [
             {
                 "biomarker": "increased NEUT count",
@@ -33779,7 +33779,7 @@
         ]
     },
     {
-        "biomarker_id": "402",
+        "biomarker_id": "AA0175",
         "biomarker_component": [
             {
                 "biomarker": "increased NEUT count",
@@ -33975,7 +33975,7 @@
         ]
     },
     {
-        "biomarker_id": "400",
+        "biomarker_id": "AA0176",
         "biomarker_component": [
             {
                 "biomarker": "increased NEUT count",
@@ -34207,7 +34207,7 @@
         ]
     },
     {
-        "biomarker_id": "398",
+        "biomarker_id": "AA0177",
         "biomarker_component": [
             {
                 "biomarker": "increased NEUT count",
@@ -34409,7 +34409,7 @@
         ]
     },
     {
-        "biomarker_id": "397",
+        "biomarker_id": "AA0178",
         "biomarker_component": [
             {
                 "biomarker": "increased NEUT count",
@@ -34629,7 +34629,7 @@
         ]
     },
     {
-        "biomarker_id": "360",
+        "biomarker_id": "AA0179",
         "biomarker_component": [
             {
                 "biomarker": "increased MONO count",
@@ -34774,7 +34774,7 @@
         ]
     },
     {
-        "biomarker_id": "73",
+        "biomarker_id": "AA0180",
         "biomarker_component": [
             {
                 "biomarker": "decreased MONO count",
@@ -34907,7 +34907,7 @@
         ]
     },
     {
-        "biomarker_id": "359",
+        "biomarker_id": "AA0181",
         "biomarker_component": [
             {
                 "biomarker": "increased MONO count",
@@ -35003,7 +35003,7 @@
         ]
     },
     {
-        "biomarker_id": "74",
+        "biomarker_id": "AA0182",
         "biomarker_component": [
             {
                 "biomarker": "decreased MONO count",
@@ -35106,7 +35106,7 @@
         ]
     },
     {
-        "biomarker_id": "23",
+        "biomarker_id": "AA0183",
         "biomarker_component": [
             {
                 "biomarker": "decreased BASO count",
@@ -35239,7 +35239,7 @@
         ]
     },
     {
-        "biomarker_id": "24",
+        "biomarker_id": "AA0184",
         "biomarker_component": [
             {
                 "biomarker": "decreased BASO count",
@@ -35335,7 +35335,7 @@
         ]
     },
     {
-        "biomarker_id": "108",
+        "biomarker_id": "AA0185",
         "biomarker_component": [
             {
                 "biomarker": "decreased TH count",
@@ -35468,7 +35468,7 @@
         ]
     },
     {
-        "biomarker_id": "482",
+        "biomarker_id": "AA0186",
         "biomarker_component": [
             {
                 "biomarker": "increased TH count",
@@ -35571,7 +35571,7 @@
         ]
     },
     {
-        "biomarker_id": "410",
+        "biomarker_id": "AA0187",
         "biomarker_component": [
             {
                 "biomarker": "increased NTH count",
@@ -35704,7 +35704,7 @@
         ]
     },
     {
-        "biomarker_id": "83",
+        "biomarker_id": "AA0188",
         "biomarker_component": [
             {
                 "biomarker": "decreased NTH count",
@@ -35800,7 +35800,7 @@
         ]
     },
     {
-        "biomarker_id": "76",
+        "biomarker_id": "AA0189",
         "biomarker_component": [
             {
                 "biomarker": "decreased MTH count",
@@ -35933,7 +35933,7 @@
         ]
     },
     {
-        "biomarker_id": "362",
+        "biomarker_id": "AA0190",
         "biomarker_component": [
             {
                 "biomarker": "increased MTH count",
@@ -36036,7 +36036,7 @@
         ]
     },
     {
-        "biomarker_id": "110",
+        "biomarker_id": "AA0191",
         "biomarker_component": [
             {
                 "biomarker": "decreased TREG count",
@@ -36176,7 +36176,7 @@
         ]
     },
     {
-        "biomarker_id": "495",
+        "biomarker_id": "AA0192",
         "biomarker_component": [
             {
                 "biomarker": "increased TREG count",
@@ -36272,7 +36272,7 @@
         ]
     },
     {
-        "biomarker_id": "247",
+        "biomarker_id": "AA0193",
         "biomarker_component": [
             {
                 "biomarker": "increased ESR",
@@ -36387,7 +36387,7 @@
         ]
     },
     {
-        "biomarker_id": "246",
+        "biomarker_id": "AA0194",
         "biomarker_component": [
             {
                 "biomarker": "increased ESR",
@@ -36571,7 +36571,7 @@
         ]
     },
     {
-        "biomarker_id": "310",
+        "biomarker_id": "AA0195",
         "biomarker_component": [
             {
                 "biomarker": "increased IL8 level",
@@ -36747,7 +36747,7 @@
         ]
     },
     {
-        "biomarker_id": "311",
+        "biomarker_id": "AA0196",
         "biomarker_component": [
             {
                 "biomarker": "increased IL8 level",
@@ -36923,7 +36923,7 @@
         ]
     },
     {
-        "biomarker_id": "312",
+        "biomarker_id": "AA0197",
         "biomarker_component": [
             {
                 "biomarker": "increased IL8 level",
@@ -37069,7 +37069,7 @@
         ]
     },
     {
-        "biomarker_id": "493",
+        "biomarker_id": "AA0198",
         "biomarker_component": [
             {
                 "biomarker": "increased TNNI3 level",
@@ -37410,7 +37410,7 @@
         ]
     },
     {
-        "biomarker_id": "58",
+        "biomarker_id": "AA0199",
         "biomarker_component": [
             {
                 "biomarker": "decreased K+ level",
@@ -37513,7 +37513,7 @@
         ]
     },
     {
-        "biomarker_id": "101",
+        "biomarker_id": "AA0200",
         "biomarker_component": [
             {
                 "biomarker": "decreased SERPINC1 level",
@@ -37704,7 +37704,7 @@
         ]
     },
     {
-        "biomarker_id": "462",
+        "biomarker_id": "AA0201",
         "biomarker_component": [
             {
                 "biomarker": "increased SERPINC1 level",
@@ -37898,7 +37898,7 @@
         ]
     },
     {
-        "biomarker_id": "251",
+        "biomarker_id": "AA0202",
         "biomarker_component": [
             {
                 "biomarker": "increased FDP level",
@@ -38082,7 +38082,7 @@
         ]
     },
     {
-        "biomarker_id": "252",
+        "biomarker_id": "AA0203",
         "biomarker_component": [
             {
                 "biomarker": "increased FIB level",
@@ -38266,7 +38266,7 @@
         ]
     },
     {
-        "biomarker_id": "391",
+        "biomarker_id": "AA0204",
         "biomarker_component": [
             {
                 "biomarker": "increased NET level",
@@ -38501,7 +38501,7 @@
         ]
     },
     {
-        "biomarker_id": "392",
+        "biomarker_id": "AA0205",
         "biomarker_component": [
             {
                 "biomarker": "increased NET level",
@@ -38604,7 +38604,7 @@
         ]
     },
     {
-        "biomarker_id": "191",
+        "biomarker_id": "AA0206",
         "biomarker_component": [
             {
                 "biomarker": "increased CIT-H3 level",
@@ -38788,7 +38788,7 @@
         ]
     },
     {
-        "biomarker_id": "197",
+        "biomarker_id": "AA0207",
         "biomarker_component": [
             {
                 "biomarker": "increased CIT-H3 level",
@@ -38884,7 +38884,7 @@
         ]
     },
     {
-        "biomarker_id": "192",
+        "biomarker_id": "AA0208",
         "biomarker_component": [
             {
                 "biomarker": "increased CIT-H3 level",
@@ -39017,7 +39017,7 @@
         ]
     },
     {
-        "biomarker_id": "194",
+        "biomarker_id": "AA0209",
         "biomarker_component": [
             {
                 "biomarker": "increased CIT-H3 level",
@@ -39113,7 +39113,7 @@
         ]
     },
     {
-        "biomarker_id": "193",
+        "biomarker_id": "AA0210",
         "biomarker_component": [
             {
                 "biomarker": "increased CIT-H3 level",
@@ -39246,7 +39246,7 @@
         ]
     },
     {
-        "biomarker_id": "196",
+        "biomarker_id": "AA0211",
         "biomarker_component": [
             {
                 "biomarker": "increased CIT-H3 level",
@@ -39427,7 +39427,7 @@
         ]
     },
     {
-        "biomarker_id": "198",
+        "biomarker_id": "AA0212",
         "biomarker_component": [
             {
                 "biomarker": "increased CIT-H3 level",
@@ -39572,7 +39572,7 @@
         ]
     },
     {
-        "biomarker_id": "195",
+        "biomarker_id": "AA0213",
         "biomarker_component": [
             {
                 "biomarker": "increased CIT-H3 level",
@@ -39675,7 +39675,7 @@
         ]
     },
     {
-        "biomarker_id": "132",
+        "biomarker_id": "AA0214",
         "biomarker_component": [
             {
                 "biomarker": "increased ALT level",
@@ -40063,7 +40063,7 @@
         ]
     },
     {
-        "biomarker_id": "133",
+        "biomarker_id": "AA0215",
         "biomarker_component": [
             {
                 "biomarker": "increased ALT level",
@@ -40196,7 +40196,7 @@
         ]
     },
     {
-        "biomarker_id": "270",
+        "biomarker_id": "AA0216",
         "biomarker_component": [
             {
                 "biomarker": "increased HGF level",
@@ -40309,7 +40309,7 @@
         ]
     },
     {
-        "biomarker_id": "259",
+        "biomarker_id": "AA0217",
         "biomarker_component": [
             {
                 "biomarker": "increased GOT1 level",
@@ -40665,7 +40665,7 @@
         ]
     },
     {
-        "biomarker_id": "260",
+        "biomarker_id": "AA0218",
         "biomarker_component": [
             {
                 "biomarker": "increased GOT1 level",
@@ -40853,7 +40853,7 @@
         ]
     },
     {
-        "biomarker_id": "199",
+        "biomarker_id": "AA0219",
         "biomarker_component": [
             {
                 "biomarker": "increased CK level",
@@ -41139,7 +41139,7 @@
         ]
     },
     {
-        "biomarker_id": "85",
+        "biomarker_id": "AA0220",
         "biomarker_component": [
             {
                 "biomarker": "decreased Na+ level",
@@ -41308,7 +41308,7 @@
         ]
     },
     {
-        "biomarker_id": "84",
+        "biomarker_id": "AA0221",
         "biomarker_component": [
             {
                 "biomarker": "decreased Na+ level",
@@ -41441,7 +41441,7 @@
         ]
     },
     {
-        "biomarker_id": "413",
+        "biomarker_id": "AA0222",
         "biomarker_component": [
             {
                 "biomarker": "increased Na+ level",
@@ -41537,7 +41537,7 @@
         ]
     },
     {
-        "biomarker_id": "412",
+        "biomarker_id": "AA0223",
         "biomarker_component": [
             {
                 "biomarker": "increased Na+ level",
@@ -41640,7 +41640,7 @@
         ]
     },
     {
-        "biomarker_id": "41",
+        "biomarker_id": "AA0224",
         "biomarker_component": [
             {
                 "biomarker": "decreased CIT level",
@@ -41773,7 +41773,7 @@
         ]
     },
     {
-        "biomarker_id": "42",
+        "biomarker_id": "AA0225",
         "biomarker_component": [
             {
                 "biomarker": "decreased CIT level",
@@ -41869,7 +41869,7 @@
         ]
     },
     {
-        "biomarker_id": "200",
+        "biomarker_id": "AA0226",
         "biomarker_component": [
             {
                 "biomarker": "increased CK-MB level",
@@ -42053,7 +42053,7 @@
         ]
     },
     {
-        "biomarker_id": "131",
+        "biomarker_id": "AA0227",
         "biomarker_component": [
             {
                 "biomarker": "increased ALDH5A1 level",
@@ -42244,7 +42244,7 @@
         ]
     },
     {
-        "biomarker_id": "211",
+        "biomarker_id": "AA0228",
         "biomarker_component": [
             {
                 "biomarker": "increased CSF1 level",
@@ -42396,7 +42396,7 @@
         ]
     },
     {
-        "biomarker_id": "317",
+        "biomarker_id": "AA0229",
         "biomarker_component": [
             {
                 "biomarker": "increased KITLG level",
@@ -42647,7 +42647,7 @@
         ]
     },
     {
-        "biomarker_id": "119",
+        "biomarker_id": "AA0230",
         "biomarker_component": [
             {
                 "biomarker": "increase KITLG level",
@@ -42796,7 +42796,7 @@
         ]
     },
     {
-        "biomarker_id": "150",
+        "biomarker_id": "AA0231",
         "biomarker_component": [
             {
                 "biomarker": "increased BIL level",
@@ -42929,7 +42929,7 @@
         ]
     },
     {
-        "biomarker_id": "149",
+        "biomarker_id": "AA0232",
         "biomarker_component": [
             {
                 "biomarker": "increased BIL level",
@@ -43113,7 +43113,7 @@
         ]
     },
     {
-        "biomarker_id": "139",
+        "biomarker_id": "AA0233",
         "biomarker_component": [
             {
                 "biomarker": "increased APTT",
@@ -43209,7 +43209,7 @@
         ]
     },
     {
-        "biomarker_id": "547",
+        "biomarker_id": "AA0234",
         "biomarker_component": [
             {
                 "biomarker": "prolonged APTT",
@@ -43444,7 +43444,7 @@
         ]
     },
     {
-        "biomarker_id": "434",
+        "biomarker_id": "AA0235",
         "biomarker_component": [
             {
                 "biomarker": "increased PT",
@@ -43540,7 +43540,7 @@
         ]
     },
     {
-        "biomarker_id": "548",
+        "biomarker_id": "AA0236",
         "biomarker_component": [
             {
                 "biomarker": "prolonged PT",
@@ -43724,7 +43724,7 @@
         ]
     },
     {
-        "biomarker_id": "90",
+        "biomarker_id": "AA0237",
         "biomarker_component": [
             {
                 "biomarker": "decreased PF4 level",
@@ -43870,7 +43870,7 @@
         ]
     },
     {
-        "biomarker_id": "533",
+        "biomarker_id": "AA0238",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
@@ -43966,7 +43966,7 @@
         ]
     },
     {
-        "biomarker_id": "244",
+        "biomarker_id": "AA0239",
         "biomarker_component": [
             {
                 "biomarker": "increased ENO2 level",
@@ -44282,7 +44282,7 @@
         ]
     },
     {
-        "biomarker_id": "243",
+        "biomarker_id": "AA0240",
         "biomarker_component": [
             {
                 "biomarker": "increased ENO2 level",
@@ -44482,7 +44482,7 @@
         ]
     },
     {
-        "biomarker_id": "431",
+        "biomarker_id": "AA0241",
         "biomarker_component": [
             {
                 "biomarker": "increased PROGRP level",
@@ -44680,7 +44680,7 @@
         ]
     },
     {
-        "biomarker_id": "430",
+        "biomarker_id": "AA0242",
         "biomarker_component": [
             {
                 "biomarker": "increased PROGRP level",
@@ -44813,7 +44813,7 @@
         ]
     },
     {
-        "biomarker_id": "106",
+        "biomarker_id": "AA0243",
         "biomarker_component": [
             {
                 "biomarker": "decreased SaO2 level",
@@ -44946,7 +44946,7 @@
         ]
     },
     {
-        "biomarker_id": "505",
+        "biomarker_id": "AA0244",
         "biomarker_component": [
             {
                 "biomarker": "increased VEGF-D level",
@@ -45140,7 +45140,7 @@
         ]
     },
     {
-        "biomarker_id": "506",
+        "biomarker_id": "AA0245",
         "biomarker_component": [
             {
                 "biomarker": "increased VEGF-D level",
@@ -45283,7 +45283,7 @@
         ]
     },
     {
-        "biomarker_id": "152",
+        "biomarker_id": "AA0246",
         "biomarker_component": [
             {
                 "biomarker": "increased BTK level",
@@ -45483,7 +45483,7 @@
         ]
     },
     {
-        "biomarker_id": "345",
+        "biomarker_id": "AA0247",
         "biomarker_component": [
             {
                 "biomarker": "increased MB level",
@@ -45667,7 +45667,7 @@
         ]
     },
     {
-        "biomarker_id": "266",
+        "biomarker_id": "AA0248",
         "biomarker_component": [
             {
                 "biomarker": "increased HBA1C level",
@@ -45800,7 +45800,7 @@
         ]
     },
     {
-        "biomarker_id": "267",
+        "biomarker_id": "AA0249",
         "biomarker_component": [
             {
                 "biomarker": "increased HBA1C level",
@@ -45933,7 +45933,7 @@
         ]
     },
     {
-        "biomarker_id": "268",
+        "biomarker_id": "AA0250",
         "biomarker_component": [
             {
                 "biomarker": "increased HBA1C level",
@@ -46036,7 +46036,7 @@
         ]
     },
     {
-        "biomarker_id": "341",
+        "biomarker_id": "AA0251",
         "biomarker_component": [
             {
                 "biomarker": "increased LILRB4 level",
@@ -46191,7 +46191,7 @@
         ]
     },
     {
-        "biomarker_id": "283",
+        "biomarker_id": "AA0252",
         "biomarker_component": [
             {
                 "biomarker": "increased IGG level",
@@ -46324,7 +46324,7 @@
         ]
     },
     {
-        "biomarker_id": "284",
+        "biomarker_id": "AA0253",
         "biomarker_component": [
             {
                 "biomarker": "increased IGM level",
@@ -46457,7 +46457,7 @@
         ]
     },
     {
-        "biomarker_id": "237",
+        "biomarker_id": "AA0254",
         "biomarker_component": [
             {
                 "biomarker": "increased EB level",
@@ -46553,7 +46553,7 @@
         ]
     },
     {
-        "biomarker_id": "57",
+        "biomarker_id": "AA0255",
         "biomarker_component": [
             {
                 "biomarker": "decreased IP level",
@@ -46649,7 +46649,7 @@
         ]
     },
     {
-        "biomarker_id": "465",
+        "biomarker_id": "AA0256",
         "biomarker_component": [
             {
                 "biomarker": "increased SIGLEC1 level",
@@ -46789,7 +46789,7 @@
         ]
     },
     {
-        "biomarker_id": "466",
+        "biomarker_id": "AA0257",
         "biomarker_component": [
             {
                 "biomarker": "increased SIGLEC1 level",
@@ -46892,7 +46892,7 @@
         ]
     },
     {
-        "biomarker_id": "508",
+        "biomarker_id": "AA0258",
         "biomarker_component": [
             {
                 "biomarker": "increased VWF level",
@@ -47029,7 +47029,7 @@
         ]
     },
     {
-        "biomarker_id": "509",
+        "biomarker_id": "AA0259",
         "biomarker_component": [
             {
                 "biomarker": "increased VWF level",
@@ -47214,7 +47214,7 @@
         ]
     },
     {
-        "biomarker_id": "461",
+        "biomarker_id": "AA0260",
         "biomarker_component": [
             {
                 "biomarker": "increased SELP level",
@@ -47420,7 +47420,7 @@
         ]
     },
     {
-        "biomarker_id": "176",
+        "biomarker_id": "AA0261",
         "biomarker_component": [
             {
                 "biomarker": "increased CD40LG level",
@@ -47532,7 +47532,7 @@
         ]
     },
     {
-        "biomarker_id": "177",
+        "biomarker_id": "AA0262",
         "biomarker_component": [
             {
                 "biomarker": "increased CD40LG level",
@@ -47699,7 +47699,7 @@
         ]
     },
     {
-        "biomarker_id": "175",
+        "biomarker_id": "AA0263",
         "biomarker_component": [
             {
                 "biomarker": "increased CD40LG level",
@@ -47899,7 +47899,7 @@
         ]
     },
     {
-        "biomarker_id": "484",
+        "biomarker_id": "AA0264",
         "biomarker_component": [
             {
                 "biomarker": "increased THBD level",
@@ -48087,7 +48087,7 @@
         ]
     },
     {
-        "biomarker_id": "109",
+        "biomarker_id": "AA0265",
         "biomarker_component": [
             {
                 "biomarker": "decreased THBD level",
@@ -48220,7 +48220,7 @@
         ]
     },
     {
-        "biomarker_id": "483",
+        "biomarker_id": "AA0266",
         "biomarker_component": [
             {
                 "biomarker": "increased THBD level",
@@ -48360,7 +48360,7 @@
         ]
     },
     {
-        "biomarker_id": "238",
+        "biomarker_id": "AA0267",
         "biomarker_component": [
             {
                 "biomarker": "increased EDN1 level",
@@ -48488,7 +48488,7 @@
         ]
     },
     {
-        "biomarker_id": "187",
+        "biomarker_id": "AA0268",
         "biomarker_component": [
             {
                 "biomarker": "increased CFDNA level",
@@ -48603,7 +48603,7 @@
         ]
     },
     {
-        "biomarker_id": "186",
+        "biomarker_id": "AA0269",
         "biomarker_component": [
             {
                 "biomarker": "increased CFDNA level",
@@ -48736,7 +48736,7 @@
         ]
     },
     {
-        "biomarker_id": "416",
+        "biomarker_id": "AA0270",
         "biomarker_component": [
             {
                 "biomarker": "increased OXLDL level",
@@ -48832,7 +48832,7 @@
         ]
     },
     {
-        "biomarker_id": "409",
+        "biomarker_id": "AA0271",
         "biomarker_component": [
             {
                 "biomarker": "increased NPPB level",
@@ -48944,7 +48944,7 @@
         ]
     },
     {
-        "biomarker_id": "408",
+        "biomarker_id": "AA0272",
         "biomarker_component": [
             {
                 "biomarker": "increased NPPB level",
@@ -49093,7 +49093,7 @@
         ]
     },
     {
-        "biomarker_id": "439",
+        "biomarker_id": "AA0273",
         "biomarker_component": [
             {
                 "biomarker": "increased RDW",
@@ -49226,7 +49226,7 @@
         ]
     },
     {
-        "biomarker_id": "444",
+        "biomarker_id": "AA0274",
         "biomarker_component": [
             {
                 "biomarker": "increased S100A8/S100A9 level",
@@ -49410,7 +49410,7 @@
         ]
     },
     {
-        "biomarker_id": "446",
+        "biomarker_id": "AA0275",
         "biomarker_component": [
             {
                 "biomarker": "increased S100A8/S100A9 level",
@@ -49519,7 +49519,7 @@
         ]
     },
     {
-        "biomarker_id": "445",
+        "biomarker_id": "AA0276",
         "biomarker_component": [
             {
                 "biomarker": "increased S100A8/S100A9 level",
@@ -49622,7 +49622,7 @@
         ]
     },
     {
-        "biomarker_id": "357",
+        "biomarker_id": "AA0277",
         "biomarker_component": [
             {
                 "biomarker": "increased MMP8 level",
@@ -49768,7 +49768,7 @@
         ]
     },
     {
-        "biomarker_id": "358",
+        "biomarker_id": "AA0278",
         "biomarker_component": [
             {
                 "biomarker": "increased MMP8 level",
@@ -49877,7 +49877,7 @@
         ]
     },
     {
-        "biomarker_id": "481",
+        "biomarker_id": "AA0279",
         "biomarker_component": [
             {
                 "biomarker": "increased TGFBI level",
@@ -50023,7 +50023,7 @@
         ]
     },
     {
-        "biomarker_id": "494",
+        "biomarker_id": "AA0280",
         "biomarker_component": [
             {
                 "biomarker": "increased TNNT2 level",
@@ -50166,7 +50166,7 @@
         ]
     },
     {
-        "biomarker_id": "338",
+        "biomarker_id": "AA0281",
         "biomarker_component": [
             {
                 "biomarker": "increased LGALS3 level",
@@ -50336,7 +50336,7 @@
         ]
     },
     {
-        "biomarker_id": "339",
+        "biomarker_id": "AA0282",
         "biomarker_component": [
             {
                 "biomarker": "increased LGALS3 level",
@@ -50469,7 +50469,7 @@
         ]
     },
     {
-        "biomarker_id": "340",
+        "biomarker_id": "AA0283",
         "biomarker_component": [
             {
                 "biomarker": "increased LGALS3 level",
@@ -50609,7 +50609,7 @@
         ]
     },
     {
-        "biomarker_id": "447",
+        "biomarker_id": "AA0284",
         "biomarker_component": [
             {
                 "biomarker": "increased S100A9 level",
@@ -50764,7 +50764,7 @@
         ]
     },
     {
-        "biomarker_id": "448",
+        "biomarker_id": "AA0285",
         "biomarker_component": [
             {
                 "biomarker": "increased S100A9 level",
@@ -50901,7 +50901,7 @@
         ]
     },
     {
-        "biomarker_id": "1",
+        "biomarker_id": "AA0286",
         "biomarker_component": [
             {
                 "biomarker": "Increased S100A9 level",
@@ -51026,7 +51026,7 @@
         ]
     },
     {
-        "biomarker_id": "389",
+        "biomarker_id": "AA0287",
         "biomarker_component": [
             {
                 "biomarker": "increased NEFL level",
@@ -51169,7 +51169,7 @@
         ]
     },
     {
-        "biomarker_id": "390",
+        "biomarker_id": "AA0288",
         "biomarker_component": [
             {
                 "biomarker": "increased NEFL level",
@@ -51366,7 +51366,7 @@
         ]
     },
     {
-        "biomarker_id": "496",
+        "biomarker_id": "AA0289",
         "biomarker_component": [
             {
                 "biomarker": "increased TXB2 level",
@@ -51499,7 +51499,7 @@
         ]
     },
     {
-        "biomarker_id": "497",
+        "biomarker_id": "AA0290",
         "biomarker_component": [
             {
                 "biomarker": "increased TXB2 level",
@@ -51608,7 +51608,7 @@
         ]
     },
     {
-        "biomarker_id": "361",
+        "biomarker_id": "AA0291",
         "biomarker_component": [
             {
                 "biomarker": "increased MPV level",
@@ -51741,7 +51741,7 @@
         ]
     },
     {
-        "biomarker_id": "75",
+        "biomarker_id": "AA0292",
         "biomarker_component": [
             {
                 "biomarker": "decreased MPV",
@@ -51837,7 +51837,7 @@
         ]
     },
     {
-        "biomarker_id": "157",
+        "biomarker_id": "AA0293",
         "biomarker_component": [
             {
                 "biomarker": "increased C5 level",
@@ -51974,7 +51974,7 @@
         ]
     },
     {
-        "biomarker_id": "158",
+        "biomarker_id": "AA0294",
         "biomarker_component": [
             {
                 "biomarker": "increased C5 level",
@@ -52099,7 +52099,7 @@
         ]
     },
     {
-        "biomarker_id": "155",
+        "biomarker_id": "AA0295",
         "biomarker_component": [
             {
                 "biomarker": "increased C3 level",
@@ -52236,7 +52236,7 @@
         ]
     },
     {
-        "biomarker_id": "156",
+        "biomarker_id": "AA0296",
         "biomarker_component": [
             {
                 "biomarker": "increased C3 level",
@@ -52421,7 +52421,7 @@
         ]
     },
     {
-        "biomarker_id": "218",
+        "biomarker_id": "AA0297",
         "biomarker_component": [
             {
                 "biomarker": "increased CX3CL1 level",
@@ -52567,7 +52567,7 @@
         ]
     },
     {
-        "biomarker_id": "219",
+        "biomarker_id": "AA0298",
         "biomarker_component": [
             {
                 "biomarker": "increased CX3CL1 level",
@@ -52731,7 +52731,7 @@
         ]
     },
     {
-        "biomarker_id": "502",
+        "biomarker_id": "AA0299",
         "biomarker_component": [
             {
                 "biomarker": "increased VCAM-1 level",
@@ -52874,7 +52874,7 @@
         ]
     },
     {
-        "biomarker_id": "503",
+        "biomarker_id": "AA0300",
         "biomarker_component": [
             {
                 "biomarker": "increased VCAM-1 level",
@@ -52980,7 +52980,7 @@
         ]
     },
     {
-        "biomarker_id": "279",
+        "biomarker_id": "AA0301",
         "biomarker_component": [
             {
                 "biomarker": "increased ICAM-1 level",
@@ -53120,7 +53120,7 @@
         ]
     },
     {
-        "biomarker_id": "54",
+        "biomarker_id": "AA0302",
         "biomarker_component": [
             {
                 "biomarker": "decreased ICAM-1 level",
@@ -53223,7 +53223,7 @@
         ]
     },
     {
-        "biomarker_id": "136",
+        "biomarker_id": "AA0303",
         "biomarker_component": [
             {
                 "biomarker": "increased AOC3 level",
@@ -53375,7 +53375,7 @@
         ]
     },
     {
-        "biomarker_id": "137",
+        "biomarker_id": "AA0304",
         "biomarker_component": [
             {
                 "biomarker": "increased AOC3 level",
@@ -53527,7 +53527,7 @@
         ]
     },
     {
-        "biomarker_id": "100",
+        "biomarker_id": "AA0305",
         "biomarker_component": [
             {
                 "biomarker": "decreased SELENOP level",
@@ -53664,7 +53664,7 @@
         ]
     },
     {
-        "biomarker_id": "290",
+        "biomarker_id": "AA0306",
         "biomarker_component": [
             {
                 "biomarker": "increased IL17A level",
@@ -53810,7 +53810,7 @@
         ]
     },
     {
-        "biomarker_id": "291",
+        "biomarker_id": "AA0307",
         "biomarker_component": [
             {
                 "biomarker": "increased IL18 level",
@@ -53962,7 +53962,7 @@
         ]
     },
     {
-        "biomarker_id": "289",
+        "biomarker_id": "AA0308",
         "biomarker_component": [
             {
                 "biomarker": "increased IL15 level",
@@ -54099,7 +54099,7 @@
         ]
     },
     {
-        "biomarker_id": "534",
+        "biomarker_id": "AA0309",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
@@ -54195,7 +54195,7 @@
         ]
     },
     {
-        "biomarker_id": "276",
+        "biomarker_id": "AA0310",
         "biomarker_component": [
             {
                 "biomarker": "increased HP level",
@@ -54295,7 +54295,7 @@
         ]
     },
     {
-        "biomarker_id": "130",
+        "biomarker_id": "AA0311",
         "biomarker_component": [
             {
                 "biomarker": "increased ALCAM level",
@@ -54414,7 +54414,7 @@
         ]
     },
     {
-        "biomarker_id": "25",
+        "biomarker_id": "AA0312",
         "biomarker_component": [
             {
                 "biomarker": "decreased BRMS1 level",
@@ -54529,7 +54529,7 @@
         ]
     },
     {
-        "biomarker_id": "541",
+        "biomarker_id": "AA0313",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
@@ -54650,7 +54650,7 @@
         ]
     },
     {
-        "biomarker_id": "44",
+        "biomarker_id": "AA0314",
         "biomarker_component": [
             {
                 "biomarker": "decreased EDNRB level",
@@ -54793,7 +54793,7 @@
         ]
     },
     {
-        "biomarker_id": "538",
+        "biomarker_id": "AA0315",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
@@ -54914,7 +54914,7 @@
         ]
     },
     {
-        "biomarker_id": "51",
+        "biomarker_id": "AA0316",
         "biomarker_component": [
             {
                 "biomarker": "decreased GATA-4 level",
@@ -55051,7 +55051,7 @@
         ]
     },
     {
-        "biomarker_id": "254",
+        "biomarker_id": "AA0317",
         "biomarker_component": [
             {
                 "biomarker": "increased GATA-4 level",
@@ -55236,7 +55236,7 @@
         ]
     },
     {
-        "biomarker_id": "542",
+        "biomarker_id": "AA0318",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
@@ -55408,7 +55408,7 @@
         ]
     },
     {
-        "biomarker_id": "274",
+        "biomarker_id": "AA0319",
         "biomarker_component": [
             {
                 "biomarker": "increased HOXA9 meth-ctDNA level",
@@ -55541,7 +55541,7 @@
         ]
     },
     {
-        "biomarker_id": "539",
+        "biomarker_id": "AA0320",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
@@ -55662,7 +55662,7 @@
         ]
     },
     {
-        "biomarker_id": "544",
+        "biomarker_id": "AA0321",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
@@ -55783,7 +55783,7 @@
         ]
     },
     {
-        "biomarker_id": "406",
+        "biomarker_id": "AA0322",
         "biomarker_component": [
             {
                 "biomarker": "increased NID2 level",
@@ -55959,7 +55959,7 @@
         ]
     },
     {
-        "biomarker_id": "545",
+        "biomarker_id": "AA0323",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
@@ -56080,7 +56080,7 @@
         ]
     },
     {
-        "biomarker_id": "70",
+        "biomarker_id": "AA0324",
         "biomarker_component": [
             {
                 "biomarker": "decreased MIR-498-5P level",
@@ -56261,7 +56261,7 @@
         ]
     },
     {
-        "biomarker_id": "86",
+        "biomarker_id": "AA0325",
         "biomarker_component": [
             {
                 "biomarker": "decreased OGDHL level",
@@ -56442,7 +56442,7 @@
         ]
     },
     {
-        "biomarker_id": "277",
+        "biomarker_id": "AA0326",
         "biomarker_component": [
             {
                 "biomarker": "increased HSP90AA1 level",
@@ -56645,7 +56645,7 @@
         ]
     },
     {
-        "biomarker_id": "102",
+        "biomarker_id": "AA0327",
         "biomarker_component": [
             {
                 "biomarker": "decreased SLC25A11 level",
@@ -56826,7 +56826,7 @@
         ]
     },
     {
-        "biomarker_id": "230",
+        "biomarker_id": "AA0328",
         "biomarker_component": [
             {
                 "biomarker": "increased DCK level",
@@ -57007,7 +57007,7 @@
         ]
     },
     {
-        "biomarker_id": "265",
+        "biomarker_id": "AA0329",
         "biomarker_component": [
             {
                 "biomarker": "increased H2AX level",
@@ -57147,7 +57147,7 @@
         ]
     },
     {
-        "biomarker_id": "216",
+        "biomarker_id": "AA0330",
         "biomarker_component": [
             {
                 "biomarker": "increased CTDNA level",
@@ -57243,7 +57243,7 @@
         ]
     },
     {
-        "biomarker_id": "531",
+        "biomarker_id": "AA0331",
         "biomarker_component": [
             {
                 "biomarker": "increased of TRAF2 level",
@@ -57398,7 +57398,7 @@
         ]
     },
     {
-        "biomarker_id": "68",
+        "biomarker_id": "AA0332",
         "biomarker_component": [
             {
                 "biomarker": "decreased MIR-214 level",
@@ -57507,7 +57507,7 @@
         ]
     },
     {
-        "biomarker_id": "82",
+        "biomarker_id": "AA0333",
         "biomarker_component": [
             {
                 "biomarker": "decreased NDRG2 level",
@@ -57623,7 +57623,7 @@
         ]
     },
     {
-        "biomarker_id": "250",
+        "biomarker_id": "AA0334",
         "biomarker_component": [
             {
                 "biomarker": "increased FCN3 level",
@@ -57802,7 +57802,7 @@
         ]
     },
     {
-        "biomarker_id": "188",
+        "biomarker_id": "AA0335",
         "biomarker_component": [
             {
                 "biomarker": "increased CHI3L1 level",
@@ -57990,7 +57990,7 @@
         ]
     },
     {
-        "biomarker_id": "189",
+        "biomarker_id": "AA0336",
         "biomarker_component": [
             {
                 "biomarker": "increased CHI3L1 level",
@@ -58142,7 +58142,7 @@
         ]
     },
     {
-        "biomarker_id": "89",
+        "biomarker_id": "AA0337",
         "biomarker_component": [
             {
                 "biomarker": "decreased P4HA1 level",
@@ -58257,7 +58257,7 @@
         ]
     },
     {
-        "biomarker_id": "255",
+        "biomarker_id": "AA0338",
         "biomarker_component": [
             {
                 "biomarker": "increased GDF15 level",
@@ -58439,7 +58439,7 @@
         ]
     },
     {
-        "biomarker_id": "151",
+        "biomarker_id": "AA0339",
         "biomarker_component": [
             {
                 "biomarker": "increased BNIP3L level",
@@ -58567,7 +58567,7 @@
         ]
     },
     {
-        "biomarker_id": "261",
+        "biomarker_id": "AA0340",
         "biomarker_component": [
             {
                 "biomarker": "increased GPC6 level",
@@ -58682,7 +58682,7 @@
         ]
     },
     {
-        "biomarker_id": "65",
+        "biomarker_id": "AA0341",
         "biomarker_component": [
             {
                 "biomarker": "decreased MIR-125A-5P level",
@@ -58803,7 +58803,7 @@
         ]
     },
     {
-        "biomarker_id": "257",
+        "biomarker_id": "AA0342",
         "biomarker_component": [
             {
                 "biomarker": "increased GLT8D1 level",
@@ -58918,7 +58918,7 @@
         ]
     },
     {
-        "biomarker_id": "64",
+        "biomarker_id": "AA0343",
         "biomarker_component": [
             {
                 "biomarker": "decreased MIR-1231 level",
@@ -59063,7 +59063,7 @@
         ]
     },
     {
-        "biomarker_id": "522",
+        "biomarker_id": "AA0344",
         "biomarker_component": [
             {
                 "biomarker": "increased YAP1 level",
@@ -59224,7 +59224,7 @@
         ]
     },
     {
-        "biomarker_id": "143",
+        "biomarker_id": "AA0345",
         "biomarker_component": [
             {
                 "biomarker": "increased ASPM level",
@@ -59333,7 +59333,7 @@
         ]
     },
     {
-        "biomarker_id": "107",
+        "biomarker_id": "AA0346",
         "biomarker_component": [
             {
                 "biomarker": "decreased TEF level",
@@ -59442,7 +59442,7 @@
         ]
     },
     {
-        "biomarker_id": "476",
+        "biomarker_id": "AA0347",
         "biomarker_component": [
             {
                 "biomarker": "increased SVV level",
@@ -59551,7 +59551,7 @@
         ]
     },
     {
-        "biomarker_id": "121",
+        "biomarker_id": "AA0348",
         "biomarker_component": [
             {
                 "biomarker": "increased A1AT level",
@@ -59670,7 +59670,7 @@
         ]
     },
     {
-        "biomarker_id": "415",
+        "biomarker_id": "AA0349",
         "biomarker_component": [
             {
                 "biomarker": "increased OPN level",
@@ -59840,7 +59840,7 @@
         ]
     },
     {
-        "biomarker_id": "414",
+        "biomarker_id": "AA0350",
         "biomarker_component": [
             {
                 "biomarker": "increased OPN level",
@@ -59992,7 +59992,7 @@
         ]
     },
     {
-        "biomarker_id": "492",
+        "biomarker_id": "AA0351",
         "biomarker_component": [
             {
                 "biomarker": "increased TNFSF9 level",
@@ -60143,7 +60143,7 @@
         ]
     },
     {
-        "biomarker_id": "388",
+        "biomarker_id": "AA0352",
         "biomarker_component": [
             {
                 "biomarker": "increased NCEH1 level",
@@ -60294,7 +60294,7 @@
         ]
     },
     {
-        "biomarker_id": "433",
+        "biomarker_id": "AA0353",
         "biomarker_component": [
             {
                 "biomarker": "increased PSMD11 level",
@@ -60455,7 +60455,7 @@
         ]
     },
     {
-        "biomarker_id": "98",
+        "biomarker_id": "AA0354",
         "biomarker_component": [
             {
                 "biomarker": "decreased PTPRM level",
@@ -60613,7 +60613,7 @@
         ]
     },
     {
-        "biomarker_id": "97",
+        "biomarker_id": "AA0355",
         "biomarker_component": [
             {
                 "biomarker": "decreased PTPRB level",
@@ -60777,7 +60777,7 @@
         ]
     },
     {
-        "biomarker_id": "498",
+        "biomarker_id": "AA0356",
         "biomarker_component": [
             {
                 "biomarker": "increased TYMS level",
@@ -60928,7 +60928,7 @@
         ]
     },
     {
-        "biomarker_id": "473",
+        "biomarker_id": "AA0357",
         "biomarker_component": [
             {
                 "biomarker": "increased ST6GALNAC6 level",
@@ -61079,7 +61079,7 @@
         ]
     },
     {
-        "biomarker_id": "141",
+        "biomarker_id": "AA0358",
         "biomarker_component": [
             {
                 "biomarker": "increased ARHGDIB level",
@@ -61222,7 +61222,7 @@
         ]
     },
     {
-        "biomarker_id": "103",
+        "biomarker_id": "AA0359",
         "biomarker_component": [
             {
                 "biomarker": "decreased SMPD1 level",
@@ -61362,7 +61362,7 @@
         ]
     },
     {
-        "biomarker_id": "405",
+        "biomarker_id": "AA0360",
         "biomarker_component": [
             {
                 "biomarker": "increased NFE2L2 level",
@@ -61458,7 +61458,7 @@
         ]
     },
     {
-        "biomarker_id": "321",
+        "biomarker_id": "AA0361",
         "biomarker_component": [
             {
                 "biomarker": "increased KRT15 level",
@@ -61554,7 +61554,7 @@
         ]
     },
     {
-        "biomarker_id": "348",
+        "biomarker_id": "AA0362",
         "biomarker_component": [
             {
                 "biomarker": "increased MIR-135A-5P level",
@@ -61650,7 +61650,7 @@
         ]
     },
     {
-        "biomarker_id": "22",
+        "biomarker_id": "AA0363",
         "biomarker_component": [
             {
                 "biomarker": "decreased B3GALT5-AS1 level",
@@ -61753,7 +61753,7 @@
         ]
     },
     {
-        "biomarker_id": "347",
+        "biomarker_id": "AA0364",
         "biomarker_component": [
             {
                 "biomarker": "increased MIR-10B level",
@@ -61922,7 +61922,7 @@
         ]
     },
     {
-        "biomarker_id": "349",
+        "biomarker_id": "AA0365",
         "biomarker_component": [
             {
                 "biomarker": "increased MIR-144 level",
@@ -62091,7 +62091,7 @@
         ]
     },
     {
-        "biomarker_id": "354",
+        "biomarker_id": "AA0366",
         "biomarker_component": [
             {
                 "biomarker": "increased MIR-451 level",
@@ -62260,7 +62260,7 @@
         ]
     },
     {
-        "biomarker_id": "351",
+        "biomarker_id": "AA0367",
         "biomarker_component": [
             {
                 "biomarker": "increased MIR-21 level",
@@ -62429,7 +62429,7 @@
         ]
     },
     {
-        "biomarker_id": "350",
+        "biomarker_id": "AA0368",
         "biomarker_component": [
             {
                 "biomarker": "increased MIR-21 level",
@@ -62562,7 +62562,7 @@
         ]
     },
     {
-        "biomarker_id": "352",
+        "biomarker_id": "AA0369",
         "biomarker_component": [
             {
                 "biomarker": "increased MIR-21 level",
@@ -62695,7 +62695,7 @@
         ]
     },
     {
-        "biomarker_id": "386",
+        "biomarker_id": "AA0370",
         "biomarker_component": [
             {
                 "biomarker": "increased NAS level",
@@ -62828,7 +62828,7 @@
         ]
     },
     {
-        "biomarker_id": "227",
+        "biomarker_id": "AA0371",
         "biomarker_component": [
             {
                 "biomarker": "increased DAP level",
@@ -62961,7 +62961,7 @@
         ]
     },
     {
-        "biomarker_id": "436",
+        "biomarker_id": "AA0372",
         "biomarker_component": [
             {
                 "biomarker": "increased PUT level",
@@ -63094,7 +63094,7 @@
         ]
     },
     {
-        "biomarker_id": "470",
+        "biomarker_id": "AA0373",
         "biomarker_component": [
             {
                 "biomarker": "increased SPE level",
@@ -63227,7 +63227,7 @@
         ]
     },
     {
-        "biomarker_id": "258",
+        "biomarker_id": "AA0374",
         "biomarker_component": [
             {
                 "biomarker": "increased GOLM1 level",
@@ -63379,7 +63379,7 @@
         ]
     },
     {
-        "biomarker_id": "126",
+        "biomarker_id": "AA0375",
         "biomarker_component": [
             {
                 "biomarker": "increased AFP level",
@@ -63771,7 +63771,7 @@
         ]
     },
     {
-        "biomarker_id": "153",
+        "biomarker_id": "AA0376",
         "biomarker_component": [
             {
                 "biomarker": "increased C1GALT1 level",
@@ -63914,7 +63914,7 @@
         ]
     },
     {
-        "biomarker_id": "344",
+        "biomarker_id": "AA0377",
         "biomarker_component": [
             {
                 "biomarker": "increased LRAG1 level",
@@ -64087,7 +64087,7 @@
         ]
     },
     {
-        "biomarker_id": "316",
+        "biomarker_id": "AA0378",
         "biomarker_component": [
             {
                 "biomarker": "increased KIF20A level",
@@ -64236,7 +64236,7 @@
         ]
     },
     {
-        "biomarker_id": "319",
+        "biomarker_id": "AA0379",
         "biomarker_component": [
             {
                 "biomarker": "increased KLK4 level",
@@ -64397,7 +64397,7 @@
         ]
     },
     {
-        "biomarker_id": "179",
+        "biomarker_id": "AA0380",
         "biomarker_component": [
             {
                 "biomarker": "increased CDH1 level",
@@ -64555,7 +64555,7 @@
         ]
     },
     {
-        "biomarker_id": "180",
+        "biomarker_id": "AA0381",
         "biomarker_component": [
             {
                 "biomarker": "increased CDH1 level",
@@ -64664,7 +64664,7 @@
         ]
     },
     {
-        "biomarker_id": "3",
+        "biomarker_id": "AA0382",
         "biomarker_component": [
             {
                 "biomarker": "decreased 5HMC level",
@@ -64809,7 +64809,7 @@
         ]
     },
     {
-        "biomarker_id": "144",
+        "biomarker_id": "AA0383",
         "biomarker_component": [
             {
                 "biomarker": "increased ATOX1 level",
@@ -64942,7 +64942,7 @@
         ]
     },
     {
-        "biomarker_id": "66",
+        "biomarker_id": "AA0384",
         "biomarker_component": [
             {
                 "biomarker": "decreased MIR-193B level",
@@ -65075,7 +65075,7 @@
         ]
     },
     {
-        "biomarker_id": "127",
+        "biomarker_id": "AA0385",
         "biomarker_component": [
             {
                 "biomarker": "increased AFP-L3 level",
@@ -65460,7 +65460,7 @@
         ]
     },
     {
-        "biomarker_id": "231",
+        "biomarker_id": "AA0386",
         "biomarker_component": [
             {
                 "biomarker": "increased DCP1A level",
@@ -65903,7 +65903,7 @@
         ]
     },
     {
-        "biomarker_id": "529",
+        "biomarker_id": "AA0387",
         "biomarker_component": [
             {
                 "biomarker": "increased mutation",
@@ -66036,7 +66036,7 @@
         ]
     },
     {
-        "biomarker_id": "504",
+        "biomarker_id": "AA0388",
         "biomarker_component": [
             {
                 "biomarker": "increased VEGF level",
@@ -66220,7 +66220,7 @@
         ]
     },
     {
-        "biomarker_id": "507",
+        "biomarker_id": "AA0389",
         "biomarker_component": [
             {
                 "biomarker": "increased VSIG4 level",
@@ -66357,7 +66357,7 @@
         ]
     },
     {
-        "biomarker_id": "71",
+        "biomarker_id": "AA0390",
         "biomarker_component": [
             {
                 "biomarker": "decreased MIR-613 level",
@@ -66490,7 +66490,7 @@
         ]
     },
     {
-        "biomarker_id": "353",
+        "biomarker_id": "AA0391",
         "biomarker_component": [
             {
                 "biomarker": "increased MIR-375-3P level",
@@ -66659,7 +66659,7 @@
         ]
     },
     {
-        "biomarker_id": "145",
+        "biomarker_id": "AA0392",
         "biomarker_component": [
             {
                 "biomarker": "increased AZGP1 level",
@@ -66804,7 +66804,7 @@
         ]
     },
     {
-        "biomarker_id": "21",
+        "biomarker_id": "AA0393",
         "biomarker_component": [
             {
                 "biomarker": "decreased AZGP1 level",
@@ -66949,7 +66949,7 @@
         ]
     },
     {
-        "biomarker_id": "499",
+        "biomarker_id": "AA0394",
         "biomarker_component": [
             {
                 "biomarker": "increased Th17 level",
@@ -67089,7 +67089,7 @@
         ]
     },
     {
-        "biomarker_id": "342",
+        "biomarker_id": "AA0395",
         "biomarker_component": [
             {
                 "biomarker": "increased LMNB1 level",
@@ -67270,7 +67270,7 @@
         ]
     },
     {
-        "biomarker_id": "356",
+        "biomarker_id": "AA0396",
         "biomarker_component": [
             {
                 "biomarker": "increased MKI67 level",
@@ -67413,7 +67413,7 @@
         ]
     },
     {
-        "biomarker_id": "140",
+        "biomarker_id": "AA0397",
         "biomarker_component": [
             {
                 "biomarker": "increased AQP1 level",
@@ -67541,7 +67541,7 @@
         ]
     },
     {
-        "biomarker_id": "125",
+        "biomarker_id": "AA0398",
         "biomarker_component": [
             {
                 "biomarker": "increased ADFP level",
@@ -67666,7 +67666,7 @@
         ]
     },
     {
-        "biomarker_id": "325",
+        "biomarker_id": "AA0399",
         "biomarker_component": [
             {
                 "biomarker": "increased LACCER level",
@@ -67811,7 +67811,7 @@
         ]
     },
     {
-        "biomarker_id": "269",
+        "biomarker_id": "AA0400",
         "biomarker_component": [
             {
                 "biomarker": "increased HEXCER level",
@@ -67956,7 +67956,7 @@
         ]
     },
     {
-        "biomarker_id": "95",
+        "biomarker_id": "AA0401",
         "biomarker_component": [
             {
                 "biomarker": "decreased PS level",
@@ -68101,7 +68101,7 @@
         ]
     },
     {
-        "biomarker_id": "485",
+        "biomarker_id": "AA0402",
         "biomarker_component": [
             {
                 "biomarker": "increased TM256 level",
@@ -68246,7 +68246,7 @@
         ]
     },
     {
-        "biomarker_id": "253",
+        "biomarker_id": "AA0403",
         "biomarker_component": [
             {
                 "biomarker": "increased FKBP4 level",
@@ -68437,7 +68437,7 @@
         ]
     },
     {
-        "biomarker_id": "49",
+        "biomarker_id": "AA0404",
         "biomarker_component": [
             {
                 "biomarker": "decreased FLNA level",
@@ -68604,7 +68604,7 @@
         ]
     },
     {
-        "biomarker_id": "373",
+        "biomarker_id": "AA0405",
         "biomarker_component": [
             {
                 "biomarker": "increased MYO5A level",
@@ -68713,7 +68713,7 @@
         ]
     },
     {
-        "biomarker_id": "510",
+        "biomarker_id": "AA0406",
         "biomarker_component": [
             {
                 "biomarker": "increased WASF1 level",
@@ -68822,7 +68822,7 @@
         ]
     },
     {
-        "biomarker_id": "422",
+        "biomarker_id": "AA0407",
         "biomarker_component": [
             {
                 "biomarker": "increased PDHB level",
@@ -68922,7 +68922,7 @@
         ]
     },
     {
-        "biomarker_id": "443",
+        "biomarker_id": "AA0408",
         "biomarker_component": [
             {
                 "biomarker": "increased RSRC1 level",
@@ -69018,7 +69018,7 @@
         ]
     },
     {
-        "biomarker_id": "527",
+        "biomarker_id": "AA0409",
         "biomarker_component": [
             {
                 "biomarker": "increased methylation",
@@ -69163,7 +69163,7 @@
         ]
     },
     {
-        "biomarker_id": "222",
+        "biomarker_id": "AA0410",
         "biomarker_component": [
             {
                 "biomarker": "increased CXCR4 level",
@@ -69321,7 +69321,7 @@
         ]
     },
     {
-        "biomarker_id": "217",
+        "biomarker_id": "AA0411",
         "biomarker_component": [
             {
                 "biomarker": "increased CTSB level",
@@ -69446,7 +69446,7 @@
         ]
     },
     {
-        "biomarker_id": "154",
+        "biomarker_id": "AA0412",
         "biomarker_component": [
             {
                 "biomarker": "increased C1QTNF3 level",
@@ -69591,7 +69591,7 @@
         ]
     },
     {
-        "biomarker_id": "45",
+        "biomarker_id": "AA0413",
         "biomarker_component": [
             {
                 "biomarker": "decreased EIF2B5 level",
@@ -69724,7 +69724,7 @@
         ]
     },
     {
-        "biomarker_id": "72",
+        "biomarker_id": "AA0414",
         "biomarker_component": [
             {
                 "biomarker": "decreased MLH1 level",
@@ -69861,7 +69861,7 @@
         ]
     },
     {
-        "biomarker_id": "112",
+        "biomarker_id": "AA0415",
         "biomarker_component": [
             {
                 "biomarker": "decreased ZNF660 level",
@@ -70006,7 +70006,7 @@
         ]
     },
     {
-        "biomarker_id": "105",
+        "biomarker_id": "AA0416",
         "biomarker_component": [
             {
                 "biomarker": "decreased ST6GALNAC3 level",
@@ -70151,7 +70151,7 @@
         ]
     },
     {
-        "biomarker_id": "521",
+        "biomarker_id": "AA0417",
         "biomarker_component": [
             {
                 "biomarker": "increased XPO6 level",
@@ -70296,7 +70296,7 @@
         ]
     },
     {
-        "biomarker_id": "111",
+        "biomarker_id": "AA0418",
         "biomarker_component": [
             {
                 "biomarker": "decreased ZFP36 level",
@@ -70441,7 +70441,7 @@
         ]
     },
     {
-        "biomarker_id": "248",
+        "biomarker_id": "AA0419",
         "biomarker_component": [
             {
                 "biomarker": "increased EZH2 level",
@@ -70596,7 +70596,7 @@
         ]
     },
     {
-        "biomarker_id": "249",
+        "biomarker_id": "AA0420",
         "biomarker_component": [
             {
                 "biomarker": "increased FABP4 level",
@@ -70748,7 +70748,7 @@
         ]
     },
     {
-        "biomarker_id": "242",
+        "biomarker_id": "AA0421",
         "biomarker_component": [
             {
                 "biomarker": "increased ENG level",
@@ -70893,7 +70893,7 @@
         ]
     },
     {
-        "biomarker_id": "134",
+        "biomarker_id": "AA0422",
         "biomarker_component": [
             {
                 "biomarker": "increased AMACR level",
@@ -71042,7 +71042,7 @@
         ]
     },
     {
-        "biomarker_id": "314",
+        "biomarker_id": "AA0423",
         "biomarker_component": [
             {
                 "biomarker": "increased IMPDH2 level",
@@ -71194,7 +71194,7 @@
         ]
     },
     {
-        "biomarker_id": "346",
+        "biomarker_id": "AA0424",
         "biomarker_component": [
             {
                 "biomarker": "increased MIR-106A-5P level",
@@ -71327,7 +71327,7 @@
         ]
     },
     {
-        "biomarker_id": "69",
+        "biomarker_id": "AA0425",
         "biomarker_component": [
             {
                 "biomarker": "decreased MIR-495 level",
@@ -71460,7 +71460,7 @@
         ]
     },
     {
-        "biomarker_id": "355",
+        "biomarker_id": "AA0426",
         "biomarker_component": [
             {
                 "biomarker": "increased MIR-454-3P level",
@@ -71593,7 +71593,7 @@
         ]
     },
     {
-        "biomarker_id": "67",
+        "biomarker_id": "AA0427",
         "biomarker_component": [
             {
                 "biomarker": "decreased MIR-195-5P level",
@@ -71726,7 +71726,7 @@
         ]
     },
     {
-        "biomarker_id": "92",
+        "biomarker_id": "AA0428",
         "biomarker_component": [
             {
                 "biomarker": "decreased PLA2R1 level",
@@ -71859,7 +71859,7 @@
         ]
     },
     {
-        "biomarker_id": "315",
+        "biomarker_id": "AA0429",
         "biomarker_component": [
             {
                 "biomarker": "increased KCNN4 level",
@@ -71992,7 +71992,7 @@
         ]
     },
     {
-        "biomarker_id": "120",
+        "biomarker_id": "AA0430",
         "biomarker_component": [
             {
                 "biomarker": "increased 8-OHDG level",
@@ -72125,7 +72125,7 @@
         ]
     },
     {
-        "biomarker_id": "491",
+        "biomarker_id": "AA0431",
         "biomarker_component": [
             {
                 "biomarker": "increased TNFRSF11B level",
@@ -72265,7 +72265,7 @@
         ]
     },
     {
-        "biomarker_id": "435",
+        "biomarker_id": "AA0432",
         "biomarker_component": [
             {
                 "biomarker": "increased PTDNA level",
@@ -72398,7 +72398,7 @@
         ]
     },
     {
-        "biomarker_id": "468",
+        "biomarker_id": "AA0433",
         "biomarker_component": [
             {
                 "biomarker": "increased SPAG5 level",
@@ -72531,7 +72531,7 @@
         ]
     },
     {
-        "biomarker_id": "429",
+        "biomarker_id": "AA0434",
         "biomarker_component": [
             {
                 "biomarker": "increased PRDX-1 level",
@@ -72686,7 +72686,7 @@
         ]
     },
     {
-        "biomarker_id": "278",
+        "biomarker_id": "AA0435",
         "biomarker_component": [
             {
                 "biomarker": "increased HSPB1 level",
@@ -72841,7 +72841,7 @@
         ]
     },
     {
-        "biomarker_id": "440",
+        "biomarker_id": "AA0436",
         "biomarker_component": [
             {
                 "biomarker": "increased REG4 level",
@@ -72990,7 +72990,7 @@
         ]
     },
     {
-        "biomarker_id": "441",
+        "biomarker_id": "AA0437",
         "biomarker_component": [
             {
                 "biomarker": "increased REG4 level",
@@ -73115,7 +73115,7 @@
         ]
     },
     {
-        "biomarker_id": "272",
+        "biomarker_id": "AA0438",
         "biomarker_component": [
             {
                 "biomarker": "increased HOTAIR level",
@@ -73248,7 +73248,7 @@
         ]
     },
     {
-        "biomarker_id": "343",
+        "biomarker_id": "AA0439",
         "biomarker_component": [
             {
                 "biomarker": "increased LNCRNA H19 level",
@@ -73381,7 +73381,7 @@
         ]
     },
     {
-        "biomarker_id": "472",
+        "biomarker_id": "AA0440",
         "biomarker_component": [
             {
                 "biomarker": "increased SREBP1 level",
@@ -73527,7 +73527,7 @@
         ]
     },
     {
-        "biomarker_id": "19",
+        "biomarker_id": "AA0441",
         "biomarker_component": [
             {
                 "biomarker": "decreased ANXA3 level",
@@ -73694,7 +73694,7 @@
         ]
     },
     {
-        "biomarker_id": "454",
+        "biomarker_id": "AA0442",
         "biomarker_component": [
             {
                 "biomarker": "increased SAMD5 level",
@@ -73839,7 +73839,7 @@
         ]
     },
     {
-        "biomarker_id": "275",
+        "biomarker_id": "AA0443",
         "biomarker_component": [
             {
                 "biomarker": "increased HOXC6 level",
@@ -73994,7 +73994,7 @@
         ]
     },
     {
-        "biomarker_id": "428",
+        "biomarker_id": "AA0444",
         "biomarker_component": [
             {
                 "biomarker": "increased PNKD level",
@@ -74127,7 +74127,7 @@
         ]
     },
     {
-        "biomarker_id": "128",
+        "biomarker_id": "AA0445",
         "biomarker_component": [
             {
                 "biomarker": "increased AGR2 level",
@@ -74273,7 +74273,7 @@
         ]
     },
     {
-        "biomarker_id": "129",
+        "biomarker_id": "AA0446",
         "biomarker_component": [
             {
                 "biomarker": "increased AGR2 level",
@@ -74395,7 +74395,7 @@
         ]
     },
     {
-        "biomarker_id": "427",
+        "biomarker_id": "AA0447",
         "biomarker_component": [
             {
                 "biomarker": "increased PLG level",
@@ -74528,7 +74528,7 @@
         ]
     },
     {
-        "biomarker_id": "432",
+        "biomarker_id": "AA0448",
         "biomarker_component": [
             {
                 "biomarker": "increased PRSS8 level",
@@ -74661,7 +74661,7 @@
         ]
     },
     {
-        "biomarker_id": "271",
+        "biomarker_id": "AA0449",
         "biomarker_component": [
             {
                 "biomarker": "increased HMGA1 level",
@@ -74807,7 +74807,7 @@
         ]
     },
     {
-        "biomarker_id": "294",
+        "biomarker_id": "AA0450",
         "biomarker_component": [
             {
                 "biomarker": "increased IL1RN level",
@@ -74940,7 +74940,7 @@
         ]
     },
     {
-        "biomarker_id": "26",
+        "biomarker_id": "AA0451",
         "biomarker_component": [
             {
                 "biomarker": "decreased BTG1 level",
@@ -75077,7 +75077,7 @@
         ]
     },
     {
-        "biomarker_id": "163",
+        "biomarker_id": "AA0452",
         "biomarker_component": [
             {
                 "biomarker": "increased CAP2 level",
@@ -75214,7 +75214,7 @@
         ]
     },
     {
-        "biomarker_id": "442",
+        "biomarker_id": "AA0453",
         "biomarker_component": [
             {
                 "biomarker": "increased RNF126 level",
@@ -75351,7 +75351,7 @@
         ]
     },
     {
-        "biomarker_id": "318",
+        "biomarker_id": "AA0454",
         "biomarker_component": [
             {
                 "biomarker": "increased KLK10 level",
@@ -75491,7 +75491,7 @@
         ]
     },
     {
-        "biomarker_id": "475",
+        "biomarker_id": "AA0455",
         "biomarker_component": [
             {
                 "biomarker": "increased STAT3 level",
@@ -75628,7 +75628,7 @@
         ]
     },
     {
-        "biomarker_id": "474",
+        "biomarker_id": "AA0456",
         "biomarker_component": [
             {
                 "biomarker": "increased STAT3 level",
@@ -75741,7 +75741,7 @@
         ]
     },
     {
-        "biomarker_id": "471",
+        "biomarker_id": "AA0457",
         "biomarker_component": [
             {
                 "biomarker": "increased SPHK1 level",
@@ -75884,7 +75884,7 @@
         ]
     },
     {
-        "biomarker_id": "423",
+        "biomarker_id": "AA0458",
         "biomarker_component": [
             {
                 "biomarker": "increased PINX1 level",
@@ -76030,7 +76030,7 @@
         ]
     },
     {
-        "biomarker_id": "91",
+        "biomarker_id": "AA0459",
         "biomarker_component": [
             {
                 "biomarker": "decreased PINX1 level",
@@ -76209,7 +76209,7 @@
         ]
     },
     {
-        "biomarker_id": "2",
+        "biomarker_id": "AA0460",
         "biomarker_component": [
             {
                 "biomarker": "decreased 5-MC GDNA level",
@@ -76318,7 +76318,7 @@
         ]
     },
     {
-        "biomarker_id": "234",
+        "biomarker_id": "AA0461",
         "biomarker_component": [
             {
                 "biomarker": "increased DKK-1 level",
@@ -76476,7 +76476,7 @@
         ]
     },
     {
-        "biomarker_id": "235",
+        "biomarker_id": "AA0462",
         "biomarker_component": [
             {
                 "biomarker": "increased DPP-4 level",
@@ -76631,7 +76631,7 @@
         ]
     },
     {
-        "biomarker_id": "190",
+        "biomarker_id": "AA0463",
         "biomarker_component": [
             {
                 "biomarker": "increased CHL1 level",
@@ -76768,7 +76768,7 @@
         ]
     },
     {
-        "biomarker_id": "407",
+        "biomarker_id": "AA0464",
         "biomarker_component": [
             {
                 "biomarker": "increased NPM level",
@@ -76914,7 +76914,7 @@
         ]
     },
     {
-        "biomarker_id": "543",
+        "biomarker_id": "AA0465",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
@@ -77053,7 +77053,7 @@
         ]
     },
     {
-        "biomarker_id": "0",
+        "biomarker_id": "AA0466",
         "biomarker_component": [
             {
                 "biomarker": "Increased NDRG1 level",
@@ -77220,7 +77220,7 @@
         ]
     },
     {
-        "biomarker_id": "245",
+        "biomarker_id": "AA0467",
         "biomarker_component": [
             {
                 "biomarker": "increased ERBB2 level",
@@ -77348,7 +77348,7 @@
         ]
     },
     {
-        "biomarker_id": "438",
+        "biomarker_id": "AA0468",
         "biomarker_component": [
             {
                 "biomarker": "increased RCAS1 level",
@@ -77494,7 +77494,7 @@
         ]
     },
     {
-        "biomarker_id": "537",
+        "biomarker_id": "AA0469",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
@@ -77603,7 +77603,7 @@
         ]
     },
     {
-        "biomarker_id": "524",
+        "biomarker_id": "AA0470",
         "biomarker_component": [
             {
                 "biomarker": "increased copy number",
@@ -77712,7 +77712,7 @@
         ]
     },
     {
-        "biomarker_id": "540",
+        "biomarker_id": "AA0471",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
@@ -77821,7 +77821,7 @@
         ]
     },
     {
-        "biomarker_id": "88",
+        "biomarker_id": "AA0472",
         "biomarker_component": [
             {
                 "biomarker": "decreased P2RX7 level",
@@ -77973,7 +77973,7 @@
         ]
     },
     {
-        "biomarker_id": "320",
+        "biomarker_id": "AA0473",
         "biomarker_component": [
             {
                 "biomarker": "increased KLK6 level",
@@ -78131,7 +78131,7 @@
         ]
     },
     {
-        "biomarker_id": "532",
+        "biomarker_id": "AA0474",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
@@ -78264,7 +78264,7 @@
         ]
     },
     {
-        "biomarker_id": "241",
+        "biomarker_id": "AA0475",
         "biomarker_component": [
             {
                 "biomarker": "increased EMC1 level",
@@ -78397,7 +78397,7 @@
         ]
     },
     {
-        "biomarker_id": "536",
+        "biomarker_id": "AA0476",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
@@ -78530,7 +78530,7 @@
         ]
     },
     {
-        "biomarker_id": "256",
+        "biomarker_id": "AA0477",
         "biomarker_component": [
             {
                 "biomarker": "increased GGT level",
@@ -78682,7 +78682,7 @@
         ]
     },
     {
-        "biomarker_id": "96",
+        "biomarker_id": "AA0478",
         "biomarker_component": [
             {
                 "biomarker": "decreased PSMB9 level",
@@ -78840,7 +78840,7 @@
         ]
     },
     {
-        "biomarker_id": "124",
+        "biomarker_id": "AA0479",
         "biomarker_component": [
             {
                 "biomarker": "increased ACKR3 level",
@@ -79031,7 +79031,7 @@
         ]
     },
     {
-        "biomarker_id": "221",
+        "biomarker_id": "AA0480",
         "biomarker_component": [
             {
                 "biomarker": "increased CXCR12 level",
@@ -79225,7 +79225,7 @@
         ]
     },
     {
-        "biomarker_id": "52",
+        "biomarker_id": "AA0481",
         "biomarker_component": [
             {
                 "biomarker": "decreased GNK1 level",
@@ -79334,7 +79334,7 @@
         ]
     },
     {
-        "biomarker_id": "526",
+        "biomarker_id": "AA0482",
         "biomarker_component": [
             {
                 "biomarker": "increased methylation",
@@ -79443,7 +79443,7 @@
         ]
     },
     {
-        "biomarker_id": "201",
+        "biomarker_id": "AA0483",
         "biomarker_component": [
             {
                 "biomarker": "increased COX-2 level",
@@ -79604,7 +79604,7 @@
         ]
     },
     {
-        "biomarker_id": "387",
+        "biomarker_id": "AA0484",
         "biomarker_component": [
             {
                 "biomarker": "increased NAV2 level",
@@ -79762,7 +79762,7 @@
         ]
     },
     {
-        "biomarker_id": "170",
+        "biomarker_id": "AA0485",
         "biomarker_component": [
             {
                 "biomarker": "increased CCND2 level",
@@ -79901,7 +79901,7 @@
         ]
     },
     {
-        "biomarker_id": "477",
+        "biomarker_id": "AA0486",
         "biomarker_component": [
             {
                 "biomarker": "increased TAGLN level",
@@ -80053,7 +80053,7 @@
         ]
     },
     {
-        "biomarker_id": "313",
+        "biomarker_id": "AA0487",
         "biomarker_component": [
             {
                 "biomarker": "increased IMP3 level",
@@ -80199,7 +80199,7 @@
         ]
     },
     {
-        "biomarker_id": "171",
+        "biomarker_id": "AA0488",
         "biomarker_component": [
             {
                 "biomarker": "increased CD10 level",
@@ -80417,7 +80417,7 @@
         ]
     },
     {
-        "biomarker_id": "173",
+        "biomarker_id": "AA0489",
         "biomarker_component": [
             {
                 "biomarker": "increased CD274 level",
@@ -80596,7 +80596,7 @@
         ]
     },
     {
-        "biomarker_id": "172",
+        "biomarker_id": "AA0490",
         "biomarker_component": [
             {
                 "biomarker": "increased CD274 level",
@@ -80781,7 +80781,7 @@
         ]
     },
     {
-        "biomarker_id": "142",
+        "biomarker_id": "AA0491",
         "biomarker_component": [
             {
                 "biomarker": "increased ARPP-19 level",
@@ -80890,7 +80890,7 @@
         ]
     },
     {
-        "biomarker_id": "236",
+        "biomarker_id": "AA0492",
         "biomarker_component": [
             {
                 "biomarker": "increased DSC2 level",
@@ -80999,7 +80999,7 @@
         ]
     },
     {
-        "biomarker_id": "273",
+        "biomarker_id": "AA0493",
         "biomarker_component": [
             {
                 "biomarker": "increased HOXA10 level",
@@ -81118,7 +81118,7 @@
         ]
     },
     {
-        "biomarker_id": "87",
+        "biomarker_id": "AA0494",
         "biomarker_component": [
             {
                 "biomarker": "decreased OLFM4 level",
@@ -81227,7 +81227,7 @@
         ]
     },
     {
-        "biomarker_id": "181",
+        "biomarker_id": "AA0495",
         "biomarker_component": [
             {
                 "biomarker": "increased CDH17 level",
@@ -81346,7 +81346,7 @@
         ]
     },
     {
-        "biomarker_id": "437",
+        "biomarker_id": "AA0496",
         "biomarker_component": [
             {
                 "biomarker": "increased PVT1 level",
@@ -81455,7 +81455,7 @@
         ]
     },
     {
-        "biomarker_id": "94",
+        "biomarker_id": "AA0497",
         "biomarker_component": [
             {
                 "biomarker": "decreased PRMT1 level",
@@ -81628,7 +81628,7 @@
         ]
     },
     {
-        "biomarker_id": "411",
+        "biomarker_id": "AA0498",
         "biomarker_component": [
             {
                 "biomarker": "increased NUPR1 level",
@@ -81801,7 +81801,7 @@
         ]
     },
     {
-        "biomarker_id": "233",
+        "biomarker_id": "AA0499",
         "biomarker_component": [
             {
                 "biomarker": "increased DKC1 level",
@@ -81935,7 +81935,7 @@
         ]
     },
     {
-        "biomarker_id": "460",
+        "biomarker_id": "AA0500",
         "biomarker_component": [
             {
                 "biomarker": "increased SCARB1 level",
@@ -82120,7 +82120,7 @@
         ]
     },
     {
-        "biomarker_id": "99",
+        "biomarker_id": "AA0501",
         "biomarker_component": [
             {
                 "biomarker": "decreased QKI level",
@@ -82296,7 +82296,7 @@
         ]
     },
     {
-        "biomarker_id": "104",
+        "biomarker_id": "AA0502",
         "biomarker_component": [
             {
                 "biomarker": "decreased SORBS2 level",
@@ -82475,7 +82475,7 @@
         ]
     },
     {
-        "biomarker_id": "282",
+        "biomarker_id": "AA0503",
         "biomarker_component": [
             {
                 "biomarker": "increased IGF2BP3 level",
@@ -82660,7 +82660,7 @@
         ]
     },
     {
-        "biomarker_id": "138",
+        "biomarker_id": "AA0504",
         "biomarker_component": [
             {
                 "biomarker": "increased APOC1 level",
@@ -82779,7 +82779,7 @@
         ]
     },
     {
-        "biomarker_id": "20",
+        "biomarker_id": "AA0505",
         "biomarker_component": [
             {
                 "biomarker": "decreased ATP4B level",
@@ -82888,7 +82888,7 @@
         ]
     },
     {
-        "biomarker_id": "232",
+        "biomarker_id": "AA0506",
         "biomarker_component": [
             {
                 "biomarker": "increased DDX5 level",
@@ -83004,7 +83004,7 @@
         ]
     },
     {
-        "biomarker_id": "530",
+        "biomarker_id": "AA0507",
         "biomarker_component": [
             {
                 "biomarker": "increased mutation",
@@ -83113,7 +83113,7 @@
         ]
     },
     {
-        "biomarker_id": "262",
+        "biomarker_id": "AA0508",
         "biomarker_component": [
             {
                 "biomarker": "increased GPX1 level",
@@ -83238,7 +83238,7 @@
         ]
     },
     {
-        "biomarker_id": "469",
+        "biomarker_id": "AA0509",
         "biomarker_component": [
             {
                 "biomarker": "increased SPAG9 level",
@@ -83402,7 +83402,7 @@
         ]
     },
     {
-        "biomarker_id": "48",
+        "biomarker_id": "AA0510",
         "biomarker_component": [
             {
                 "biomarker": "decreased FGFR3 level",
@@ -83511,7 +83511,7 @@
         ]
     },
     {
-        "biomarker_id": "528",
+        "biomarker_id": "AA0511",
         "biomarker_component": [
             {
                 "biomarker": "increased methylation",
@@ -83620,7 +83620,7 @@
         ]
     },
     {
-        "biomarker_id": "525",
+        "biomarker_id": "AA0512",
         "biomarker_component": [
             {
                 "biomarker": "increased methylation",
@@ -83729,7 +83729,7 @@
         ]
     },
     {
-        "biomarker_id": "53",
+        "biomarker_id": "AA0513",
         "biomarker_component": [
             {
                 "biomarker": "decreased GXP3 level",
@@ -83838,7 +83838,7 @@
         ]
     },
     {
-        "biomarker_id": "467",
+        "biomarker_id": "AA0514",
         "biomarker_component": [
             {
                 "biomarker": "increased SNHG5 level",
@@ -84004,7 +84004,7 @@
         ]
     },
     {
-        "biomarker_id": "523",
+        "biomarker_id": "AA0515",
         "biomarker_component": [
             {
                 "biomarker": "increased antigen level",
@@ -84155,7 +84155,7 @@
         ]
     },
     {
-        "biomarker_id": "380",
+        "biomarker_id": "AA0516",
         "biomarker_component": [
             {
                 "biomarker": "increased N-glycan level",
@@ -84288,7 +84288,7 @@
         ]
     },
     {
-        "biomarker_id": "18",
+        "biomarker_id": "AA0517",
         "biomarker_component": [
             {
                 "biomarker": "decreased ALKBH5 level",
@@ -84461,7 +84461,7 @@
         ]
     },
     {
-        "biomarker_id": "50",
+        "biomarker_id": "AA0518",
         "biomarker_component": [
             {
                 "biomarker": "decreased FTO level",
@@ -84598,7 +84598,7 @@
         ]
     },
     {
-        "biomarker_id": "114",
+        "biomarker_id": "AA0519",
         "biomarker_component": [
             {
                 "biomarker": "differentially measured MIR-576 level",
@@ -84713,7 +84713,7 @@
         ]
     },
     {
-        "biomarker_id": "115",
+        "biomarker_id": "AA0520",
         "biomarker_component": [
             {
                 "biomarker": "differentially measured MIR-616 level",
@@ -84828,7 +84828,7 @@
         ]
     },
     {
-        "biomarker_id": "418",
+        "biomarker_id": "AA0521",
         "biomarker_component": [
             {
                 "biomarker": "increased P4HB level",
@@ -84956,7 +84956,7 @@
         ]
     },
     {
-        "biomarker_id": "113",
+        "biomarker_id": "AA0522",
         "biomarker_component": [
             {
                 "biomarker": "differentially measured 4-hydroxybenzoate level",
@@ -85071,7 +85071,7 @@
         ]
     },
     {
-        "biomarker_id": "116",
+        "biomarker_id": "AA0523",
         "biomarker_component": [
             {
                 "biomarker": "differentially measured gentisate level",
@@ -85186,7 +85186,7 @@
         ]
     },
     {
-        "biomarker_id": "292",
+        "biomarker_id": "AA0524",
         "biomarker_component": [
             {
                 "biomarker": "increased IL1B level",
@@ -85377,7 +85377,7 @@
         ]
     },
     {
-        "biomarker_id": "293",
+        "biomarker_id": "AA0525",
         "biomarker_component": [
             {
                 "biomarker": "increased IL1B level",
@@ -85505,7 +85505,7 @@
         ]
     },
     {
-        "biomarker_id": "56",
+        "biomarker_id": "AA0526",
         "biomarker_component": [
             {
                 "biomarker": "decreased IL1B level",
@@ -85608,7 +85608,7 @@
         ]
     },
     {
-        "biomarker_id": "546",
+        "biomarker_id": "AA0527",
         "biomarker_component": [
             {
                 "biomarker": "presence of",
@@ -85753,7 +85753,7 @@
         ]
     },
     {
-        "biomarker_id": "424",
+        "biomarker_id": "AA0528",
         "biomarker_component": [
             {
                 "biomarker": "increased PLAT aggregation",
@@ -85886,7 +85886,7 @@
         ]
     },
     {
-        "biomarker_id": "135",
+        "biomarker_id": "AA0529",
         "biomarker_component": [
             {
                 "biomarker": "increased ANGPT2 level",
@@ -86023,7 +86023,7 @@
         ]
     },
     {
-        "biomarker_id": "239",
+        "biomarker_id": "AA0530",
         "biomarker_component": [
             {
                 "biomarker": "increased EGFR level",
@@ -86163,7 +86163,7 @@
         ]
     },
     {
-        "biomarker_id": "240",
+        "biomarker_id": "AA0531",
         "biomarker_component": [
             {
                 "biomarker": "increased EGFR level",
@@ -86279,7 +86279,7 @@
         ]
     },
     {
-        "biomarker_id": "378",
+        "biomarker_id": "AA0532",
         "biomarker_component": [
             {
                 "biomarker": "increased N-glycan level",
@@ -86412,7 +86412,7 @@
         ]
     },
     {
-        "biomarker_id": "374",
+        "biomarker_id": "AA0533",
         "biomarker_component": [
             {
                 "biomarker": "increased N-glycan level",
@@ -86545,7 +86545,7 @@
         ]
     },
     {
-        "biomarker_id": "377",
+        "biomarker_id": "AA0534",
         "biomarker_component": [
             {
                 "biomarker": "increased N-glycan level",
@@ -86678,7 +86678,7 @@
         ]
     },
     {
-        "biomarker_id": "375",
+        "biomarker_id": "AA0535",
         "biomarker_component": [
             {
                 "biomarker": "increased N-glycan level",
@@ -86811,7 +86811,7 @@
         ]
     },
     {
-        "biomarker_id": "383",
+        "biomarker_id": "AA0536",
         "biomarker_component": [
             {
                 "biomarker": "increased N-glycan level",
@@ -86944,7 +86944,7 @@
         ]
     },
     {
-        "biomarker_id": "381",
+        "biomarker_id": "AA0537",
         "biomarker_component": [
             {
                 "biomarker": "increased N-glycan level",
@@ -87077,7 +87077,7 @@
         ]
     },
     {
-        "biomarker_id": "79",
+        "biomarker_id": "AA0538",
         "biomarker_component": [
             {
                 "biomarker": "decreased N-glycan level",
@@ -87210,7 +87210,7 @@
         ]
     },
     {
-        "biomarker_id": "78",
+        "biomarker_id": "AA0539",
         "biomarker_component": [
             {
                 "biomarker": "decreased N-glycan level",
@@ -87343,7 +87343,7 @@
         ]
     },
     {
-        "biomarker_id": "385",
+        "biomarker_id": "AA0540",
         "biomarker_component": [
             {
                 "biomarker": "increased N-glycan level",
@@ -87524,7 +87524,7 @@
         ]
     },
     {
-        "biomarker_id": "80",
+        "biomarker_id": "AA0541",
         "biomarker_component": [
             {
                 "biomarker": "decreased N-glycan level",
@@ -87693,7 +87693,7 @@
         ]
     },
     {
-        "biomarker_id": "81",
+        "biomarker_id": "AA0542",
         "biomarker_component": [
             {
                 "biomarker": "decreased N-glycan level",
@@ -87862,7 +87862,7 @@
         ]
     },
     {
-        "biomarker_id": "77",
+        "biomarker_id": "AA0543",
         "biomarker_component": [
             {
                 "biomarker": "decreased N-glycan level",
@@ -88031,7 +88031,7 @@
         ]
     },
     {
-        "biomarker_id": "384",
+        "biomarker_id": "AA0544",
         "biomarker_component": [
             {
                 "biomarker": "increased N-glycan level",
@@ -88164,7 +88164,7 @@
         ]
     },
     {
-        "biomarker_id": "379",
+        "biomarker_id": "AA0545",
         "biomarker_component": [
             {
                 "biomarker": "increased N-glycan level",
@@ -88297,7 +88297,7 @@
         ]
     },
     {
-        "biomarker_id": "382",
+        "biomarker_id": "AA0546",
         "biomarker_component": [
             {
                 "biomarker": "increased N-glycan level",
@@ -88430,7 +88430,7 @@
         ]
     },
     {
-        "biomarker_id": "376",
+        "biomarker_id": "AA0547",
         "biomarker_component": [
             {
                 "biomarker": "increased N-glycan level",
@@ -88563,7 +88563,7 @@
         ]
     },
     {
-        "biomarker_id": "117",
+        "biomarker_id": "AA0548",
         "biomarker_component": [
             {
                 "biomarker": "hypermethylated MIR-9-1 gene",
@@ -88696,7 +88696,7 @@
         ]
     },
     {
-        "biomarker_id": "118",
+        "biomarker_id": "AA0549",
         "biomarker_component": [
             {
                 "biomarker": "hypermethylated RASSF1 gene",
