@@ -217,7 +217,7 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
                     logging.info(f'PubMed API rate limit check ({pubmed_rate_limit_check}) reached, sleeping for {pubmed_sleep_time} second...')
                     time.sleep(pubmed_sleep_time)
                     pubmed_api_rate_limit_counter = 0
-                pubmed_data = data_api.get_pubmed_data(evidence_source[1]['evidence_id'])
+                pubmed_api_call_indicator, pubmed_data = data_api.get_pubmed_data(evidence_source[1]['evidence_id'])
                 if not pubmed_data:
                     continue
                 citation_entry = {
@@ -233,7 +233,7 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
                     'reference': []
                 }
                 result_data[evidence_source[0]]['citation'].append(citation_entry)
-                pubmed_api_rate_limit_counter += 1
+                pubmed_api_rate_limit_counter += pubmed_api_call_indicator
 
             logging.info(f'Finished adding citation data!')
         
@@ -395,8 +395,7 @@ def build_base_biomarker_component_entry(row: list, name_space_map: dict) -> tup
     synonyms = []
     if assessed_entity_type == 'protein' and assessed_entity_type_name_space in set(name_space_map.keys()):
         if name_space_map[assessed_entity_type_name_space] == 'uniprot':
-            uniprot_data = data_api.get_uniprot_data(row['assessed_biomarker_entity_id'].split(':')[1])
-            uniprot_call_counter = 1
+            uniprot_call_counter, uniprot_data = data_api.get_uniprot_data(row['assessed_biomarker_entity_id'].split(':')[1])
             if uniprot_data:
                 synonyms = [{'synonym': synonym} for synonym in uniprot_data['synonyms']]
 
