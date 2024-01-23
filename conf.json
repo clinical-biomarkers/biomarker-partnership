@@ -13,7 +13,8 @@
     "data_conversion": {
         "log_path": "../../home/logs/conversion_log.log",
         "url_map_path": "../../mapping_data/url_map.json",
-        "namespace_map_path": "../../mapping_data/namespace_map.json"
+        "namespace_map_path": "../../mapping_data/namespace_map.json",
+        "triples_map_path": "../../mapping_data/triples_map.json"
     },
     "testing": {
         "log_path": "../../home/logs/test_log.log",
