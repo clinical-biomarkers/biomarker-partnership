@@ -32,11 +32,13 @@ import sys
 import misc_functions as misc_fns
 import json_to_tsv as j_to_t
 import tsv_to_json as t_to_j
+import json_to_nt as j_to_nt
 
 _CONF_KEY = 'data_conversion'
 _version = None
 URL_MAP = None
 NAMESPACE_MAP = None
+TRIPLES_MAP = None
 TSV_HEADERS = ['biomarker_id', 'biomarker', 'assessed_biomarker_entity', 'assessed_biomarker_entity_id', 
             'assessed_entity_type', 'condition', 'condition_id', 'exposure_agent', 'exposure_agent_id', 
             'best_biomarker_role', 'specimen', 'specimen_id', 'loinc_code', 'evidence_source', 'evidence',
@@ -74,12 +76,17 @@ def user_args() -> None:
 
     # checking for the JSON -> TSV conversion
     if options.source_filepath.endswith('.json'):
-        if not (options.target_filepath.endswith('.tsv')):
-            logging.error(f'Error: Incorrect target_filepath file type for source type of JSON, expects TSV.')
-            print(f'Error: Incorrect target_filepath file type for source type of JSON, expects TSV.')
+        if not (options.target_filepath.endswith('.tsv')) and not (options.target_filepath.endswith('.nt')):
+            logging.error(f'Error: Incorrect target_filepath file type for source type of JSON, expects TSV or NT.')
+            print(f'Error: Incorrect target_filepath file type for source type of JSON, expects TSV or NT.')
             sys.exit(1)
         # if a valid source JSON conversion called, continue to processing
-        j_to_t.json_to_tsv(options.source_filepath, options.target_filepath, TSV_HEADERS)
+        if options.target_filepath.endswith('.tsv'):
+            j_to_t.json_to_tsv(options.source_filepath, options.target_filepath, TSV_HEADERS)
+        elif options.target_filepath.endswith('.nt'):
+            triples_map = misc_fns.load_json(TRIPLES_MAP)
+            namespace_map = misc_fns.load_json(NAMESPACE_MAP)
+            j_to_nt.json_to_nt(options.source_filepath, options.target_filepath, triples_map, namespace_map)
     
     # checking for the TSV -> JSON conversion
     if options.source_filepath.endswith('.tsv'):
@@ -88,7 +95,9 @@ def user_args() -> None:
             print(f'Error: Incorrect target_filepath file type for source type of TSV, expects JSON.')  
             sys.exit(1)
         # if a valid source TSV conversion called, continue to processing
-        t_to_j.tsv_to_json(options.source_filepath, options.target_filepath, TSV_HEADERS, URL_MAP, NAMESPACE_MAP)
+        url_map = misc_fns.load_json(URL_MAP)
+        namespace_map = misc_fns.load_json(NAMESPACE_MAP)
+        t_to_j.tsv_to_json(options.source_filepath, options.target_filepath, TSV_HEADERS, url_map, namespace_map)
         
 def main():
     ''' Main entry point for the data conversion logic.
@@ -97,18 +106,16 @@ def main():
     global _version
     global URL_MAP
     global NAMESPACE_MAP
+    global TRIPLES_MAP
     
     # grab config information
     config = misc_fns.load_json('../../conf.json')
     _version = config['version']
     log_path = config[_CONF_KEY]['log_path']
-    url_map_path = config[_CONF_KEY]['url_map_path']
-    namespace_map_path = config[_CONF_KEY]['namespace_map_path']
+    URL_MAP = config[_CONF_KEY]['url_map_path']
+    NAMESPACE_MAP = config[_CONF_KEY]['namespace_map_path']
+    TRIPLES_MAP = config[_CONF_KEY]['triples_map_path']
 
-    # load in the URL map and namespace map
-    URL_MAP = misc_fns.load_json(url_map_path)
-    NAMESPACE_MAP = misc_fns.load_json(namespace_map_path)
-    
     # make sure directory to dump logs in exists
     misc_fns.validate_filepath(os.path.split(log_path)[0], 'output')
     # set up logging
