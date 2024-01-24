@@ -1,0 +1,34 @@
+{
+    "subject_objects": {
+        "biomarker_id": "<https://hivelab.biochemistry.gwu.edu/biomarker/api/{replace}>",
+        "best_predicate": "",
+        "uniprot": "<http://purl.uniprot.org/uniprot/{replace}>",
+        "best_biomarker_role": {
+            "risk": "<http://purl.obolibrary.org/obo/DBO_0000008>",
+            "diagnostic": "<http://purl.obolibrary.org/obo/DBO_0000002>",
+            "prognostic": "<http://purl.obolibrary.org/obo/DBO_0000006>",
+            "monitoring": "<http://purl.obolibrary.org/obo/DBO_0000003>",
+            "predictive": "<http://purl.obolibrary.org/obo/DBO_0000005>",
+            "response": "<http://purl.obolibrary.org/obo/DBO_0000004>",
+            "safety": "<http://purl.obolibrary.org/obo/DBO_0000007>"
+        },
+        "uberon": "<http://purl.obolibrary.org/obo/UBERON_{replace}>",
+        "doid": "<http://purl.obolibrary.org/obo/DOID_{replace}>"
+    },
+    "predicates": {
+        "biomarker_change": {
+            "absence": "<http://purl.obolibrary.org/obo/DBO_1000017>",
+            "decrease": "<http://purl.obolibrary.org/obo/DBO_1000015>",
+            "increase": "<http://purl.obolibrary.org/obo/DBO_1000009>",
+            "presence": "<http://purl.obolibrary.org/obo/DBO_1000016>"
+        },
+        "best_biomarker_role": "<http://purl.obolibrary.org/obo/DBO_1000011>",
+        "specimen_sampled_from": "<http://purl.obolibrary.org/obo/DBO_1000018>",
+        "condition_role_indicator": {
+            "diagnostic": "<http://purl.obolibrary.org/obo/DBO_1000002>",
+            "risk": "<http://purl.obolibrary.org/obo/DBO_1000008>",
+            "monitoring": "<http://purl.obolibrary.org/obo/DBO_1000003>",
+            "prognostic": "<http://purl.obolibrary.org/obo/DBO_1000006>"
+        }
+    }
+}
