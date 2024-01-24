@@ -11,7 +11,9 @@
             "predictive": "<http://purl.obolibrary.org/obo/DBO_0000005>",
             "response": "<http://purl.obolibrary.org/obo/DBO_0000004>",
             "safety": "<http://purl.obolibrary.org/obo/DBO_0000007>"
-        }
+        },
+        "uberon": "<http://purl.obolibrary.org/obo/UBERON_{replace}>",
+        "doid": "<http://purl.obolibrary.org/obo/DOID_{replace}>"
     },
     "predicates": {
         "biomarker_change": {
@@ -21,11 +23,12 @@
             "presence": "<http://purl.obolibrary.org/obo/DBO_1000016>"
         },
         "best_biomarker_role": "<http://purl.obolibrary.org/obo/DBO_1000011>",
-        "indicates_level_of": {
-
-        },
-        "provides_clinical_info_for": {
-            
+        "specimen_sampled_from": "<http://purl.obolibrary.org/obo/DBO_1000018>",
+        "condition_role_indicator": {
+            "diagnostic": "<http://purl.obolibrary.org/obo/DBO_1000002>",
+            "risk": "<http://purl.obolibrary.org/obo/DBO_1000008>",
+            "monitoring": "<http://purl.obolibrary.org/obo/DBO_1000003>",
+            "prognostic": "<http://purl.obolibrary.org/obo/DBO_1000006>"
         }
     }
 }
