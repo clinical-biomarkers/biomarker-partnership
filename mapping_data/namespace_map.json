@@ -1,5 +1,6 @@
 {
     "doid": "disease ontology",
     "upkb": "uniprot",
-    "uberon": "uberon"
+    "uberon": "uberon",
+    "chebi": "chebi"
 }

@@ -9,10 +9,12 @@ from dotenv import load_dotenv
 import os
 from time import sleep
 import json
+import xml.etree.ElementTree as ET
 from xml.etree.ElementTree import ParseError
 
 DOID_API_ENDPOINT = 'https://www.disease-ontology.org/api/metadata/DOID:'
 UNIPROT_API_ENDPOINT = 'https://www.ebi.ac.uk/proteins/api/proteins/'
+CHEBI_API_ENDPOINT = 'https://www.ebi.ac.uk/webservices/chebi/2.0/test/getCompleteEntity?chebiId='
 
 def get_doid_data(doid_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
     ''' Gets the DOID data for the given DOID ID.
@@ -154,13 +156,15 @@ def get_pubmed_data(pubmed_id: str) -> tuple:
         json.dump(pubmed_map, f, indent = 4)
     return 1, return_data
 
-def get_uniprot_data(uniprot_id: str) -> tuple:
+def get_uniprot_data(uniprot_id: str, assessed_entity_type: str) -> tuple:
     ''' Gets the UniProt data for the given UniProt ID.
 
     Parameters
     ----------
     uniprot_id: str
         The UniProt ID to get the data for.
+    assessed_entity_type: str
+        The type of assessed entity. (ex. protein or gene)
     
     Returns
     -------
@@ -201,3 +205,64 @@ def get_uniprot_data(uniprot_id: str) -> tuple:
         uniprot_map[uniprot_id] = return_data
         json.dump(uniprot_map, f, indent = 4)
     return 1, return_data
+
+def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
+    ''' Gets the ChEBI data for the given ChEBI ID.
+
+    Parameters
+    ----------
+    chebi_id: str
+        The ChEBI ID to get the data for.
+    max_retries: int
+        The maximum number of times to retry the API call if it fails.
+    timeout: int
+        The number of seconds to wait before timing out the API call.
+    
+    Returns
+    -------
+    dict
+        The ChEBI name and synonym data for the given ChEBI ID.
+    '''
+    chebi_id = chebi_id.strip()
+    # check ChEBI cache and see if information is there to avoid duplicate API calls
+    with open('../../mapping_data/chebi_map.json', 'r') as f:
+        chebi_map = json.load(f)
+    if chebi_id in chebi_map:
+        return chebi_map[chebi_id]
+    
+    ns = {'chebi': 'https://www.ebi.ac.uk/webservices/chebi'}
+    attempt = 0
+    while attempt < max_retries:
+        try:
+            response = requests.get(CHEBI_API_ENDPOINT + chebi_id, timeout = timeout)
+            if response.status_code != 200:
+                logging.error(f'Error during ChEBI API call for id {chebi_id}:\n\tStatus Code: {response.status_code}\n\tReturn Data: {response.text}')
+                print(f'Error during ChEBI API call for id {chebi_id}:\n\tStatus Code: {response.status_code}\n\tReturn Data: {response.text}')
+                return None
+            root = ET.fromstring(response.content)
+            chebi_name_element = root.find('.//chebi:chebiAsciiName', ns)
+            synonym_elements = root.findall('.//chebi:Synonyms', ns)
+            synonyms = [synonym.find('chebi:data', ns).text for synonym in synonym_elements]
+            return_data = {
+                'recommended_name': chebi_name_element.text,
+                'synonyms': [synonym for synonym in synonyms]
+            }
+            # add data to cache
+            with open('../../mapping_data/chebi_map.json', 'w') as f:
+                chebi_map[chebi_id] = return_data
+                json.dump(chebi_map, f, indent = 4)
+            return return_data
+
+        except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
+            logging.warning(f'Warning: Failed to connect to ChEBI API on attempt {attempt + 1}. Retrying...')
+            print(f'Warning: Failed to connect to ChEBI API. Retrying...')
+            attempt += 1
+            sleep(1)
+            continue
+        except Exception as e:
+            logging.error(f'Unexpected error while fetching ChEBI data for ChEBI ID {chebi_id}:\n\t{e}')
+            print(f'Unexpected error while fetching ChEBI data for ChEBI ID {chebi_id}:\n\t{e}')
+            return None
+    
+    logging.error(f'Failed to retrive ChEBI data after {max_retries} attempts.')
+    return None
