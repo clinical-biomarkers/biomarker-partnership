@@ -4,6 +4,7 @@
 import logging
 import json
 import os 
+import re
 
 def setup_logging(log_path: str) -> None:
     ''' Set up logging for the data conversion process.
@@ -55,3 +56,19 @@ def load_json(filepath: str) -> dict:
     '''
     with open(filepath, 'r') as f:
         return json.load(f)
+
+def clean_string(string: str) -> str:
+    ''' Cleans a string by removing all non-alphanumeric characters and
+    converting to lowercase.
+
+    Parameters
+    ----------
+    string: str
+        String to clean.
+
+    Returns
+    -------
+    str
+        The cleaned string.
+    '''
+    return re.sub(r'[^A-Za-z0-9]+', '', string).lower()
