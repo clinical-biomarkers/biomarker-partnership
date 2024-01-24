@@ -11,6 +11,9 @@ import misc_functions as misc_fns
 SUBJECT_OBJECTS = 'subject_objects'
 PREDICATES = 'predicates'
 
+# replace value
+REPLACE_VALUE = '{replace}'
+
 def json_to_nt(source_filepath: str, target_filepath: str, triples_map: dict, namespace_map) -> None:
     ''' Converts the JSON data model format to the N-Triples (nt) format.
 
@@ -44,16 +47,27 @@ def json_to_nt(source_filepath: str, target_filepath: str, triples_map: dict, na
             biomarker = biomarker_component['biomarker']
             assessed_biomarker_entity_id = biomarker_component['assessed_biomarker_entity_id']
             change_triple = build_biomarker_change_triple(biomarker_subject_uri, biomarker, assessed_biomarker_entity_id, triples_map, namespace_map)
-            if not change_triple:
-                logging.error(f"Error: Failed to build the biomarker change triple for entry: {idx}\n\tbiomarker_id: {entry['biomarker_id']}\n\tbiomarker: {biomarker}")
-                print(f"Error: Failed to build the biomarker change triple for entry: {idx}\n\tbiomarker_id: {entry['biomarker_id']}\n\tbiomarker: {biomarker}")
-            else:
+            if change_triple:
                 entry_triples.append(change_triple)
+            
+            ### handle specimen triple
+            specimens = biomarker_component.get('specimen', [])
+            specimen_triples = build_specimen_triples(biomarker_subject_uri, specimens, triples_map, namespace_map)
+            if specimen_triples:
+                entry_triples.extend(specimen_triples)
             
         ### handle best biomarker role triple
         roles = entry['best_biomarker_role']
         role_triples = build_biomarker_role_triples(biomarker_subject_uri, roles, triples_map)
-        entry_triples.extend(role_triples)
+        if role_triples:
+            entry_triples.extend(role_triples)
+
+        ### handle the condition triple
+        if entry.get('condition', None):
+            condition = entry['condition']['condition_id']
+            condition_triple = build_condition_triple(biomarker_subject_uri, condition, roles, triples_map, namespace_map)
+            if condition_triple:
+                entry_triples.extend(condition_triple)
     
         # add the entry triples to the final triples
         final_triples.extend(entry_triples)
@@ -63,6 +77,90 @@ def json_to_nt(source_filepath: str, target_filepath: str, triples_map: dict, na
     with open(target_filepath, 'w') as f:
         f.write(triples)
             
+
+def build_condition_triple(biomarker_subject_uri: str, condition: str, roles: list, triples_map: dict, namespace_map: dict) -> list:
+    ''' Builds the condition triple.
+
+    Parameters
+    ----------
+    biomarker_subject_uri : str
+        The biomarker subject URI.
+    condition : str
+        The condition name space and ID.
+    roles : list
+        The best_biomarker roles list.
+    triples_map : dict
+        The triples map to use for the conversion.
+    namespace_map : dict
+        The namespace map to use for the conversion.
+    
+    Returns
+    -------
+    list
+        The condition triples.
+    '''
+    condition_triples = []
+    condition_name_space = condition.split(':')[0].lower()
+    if condition_name_space in namespace_map:
+        if namespace_map[condition_name_space] == 'disease ontology':
+            doid_id = condition.split(':')[1]
+            condition_object_uri = triples_map[SUBJECT_OBJECTS]['doid'].replace('{replace}', doid_id)
+            for role_entry in roles:
+                role = role_entry['role'].lower()
+                condition_predicate_map = triples_map[PREDICATES]['condition_role_indicator']
+                if role == 'diagnostic':
+                    predicate_uri = condition_predicate_map['diagnostic']
+                elif role == 'risk':
+                    predicate_uri = condition_predicate_map['risk']
+                elif role == 'monitoring':
+                    predicate_uri = condition_predicate_map['monitoring']
+                elif role == 'prognostic':
+                    predicate_uri = condition_predicate_map['prognostic']
+                else:
+                    continue
+                condition_triples.append(f'{biomarker_subject_uri} {predicate_uri} {condition_object_uri} .')
+    else:
+        logging.info(f'build_condition_triple: No namespace URI found for condition: {condition}')
+        print(f'build_condition_triple: No namespace URI found for condition: {condition}')
+    
+    return condition_triples
+
+def build_specimen_triples(biomarker_subject_uri: str, specimens: list, triples_map: dict, namespace_map: dict) -> list:
+    ''' Builds the specimen triples.
+
+    Parameters
+    ----------
+    biomarker_subject_uri : str
+        The biomarker subject URI.
+    specimens : list
+        The specimens list.
+    triples_map : dict
+        The triples map to use for the conversion.
+    namespace_map : dict
+        The namespace map to use for the conversion.
+    
+    Returns
+    -------
+    list
+        The specimen triples.
+    '''
+    specimen_triples = []
+    specimen_predicate_uri = triples_map[PREDICATES]['specimen_sampled_from']
+
+    for specimen in specimens:
+        if specimen.get('name_space', '') != '':
+            if specimen['name_space'].lower() in namespace_map:
+                if namespace_map[specimen['name_space'].lower()] == 'uberon':
+                    specimen_id = specimen.get('specimen_id', None)
+                    if specimen_id:
+                        uberon_sample_uri = triples_map[SUBJECT_OBJECTS]['uberon'].replace('{replace}', specimen_id.split(':')[1])
+                        specimen_triples.append(f'{biomarker_subject_uri} {specimen_predicate_uri} {uberon_sample_uri} .')
+            else:
+                logging.info(f'build_specimen_triples: No namespace URI found for specimen: {specimen}')
+                print(f'build_specimen_triples: No namespace URI found for specimen: {specimen}')
+
+    return specimen_triples 
+
 def build_biomarker_role_triples(biomarker_subject_uri: str, roles: dict, triples_map: dict) -> list:
     ''' Builds the best biomarker role triples.
 
@@ -87,8 +185,8 @@ def build_biomarker_role_triples(biomarker_subject_uri: str, roles: dict, triple
         role = role_dict['role']
         if role.lower() == 'risk':
             role_object_uri = role_object_map['risk']
-        elif role.lower() == 'diagnosis':
-            role_object_uri = role_object_map['diagnosis']
+        elif role.lower() == 'diagnostic':
+            role_object_uri = role_object_map['diagnostic']
         elif role.lower() == 'prognostic':
             role_object_uri = role_object_map['prognostic']
         elif role.lower() == 'monitoring':
@@ -101,6 +199,7 @@ def build_biomarker_role_triples(biomarker_subject_uri: str, roles: dict, triple
             role_object_uri = role_object_map['safety']
         else:
             logging.info(f'build_biomarker_role_triples: No role URI found for role: {role}')
+            print(f'build_biomarker_role_triples: No role URI found for role: {role}')
             continue
         role_triples.append(f'{biomarker_subject_uri} {role_predicate_uri} {role_object_uri} .')
     
@@ -139,6 +238,7 @@ def build_biomarker_change_triple(biomarker_subject_uri: str, biomarker_change: 
         predicate_uri = triples_map[PREDICATES][change_key]['presence']
     else:
         logging.info(f'build_biomarker_change_triple: No change predicate found for biomarker change: {biomarker_change}')
+        print(f'build_biomarker_change_triple: No change predicate found for biomarker change: {biomarker_change}')
         return None 
     
     # get object URI
@@ -147,11 +247,9 @@ def build_biomarker_change_triple(biomarker_subject_uri: str, biomarker_change: 
         entity_id = assessed_biomarker_entity_id.split(':')[1]
         if namespace_map[entity_namespace] == 'uniprot':
             object_uri = triples_map[SUBJECT_OBJECTS]['uniprot'].replace('{replace}', entity_id.upper())
-        else:
-            logging.info(f'build_biomarker_change_triple: No namespace URI found for assessed biomarker entity ID: {assessed_biomarker_entity_id}')
-            return None
     else:
         logging.info(f'build_biomarker_change_triple: No namespace found for assessed biomarker entity ID: {assessed_biomarker_entity_id}')
+        print(f'build_biomarker_change_triple: No namespace found for assessed biomarker entity ID: {assessed_biomarker_entity_id}')
         return None
     
     return f'{biomarker_subject_uri} {predicate_uri} {object_uri} .'
