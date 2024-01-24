@@ -211,29 +211,31 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
             pubmed_api_rate_limit_counter = 0
             # get the citation data for each evidence source
             for evidence_source in evidence_sources:
-                if evidence_source[1]['database'].lower() != 'pubmed':
-                    continue 
-                if pubmed_api_rate_limit_counter == pubmed_rate_limit_check:
-                    logging.info(f'PubMed API rate limit check ({pubmed_rate_limit_check}) reached, sleeping for {pubmed_sleep_time} second...')
-                    time.sleep(pubmed_sleep_time)
-                    pubmed_api_rate_limit_counter = 0
-                pubmed_api_call_indicator, pubmed_data = data_api.get_pubmed_data(evidence_source[1]['evidence_id'])
-                if not pubmed_data:
-                    continue
-                citation_entry = {
-                    'citation_title': pubmed_data['title'],
-                    'journal': pubmed_data['journal'],
-                    'authors': pubmed_data['authors'],
-                    'date': pubmed_data['publication_date'],
-                    'evidence_source': {
-                        'evidence_id': evidence_source[1]['evidence_id'],
-                        'database': evidence_source[1]['database'].title(),
-                        'url': evidence_source[1]['url']
-                    },
-                    'reference': []
-                }
-                result_data[evidence_source[0]]['citation'].append(citation_entry)
-                pubmed_api_rate_limit_counter += pubmed_api_call_indicator
+                if evidence_source[1]['database'].lower() == 'pubmed':
+                    if pubmed_api_rate_limit_counter == pubmed_rate_limit_check:
+                        logging.info(f'PubMed API rate limit check ({pubmed_rate_limit_check}) reached, sleeping for {pubmed_sleep_time} second...')
+                        time.sleep(pubmed_sleep_time)
+                        pubmed_api_rate_limit_counter = 0
+                    pubmed_api_call_indicator, pubmed_data = data_api.get_pubmed_data(evidence_source[1]['evidence_id'])
+                    if not pubmed_data:
+                        continue
+                    citation_entry = {
+                        'citation_title': pubmed_data['title'],
+                        'journal': pubmed_data['journal'],
+                        'authors': pubmed_data['authors'],
+                        'date': pubmed_data['publication_date'],
+                        'evidence_source': {
+                            'evidence_id': evidence_source[1]['evidence_id'],
+                            'database': evidence_source[1]['database'].title(),
+                            'url': evidence_source[1]['url']
+                        },
+                        'reference': []
+                    }
+                    result_data[evidence_source[0]]['citation'].append(citation_entry)
+                    pubmed_api_rate_limit_counter += pubmed_api_call_indicator
+                else:
+                    logging.info(f'Warning: Evidence source database {evidence_source[1]["database"]} not supported for citation data.')
+                    print(f'Warning: Evidence source database {evidence_source[1]["database"]} not supported for citation data.')
 
             logging.info(f'Finished adding citation data!')
         
@@ -331,6 +333,9 @@ def build_condition_entry(row: list, url_map: dict, name_space_map: dict) -> dic
                     }
                     synonym_entries.append(synonym_entry)
                 condition['synonyms'] = synonym_entries 
+        else:
+            logging.info(f'Warning: Condition name space {condition_name_space} not supported for condition description and synonyms.')
+            print(f'Warning: Condition name space {condition_name_space} not supported for condition description and synonyms.')
     
     return condition
 
@@ -398,6 +403,9 @@ def build_base_biomarker_component_entry(row: list, name_space_map: dict) -> tup
             uniprot_call_counter, uniprot_data = data_api.get_uniprot_data(row['assessed_biomarker_entity_id'].split(':')[1])
             if uniprot_data:
                 synonyms = [{'synonym': synonym} for synonym in uniprot_data['synonyms']]
+    else:
+        logging.info(f'Warning: Assessed entity type: {assessed_entity_type} / assessed entity name space: {assessed_entity_type_name_space} not supported for synonym data.')
+        print(f'Warning: Assessed entity type: {assessed_entity_type} / assessed entity name space: {assessed_entity_type_name_space} not supported for synonym data.')
 
     entry = {
         'biomarker': row['biomarker'],
