@@ -1,4 +1,5 @@
 {
     "doid": "disease ontology",
-    "upkb": "uniprot"
+    "upkb": "uniprot",
+    "uberon": "uberon"
 }
