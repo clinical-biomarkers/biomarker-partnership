@@ -6,6 +6,7 @@ import csv
 import logging 
 import time 
 import api_calls as data_api
+import misc_functions as misc_fns
 
 COMP_SINGULAR_EVIDENCE_FIELDS = {'biomarker', 'assessed_biomarker_entity', 
                                 'assessed_biomarker_entity_id', 'assessed_entity_type'}
@@ -13,12 +14,9 @@ TOP_LEVEL_EVIDENCE_FIELDS = {'condition', 'exposure_agent', 'best_biomarker_role
 
 UNIPROT_RATE_LIMIT_CHECK = 200
 UNIPROT_SLEEP_TIME = 1
-
 ADD_CITATION_DATA = True
 PUBMED_RATE_LIMIT_CHECK = 10 
 PUBMED_SLEEP_TIME = 1
-
-# TODO: multiple specimen issue 
 
 def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, url_map: dict, name_space_map: dict) -> None:
     ''' Entry point for the TSV -> JSON conversion.
@@ -78,8 +76,8 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
             top_evidence_source = build_evidence_entry(row, top_evidence_tags, url_map)
 
             ### build biomarker component object
-            uniprot_count, base_biomarker_component_object = build_base_biomarker_component_entry(row, name_space_map)
-            uniprot_rate_limit_counter += uniprot_count
+            api_counts, base_biomarker_component_object = build_base_biomarker_component_entry(row, name_space_map)
+            uniprot_rate_limit_counter += api_counts['uniprot']
             if uniprot_rate_limit_counter == uniprot_rate_limit_check:
                 logging.info(f'UniProt API rate limit check ({uniprot_rate_limit_check})reached, sleeping for {uniprot_sleep_time} seconds...')
                 time.sleep(uniprot_sleep_time)
@@ -234,7 +232,7 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
                     result_data[evidence_source[0]]['citation'].append(citation_entry)
                     pubmed_api_rate_limit_counter += pubmed_api_call_indicator
                 else:
-                    logging.info(f'Warning: Evidence source database {evidence_source[1]["database"]} not supported for citation data.')
+                    logging.warning(f'Warning: Evidence source database {evidence_source[1]["database"]} not supported for citation data.')
                     print(f'Warning: Evidence source database {evidence_source[1]["database"]} not supported for citation data.')
 
             logging.info(f'Finished adding citation data!')
@@ -297,14 +295,14 @@ def build_condition_entry(row: list, url_map: dict, name_space_map: dict) -> dic
         if condition_name_space in set(url_map.keys()):
             condition_resource = name_space_map[condition_name_space].title()
         else:
-            logging.info(f'Warning: Condition name space {condition_name_space} not in the name space map.')
+            logging.warning(f'Warning: Condition name space {condition_name_space} not in the name space map.')
             condition_resource = condition_name_space
         # try to build condition url
         condition_url = None
         if condition_name_space in set(url_map.keys()):
             condition_url = f"{url_map[condition_name_space]}{row['condition_id'].split(':')[1]}"
         else:
-            logging.info(f'Warning: Condition name space {condition_name_space} not in the url map.')
+            logging.warning(f'Warning: Condition name space {condition_name_space} not in the url map.')
         # build entry
         condition = {
             'condition_id': row['condition_id'],
@@ -334,7 +332,7 @@ def build_condition_entry(row: list, url_map: dict, name_space_map: dict) -> dic
                     synonym_entries.append(synonym_entry)
                 condition['synonyms'] = synonym_entries 
         else:
-            logging.info(f'Warning: Condition name space {condition_name_space} not supported for condition description and synonyms.')
+            logging.warning(f'Warning: Condition name space {condition_name_space} not supported for condition description and synonyms.')
             print(f'Warning: Condition name space {condition_name_space} not supported for condition description and synonyms.')
     
     return condition
@@ -366,7 +364,7 @@ def add_specimen_entry(row: list, biomarker_component_object: dict, url_map: dic
         if specimen_database in set(url_map.keys()):
             specimen_url = f"{url_map[specimen_database]}{row['specimen_id'].split(':')[1]}"
         else:
-            logging.info(f'Warning: Specimen database {specimen_database} not in the url map.')
+            logging.warning(f'Warning: Specimen database {specimen_database} not in the url map.')
     if row['specimen'] or row['loinc_code']:
         specimen = {
             'name': row.get('specimen', ''),
@@ -392,20 +390,60 @@ def build_base_biomarker_component_entry(row: list, name_space_map: dict) -> tup
     Returns
     -------
     tuple
-        Returns an integer used for uniprot api rate limit control and the dictionary containing the biomarker component entry.
+        Returns a dictionary used for api rate limit control and the dictionary containing the biomarker component entry.
     '''
-    uniprot_call_counter = 0
+    api_call_counter = {
+        'uniprot': 0
+    }
     assessed_entity_type = row['assessed_entity_type'].lower().strip()
-    assessed_entity_type_name_space = row['assessed_biomarker_entity_id'].split(':')[0].lower()
+    assessed_entity_type_name_space = row['assessed_biomarker_entity_id'].split(':')[0].lower().strip()
+    recommended_name = None
     synonyms = []
-    if assessed_entity_type == 'protein' and assessed_entity_type_name_space in set(name_space_map.keys()):
-        if name_space_map[assessed_entity_type_name_space] == 'uniprot':
-            uniprot_call_counter, uniprot_data = data_api.get_uniprot_data(row['assessed_biomarker_entity_id'].split(':')[1])
-            if uniprot_data:
-                synonyms = [{'synonym': synonym} for synonym in uniprot_data['synonyms']]
+
+    # check if resource namespace is supported for retrieving synonym data
+    if assessed_entity_type_name_space in set(name_space_map.keys()):
+
+        # handle protein entities
+        if assessed_entity_type == 'protein':
+            # handle uniprot protein data
+            if name_space_map[assessed_entity_type_name_space] == 'uniprot':
+                uniprot_call_counter, uniprot_data = data_api.get_uniprot_data(row['assessed_biomarker_entity_id'].split(':')[1], 'protein')
+                if uniprot_call_counter == 1:
+                    api_call_counter['uniprot'] += 1
+                synonyms, recommended_name = handle_synonym_rec_name_data(uniprot_data)
+            # handle chebi protein data
+            elif name_space_map[assessed_entity_type_name_space] == 'chebi':
+                chebi_data = data_api.get_chebi_data(row['assessed_biomarker_entity_id'].split(':')[1])
+                synonyms, recommended_name = handle_synonym_rec_name_data(chebi_data)
+            else:
+                logging.warning(f'Warning: Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for protein synonym data')
+                print(f'Warning: Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for protein synonym data.')
+        
+        # handle metabolite entities
+        elif assessed_entity_type == 'metabolite':
+            # handle chebi metabolite data
+            if name_space_map[assessed_entity_type_name_space] == 'chebi':
+                chebi_data = data_api.get_chebi_data(row['assessed_biomarker_entity_id'].split(':')[1])
+                synonyms, recommended_name = handle_synonym_rec_name_data(chebi_data)
+            else:
+                logging.warning(f'Warning: Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for metabolite synonym data.')
+                print(f'Warning: Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for metabolite synonym data.')
+        
+        # provide warning if entity type is not supported
+        else:
+            logging.warning(f'Warning: Assessed entity type: {assessed_entity_type} not supported for synonym data.')
+            print(f'Warning: Assessed entity type: {assessed_entity_type} not supported for synonym data.')
+
+    # provide warning if name space is not supported
     else:
-        logging.info(f'Warning: Assessed entity type: {assessed_entity_type} / assessed entity name space: {assessed_entity_type_name_space} not supported for synonym data.')
-        print(f'Warning: Assessed entity type: {assessed_entity_type} / assessed entity name space: {assessed_entity_type_name_space} not supported for synonym data.')
+        logging.warning(f'Warning: Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for protein synonym data.')
+        print(f'Warning: Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for protein synonym data.')
+    
+    # give a warning if the API retrieved recommended name does not match the TSV assessed biomarker entity value 
+    if recommended_name:
+        if misc_fns.clean_string(row['assessed_biomarker_entity']) != misc_fns.clean_string(recommended_name):
+            logging.warning(f'Warning: Resource recommended name \'{recommended_name}\' does not match the TSV assessed biomarker entity \'{row["assessed_biomarker_entity"]}\'.')
+            print(f'Warning: Resource recommended name \'{recommended_name}\' does not match the TSV assessed biomarker entity \'{row["assessed_biomarker_entity"]}\'.')
 
     entry = {
         'biomarker': row['biomarker'],
@@ -417,7 +455,26 @@ def build_base_biomarker_component_entry(row: list, name_space_map: dict) -> tup
         'assessed_entity_type': row['assessed_entity_type']
     }
 
-    return uniprot_call_counter, entry 
+    return api_call_counter, entry 
+
+def handle_synonym_rec_name_data(data: dict) -> tuple:
+    ''' Handles the synonym and recommended name data returned from the API call for assessed biomarker entity data.
+
+    Parameters
+    ----------
+    data : dict
+        Dictionary containing the API call response data.
+    
+    Returns
+    -------
+    tuple
+        Tuple containing the recommended name and synonym entries.
+    '''
+    if data:
+        synonyms = [{'synonym': synonym} for synonym in data['synonyms']]
+        recommended_name = data['recommended_name']
+        return synonyms, recommended_name
+    return [], None
 
 def build_evidence_entry(row: list, tag_list: list, url_map: dict) -> list:
     ''' Builds the evidence entry.
@@ -444,7 +501,7 @@ def build_evidence_entry(row: list, tag_list: list, url_map: dict) -> list:
         if evidence_database in set(url_map.keys()):
             evidence_url = f"{url_map[evidence_database]}{evidence_id}"
         else:
-            logging.info(f'Warning: Evidence database {evidence_database} not in the url map.')
+            logging.warning(f'Warning: Evidence database {evidence_database} not in the url map.')
             evidence_url = None 
         # build evidence object
         evidence_entry.append(
