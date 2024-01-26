@@ -57,6 +57,19 @@ def load_json(filepath: str) -> dict:
     with open(filepath, 'r') as f:
         return json.load(f)
 
+def write_json(filepath: str, data: dict) -> None:
+    ''' Writes the data to a JSON file.
+
+    Parameters
+    ----------
+    filepath: str
+        Filepath to the JSON file.
+    data: dict
+        Data to write to the JSON file.
+    '''
+    with open(filepath, 'w') as f:
+        json.dump(data, f)
+
 def clean_string(string: str) -> str:
     ''' Cleans a string by removing all non-alphanumeric characters and
     converting to lowercase.
