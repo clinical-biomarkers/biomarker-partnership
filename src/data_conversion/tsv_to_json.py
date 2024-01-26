@@ -429,6 +429,16 @@ def build_base_biomarker_component_entry(row: list, name_space_map: dict) -> tup
                 logging.warning(f'Warning: Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for metabolite synonym data.')
                 print(f'Warning: Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for metabolite synonym data.')
         
+        ### handle cell entities
+        elif assessed_entity_type == 'cell':
+            # handle cell ontology data
+            if name_space_map[assessed_entity_type_name_space] == 'cell ontology':
+                cell_ontology_data = data_api.get_co_data(row['assessed_biomarker_entity_id'].split(':')[1])
+                synonyms, recommended_name = handle_synonym_rec_name_data(cell_ontology_data)
+            else:
+                logging.warning(f'Warning: Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for cell synonym data.')
+                print(f'Warning: Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for cell synonym data.')
+        
         # provide warning if entity type is not supported
         else:
             logging.warning(f'Warning: Assessed entity type: {assessed_entity_type} not supported for synonym data.')
