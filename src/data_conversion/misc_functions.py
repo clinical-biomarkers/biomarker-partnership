@@ -68,7 +68,7 @@ def write_json(filepath: str, data: dict) -> None:
         Data to write to the JSON file.
     '''
     with open(filepath, 'w') as f:
-        json.dump(data, f)
+        json.dump(data, f, indent = 4)
 
 def clean_string(string: str) -> str:
     ''' Cleans a string by removing all non-alphanumeric characters and
