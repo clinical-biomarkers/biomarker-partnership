@@ -1,1 +1,135 @@
-{}
+{
+    "CL_0000738": {
+        "recommended_name": "leukocyte",
+        "synonyms": [
+            "leucocyte",
+            "white blood cell",
+            "immune cell"
+        ]
+    },
+    "CL_0000542": {
+        "recommended_name": "lymphocyte",
+        "synonyms": []
+    },
+    "CL_0000233": {
+        "recommended_name": "platelet",
+        "synonyms": [
+            "anucleate thrombocyte",
+            "blood platelet",
+            "enucleate thrombocyte"
+        ]
+    },
+    "CL_0000624": {
+        "recommended_name": "CD4-positive, alpha-beta T cell",
+        "synonyms": [
+            "CD4-positive, alpha-beta T lymphocyte",
+            "CD4-positive, alpha-beta T-cell",
+            "CD4-positive, alpha-beta T-lymphocyte"
+        ]
+    },
+    "CL_0000795": {
+        "recommended_name": "CD8-positive, alpha-beta regulatory T cell",
+        "synonyms": [
+            "suppressor T cell",
+            "suppressor T lymphocyte",
+            "suppressor T-cell",
+            "suppressor T-lymphocyte",
+            "CD8+ T(reg)",
+            "CD8+ Treg",
+            "CD8+ regulatory T cell",
+            "CD8-positive T(reg)",
+            "CD8-positive Treg",
+            "CD8-positive, alpha-beta Treg",
+            "CD8-positive, alpha-beta regulatory T lymphocyte",
+            "CD8-positive, alpha-beta regulatory T-cell",
+            "CD8-positive, alpha-beta regulatory T-lymphocyte"
+        ]
+    },
+    "CL_0000094": {
+        "recommended_name": "granulocyte",
+        "synonyms": [
+            "granular leucocyte",
+            "granular leukocyte",
+            "polymorphonuclear leukocyte"
+        ]
+    },
+    "CL_0000771": {
+        "recommended_name": "eosinophil",
+        "synonyms": [
+            "polymorphonuclear leucocyte",
+            "polymorphonuclear leukocyte",
+            "eosinocyte",
+            "eosinophilic granulocyte",
+            "eosinophilic leucocyte",
+            "eosinophilic leukocyte"
+        ]
+    },
+    "CL_0000775": {
+        "recommended_name": "neutrophil",
+        "synonyms": [
+            "PMN",
+            "poly",
+            "polymorphonuclear leucocyte",
+            "polymorphonuclear leukocyte",
+            "polymorphonuclear neutrophil",
+            "polynuclear neutrophilic leucocyte",
+            "polynuclear neutrophilic leukocyte",
+            "neutrocyte",
+            "neutrophil leucocyte",
+            "neutrophil leukocyte",
+            "neutrophilic leucocyte",
+            "neutrophilic leukocyte"
+        ]
+    },
+    "CL_0000576": {
+        "recommended_name": "monocyte",
+        "synonyms": []
+    },
+    "CL_0000767": {
+        "recommended_name": "basophil",
+        "synonyms": [
+            "polymorphonuclear leucocyte",
+            "polymorphonuclear leukocyte",
+            "basophilic leucocyte",
+            "basophilic leukocyte"
+        ]
+    },
+    "CL_0000912": {
+        "recommended_name": "helper T cell",
+        "synonyms": [
+            "T-helper cell",
+            "helper T lymphocyte",
+            "helper T-cell",
+            "helper T-lymphocyte"
+        ]
+    },
+    "CL_0000898": {
+        "recommended_name": "naive T cell",
+        "synonyms": [
+            "naive T lymphocyte",
+            "naive T-cell",
+            "naive T-lymphocyte"
+        ]
+    },
+    "CL_0000813": {
+        "recommended_name": "memory T cell",
+        "synonyms": [
+            "memory T lymphocyte",
+            "memory T-cell",
+            "memory T-lymphocyte"
+        ]
+    },
+    "CL_0000815": {
+        "recommended_name": "regulatory T cell",
+        "synonyms": [
+            "suppressor T cell",
+            "suppressor T lymphocyte",
+            "suppressor T-cell",
+            "suppressor T-lymphocyte",
+            "Treg",
+            "regulatory T lymphocyte",
+            "regulatory T-cell",
+            "regulatory T-lymphocyte"
+        ]
+    }
+}
