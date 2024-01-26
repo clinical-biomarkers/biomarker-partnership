@@ -37,8 +37,7 @@ def get_doid_data(doid_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
     '''
     doid_id = doid_id.strip()
     # first check DOID cache and see if information is there to avoid duplicate API calls
-    with open('../../mapping_data/doid_map.json', 'r') as f:
-        doid_map = json.load(f)
+    doid_map = misc_fns.load_json('../../mapping_data/doid_map.json')
     if doid_id in doid_map:
         return doid_map[doid_id]    
 
@@ -65,9 +64,9 @@ def get_doid_data(doid_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
             synonyms = [] if synonyms is None else synonyms
             synonyms = [synonym.replace('EXACT', '').strip() for synonym in synonyms if 'EXACT' in synonym]
             return_data = {'description': doid_description, 'synonyms': synonyms} 
-            with open('../../mapping_data/doid_map.json', 'w') as f:
-                doid_map[doid_id] = return_data
-                json.dump(doid_map, f, indent = 4)
+            # write back to cache 
+            doid_map[doid_id] = return_data
+            misc_fns.write_json('../../mapping_data/doid_map.json', doid_map)
             return return_data
         except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
             logging.warning(f'Warning: Failed to connect to DOID API on attempt {attempt + 1}. Retrying...')
@@ -98,8 +97,7 @@ def get_pubmed_data(pubmed_id: str) -> tuple:
     '''
     pubmed_id = pubmed_id.strip()
     # check PubMed cache and see if information is there to avoid duplicate API calls
-    with open('../../mapping_data/pubmed_map.json', 'r') as f:
-        pubmed_map = json.load(f)
+    pubmed_map = misc_fns.load_json('../../mapping_data/pubmed_map.json')
     if pubmed_id in pubmed_map:
         return 0, pubmed_map[pubmed_id]
     
@@ -157,9 +155,8 @@ def get_pubmed_data(pubmed_id: str) -> tuple:
         'publication_date': publication_date
     }
     # add data to cache
-    with open('../../mapping_data/pubmed_map.json', 'w') as f:
-        pubmed_map[pubmed_id] = return_data
-        json.dump(pubmed_map, f, indent = 4)
+    pubmed_map[pubmed_id] = return_data
+    misc_fns.write_json('../../mapping_data/pubmed_map.json', pubmed_map)
     return 1, return_data
 
 def get_uniprot_data(uniprot_id: str, assessed_entity_type: str) -> tuple:
@@ -179,8 +176,7 @@ def get_uniprot_data(uniprot_id: str, assessed_entity_type: str) -> tuple:
     '''
     uniprot_id = uniprot_id.strip()
     # check UniProt cache and see if information is there to avoid duplicate API calls
-    with open('../../mapping_data/uniprot_map.json', 'r') as f:
-        uniprot_map = json.load(f)
+    uniprot_map = misc_fns.load_json('../../mapping_data/uniprot_map.json')
     if uniprot_id in uniprot_map:
         return 0, uniprot_map[uniprot_id]
     
@@ -207,9 +203,8 @@ def get_uniprot_data(uniprot_id: str, assessed_entity_type: str) -> tuple:
         'synonyms': synonyms
     }
     # add data to cache
-    with open('../../mapping_data/uniprot_map.json', 'w') as f:
-        uniprot_map[uniprot_id] = return_data
-        json.dump(uniprot_map, f, indent = 4)
+    uniprot_map[uniprot_id] = return_data
+    misc_fns.write_json('../../mapping_data/uniprot_map.json', uniprot_map)
     return 1, return_data
 
 def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
@@ -231,8 +226,7 @@ def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> dic
     '''
     chebi_id = chebi_id.strip()
     # check ChEBI cache and see if information is there to avoid duplicate API calls
-    with open('../../mapping_data/chebi_map.json', 'r') as f:
-        chebi_map = json.load(f)
+    chebi_map = misc_fns.load_json('../../mapping_data/chebi_map.json')
     if chebi_id in chebi_map:
         return chebi_map[chebi_id]
     
@@ -254,9 +248,8 @@ def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> dic
                 'synonyms': [synonym for synonym in synonyms]
             }
             # add data to cache
-            with open('../../mapping_data/chebi_map.json', 'w') as f:
-                chebi_map[chebi_id] = return_data
-                json.dump(chebi_map, f, indent = 4)
+            chebi_map[chebi_id] = return_data
+            misc_fns.write_json('../../mapping_data/chebi_map.json', chebi_map)
             return return_data
 
         except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
