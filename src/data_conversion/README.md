@@ -49,3 +49,15 @@ Some notes for the JSON to TSV conversion:
 
 For the TSV to JSON conversion: 
 - The values for `assessed_biomarker_entity`, `condition`, `exposure_agent` are assumed to already be the recommended name for the entities, and are populated in the `recommended_name` field for each. 
+    - If the resource API call is supported, a warning will be logged and printed for each value where the name provided in the TSV file does not match the recommended name from the resource. 
+
+## Namespace Support 
+
+The full JSON data model version includes various supplementary data fields that is not captured by the simplified table (TSV) views such as synonym data and citation data. The TSV to JSON conversion supports the following resource API calls to automate the populating of these fields:
+
+- PubMed
+- Disease Ontology 
+- UniprotKB
+- Uberon 
+- Chemical Entities of Biological Interest (ChEBI)
+- Cell Ontology 
