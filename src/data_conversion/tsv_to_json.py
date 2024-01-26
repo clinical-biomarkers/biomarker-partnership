@@ -403,7 +403,7 @@ def build_base_biomarker_component_entry(row: list, name_space_map: dict) -> tup
     # check if resource namespace is supported for retrieving synonym data
     if assessed_entity_type_name_space in set(name_space_map.keys()):
 
-        # handle protein entities
+        ### handle protein entities
         if assessed_entity_type == 'protein':
             # handle uniprot protein data
             if name_space_map[assessed_entity_type_name_space] == 'uniprot':
@@ -419,7 +419,7 @@ def build_base_biomarker_component_entry(row: list, name_space_map: dict) -> tup
                 logging.warning(f'Warning: Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for protein synonym data')
                 print(f'Warning: Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for protein synonym data.')
         
-        # handle metabolite entities
+        ### handle metabolite entities
         elif assessed_entity_type == 'metabolite':
             # handle chebi metabolite data
             if name_space_map[assessed_entity_type_name_space] == 'chebi':
