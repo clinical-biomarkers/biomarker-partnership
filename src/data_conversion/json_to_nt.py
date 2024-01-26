@@ -247,6 +247,10 @@ def build_biomarker_change_triple(biomarker_subject_uri: str, biomarker_change: 
         entity_id = assessed_biomarker_entity_id.split(':')[1]
         if namespace_map[entity_namespace] == 'uniprot':
             object_uri = triples_map[SUBJECT_OBJECTS]['uniprot'].replace('{replace}', entity_id.upper())
+        else:
+            logging.info(f'build_biomarker_change_triple: No namespace object URI found for assessed biomarker entity ID: {assessed_biomarker_entity_id}')
+            print(f'build_biomarker_change_triple: No namespace object URI found for assessed biomarker entity ID: {assessed_biomarker_entity_id}')
+            return None
     else:
         logging.info(f'build_biomarker_change_triple: No namespace found for assessed biomarker entity ID: {assessed_biomarker_entity_id}')
         print(f'build_biomarker_change_triple: No namespace found for assessed biomarker entity ID: {assessed_biomarker_entity_id}')
