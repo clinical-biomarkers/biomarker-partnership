@@ -11,10 +11,12 @@ from time import sleep
 import json
 import xml.etree.ElementTree as ET
 from xml.etree.ElementTree import ParseError
+import misc_functions as misc_fns
 
 DOID_API_ENDPOINT = 'https://www.disease-ontology.org/api/metadata/DOID:'
 UNIPROT_API_ENDPOINT = 'https://www.ebi.ac.uk/proteins/api/proteins/'
 CHEBI_API_ENDPOINT = 'https://www.ebi.ac.uk/webservices/chebi/2.0/test/getCompleteEntity?chebiId='
+CO_API_ENDPOINT = 'https://www.ebi.ac.uk/ols4/api/ontologies/cl/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252F'
 
 def get_doid_data(doid_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
     ''' Gets the DOID data for the given DOID ID.
@@ -23,9 +25,9 @@ def get_doid_data(doid_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
     ----------
     doid_id: str
         The DOID ID to get the data for.
-    max_retries: int
+    max_retries: int (default = 3)
         The maximum number of times to retry the API call if it fails.
-    timeout: int
+    timeout: int (default = 5)
         The number of seconds to wait before timing out the API call.
 
     Returns
@@ -73,6 +75,10 @@ def get_doid_data(doid_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
             attempt += 1
             sleep(1)
             continue
+        except Exception as e:
+            logging.error(f'Unexpected error while fetching DOID data for DOID ID {doid_id}:\n\t{e}')
+            print(f'Unexpected error while fetching DOID data for DOID ID {doid_id}:\n\t{e}')
+            return None
     
     logging.error(f'Failed to retrive DOID data after {max_retries} attempts.')
     return None
@@ -213,9 +219,9 @@ def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> dic
     ----------
     chebi_id: str
         The ChEBI ID to get the data for.
-    max_retries: int
+    max_retries: int (default = 3)
         The maximum number of times to retry the API call if it fails.
-    timeout: int
+    timeout: int (default = 5)
         The number of seconds to wait before timing out the API call.
     
     Returns
@@ -266,3 +272,71 @@ def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> dic
     
     logging.error(f'Failed to retrive ChEBI data after {max_retries} attempts.')
     return None
+
+def get_co_data(co_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
+    ''' Gets the Cell Ontology data for the given Cell Ontology ID.
+
+    Parameters
+    ----------
+    co_id: str
+        The Cell Ontology ID to get the data for.
+    max_retries: int (default = 3)
+        The maximum number of times to retry the API call if it fails.
+    timeout: int (default = 5)
+        The number of seconds to wait before timing out the API call.
+    
+    Returns
+    -------
+    dict
+        The Cell Ontology name and synonym data for the given Cell Ontology ID.
+    '''
+    co_id = co_id.strip()
+    # co id's must start with capital `CL`
+    if co_id.startswith('cl'):
+        co_id = co_id.replace('cl', 'CL')
+    # check Cell Ontology cache and see if information is there to avoid duplicate API calls
+    co_map = misc_fns.load_json('../../mapping_data/co_map.json')
+    if co_id in co_map:
+        return co_map[co_id]
+    
+    attempt = 0
+    while attempt < max_retries:
+        try:
+            response = requests.get(CO_API_ENDPOINT + co_id, timeout = timeout)
+
+            # handle errors 
+            if response.status_code != 200:
+                logging.error(f'Error during Cell Ontology API call for id {co_id}:\n\tStatus Code: {response.status_code}\n\tReturn Data: {response.text}')
+                print(f'Error during Cell Ontology API call for id {co_id}:\n\tStatus Code: {response.status_code}\n\tReturn Data: {response.text}')
+                return None
+            
+            # if no return error, continue to processing
+            co_data = response.json()
+            recommended_name = co_data['label']
+            synonyms = [synonym for synonym in co_data.get('synonyms', [])]
+
+            return_data = {
+                'recommended_name': recommended_name,
+                'synonyms': synonyms
+            }
+            # add data to cache
+            co_map[co_id] = return_data
+            misc_fns.write_json('../../mapping_data/co_map.json', co_map)
+            return return_data
+        except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
+            logging.warning(f'Warning: Failed to connect to Cell Ontology API on attempt {attempt + 1}. Retrying...')
+            print(f'Warning: Failed to connect to Cell Ontology API. Retrying...')
+            attempt += 1
+            sleep(1)
+            continue
+        except Exception as e:
+            logging.error(f'Unexpected error while fetching Cell Ontology data for Cell Ontology ID {co_id}:\n\t{e}')
+            print(f'Unexpected error while fetching Cell Ontology data for Cell Ontology ID {co_id}:\n\t{e}')
+            return None
+    
+    logging.error(f'Failed to retrive Cell Ontology data after {max_retries} attempts.')
+    return None
+
+
+
+    
