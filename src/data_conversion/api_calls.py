@@ -17,6 +17,7 @@ DOID_API_ENDPOINT = 'https://www.disease-ontology.org/api/metadata/DOID:'
 UNIPROT_API_ENDPOINT = 'https://www.ebi.ac.uk/proteins/api/proteins/'
 CHEBI_API_ENDPOINT = 'https://www.ebi.ac.uk/webservices/chebi/2.0/test/getCompleteEntity?chebiId='
 CO_API_ENDPOINT = 'https://www.ebi.ac.uk/ols4/api/ontologies/cl/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252F'
+HGNC_ENDPOINT = 'https://rest.genenames.org/fetch/hgnc_id/'
 
 def get_doid_data(doid_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
     ''' Gets the DOID data for the given DOID ID.
@@ -330,6 +331,63 @@ def get_co_data(co_id: str, max_retries: int = 3, timeout: int = 5) -> tuple:
     logging.error(f'Failed to retrive Cell Ontology data after {max_retries} attempts.')
     return 1, None
 
+def get_hgnc_data(hgnc_id: str, max_retries: int = 3, timeout: int = 5) -> tuple:
+    ''' Gets the HGNC data for the given HGNC ID.
 
-
+    Parameters
+    ----------
+    hgnc_id: str
+        The HGNC ID to get the data for.
+    max_retries: int (default = 3)
+        The maximum number of times to retry the API call if it fails.
+    timeout: int (default = 5)
+        The number of seconds to wait before timing out the API call.
     
+    Returns
+    -------
+    tuple
+        Indicator if an API call was made and the HGNC name and synonym data for the given HGNC ID.
+    '''
+    hgnc_id = hgnc_id.strip()
+    # check HGNC cache and see if information is there to avoid duplicate API calls
+    hgnc_map = misc_fns.load_json('../../mapping_data/hgnc_map.json')
+    if hgnc_id in hgnc_map:
+        return 0, hgnc_map[hgnc_id]
+    
+    attempt = 0
+    while attempt < max_retries:
+        try:
+            response = requests.get(HGNC_ENDPOINT + hgnc_id, timeout = timeout, headers = {'Accept': 'application/json'})
+
+            # handle errors
+            if response.status_code != 200:
+                misc_fns.print_and_log(f'Error during HGNC API call for id \'{hgnc_id}\':\n\tStatus Code: \'{response.status_code}\'\n\tReturn Data: {response.text}', 'error')
+                return 1, None
+            
+            # if no return error, continue to processing
+            hgnc_data = response.json().get('response', {}).get('docs', [{}])[0]
+            synonyms = []
+            for synonym in hgnc_data.get('alias_symbol', []):
+                synonyms.append(synonym)
+            for synonym in hgnc_data.get('alias_name', []):
+                synonyms.append(synonym)
+            return_data = {
+                'recommended_name': hgnc_data['name'],
+                'synonyms': synonyms
+            }
+            # add data to cache
+            hgnc_map[hgnc_id] = return_data
+            misc_fns.write_json('../../mapping_data/hgnc_map.json', hgnc_map)
+            return 1, return_data
+        except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
+            misc_fns.print_and_log(f'Warning: Failed to connect to HGNC API on attempt {attempt + 1}. Retrying...', 'warning')
+            attempt += 1
+            sleep(1)
+            continue
+        except Exception as e:
+            misc_fns.print_and_log(f'Unexpected error while fetching HGNC data for HGNC ID \'{hgnc_id}\':\n\t{e}', 'error')
+            return 1, None
+    
+    misc_fns.print_and_log(f'Failed to retrive HGNC data after {max_retries} attempts.', 'error')
+    return 1, None
+
