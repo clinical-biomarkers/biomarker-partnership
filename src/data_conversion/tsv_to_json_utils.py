@@ -1,6 +1,56 @@
 import api_calls as data_api
 import misc_functions as misc_fns
-import sys
+import time
+
+RATE_LIMIT_CHECKS = {
+    'uniprot': {
+        'rate_limit': 200,
+        'sleep_time': 1
+    },
+    'hgnc': {
+        'rate_limit': 10,
+        'sleep_time': 1
+    },
+    'pubmed': {
+        'rate_limit': 10,
+        'sleep_time': 1
+    }
+}
+uniprot_count = 0
+hgnc_count = 0
+pubmed_count = 0
+
+def handle_rate_limits(api_calls: dict) -> None:
+    ''' Checks the rate limit and sleeps if required.
+
+    Parameters
+    ----------
+    api_calls : dict
+        Dictionary containing the API call indicators.
+    '''
+    global uniprot_count
+    global hgnc_count
+    global pubmed_count
+
+    uniprot_count += api_calls.get('uniprot', 0)
+    hgnc_count += api_calls.get('hgnc', 0)
+    pubmed_count += api_calls.get('pubmed', 0)
+    api_call_totals = {
+        'uniprot': uniprot_count,
+        'hgnc': hgnc_count,
+        'pubmed': pubmed_count
+    }
+
+    for resource in api_calls:
+        if resource not in RATE_LIMIT_CHECKS:
+            continue 
+        if api_call_totals[resource] >= RATE_LIMIT_CHECKS[resource]['rate_limit']:
+            misc_fns.print_and_log(f'Rate limit reached for {resource} API calls. Sleeping for {RATE_LIMIT_CHECKS[resource]["sleep_time"]} seconds...', 'info')
+            time.sleep(RATE_LIMIT_CHECKS[resource]['sleep_time'])
+            uniprot_count = 0
+            hgnc_count = 0
+            pubmed_count = 0
+            break 
 
 def handle_entity_type_synonyms(entity_type: str, assessed_entity_type_name_space: str, assessed_entity_type_accession: str, name_space_map: dict) -> tuple:
     ''' For supported resources, handles the synonym and recommended name data returned from the API call for assessed biomarker entity data.
@@ -104,6 +154,8 @@ def _handle_metabolite_synonyms(assessed_entity_type_name_space: str, assessed_e
     api_call_counter = {}
     if name_space_map[assessed_entity_type_name_space] == 'chebi':
         api_call_count, resource_data = data_api.get_chebi_data(assessed_entity_type_accession)
+    elif name_space_map[assessed_entity_type_name_space] == 'hgnc':
+        api_call_count, resource_data = data_api.get_hgnc_data(assessed_entity_type_accession)
     else:
         misc_fns.log_once(f'Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for automated metabolite synonym data retrieval.', 'info')
         return None, None
