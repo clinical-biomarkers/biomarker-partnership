@@ -12,11 +12,7 @@ COMP_SINGULAR_EVIDENCE_FIELDS = {'biomarker', 'assessed_biomarker_entity',
                                 'assessed_biomarker_entity_id', 'assessed_entity_type'}
 TOP_LEVEL_EVIDENCE_FIELDS = {'condition', 'exposure_agent', 'best_biomarker_role'}
 
-UNIPROT_RATE_LIMIT_CHECK = 200
-UNIPROT_SLEEP_TIME = 1
 ADD_CITATION_DATA = True
-PUBMED_RATE_LIMIT_CHECK = 10 
-PUBMED_SLEEP_TIME = 1
 
 def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, url_map: dict, name_space_map: dict) -> None:
     ''' Entry point for the TSV -> JSON conversion.
@@ -36,13 +32,6 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
     '''
 
     header_check = False
-
-    # set rate limit variables to locals for better performance
-    uniprot_rate_limit_counter = 0
-    uniprot_rate_limit_check = UNIPROT_RATE_LIMIT_CHECK
-    uniprot_sleep_time = UNIPROT_SLEEP_TIME
-    pubmed_rate_limit_check = PUBMED_RATE_LIMIT_CHECK
-    pubmed_sleep_time = PUBMED_SLEEP_TIME
 
     with open(source_filepath, 'r') as f:
         data = csv.DictReader(f, delimiter = '\t', quotechar = '"')
@@ -77,11 +66,7 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
 
             ### build biomarker component object
             api_counts, base_biomarker_component_object = build_base_biomarker_component_entry(row, name_space_map)
-            uniprot_rate_limit_counter += api_counts['uniprot']
-            if uniprot_rate_limit_counter == uniprot_rate_limit_check:
-                misc_fns.print_and_log(f'UniProt API rate limit check ({uniprot_rate_limit_check}) reached, sleeping for {uniprot_sleep_time} seconds...', 'info')
-                time.sleep(uniprot_sleep_time)
-                uniprot_rate_limit_counter = 0
+            utils.handle_rate_limits(api_counts)
 
             ### build and add the spcimen entry to the biomarker component object
             biomarker_component = add_specimen_entry(row, base_biomarker_component_object, url_map)
@@ -206,15 +191,11 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
                         evidence_sources.append((entry_idx, evidence_source))
             misc_fns.print_and_log(f'Adding citation data for {len(evidence_sources)} evidence sources...', 'info')
 
-            pubmed_api_rate_limit_counter = 0
             # get the citation data for each evidence source
             for evidence_source in evidence_sources:
                 if evidence_source[1]['database'].lower() == 'pubmed':
-                    if pubmed_api_rate_limit_counter == pubmed_rate_limit_check:
-                        misc_fns.print_and_log(f'PubMed API rate limit check ({pubmed_rate_limit_check}) reached, sleeping for {pubmed_sleep_time} second...', 'info')
-                        time.sleep(pubmed_sleep_time)
-                        pubmed_api_rate_limit_counter = 0
                     pubmed_api_call_indicator, pubmed_data = data_api.get_pubmed_data(evidence_source[1]['evidence_id'])
+                    utils.handle_rate_limits({'pubmed': pubmed_api_call_indicator})
                     if not pubmed_data:
                         continue
                     citation_entry = {
@@ -230,7 +211,6 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
                         'reference': []
                     }
                     result_data[evidence_source[0]]['citation'].append(citation_entry)
-                    pubmed_api_rate_limit_counter += pubmed_api_call_indicator
                 else:
                     misc_fns.log_once(f'Evidence source database {evidence_source[1]["database"]} not supported for citation data.', 'info')
 
