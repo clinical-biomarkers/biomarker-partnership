@@ -6,6 +6,7 @@ import csv
 import time 
 import api_calls as data_api
 import misc_functions as misc_fns
+import tsv_to_json_utils as utils
 
 COMP_SINGULAR_EVIDENCE_FIELDS = {'biomarker', 'assessed_biomarker_entity', 
                                 'assessed_biomarker_entity_id', 'assessed_entity_type'}
@@ -389,54 +390,22 @@ def build_base_biomarker_component_entry(row: list, name_space_map: dict) -> tup
     tuple
         Returns a dictionary used for api rate limit control and the dictionary containing the biomarker component entry.
     '''
-    api_call_counter = {
-        'uniprot': 0
-    }
+    api_call_counter = {value: 0 for _, value in name_space_map.items()}
     assessed_entity_type = row['assessed_entity_type'].lower().strip()
     assessed_entity_type_name_space = row['assessed_biomarker_entity_id'].split(':')[0].lower().strip()
+    assessed_entity_type_accession = row['assessed_biomarker_entity_id'].split(':')[1].strip()
     recommended_name = None
     synonyms = []
 
     # check if resource namespace is supported for retrieving synonym data
     if assessed_entity_type_name_space in set(name_space_map.keys()):
 
-        ### handle protein entities
-        if assessed_entity_type == 'protein':
-            # handle uniprot protein data
-            if name_space_map[assessed_entity_type_name_space] == 'uniprot':
-                uniprot_call_counter, uniprot_data = data_api.get_uniprot_data(row['assessed_biomarker_entity_id'].split(':')[1], 'protein')
-                if uniprot_call_counter == 1:
-                    api_call_counter['uniprot'] += 1
-                synonyms, recommended_name = handle_synonym_rec_name_data(uniprot_data)
-            # handle chebi protein data
-            elif name_space_map[assessed_entity_type_name_space] == 'chebi':
-                chebi_data = data_api.get_chebi_data(row['assessed_biomarker_entity_id'].split(':')[1])
-                synonyms, recommended_name = handle_synonym_rec_name_data(chebi_data)
-            else:
-                misc_fns.log_once(f'Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for protein synonym data.', 'info')
+        synonyms, recommended_name, api_calls_used = utils.handle_entity_type_synonyms(assessed_entity_type, assessed_entity_type_name_space, assessed_entity_type_accession, name_space_map)
+        if api_calls_used:
+            api_call_counter['uniprot'] += api_calls_used.get('uniprot', 0)
+            api_call_counter['chebi'] += api_calls_used.get('chebi', 0)
+            api_call_counter['cell ontology'] += api_calls_used.get('cell ontology', 0)
         
-        ### handle metabolite entities
-        elif assessed_entity_type == 'metabolite':
-            # handle chebi metabolite data
-            if name_space_map[assessed_entity_type_name_space] == 'chebi':
-                chebi_data = data_api.get_chebi_data(row['assessed_biomarker_entity_id'].split(':')[1])
-                synonyms, recommended_name = handle_synonym_rec_name_data(chebi_data)
-            else:
-                misc_fns.log_once(f'Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for metabolite synonym data.', 'info')
-        
-        ### handle cell entities
-        elif assessed_entity_type == 'cell':
-            # handle cell ontology data
-            if name_space_map[assessed_entity_type_name_space] == 'cell ontology':
-                cell_ontology_data = data_api.get_co_data(row['assessed_biomarker_entity_id'].split(':')[1])
-                synonyms, recommended_name = handle_synonym_rec_name_data(cell_ontology_data)
-            else:
-                misc_fns.log_once(f'Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for cell synonym data.', 'info')
-        
-        # provide warning if entity type is not supported
-        else:
-            misc_fns.log_once(f'Assessed entity type \'{assessed_entity_type}\' not supported for synonym data.', 'info')
-
     # provide warning if name space is not supported
     else:
         misc_fns.log_once(f'Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for synonym data.', 'info')
@@ -457,25 +426,6 @@ def build_base_biomarker_component_entry(row: list, name_space_map: dict) -> tup
     }
 
     return api_call_counter, entry 
-
-def handle_synonym_rec_name_data(data: dict) -> tuple:
-    ''' Handles the synonym and recommended name data returned from the API call for assessed biomarker entity data.
-
-    Parameters
-    ----------
-    data : dict
-        Dictionary containing the API call response data.
-    
-    Returns
-    -------
-    tuple
-        Tuple containing the recommended name and synonym entries.
-    '''
-    if data:
-        synonyms = [{'synonym': synonym} for synonym in data['synonyms']]
-        recommended_name = data['recommended_name']
-        return synonyms, recommended_name
-    return [], None
 
 def build_evidence_entry(row: list, tag_list: list, url_map: dict) -> list:
     ''' Builds the evidence entry.
