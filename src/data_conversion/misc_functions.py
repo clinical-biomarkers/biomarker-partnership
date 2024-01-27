@@ -85,3 +85,27 @@ def clean_string(string: str) -> str:
         The cleaned string.
     '''
     return re.sub(r'[^A-Za-z0-9]+', '', string).lower()
+
+def print_and_log(string: str, level: str) -> None:
+    ''' Logs and prints if level is warning (for error level the calling 
+    code is expected to raise the error so no print required). 
+
+    Parameters
+    ----------
+    string: str
+        String to print and log.
+    level: str
+        Level of logging to use.
+    '''
+    if level.lower() == 'debug':
+        logging.debug(string)
+    elif level.lower() == 'info':
+        logging.info(string)
+    elif level.lower() == 'warning':
+        logging.warning(string)
+        print(string)
+    elif level.lower() == 'error':
+        logging.error(string)
+    else:
+        logging.error(f'print_and_log error: Invalid level {level}')
+        raise ValueError(f'print_and_log error: Invalid level {level}')
