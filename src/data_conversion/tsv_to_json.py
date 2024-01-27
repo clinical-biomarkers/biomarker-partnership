@@ -231,7 +231,7 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
                     result_data[evidence_source[0]]['citation'].append(citation_entry)
                     pubmed_api_rate_limit_counter += pubmed_api_call_indicator
                 else:
-                    misc_fns.print_and_log(f'Evidence source database {evidence_source[1]["database"]} not supported for citation data.', 'info')
+                    misc_fns.log_once(f'Evidence source database {evidence_source[1]["database"]} not supported for citation data.', 'info')
 
             misc_fns.print_and_log(f'Finished adding citation data!', 'info')
         
@@ -293,14 +293,14 @@ def build_condition_entry(row: list, url_map: dict, name_space_map: dict) -> dic
         if condition_name_space in set(url_map.keys()):
             condition_resource = name_space_map[condition_name_space].title()
         else:
-            misc_fns.print_and_log(f'Condition name space \'{condition_name_space}\' not in the name space map.', 'info')
+            misc_fns.log_once(f'Condition name space \'{condition_name_space}\' not in the name space map.', 'info')
             condition_resource = condition_name_space
         # try to build condition url
         condition_url = None
         if condition_name_space in set(url_map.keys()):
             condition_url = f"{url_map[condition_name_space]}{row['condition_id'].split(':')[1]}"
         else:
-            misc_fns.print_and_log(f'Condition name space \'{condition_name_space}\' not in the url map.', 'info')
+            misc_fns.log_once(f'Condition name space \'{condition_name_space}\' not in the url map.', 'warning')
         # build entry
         condition = {
             'condition_id': row['condition_id'],
@@ -330,7 +330,7 @@ def build_condition_entry(row: list, url_map: dict, name_space_map: dict) -> dic
                     synonym_entries.append(synonym_entry)
                 condition['synonyms'] = synonym_entries 
         else:
-            misc_fns.print_and_log(f'Condition name space \'{condition_name_space}\' not supported for condition description and synonyms.', 'info')
+            misc_fns.log_once(f'Condition name space \'{condition_name_space}\' not supported for automated condition description and synonyms retrieval.', 'info')
     
     return condition
 
@@ -361,7 +361,7 @@ def add_specimen_entry(row: list, biomarker_component_object: dict, url_map: dic
         if specimen_database in set(url_map.keys()):
             specimen_url = f"{url_map[specimen_database]}{row['specimen_id'].split(':')[1]}"
         else:
-            misc_fns.print_and_log(f'Specimen database \'{specimen_database}\' not in the url map.', 'info')
+            misc_fns.log_once(f'Specimen database \'{specimen_database}\' not in the url map.', 'info')
     if row['specimen'] or row['loinc_code']:
         specimen = {
             'name': row.get('specimen', ''),
@@ -413,7 +413,7 @@ def build_base_biomarker_component_entry(row: list, name_space_map: dict) -> tup
                 chebi_data = data_api.get_chebi_data(row['assessed_biomarker_entity_id'].split(':')[1])
                 synonyms, recommended_name = handle_synonym_rec_name_data(chebi_data)
             else:
-                misc_fns.print_and_log(f'Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for protein synonym data.', 'info')
+                misc_fns.log_once(f'Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for protein synonym data.', 'info')
         
         ### handle metabolite entities
         elif assessed_entity_type == 'metabolite':
@@ -422,7 +422,7 @@ def build_base_biomarker_component_entry(row: list, name_space_map: dict) -> tup
                 chebi_data = data_api.get_chebi_data(row['assessed_biomarker_entity_id'].split(':')[1])
                 synonyms, recommended_name = handle_synonym_rec_name_data(chebi_data)
             else:
-                misc_fns.print_and_log(f'Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for metabolite synonym data.', 'info')
+                misc_fns.log_once(f'Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for metabolite synonym data.', 'info')
         
         ### handle cell entities
         elif assessed_entity_type == 'cell':
@@ -431,20 +431,20 @@ def build_base_biomarker_component_entry(row: list, name_space_map: dict) -> tup
                 cell_ontology_data = data_api.get_co_data(row['assessed_biomarker_entity_id'].split(':')[1])
                 synonyms, recommended_name = handle_synonym_rec_name_data(cell_ontology_data)
             else:
-                misc_fns.print_and_log(f'Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for cell synonym data.', 'info')
+                misc_fns.log_once(f'Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for cell synonym data.', 'info')
         
         # provide warning if entity type is not supported
         else:
-            misc_fns.print_and_log(f'Assessed entity type \'{assessed_entity_type}\' not supported for synonym data.', 'info')
+            misc_fns.log_once(f'Assessed entity type \'{assessed_entity_type}\' not supported for synonym data.', 'info')
 
     # provide warning if name space is not supported
     else:
-        misc_fns.print_and_log(f'Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for synonym data.', 'info')
+        misc_fns.log_once(f'Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for synonym data.', 'info')
     
     # give a warning if the API retrieved recommended name does not match the TSV assessed biomarker entity value 
     if recommended_name:
         if misc_fns.clean_string(row['assessed_biomarker_entity']) != misc_fns.clean_string(recommended_name):
-            misc_fns.print_and_log(f'Warning: Resource recommended name \'{recommended_name}\' does not match the TSV assessed biomarker entity \'{row["assessed_biomarker_entity"]}\'', 'warning')
+            misc_fns.log_once(f'Warning: Resource recommended name \'{recommended_name}\' does not match the TSV assessed biomarker entity \'{row["assessed_biomarker_entity"]}\'', 'warning')
 
     entry = {
         'biomarker': row['biomarker'],
@@ -502,7 +502,7 @@ def build_evidence_entry(row: list, tag_list: list, url_map: dict) -> list:
         if evidence_database in set(url_map.keys()):
             evidence_url = f"{url_map[evidence_database]}{evidence_id}"
         else:
-            misc_fns.print_and_log(f'Evidence database \'{evidence_database}\' not in the url map.', 'info')
+            misc_fns.log_once(f'Evidence database \'{evidence_database}\' not in the url map.', 'warning')
             evidence_url = None 
         # build evidence object
         evidence_entry.append(
