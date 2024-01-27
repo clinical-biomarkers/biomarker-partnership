@@ -1,9 +1,7 @@
 ''' Handles the conversion from the JSON data model format to the TSV table format.
 '''
 
-import logging 
 import traceback
-import sys 
 import misc_functions as misc_fns
 
 # valid evidence tags for singular fields
@@ -33,7 +31,6 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -
     # get the JSON source data
     json_data = misc_fns.load_json(source_filepath)
 
-
     # create the end result TSV content file and write the headers
     tsv_content = '\t'.join(tsv_headers) + '\n'
 
@@ -52,13 +49,11 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -
             best_biomarker_roles = ';'.join([role['role'] for role in best_biomarker_roles_dict])
             top_level_evidence = top_level_entry.get('evidence_source', [])
         except KeyError as e:
-            logging.error(f'KeyError: Error parsing top level element in JSON data:\n\tIndex: {top_level_entry_idx}\n\Error: {e}\n\n{traceback.format_exc()}')
-            print(f'KeyError: Error parsing top level element in JSON data:\n\tIndex: {top_level_entry_idx}\n\tError: {e}\n\n{traceback.format_exc()}')
-            sys.exit(1)
+            misc_fns.print_and_log(f'KeyError: Error parsing top level element in JSON data:\n\tIndex: {top_level_entry_idx}\n\Error: {e}\n\n{traceback.format_exc()}', 'error')
+            raise KeyError(e)
         except Exception as e:
-            logging.error(f'Unexpected error parsing top level elements in JSON data:\n\tIndex: {top_level_entry_idx}\n\tError: {e}\n\n{traceback.format_exc()}')
-            print(f'Unexpected error parsing top level elements in JSON data:\n\tIndex: {top_level_entry_idx}\n\tError: {e}\n\n{traceback.format_exc()}')
-            sys.exit(1)
+            misc_fns.print_and_log(f'Unexpected error parsing top level elements in JSON data:\n\tIndex: {top_level_entry_idx}\n\tError: {e}\n\n{traceback.format_exc()}', 'error')
+            raise Exception(e)
         
         ### loop through the biomarker component in the current entry 
 
@@ -75,13 +70,11 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -
                 assessed_entity_type = component_entry['assessed_entity_type']
                 component_evidence = component_entry['evidence_source']
             except KeyError as e:
-                logging.error(f'KeyError: Error parsing biomarker component element in JSON data:\n\tIndex: {component_idx}\n\Error: {e}\n\n{traceback.format_exc()}')
-                print(f'KeyError: Error parsing biomarker component element in JSON data:\n\tIndex: {component_idx}\n\Error: {e}\n\n{traceback.format_exc()}')
-                sys.exit(1)
+                misc_fns.print_and_log(f'KeyError: Error parsing biomarker component element in JSON data:\n\tIndex: {component_idx}\n\Error: {e}\n\n{traceback.format_exc()}', 'error')
+                raise KeyError(e)
             except Exception as e:
-                logging.error(f'Unexpected error parsing biomarker component elements in JSON data:\n\tIndex: {component_idx}\n\tError: {e}\n\n{traceback.format_exc()}')
-                print(f'Unexpected error parsing biomarker component elements in JSON data:\n\tIndex: {component_idx}\n\tError: {e}\n\n{traceback.format_exc()}')
-                sys.exit(1)
+                misc_fns.print_and_log(f'Unexpected error parsing biomarker component elements in JSON data:\n\tIndex: {component_idx}\n\tError: {e}\n\n{traceback.format_exc()}', 'error')
+                raise Exception(e)
             
             # initialize specimen values to empty strings for the case specimen data is not present
             specimen = ''
@@ -285,7 +278,7 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list) -
     # write the TSV content to the target file
     with open(target_filepath, 'w') as f:
         f.write(tsv_content)
-    logging.info(f'Conversion complete. TSV file written to {target_filepath}')
+    misc_fns.print_and_log(f'Conversion complete. TSV file written to {target_filepath}', 'info')
 
 def tag_parse(tag: dict, object_evidence_fields: dict, component_idx: int = None) -> tuple:
     ''' Parses the evidence data in the JSON data model. 
