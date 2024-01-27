@@ -61,3 +61,4 @@ The full JSON data model version includes various supplementary data fields that
 - Uberon 
 - Chemical Entities of Biological Interest (ChEBI)
 - Cell Ontology 
+- HUGO Gene Nomenclature Committee (HGNC) 
