@@ -207,7 +207,7 @@ def get_uniprot_data(uniprot_id: str, assessed_entity_type: str) -> tuple:
     misc_fns.write_json('../../mapping_data/uniprot_map.json', uniprot_map)
     return 1, return_data
 
-def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
+def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> tuple:
     ''' Gets the ChEBI data for the given ChEBI ID.
 
     Parameters
@@ -222,13 +222,13 @@ def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> dic
     Returns
     -------
     dict
-        The ChEBI name and synonym data for the given ChEBI ID.
+        Indicator if an API call was made and the ChEBI name and synonym data for the given ChEBI ID.
     '''
     chebi_id = chebi_id.strip()
     # check ChEBI cache and see if information is there to avoid duplicate API calls
     chebi_map = misc_fns.load_json('../../mapping_data/chebi_map.json')
     if chebi_id in chebi_map:
-        return chebi_map[chebi_id]
+        return 0, chebi_map[chebi_id]
     
     ns = {'chebi': 'https://www.ebi.ac.uk/webservices/chebi'}
     attempt = 0
@@ -238,7 +238,7 @@ def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> dic
             if response.status_code != 200:
                 logging.error(f'Error during ChEBI API call for id {chebi_id}:\n\tStatus Code: {response.status_code}\n\tReturn Data: {response.text}')
                 print(f'Error during ChEBI API call for id {chebi_id}:\n\tStatus Code: {response.status_code}\n\tReturn Data: {response.text}')
-                return None
+                return 1, None
             root = ET.fromstring(response.content)
             chebi_name_element = root.find('.//chebi:chebiAsciiName', ns)
             synonym_elements = root.findall('.//chebi:Synonyms', ns)
@@ -250,7 +250,7 @@ def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> dic
             # add data to cache
             chebi_map[chebi_id] = return_data
             misc_fns.write_json('../../mapping_data/chebi_map.json', chebi_map)
-            return return_data
+            return 1, return_data
 
         except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
             logging.warning(f'Warning: Failed to connect to ChEBI API on attempt {attempt + 1}. Retrying...')
@@ -261,12 +261,12 @@ def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> dic
         except Exception as e:
             logging.error(f'Unexpected error while fetching ChEBI data for ChEBI ID {chebi_id}:\n\t{e}')
             print(f'Unexpected error while fetching ChEBI data for ChEBI ID {chebi_id}:\n\t{e}')
-            return None
+            return 1, None
     
     logging.error(f'Failed to retrive ChEBI data after {max_retries} attempts.')
-    return None
+    return 1, None
 
-def get_co_data(co_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
+def get_co_data(co_id: str, max_retries: int = 3, timeout: int = 5) -> tuple:
     ''' Gets the Cell Ontology data for the given Cell Ontology ID.
 
     Parameters
@@ -280,8 +280,8 @@ def get_co_data(co_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
     
     Returns
     -------
-    dict
-        The Cell Ontology name and synonym data for the given Cell Ontology ID.
+    tuple
+        Indicator if an API call was made and the Cell Ontology name and synonym data for the given Cell Ontology ID.
     '''
     co_id = co_id.strip()
     # co id's must start with capital `CL`
@@ -290,7 +290,7 @@ def get_co_data(co_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
     # check Cell Ontology cache and see if information is there to avoid duplicate API calls
     co_map = misc_fns.load_json('../../mapping_data/co_map.json')
     if co_id in co_map:
-        return co_map[co_id]
+        return 0, co_map[co_id]
     
     attempt = 0
     while attempt < max_retries:
@@ -301,7 +301,7 @@ def get_co_data(co_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
             if response.status_code != 200:
                 logging.error(f'Error during Cell Ontology API call for id {co_id}:\n\tStatus Code: {response.status_code}\n\tReturn Data: {response.text}')
                 print(f'Error during Cell Ontology API call for id {co_id}:\n\tStatus Code: {response.status_code}\n\tReturn Data: {response.text}')
-                return None
+                return 1, None
             
             # if no return error, continue to processing
             co_data = response.json()
@@ -325,10 +325,10 @@ def get_co_data(co_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
         except Exception as e:
             logging.error(f'Unexpected error while fetching Cell Ontology data for Cell Ontology ID {co_id}:\n\t{e}')
             print(f'Unexpected error while fetching Cell Ontology data for Cell Ontology ID {co_id}:\n\t{e}')
-            return None
+            return 1, None
     
     logging.error(f'Failed to retrive Cell Ontology data after {max_retries} attempts.')
-    return None
+    return 1, None
 
 
 
