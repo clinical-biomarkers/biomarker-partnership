@@ -3,5 +3,6 @@
     "upkb": "uniprot",
     "uberon": "uberon",
     "chebi": "chebi",
-    "co": "cell ontology"
+    "co": "cell ontology",
+    "hgnc": "hgnc"
 }
