@@ -1,5 +1,8 @@
 {
     "doid": "disease ontology",
     "upkb": "uniprot",
-    "uberon": "uberon"
+    "uberon": "uberon",
+    "chebi": "chebi",
+    "co": "cell ontology",
+    "hgnc": "hgnc"
 }

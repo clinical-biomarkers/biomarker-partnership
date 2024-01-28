@@ -120,8 +120,7 @@ def build_condition_triple(biomarker_subject_uri: str, condition: str, roles: li
                     continue
                 condition_triples.append(f'{biomarker_subject_uri} {predicate_uri} {condition_object_uri} .')
     else:
-        logging.info(f'build_condition_triple: No namespace URI found for condition: {condition}')
-        print(f'build_condition_triple: No namespace URI found for condition: {condition}')
+        misc_fns.log_once(f'build_condition_triple: No namespace URI map found for condition name space: \'{condition_name_space}\'', 'info')
     
     return condition_triples
 
@@ -156,8 +155,7 @@ def build_specimen_triples(biomarker_subject_uri: str, specimens: list, triples_
                         uberon_sample_uri = triples_map[SUBJECT_OBJECTS]['uberon'].replace('{replace}', specimen_id.split(':')[1])
                         specimen_triples.append(f'{biomarker_subject_uri} {specimen_predicate_uri} {uberon_sample_uri} .')
             else:
-                logging.info(f'build_specimen_triples: No namespace URI found for specimen: {specimen}')
-                print(f'build_specimen_triples: No namespace URI found for specimen: {specimen}')
+                misc_fns.log_once(f'build_specimen_triples: No namespace URI found for specimen: \'{specimen}\'', 'info')
 
     return specimen_triples 
 
@@ -198,8 +196,7 @@ def build_biomarker_role_triples(biomarker_subject_uri: str, roles: dict, triple
         elif role.lower() == 'safety':
             role_object_uri = role_object_map['safety']
         else:
-            logging.info(f'build_biomarker_role_triples: No role URI found for role: {role}')
-            print(f'build_biomarker_role_triples: No role URI found for role: {role}')
+            misc_fns.log_once(f'build_biomarker_role_triples: No role URI found for role: \'{role}\'', 'info')
             continue
         role_triples.append(f'{biomarker_subject_uri} {role_predicate_uri} {role_object_uri} .')
     
@@ -237,8 +234,7 @@ def build_biomarker_change_triple(biomarker_subject_uri: str, biomarker_change: 
     elif 'presence' in biomarker_change.lower():
         predicate_uri = triples_map[PREDICATES][change_key]['presence']
     else:
-        logging.info(f'build_biomarker_change_triple: No change predicate found for biomarker change: {biomarker_change}')
-        print(f'build_biomarker_change_triple: No change predicate found for biomarker change: {biomarker_change}')
+        misc_fns.log_once(f'build_biomarker_change_triple: No change predicate found for biomarker change: \'{biomarker_change}\'', 'info')
         return None 
     
     # get object URI
@@ -248,8 +244,7 @@ def build_biomarker_change_triple(biomarker_subject_uri: str, biomarker_change: 
         if namespace_map[entity_namespace] == 'uniprot':
             object_uri = triples_map[SUBJECT_OBJECTS]['uniprot'].replace('{replace}', entity_id.upper())
     else:
-        logging.info(f'build_biomarker_change_triple: No namespace found for assessed biomarker entity ID: {assessed_biomarker_entity_id}')
-        print(f'build_biomarker_change_triple: No namespace found for assessed biomarker entity ID: {assessed_biomarker_entity_id}')
+        misc_fns.log_once(f'build_biomarker_change_triple: No namespace object URI found for assessed biomarker entity ID: \'{assessed_biomarker_entity_id}\'', 'info')
         return None
     
     return f'{biomarker_subject_uri} {predicate_uri} {object_uri} .'
