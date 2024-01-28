@@ -58,7 +58,6 @@ The full JSON data model version includes various supplementary data fields that
 - PubMed
 - Disease Ontology 
 - UniprotKB
-- Uberon 
 - Chemical Entities of Biological Interest (ChEBI)
 - Cell Ontology 
 - HUGO Gene Nomenclature Committee (HGNC) 
