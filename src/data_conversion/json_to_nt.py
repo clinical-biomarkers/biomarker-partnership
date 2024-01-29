@@ -241,10 +241,18 @@ def build_biomarker_change_triple(biomarker_subject_uri: str, biomarker_change: 
     entity_namespace = assessed_biomarker_entity_id.split(':')[0].lower()
     if entity_namespace in namespace_map:
         entity_id = assessed_biomarker_entity_id.split(':')[1]
-        if namespace_map[entity_namespace] == 'uniprot':
+        namespace_value = namespace_map[entity_namespace]
+        if namespace_value == 'uniprot':
             object_uri = triples_map[SUBJECT_OBJECTS]['uniprot'].replace('{replace}', entity_id.upper())
+        elif namespace_value == 'cell ontology':
+            object_uri = triples_map[SUBJECT_OBJECTS]['cell_ontology'].replace('{replace}', entity_id.upper())
+        elif namespace_value == 'chebi':
+            object_uri = triples_map[SUBJECT_OBJECTS]['chebi'].replace('{replace}', entity_id.upper())
+        else:
+            misc_fns.log_once(f'build_biomarker_change_triple: No namespace object URI mapping found for entity namespace: \'{entity_namespace}\'', 'info')
+            return None
     else:
-        misc_fns.log_once(f'build_biomarker_change_triple: No namespace object URI found for assessed biomarker entity ID: \'{assessed_biomarker_entity_id}\'', 'info')
+        misc_fns.log_once(f'build_biomarker_change_triple: No namespace object URI mapping found for entity namespace: \'{entity_namespace}\'', 'info')
         return None
     
     return f'{biomarker_subject_uri} {predicate_uri} {object_uri} .'
