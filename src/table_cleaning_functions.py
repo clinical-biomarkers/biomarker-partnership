@@ -42,7 +42,7 @@ def clean_parantheticals(source_column: pd.Series) -> pd.Series:
     pd.Series
         The cleaned dataframe column.
     '''
-    return source_column.apply(lambda x: re.sub(r'\([^)]*\)', '', x).strip() if isinstance(x, str) else x)
+    return source_column.apply(lambda x : x.split('(')[0].strip() if isinstance(x, str) else x)
 
 def strip_values(source_column: pd.Series) -> pd.Series:
     ''' Strips the leading and trailing whitespace from the given dataframe column.
