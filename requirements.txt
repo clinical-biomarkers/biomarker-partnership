@@ -3,3 +3,4 @@ pandas==2.1.1
 ipykernel==6.28.0
 python-dotenv==1.0.0
 pymed==0.8.9
+pronto==2.5.5
