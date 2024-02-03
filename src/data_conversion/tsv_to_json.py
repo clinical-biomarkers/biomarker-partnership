@@ -216,6 +216,10 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
 
             misc_fns.print_and_log(f'Finished adding citation data!', 'info')
         
+        total_api_calls = utils.get_total_api_calls()
+        for resource, count in total_api_calls.items():
+            misc_fns.print_and_log(f'Total {resource} API calls: {count}', 'info')
+        
         with open(target_filepath, 'w') as f:
             json.dump(result_data, f, indent = 4)
 
@@ -299,6 +303,8 @@ def build_condition_entry(row: list, url_map: dict, name_space_map: dict) -> dic
         if condition_name_space == 'doid':
             doid_data = data_api.get_doid_data(row['condition_id'].split(':')[1])
             if doid_data:
+                if row['condition'] != doid_data['recommended_name']:
+                    misc_fns.log_once(f'Warning: Resource recommended name \'{doid_data["recommended_name"]}\' does not match the TSV condition name \'{row["condition"]}\'', 'warning')
                 condition['recommended_name']['description'] = doid_data['description']
                 synonym_entries = []
                 for synonym in doid_data['synonyms']:
