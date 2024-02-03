@@ -53,6 +53,9 @@ def get_doid_data(doid_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
             # if no return error, continue to processing
             doid_data = response.json()
 
+            # get recommended name
+            doid_name = doid_data.get('name', '')
+
             # clean the doid description
             doid_description = doid_data.get('definition', '')
             doid_description = re.search('\"(.*)\"', doid_description).group(1)
@@ -61,7 +64,7 @@ def get_doid_data(doid_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
             synonyms = doid_data.get('synonyms', [])
             synonyms = [] if synonyms is None else synonyms
             synonyms = [synonym.replace('EXACT', '').strip() for synonym in synonyms if 'EXACT' in synonym]
-            return_data = {'description': doid_description, 'synonyms': synonyms} 
+            return_data = {'recommended_name': doid_name, 'description': doid_description, 'synonyms': synonyms} 
             # write back to cache 
             doid_map[doid_id] = return_data
             misc_fns.write_json('../../mapping_data/doid_map.json', doid_map)
