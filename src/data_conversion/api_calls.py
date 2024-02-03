@@ -217,9 +217,37 @@ def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> tup
     dict
         Indicator if an API call was made and the ChEBI name and synonym data for the given ChEBI ID.
     '''
+    mapping_data_path = '../../mapping_data/'
+    chebi_maps = {
+        '1_4': f'{mapping_data_path}chebi_map_1_1_4.json',
+        '1_5': f'{mapping_data_path}chebi_map_1_5_9.json',
+        '2': f'{mapping_data_path}chebi_map_2.json',
+        '3': f'{mapping_data_path}chebi_map_3.json',
+        '4': f'{mapping_data_path}chebi_map_4.json',
+        '5': f'{mapping_data_path}chebi_map_5.json',
+        '6': f'{mapping_data_path}chebi_map_6.json',
+        '7': f'{mapping_data_path}chebi_map_7.json',
+        '8': f'{mapping_data_path}chebi_map_8.json',
+        '9': f'{mapping_data_path}chebi_map_9.json'
+    }
     chebi_id = chebi_id.strip()
     # check ChEBI cache and see if information is there to avoid duplicate API calls
-    chebi_map = misc_fns.load_json('../../mapping_data/chebi_map.json')
+    target_map = None 
+    if chebi_id[0] == 1:
+        if len(chebi_id) > 1:
+            if chebi_id[1] in {'0', '1', '2', '3', '4'}:
+                target_map = chebi_maps['1_4']
+            else:
+                target_map = chebi_maps['1_5']
+    elif chebi_id[0] == 2: target_map = chebi_maps['2']
+    elif chebi_id[0] == 3: target_map = chebi_maps['3']
+    elif chebi_id[0] == 4: target_map = chebi_maps['4']
+    elif chebi_id[0] == 5: target_map = chebi_maps['5']
+    elif chebi_id[0] == 6: target_map = chebi_maps['6']
+    elif chebi_id[0] == 7: target_map = chebi_maps['7']
+    elif chebi_id[0] == 8: target_map = chebi_maps['8']
+    elif chebi_id[0] == 9: target_map = chebi_maps['9']
+    chebi_map = misc_fns.load_json(target_map)
     if chebi_id in chebi_map:
         return 0, chebi_map[chebi_id]
     
@@ -241,7 +269,7 @@ def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> tup
             }
             # add data to cache
             chebi_map[chebi_id] = return_data
-            misc_fns.write_json('../../mapping_data/chebi_map.json', chebi_map)
+            misc_fns.write_json(target_map, chebi_map)
             return 1, return_data
 
         except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
