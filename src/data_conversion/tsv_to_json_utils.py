@@ -19,6 +19,58 @@ RATE_LIMIT_CHECKS = {
 uniprot_count = 0
 hgnc_count = 0
 pubmed_count = 0
+api_counters = {
+    'uniprot': {
+        'count': 0,
+        'total': 0
+    },
+    'hgnc': {
+        'count': 0,
+        'total': 0
+    },
+    'pubmed': {
+        'count': 0,
+        'total': 0
+    } 
+}
+
+def get_total_api_calls() -> dict:
+    ''' Returns the total number of API calls made for each resource during the conversion.
+
+    Returns
+    -------
+    dict
+        Dictionary containing the total number of API calls made for each resource.
+    '''
+    return_data = {}
+    for resource in api_counters:
+        return_data[resource] = api_counters[resource]['total']
+    return return_data
+
+def _update_resource_api_counters(resource: str, call_count: int) -> None:
+    ''' Updates the resource API call counters.
+
+    Parameters
+    ----------
+    resource : str
+        The resource name.
+    call_count : int
+        The number of API calls made.
+    '''
+    global api_counters
+    api_counters[resource]['count'] += call_count
+    api_counters[resource]['total'] += call_count
+
+def _reset_resource_api_counter(resource: str) -> None:
+    ''' Resets the resource API call counter.
+
+    Parameters
+    ----------
+    resource : str
+        The resource name.
+    '''
+    global api_counters
+    api_counters[resource]['count'] = 0
 
 def handle_rate_limits(api_calls: dict) -> None:
     ''' Checks the rate limit and sleeps if required.
@@ -28,28 +80,20 @@ def handle_rate_limits(api_calls: dict) -> None:
     api_calls : dict
         Dictionary containing the API call indicators.
     '''
-    global uniprot_count
-    global hgnc_count
-    global pubmed_count
 
-    uniprot_count += api_calls.get('uniprot', 0)
-    hgnc_count += api_calls.get('hgnc', 0)
-    pubmed_count += api_calls.get('pubmed', 0)
-    api_call_totals = {
-        'uniprot': uniprot_count,
-        'hgnc': hgnc_count,
-        'pubmed': pubmed_count
-    }
+    _update_resource_api_counters('uniprot', api_calls.get('uniprot', 0))
+    _update_resource_api_counters('hgnc', api_calls.get('hgnc', 0))
+    _update_resource_api_counters('pubmed', api_calls.get('pubmed', 0))
 
     for resource in api_calls:
         if resource not in RATE_LIMIT_CHECKS:
             continue 
-        if api_call_totals[resource] >= RATE_LIMIT_CHECKS[resource]['rate_limit']:
+        if api_counters[resource]['count'] >= RATE_LIMIT_CHECKS[resource]['rate_limit']:
             misc_fns.print_and_log(f'Rate limit reached for {resource} API calls. Sleeping for {RATE_LIMIT_CHECKS[resource]["sleep_time"]} seconds...', 'info')
             time.sleep(RATE_LIMIT_CHECKS[resource]['sleep_time'])
-            uniprot_count = 0
-            hgnc_count = 0
-            pubmed_count = 0
+            _reset_resource_api_counter('uniprot')
+            _reset_resource_api_counter('hgnc')
+            _reset_resource_api_counter('pubmed')
             break 
 
 def handle_entity_type_synonyms(entity_type: str, assessed_entity_type_name_space: str, assessed_entity_type_accession: str, name_space_map: dict) -> tuple:
