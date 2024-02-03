@@ -83,13 +83,7 @@
       "synonyms": [
         {
           "synonym_id": "DOID:10283",
-          "name": "hereditary prostate cancer",
-          "resource": "Disease Ontology",
-          "url": "http://purl.obolibrary.org/obo/DOID:10283"
-        },
-        {
-          "synonym_id": "DOID:10283",
-          "name": "malignant tumor of the prostate",
+          "name": "prostate neoplasm",
           "resource": "Disease Ontology",
           "url": "http://purl.obolibrary.org/obo/DOID:10283"
         },
@@ -101,19 +95,13 @@
         },
         {
           "synonym_id": "DOID:10283",
+          "name": "tumor of the prostate",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID:10283"
+        },
+        {
+          "synonym_id": "DOID:10283",
           "name": "prostate cancer, familial",
-          "resource": "Disease Ontology",
-          "url": "http://purl.obolibrary.org/obo/DOID:10283"
-        },
-        {
-          "synonym_id": "DOID:10283",
-          "name": "prostate neoplasm",
-          "resource": "Disease Ontology",
-          "url": "http://purl.obolibrary.org/obo/DOID:10283"
-        },
-        {
-          "synonym_id": "DOID:10283",
-          "name": "prostatic cancer",
           "resource": "Disease Ontology",
           "url": "http://purl.obolibrary.org/obo/DOID:10283"
         },
@@ -125,7 +113,19 @@
         },
         {
           "synonym_id": "DOID:10283",
-          "name": "tumor of the prostate",
+          "name": "malignant tumor of the prostate",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID:10283"
+        },
+        {
+          "synonym_id": "DOID:10283",
+          "name": "hereditary prostate cancer",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID:10283"
+        },
+        {
+          "synonym_id": "DOID:10283",
+          "name": "prostatic cancer",
           "resource": "Disease Ontology",
           "url": "http://purl.obolibrary.org/obo/DOID:10283"
         }
@@ -247,24 +247,6 @@
       "synonyms": [
         {
           "synonym_id": "DOID:0080600",
-          "name": "2019 Novel Coronavirus (2019-nCoV)",
-          "resource": "Disease Ontology",
-          "url": "http://purl.obolibrary.org/obo/DOID:0080600"
-        },
-        {
-          "synonym_id": "DOID:0080600",
-          "name": "2019-nCoV infection",
-          "resource": "Disease Ontology",
-          "url": "http://purl.obolibrary.org/obo/DOID:0080600"
-        },
-        {
-          "synonym_id": "DOID:0080600",
-          "name": "COVID19",
-          "resource": "Disease Ontology",
-          "url": "http://purl.obolibrary.org/obo/DOID:0080600"
-        },
-        {
-          "synonym_id": "DOID:0080600",
           "name": "SARS-CoV-2 infection",
           "resource": "Disease Ontology",
           "url": "http://purl.obolibrary.org/obo/DOID:0080600"
@@ -277,7 +259,25 @@
         },
         {
           "synonym_id": "DOID:0080600",
+          "name": "COVID19",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID:0080600"
+        },
+        {
+          "synonym_id": "DOID:0080600",
           "name": "Wuhan seafood market pneumonia virus infection",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID:0080600"
+        },
+        {
+          "synonym_id": "DOID:0080600",
+          "name": "2019-nCoV infection",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID:0080600"
+        },
+        {
+          "synonym_id": "DOID:0080600",
+          "name": "2019 Novel Coronavirus (2019-nCoV)",
           "resource": "Disease Ontology",
           "url": "http://purl.obolibrary.org/obo/DOID:0080600"
         }
@@ -516,13 +516,13 @@
         },
         {
           "synonym_id": "DOID:11934",
-          "name": "head and neck tumours",
+          "name": "head/neck neoplasm",
           "resource": "Disease Ontology",
           "url": "http://purl.obolibrary.org/obo/DOID:11934"
         },
         {
           "synonym_id": "DOID:11934",
-          "name": "head/neck neoplasm",
+          "name": "head and neck tumours",
           "resource": "Disease Ontology",
           "url": "http://purl.obolibrary.org/obo/DOID:11934"
         },
