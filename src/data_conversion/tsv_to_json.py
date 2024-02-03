@@ -216,6 +216,10 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
 
             misc_fns.print_and_log(f'Finished adding citation data!', 'info')
         
+        total_api_calls = utils.get_total_api_calls()
+        for resource, count in total_api_calls.items():
+            misc_fns.print_and_log(f'Total {resource} API calls: {count}', 'info')
+        
         with open(target_filepath, 'w') as f:
             json.dump(result_data, f, indent = 4)
 
