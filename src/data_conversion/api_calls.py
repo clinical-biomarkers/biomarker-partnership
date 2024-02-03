@@ -233,7 +233,6 @@ def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> tup
     chebi_id = chebi_id.strip()
     # check ChEBI cache and see if information is there to avoid duplicate API calls
     if chebi_id[0] == '1':
-        print('here')
         if len(chebi_id) > 1:
             if chebi_id[1] in {'0', '1', '2', '3', '4'}:
                 target_map = chebi_maps['1_4']
