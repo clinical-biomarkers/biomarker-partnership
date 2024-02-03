@@ -299,6 +299,8 @@ def build_condition_entry(row: list, url_map: dict, name_space_map: dict) -> dic
         if condition_name_space == 'doid':
             doid_data = data_api.get_doid_data(row['condition_id'].split(':')[1])
             if doid_data:
+                if row['condition'] != doid_data['recommended_name']:
+                    misc_fns.log_once(f'Warning: Resource recommended name \'{doid_data["recommended_name"]}\' does not match the TSV condition name \'{row["condition"]}\'', 'warning')
                 condition['recommended_name']['description'] = doid_data['description']
                 synonym_entries = []
                 for synonym in doid_data['synonyms']:
