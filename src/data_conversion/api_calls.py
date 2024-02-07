@@ -16,6 +16,7 @@ UNIPROT_API_ENDPOINT = 'https://www.ebi.ac.uk/proteins/api/proteins/'
 CHEBI_API_ENDPOINT = 'https://www.ebi.ac.uk/webservices/chebi/2.0/test/getCompleteEntity?chebiId='
 CO_API_ENDPOINT = 'https://www.ebi.ac.uk/ols4/api/ontologies/cl/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252F'
 HGNC_ENDPOINT = 'https://rest.genenames.org/fetch/hgnc_id/'
+NCBI_API_ENDPOINT = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db={db_replace}&id={id_replace}&api_key={api_key_replace}&email={email_replace}'
 
 def get_doid_data(doid_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
     ''' Gets the DOID data for the given DOID ID.
@@ -404,5 +405,96 @@ def get_hgnc_data(hgnc_id: str, max_retries: int = 3, timeout: int = 5) -> tuple
             return 1, None
     
     misc_fns.print_and_log(f'Failed to retrive HGNC data for HGNC ID \'{hgnc_id}\' after {max_retries} attempts.', 'error')
+    return 1, None
+
+def get_ncbi_data(ncbi_id: str, entity_type: str, max_retries: int = 3, timeout: int = 5) -> tuple:
+    ''' Gets the NCBI data for the given NCBI ID from the specified database.
+
+    Parameters
+    ----------
+    ncbi_id: str
+        The NCBI ID to get the data for.
+    entity_type: str
+        The type of entity to indicate which database to search. (ex. gene)
+    max_retries: int (default = 3)
+        The maximum number of times to retry the API call if it fails.
+    timeout: int (default = 5)
+        The number of seconds to wait before timing out the API call.
+    
+    Returns
+    -------
+    tuple
+        Indicator if an API call was made and the NCBI name and synonym data for the given NCBI ID.
+    '''
+    ncbi_id = ncbi_id.strip()
+    entity_type = entity_type.strip().lower()
+    # check supported entity type passed 
+    if entity_type not in {'gene'}:
+        misc_fns.log_once(f'Error: Unsupported entity type \'{entity_type}\' for NCBI synonym retrieval. Supported types: gene.', 'info')
+        return 0, None
+    map_path = '../../mapping_data/ncbi_map/'
+    # check NCBI cache and see if information is there to avoid duplicate API calls
+    if entity_type == 'gene': 
+        map_path += 'ncbi_gene_map.json'
+        ncbi_map = misc_fns.load_json(map_path)
+        endpoint = NCBI_API_ENDPOINT.replace('{db_replace}', 'gene')
+        endpoint = endpoint.replace('{id_replace}', ncbi_id)
+    if ncbi_id in ncbi_map:
+        return 0, ncbi_map[ncbi_id]
+    
+    # load local environment variables
+    load_dotenv()
+    email = os.getenv('EMAIL')
+    if email is None:
+        misc_fns.print_and_log(f'Error: Failed to find EMAIL environment variable. Check .env file. Skipping NCBI API calls...', 'warning')
+        return 0, None
+    endpoint = endpoint.replace('{email_replace}', email)
+    try:
+        api_key = os.getenv('API_KEY')
+        endpoint = endpoint.replace('{api_key_replace}', api_key)
+    except Exception as e:
+        misc_fns.print_and_log(f'Warning: Failed to find API_KEY environment variable. Consider adding one.', 'warning')
+        api_key = None
+        endpoint = endpoint.replace('&api_key={api_key_replace}', '')
+    
+    attempt = 0
+    while attempt < max_retries:
+        try:
+            response = requests.get(endpoint, timeout = timeout)
+
+            # handle errors
+            if response.status_code != 200:
+                misc_fns.print_and_log(f'Error during NCBI API call for id \'{ncbi_id}\':\n\tStatus Code: \'{response.status_code}\'\n\tReturn Data: {response.text}', 'error')
+                return 1, None
+            
+            # if no return error, continue to processing
+            root = ET.fromstring(response.content)
+            document_summary = root.find('.//DocumentSummary')
+            if document_summary:
+                name = document_summary.find('Name').text
+                synonyms = document_summary.find('OtherAliases').text 
+                if synonyms: synonyms = synonyms.split(', ')
+                else: synonyms = []
+                return_data = {
+                    'recommended_name': name,
+                    'synonyms': synonyms
+                }
+                # add data to cache
+                ncbi_map[ncbi_id] = return_data
+                misc_fns.write_json(map_path, ncbi_map)
+                return 1, return_data
+            else:
+                misc_fns.print_and_log(f'Error: No DocumentSummary found for NCBI ID \'{ncbi_id}\'', 'error')
+                return 1, None
+        except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
+            misc_fns.print_and_log(f'Warning: Failed to connect to NCBI API on attempt {attempt + 1}. Retrying...', 'warning')
+            attempt += 1
+            sleep(1)
+            continue
+        except Exception as e:
+            misc_fns.print_and_log(f'Unexpected error while fetching NCBI data for NCBI ID \'{ncbi_id}\':\n\t{e}', 'error')
+            return 1, None
+    
+    misc_fns.print_and_log(f'Failed to retrive NCBI data for NCBI ID \'{ncbi_id}\' after {max_retries} attempts.', 'error')
     return 1, None
 
