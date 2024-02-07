@@ -4,5 +4,6 @@
     "uberon": "uberon",
     "chebi": "chebi",
     "co": "cell ontology",
-    "hgnc": "hgnc"
+    "hgnc": "hgnc",
+    "ncbi": "ncbi"
 }

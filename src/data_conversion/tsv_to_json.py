@@ -391,6 +391,7 @@ def build_base_biomarker_component_entry(row: list, name_space_map: dict) -> tup
             api_call_counter['uniprot'] += api_calls_used.get('uniprot', 0)
             api_call_counter['chebi'] += api_calls_used.get('chebi', 0)
             api_call_counter['cell ontology'] += api_calls_used.get('cell ontology', 0)
+            api_call_counter['ncbi'] += api_calls_used.get('ncbi', 0)
         
     # provide warning if name space is not supported
     else:
