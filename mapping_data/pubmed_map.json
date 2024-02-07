@@ -2680,5 +2680,59 @@
         "journal": "BMC cancer",
         "authors": "Shewell LK, Day CJ, Kutasovic JR, Abrahams JL, Wang J, Poole J, Niland C, Ferguson K, Saunus JM, Lakhani SR, von Itzstein M, Paton JC, Paton AW, Jennings MP",
         "publication_date": "2022-03-30"
+    },
+    "33519238": {
+        "title": "Significance of Oncotype DX 21-Gene Test and Expression of Long Non-Coding RNA MALAT1 in Early and Estrogen Receptor-Positive Breast Cancer Patients.",
+        "journal": "Cancer management and research",
+        "authors": "Huang Z, Qin Q, Xia L, Lian B, Tan Q, Yu Y, Mo Q",
+        "publication_date": "2021-02-02"
+    },
+    "26297356": {
+        "title": "Development and verification of the PAM50-based Prosigna breast cancer gene signature assay.",
+        "journal": "BMC medical genomics",
+        "authors": "Wallden B, Storhoff J, Nielsen T, Dowidar N, Schaper C, Ferree S, Liu S, Leung S, Geiss G, Snider J, Vickery T, Davies SR, Mardis ER, Gnant M, Sestak I, Ellis MJ, Perou CM, Bernard PS, Parker JS",
+        "publication_date": "2015-08-25"
+    },
+    "21151591": {
+        "title": "Biological functions of the genes in the mammaprint breast cancer profile reflect the hallmarks of cancer.",
+        "journal": "Biomarker insights",
+        "authors": "Tian S, Roepman P, Van't Veer LJ, Bernards R, de Snoo F, Glas AM",
+        "publication_date": "2010-12-15"
+    },
+    "23826382": {
+        "title": "The EndoPredict Gene-Expression Assay in Clinical Practice - Performance and Impact on Clinical Decisions.",
+        "journal": "PloS one",
+        "authors": "M\u00fcller BM, Keil E, Lehmann A, Winzer KJ, Richter-Ehrenstein C, Prinzler J, Bangemann N, Reles A, Stadie S, Schoenegg W, Eucker J, Schmidt M, Lippek F, J\u00f6hrens K, Pahl S, Sinn BV, Budczies J, Dietel M, Denkert C",
+        "publication_date": "2013-07-05"
+    },
+    "35984580": {
+        "title": "BluePrint breast cancer molecular subtyping recognizes single and dual subtype tumors with implications for therapeutic guidance.",
+        "journal": "Breast cancer research and treatment",
+        "authors": "Kuilman MM, Ellappalayam A, Barcaru A, Haan JC, Bhaskaran R, Wehkamp D, Menicucci AR, Audeh WM, Mittempergher L, Glas AM",
+        "publication_date": "2022-08-20"
+    },
+    "23757354": {
+        "title": "Breast cancer index identifies early-stage estrogen receptor-positive breast cancer patients at risk for early- and late-distant recurrence.",
+        "journal": "Clinical cancer research : an official journal of the American Association for Cancer Research",
+        "authors": "Zhang Y, Schnabel CA, Schroeder BE, Jerevall PL, Jankowitz RC, Fornander T, St\u00e5l O, Brufsky AM, Sgroi D, Erlander MG",
+        "publication_date": "2013-06-13"
+    },
+    "23826159": {
+        "title": "Discovery and validation of a prostate cancer genomic classifier that predicts early metastasis following radical prostatectomy.",
+        "journal": "PloS one",
+        "authors": "Erho N, Crisan A, Vergara IA, Mitra AP, Ghadessi M, Buerki C, Bergstralh EJ, Kollmeyer T, Fink S, Haddad Z, Zimmermann B, Sierocinski T, Ballman KV, Triche TJ, Black PC, Karnes RJ, Klee G, Davicioni E, Jenkins RB",
+        "publication_date": "2013-07-05"
+    },
+    "20615243": {
+        "title": "Mammostrat as a tool to stratify breast cancer patients at risk of recurrence during endocrine therapy.",
+        "journal": "Breast cancer research : BCR",
+        "authors": "Bartlett JM, Thomas J, Ross DT, Seitz RS, Ring BZ, Beck RA, Pedersen HC, Munro A, Kunkler IH, Campbell FM, Jack W, Kerr GR, Johnstone L, Cameron DA, Chetty U",
+        "publication_date": "2010-07-10"
+    },
+    "21990413": {
+        "title": "Prognostic value of a combined estrogen receptor, progesterone receptor, Ki-67, and human epidermal growth factor receptor 2 immunohistochemical score and comparison with the Genomic Health recurrence score in early breast cancer.",
+        "journal": "Journal of clinical oncology : official journal of the American Society of Clinical Oncology",
+        "authors": "Cuzick J, Dowsett M, Pineda S, Wale C, Salter J, Quinn E, Zabaglo L, Mallon E, Green AR, Ellis IO, Howell A, Buzdar AU, Forbes JF",
+        "publication_date": "2011-10-13"
     }
 }
