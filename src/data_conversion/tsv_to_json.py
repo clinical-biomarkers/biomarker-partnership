@@ -212,7 +212,7 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
                     }
                     result_data[evidence_source[0]]['citation'].append(citation_entry)
                 else:
-                    misc_fns.log_once(f'Evidence source database {evidence_source[1]["database"]} not supported for citation data.', 'info')
+                    misc_fns.log_once(f'Evidence source database \'{evidence_source[1]["database"]}\' not supported for citation data.', 'info')
 
             misc_fns.print_and_log(f'Finished adding citation data!', 'info')
         
