@@ -9,16 +9,14 @@ The code in this directory handles the logic for the data conversion. The entry 
 
 ## Prerequisites / Notes
 
-In order for the TSV to JSON logic to fully fill out the supplementary information for the evidence source citation data, you will have to create a local environment `.env` file in this directory and include your email and a PubMed API key. The logic will work if you just include your email and no API key, however, the rate limit witout an API key is more limited, increasing the likelihood of a 429 Too Many Requests error. You can find the instructions for obtaining an API key [here](https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/). For example:
+In order for the TSV to JSON conversion to utilize the NCBI API, it is recommended to create a local environment `.env` file in this directory and include your email and an API key. The logic will work if you just include your email and no API key, however, the rate limit witout an API key is more limited, increasing the likelihood of a `429 Too Many Requests` error. You can find the instructions for obtaining an API key [here](https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/). For example:
 
 ```
 EMAIL='example@example.com'
 API_KEY='key'
 ```
 
-The [pymed](https://github.com/gijswobben/pymed) wrapper library is used for the PubMed API access. Due to the scrict rate limiting this might take a long time if you have a large TSV file. If performance becomes an issue, you can change the global `ADD_CITATION_DATA` flag to `False` in the `tsv_to_json.py` file, which will skip the citation build. Note: the code does not fill in any of the reference data, that will have to be done manually. 
-
-The Uniprot KB API used to get the synonym names for a Uniprot accession has a more generous API rate limit that likely won't cause a significant bottleneck unless your TSV file is extremely large. There is some basic logic in place to make sure the rate limit is not hit during the TSV to JSON conversion. It is more likely that the PubMed API bottlenecks large file conversion. 
+The [pymed](https://github.com/gijswobben/pymed) wrapper library is used for the PubMed API access and the ESummary Utility is used directly for assessed biomarker entity synonym retrieval. Due to the scrict rate limiting this might take a long time if you have a large TSV file with many NCBI/PubMed references. If performance becomes an issue, you can change the global `ADD_CITATION_DATA` flag to `False` in the `tsv_to_json.py` file, which will skip the citation build. Note: the code does not fill in any of the reference data, that will have to be done manually. 
 
 ## Usage 
 
@@ -56,6 +54,7 @@ For the TSV to JSON conversion:
 The full JSON data model version includes various supplementary data fields that is not captured by the simplified table (TSV) views such as synonym data and citation data. The TSV to JSON conversion supports the following resource API calls to automate the populating of these fields:
 
 - PubMed
+- NCBI Gene Database
 - Disease Ontology 
 - UniprotKB
 - Chemical Entities of Biological Interest (ChEBI)
