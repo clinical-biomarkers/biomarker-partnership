@@ -1,5 +1,8 @@
 {
     "pubmed": "https://pubmed.ncbi.nlm.nih.gov/",
     "uberon": "http://purl.obolibrary.org/obo/UBERON_",
-    "doid": "http://purl.obolibrary.org/obo/DOID:"
+    "doid": "http://purl.obolibrary.org/obo/DOID_",
+    "google patents": "https://patents.google.com/patent/",
+    "google patent": "https://patents.google.com/patent/",
+    "wipo": "https://patentscope.wipo.int/search/en/detail.jsf?docId="
 }
