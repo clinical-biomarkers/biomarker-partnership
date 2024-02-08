@@ -1,7 +1,6 @@
 {
     "subject_objects": {
         "biomarker_id": "<https://hivelab.biochemistry.gwu.edu/biomarker/api/id/getbiomarker?biomarker_id={replace}>",
-        "best_predicate": "",
         "uniprot": "<http://purl.uniprot.org/uniprot/{replace}>",
         "best_biomarker_role": {
             "risk": "<http://purl.obolibrary.org/obo/OBCI_0000008>",
@@ -15,7 +14,10 @@
         "uberon": "<http://purl.obolibrary.org/obo/UBERON_{replace}>",
         "doid": "<http://purl.obolibrary.org/obo/DOID_{replace}>",
         "cell_ontology": "<http://purl.obolibrary.org/obo/{replace}>",
-        "chebi": "<http://purl.obolibrary.org/obo/CHEBI_{replace}>"
+        "chebi": "<http://purl.obolibrary.org/obo/CHEBI_{replace}>",
+        "ncbi": {
+            "gene": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID{replace}"
+        }
     },
     "predicates": {
         "biomarker_change": {

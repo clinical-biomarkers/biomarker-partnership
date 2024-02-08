@@ -46,7 +46,8 @@ def json_to_nt(source_filepath: str, target_filepath: str, triples_map: dict, na
             ### handle change in entity triple 
             biomarker = biomarker_component['biomarker']
             assessed_biomarker_entity_id = biomarker_component['assessed_biomarker_entity_id']
-            change_triple = build_biomarker_change_triple(biomarker_subject_uri, biomarker, assessed_biomarker_entity_id, triples_map, namespace_map)
+            assessed_entity_type = biomarker_component['assessed_entity_type']
+            change_triple = build_biomarker_change_triple(biomarker_subject_uri, biomarker, assessed_biomarker_entity_id, assessed_entity_type, triples_map, namespace_map)
             if change_triple:
                 entry_triples.append(change_triple)
             
@@ -104,7 +105,7 @@ def build_condition_triple(biomarker_subject_uri: str, condition: str, roles: li
     if condition_name_space in namespace_map:
         if namespace_map[condition_name_space] == 'disease ontology':
             doid_id = condition.split(':')[1]
-            condition_object_uri = triples_map[SUBJECT_OBJECTS]['doid'].replace('{replace}', doid_id)
+            condition_object_uri = triples_map[SUBJECT_OBJECTS]['doid'].replace(REPLACE_VALUE, doid_id)
             for role_entry in roles:
                 role = role_entry['role'].lower()
                 condition_predicate_map = triples_map[PREDICATES]['condition_role_indicator']
@@ -152,7 +153,7 @@ def build_specimen_triples(biomarker_subject_uri: str, specimens: list, triples_
                 if namespace_map[specimen['name_space'].lower()] == 'uberon':
                     specimen_id = specimen.get('specimen_id', None)
                     if specimen_id:
-                        uberon_sample_uri = triples_map[SUBJECT_OBJECTS]['uberon'].replace('{replace}', specimen_id.split(':')[1])
+                        uberon_sample_uri = triples_map[SUBJECT_OBJECTS]['uberon'].replace(REPLACE_VALUE, specimen_id.split(':')[1])
                         specimen_triples.append(f'{biomarker_subject_uri} {specimen_predicate_uri} {uberon_sample_uri} .')
             else:
                 misc_fns.log_once(f'build_specimen_triples: No namespace URI found for specimen: \'{specimen}\'', 'info')
@@ -202,7 +203,7 @@ def build_biomarker_role_triples(biomarker_subject_uri: str, roles: dict, triple
     
     return role_triples
 
-def build_biomarker_change_triple(biomarker_subject_uri: str, biomarker_change: str, assessed_biomarker_entity_id: str, triples_map: dict, namespace_map: dict) -> str:
+def build_biomarker_change_triple(biomarker_subject_uri: str, biomarker_change: str, assessed_biomarker_entity_id: str, assessed_entity_type: str, triples_map: dict, namespace_map: dict) -> str:
     ''' Builds the biomarker change triple.
 
     Parameters
@@ -213,6 +214,8 @@ def build_biomarker_change_triple(biomarker_subject_uri: str, biomarker_change: 
         The biomarker change.
     assessed_biomarker_entity_id : str
         The assessed biomarker entity ID.
+    assessed_entity_type : str
+        The assessed entity type.
     triples_map : dict
         The triples map to use for the conversion.
     namespace_map : dict
@@ -243,11 +246,17 @@ def build_biomarker_change_triple(biomarker_subject_uri: str, biomarker_change: 
         entity_id = assessed_biomarker_entity_id.split(':')[1]
         namespace_value = namespace_map[entity_namespace]
         if namespace_value == 'uniprot':
-            object_uri = triples_map[SUBJECT_OBJECTS]['uniprot'].replace('{replace}', entity_id.upper())
+            object_uri = triples_map[SUBJECT_OBJECTS]['uniprot'].replace(REPLACE_VALUE, entity_id.upper())
         elif namespace_value == 'cell ontology':
-            object_uri = triples_map[SUBJECT_OBJECTS]['cell_ontology'].replace('{replace}', entity_id.upper())
+            object_uri = triples_map[SUBJECT_OBJECTS]['cell_ontology'].replace(REPLACE_VALUE, entity_id.upper())
         elif namespace_value == 'chebi':
-            object_uri = triples_map[SUBJECT_OBJECTS]['chebi'].replace('{replace}', entity_id.upper())
+            object_uri = triples_map[SUBJECT_OBJECTS]['chebi'].replace(REPLACE_VALUE, entity_id.upper())
+        elif namespace_value == 'ncbi':
+            if assessed_entity_type == 'gene':
+                object_uri = triples_map[SUBJECT_OBJECTS]['ncbi']['gene'].replace(REPLACE_VALUE, entity_id)
+            else:
+                misc_fns.log_once(f'build_biomarker_change_triple: No object URI found for \'ncbi\' entity type: \'{assessed_entity_type}\'', 'info')
+                return None
         else:
             misc_fns.log_once(f'build_biomarker_change_triple: No namespace object URI mapping found for entity namespace: \'{entity_namespace}\'', 'info')
             return None
@@ -272,4 +281,4 @@ def create_biomarker_subect_uri(biomarker_id: str, base_url: str) -> str:
     str
         The biomarker subject URI.
     '''
-    return base_url.replace('{replace}', biomarker_id)
+    return base_url.replace(REPLACE_VALUE, biomarker_id)
