@@ -12,18 +12,20 @@ Once the initial data is curated, you can convert back and forth between the fla
 
 In order to standardize data for unique `biomarker_id` assignment, these resouces/databases were chosen as the resources for each `assessed_entity_type` (by order of preference/availability): 
 
-- Carbohydrate: Chemical Entities of Biological Interest (ChEBI) 
-- Cell: Cell Ontology (CO) -> National Cancer Institute Thesaurus (NCIt)
-- Chemical Element: PubChem (PCCID)
-- DNA: ?
-- Gene: Uniprot (UPKB) -> ? 
-- Gene mutation: NCBI dbSNP 
-- Glycan: GlyTouCan Accession (GTC)
-- Lipoprotein: Chemical Entities of Biological Interest (ChEBI)
-- Metabolite: Chemical Entities of Biological Interest (ChEBI)
-- Peptide: Protein Ontology (PRO)
-- Protein: Uniprot (UPKB) -> Protein Data Bank (PDB) -> Protein Ontology (PRO)
-- Protein Complex: Protein Ontology (PRO) -> Gene Ontology (GO)
+| Assessed Entity Type | Resource (in order of preference/availability) |
+|----------------------|------------------------------------------------|
+| Carbohydrate         | Chemical Entities of Biological Interest (ChEBI) |
+| Cell                 | Cell Ontology (CO) -> National Cancer Institute Thesaurus (NCIt) |
+| Chemical Element     | PubChem (PCCID) |
+| DNA                  | ? |
+| Gene                 | Uniprot (UPKB) -> ? |
+| Gene mutation        | NCBI dbSNP |
+| Glycan               | GlyTouCan Accession (GTC) |
+| Lipoprotein          | Chemical Entities of Biological Interest (ChEBI) |
+| Metabolite           | Chemical Entities of Biological Interest (ChEBI) |
+| Peptide              | Protein Ontology (PRO) |
+| Protein              | Uniprot (UPKB) -> Protein Data Bank (PDB) -> Protein Ontology (PRO) |
+| Protein Complex      | Protein Ontology (PRO) -> Gene Ontology (GO) |
 
 For `condition` data, our primary database is the Disease Ontology (DOID). 
 
