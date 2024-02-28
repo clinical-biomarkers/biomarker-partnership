@@ -1,0 +1,114 @@
+{
+    "biomarker_id": "",
+    "biomarker_component": [
+        {
+            "biomarker": "",
+            "assessed_biomarker_entity": {
+                "recommended_name": "",
+                "synonyms": [
+                    {
+                        "synonym": ""
+                    }
+                ]
+            },
+            "assessed_biomarker_entity_id": "",
+            "assessed_entity_type": "",
+            "specimen": [
+                {
+                    "name": "",
+                    "specimen_id": "",
+                    "name_space": "",
+                    "url": "",
+                    "loinc_code": ""
+                }
+            ],
+            "evidence_source": [
+                {
+                    "evidence_id": "",
+                    "database": "",
+                    "url": "",
+                    "evidence_list": [
+                        {
+                            "evidence": ""
+                        }
+                    ],
+                    "tags": [
+                        {
+                            "tag": ""
+                        }
+                    ]
+                }                    
+            ]
+        }
+    ],
+    "best_biomarker_role": [
+        {
+            "role": ""
+        }
+    ],
+    "condition": {
+        "condition_id": "",
+        "recommended_name": {
+            "condition_id": "",
+            "name": "",
+            "description": "",
+            "resource": "",
+            "url": ""
+        },
+        "synonyms": [
+            {
+                "synonym_id": "",
+                "name": "",
+                "resource": "",
+                "url": ""
+            }
+        ]
+    },
+    "exposure_agent": {
+        "exposure_agent_id": "",
+        "recommended_name": {
+            "exposure_agent_id": "",
+            "name": "",
+            "description": "",
+            "resource": "",
+            "url": ""
+        }
+    },
+    "evidence_source": [
+        {
+            "evidence_id": "",
+            "database": "",
+            "url": "",
+            "evidence_list": [
+                {
+                    "evidence": ""
+                }
+            ],
+            "tags": [
+                {
+                    "tag": ""
+                }
+            ]
+        }
+    ],
+    "citation": [
+        {
+            "citation_title": "",
+            "journal": "",
+            "authors": "",
+            "date": "",
+            "reference": [
+                {
+                    "reference_id": "",
+                    "type": "",
+                    "url": ""
+                }
+            ],
+            "evidence_source": {
+                "evidence_id": "",
+                "database": "",
+                "url": ""
+            }
+        }
+    ]
+}
