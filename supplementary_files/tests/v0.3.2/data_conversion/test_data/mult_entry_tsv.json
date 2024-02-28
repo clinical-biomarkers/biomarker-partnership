@@ -1,0 +1,250 @@
+[
+  {
+    "biomarker_id": "A0001",
+    "biomarker_component": [
+      {
+        "biomarker": "entry 1 increased IL6 level",
+        "assessed_biomarker_entity": {
+          "recommended_name": "entry 1 Interleukin-6",
+          "synonyms": [
+            {
+              "synonym": "entry 1 Interferon-beta 2"
+            },
+            {
+              "synonym": "entry 1 IL6"
+            },
+            {
+              "synonym": "entry 1 IFNB2"
+            }
+          ]
+        },
+        "assessed_biomarker_entity_id": "entry 1 UPKB:p05231",
+        "assessed_entity_type": "entry 1 protein",
+        "specimen": [
+          {
+            "name": "entry 1 blood",
+            "specimen_id": "entry 1 UBERON:0000178",
+            "name_space": "entry 1 UBERON",
+            "url": "http://purl.obolibrary.org/obo/UBERON_0000178",
+            "loinc_code": "entry 1 26881-3"
+          }
+        ],
+        "evidence_source": [
+          {
+            "evidence_id": "entry 1 10914713",
+            "database": "entry 1 PubMed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10914713/",
+            "evidence_list": [
+              {
+                "evidence": "entry 1 In multivariate analysis, however, the only two significant prognostic factors were EOD and IL-6. These results indicate that the serum IL-6 level is a significant prognostic factor for prostate cancer as well as EOD."
+              }
+            ],
+            "tags": [
+              {
+                "tag": "biomarker"
+              },
+              {
+                "tag": "specimen:UBERON:0000178"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "best_biomarker_role": [
+      {
+        "role": "prognostic"
+      }
+    ],
+    "condition": {
+      "condition_id": "entry 1 DOID:10283",
+      "recommended_name": {
+        "condition_id": "entry 1 DOID:10283",
+        "name": "entry 1 prostate cancer",
+        "description": "entry 1 A male reproductive organ cancer that is located_in the prostate.",
+        "resource": "entry 1 Disease Ontology",
+        "url": "http://disease-ontology.org/term/DOID:10283"
+      },
+      "synonyms": [
+        {
+          "synonym_id": "entry 1 DOID:10283",
+          "name": "entry 1 NGP - new growth of prostate",
+          "resource": "entry 1 Disease Ontology",
+          "url": "http://disease-ontology.org/term/DOID:10283"
+        },
+        {
+          "synonym_id": "entry 1 DOID:10283",
+          "name": "entry 1 hereditary prostate cancer",
+          "resource": "entry 1 Disease Ontology",
+          "url": "http://disease-ontology.org/term/DOID:10283"
+        }
+      ]
+    },
+    "evidence_source": [
+      {
+        "evidence_id": "entry 1 10914713",
+        "database": "entry 1 PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10914713/",
+        "evidence_list": [
+          {
+            "evidence": "entry 1 In multivariate analysis, however, the only two significant prognostic factors were EOD and IL-6. These results indicate that the serum IL-6 level is a significant prognostic factor for prostate cancer as well as EOD."
+          }
+        ],
+        "tags": [
+          {
+            "tag": "biomarker:0"
+          },
+          {
+            "tag": "specimen:UBERON:0000178:0"
+          }
+        ]
+      }
+    ],
+    "citation": [
+      {
+        "citation_title": "Serum interleukin 6 as a prognostic factor in patients with prostate cancer",
+        "journal": "Clin Cancer Res",
+        "authors": "J Nakashima, M Tachibana, Y Horiguchi, M Oya, T Ohigashi, H Asakura, M Murai",
+        "date": "July 6, 2000",
+        "reference": [
+          {
+            "reference_id": "10914713",
+            "type": "PubMed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10914713/"
+          }
+        ],
+        "evidence_source": [
+          {
+            "evidence_id": "10914713",
+            "database": "PubMed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10914713/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "biomarker_id": "A0002",
+    "biomarker_component": [
+      {
+        "biomarker": "entry 2 increased IL6 level",
+        "assessed_biomarker_entity": {
+          "recommended_name": "entry 2 Interleukin-6",
+          "synonyms": [
+            {
+              "synonym": "entry 2 Interferon-beta 2"
+            },
+            {
+              "synonym": "entry 2 IL6"
+            },
+            {
+              "synonym": "entry 2 IFNB2"
+            }
+          ]
+        },
+        "assessed_biomarker_entity_id": "entry 2 UPKB:p05231",
+        "assessed_entity_type": "entry 2 protein",
+        "specimen": [
+          {
+            "name": "entry 2 blood",
+            "specimen_id": "entry 2 UBERON:0000178",
+            "name_space": "entry 2 UBERON",
+            "url": "http://purl.obolibrary.org/obo/UBERON_0000178",
+            "loinc_code": "entry 2 26881-3"
+          }
+        ],
+        "evidence_source": [
+          {
+            "evidence_id": "entry 2 10914713",
+            "database": "entry 2 PubMed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10914713/",
+            "evidence_list": [
+              {
+                "evidence": "entry 2 In multivariate analysis, however, the only two significant prognostic factors were EOD and IL-6. These results indicate that the serum IL-6 level is a significant prognostic factor for prostate cancer as well as EOD."
+              }
+            ],
+            "tags": [
+              {
+                "tag": "biomarker"
+              },
+              {
+                "tag": "specimen:UBERON:0000178"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "best_biomarker_role": [
+      {
+        "role": "predictive"
+      }
+    ],
+    "condition": {
+      "condition_id": "entry 2 DOID:10283",
+      "recommended_name": {
+        "condition_id": "entry 2 DOID:10283",
+        "name": "entry 2 prostate cancer",
+        "description": "entry 2 A male reproductive organ cancer that is located_in the prostate.",
+        "resource": "entry 2 Disease Ontology",
+        "url": "http://disease-ontology.org/term/DOID:10283"
+      },
+      "synonyms": [
+        {
+          "synonym_id": "entry 2 DOID:10283",
+          "name": "entry 2 NGP - new growth of prostate",
+          "resource": "entry 2 Disease Ontology",
+          "url": "http://disease-ontology.org/term/DOID:10283"
+        },
+        {
+          "synonym_id": "entry 2 DOID:10283",
+          "name": "entry 2 hereditary prostate cancer",
+          "resource": "entry 2 Disease Ontology",
+          "url": "http://disease-ontology.org/term/DOID:10283"
+        }
+      ]
+    },
+    "evidence_source": [
+      {
+        "evidence_id": "entry 2 10914713",
+        "database": "entry 2 PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10914713/",
+        "evidence_list": [
+          {
+            "evidence": "entry 2 In multivariate analysis, however, the only two significant prognostic factors were EOD and IL-6. These results indicate that the serum IL-6 level is a significant prognostic factor for prostate cancer as well as EOD."
+          }
+        ],
+        "tags": [
+          {
+            "tag": "biomarker:0"
+          },
+          {
+            "tag": "specimen:UBERON:0000178:0"
+          }
+        ]
+      }
+    ],
+    "citation": [
+      {
+        "citation_title": "Serum interleukin 6 as a prognostic factor in patients with prostate cancer",
+        "journal": "Clin Cancer Res",
+        "authors": "J Nakashima, M Tachibana, Y Horiguchi, M Oya, T Ohigashi, H Asakura, M Murai",
+        "date": "July 6, 2000",
+        "reference": [
+          {
+            "reference_id": "10914713",
+            "type": "PubMed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10914713/"
+          }
+        ],
+        "evidence_source": [
+          {
+            "evidence_id": "10914713",
+            "database": "PubMed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10914713/"
+          }
+        ]
+      }
+    ]
+  }
+]
