@@ -18,8 +18,8 @@ In order to standardize data for unique `biomarker_id` assignment, these resouce
 | Cell                 | Cell Ontology (CO) -> National Cancer Institute Thesaurus (NCIt) |
 | Chemical Element     | PubChem (PCCID) |
 | DNA                  | ? |
-| Gene                 | Uniprot (UPKB) -> ? |
-| Gene mutation        | NCBI dbSNP |
+| Gene                 | NCBI |
+| Gene (mutation)        | NCBI dbSNP |
 | Glycan               | GlyTouCan Accession (GTC) |
 | Lipoprotein          | Chemical Entities of Biological Interest (ChEBI) |
 | Metabolite           | Chemical Entities of Biological Interest (ChEBI) |
