@@ -9,6 +9,12 @@ PREFIX_MAP_PATH = '../mapping_data/prefix_map.json'
 with open(PREFIX_MAP_PATH) as f:
     PREFIX_MAP = json.load(f)
 
+TSV_HEADERS = ['biomarker_id', 'biomarker', 'assessed_biomarker_entity', 
+            'assessed_biomarker_entity_id', 'assessed_entity_type', 'condition', 
+            'condition_id', 'exposure_agent', 'exposure_agent_id',
+            'best_biomarker_role', 'specimen', 'specimen_id', 'loinc_code', 
+            'evidence_source', 'evidence', 'tag']
+
 def map_prefixes(source_column: pd.Series) -> pd.Series:
     ''' Maps the prefixes in the given dataframe column.
 
