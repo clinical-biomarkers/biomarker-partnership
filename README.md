@@ -9,6 +9,7 @@ The goal of this project is to develop a community-based biomarker-centric data 
 - [Biomarker Defition](#biomarker-definition)
 - [Project Workflow](#workflow)
 - [Usage Guides](./supplementary_files/documentation/README.md)
+- [Contributing Data](#contributing-data)
 - [Top Level Repository Structure](#top-level-repository-structure)
 - [References](#references)
 
@@ -48,6 +49,10 @@ flowchart TD
     D --> F[Incorporate Into MongoDB]
     F --> G[Generate RDF Triples for Virtuoso]
 ```
+
+## Contributing Data
+
+Notes for data contribution can be found [here](./supplementary_files/documentation/contributing_data.md). All usage guides can be found [here](./supplementary_files/documentation/README.md).
 
 ## Top Level Repository Structure 
 
