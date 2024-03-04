@@ -24,7 +24,7 @@ In order to standardize data for unique `biomarker_id` assignment, these resouce
 | Lipoprotein          | Chemical Entities of Biological Interest (ChEBI) |
 | Metabolite           | Chemical Entities of Biological Interest (ChEBI) |
 | Peptide              | Protein Ontology (PRO) |
-| Protein              | Uniprot (UPKB) -> Protein Data Bank (PDB) -> Protein Ontology (PRO) |
+| Protein              | Uniprot (UPKB) -> Protein Data Bank (PDB) -> Protein Ontology (PRO) -> National Cancer Institute Thesaurus (NCIt)|
 | Protein Complex      | Protein Ontology (PRO) -> Gene Ontology (GO) |
 
 For `condition` data, our primary database is the Disease Ontology (DOID). 
