@@ -6,7 +6,7 @@ Will eventually support converting data to an nt file for RDF triples.
 Script is not agnostic to the formatting of the current table format/structure or the current data
 model JSON schema. If those are updated in the future, this script needs to be updated. 
 
-Currently written for the v0.3.1 data model schema and supports the following conversions:
+Currently written for the v0.3.2 data model schema and supports the following conversions:
     - JSON -> TSV
     - TSV -> JSON
 
@@ -60,7 +60,7 @@ def user_args() -> None:
     parser.add_argument('-v', '--version', action = 'version', version = f'%(prog)s {_version}')
 
     # print out help if script is called without enough arguments
-    if len(os.sys.argv) <= 2:
+    if len(sys.argv) <= 2:
         sys.argv.append('-h')
     
     options = parser.parse_args()
