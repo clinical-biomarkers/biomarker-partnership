@@ -16,16 +16,18 @@ In order to standardize data for unique `biomarker_id` assignment, these resouce
 |----------------------|------------------------------------------------|
 | Carbohydrate         | Chemical Entities of Biological Interest (ChEBI) |
 | Cell                 | Cell Ontology (CO) -> National Cancer Institute Thesaurus (NCIt) |
-| Chemical Element     | PubChem (PCCID) |
-| DNA                  | ? |
+| Chemical Element     | PubChem (PCCID) -> National Cancer Institute Thesaurus (NCIt) |
+| DNA                  | National Cancer Institute Thesaurus (NCIt) |
 | Gene                 | NCBI |
-| Gene (mutation)        | NCBI dbSNP |
-| Glycan               | GlyTouCan Accession (GTC) |
+| Gene (mutation)      | NCBI dbSNP |
+| Glycan               | GlyTouCan Accession (GTC) -> PubChem (PCCID) |
 | Lipoprotein          | Chemical Entities of Biological Interest (ChEBI) |
 | Metabolite           | Chemical Entities of Biological Interest (ChEBI) |
 | Peptide              | Protein Ontology (PRO) |
 | Protein              | Uniprot (UPKB) -> Protein Data Bank (PDB) -> Protein Ontology (PRO) -> National Cancer Institute Thesaurus (NCIt)|
 | Protein Complex      | Protein Ontology (PRO) -> Gene Ontology (GO) |
+| RNA                  | RNA Central (RNAC) |
+| miRNA                | miRBase (MRB) |
 
 For `condition` data, our primary database is the Disease Ontology (DOID). 
 
