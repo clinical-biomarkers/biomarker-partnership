@@ -1931,5 +1931,45 @@
         "synonyms": [
             "FGFR-3"
         ]
+    },
+    "P01589": {
+        "recommended_name": "Interleukin-2 receptor subunit alpha",
+        "synonyms": [
+            "IL-2 receptor subunit alpha",
+            "IL-2-RA",
+            "IL-2R subunit alpha",
+            "IL2-RA",
+            "TAC antigen",
+            "p55"
+        ]
+    },
+    "P02671": {
+        "recommended_name": "Fibrinogen alpha chain",
+        "synonyms": []
+    },
+    "P68431": {
+        "recommended_name": "Histone H3.1",
+        "synonyms": [
+            "Histone H3/a",
+            "Histone H3/b",
+            "Histone H3/c",
+            "Histone H3/d",
+            "Histone H3/f",
+            "Histone H3/h",
+            "Histone H3/i",
+            "Histone H3/j",
+            "Histone H3/k",
+            "Histone H3/l"
+        ]
+    },
+    "P24298": {
+        "recommended_name": "Alanine aminotransferase 1",
+        "synonyms": [
+            "ALT1",
+            "Glutamate pyruvate transaminase 1",
+            "GPT 1",
+            "Glutamic--alanine transaminase 1",
+            "Glutamic--pyruvic transaminase 1"
+        ]
     }
 }
