@@ -111,7 +111,7 @@ def extract_component_fields(component_entry: dict, idx: int) -> tuple:
 
     return return_data
 
-def tag_parse(tag: dict, object_evidence_fields: dict, component_idx: int = -1) -> tuple:
+def tag_parse(tag: dict, object_evidence_fields: dict, component_idx: int = None) -> tuple:
     ''' Parses the evidence tag data in the JSON model.
 
     Parameters
@@ -132,14 +132,14 @@ def tag_parse(tag: dict, object_evidence_fields: dict, component_idx: int = -1) 
     tag_value = tag['tag'].split(':')[0]
     tag_index = tag['tag'].split(':')[-1]
 
-    if component_idx == -1 and tag_value != tag_index and component_idx != tag_index:
+    if component_idx and tag_value != tag_index and component_idx != tag_index:
         return (None, evidence_flag)
 
     # check that tag is applicable to the current row
     if tag_value in SINGLE_EVIDENCE_FIELDS:
         evidence_flag = True
     if tag_value in set(object_evidence_fields.keys()):
-        if tag['tag'][tag['tag'].find(':') + 1] == object_evidence_fields[tag_value]:
+        if tag['tag'][tag['tag'].find(':') + 1:] == object_evidence_fields[tag_value]:
             evidence_flag = True
     return (tag_value, evidence_flag)
 
