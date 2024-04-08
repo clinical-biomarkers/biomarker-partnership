@@ -1,5 +1,5 @@
-import api_calls as data_api
-import misc_functions as misc_fns
+from fmt_lib import api_calls as data_api
+from fmt_lib import misc_functions as misc_fns
 import time
 
 RATE_LIMIT_CHECKS = {
@@ -52,31 +52,6 @@ def get_total_api_calls() -> dict:
         return_data[resource] = api_counters[resource]['total']
     return return_data
 
-def _update_resource_api_counters(resource: str, call_count: int) -> None:
-    ''' Updates the resource API call counters.
-
-    Parameters
-    ----------
-    resource : str
-        The resource name.
-    call_count : int
-        The number of API calls made.
-    '''
-    global api_counters
-    api_counters[resource]['count'] += call_count
-    api_counters[resource]['total'] += call_count
-
-def _reset_resource_api_counter(resource: str) -> None:
-    ''' Resets the resource API call counter.
-
-    Parameters
-    ----------
-    resource : str
-        The resource name.
-    '''
-    global api_counters
-    api_counters[resource]['count'] = 0
-
 def handle_rate_limits(api_calls: dict) -> None:
     ''' Checks the rate limit and sleeps if required.
 
@@ -96,16 +71,23 @@ def handle_rate_limits(api_calls: dict) -> None:
         if resource not in RATE_LIMIT_CHECKS:
             continue 
         if api_counters[resource]['count'] >= RATE_LIMIT_CHECKS[resource]['rate_limit']:
-            misc_fns.print_and_log(f'Rate limit reached for \'{resource}\' API calls. Sleeping for {RATE_LIMIT_CHECKS[resource]["sleep_time"]} seconds...', 'info')
+            misc_fns.print_and_log(
+                f'Rate limit reached for \'{resource}\' API calls. Sleeping for {RATE_LIMIT_CHECKS[resource]["sleep_time"]} seconds...',
+                'info'
+            )
             time.sleep(RATE_LIMIT_CHECKS[resource]['sleep_time'])
             check_pubmed_ncbi_rate_limit = False
             for resource in api_counters:
                 _reset_resource_api_counter(resource)
             break 
         
+    # pubmed and ncbi resources have a combined rate limit
     if check_pubmed_ncbi_rate_limit:
         if api_counters['pubmed']['count'] + api_counters['ncbi']['count'] >= RATE_LIMIT_CHECKS['pubmed']['rate_limit']:
-            misc_fns.print_and_log(f'Rate limit reached for \'PubMed and NCBI\' combined API calls. Sleeping for {RATE_LIMIT_CHECKS["pubmed"]["sleep_time"]} seconds...', 'info')
+            misc_fns.print_and_log(
+                f'Rate limit reached for \'PubMed and NCBI\' combined API calls. Sleeping for {RATE_LIMIT_CHECKS["pubmed"]["sleep_time"]} seconds...',
+                'info'
+            )
             time.sleep(RATE_LIMIT_CHECKS['pubmed']['sleep_time'])
             for resource in api_counters:
                 _reset_resource_api_counter(resource)
@@ -272,3 +254,28 @@ def _handle_cell_synonyms(assessed_entity_type_name_space: str, assessed_entity_
         return None, None
     api_call_counter[name_space_map[assessed_entity_type_name_space]] = api_call_count
     return resource_data, api_call_counter
+
+def _update_resource_api_counters(resource: str, call_count: int) -> None:
+    ''' Updates the resource API call counters.
+
+    Parameters
+    ----------
+    resource : str
+        The resource name.
+    call_count : int
+        The number of API calls made.
+    '''
+    global api_counters
+    api_counters[resource]['count'] += call_count
+    api_counters[resource]['total'] += call_count
+
+def _reset_resource_api_counter(resource: str) -> None:
+    ''' Resets the resource API call counter.
+
+    Parameters
+    ----------
+    resource : str
+        The resource name.
+    '''
+    global api_counters
+    api_counters[resource]['count'] = 0

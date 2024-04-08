@@ -6,8 +6,9 @@ import json
 import os 
 import re
 import hashlib
+from typing import Set
 
-logged_messages = set()
+logged_messages: Set[str] = set()
 MAX_LOGGED_MESSAGES = 1000
 
 def setup_logging(log_path: str) -> None:
@@ -31,18 +32,23 @@ def validate_filepath(filepath: str, mode: str) -> None:
         Filepath to the source data dictionary file or the output path.
     mode: str
         Whether checking the output directory path or the input file. ('input' or 'output')
+
+    Raises
+    ------
+    FileNotFoundError: If file doesn't exist.
+    ValueError: If directory filepath doesn't exist.
     '''
     
     if mode == 'input':
         if not os.path.isfile(filepath):
-            logging.error(f'Error: The (input) file {filepath} does not exist.')
-            raise ValueError(f'Error: The (input) file {filepath} does not exist.')
+            print_and_log(f'Error: The (input) file {filepath} does not exist.', 'error')
+            raise FileNotFoundError(f'Error: The (input) file {filepath} does not exist.')
     elif mode == 'output':
         if not os.path.isdir(filepath):
-            logging.error(f'Error: The (output) directory {filepath} does not exist.')
+            print_and_log(f'Error: The (output) directory {filepath} does not exist.', 'error')
             raise ValueError(f'Error: The (output) directory {filepath} does not exist.')
     else:
-        logging.error(f'Validate_filepath error: Invalid mode {mode}')
+        print_and_log(f'Validate_filepath error: Invalid mode {mode}', 'error')
         raise ValueError(f'Validate_filepath error: Invalid mode {mode}')
 
 def load_json(filepath: str) -> dict:
@@ -52,6 +58,10 @@ def load_json(filepath: str) -> dict:
     ----------
     filepath: str
         Filepath to the JSON file.
+
+    Raises
+    ------
+    FileNotFoundError: If file doesn't exist.
 
     Returns
     -------

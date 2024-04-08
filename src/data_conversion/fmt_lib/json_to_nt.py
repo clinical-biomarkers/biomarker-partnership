@@ -5,7 +5,7 @@ import logging
 import traceback
 import sys 
 import re
-import misc_functions as misc_fns
+from fmt_lib import misc_functions as misc_fns
 
 # triple category keys
 SUBJECT_OBJECTS = 'subject_objects'

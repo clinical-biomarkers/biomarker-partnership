@@ -2,14 +2,15 @@
 '''
 
 from pymed import PubMed
-import requests 
+import requests
 import re 
+from typing import Union
 from dotenv import load_dotenv
 import os
 from time import sleep
 import xml.etree.ElementTree as ET
 from xml.etree.ElementTree import ParseError
-import misc_functions as misc_fns
+from fmt_lib import misc_functions as misc_fns
 
 DOID_API_ENDPOINT = 'https://www.disease-ontology.org/api/metadata/DOID:'
 UNIPROT_API_ENDPOINT = 'https://www.ebi.ac.uk/proteins/api/proteins/'
@@ -18,7 +19,7 @@ CO_API_ENDPOINT = 'https://www.ebi.ac.uk/ols4/api/ontologies/cl/terms/http%253A%
 HGNC_ENDPOINT = 'https://rest.genenames.org/fetch/hgnc_id/'
 NCBI_API_ENDPOINT = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db={db_replace}&id={id_replace}&api_key={api_key_replace}&email={email_replace}'
 
-def get_doid_data(doid_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
+def get_doid_data(doid_id: str, max_retries: int = 3, timeout: int = 5) -> Union[dict, None]:
     ''' Gets the DOID data for the given DOID ID.
 
     Parameters
@@ -32,7 +33,7 @@ def get_doid_data(doid_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
 
     Returns
     -------
-    dict
+    dict or None
         The synonym and description data for the given DOID ID.
     '''
     doid_id = doid_id.strip()
@@ -59,7 +60,9 @@ def get_doid_data(doid_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
 
             # clean the doid description
             doid_description = doid_data.get('definition', '')
-            doid_description = re.search('\"(.*)\"', doid_description).group(1)
+            doid_description = re.search('\"(.*)\"', doid_description)
+            if doid_description is not None:
+                doid_description = doid_description.group(1)
 
             # only keep the synonyms that have the EXACT qualifier and remove the qualifier
             synonyms = doid_data.get('synonyms', [])
@@ -71,7 +74,7 @@ def get_doid_data(doid_id: str, max_retries: int = 3, timeout: int = 5) -> dict:
             misc_fns.write_json('../../mapping_data/doid_map.json', doid_map)
             return return_data
         except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
-            misc_fns.print_and_log(f'Warning: Failed to connect to DOID API on attempt {attempt + 1}. Retrying...', 'warning')
+            misc_fns.print_and_log(f'Warning: Failed to connect to DOID API on attempt {attempt + 1}.\n{e}\nRetrying...', 'warning')
             attempt += 1
             sleep(1)
             continue
@@ -109,10 +112,10 @@ def get_pubmed_data(pubmed_id: str) -> tuple:
     try:
         api_key = os.getenv('API_KEY')
     except Exception as e:
-        misc_fns.print_and_log(f'Warning: Failed to find API_KEY environment variable. Consider adding one.', 'warning')
+        misc_fns.print_and_log(f'Warning: Failed to find API_KEY environment variable. Consider adding one.\n{e}', 'warning')
         api_key = None
     if email is None:
-        misc_fns.print_and_log(f'Error: Failed to find EMAIL environment variable. Check .env file. Skipping PubMed API calls...', 'warning')
+        misc_fns.print_and_log('Error: Failed to find EMAIL environment variable. Check .env file. Skipping PubMed API calls...', 'warning')
         return 0, None 
 
     # query PubMed for the given PubMed ID
@@ -233,6 +236,7 @@ def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> tup
     }
     chebi_id = chebi_id.strip()
     # check ChEBI cache and see if information is there to avoid duplicate API calls
+    target_map = None
     if chebi_id[0] == '1':
         if len(chebi_id) > 1:
             if chebi_id[1] in {'0', '1', '2', '3', '4'}:
@@ -241,14 +245,22 @@ def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> tup
                 target_map = chebi_maps['1_9']
         else:
             target_map = chebi_maps['1_4']
-    elif chebi_id[0] == '2': target_map = chebi_maps['2']
-    elif chebi_id[0] == '3': target_map = chebi_maps['3']
-    elif chebi_id[0] == '4': target_map = chebi_maps['4']
-    elif chebi_id[0] == '5': target_map = chebi_maps['5']
-    elif chebi_id[0] == '6': target_map = chebi_maps['6']
-    elif chebi_id[0] == '7': target_map = chebi_maps['7']
-    elif chebi_id[0] == '8': target_map = chebi_maps['8']
-    elif chebi_id[0] == '9': target_map = chebi_maps['9']
+    elif chebi_id[0] == '2': 
+        target_map = chebi_maps['2']
+    elif chebi_id[0] == '3': 
+        target_map = chebi_maps['3']
+    elif chebi_id[0] == '4':
+        target_map = chebi_maps['4']
+    elif chebi_id[0] == '5':
+        target_map = chebi_maps['5']
+    elif chebi_id[0] == '6':
+        target_map = chebi_maps['6']
+    elif chebi_id[0] == '7':
+        target_map = chebi_maps['7']
+    elif chebi_id[0] == '8':
+        target_map = chebi_maps['8']
+    else:
+        target_map = chebi_maps['9']
     chebi_map = misc_fns.load_json(target_map)
     if chebi_id in chebi_map:
         return 0, chebi_map[chebi_id]
@@ -275,7 +287,7 @@ def get_chebi_data(chebi_id: str, max_retries: int = 3, timeout: int = 5) -> tup
             return 1, return_data
 
         except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
-            misc_fns.print_and_log(f'Warning: Failed to connect to ChEBI API on attempt {attempt + 1}. Retrying...', 'warning')
+            misc_fns.print_and_log(f'Warning: Failed to connect to ChEBI API on attempt {attempt + 1}.\n{e}\nRetrying...', 'warning')
             attempt += 1
             sleep(1)
             continue
@@ -334,9 +346,9 @@ def get_co_data(co_id: str, max_retries: int = 3, timeout: int = 5) -> tuple:
             # add data to cache
             co_map[co_id] = return_data
             misc_fns.write_json('../../mapping_data/co_map.json', co_map)
-            return return_data
+            return 1, return_data
         except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
-            misc_fns.print_and_log(f'Warning: Failed to connect to Cell Ontology API on attempt {attempt + 1} for ID \'{co_id}\'. Retrying...', 'warning')
+            misc_fns.print_and_log(f'Warning: Failed to connect to Cell Ontology API on attempt {attempt + 1} for ID \'{co_id}\'.\n{e}\nRetrying...', 'warning')
             attempt += 1
             sleep(1)
             continue
@@ -396,7 +408,7 @@ def get_hgnc_data(hgnc_id: str, max_retries: int = 3, timeout: int = 5) -> tuple
             misc_fns.write_json('../../mapping_data/hgnc_map.json', hgnc_map)
             return 1, return_data
         except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
-            misc_fns.print_and_log(f'Warning: Failed to connect to HGNC API on attempt {attempt + 1}. Retrying...', 'warning')
+            misc_fns.print_and_log(f'Warning: Failed to connect to HGNC API on attempt {attempt + 1}.\n{e}\nRetrying...', 'warning')
             attempt += 1
             sleep(1)
             continue
@@ -453,7 +465,7 @@ def get_ncbi_data(ncbi_id: str, entity_type: str, max_retries: int = 3, timeout:
         api_key = os.getenv('API_KEY')
         endpoint = endpoint.replace('{api_key_replace}', api_key)
     except Exception as e:
-        misc_fns.print_and_log(f'Warning: Failed to find API_KEY environment variable. Consider adding one.', 'warning')
+        misc_fns.print_and_log(f'Warning: Failed to find API_KEY environment variable. Consider adding one.\n{e}', 'warning')
         api_key = None
         endpoint = endpoint.replace('&api_key={api_key_replace}', '')
     
@@ -487,7 +499,7 @@ def get_ncbi_data(ncbi_id: str, entity_type: str, max_retries: int = 3, timeout:
                 misc_fns.print_and_log(f'Error: No DocumentSummary found for NCBI ID \'{ncbi_id}\'', 'error')
                 return 1, None
         except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
-            misc_fns.print_and_log(f'Warning: Failed to connect to NCBI API on attempt {attempt + 1}. Retrying...', 'warning')
+            misc_fns.print_and_log(f'Warning: Failed to connect to NCBI API on attempt {attempt + 1}.\n{e}\nRetrying...', 'warning')
             attempt += 1
             sleep(1)
             continue
