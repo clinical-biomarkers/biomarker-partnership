@@ -1,7 +1,6 @@
-#!/usr/bin/env/python3
 ''' Biomarker-Partnership data converter. This script is the entry point for the data conversion
-logic. Can convert table formatted data to the data model JSON or JSON data to the table format. 
-Will eventually support converting data to an nt file for RDF triples. 
+logic. Can convert table formatted data to the data model JSON, JSON data to the table format, and
+JSON data to N-Triples.
 
 Script is not agnostic to the formatting of the current table format/structure or the current data
 model JSON schema. If those are updated in the future, this script needs to be updated. 
@@ -9,6 +8,7 @@ model JSON schema. If those are updated in the future, this script needs to be u
 Currently written for the v0.3.2 data model schema and supports the following conversions:
     - JSON -> TSV
     - TSV -> JSON
+    - JSON -> NT
 
 Usage: data_conversion.py [options]
 
@@ -21,6 +21,7 @@ Usage: data_conversion.py [options]
         target_filepath     filepath of the target file (accepts JSON or TSV)
     
     Optional arguments: 
+        -c --chunk          write checkpoint (if not provided, will default to 10,000)
         -h --help           show the help message and exit 
         -v --version        show current version number and exit 
 '''
@@ -29,74 +30,63 @@ import logging
 import argparse
 import os
 import sys
-import misc_functions as misc_fns
-import json_to_tsv as j_to_t
-import tsv_to_json as t_to_j
-import json_to_nt as j_to_nt
+from fmt_lib import misc_functions as misc_fns
+from fmt_lib import json_to_tsv as j_to_t
+from fmt_lib import tsv_to_json as t_to_j
+from fmt_lib import json_to_nt as j_to_nt
 
 _CONF_KEY = 'data_conversion'
 _version = None
-URL_MAP = None
-NAMESPACE_MAP = None
-TRIPLES_MAP = None
 TSV_HEADERS = ['biomarker_id', 'biomarker', 'assessed_biomarker_entity', 'assessed_biomarker_entity_id', 
             'assessed_entity_type', 'condition', 'condition_id', 'exposure_agent', 'exposure_agent_id', 
             'best_biomarker_role', 'specimen', 'specimen_id', 'loinc_code', 'evidence_source', 'evidence',
             'tag']
 
-def user_args() -> None:
+def user_args(url_map: dict, triples_map: dict, namespace_map: dict) -> None:
     ''' Parse user inputted arguments and call the appropriate function to convert the data.
-    '''
 
-    # argument parser
+    Parameters
+    ----------
+    url_map: dict
+        Map for URL building.
+    triples_map: dict 
+        Map to build RDF triples.
+    namespace_map: dict
+        Map for resource namespaces.
+    '''
     parser = argparse.ArgumentParser(
         prog = 'biomarker-partnership data conversion',
         usage = 'python data_conversion.py [options] source_filepath target_filepath'
     )
-
-    # add arguments
     parser.add_argument('source_filepath', help = 'filepath of the source file')
     parser.add_argument('target_filepath', help = 'filepath of the target file to generate')
+    parser.add_argument('-c', '--chunk', default = 10_000)
     parser.add_argument('-v', '--version', action = 'version', version = f'%(prog)s {_version}')
-
-    # print out help if script is called without enough arguments
     if len(sys.argv) <= 2:
         sys.argv.append('-h')
-    
     options = parser.parse_args()
-    # check that the user provided filepaths for both the source and target files exist
     misc_fns.validate_filepath(options.source_filepath, 'input')
     misc_fns.validate_filepath(os.path.split(options.target_filepath)[0], 'output')
 
-    # log the user passed arguments
     logging.info(f'Arguments passed:\n\tsource_filepath = {options.source_filepath}\n\ttarget_filepath = {options.target_filepath}')
 
     ### check that the source and target file types passed indicate a supported conversion type and pass 
     ### to the appropriate function for processing 
 
-    # checking for the JSON -> TSV conversion
     if options.source_filepath.endswith('.json'):
         if not (options.target_filepath.endswith('.tsv')) and not (options.target_filepath.endswith('.nt')):
-            logging.error(f'Error: Incorrect target_filepath file type for source type of JSON, expects TSV or NT.')
-            print(f'Error: Incorrect target_filepath file type for source type of JSON, expects TSV or NT.')
+            misc_fns.print_and_log('Error: Incorrect target_filepath file type for source type of JSON, expects TSV or NT.', 'error')
+            print('Error: Incorrect target_filepath file type for source type of JSON, expects TSV or NT.')
             sys.exit(1)
-        # if a valid source JSON conversion called, continue to processing
         if options.target_filepath.endswith('.tsv'):
             j_to_t.json_to_tsv(options.source_filepath, options.target_filepath, TSV_HEADERS)
         elif options.target_filepath.endswith('.nt'):
-            triples_map = misc_fns.load_json(TRIPLES_MAP)
-            namespace_map = misc_fns.load_json(NAMESPACE_MAP)
             j_to_nt.json_to_nt(options.source_filepath, options.target_filepath, triples_map, namespace_map)
-    
-    # checking for the TSV -> JSON conversion
-    if options.source_filepath.endswith('.tsv'):
+    elif options.source_filepath.endswith('.tsv'):
         if not (options.target_filepath.endswith('.json')):
-            logging.error(f'Error: Incorrect target_filepath file type for source type of TSV, expects JSON.')
-            print(f'Error: Incorrect target_filepath file type for source type of TSV, expects JSON.')  
+            misc_fns.print_and_log('Error: Incorrect target_filepath file type for source type of TSV, expects JSON.', 'error')
+            print('Error: Incorrect target_filepath file type for source type of TSV, expects JSON.')  
             sys.exit(1)
-        # if a valid source TSV conversion called, continue to processing
-        url_map = misc_fns.load_json(URL_MAP)
-        namespace_map = misc_fns.load_json(NAMESPACE_MAP)
         t_to_j.tsv_to_json(options.source_filepath, options.target_filepath, TSV_HEADERS, url_map, namespace_map)
         
 def main():
@@ -104,30 +94,19 @@ def main():
     '''
     
     global _version
-    global URL_MAP
-    global NAMESPACE_MAP
-    global TRIPLES_MAP
     
-    # grab config information
     config = misc_fns.load_json('../../conf.json')
     _version = config['version']
     log_path = config[_CONF_KEY]['log_path']
-    URL_MAP = config[_CONF_KEY]['url_map_path']
-    NAMESPACE_MAP = config[_CONF_KEY]['namespace_map_path']
-    TRIPLES_MAP = config[_CONF_KEY]['triples_map_path']
+    url_map = misc_fns.load_json(config[_CONF_KEY]['url_map_path'])
+    namespace_map = misc_fns.load_json(config[_CONF_KEY]['namespace_map_path'])
+    triples_map = misc_fns.load_json(config[_CONF_KEY]['triples_map_path'])
 
-    # make sure directory to dump logs in exists
     misc_fns.validate_filepath(os.path.split(log_path)[0], 'output')
-    # set up logging
     misc_fns.setup_logging(log_path)
 
-    # log start delimiter for new run
     logging.info('################################## Start ##################################')
-
-    # parse command line arguments
-    user_args()
-
-    # log end delimiter for run
+    user_args(url_map, triples_map, namespace_map)
     logging.info('---------------------------------- End ----------------------------------')
 
 if __name__ == '__main__':
