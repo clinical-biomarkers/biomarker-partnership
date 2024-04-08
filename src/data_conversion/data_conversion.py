@@ -30,6 +30,7 @@ import logging
 import argparse
 import os
 import sys
+import time
 from fmt_lib import misc_functions as misc_fns
 from fmt_lib import json_to_tsv as j_to_t
 from fmt_lib import tsv_to_json as t_to_j
@@ -106,7 +107,11 @@ def main():
     misc_fns.setup_logging(log_path)
 
     logging.info('################################## Start ##################################')
+    start_time = time.time()
     user_args(url_map, triples_map, namespace_map)
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    logging.info(f'Estimated execution time: {elapsed_time} seconds (this is a rough estimate for debugging).')
     logging.info('---------------------------------- End ----------------------------------')
 
 if __name__ == '__main__':
