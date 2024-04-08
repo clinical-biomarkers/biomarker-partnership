@@ -1,7 +1,5 @@
 ''' Handles the conversion from the JSON data model format to the TSV table format.
 '''
-
-import traceback
 from fmt_lib import misc_functions as misc_fns
 from fmt_lib import json_to_tsv_utils as utils
 
@@ -30,7 +28,7 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list, c
     ### loop through entries in the JSON data 
     for top_level_entry_idx, top_level_entry in enumerate(json_data):
 
-        if top_level_entry_idx % chunk == 0:
+        if (top_level_entry_idx + 1) % chunk == 0:
             with open(target_filepath, 'a') as f:
                 f.write(tsv_content)
             misc_fns.print_and_log(f'Write checkpoint hit at row {top_level_entry_idx}, dumping...', 'info')
