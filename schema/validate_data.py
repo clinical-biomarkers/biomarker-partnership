@@ -43,7 +43,7 @@ def user_args(intermediate_path: str = None) -> None:
     parser.add_argument('data_filepath', help = 'filepath of the input file to validate (tsv, txt, or json)')
     parser.add_argument('schema_filepath', help = 'filepath of the schema file to validate against (json)')
     parser.add_argument('-o', '--output', action = 'store_true', help = 'whether to save the intermediate json, only applicable if input file is tsv or txt format (store_true argument)')
-    parser.add_argument('-c', '--chunk', action = 'store', help = 'chunk size to process the source data, only applicable if input file is tsv or txt format')
+    # parser.add_argument('-c', '--chunk', action = 'store', help = 'chunk size to process the source data, only applicable if input file is tsv or txt format')
     parser.add_argument('-v', '--version', action = 'version', version = f'%(prog)s {_version}')
 
     # print out help if script is called with no arguments 
@@ -53,7 +53,7 @@ def user_args(intermediate_path: str = None) -> None:
     options = parser.parse_args()
 
     # log the user passed arguments
-    logging.info(f'Arguments passed:\ndata_filepath = {options.data_filepath}\nschema_filepath = {options.schema_filepath}\noutput flag = {options.output}\nchunk = {options.chunk}')
+    logging.info(f'Arguments passed:\ndata_filepath = {options.data_filepath}\nschema_filepath = {options.schema_filepath}\noutput flag = {options.output}')
 
     # check that the correct file types were passed
     if not (options.data_filepath.endswith('.tsv') or options.data_filepath.endswith('.txt') or options.data_filepath.endswith('.json')):
