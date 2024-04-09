@@ -1,0 +1,595 @@
+[
+  {
+    "biomarker_id": "A0001",
+    "biomarker_component": [
+      {
+        "biomarker": "increased IL6 level",
+        "assessed_biomarker_entity": {
+          "recommended_name": "Interleukin-6",
+          "synonyms": [
+            {
+              "synonym": "IL-6"
+            },
+            {
+              "synonym": "B-cell stimulatory factor 2"
+            },
+            {
+              "synonym": "BSF-2"
+            },
+            {
+              "synonym": "CTL differentiation factor"
+            },
+            {
+              "synonym": "CDF"
+            },
+            {
+              "synonym": "Hybridoma growth factor"
+            },
+            {
+              "synonym": "Interferon beta-2"
+            },
+            {
+              "synonym": "IFN-beta-2"
+            }
+          ]
+        },
+        "assessed_biomarker_entity_id": "UPKB:P05231",
+        "assessed_entity_type": "protein",
+        "specimen": [
+          {
+            "name": "blood",
+            "id": "UBERON:0000178",
+            "name_space": "Uberon",
+            "url": "http://purl.obolibrary.org/obo/UBERON_0000178",
+            "loinc_code": "26881-3"
+          }
+        ],
+        "evidence_source": [
+          {
+            "id": "10914713",
+            "database": "Pubmed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10914713",
+            "evidence_list": [
+              {
+                "evidence": "entry 1 In multivariate analysis, however, the only two significant prognostic factors were EOD and IL-6. These results indicate that the serum IL-6 level is a significant prognostic factor for prostate cancer as well as EOD."
+              }
+            ],
+            "tags": [
+              {
+                "tag": "biomarker"
+              },
+              {
+                "tag": "specimen:UBERON:0000178"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "best_biomarker_role": [
+      {
+        "role": "prognostic"
+      }
+    ],
+    "condition": {
+      "id": "DOID:10283",
+      "recommended_name": {
+        "id": "DOID:10283",
+        "name": "prostate cancer",
+        "description": "A male reproductive organ cancer that is located_in the prostate.",
+        "resource": "Disease Ontology",
+        "url": "http://purl.obolibrary.org/obo/DOID_10283"
+      },
+      "synonyms": [
+        {
+          "id": "DOID:10283",
+          "name": "prostate neoplasm",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_10283"
+        },
+        {
+          "id": "DOID:10283",
+          "name": "NGP - new growth of prostate",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_10283"
+        },
+        {
+          "id": "DOID:10283",
+          "name": "tumor of the prostate",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_10283"
+        },
+        {
+          "id": "DOID:10283",
+          "name": "prostate cancer, familial",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_10283"
+        },
+        {
+          "id": "DOID:10283",
+          "name": "prostatic neoplasm",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_10283"
+        },
+        {
+          "id": "DOID:10283",
+          "name": "malignant tumor of the prostate",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_10283"
+        },
+        {
+          "id": "DOID:10283",
+          "name": "hereditary prostate cancer",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_10283"
+        },
+        {
+          "id": "DOID:10283",
+          "name": "prostatic cancer",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_10283"
+        }
+      ]
+    },
+    "evidence_source": [
+      {
+        "id": "32369209",
+        "database": "Pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32369209",
+        "evidence_list": [
+          {
+            "evidence": "Our results showed that the laboratory tests of cancer patients had the following characteristics: low lymphocytes, increased IL-6, CRP, PCT, D dimer, and LDH. The increase of these inflammatory indexes indicates that the infected patients were in inflammatory state, which may be closely related to the inflammatory storm."
+          }
+        ],
+        "tags": [
+          {
+            "tag": "condition"
+          },
+          {
+            "tag": "best_biomarker_role"
+          }
+        ]
+      }
+    ],
+    "citation": [
+      {
+        "citation_title": "Serum interleukin 6 as a prognostic factor in patients with prostate cancer.",
+        "journal": "Clinical cancer research : an official journal of the American Association for Cancer Research",
+        "authors": "Nakashima J, Tachibana M, Horiguchi Y, Oya M, Ohigashi T, Asakura H, Murai M",
+        "date": "2000-07-29",
+        "evidence_source": [],
+        "reference": [
+          {
+            "id": "10914713",
+            "type": "Pubmed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10914713"
+          }
+        ]
+      },
+      {
+        "citation_title": "Clinical characteristics and outcomes of cancer patients with COVID-19.",
+        "journal": "Journal of medical virology",
+        "authors": "Yang F, Shi S, Zhu J, Shi J, Dai K, Chen X",
+        "date": "2020-05-06",
+        "evidence_source": [],
+        "reference": [
+          {
+            "id": "32369209",
+            "type": "Pubmed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32369209"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "biomarker_id": "A0002",
+    "biomarker_component": [
+      {
+        "biomarker": "decreased LYMP count",
+        "assessed_biomarker_entity": {
+          "recommended_name": "Lymphocyte",
+          "synonyms": []
+        },
+        "assessed_biomarker_entity_id": "CO:CL_0000542",
+        "assessed_entity_type": "protein",
+        "specimen": [
+          {
+            "name": "blood",
+            "id": "UBERON:0000178",
+            "name_space": "Uberon",
+            "url": "http://purl.obolibrary.org/obo/UBERON_0000178",
+            "loinc_code": "26881-3"
+          },
+          {
+            "name": "oropharynx",
+            "id": "UBERON:0001729",
+            "name_space": "Uberon",
+            "url": "http://purl.obolibrary.org/obo/UBERON_0001729",
+            "loinc_code": "40898-9"
+          }
+        ],
+        "evidence_source": [
+          {
+            "id": "32369209",
+            "database": "Pubmed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32369209",
+            "evidence_list": [
+              {
+                "evidence": "Our results showed that the laboratory tests of cancer patients had the following characteristics: low lymphocytes, increased IL-6, CRP, PCT, D dimer, and LDH. The increase of these inflammatory indexes indicates that the infected patients were in inflammatory state, which may be closely related to the inflammatory storm."
+              }
+            ],
+            "tags": [
+              {
+                "tag": "biomarker"
+              },
+              {
+                "tag": "loinc_code:26881-3"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "best_biomarker_role": [
+      {
+        "role": "predictive"
+      },
+      {
+        "role": "prognostic"
+      }
+    ],
+    "condition": {
+      "id": "DOID:0080600",
+      "recommended_name": {
+        "id": "DOID:0080600",
+        "name": "COVID-19",
+        "description": "A Coronavirus infectious disease that is characterized by fever, cough and shortness of breath and that has_material_basis_in SARS-CoV-2.",
+        "resource": "Disease Ontology",
+        "url": "http://purl.obolibrary.org/obo/DOID_0080600"
+      },
+      "synonyms": [
+        {
+          "id": "DOID:0080600",
+          "name": "SARS-CoV-2 infection",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_0080600"
+        },
+        {
+          "id": "DOID:0080600",
+          "name": "Wuhan coronavirus infection",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_0080600"
+        },
+        {
+          "id": "DOID:0080600",
+          "name": "COVID19",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_0080600"
+        },
+        {
+          "id": "DOID:0080600",
+          "name": "Wuhan seafood market pneumonia virus infection",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_0080600"
+        },
+        {
+          "id": "DOID:0080600",
+          "name": "2019-nCoV infection",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_0080600"
+        },
+        {
+          "id": "DOID:0080600",
+          "name": "2019 Novel Coronavirus (2019-nCoV)",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_0080600"
+        }
+      ]
+    },
+    "evidence_source": [
+      {
+        "id": "32369209",
+        "database": "Pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32369209",
+        "evidence_list": [
+          {
+            "evidence": "Our results showed that the laboratory tests of cancer patients had the following characteristics: low lymphocytes, increased IL-6, CRP, PCT, D dimer, and LDH. The increase of these inflammatory indexes indicates that the infected patients were in inflammatory state, which may be closely related to the inflammatory storm."
+          }
+        ],
+        "tags": [
+          {
+            "tag": "condition"
+          }
+        ]
+      },
+      {
+        "id": "32259560",
+        "database": "Pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32259560",
+        "evidence_list": [
+          {
+            "evidence": "Serial measurement of circulating IL-6 levels may be important in identifying disease progression among COVID-19-infected patients."
+          }
+        ],
+        "tags": [
+          {
+            "tag": "condition"
+          }
+        ]
+      }
+    ],
+    "citation": [
+      {
+        "citation_title": "Clinical characteristics and outcomes of cancer patients with COVID-19.",
+        "journal": "Journal of medical virology",
+        "authors": "Yang F, Shi S, Zhu J, Shi J, Dai K, Chen X",
+        "date": "2020-05-06",
+        "evidence_source": [],
+        "reference": [
+          {
+            "id": "32369209",
+            "type": "Pubmed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32369209"
+          }
+        ]
+      },
+      {
+        "citation_title": "Interleukin-6 as a potential biomarker of COVID-19 progression.",
+        "journal": "Medecine et maladies infectieuses",
+        "authors": "Ulhaq ZS, Soraya GV",
+        "date": "2020-04-08",
+        "evidence_source": [],
+        "reference": [
+          {
+            "id": "32259560",
+            "type": "Pubmed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32259560"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "biomarker_id": "A0003",
+    "biomarker_component": [
+      {
+        "biomarker": "increased PCT level",
+        "assessed_biomarker_entity": {
+          "recommended_name": "Procalcitonin",
+          "synonyms": []
+        },
+        "assessed_biomarker_entity_id": "PCCID:56841902",
+        "assessed_entity_type": "protein",
+        "specimen": [
+          {}
+        ],
+        "evidence_source": [
+          {
+            "id": "32369209",
+            "database": "Pubmed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32369209",
+            "evidence_list": [
+              {
+                "evidence": "Our results showed that the laboratory tests of cancer patients had the following characteristics: low lymphocytes, increased IL-6, CRP, PCT, D dimer, and LDH. The increase of these inflammatory indexes indicates that the infected patients were in inflammatory state, which may be closely related to the inflammatory storm."
+              }
+            ],
+            "tags": [
+              {
+                "tag": "biomarker"
+              },
+              {
+                "tag": "assessed_entity_type"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "best_biomarker_role": [
+      {
+        "role": "monitoring"
+      }
+    ],
+    "condition": {
+      "id": "DOID:1324",
+      "recommended_name": {
+        "id": "DOID:1324",
+        "name": "lung cancer",
+        "description": "A respiratory system cancer that is located_in the lung.",
+        "resource": "Disease Ontology",
+        "url": "http://purl.obolibrary.org/obo/DOID_1324"
+      },
+      "synonyms": []
+    },
+    "evidence_source": [],
+    "citation": [
+      {
+        "citation_title": "Clinical characteristics and outcomes of cancer patients with COVID-19.",
+        "journal": "Journal of medical virology",
+        "authors": "Yang F, Shi S, Zhu J, Shi J, Dai K, Chen X",
+        "date": "2020-05-06",
+        "evidence_source": [],
+        "reference": [
+          {
+            "id": "32369209",
+            "type": "Pubmed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32369209"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "biomarker_id": "A0004",
+    "biomarker_component": [
+      {
+        "biomarker": "increased WBC count",
+        "assessed_biomarker_entity": {
+          "recommended_name": "White blood cell",
+          "synonyms": []
+        },
+        "assessed_biomarker_entity_id": "CO:CL_0000738",
+        "assessed_entity_type": "protein",
+        "specimen": [
+          {
+            "name": "blood",
+            "id": "UBERON:0000178",
+            "name_space": "Uberon",
+            "url": "http://purl.obolibrary.org/obo/UBERON_0000178",
+            "loinc_code": "26881-3"
+          }
+        ],
+        "evidence_source": [
+          {
+            "id": "32286245",
+            "database": "Pubmed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32286245",
+            "evidence_list": [
+              {
+                "evidence": "In hospitalized patients with respiratory distress, we recommend clinicians closely monitor WBC count, lymphocyte count, platelet count, IL-6 and serum ferritin as markers for potential progression to critical illness."
+              }
+            ],
+            "tags": [
+              {
+                "tag": "biomarker"
+              },
+              {
+                "tag": "assessed_entity_type"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "biomarker": "decreased PLAT count",
+        "assessed_biomarker_entity": {
+          "recommended_name": "Platelet",
+          "synonyms": []
+        },
+        "assessed_biomarker_entity_id": "CO:CL_0000233",
+        "assessed_entity_type": "protein",
+        "specimen": [
+          {
+            "name": "blood",
+            "id": "UBERON:0000178",
+            "name_space": "Uberon",
+            "url": "http://purl.obolibrary.org/obo/UBERON_0000178",
+            "loinc_code": "11125-2"
+          }
+        ],
+        "evidence_source": [
+          {
+            "id": "32379887",
+            "database": "Pubmed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32379887",
+            "evidence_list": [
+              {
+                "evidence": "Consequently, the counts of CD8+T and CD4+T cells can be used as diagnostic markers of COVID-19 and predictors of disease severity."
+              }
+            ],
+            "tags": [
+              {
+                "tag": "loinc_code:11125-2"
+              },
+              {
+                "tag": "specimen:UBERON:0000178"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "best_biomarker_role": [
+      {
+        "role": "monitoring"
+      },
+      {
+        "role": "diagnostic"
+      }
+    ],
+    "condition": {
+      "id": "DOID:11934",
+      "recommended_name": {
+        "id": "DOID:11934",
+        "name": "head and neck cancer",
+        "description": "An organ system cancer that arises in the head or neck region. This region includes the nasal cavity, sinuses, lips, mouth, salivary glands, throat, or larynx.",
+        "resource": "Disease Ontology",
+        "url": "http://purl.obolibrary.org/obo/DOID_11934"
+      },
+      "synonyms": [
+        {
+          "id": "DOID:11934",
+          "name": "head and neck neoplasm",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_11934"
+        },
+        {
+          "id": "DOID:11934",
+          "name": "head/neck neoplasm",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_11934"
+        },
+        {
+          "id": "DOID:11934",
+          "name": "head and neck tumours",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_11934"
+        },
+        {
+          "id": "DOID:11934",
+          "name": "tumor of head and neck",
+          "resource": "Disease Ontology",
+          "url": "http://purl.obolibrary.org/obo/DOID_11934"
+        }
+      ]
+    },
+    "evidence_source": [
+      {
+        "id": "32369209",
+        "database": "Pubmed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32369209",
+        "evidence_list": [
+          {
+            "evidence": "Our results showed that the laboratory tests of cancer patients had the following characteristics: low lymphocytes, increased IL-6, CRP, PCT, D dimer, and LDH. The increase of these inflammatory indexes indicates that the infected patients were in inflammatory state, which may be closely related to the inflammatory storm."
+          }
+        ],
+        "tags": [
+          {
+            "tag": "condition"
+          }
+        ]
+      }
+    ],
+    "citation": [
+      {
+        "citation_title": "Hematologic, biochemical and immune biomarker abnormalities associated with severe illness and mortality in coronavirus disease 2019 (COVID-19): a meta-analysis.",
+        "journal": "Clinical chemistry and laboratory medicine",
+        "authors": "Henry BM, de Oliveira MHS, Benoit S, Plebani M, Lippi G",
+        "date": "2020-04-15",
+        "evidence_source": [],
+        "reference": [
+          {
+            "id": "32286245",
+            "type": "Pubmed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32286245"
+          }
+        ]
+      },
+      {
+        "citation_title": "T-Cell Subset Counts in Peripheral Blood Can Be Used as Discriminatory Biomarkers for Diagnosis and Severity Prediction of Coronavirus Disease 2019.",
+        "journal": "The Journal of infectious diseases",
+        "authors": "Jiang M, Guo Y, Luo Q, Huang Z, Zhao R, Liu S, Le A, Li J, Wan L",
+        "date": "2020-05-08",
+        "evidence_source": [],
+        "reference": [
+          {
+            "id": "32379887",
+            "type": "Pubmed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32379887"
+          }
+        ]
+      }
+    ]
+  }
+]

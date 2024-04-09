@@ -1,0 +1,1 @@
+Looped test case. Assertion files are automatically generated. 
