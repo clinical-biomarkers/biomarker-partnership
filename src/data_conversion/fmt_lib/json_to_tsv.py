@@ -59,7 +59,7 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list, c
                 for specimen_entry in specimens:
                     # parse specimen data
                     specimen = specimen_entry.get('name', '')
-                    specimen_id = specimen_entry.get('specimen_id', '')
+                    specimen_id = specimen_entry.get('id', '')
                     loinc_code = specimen_entry.get('loinc_code', '')
                     # object/array dictionary for object field tags
                     object_evidence_fields = {
@@ -95,7 +95,7 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list, c
                         evidence_columns = [''] * 3
 
                         # create the evidence source value 
-                        evidence_source_value = f"{evidence_source['database']}:{evidence_source['evidence_id']}"
+                        evidence_source_value = f"{evidence_source['database']}:{evidence_source['id']}"
                         # initialize evidence and tag values lists
                         tag_values = []
 
@@ -122,7 +122,7 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list, c
                         add_evidence_flag = False
                         evidence_columns = [''] * 3
 
-                        evidence_source_value = f"{evidence_source['database']}:{evidence_source['evidence_id']}"
+                        evidence_source_value = f"{evidence_source['database']}:{evidence_source['id']}"
                         tag_values = []
 
                         for tag in evidence_source['tags']:
@@ -183,7 +183,7 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list, c
                     
                     add_evidence_flag = False
                     evidence_columns = [''] * 3
-                    evidence_source_value = f"{evidence_source['database']}:{evidence_source['evidence_id']}"
+                    evidence_source_value = f"{evidence_source['database']}:{evidence_source['id']}"
                     tag_values = []
 
                     for tag in evidence_source['tags']:
@@ -206,7 +206,7 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list, c
                     add_evidence_flag = False
                     evidence_columns = [''] * 3
 
-                    evidence_source_value = f"{evidence_source['database']}:{evidence_source['evidence_id']}"
+                    evidence_source_value = f"{evidence_source['database']}:{evidence_source['id']}"
                     tag_values = []
 
                     for tag in evidence_source['tags']:

@@ -41,9 +41,9 @@ def extract_top_level_fields(entry: dict, idx: int) -> tuple:
         return_data = (
             entry['biomarker_id'], 
             entry.get('condition', {}).get('recommended_name', {}).get('name', ''),
-            entry.get('condition', {}).get('condition_id', ''),
+            entry.get('condition', {}).get('id', ''),
             entry.get('exposure_agent', {}).get('recommended_name', {}).get('name', ''),
-            entry.get('exposure_agent', {}).get('exposure_agent_id', ''),
+            entry.get('exposure_agent', {}).get('id', ''),
             ';'.join([role['role'] for role in best_biomarker_roles_dict]),
             entry.get('evidence_source', [])
         )

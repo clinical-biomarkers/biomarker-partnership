@@ -97,7 +97,7 @@ def add_specimen_entry(row: dict, biomarker_component_object: dict, url_map: dic
     if row['specimen'] or row['loinc_code']:
         specimen = {
             'name': row.get('specimen', ''),
-            'specimen_id': row.get('specimen_id', ''),
+            'id': row.get('specimen_id', ''),
             'name_space': specimen_database.title() if specimen_database else '',
             'url': specimen_url if specimen_url else '',
             'loinc_code': row.get('loinc_code', '')
@@ -180,9 +180,9 @@ def build_condition_entry(row: dict, url_map: dict, name_space_map: dict) -> Uni
             misc_fns.log_once(f'Condition name space \'{condition_name_space}\' not in the url map.', 'warning')
         # build entry
         condition = {
-            'condition_id': row['condition_id'],
+            'id': row['condition_id'],
             'recommended_name': {
-                'condition_id': row['condition_id'],
+                'id': row['condition_id'],
                 'name': row['condition'],
                 'description': None,
                 'resource': condition_resource,
@@ -201,7 +201,7 @@ def build_condition_entry(row: dict, url_map: dict, name_space_map: dict) -> Uni
                 synonym_entries = []
                 for synonym in doid_data['synonyms']:
                     synonym_entry = {
-                        'synonym_id': row['condition_id'],
+                        'id': row['condition_id'],
                         'name': synonym,
                         'resource': condition_resource,
                         'url': condition_url
@@ -274,7 +274,7 @@ def build_evidence_entry(row: dict, tag_list: list, url_map: dict) -> list:
         # build evidence object
         evidence_entry.append(
             {
-                'evidence_id': evidence_id,
+                'id': evidence_id,
                 'database': evidence_database.title(),
                 'url': evidence_url,
                 'evidence_list': [{'evidence': evidence_txt.strip()} for evidence_txt in row['evidence'].split(';|')],
@@ -307,17 +307,17 @@ def add_citation_data(result_data: list) -> list:
             # get each component evidence source
             for evidence_source in biomarker_componennt_entry['evidence_source']:
                 evidence_sources.append((entry_idx, evidence_source))
-                seen_pubmed_set.add(evidence_source['evidence_id'])
+                seen_pubmed_set.add(evidence_source['id'])
         # get the evidence source data for the top level entry
         for evidence_source in entry['evidence_source']:
-            if evidence_source['evidence_id'] not in seen_pubmed_set:
+            if evidence_source['id'] not in seen_pubmed_set:
                 evidence_sources.append((entry_idx, evidence_source))
     misc_fns.print_and_log(f'Adding citation data for {len(evidence_sources)} evidence sources...', 'info')
 
     # get the citation data for each evidence source
     for evidence_source in evidence_sources:
         if evidence_source[1]['database'].lower() == 'pubmed':
-            pubmed_api_call_indicator, pubmed_data = data_api.get_pubmed_data(evidence_source[1]['evidence_id'])
+            pubmed_api_call_indicator, pubmed_data = data_api.get_pubmed_data(evidence_source[1]['id'])
             syn_utils.handle_rate_limits({'pubmed': pubmed_api_call_indicator})
             if not pubmed_data:
                 continue
@@ -329,8 +329,8 @@ def add_citation_data(result_data: list) -> list:
                 'evidence_source': [],
                 'reference': [
                     {
-                        'evidence_id': evidence_source[1]['evidence_id'],
-                        'database': evidence_source[1]['database'].title(),
+                        'id': evidence_source[1]['id'],
+                        'type': evidence_source[1]['database'].title(),
                         'url': evidence_source[1]['url']
                     }
                 ]
