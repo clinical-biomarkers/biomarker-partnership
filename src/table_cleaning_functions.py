@@ -31,7 +31,8 @@ def map_prefixes(source_column: pd.Series) -> pd.Series:
     return source_column.apply(lambda x: x.replace(x.split(':')[0], PREFIX_MAP[x.split(':')[0].lower()]).strip() if pd.notnull(x) and x.split(':')[0].lower() in PREFIX_MAP else x)
 
 def clean_parantheticals(source_column: pd.Series) -> pd.Series:
-    ''' Cleans the parantheticals in the given dataframe column.
+    ''' Cleans the parantheticals in the given dataframe column if the 
+    value is a string.
 
     Parameters
     ----------
@@ -59,3 +60,34 @@ def strip_values(source_column: pd.Series) -> pd.Series:
         The cleaned dataframe column.
     '''
     return source_column.apply(lambda x: x.strip() if isinstance(x, str) else x)
+
+def strip_internal_whitespace(source_column: pd.Series) -> pd.Series:
+    ''' Strips the internal whitespace from the given dataframe column if the 
+    value is a string.
+
+    Parameters
+    ----------
+    source_column: pd.Series
+        The dataframe column to clean.
+
+    Returns
+    -------
+    pd.Series
+        The cleaned dataframe column.
+    '''
+    return source_column.apply(lambda x: x.replace(' ', '') if isinstance(x, str) else x)
+
+def make_lowercase(source_column: pd.Series) -> pd.Series:
+    ''' Makes all string values lowercase from the given dataframe column.
+
+    Parameters
+    ----------
+    source_column: pd.Series
+        The dataframe column to clean.
+
+    Returns
+    -------
+    pd.Series
+        The cleaned dataframe column.
+    '''
+    return source_column.apply(lambda x: x.lower() if isinstance(x, str) else x)
