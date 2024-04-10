@@ -21,7 +21,8 @@ Usage: data_conversion.py [options]
         target_filepath     filepath of the target file (accepts JSON or TSV)
     
     Optional arguments: 
-        -c --chunk          write checkpoint (if not provided, will default to 10,000)
+        -c --chunk          log/write checkpoint (if not provided, will default to 10,000)
+        -l --log            whether to print a message indicating the progress (default False)
         -h --help           show the help message and exit 
         -v --version        show current version number and exit 
 '''
@@ -61,7 +62,8 @@ def user_args(url_map: dict, triples_map: dict, namespace_map: dict) -> None:
     )
     parser.add_argument('source_filepath', help = 'filepath of the source file')
     parser.add_argument('target_filepath', help = 'filepath of the target file to generate')
-    parser.add_argument('-c', '--chunk', default = 10_000)
+    parser.add_argument('-c', '--chunk', default = 10_000, help = 'write checkpoint (default will dump to disk every 10,000 records/rows)')
+    parser.add_argument('-l', '--log', action = 'store_true', help = 'whether to print a message indicating the write checkpoin has been hit (default False)')
     parser.add_argument('-v', '--version', action = 'version', version = f'%(prog)s {_version}')
     if len(sys.argv) <= 2:
         sys.argv.append('-h')
@@ -69,7 +71,12 @@ def user_args(url_map: dict, triples_map: dict, namespace_map: dict) -> None:
     misc_fns.validate_filepath(options.source_filepath, 'input')
     misc_fns.validate_filepath(os.path.split(options.target_filepath)[0], 'output')
 
-    logging.info(f'Arguments passed:\n\tsource_filepath = {options.source_filepath}\n\ttarget_filepath = {options.target_filepath}')
+    logging.info(
+        f'Arguments passed:\n\tsource_filepath = {options.source_filepath}\
+            \n\ttarget_filepath = {options.target_filepath}\
+            \n\tchunk = {options.chunk}\
+            \n\tlog = {options.log}'
+    )
 
     ### check that the source and target file types passed indicate a supported conversion type and pass 
     ### to the appropriate function for processing 
@@ -80,7 +87,7 @@ def user_args(url_map: dict, triples_map: dict, namespace_map: dict) -> None:
             print('Error: Incorrect target_filepath file type for source type of JSON, expects TSV or NT.')
             sys.exit(1)
         if options.target_filepath.endswith('.tsv'):
-            j_to_t.json_to_tsv(options.source_filepath, options.target_filepath, TSV_HEADERS)
+            j_to_t.json_to_tsv(options.source_filepath, options.target_filepath, TSV_HEADERS, options.chunk, options.log)
         elif options.target_filepath.endswith('.nt'):
             j_to_nt.json_to_nt(options.source_filepath, options.target_filepath, triples_map, namespace_map)
     elif options.source_filepath.endswith('.tsv'):
@@ -88,7 +95,7 @@ def user_args(url_map: dict, triples_map: dict, namespace_map: dict) -> None:
             misc_fns.print_and_log('Error: Incorrect target_filepath file type for source type of TSV, expects JSON.', 'error')
             print('Error: Incorrect target_filepath file type for source type of TSV, expects JSON.')  
             sys.exit(1)
-        t_to_j.tsv_to_json(options.source_filepath, options.target_filepath, TSV_HEADERS, url_map, namespace_map)
+        t_to_j.tsv_to_json(options.source_filepath, options.target_filepath, TSV_HEADERS, url_map, namespace_map, options.chunk, options.log)
         
 def main():
     ''' Main entry point for the data conversion logic.

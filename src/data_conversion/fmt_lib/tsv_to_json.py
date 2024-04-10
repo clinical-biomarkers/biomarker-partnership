@@ -8,7 +8,7 @@ from fmt_lib import synonym_utils as syn_utils
 
 ADD_CITATION_DATA = True
 
-def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, url_map: dict, name_space_map: dict, chunk: int = 10_000) -> None:
+def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, url_map: dict, name_space_map: dict, chunk: int = 10_000, log: bool = False) -> None:
     ''' Entry point for the TSV -> JSON conversion.
 
     Parameters
@@ -24,7 +24,9 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
     name_space_map : dict
         Dictionary that provides mappings for name space acronym's to full name space names.
     chunk : int (default: 10,000)
-        Write checkpoint.
+        Log checkpoint.
+    log : bool (default: False)
+        Whether to print a message when the log checkpoint is hit.
     '''
 
     f = open(source_filepath, 'r')
@@ -41,10 +43,9 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
     for row_idx, row in enumerate(data):
 
         if (row_idx + 1) % chunk == 0:
-            if ADD_CITATION_DATA:
-                result_data = utils.add_citation_data(result_data)
-            utils.write_chunk_to_tempfile(result_data, temp_files_list)
-            result_data.clear()
+            if log:
+                misc_fns.print_and_log(f'Log checkpoint at row {row_idx}...', 'info')
+                print(f'Log checkpoint hit at row {row_idx}...')
 
         row = {key: value.strip() if isinstance(value, str) else value for key, value in row.items()}
 
@@ -171,10 +172,9 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
     for resource, count in total_api_calls.items():
         misc_fns.print_and_log(f'Total {resource} API calls: {count}', 'info')
     
-    if result_data:
-        if ADD_CITATION_DATA:
-            result_data = utils.add_citation_data(result_data)
-        utils.write_chunk_to_tempfile(result_data, temp_files_list)
-    utils.merge_temp_files(temp_files_list, target_filepath)
+    if ADD_CITATION_DATA:
+        result_data = utils.add_citation_data(result_data)
+    
+    misc_fns.write_json(target_filepath, result_data)
 
     f.close()

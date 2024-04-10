@@ -3,7 +3,7 @@
 from fmt_lib import misc_functions as misc_fns
 from fmt_lib import json_to_tsv_utils as utils
 
-def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list, chunk: int = 10_000) -> None:
+def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list, chunk: int = 10_000, log: bool = False) -> None:
     ''' Entry point for the JSON -> TSV conversion.
 
     Parameters
@@ -16,6 +16,8 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list, c
         List of the headers in the TSV file.
     chunk : int (default: 10,000)
         The write checkpoint. 
+    log : bool (default: False)
+        Whether to print a message when the write checkpoint is hit.
 
     Raises
     ------
@@ -31,8 +33,9 @@ def json_to_tsv(source_filepath: str, target_filepath: str, tsv_headers: list, c
         if (top_level_entry_idx + 1) % chunk == 0:
             with open(target_filepath, 'a') as f:
                 f.write(tsv_content)
-            misc_fns.print_and_log(f'Write checkpoint hit at row {top_level_entry_idx}, dumping...', 'info')
-            print(f'Write checkpoint hit at row {top_level_entry_idx}, dumping...')
+            if log:
+                misc_fns.print_and_log(f'Write checkpoint hit at row {top_level_entry_idx}, dumping...', 'info')
+                print(f'Write checkpoint hit at row {top_level_entry_idx}, dumping...')
             tsv_content = ''
 
         biomarker_id, condition, condition_id, exposure_agent, exposure_agent_id, best_biomarker_roles, top_level_evidence \
