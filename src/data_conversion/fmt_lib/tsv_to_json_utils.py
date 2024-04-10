@@ -102,7 +102,7 @@ def add_specimen_entry(row: dict, biomarker_component_object: dict, url_map: dic
             'url': specimen_url if specimen_url else '',
             'loinc_code': row.get('loinc_code', '')
         }
-    biomarker_component_object['specimen'].append(specimen)
+        biomarker_component_object['specimen'].append(specimen)
     return biomarker_component_object
 
 def parse_tags(row: dict, component_object_evidence_fields: dict) -> tuple:
@@ -277,7 +277,7 @@ def build_evidence_entry(row: dict, tag_list: list, url_map: dict) -> list:
                 'id': evidence_id,
                 'database': evidence_database.title(),
                 'url': evidence_url,
-                'evidence_list': [{'evidence': evidence_txt.strip()} for evidence_txt in row['evidence'].split(';|')],
+                'evidence_list': [{'evidence': evidence_txt.strip()} for evidence_txt in row['evidence'].split(';|')] if row['evidence'] else [],
                 'tags': tag_list
             }
         )
@@ -341,49 +341,3 @@ def add_citation_data(result_data: list) -> list:
 
     misc_fns.print_and_log('Finished adding citation data!', 'info')
     return result_data
-
-def write_chunk_to_tempfile(chunk_data: list, temp_files_list: list[str]) -> list:
-    ''' Writes a chunk to a temporary file.
-
-    Parameters
-    ----------
-    chunk_data : list
-        The data to write out.
-    temp_files_list : list[str]
-        The list of the existing temporary files.
-
-    Returns
-    -------
-    list
-        The updated list of temporary file names.
-    '''
-    temp_file = tempfile.NamedTemporaryFile(delete = False, mode = 'w', encoding = 'utf-8')
-    for item in chunk_data:
-        json.dump(item, temp_file)
-        temp_file.write(',\n')
-    temp_file.close()
-    temp_files_list.append(temp_file.name)
-    return temp_files_list
-
-def merge_temp_files(temp_files_list: list[str], target_filepath: str) -> None:
-    ''' Merges the temp files into the final JSON file.
-
-    Parameters
-    ----------
-    temp_files_list : list[str]
-        The temporary file names.
-    target_filepath : str
-        The target filepath for the final JSON file.
-    '''
-    with open (target_filepath, 'w', encoding = 'utf-8') as final_file:
-        final_file.write('[')
-        total_files = len(temp_files_list)
-        for idx, temp_file_name in enumerate(temp_files_list):
-            with open(temp_file_name, 'r', encoding = 'utf-8') as temp_file:
-                content = temp_file.read().rstrip('\n')
-                if idx == total_files - 1:
-                    content = content.rstrip(',')
-                final_file.write(content)
-        final_file.write(']')
-    for temp_file_name in temp_files_list:
-        os.remove(temp_file_name)
