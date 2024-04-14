@@ -5,5 +5,7 @@
     "chebi": "chebi",
     "co": "cell ontology",
     "hgnc": "hgnc",
-    "ncbi": "ncbi"
+    "ncbi": "ncbi",
+    "pro": "protein ontology",
+    "ncit": "ncit"
 }
