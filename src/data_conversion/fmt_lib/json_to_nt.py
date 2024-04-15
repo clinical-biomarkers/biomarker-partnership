@@ -80,7 +80,7 @@ def json_to_nt(
 
         ### handle the condition triple
         if entry.get("condition", None):
-            condition = entry["condition"]["condition_id"]
+            condition = entry["condition"]["id"]
             condition_triple = build_condition_triple(
                 biomarker_subject_uri, condition, roles, triples_map, namespace_map
             )
@@ -186,7 +186,7 @@ def build_specimen_triples(
         if specimen.get("name_space", "") != "":
             if specimen["name_space"].lower() in namespace_map:
                 if namespace_map[specimen["name_space"].lower()] == "uberon":
-                    specimen_id = specimen.get("specimen_id", None)
+                    specimen_id = specimen.get("id", None)
                     if specimen_id:
                         uberon_sample_uri = triples_map[SUBJECT_OBJECTS][
                             "uberon"
