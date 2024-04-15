@@ -21,7 +21,13 @@
         "ncbi": {
             "gene": "<https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID{replace}>",
             "compound": "<http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID{replace}>"
-        }
+        },
+        "dbsnp": "<https://www.ncbi.nlm.nih.gov/snp/{replace}>",
+        "pccid": "<https://pubchem.ncbi.nlm.nih.gov/compound/{replace}>",
+        "pdb": "<https://www.rcsb.org/structure/{replace}>",
+        "mrb": "<https://www.mirbase.org/hairpin/{replace}>",
+        "rnac": "<https://rnacentral.org/rna/{replace}/9606>",
+        "gtc": "<https://glytoucan.org/Structures/Glycans/{replace}"
     },
     "predicates": {
         "biomarker_change": {
