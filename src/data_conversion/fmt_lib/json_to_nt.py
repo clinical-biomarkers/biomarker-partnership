@@ -326,6 +326,30 @@ def build_biomarker_change_triple(
             object_uri = triples_map[SUBJECT_OBJECTS]["ncit"].replace(
                 REPLACE_VALUE, entity_id
             )
+        elif namespace_value == "dbsnp":
+            object_uri = triples_map[SUBJECT_OBJECTS]["dbsnp"].replace(
+                REPLACE_VALUE, entity_id.replace("RS", "rs")
+            )
+        elif namespace_value == "pubchem id":
+            object_uri = triples_map[SUBJECT_OBJECTS]["pccid"].replace(
+                REPLACE_VALUE, entity_id
+            )
+        elif namespace_value == "protein data bank":
+            object_uri = triples_map[SUBJECT_OBJECTS]["pccid"].replace(
+                REPLACE_VALUE, entity_id
+            )
+        elif namespace_value == "mirbase":
+            object_uri = triples_map[SUBJECT_OBJECTS]["mrb"].replace(
+                REPLACE_VALUE, entity_id
+            )
+        elif namespace_value == "rna central":
+            object_uri = triples_map[SUBJECT_OBJECTS]["rnac"].replace(
+                REPLACE_VALUE, entity_id
+            )
+        elif namespace_value == "glytoucan":
+            object_uri = triples_map[SUBJECT_OBJECTS]["gtc"].replace(
+                REPLACE_VALUE, entity_id
+            )
         elif namespace_value == "ncbi":
             if assessed_entity_type == "gene":
                 object_uri = triples_map[SUBJECT_OBJECTS]["ncbi"]["gene"].replace(
