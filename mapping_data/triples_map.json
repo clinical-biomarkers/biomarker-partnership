@@ -1,6 +1,7 @@
 {
     "subject_objects": {
-        "biomarker_id": "<https://hivelab.biochemistry.gwu.edu/biomarker/api/id/getbiomarker?biomarker_id={replace}>",
+        "biomarker_id": "<https://hivelab.biochemistry.gwu.edu/biomarker/api/id/{replace}>",
+        "biomarker_canonical_id": "<https://hivelab.biochemistry.gwu.edu/biomarker/api/canonical_id/{replace}>",
         "uniprot": "<http://purl.uniprot.org/uniprot/{replace}>",
         "best_biomarker_role": {
             "risk": "<http://purl.obolibrary.org/obo/OBCI_0000008>",
@@ -15,9 +16,18 @@
         "doid": "<http://purl.obolibrary.org/obo/DOID_{replace}>",
         "cell_ontology": "<http://purl.obolibrary.org/obo/{replace}>",
         "chebi": "<http://purl.obolibrary.org/obo/CHEBI_{replace}>",
+        "protein_ontology": "<http://purl.obolibrary.org/obo/{replace}>",
+        "ncit": "<http://purl.obolibrary.org/obo/NCIT_{replace}>",
         "ncbi": {
-            "gene": "https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID{replace}"
-        }
+            "gene": "<https://pubchem.ncbi.nlm.nih.gov/rest/rdf/gene/GID{replace}>",
+            "compound": "<http://rdf.ncbi.nlm.nih.gov/pubchem/compound/CID{replace}>"
+        },
+        "dbsnp": "<https://www.ncbi.nlm.nih.gov/snp/{replace}>",
+        "pccid": "<https://pubchem.ncbi.nlm.nih.gov/compound/{replace}>",
+        "pdb": "<https://www.rcsb.org/structure/{replace}>",
+        "mrb": "<https://www.mirbase.org/hairpin/{replace}>",
+        "rnac": "<https://rnacentral.org/rna/{replace}/9606>",
+        "gtc": "<https://glytoucan.org/Structures/Glycans/{replace}"
     },
     "predicates": {
         "biomarker_change": {

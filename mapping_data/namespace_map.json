@@ -5,5 +5,13 @@
     "chebi": "chebi",
     "co": "cell ontology",
     "hgnc": "hgnc",
-    "ncbi": "ncbi"
+    "ncbi": "ncbi",
+    "pro": "protein ontology",
+    "ncit": "ncit",
+    "dbsnp": "dbsnp",
+    "pccid": "pubchem id",
+    "pdb": "protein data bank",
+    "mrb": "mirbase",
+    "rnac": "rna central",
+    "gtc": "glytoucan"
 }
