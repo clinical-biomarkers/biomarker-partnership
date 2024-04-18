@@ -4,3 +4,4 @@ ipykernel==6.28.0
 python-dotenv==1.0.0
 pymed==0.8.9
 pronto==2.5.5
+ijson==3.2.3
