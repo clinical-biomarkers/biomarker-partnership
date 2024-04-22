@@ -1,0 +1,208 @@
+[
+    {
+        "biomarker_id": "A0001",
+        "biomarker_component": [
+            {
+                "biomarker": "biomarker 1",
+                "assessed_biomarker_entity": {
+                    "recommended_name": "assessed_biomarker_entity recommended name 1",
+                    "synonyms": [
+                        {
+                            "synonym": "assessed_biomarker_entity synonym 1"
+                        }
+                    ]
+                },
+                "assessed_biomarker_entity_id": "assessed_biomarker_entity_id 1",
+                "assessed_entity_type": "assessed_entity_type 1",
+                "specimen": [
+                    {
+                        "name": "specimen 1",
+                        "id": "specimen_id_1",
+                        "name_space": "specimen name_space 1",
+                        "url": "specimen url 1",
+                        "loinc_code": "loinc_code 1"
+                    }
+                ],
+                "evidence_source": [
+                    {
+                        "id": "component 1 evidence_id 1",
+                        "database": "component 1 database 1",
+                        "url": "component 1 url 1",
+                        "evidence_list": [
+                            {
+                                "evidence": "component 1 evidence 1"
+                            },
+                            {
+                                "evidence": "component 1 evidence 2"
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "specimen:specimen_id_1"
+                            },
+                            {
+                                "tag": "biomarker"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "biomarker": "biomarker 2",
+                "assessed_biomarker_entity": {
+                    "recommended_name": "assessed_biomarker_entity recommended name 2",
+                    "synonyms": [
+                        {
+                            "synonym": "assessed_biomarker_entity synonym 2"
+                        }
+                    ]
+                },
+                "assessed_biomarker_entity_id": "assessed_biomarker_entity_id 2",
+                "assessed_entity_type": "assessed_entity_type 2",
+                "specimen": [
+                    {
+                        "name": "specimen 2.1",
+                        "id": "specimen_id_2.1",
+                        "name_space": "specimen name_space 2.1",
+                        "url": "specimen url 2.1",
+                        "loinc_code": "loinc_code 2.1"
+                    },
+    {
+                        "name": "specimen 2.2",
+                        "id": "specimen_id_2.2",
+                        "name_space": "specimen name_space 2.2",
+                        "url": "specimen url 2.2",
+                        "loinc_code": "loinc_code 2.2"
+                    }
+                ],
+                "evidence_source": [
+                    {
+                        "id": "component 2 evidence_id 1",
+                        "database": "component 2 database 1",
+                        "url": "component 2 url 1",
+                        "evidence_list": [
+                            {
+                                "evidence": "component 2 evidence 1"
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "assessed_biomarker_entity"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "biomarker": "biomarker 3",
+                "assessed_biomarker_entity": {
+                    "recommended_name": "assessed_biomarker_entity recommended name 3",
+                    "synonyms": [
+                        {
+                            "synonym": "assessed_biomarker_entity synonym 3"
+                        }
+                    ]
+                },
+                "assessed_biomarker_entity_id": "assessed_biomarker_entity_id 3",
+                "assessed_entity_type": "assessed_entity_type 3",
+                "evidence_source": [
+                    {
+                        "id": "component 3 evidence_id 1",
+                        "database": "component 3 database 1",
+                        "url": "component 3 url 1",
+                        "evidence_list": [
+                            {
+                                "evidence": "component 3 evidence 1"
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "assessed_biomarker_entity"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "component 3 evidence_id 2",
+                        "database": "component 3 database 2",
+                        "url": "component 3 url 2",
+                        "evidence_list": [
+                            {
+                                "evidence": "component 3 evidence 2"
+                            }
+                        ],
+                        "tags": [
+                            {
+                                "tag": "assessed_entity_type"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "best_biomarker_role": [
+            {
+                "role": "prognostic"
+            },
+            {
+                "role": "diagnostic"
+            }
+        ],
+        "condition": {
+            "id": "condition_id",
+            "recommended_name": {
+                "id": "condition_id",
+                "name": "condition name",
+                "description": "condition description",
+                "resource": "condition resource",
+                "url": "condition url"
+            },
+            "synonyms": [
+                {
+                    "id": "condition synonym_id",
+                    "name": "condition name",
+                    "resource": "condition resource",
+                    "url": "condition url"
+                }
+            ]
+        },
+        "evidence_source": [
+            {
+                "id": "top level evidence_id",
+                "database": "top level evidence database",
+                "url": "top level evidence url",
+                "evidence_list": [
+                    {
+                        "evidence": "top level evidence 1"
+                    }
+                ],
+                "tags": [
+                    {
+                        "tag": "condition"
+                    }
+                ]
+            }
+        ],
+        "citation": [
+            {
+                "citation_title": "",
+                "journal": "",
+                "authors": "",
+                "date": "",
+                "reference": [
+                    {
+                        "id": "",
+                        "type": "",
+                        "url": ""
+                    }
+                ],
+                "evidence_source": [
+                    {
+                        "id": "",
+                        "database": "",
+                        "url": ""
+                    }
+                ]
+            }
+        ]
+    }
+]
