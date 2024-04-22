@@ -322,11 +322,11 @@ def add_citation_data(result_data: list) -> list:
             if not pubmed_data:
                 continue
             citation_entry = {
-                'citation_title': pubmed_data['title'],
+                'title': pubmed_data['title'],
                 'journal': pubmed_data['journal'],
                 'authors': pubmed_data['authors'],
                 'date': pubmed_data['publication_date'],
-                'evidence_source': [],
+                'evidence': [],
                 'reference': [
                     {
                         'id': evidence_source[1]['id'],

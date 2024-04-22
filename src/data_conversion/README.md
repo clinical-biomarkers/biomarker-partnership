@@ -2,7 +2,7 @@
 
 The project's data can be viewed in multiple formats. The main view (the JSON data model), is the main format that comprehensively captures the complexity and nested nature of the biomarker data. However, for simple biomarker queries and searching, the data can also be viewed in a table (TSV) format. Due to the hierarchical and nested nature of the data model, the table view is a simplified version of the data model where each entry is unrolled into (if applicable) multiple rows. The third format is in N-Triples (NT). The triple conversion is a one-way conversion that goes from JSON to NT. 
 
-The code in this directory handles the logic for the data conversion. The entry point is the `data_conversion.py` script. Right now the logic is updated for the `v0.3.3` data model schema and supports the following conversions:
+The code in this directory handles the logic for the data conversion. The entry point is the `data_conversion.py` script. Right now the logic is updated for the `v0.3.4` data model schema and supports the following conversions:
 - JSON -> TSV
 - JSON -> NT
 - TSV -> JSON 
@@ -28,6 +28,8 @@ Positional arguments:
     target_filepath     filepath of the target file to generate (including the filename and extension)
 
 Optional Arguments:
+    -c --chunk          log/write checkpoint (if not provided, will default to 10,000)
+    -l --log            whether to print a message indicating the progress (default False)
     -h --help           show the help message and exit 
     -v --version        show the current version number and exit
 ```
