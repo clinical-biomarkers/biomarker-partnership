@@ -8,7 +8,7 @@ from fmt_lib import synonym_utils as syn_utils
 
 ADD_CITATION_DATA = True
 
-def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, url_map: dict, name_space_map: dict, chunk: int = 10_000, log: bool = False) -> None:
+def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, url_map: dict, name_space_map: dict, chunk: int = 10_000, log: bool = False, metadata: bool = True) -> None:
     ''' Entry point for the TSV -> JSON conversion.
 
     Parameters
@@ -27,6 +27,8 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
         Log checkpoint.
     log : bool (default: False)
         Whether to print a message when the log checkpoint is hit.
+    metadata : bool (default: True)
+         Whether to attempt automatic metadata retrieval.
     '''
 
     f = open(source_filepath, 'r')
@@ -61,8 +63,9 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
         top_evidence_source = utils.build_evidence_entry(row, top_evidence_tags, url_map)
 
         ### build biomarker component object
-        api_counts, base_biomarker_component_object = utils.build_base_biomarker_component_entry(row, name_space_map)
-        syn_utils.handle_rate_limits(api_counts)
+        api_counts, base_biomarker_component_object = utils.build_base_biomarker_component_entry(row, name_space_map, metadata)
+        if metadata:
+            syn_utils.handle_rate_limits(api_counts)
 
         ### build and add the spcimen entry to the biomarker component object
         biomarker_component = utils.add_specimen_entry(row, base_biomarker_component_object, url_map)
@@ -71,7 +74,7 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
         biomarker_component['evidence_source'] = comp_evidence_source
 
         ### build condition entry 
-        condition_entry = utils.build_condition_entry(row, url_map, name_space_map)
+        condition_entry = utils.build_condition_entry(row, url_map, name_space_map, metadata)
 
         ### build top level entry
         biomarker_entry = utils.build_biomarker_entry(row, biomarker_component, condition_entry, top_evidence_source)
