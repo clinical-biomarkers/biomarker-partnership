@@ -10,7 +10,7 @@ COMP_SINGULAR_EVIDENCE_FIELDS = {'biomarker', 'assessed_biomarker_entity',
                                 'assessed_biomarker_entity_id', 'assessed_entity_type'}
 TOP_LEVEL_EVIDENCE_FIELDS = {'condition', 'exposure_agent', 'best_biomarker_role'}
 
-def build_base_biomarker_component_entry(row: dict, name_space_map: dict) -> tuple:
+def build_base_biomarker_component_entry(row: dict, name_space_map: dict, metadata: bool = True) -> tuple:
     ''' Builds a the base for a biomarker component entry. Everything up until the specimen and 
     evidence source fields.
 
@@ -20,6 +20,8 @@ def build_base_biomarker_component_entry(row: dict, name_space_map: dict) -> tup
         The current row in the TSV file being processed.
     name_space_map : dict
         Dictionary that provides mappings for name space acronym's to full name space names.
+    metadata : bool (default: True)
+         Whether to attempt automatic metadata retrieval.
     
     Returns
     -------
@@ -33,21 +35,22 @@ def build_base_biomarker_component_entry(row: dict, name_space_map: dict) -> tup
     recommended_name = None
     synonyms = []
 
-    # check if resource namespace is supported for retrieving synonym data
-    if assessed_entity_type_name_space in set(name_space_map.keys()):
+    if metadata:
+        # check if resource namespace is supported for retrieving synonym data
+        if assessed_entity_type_name_space in set(name_space_map.keys()):
 
-        synonyms, recommended_name, api_calls_used = syn_utils.handle_entity_type_synonyms(
-            assessed_entity_type, assessed_entity_type_name_space, assessed_entity_type_accession, name_space_map
-        )
-        if api_calls_used:
-            api_call_counter['uniprot'] += api_calls_used.get('uniprot', 0)
-            api_call_counter['chebi'] += api_calls_used.get('chebi', 0)
-            api_call_counter['cell ontology'] += api_calls_used.get('cell ontology', 0)
-            api_call_counter['ncbi'] += api_calls_used.get('ncbi', 0)
-        
-    # provide warning if name space is not supported
-    else:
-        misc_fns.log_once(f'Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for synonym data.', 'info')
+            synonyms, recommended_name, api_calls_used = syn_utils.handle_entity_type_synonyms(
+                assessed_entity_type, assessed_entity_type_name_space, assessed_entity_type_accession, name_space_map
+            )
+            if api_calls_used:
+                api_call_counter['uniprot'] += api_calls_used.get('uniprot', 0)
+                api_call_counter['chebi'] += api_calls_used.get('chebi', 0)
+                api_call_counter['cell ontology'] += api_calls_used.get('cell ontology', 0)
+                api_call_counter['ncbi'] += api_calls_used.get('ncbi', 0)
+            
+        # provide warning if name space is not supported
+        else:
+            misc_fns.log_once(f'Assessed entity type name space \'{assessed_entity_type_name_space}\' not supported for synonym data.', 'info')
     
     # give a warning if the API retrieved recommended name does not match the TSV assessed biomarker entity value 
     if recommended_name:
@@ -146,7 +149,7 @@ def parse_tags(row: dict, component_object_evidence_fields: dict) -> tuple:
 
     return comp_evidence_tags, top_evidence_tags
 
-def build_condition_entry(row: dict, url_map: dict, name_space_map: dict) -> Union[dict, None]:
+def build_condition_entry(row: dict, url_map: dict, name_space_map: dict, metadata: bool = True) -> Union[dict, None]:
     ''' If applicable, builds the condition entry. 
 
     Parameters
@@ -157,6 +160,8 @@ def build_condition_entry(row: dict, url_map: dict, name_space_map: dict) -> Uni
         Dictionary that provides mappings for name space's to base URL's. This assists with URL construction.
     name_space_map : dict
         Dictionary that provides mappings for name space acronym's to full name space names.
+    metadata : bool (default: True)
+         Whether to attempt automatic metadata retrieval.
     
     Returns
     -------
@@ -192,24 +197,25 @@ def build_condition_entry(row: dict, url_map: dict, name_space_map: dict) -> Uni
         }
 
         # handle getting the condition description and synonyms
-        if condition_name_space == 'doid':
-            doid_data = data_api.get_doid_data(row['condition_id'].split(':')[1])
-            if doid_data:
-                if row['condition'] != doid_data['recommended_name']:
-                    misc_fns.log_once(f'Warning: Resource recommended name \'{doid_data["recommended_name"]}\' does not match the TSV condition name \'{row["condition"]}\'', 'warning')
-                condition['recommended_name']['description'] = doid_data['description']
-                synonym_entries = []
-                for synonym in doid_data['synonyms']:
-                    synonym_entry = {
-                        'id': row['condition_id'],
-                        'name': synonym,
-                        'resource': condition_resource,
-                        'url': condition_url
-                    }
-                    synonym_entries.append(synonym_entry)
-                condition['synonyms'] = synonym_entries 
-        else:
-            misc_fns.log_once(f'Condition name space \'{condition_name_space}\' not supported for automated condition description and synonyms retrieval.', 'info')
+        if metadata:
+            if condition_name_space == 'doid':
+                doid_data = data_api.get_doid_data(row['condition_id'].split(':')[1])
+                if doid_data:
+                    if row['condition'] != doid_data['recommended_name']:
+                        misc_fns.log_once(f'Warning: Resource recommended name \'{doid_data["recommended_name"]}\' does not match the TSV condition name \'{row["condition"]}\'', 'warning')
+                    condition['recommended_name']['description'] = doid_data['description']
+                    synonym_entries = []
+                    for synonym in doid_data['synonyms']:
+                        synonym_entry = {
+                            'id': row['condition_id'],
+                            'name': synonym,
+                            'resource': condition_resource,
+                            'url': condition_url
+                        }
+                        synonym_entries.append(synonym_entry)
+                    condition['synonyms'] = synonym_entries 
+            else:
+                misc_fns.log_once(f'Condition name space \'{condition_name_space}\' not supported for automated condition description and synonyms retrieval.', 'info')
     
     return condition
 

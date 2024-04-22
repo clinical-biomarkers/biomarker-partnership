@@ -23,6 +23,7 @@ Usage: data_conversion.py [options]
     Optional arguments: 
         -c --chunk          log/write checkpoint (if not provided, will default to 10,000)
         -l --log            whether to print a message indicating the progress (default False)
+        -m --metadata       whether to attempt automatic metadata retrieval for TSV to JSON converstions (default True)
         -h --help           show the help message and exit 
         -v --version        show current version number and exit 
 '''
@@ -64,6 +65,7 @@ def user_args(url_map: dict, triples_map: dict, namespace_map: dict) -> None:
     parser.add_argument('target_filepath', help = 'filepath of the target file to generate')
     parser.add_argument('-c', '--chunk', default = 10_000, help = 'write checkpoint (default will dump to disk every 10,000 records/rows)')
     parser.add_argument('-l', '--log', action = 'store_true', help = 'whether to print a message indicating the write checkpoin has been hit (default False)')
+    parser.add_argument('-m', '--metadata', action = 'store_false', help = 'whether to attempt automatic metadata retrieval for TSV to JSON converstions (default True)')
     parser.add_argument('-v', '--version', action = 'version', version = f'%(prog)s {_version}')
     if len(sys.argv) <= 2:
         sys.argv.append('-h')
@@ -75,7 +77,8 @@ def user_args(url_map: dict, triples_map: dict, namespace_map: dict) -> None:
         f'Arguments passed:\n\tsource_filepath = {options.source_filepath}\
             \n\ttarget_filepath = {options.target_filepath}\
             \n\tchunk = {options.chunk}\
-            \n\tlog = {options.log}'
+            \n\tlog = {options.log}\
+            \n\tmetadata = {options.metadata}'
     )
 
     ### check that the source and target file types passed indicate a supported conversion type and pass 
@@ -95,7 +98,7 @@ def user_args(url_map: dict, triples_map: dict, namespace_map: dict) -> None:
             misc_fns.print_and_log('Error: Incorrect target_filepath file type for source type of TSV, expects JSON.', 'error')
             print('Error: Incorrect target_filepath file type for source type of TSV, expects JSON.')  
             sys.exit(1)
-        t_to_j.tsv_to_json(options.source_filepath, options.target_filepath, TSV_HEADERS, url_map, namespace_map, options.chunk, options.log)
+        t_to_j.tsv_to_json(options.source_filepath, options.target_filepath, TSV_HEADERS, url_map, namespace_map, options.chunk, options.log, options.metadata)
         
 def main():
     ''' Main entry point for the data conversion logic.
