@@ -13,5 +13,6 @@
     "pdb": "protein data bank",
     "mrb": "mirbase",
     "rnac": "rna central",
-    "gtc": "glytoucan"
+    "gtc": "glytoucan",
+    "doi": "doi"
 }
