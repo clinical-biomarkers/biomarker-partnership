@@ -7,16 +7,20 @@ The code in this directory handles the logic for the data conversion. The entry 
 - JSON -> NT
 - TSV -> JSON 
 
-## Prerequisites / Notes
+## TSV to JSON Prerequisites / Notes
 
-In order for the TSV to JSON conversion to utilize the NCBI API (if you are converting data with PubMed papers used as evidence or converting NCBI entities that you want automated synonym retrievl for), it is recommended to create a local environment `.env` file in this directory and include your email and an API key. The logic will work if you just include your email and no API key, however, the rate limit witout an API key is more limited, increasing the likelihood of a `429 Too Many Requests` error. You can find the instructions for obtaining an API key [here](https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/). For example:
+The TSV to JSON conversion code can handle the filling in of some metadata automatically, for example, Pubmed paper citation data and some `assessed_biomarker_entity`/`condition` metadata such as retrieving synonyms. However, as written to handle dynamic on-the-fly retrieval from various sources without having to specify before hand, this code is generally very expensive in terms of time complexity (requiring potentially many expensive I/O operations). For very large files, it is recommended to run the conversion with these features turned off (by specifying the `-m` flag) and then write a supplementary script to fill in the metadata fields separately. If you write a separate script to fill in metadata, you can make use of the [mapping data](../../mapping_data/) files and only call the resource's API if the data is not already contained locally.
+
+In order for the TSV to JSON conversion to utilize the NCBI API (if you are converting data with PubMed papers used as evidence or converting NCBI entities that you want automated synonym retrieval for), it is recommended to create a local environment `.env` file in this directory and include your email and an API key. The code will work if you just include your email and no API key, however, the rate limit witout an API key is more limited, increasing the likelihood of a `429 Too Many Requests` error. You can find the instructions for obtaining an API key [here](https://ncbiinsights.ncbi.nlm.nih.gov/2017/11/02/new-api-keys-for-the-e-utilities/). For example:
 
 ```
 EMAIL='example@example.com'
 API_KEY='key'
 ```
 
-The [pymed](https://github.com/gijswobben/pymed) wrapper library is used for the PubMed API access and the ESummary Utility is used directly for assessed biomarker entity synonym retrieval. Due to the scrict rate limiting this might take a long time if you have a large TSV file with many NCBI/PubMed references. If performance becomes an issue, you can change the global `ADD_CITATION_DATA` flag to `False` in the `fmt_lib/tsv_to_json.py` file, which will skip the citation build. Note: the code does not fill in any of the `citation[evidence_source]` data, that will have to be done manually. 
+The [pymed](https://github.com/gijswobben/pymed) wrapper library is used for the PubMed API access and the ESummary Utility is used directly for assessed biomarker entity synonym retrieval. Due to the scrict rate limiting this might take a long time if you have a large TSV file with many NCBI/PubMed references. The Pubmed citation retrieval is not handled by the `-m`/`--metadata` flag, but the `ADD_CITATION_DATA` global variable in the `fmt_lib/tsv_to_json.py` file. If needed or desired, you can set this to `False` to skip the ciation build.    
+
+Note: the code does not fill in any of the `citation[evidence]` data, that will have to be done manually. 
 
 ## Usage 
 
@@ -30,6 +34,7 @@ Positional arguments:
 Optional Arguments:
     -c --chunk          log/write checkpoint (if not provided, will default to 10,000)
     -l --log            whether to print a message indicating the progress (default False)
+    -m --metadata       whether to attempt automatic metadata retrieval for TSV to JSON converstions (default True)
     -h --help           show the help message and exit 
     -v --version        show the current version number and exit
 ```
