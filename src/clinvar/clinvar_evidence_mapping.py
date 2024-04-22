@@ -128,7 +128,7 @@ def generate_citation_entry(
                     "url": source["url"],
                 }
             )
-        return_data["evidence_source"] = evidence_source_list
+        return_data["evidence"] = evidence_source_list
 
     return api_call, return_data
 
