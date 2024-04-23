@@ -63,7 +63,7 @@ def user_args(url_map: dict, triples_map: dict, namespace_map: dict) -> None:
     )
     parser.add_argument('source_filepath', help = 'filepath of the source file')
     parser.add_argument('target_filepath', help = 'filepath of the target file to generate')
-    parser.add_argument('-c', '--chunk', default = 10_000, help = 'write checkpoint (default will dump to disk every 10,000 records/rows)')
+    parser.add_argument('-c', '--chunk', type = int, default = 10_000, help = 'write checkpoint (default will dump to disk every 10,000 records/rows)')
     parser.add_argument('-l', '--log', action = 'store_true', help = 'whether to print a message indicating the write checkpoin has been hit (default False)')
     parser.add_argument('-m', '--metadata', action = 'store_false', help = 'whether to attempt automatic metadata retrieval for TSV to JSON converstions (default True)')
     parser.add_argument('-v', '--version', action = 'version', version = f'%(prog)s {_version}')
