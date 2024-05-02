@@ -2433,5 +2433,6469 @@
             "RDA32",
             "REH3P21"
         ]
+    },
+    "2068": {
+        "recommended_name": "ERCC2",
+        "synonyms": [
+            "COFS2",
+            "EM9",
+            "TFIIH",
+            "TTD",
+            "TTD1",
+            "XPD"
+        ]
+    },
+    "2071": {
+        "recommended_name": "ERCC3",
+        "synonyms": [
+            "BTF2",
+            "GTF2H",
+            "RAD25",
+            "Ssl2",
+            "TFIIH",
+            "TTD2",
+            "XPB"
+        ]
+    },
+    "2072": {
+        "recommended_name": "ERCC4",
+        "synonyms": [
+            "ERCC11",
+            "FANCQ",
+            "RAD1",
+            "XFEPS",
+            "XPF"
+        ]
+    },
+    "2073": {
+        "recommended_name": "ERCC5",
+        "synonyms": [
+            "COFS3",
+            "ERCC5-201",
+            "ERCM2",
+            "UVDR",
+            "XPG",
+            "XPGC"
+        ]
+    },
+    "4292": {
+        "recommended_name": "MLH1",
+        "synonyms": [
+            "COCA2",
+            "FCC2",
+            "HNPCC",
+            "HNPCC2",
+            "LYNCH2",
+            "MLH-1",
+            "MMRCS1",
+            "hMLH1"
+        ]
+    },
+    "4436": {
+        "recommended_name": "MSH2",
+        "synonyms": [
+            "COCA1",
+            "FCC1",
+            "HNPCC",
+            "HNPCC1",
+            "LCFS2",
+            "LYNCH1",
+            "MMRCS2",
+            "MSH-2",
+            "hMSH2"
+        ]
+    },
+    "2956": {
+        "recommended_name": "MSH6",
+        "synonyms": [
+            "GTBP",
+            "GTMBP",
+            "HNPCC5",
+            "HSAP",
+            "LYNCH5",
+            "MMRCS3",
+            "MSH-6",
+            "p160"
+        ]
+    },
+    "5378": {
+        "recommended_name": "PMS1",
+        "synonyms": [
+            "HNPCC3",
+            "MLH2",
+            "PMSL1",
+            "hPMS1"
+        ]
+    },
+    "5395": {
+        "recommended_name": "PMS2",
+        "synonyms": [
+            "HNPCC4",
+            "LYNCH4",
+            "MLH4",
+            "MMRCS4",
+            "PMS-2",
+            "PMS2CL",
+            "PMSL2"
+        ]
+    },
+    "675": {
+        "recommended_name": "BRCA2",
+        "synonyms": [
+            "BRCC2",
+            "BROVCA2",
+            "FACD",
+            "FAD",
+            "FAD1",
+            "FANCD",
+            "FANCD1",
+            "GLM3",
+            "PNCA2",
+            "XRCC11"
+        ]
+    },
+    "83990": {
+        "recommended_name": "BRIP1",
+        "synonyms": [
+            "BACH1",
+            "FANCJ",
+            "OF"
+        ]
+    },
+    "2175": {
+        "recommended_name": "FANCA",
+        "synonyms": [
+            "FA",
+            "FA-H",
+            "FA1",
+            "FAA",
+            "FACA",
+            "FAH",
+            "FANCH"
+        ]
+    },
+    "2176": {
+        "recommended_name": "FANCC",
+        "synonyms": [
+            "FA3",
+            "FAC",
+            "FACC"
+        ]
+    },
+    "5889": {
+        "recommended_name": "RAD51C",
+        "synonyms": [
+            "BROVCA3",
+            "FANCO",
+            "R51H3",
+            "RAD51L2"
+        ]
+    },
+    "641": {
+        "recommended_name": "BLM",
+        "synonyms": [
+            "BS",
+            "MGRISCE1",
+            "RECQ2",
+            "RECQL2",
+            "RECQL3"
+        ]
+    },
+    "672": {
+        "recommended_name": "BRCA1",
+        "synonyms": [
+            "BRCAI",
+            "BRCC1",
+            "BROVCA1",
+            "FANCS",
+            "IRIS",
+            "PNCA4",
+            "PPP1R53",
+            "PSCP",
+            "RNF53"
+        ]
+    },
+    "4361": {
+        "recommended_name": "MRE11",
+        "synonyms": [
+            "ATLD",
+            "HNGS1",
+            "MRE11A",
+            "MRE11B"
+        ]
+    },
+    "4683": {
+        "recommended_name": "NBN",
+        "synonyms": [
+            "AT-V1",
+            "AT-V2",
+            "ATV",
+            "NBS",
+            "NBS1",
+            "P95"
+        ]
+    },
+    "10111": {
+        "recommended_name": "RAD50",
+        "synonyms": [
+            "NBSLD",
+            "RAD502",
+            "hRad50"
+        ]
+    },
+    "5888": {
+        "recommended_name": "RAD51",
+        "synonyms": [
+            "BRCC5",
+            "FANCR",
+            "HRAD51",
+            "HsRad51",
+            "HsT16930",
+            "MRMV2",
+            "RAD51A",
+            "RECA"
+        ]
+    },
+    "5890": {
+        "recommended_name": "RAD51B",
+        "synonyms": [
+            "R51H2",
+            "RAD51L1",
+            "REC2"
+        ]
+    },
+    "5892": {
+        "recommended_name": "RAD51D",
+        "synonyms": [
+            "BROVCA4",
+            "R51H3",
+            "RAD51L3",
+            "TRAD"
+        ]
+    },
+    "5893": {
+        "recommended_name": "RAD52",
+        "synonyms": []
+    },
+    "8438": {
+        "recommended_name": "RAD54L",
+        "synonyms": [
+            "HR54",
+            "RAD54A",
+            "hHR54",
+            "hRAD54"
+        ]
+    },
+    "472": {
+        "recommended_name": "ATM",
+        "synonyms": [
+            "AT1",
+            "ATA",
+            "ATC",
+            "ATD",
+            "ATDC",
+            "ATE",
+            "TEL1",
+            "TELO1"
+        ]
+    },
+    "545": {
+        "recommended_name": "ATR",
+        "synonyms": [
+            "FCTCS",
+            "FRP1",
+            "MEC1",
+            "SCKL",
+            "SCKL1"
+        ]
+    },
+    "11200": {
+        "recommended_name": "CHEK2",
+        "synonyms": [
+            "CDS1",
+            "CHK2",
+            "HuCds1",
+            "LFS2",
+            "PP1425",
+            "RAD53",
+            "TPDS4",
+            "hCds1"
+        ]
+    },
+    "9656": {
+        "recommended_name": "MDC1",
+        "synonyms": [
+            "NFBD1"
+        ]
+    },
+    "5426": {
+        "recommended_name": "POLE",
+        "synonyms": [
+            "CRCS12",
+            "FILS",
+            "IMAGEI",
+            "POLE1"
+        ]
+    },
+    "4595": {
+        "recommended_name": "MUTYH",
+        "synonyms": [
+            "MYH"
+        ]
+    },
+    "142": {
+        "recommended_name": "PARP1",
+        "synonyms": [
+            "ADPRT",
+            "ADPRT 1",
+            "ADPRT1",
+            "ARTD1",
+            "PARP",
+            "PARP-1",
+            "PARS",
+            "PPOL",
+            "Poly-PARP",
+            "pADPRT-1"
+        ]
+    },
+    "9401": {
+        "recommended_name": "RECQL4",
+        "synonyms": [
+            "RECQ4"
+        ]
+    },
+    "673": {
+        "recommended_name": "BRAF",
+        "synonyms": [
+            "B-RAF1",
+            "B-raf",
+            "BRAF-1",
+            "BRAF1",
+            "NS7",
+            "RAFB1"
+        ]
+    },
+    "238": {
+        "recommended_name": "ALK",
+        "synonyms": [
+            "ALK1",
+            "CD246",
+            "NBLST3"
+        ]
+    },
+    "6098": {
+        "recommended_name": "ROS1",
+        "synonyms": [
+            "MCF3",
+            "ROS",
+            "c-ros-1"
+        ]
+    },
+    "4233": {
+        "recommended_name": "MET",
+        "synonyms": [
+            "AUTS9",
+            "DA11",
+            "DFNB97",
+            "HGFR",
+            "RCCP2",
+            "c-Met"
+        ]
+    },
+    "5979": {
+        "recommended_name": "RET",
+        "synonyms": [
+            "CDHF12",
+            "CDHR16",
+            "HSCR1",
+            "MEN2A",
+            "MEN2B",
+            "MTC1",
+            "PTC",
+            "RET-ELE1"
+        ]
+    },
+    "79728": {
+        "recommended_name": "PALB2",
+        "synonyms": [
+            "BROVCA5",
+            "FANCN",
+            "PNCA3"
+        ]
+    },
+    "4879": {
+        "recommended_name": "NPPB",
+        "synonyms": [
+            "BNP",
+            "Iso-ANP"
+        ]
+    },
+    "91937": {
+        "recommended_name": "TIMD4",
+        "synonyms": [
+            "SMUCKLER",
+            "TIM4"
+        ]
+    },
+    "8074": {
+        "recommended_name": "FGF23",
+        "synonyms": [
+            "ADHR",
+            "FGFN",
+            "HFTC2",
+            "HPDR2",
+            "HYPF",
+            "PHPTC"
+        ]
+    },
+    "9518": {
+        "recommended_name": "GDF15",
+        "synonyms": [
+            "GDF-15",
+            "HG",
+            "MIC-1",
+            "MIC1",
+            "NAG-1",
+            "PDF",
+            "PLAB",
+            "PTGFB"
+        ]
+    },
+    "10418": {
+        "recommended_name": "SPON1",
+        "synonyms": [
+            "VSGP/F-spondin",
+            "f-spondin"
+        ]
+    },
+    "7422": {
+        "recommended_name": "VEGFA",
+        "synonyms": [
+            "L-VEGF",
+            "MVCD1",
+            "VEGF",
+            "VPF"
+        ]
+    },
+    "2670": {
+        "recommended_name": "GFAP",
+        "synonyms": [
+            "ALXDRD"
+        ]
+    },
+    "3586": {
+        "recommended_name": "IL10",
+        "synonyms": [
+            "CSIF",
+            "GVHDS",
+            "IL-10",
+            "IL10A",
+            "TGIF"
+        ]
+    },
+    "26762": {
+        "recommended_name": "HAVCR1",
+        "synonyms": [
+            "CD365",
+            "HAVCR",
+            "HAVCR-1",
+            "KIM-1",
+            "KIM1",
+            "TIM",
+            "TIM-1",
+            "TIM1",
+            "TIMD-1",
+            "TIMD1"
+        ]
+    },
+    "2658": {
+        "recommended_name": "GDF2",
+        "synonyms": [
+            "BMP-9",
+            "BMP9",
+            "HHT5"
+        ]
+    },
+    "7138": {
+        "recommended_name": "TNNT1",
+        "synonyms": [
+            "ANM",
+            "NEM5",
+            "STNT",
+            "TNT",
+            "TNTS"
+        ]
+    },
+    "57823": {
+        "recommended_name": "SLAMF7",
+        "synonyms": [
+            "19A",
+            "CD319",
+            "CRACC",
+            "CS1"
+        ]
+    },
+    "3566": {
+        "recommended_name": "IL4R",
+        "synonyms": [
+            "CD124",
+            "IL-4RA",
+            "IL4RA"
+        ]
+    },
+    "181": {
+        "recommended_name": "AGRP",
+        "synonyms": [
+            "AGRT",
+            "ART",
+            "ASIP2"
+        ]
+    },
+    "920": {
+        "recommended_name": "CD4",
+        "synonyms": [
+            "CD4mut",
+            "IMD79",
+            "Leu-3",
+            "OKT4D",
+            "T4"
+        ]
+    },
+    "5549": {
+        "recommended_name": "PRELP",
+        "synonyms": [
+            "MST161",
+            "MSTP161",
+            "SLRR2A"
+        ]
+    },
+    "5806": {
+        "recommended_name": "PTX3",
+        "synonyms": [
+            "TNFAIP5",
+            "TSG-14"
+        ]
+    },
+    "1514": {
+        "recommended_name": "CTSL",
+        "synonyms": [
+            "CATL",
+            "CTSL1",
+            "MEP"
+        ]
+    },
+    "5228": {
+        "recommended_name": "PGF",
+        "synonyms": [
+            "D12S1900",
+            "PGFL",
+            "PIGF",
+            "PLGF",
+            "PlGF-2",
+            "SHGC-10760"
+        ]
+    },
+    "8792": {
+        "recommended_name": "TNFRSF11A",
+        "synonyms": [
+            "CD265",
+            "FEO",
+            "LOH18CR1",
+            "ODFR",
+            "OFE",
+            "OPTB7",
+            "OSTS",
+            "PDB2",
+            "RANK",
+            "TRANCE-R",
+            "TRANCER"
+        ]
+    },
+    "7010": {
+        "recommended_name": "TEK",
+        "synonyms": [
+            "CD202B",
+            "GLC3E",
+            "TIE-2",
+            "TIE2",
+            "VMCM",
+            "VMCM1"
+        ]
+    },
+    "10417": {
+        "recommended_name": "SPON2",
+        "synonyms": [
+            "DIL-1",
+            "DIL1",
+            "M-SPONDIN",
+            "MINDIN"
+        ]
+    },
+    "4524": {
+        "recommended_name": "MTHFR",
+        "synonyms": []
+    },
+    "4522": {
+        "recommended_name": "MTHFD1",
+        "synonyms": [
+            "CIMAH",
+            "MTHFC",
+            "MTHFD"
+        ]
+    },
+    "4552": {
+        "recommended_name": "MTRR",
+        "synonyms": [
+            "MSR",
+            "cblE"
+        ]
+    },
+    "6948": {
+        "recommended_name": "TCN2",
+        "synonyms": [
+            "D22S676",
+            "D22S750",
+            "II",
+            "TC",
+            "TC II",
+            "TC-2",
+            "TC2",
+            "TCII"
+        ]
+    },
+    "1491": {
+        "recommended_name": "CTH",
+        "synonyms": [
+            "CGL",
+            "CSE"
+        ]
+    },
+    "4548": {
+        "recommended_name": "MTR",
+        "synonyms": [
+            "HMAG",
+            "MS",
+            "cblG"
+        ]
+    },
+    "875": {
+        "recommended_name": "CBS",
+        "synonyms": [
+            "CBSL",
+            "HIP4"
+        ]
+    },
+    "1719": {
+        "recommended_name": "DHFR",
+        "synonyms": [
+            "DHFR1",
+            "DHFRP1",
+            "DYR"
+        ]
+    },
+    "635": {
+        "recommended_name": "BHMT",
+        "synonyms": [
+            "BHMT1",
+            "HEL-S-61p"
+        ]
+    },
+    "6573": {
+        "recommended_name": "SLC19A1",
+        "synonyms": [
+            "CHMD",
+            "FOLT",
+            "IFC-1",
+            "IFC1",
+            "IMD114",
+            "MEGAF",
+            "REFC",
+            "RFC",
+            "RFC1",
+            "RFT-1",
+            "hRFC",
+            "hSLC19A1"
+        ]
+    },
+    "6470": {
+        "recommended_name": "SHMT1",
+        "synonyms": [
+            "CSHMT",
+            "SHMT"
+        ]
+    },
+    "2348": {
+        "recommended_name": "FOLR1",
+        "synonyms": [
+            "FBP",
+            "FOLR",
+            "FRalpha",
+            "NCFTD"
+        ]
+    },
+    "8764": {
+        "recommended_name": "TNFRSF14",
+        "synonyms": [
+            "ATAR",
+            "CD270",
+            "HVEA",
+            "HVEM",
+            "LIGHTR",
+            "TR2"
+        ]
+    },
+    "7133": {
+        "recommended_name": "TNFRSF1B",
+        "synonyms": [
+            "CD120b",
+            "TBPII",
+            "TNF-R-II",
+            "TNF-R75",
+            "TNFBR",
+            "TNFR1B",
+            "TNFR2",
+            "TNFR80",
+            "p75",
+            "p75TNFR"
+        ]
+    },
+    "2050": {
+        "recommended_name": "EPHB4",
+        "synonyms": [
+            "CMAVM2",
+            "HFASD",
+            "HTK",
+            "LMPHM7",
+            "MYK1",
+            "TYRO11"
+        ]
+    },
+    "3559": {
+        "recommended_name": "IL2RA",
+        "synonyms": [
+            "CD25",
+            "IDDM10",
+            "IL2R",
+            "IMD41",
+            "TCGFR",
+            "p55"
+        ]
+    },
+    "4982": {
+        "recommended_name": "TNFRSF11B",
+        "synonyms": [
+            "OCIF",
+            "OPG",
+            "PDB5",
+            "TR1"
+        ]
+    },
+    "7033": {
+        "recommended_name": "TFF3",
+        "synonyms": [
+            "ITF",
+            "P1B",
+            "TFI"
+        ]
+    },
+    "6347": {
+        "recommended_name": "CCL2",
+        "synonyms": [
+            "GDCF-2",
+            "HC11",
+            "HSMCR30",
+            "MCAF",
+            "MCP-1",
+            "MCP1",
+            "SCYA2",
+            "SMC-CF"
+        ]
+    },
+    "2896": {
+        "recommended_name": "GRN",
+        "synonyms": [
+            "CLN11",
+            "GEP",
+            "GP88",
+            "PCDGF",
+            "PEPI",
+            "PGRN"
+        ]
+    },
+    "56955": {
+        "recommended_name": "MEPE",
+        "synonyms": [
+            "OF45"
+        ]
+    },
+    "3339": {
+        "recommended_name": "HSPG2",
+        "synonyms": [
+            "HSPG",
+            "PLC",
+            "PRCAN",
+            "SJA",
+            "SJS",
+            "SJS1"
+        ]
+    },
+    "4055": {
+        "recommended_name": "LTBR",
+        "synonyms": [
+            "D12S370",
+            "LT-BETA-R",
+            "TNF-R-III",
+            "TNFCR",
+            "TNFR-RP",
+            "TNFR2-RP",
+            "TNFR3",
+            "TNFRSF3"
+        ]
+    },
+    "7079": {
+        "recommended_name": "TIMP4",
+        "synonyms": [
+            "TIMP-4"
+        ]
+    },
+    "79865": {
+        "recommended_name": "TREML2",
+        "synonyms": [
+            "C6orf76",
+            "TLT-2",
+            "TLT2",
+            "dJ238O23.1"
+        ]
+    },
+    "2167": {
+        "recommended_name": "FABP4",
+        "synonyms": [
+            "A-FABP",
+            "AFABP",
+            "ALBP",
+            "HEL-S-104",
+            "aP2"
+        ]
+    },
+    "8788": {
+        "recommended_name": "DLK1",
+        "synonyms": [
+            "DLK",
+            "DLK-1",
+            "Delta1",
+            "FA1",
+            "PREF1",
+            "Pref-1",
+            "ZOG",
+            "pG2"
+        ]
+    },
+    "58191": {
+        "recommended_name": "CXCL16",
+        "synonyms": [
+            "CXCLG16",
+            "SR-PSOX",
+            "SRPSOX"
+        ]
+    },
+    "56729": {
+        "recommended_name": "RETN",
+        "synonyms": [
+            "ADSF",
+            "FIZZ3",
+            "RENT",
+            "RETN1",
+            "RSTN",
+            "XCP1"
+        ]
+    },
+    "3484": {
+        "recommended_name": "IGFBP1",
+        "synonyms": [
+            "AFBP",
+            "IBP1",
+            "IGF-BP25",
+            "PP12",
+            "hIGFBP-1"
+        ]
+    },
+    "558": {
+        "recommended_name": "AXL",
+        "synonyms": [
+            "ARK",
+            "AXL3",
+            "JTK11",
+            "Tyro7",
+            "UFO"
+        ]
+    },
+    "3554": {
+        "recommended_name": "IL1R1",
+        "synonyms": [
+            "CD121A",
+            "CRMO3",
+            "D2S1473",
+            "IL-1R-alpha",
+            "IL-1RT1",
+            "IL1R",
+            "IL1RA",
+            "P80"
+        ]
+    },
+    "355": {
+        "recommended_name": "FAS",
+        "synonyms": [
+            "ALPS1A",
+            "APO-1",
+            "APT1",
+            "CD95",
+            "FAS1",
+            "FASTM",
+            "TNFRSF6"
+        ]
+    },
+    "4151": {
+        "recommended_name": "MB",
+        "synonyms": [
+            "MYOSB",
+            "PVALB"
+        ]
+    },
+    "5329": {
+        "recommended_name": "PLAUR",
+        "synonyms": [
+            "CD87",
+            "U-PAR",
+            "UPAR",
+            "URKR"
+        ]
+    },
+    "6696": {
+        "recommended_name": "SPP1",
+        "synonyms": [
+            "BNSP",
+            "BSPI",
+            "ETA-1",
+            "OPN"
+        ]
+    },
+    "8993": {
+        "recommended_name": "PGLYRP1",
+        "synonyms": [
+            "PGLYRP",
+            "PGRP",
+            "PGRP-S",
+            "PGRPS",
+            "TAG7",
+            "TNFSF3L"
+        ]
+    },
+    "1357": {
+        "recommended_name": "CPA1",
+        "synonyms": [
+            "CPA"
+        ]
+    },
+    "3960": {
+        "recommended_name": "LGALS4",
+        "synonyms": [
+            "GAL4",
+            "L36LBP"
+        ]
+    },
+    "140885": {
+        "recommended_name": "SIRPA",
+        "synonyms": [
+            "BIT",
+            "CD172A",
+            "MFR",
+            "MYD-1",
+            "P84",
+            "PTPNS1",
+            "SHPS1",
+            "SIRP"
+        ]
+    },
+    "6359": {
+        "recommended_name": "CCL15",
+        "synonyms": [
+            "HCC-2",
+            "HMRP-2B",
+            "LKN-1",
+            "LKN1",
+            "MIP-1 delta",
+            "MIP-1D",
+            "MIP-5",
+            "MRP-2B",
+            "NCC-3",
+            "NCC3",
+            "SCYA15",
+            "SCYL3",
+            "SY15"
+        ]
+    },
+    "1360": {
+        "recommended_name": "CPB1",
+        "synonyms": [
+            "CPB",
+            "PASP",
+            "PCPB"
+        ]
+    },
+    "1116": {
+        "recommended_name": "CHI3L1",
+        "synonyms": [
+            "ASRT7",
+            "CGP-39",
+            "GP-39",
+            "GP39",
+            "HC-gp39",
+            "HCGP-3P",
+            "YK-40",
+            "YKL-40",
+            "YKL40",
+            "YYL-40",
+            "hCGP-39"
+        ]
+    },
+    "9173": {
+        "recommended_name": "IL1RL1",
+        "synonyms": [
+            "DER4",
+            "FIT-1",
+            "IL33R",
+            "ST2",
+            "ST2L",
+            "ST2V",
+            "T1"
+        ]
+    },
+    "117156": {
+        "recommended_name": "SCGB3A2",
+        "synonyms": [
+            "LU103",
+            "PNSP1",
+            "UGRP1",
+            "pnSP-1"
+        ]
+    },
+    "3490": {
+        "recommended_name": "IGFBP7",
+        "synonyms": [
+            "AGM",
+            "FSTL2",
+            "IBP-7",
+            "IGFBP-7",
+            "IGFBP-7v",
+            "IGFBPRP1",
+            "MAC25",
+            "PSF",
+            "RAMSVPS",
+            "TAF"
+        ]
+    },
+    "22918": {
+        "recommended_name": "CD93",
+        "synonyms": [
+            "C1QR1",
+            "C1qR(P)",
+            "C1qRP",
+            "CDw93",
+            "ECSM3",
+            "MXRA4",
+            "dJ737E23.1"
+        ]
+    },
+    "10068": {
+        "recommended_name": "IL18BP",
+        "synonyms": [
+            "FVH",
+            "IL18BPa"
+        ]
+    },
+    "1277": {
+        "recommended_name": "COL1A1",
+        "synonyms": [
+            "CAFYD",
+            "EDSARTH1",
+            "EDSC",
+            "OI1",
+            "OI2",
+            "OI3",
+            "OI4"
+        ]
+    },
+    "1522": {
+        "recommended_name": "CTSZ",
+        "synonyms": [
+            "CTSX"
+        ]
+    },
+    "4314": {
+        "recommended_name": "MMP3",
+        "synonyms": [
+            "CHDS6",
+            "MMP-3",
+            "SL-1",
+            "STMY",
+            "STMY1",
+            "STR1"
+        ]
+    },
+    "5154": {
+        "recommended_name": "PDGFA",
+        "synonyms": [
+            "PDGF-A",
+            "PDGF1"
+        ]
+    },
+    "3485": {
+        "recommended_name": "IGFBP2",
+        "synonyms": [
+            "IBP2",
+            "IGF-BP53"
+        ]
+    },
+    "4878": {
+        "recommended_name": "NPPA",
+        "synonyms": [
+            "ANF",
+            "ANP",
+            "ATFB6",
+            "ATRST2",
+            "CDD",
+            "CDD-ANF",
+            "CDP",
+            "PND"
+        ]
+    },
+    "6360": {
+        "recommended_name": "CCL16",
+        "synonyms": [
+            "CKb12",
+            "HCC-4",
+            "ILINCK",
+            "LCC-1",
+            "LEC",
+            "LMC",
+            "Mtn-1",
+            "NCC-4",
+            "NCC4",
+            "SCYA16",
+            "SCYL4"
+        ]
+    },
+    "284": {
+        "recommended_name": "ANGPT1",
+        "synonyms": [
+            "AGP1",
+            "AGPT",
+            "AGPT-1",
+            "ANG1",
+            "HAE5"
+        ]
+    },
+    "8797": {
+        "recommended_name": "TNFRSF10A",
+        "synonyms": [
+            "APO2",
+            "CD261",
+            "DR4",
+            "TRAILR-1",
+            "TRAILR1"
+        ]
+    },
+    "2149": {
+        "recommended_name": "F2R",
+        "synonyms": [
+            "CF2R",
+            "HTR",
+            "PAR-1",
+            "PAR1",
+            "TR"
+        ]
+    },
+    "8795": {
+        "recommended_name": "TNFRSF10B",
+        "synonyms": [
+            "CD262",
+            "DR5",
+            "KILLER",
+            "KILLER/DR5",
+            "TRAIL-R2",
+            "TRAILR2",
+            "TRICK2",
+            "TRICK2A",
+            "TRICK2B",
+            "TRICKB",
+            "ZTNFR9"
+        ]
+    },
+    "83886": {
+        "recommended_name": "PRSS27",
+        "synonyms": [
+            "CAPH2",
+            "MPN"
+        ]
+    },
+    "2152": {
+        "recommended_name": "F3",
+        "synonyms": [
+            "CD142",
+            "TF",
+            "TFA"
+        ]
+    },
+    "5155": {
+        "recommended_name": "PDGFB",
+        "synonyms": [
+            "IBGC5",
+            "PDGF-2",
+            "PDGF2",
+            "SIS",
+            "SSV",
+            "c-sis"
+        ]
+    },
+    "3965": {
+        "recommended_name": "LGALS9",
+        "synonyms": [
+            "HUAT",
+            "LGALS9A"
+        ]
+    },
+    "26291": {
+        "recommended_name": "FGF21",
+        "synonyms": []
+    },
+    "177": {
+        "recommended_name": "AGER",
+        "synonyms": [
+            "RAGE",
+            "SCARJ1",
+            "sRAGE"
+        ]
+    },
+    "5972": {
+        "recommended_name": "REN",
+        "synonyms": [
+            "ADTKD4",
+            "HNFJ2",
+            "RTD"
+        ]
+    },
+    "23584": {
+        "recommended_name": "VSIG2",
+        "synonyms": [
+            "2210413P10Rik",
+            "CTH",
+            "CTXL"
+        ]
+    },
+    "6375": {
+        "recommended_name": "XCL1",
+        "synonyms": [
+            "ATAC",
+            "LPTN",
+            "LTN",
+            "SCM-1",
+            "SCM-1a",
+            "SCM1",
+            "SCM1A",
+            "SCYC1"
+        ]
+    },
+    "3603": {
+        "recommended_name": "IL16",
+        "synonyms": [
+            "LCF",
+            "NIL16",
+            "PRIL16",
+            "prIL-16"
+        ]
+    },
+    "1088": {
+        "recommended_name": "CEACAM8",
+        "synonyms": [
+            "CD66b",
+            "CD67",
+            "CGM6",
+            "NCA-95"
+        ]
+    },
+    "6348": {
+        "recommended_name": "CCL3",
+        "synonyms": [
+            "G0S19-1",
+            "LD78",
+            "LD78ALPHA",
+            "MIP-1-alpha",
+            "MIP1A",
+            "SCI",
+            "SCYA3"
+        ]
+    },
+    "4316": {
+        "recommended_name": "MMP7",
+        "synonyms": [
+            "MMP-7",
+            "MPSL1",
+            "PUMP-1"
+        ]
+    },
+    "1634": {
+        "recommended_name": "DCN",
+        "synonyms": [
+            "CSCD",
+            "DSPG2",
+            "PG40",
+            "PGII",
+            "PGS2",
+            "SLRR1B"
+        ]
+    },
+    "2172": {
+        "recommended_name": "FABP6",
+        "synonyms": [
+            "I-15P",
+            "I-BABP",
+            "I-BALB",
+            "I-BAP",
+            "ILBP",
+            "ILBP3",
+            "ILLBP"
+        ]
+    },
+    "4321": {
+        "recommended_name": "MMP12",
+        "synonyms": [
+            "HME",
+            "ME",
+            "MME",
+            "MMP-12"
+        ]
+    },
+    "80380": {
+        "recommended_name": "PDCD1LG2",
+        "synonyms": [
+            "B7DC",
+            "Btdc",
+            "CD273",
+            "PD-L2",
+            "PDCD1L2",
+            "PDL2",
+            "bA574F11.2"
+        ]
+    },
+    "23495": {
+        "recommended_name": "TNFRSF13B",
+        "synonyms": [
+            "CD267",
+            "CVID",
+            "CVID2",
+            "IGAD2",
+            "RYZN",
+            "TACI",
+            "TNFRSF14B"
+        ]
+    },
+    "7052": {
+        "recommended_name": "TGM2",
+        "synonyms": [
+            "G(h)",
+            "TG(C)",
+            "TGC",
+            "hTG2",
+            "tTG"
+        ]
+    },
+    "763": {
+        "recommended_name": "CA5A",
+        "synonyms": [
+            "CA5",
+            "CA5AD",
+            "CAV",
+            "CAVA",
+            "GS1-21A4.1"
+        ]
+    },
+    "2720": {
+        "recommended_name": "GLB1",
+        "synonyms": [
+            "EBP",
+            "ELNR1",
+            "MPS4B"
+        ]
+    },
+    "26047": {
+        "recommended_name": "CNTNAP2",
+        "synonyms": [
+            "AUTS15",
+            "CASPR2",
+            "CDFE",
+            "NRXN4",
+            "PTHSL1"
+        ]
+    },
+    "5052": {
+        "recommended_name": "PRDX1",
+        "synonyms": [
+            "MSP23",
+            "NKEF-A",
+            "NKEFA",
+            "PAG",
+            "PAGA",
+            "PAGB",
+            "PRX1",
+            "PRXI",
+            "TDPX2"
+        ]
+    },
+    "3655": {
+        "recommended_name": "ITGA6",
+        "synonyms": [
+            "CD49f",
+            "ITGA6A",
+            "ITGA6B",
+            "JEB6",
+            "VLA-6"
+        ]
+    },
+    "1041": {
+        "recommended_name": "CDSN",
+        "synonyms": [
+            "HTSS",
+            "HTSS1",
+            "HYPT2",
+            "PSS",
+            "PSS1"
+        ]
+    },
+    "11006": {
+        "recommended_name": "LILRB4",
+        "synonyms": [
+            "B4",
+            "CD85K",
+            "ILT-3",
+            "ILT3",
+            "LIR-5",
+            "LIR5"
+        ]
+    },
+    "3880": {
+        "recommended_name": "KRT19",
+        "synonyms": [
+            "CK19",
+            "K19",
+            "K1CS"
+        ]
+    },
+    "9452": {
+        "recommended_name": "ITM2A",
+        "synonyms": [
+            "BRICD2A",
+            "E25A"
+        ]
+    },
+    "3176": {
+        "recommended_name": "HNMT",
+        "synonyms": [
+            "HMT",
+            "HNMT-S1",
+            "HNMT-S2",
+            "MRT51"
+        ]
+    },
+    "284021": {
+        "recommended_name": "MILR1",
+        "synonyms": [
+            "Allergin-1",
+            "C17orf60",
+            "MCA-32",
+            "MCA32"
+        ]
+    },
+    "4771": {
+        "recommended_name": "NF2",
+        "synonyms": [
+            "ACN",
+            "BANF",
+            "SCH",
+            "SWNV",
+            "merlin-1"
+        ]
+    },
+    "91584": {
+        "recommended_name": "PLXNA4",
+        "synonyms": [
+            "FAYV2820",
+            "PLEXA4",
+            "PLXNA4A",
+            "PLXNA4B",
+            "PRO34003"
+        ]
+    },
+    "10970": {
+        "recommended_name": "CKAP4",
+        "synonyms": [
+            "CLIMP-63",
+            "CLIMP63",
+            "ERGIC-63",
+            "p63"
+        ]
+    },
+    "338339": {
+        "recommended_name": "CLEC4D",
+        "synonyms": [
+            "CD368",
+            "CLEC-6",
+            "CLEC6",
+            "CLECSF8",
+            "Dectin-3",
+            "MCL",
+            "MPCL"
+        ]
+    },
+    "54210": {
+        "recommended_name": "TREM1",
+        "synonyms": [
+            "CD354",
+            "TREM-1"
+        ]
+    },
+    "1525": {
+        "recommended_name": "CXADR",
+        "synonyms": [
+            "CAR",
+            "CAR4/6",
+            "HCAR"
+        ]
+    },
+    "118788": {
+        "recommended_name": "PIK3AP1",
+        "synonyms": [
+            "BCAP"
+        ]
+    },
+    "54097": {
+        "recommended_name": "FAM3B",
+        "synonyms": [
+            "2-21",
+            "C21orf11",
+            "C21orf76",
+            "ORF9",
+            "PANDER",
+            "PRED44"
+        ]
+    },
+    "9437": {
+        "recommended_name": "NCR1",
+        "synonyms": [
+            "CD335",
+            "LY94",
+            "NK-p46",
+            "NKP46"
+        ]
+    },
+    "27074": {
+        "recommended_name": "LAMP3",
+        "synonyms": [
+            "CD208",
+            "DC LAMP",
+            "DC-LAMP",
+            "DCLAMP",
+            "LAMP",
+            "LAMP-3",
+            "TSC403"
+        ]
+    },
+    "64581": {
+        "recommended_name": "CLEC7A",
+        "synonyms": [
+            "BGR",
+            "CANDF4",
+            "CD369",
+            "CLECSF12",
+            "DECTIN1",
+            "SCARE2"
+        ]
+    },
+    "93978": {
+        "recommended_name": "CLEC6A",
+        "synonyms": [
+            "CLEC4N",
+            "CLECSF10",
+            "dectin-2",
+            "hDECTIN-2"
+        ]
+    },
+    "3594": {
+        "recommended_name": "IL12RB1",
+        "synonyms": [
+            "CD212",
+            "IL-12R-BETA1",
+            "IL12RB",
+            "IMD30"
+        ]
+    },
+    "3902": {
+        "recommended_name": "LAG3",
+        "synonyms": [
+            "CD223"
+        ]
+    },
+    "9308": {
+        "recommended_name": "CD83",
+        "synonyms": [
+            "BL11",
+            "HB15"
+        ]
+    },
+    "11118": {
+        "recommended_name": "BTN3A2",
+        "synonyms": [
+            "BT3.2",
+            "BTF4",
+            "BTN3.2",
+            "CD277"
+        ]
+    },
+    "10232": {
+        "recommended_name": "MSLN",
+        "synonyms": [
+            "MPF",
+            "SMRP"
+        ]
+    },
+    "8741": {
+        "recommended_name": "TNFSF13",
+        "synonyms": [
+            "APRIL",
+            "CD256",
+            "TALL-2",
+            "TALL2",
+            "TNLG7B",
+            "TRDL-1",
+            "UNQ383/PRO715",
+            "ZTNF2"
+        ]
+    },
+    "1950": {
+        "recommended_name": "EGF",
+        "synonyms": [
+            "HOMG4",
+            "URG"
+        ]
+    },
+    "8771": {
+        "recommended_name": "TNFRSF6B",
+        "synonyms": [
+            "DCR3",
+            "DJ583P15.1.1",
+            "M68",
+            "M68E",
+            "TR6"
+        ]
+    },
+    "6382": {
+        "recommended_name": "SDC1",
+        "synonyms": [
+            "CD138",
+            "SDC",
+            "SYND1",
+            "syndecan"
+        ]
+    },
+    "7048": {
+        "recommended_name": "TGFBR2",
+        "synonyms": [
+            "AAT3",
+            "FAA3",
+            "LDS1B",
+            "LDS2",
+            "LDS2B",
+            "MFS2",
+            "RIIC",
+            "TAAD2",
+            "TBR-ii",
+            "TBRII",
+            "TGFR-2",
+            "TGFbeta-RII",
+            "tbetaR-II"
+        ]
+    },
+    "3459": {
+        "recommended_name": "IFNGR1",
+        "synonyms": [
+            "CD119",
+            "IFNGR",
+            "IMD27A",
+            "IMD27B"
+        ]
+    },
+    "11012": {
+        "recommended_name": "KLK11",
+        "synonyms": [
+            "IEKD",
+            "PRSS20",
+            "TLSP"
+        ]
+    },
+    "2817": {
+        "recommended_name": "GPC1",
+        "synonyms": [
+            "glypican"
+        ]
+    },
+    "7980": {
+        "recommended_name": "TFPI2",
+        "synonyms": [
+            "PP5",
+            "REF1",
+            "TFPI-2"
+        ]
+    },
+    "11202": {
+        "recommended_name": "KLK8",
+        "synonyms": [
+            "HNP",
+            "NP",
+            "NRPN",
+            "PRSS19",
+            "TADG14"
+        ]
+    },
+    "6275": {
+        "recommended_name": "S100A4",
+        "synonyms": [
+            "18A2",
+            "42A",
+            "CAPL",
+            "FSP1",
+            "MTS1",
+            "P9KA",
+            "PEL98"
+        ]
+    },
+    "3480": {
+        "recommended_name": "IGF1R",
+        "synonyms": [
+            "CD221",
+            "IGFIR",
+            "IGFR",
+            "JTK13"
+        ]
+    },
+    "7039": {
+        "recommended_name": "TGFA",
+        "synonyms": [
+            "TFGA"
+        ]
+    },
+    "8772": {
+        "recommended_name": "FADD",
+        "synonyms": [
+            "GIG3",
+            "IMD90",
+            "MORT1"
+        ]
+    },
+    "81607": {
+        "recommended_name": "NECTIN4",
+        "synonyms": [
+            "EDSS1",
+            "LNIR",
+            "PRR4",
+            "PVRL4",
+            "nectin-4"
+        ]
+    },
+    "1969": {
+        "recommended_name": "EPHA2",
+        "synonyms": [
+            "ARCC2",
+            "CTPA",
+            "CTPP1",
+            "CTRCT6",
+            "ECK"
+        ]
+    },
+    "768": {
+        "recommended_name": "CA9",
+        "synonyms": [
+            "CAIX",
+            "MN"
+        ]
+    },
+    "939": {
+        "recommended_name": "CD27",
+        "synonyms": [
+            "S152",
+            "S152. LPFS2",
+            "T14",
+            "TNFRSF7",
+            "Tp55"
+        ]
+    },
+    "101": {
+        "recommended_name": "ADAM8",
+        "synonyms": [
+            "CD156",
+            "CD156a",
+            "MS2"
+        ]
+    },
+    "28514": {
+        "recommended_name": "DLL1",
+        "synonyms": [
+            "DELTA1",
+            "DL1",
+            "Delta",
+            "NEDBAS"
+        ]
+    },
+    "4192": {
+        "recommended_name": "MDK",
+        "synonyms": [
+            "ARAP",
+            "MK",
+            "NEGF2"
+        ]
+    },
+    "7431": {
+        "recommended_name": "VIM",
+        "synonyms": []
+    },
+    "8115": {
+        "recommended_name": "TCL1A",
+        "synonyms": [
+            "TCL1"
+        ]
+    },
+    "11126": {
+        "recommended_name": "CD160",
+        "synonyms": [
+            "BY55",
+            "NK1",
+            "NK28"
+        ]
+    },
+    "7293": {
+        "recommended_name": "TNFRSF4",
+        "synonyms": [
+            "ACT35",
+            "CD134",
+            "IMD16",
+            "OX40",
+            "TXGP1L"
+        ]
+    },
+    "284340": {
+        "recommended_name": "CXCL17",
+        "synonyms": [
+            "DMC",
+            "Dcip1",
+            "UNQ473",
+            "VCC-1",
+            "VCC1"
+        ]
+    },
+    "5539": {
+        "recommended_name": "PPY",
+        "synonyms": [
+            "PH",
+            "PNP",
+            "PP"
+        ]
+    },
+    "50489": {
+        "recommended_name": "CD207",
+        "synonyms": [
+            "CLEC4K"
+        ]
+    },
+    "10406": {
+        "recommended_name": "WFDC2",
+        "synonyms": [
+            "EDDM4",
+            "HE4",
+            "WAP5",
+            "dJ461P17.6"
+        ]
+    },
+    "10563": {
+        "recommended_name": "CXCL13",
+        "synonyms": [
+            "ANGIE",
+            "ANGIE2",
+            "BCA-1",
+            "BCA1",
+            "BLC",
+            "BLR1L",
+            "SCYB13"
+        ]
+    },
+    "170689": {
+        "recommended_name": "ADAMTS15",
+        "synonyms": [
+            "DA12"
+        ]
+    },
+    "84870": {
+        "recommended_name": "RSPO3",
+        "synonyms": [
+            "CRISTIN1",
+            "PWTSR",
+            "THSD2"
+        ]
+    },
+    "94025": {
+        "recommended_name": "MUC16",
+        "synonyms": [
+            "CA125"
+        ]
+    },
+    "127943": {
+        "recommended_name": "FCRLB",
+        "synonyms": [
+            "FCRL2",
+            "FCRLM2",
+            "FCRLY",
+            "FREB-2",
+            "FREB2",
+            "FcRY"
+        ]
+    },
+    "374": {
+        "recommended_name": "AREG",
+        "synonyms": [
+            "AR",
+            "AREGB",
+            "CRDGF",
+            "SDGF"
+        ]
+    },
+    "3949": {
+        "recommended_name": "LDLR",
+        "synonyms": [
+            "FH",
+            "FHC",
+            "FHCL1",
+            "LDLCQ2"
+        ]
+    },
+    "836": {
+        "recommended_name": "CASP3",
+        "synonyms": [
+            "CPP32",
+            "CPP32B",
+            "SCA-1"
+        ]
+    },
+    "5446": {
+        "recommended_name": "PON3",
+        "synonyms": []
+    },
+    "654": {
+        "recommended_name": "BMP6",
+        "synonyms": [
+            "IO",
+            "VGR",
+            "VGR1"
+        ]
+    },
+    "959": {
+        "recommended_name": "CD40LG",
+        "synonyms": [
+            "CD154",
+            "CD40L",
+            "HIGM1",
+            "IGM",
+            "IMD3",
+            "T-BAM",
+            "TNFSF5",
+            "TRAP",
+            "gp39",
+            "hCD40L"
+        ]
+    },
+    "2688": {
+        "recommended_name": "GH1",
+        "synonyms": [
+            "GH",
+            "GH-N",
+            "GHB5",
+            "GHN",
+            "IGHD1A",
+            "IGHD1B",
+            "IGHD2",
+            "hGH-N"
+        ]
+    },
+    "1666": {
+        "recommended_name": "DECR1",
+        "synonyms": [
+            "DECR",
+            "NADPH",
+            "SDR18C1"
+        ]
+    },
+    "6361": {
+        "recommended_name": "CCL17",
+        "synonyms": [
+            "A-152E5.3",
+            "ABCD-2",
+            "SCYA17",
+            "TARC"
+        ]
+    },
+    "84687": {
+        "recommended_name": "PPP1R9B",
+        "synonyms": [
+            "PPP1R6",
+            "PPP1R9",
+            "SPINO",
+            "Spn"
+        ]
+    },
+    "3082": {
+        "recommended_name": "HGF",
+        "synonyms": [
+            "DFNB39",
+            "F-TCF",
+            "HGFB",
+            "HPTA",
+            "SF"
+        ]
+    },
+    "3689": {
+        "recommended_name": "ITGB2",
+        "synonyms": [
+            "CD18",
+            "LAD",
+            "LCAMB",
+            "LFA-1",
+            "MAC-1",
+            "MF17",
+            "MFI7"
+        ]
+    },
+    "6403": {
+        "recommended_name": "SELP",
+        "synonyms": [
+            "CD62",
+            "CD62P",
+            "GMP140",
+            "GRMP",
+            "LECAM3",
+            "PADGEM",
+            "PSEL"
+        ]
+    },
+    "54": {
+        "recommended_name": "ACP5",
+        "synonyms": [
+            "HPAP",
+            "TRACP5a",
+            "TRACP5b",
+            "TRAP",
+            "TRAcP",
+            "TrATPase"
+        ]
+    },
+    "4072": {
+        "recommended_name": "EPCAM",
+        "synonyms": [
+            "Ber-Ep4",
+            "BerEp4",
+            "DIAR5",
+            "EGP-2",
+            "EGP314",
+            "EGP40",
+            "ESA",
+            "HNPCC8",
+            "KS1/4",
+            "KSA",
+            "LYNCH8",
+            "M4S1",
+            "MIC18",
+            "MK-1",
+            "MOC-31",
+            "TACSTD1",
+            "TROP1"
+        ]
+    },
+    "10673": {
+        "recommended_name": "TNFSF13B",
+        "synonyms": [
+            "BAFF",
+            "BLYS",
+            "CD257",
+            "DTL",
+            "TALL-1",
+            "TALL1",
+            "THANK",
+            "TNFSF20",
+            "TNLG7A",
+            "ZTNF4"
+        ]
+    },
+    "5327": {
+        "recommended_name": "PLAT",
+        "synonyms": [
+            "T-PA",
+            "TPA"
+        ]
+    },
+    "246778": {
+        "recommended_name": "IL27",
+        "synonyms": [
+            "IL-27",
+            "IL-27A",
+            "IL27A",
+            "IL27p28",
+            "IL30",
+            "p28"
+        ]
+    },
+    "2694": {
+        "recommended_name": "CBLIF",
+        "synonyms": [
+            "GIF",
+            "IF",
+            "IFMH",
+            "INF",
+            "TCN3"
+        ]
+    },
+    "2739": {
+        "recommended_name": "GLO1",
+        "synonyms": [
+            "GLOD1",
+            "GLYI",
+            "HEL-S-74"
+        ]
+    },
+    "145264": {
+        "recommended_name": "SERPINA12",
+        "synonyms": [
+            "OL-64"
+        ]
+    },
+    "2213": {
+        "recommended_name": "FCGR2B",
+        "synonyms": [
+            "CD32",
+            "CD32B",
+            "FCG2",
+            "FCGR2",
+            "FCGR2C",
+            "FcGRIIB",
+            "FcRII-c",
+            "FcgammaRIIb",
+            "IGFR2"
+        ]
+    },
+    "22943": {
+        "recommended_name": "DKK1",
+        "synonyms": [
+            "DKK-1",
+            "SK"
+        ]
+    },
+    "1839": {
+        "recommended_name": "HBEGF",
+        "synonyms": [
+            "DTR",
+            "DTS",
+            "DTSF",
+            "HEGFL"
+        ]
+    },
+    "2169": {
+        "recommended_name": "FABP2",
+        "synonyms": [
+            "FABPI",
+            "I-FABP"
+        ]
+    },
+    "3952": {
+        "recommended_name": "LEP",
+        "synonyms": [
+            "LEPD",
+            "OB",
+            "OBS"
+        ]
+    },
+    "10913": {
+        "recommended_name": "EDAR",
+        "synonyms": [
+            "DL",
+            "ECTD10A",
+            "ECTD10B",
+            "ED1R",
+            "ED3",
+            "ED5",
+            "EDA-A1R",
+            "EDA1R",
+            "EDA3",
+            "HRM1"
+        ]
+    },
+    "50856": {
+        "recommended_name": "CLEC4A",
+        "synonyms": [
+            "CD367",
+            "CLECSF6",
+            "DCIR",
+            "DDB27",
+            "HDCGC13P",
+            "LLIR",
+            "hDCIR"
+        ]
+    },
+    "23586": {
+        "recommended_name": "RIGI",
+        "synonyms": [
+            "DDX58",
+            "RIG-I",
+            "RIG1",
+            "RLR-1",
+            "SGMRT2"
+        ]
+    },
+    "22801": {
+        "recommended_name": "ITGA11",
+        "synonyms": [
+            "HsT18964"
+        ]
+    },
+    "8743": {
+        "recommended_name": "TNFSF10",
+        "synonyms": [
+            "APO2L",
+            "Apo-2L",
+            "CD253",
+            "TANCR",
+            "TL2",
+            "TNLG6A",
+            "TRAIL"
+        ]
+    },
+    "3002": {
+        "recommended_name": "GZMB",
+        "synonyms": [
+            "C11",
+            "CCPI",
+            "CGL-1",
+            "CGL1",
+            "CSP-B",
+            "CSPB",
+            "CTLA1",
+            "CTSGL1",
+            "HLP",
+            "SECT"
+        ]
+    },
+    "4254": {
+        "recommended_name": "KITLG",
+        "synonyms": [
+            "DCUA",
+            "DFNA69",
+            "FPH2",
+            "FPHH",
+            "KL-1",
+            "Kitl",
+            "MGF",
+            "SCF",
+            "SF",
+            "SHEP7",
+            "SLF",
+            "WS2F"
+        ]
+    },
+    "9332": {
+        "recommended_name": "CD163",
+        "synonyms": [
+            "M130",
+            "MM130",
+            "SCARI1"
+        ]
+    },
+    "8794": {
+        "recommended_name": "TNFRSF10C",
+        "synonyms": [
+            "CD263",
+            "DCR1",
+            "DCR1-TNFR",
+            "LIT",
+            "TRAIL-R3",
+            "TRAILR3",
+            "TRID"
+        ]
+    },
+    "5919": {
+        "recommended_name": "RARRES2",
+        "synonyms": [
+            "HP10433",
+            "TIG2"
+        ]
+    },
+    "3384": {
+        "recommended_name": "ICAM2",
+        "synonyms": [
+            "CD102"
+        ]
+    },
+    "54363": {
+        "recommended_name": "HAO1",
+        "synonyms": [
+            "GO",
+            "GOX",
+            "GOX1",
+            "HAOX1"
+        ]
+    },
+    "11168": {
+        "recommended_name": "PSIP1",
+        "synonyms": [
+            "DFS70",
+            "LEDGF",
+            "PAIP",
+            "PSIP2",
+            "p52",
+            "p75"
+        ]
+    },
+    "339390": {
+        "recommended_name": "CLEC4G",
+        "synonyms": [
+            "DTTR431",
+            "LP2698",
+            "LSECtin",
+            "UNQ431"
+        ]
+    },
+    "3824": {
+        "recommended_name": "KLRD1",
+        "synonyms": [
+            "CD94"
+        ]
+    },
+    "6781": {
+        "recommended_name": "STC1",
+        "synonyms": [
+            "STC"
+        ]
+    },
+    "962": {
+        "recommended_name": "CD48",
+        "synonyms": [
+            "BCM1",
+            "BLAST",
+            "BLAST1",
+            "MEM-102",
+            "SLAMF2",
+            "hCD48",
+            "mCD48"
+        ]
+    },
+    "7512": {
+        "recommended_name": "XPNPEP2",
+        "synonyms": [
+            "AEACEI",
+            "APP2"
+        ]
+    },
+    "25": {
+        "recommended_name": "ABL1",
+        "synonyms": [
+            "ABL",
+            "BCR-ABL",
+            "CHDSKM",
+            "JTK7",
+            "bcr/abl",
+            "c-ABL",
+            "c-ABL1",
+            "p150",
+            "v-abl"
+        ]
+    },
+    "970": {
+        "recommended_name": "CD70",
+        "synonyms": [
+            "CD27-L",
+            "CD27L",
+            "CD27LG",
+            "LPFS3",
+            "TNFSF7",
+            "TNLG8A"
+        ]
+    },
+    "11197": {
+        "recommended_name": "WIF1",
+        "synonyms": [
+            "WIF-1"
+        ]
+    },
+    "51135": {
+        "recommended_name": "IRAK4",
+        "synonyms": [
+            "IMD67",
+            "IPD1",
+            "IRAK-4",
+            "NY-REN-64",
+            "REN64"
+        ]
+    },
+    "3059": {
+        "recommended_name": "HCLS1",
+        "synonyms": [
+            "CTTNL",
+            "HS1",
+            "lckBP1",
+            "p75"
+        ]
+    },
+    "3654": {
+        "recommended_name": "IRAK1",
+        "synonyms": [
+            "IRAK",
+            "pelle"
+        ]
+    },
+    "25824": {
+        "recommended_name": "PRDX5",
+        "synonyms": [
+            "ACR1",
+            "AOEB166",
+            "B166",
+            "HEL-S-55",
+            "PLP",
+            "PMP20",
+            "PRDX6",
+            "PRXV",
+            "SBBI10",
+            "prx-V"
+        ]
+    },
+    "6737": {
+        "recommended_name": "TRIM21",
+        "synonyms": [
+            "RNF81",
+            "RO52",
+            "Ro/SSA",
+            "SSA",
+            "SSA1"
+        ]
+    },
+    "10019": {
+        "recommended_name": "SH2B3",
+        "synonyms": [
+            "IDDM20",
+            "LNK"
+        ]
+    },
+    "3382": {
+        "recommended_name": "ICA1",
+        "synonyms": [
+            "ICA69",
+            "ICAp69"
+        ]
+    },
+    "27071": {
+        "recommended_name": "DAPP1",
+        "synonyms": [
+            "BAM32"
+        ]
+    },
+    "10988": {
+        "recommended_name": "METAP2",
+        "synonyms": [
+            "MAP2",
+            "MNPEP",
+            "p67eIF2"
+        ]
+    },
+    "1026": {
+        "recommended_name": "CDKN1A",
+        "synonyms": [
+            "CAP20",
+            "CDKN1",
+            "CIP1",
+            "MDA-6",
+            "P21",
+            "SDI1",
+            "WAF1",
+            "p21CIP1"
+        ]
+    },
+    "4067": {
+        "recommended_name": "LYN",
+        "synonyms": [
+            "JTK8",
+            "SAIDV",
+            "p53Lyn",
+            "p56Lyn"
+        ]
+    },
+    "4854": {
+        "recommended_name": "NOTCH3",
+        "synonyms": [
+            "CADASIL",
+            "CADASIL1",
+            "CASIL",
+            "IMF2",
+            "LMNS"
+        ]
+    },
+    "10468": {
+        "recommended_name": "FST",
+        "synonyms": [
+            "FS"
+        ]
+    },
+    "4907": {
+        "recommended_name": "NT5E",
+        "synonyms": [
+            "CALJA",
+            "CD73",
+            "E5NT",
+            "NT",
+            "NT5",
+            "NTE",
+            "eN",
+            "eNT"
+        ]
+    },
+    "1118": {
+        "recommended_name": "CHIT1",
+        "synonyms": [
+            "CHI3",
+            "CHIT",
+            "CHITD"
+        ]
+    },
+    "4747": {
+        "recommended_name": "NEFL",
+        "synonyms": [
+            "CMT1F",
+            "CMT2E",
+            "CMTDIG",
+            "NF-L",
+            "NF68",
+            "NFL",
+            "PPP1R110"
+        ]
+    },
+    "64184": {
+        "recommended_name": "EDDM3B",
+        "synonyms": [
+            "EP3B",
+            "FAM12B",
+            "HE3-BETA",
+            "HE3B",
+            "RAM2"
+        ]
+    },
+    "84432": {
+        "recommended_name": "PROK1",
+        "synonyms": [
+            "EGVEGF",
+            "PK1",
+            "PRK1"
+        ]
+    },
+    "1506": {
+        "recommended_name": "CTRL",
+        "synonyms": [
+            "CTRL1"
+        ]
+    },
+    "2813": {
+        "recommended_name": "GP2",
+        "synonyms": [
+            "ZAP75"
+        ]
+    },
+    "10816": {
+        "recommended_name": "SPINT3",
+        "synonyms": [
+            "HKIB9"
+        ]
+    },
+    "218": {
+        "recommended_name": "ALDH3A1",
+        "synonyms": [
+            "ALDH3",
+            "ALDHIII"
+        ]
+    },
+    "3593": {
+        "recommended_name": "IL12B",
+        "synonyms": [
+            "CLMF",
+            "CLMF2",
+            "IL-12B",
+            "IMD28",
+            "IMD29",
+            "NKSF",
+            "NKSF2"
+        ]
+    },
+    "5020": {
+        "recommended_name": "OXT",
+        "synonyms": [
+            "OT",
+            "OT-NPI",
+            "OXT-NPI"
+        ]
+    },
+    "2782": {
+        "recommended_name": "GNB1",
+        "synonyms": [
+            "HG2A",
+            "MDS",
+            "MRD42"
+        ]
+    },
+    "6285": {
+        "recommended_name": "S100B",
+        "synonyms": [
+            "NEF",
+            "S100",
+            "S100-B",
+            "S100beta"
+        ]
+    },
+    "10014": {
+        "recommended_name": "HDAC5",
+        "synonyms": [
+            "HD5",
+            "NY-CO-9"
+        ]
+    },
+    "140628": {
+        "recommended_name": "GATA5",
+        "synonyms": [
+            "CHTD5",
+            "GATAS",
+            "bB379O24.1"
+        ]
+    },
+    "221091": {
+        "recommended_name": "LRRN4CL",
+        "synonyms": []
+    },
+    "55753": {
+        "recommended_name": "OGDHL",
+        "synonyms": [
+            "YOBELN"
+        ]
+    },
+    "29968": {
+        "recommended_name": "PSAT1",
+        "synonyms": [
+            "EPIP",
+            "NLS2",
+            "PSA",
+            "PSAT",
+            "PSATD"
+        ]
+    },
+    "283600": {
+        "recommended_name": "SLC25A47",
+        "synonyms": [
+            "C14orf68",
+            "HDCMP",
+            "HDMCP",
+            "HMFN1655"
+        ]
+    },
+    "117581": {
+        "recommended_name": "TWIST2",
+        "synonyms": [
+            "AMS",
+            "BBRSAY",
+            "DERMO1",
+            "FFDD3",
+            "SETLSS",
+            "bHLHa39"
+        ]
+    },
+    "3627": {
+        "recommended_name": "CXCL10",
+        "synonyms": [
+            "C7",
+            "IFI10",
+            "INP10",
+            "IP-10",
+            "SCYB10",
+            "crg-2",
+            "gIP-10",
+            "mob-1"
+        ]
+    },
+    "221188": {
+        "recommended_name": "ADGRG5",
+        "synonyms": [
+            "GPR114",
+            "PGR27"
+        ]
+    },
+    "51676": {
+        "recommended_name": "ASB2",
+        "synonyms": [
+            "ASB-2"
+        ]
+    },
+    "1755": {
+        "recommended_name": "DMBT1",
+        "synonyms": [
+            "GP340",
+            "SAG",
+            "SALSA",
+            "muclin"
+        ]
+    },
+    "2857": {
+        "recommended_name": "GPR34",
+        "synonyms": [
+            "LPS1",
+            "LYPSR1"
+        ]
+    },
+    "3003": {
+        "recommended_name": "GZMK",
+        "synonyms": [
+            "TRYP2"
+        ]
+    },
+    "3004": {
+        "recommended_name": "GZMM",
+        "synonyms": [
+            "LMET1",
+            "MET1"
+        ]
+    },
+    "5654": {
+        "recommended_name": "HTRA1",
+        "synonyms": [
+            "ARMD7",
+            "CADASIL2",
+            "CARASIL",
+            "HtrA",
+            "L56",
+            "ORF480",
+            "PRSS11"
+        ]
+    },
+    "30009": {
+        "recommended_name": "TBX21",
+        "synonyms": [
+            "IMD88",
+            "T-PET",
+            "T-bet",
+            "TBET",
+            "TBLYM"
+        ]
+    },
+    "730": {
+        "recommended_name": "C7",
+        "synonyms": []
+    },
+    "290": {
+        "recommended_name": "ANPEP",
+        "synonyms": [
+            "AP-M",
+            "AP-N",
+            "APN",
+            "CD13",
+            "GP150",
+            "LAP1",
+            "P150",
+            "PEPN",
+            "hAPN"
+        ]
+    },
+    "28797": {
+        "recommended_name": "IGLV3-19",
+        "synonyms": [
+            "IGLV319",
+            "V2-13",
+            "VL3L"
+        ]
+    },
+    "28825": {
+        "recommended_name": "IGLV1-40",
+        "synonyms": [
+            "IGLV140",
+            "V1-13"
+        ]
+    },
+    "5768": {
+        "recommended_name": "QSOX1",
+        "synonyms": [
+            "Q6",
+            "QSCN6"
+        ]
+    },
+    "28791": {
+        "recommended_name": "IGLV3-27",
+        "synonyms": [
+            "IGLV327",
+            "V2-19"
+        ]
+    },
+    "2": {
+        "recommended_name": "A2M",
+        "synonyms": [
+            "A2MD",
+            "CPAMD5",
+            "FWP007",
+            "S863-7"
+        ]
+    },
+    "28388": {
+        "recommended_name": "IGHV5-51",
+        "synonyms": [
+            "IGHV551",
+            "VH"
+        ]
+    },
+    "28395": {
+        "recommended_name": "IGHV4-34",
+        "synonyms": [
+            "IGHV434",
+            "VH"
+        ]
+    },
+    "28908": {
+        "recommended_name": "IGKV4-1",
+        "synonyms": [
+            "B3",
+            "IGKV41"
+        ]
+    },
+    "12": {
+        "recommended_name": "SERPINA3",
+        "synonyms": [
+            "AACT",
+            "ACT",
+            "GIG24",
+            "GIG25"
+        ]
+    },
+    "3026": {
+        "recommended_name": "HABP2",
+        "synonyms": [
+            "FSAP",
+            "HABP",
+            "HGFAL",
+            "NMTC5",
+            "PHBP"
+        ]
+    },
+    "3931": {
+        "recommended_name": "LCAT",
+        "synonyms": []
+    },
+    "5950": {
+        "recommended_name": "RBP4",
+        "synonyms": [
+            "MCOPCB10",
+            "RDCCAS"
+        ]
+    },
+    "2159": {
+        "recommended_name": "F10",
+        "synonyms": [
+            "FX",
+            "FXA"
+        ]
+    },
+    "5004": {
+        "recommended_name": "ORM1",
+        "synonyms": [
+            "A1AG1",
+            "AGP-A",
+            "AGP1",
+            "HEL-S-153w",
+            "ORM"
+        ]
+    },
+    "725": {
+        "recommended_name": "C4BPB",
+        "synonyms": [
+            "C4BP"
+        ]
+    },
+    "51449": {
+        "recommended_name": "PCYOX1",
+        "synonyms": [
+            "PCL1"
+        ]
+    },
+    "3080": {
+        "recommended_name": "CFHR2",
+        "synonyms": [
+            "CFHL2",
+            "FHR2",
+            "HFL3"
+        ]
+    },
+    "1369": {
+        "recommended_name": "CPN1",
+        "synonyms": [
+            "CPN",
+            "SCPN"
+        ]
+    },
+    "2147": {
+        "recommended_name": "F2",
+        "synonyms": [
+            "PT",
+            "RPRGL2",
+            "THPH1"
+        ]
+    },
+    "7450": {
+        "recommended_name": "VWF",
+        "synonyms": [
+            "F8VWF",
+            "VWD"
+        ]
+    },
+    "8829": {
+        "recommended_name": "NRP1",
+        "synonyms": [
+            "BDCA4",
+            "CD304",
+            "NP1",
+            "NRP",
+            "VEGF165R"
+        ]
+    },
+    "28451": {
+        "recommended_name": "IGHV3-9",
+        "synonyms": [
+            "IGHV39",
+            "VH"
+        ]
+    },
+    "28822": {
+        "recommended_name": "IGLV1-47",
+        "synonyms": [
+            "IGLV147",
+            "V1-17"
+        ]
+    },
+    "28299": {
+        "recommended_name": "IGKV1-5",
+        "synonyms": [
+            "IGKV",
+            "IGKV15",
+            "L12",
+            "L12a",
+            "V1"
+        ]
+    },
+    "3512": {
+        "recommended_name": "JCHAIN",
+        "synonyms": [
+            "IGCJ",
+            "IGJ",
+            "JCH"
+        ]
+    },
+    "4060": {
+        "recommended_name": "LUM",
+        "synonyms": [
+            "LDC",
+            "SLRR2D"
+        ]
+    },
+    "5284": {
+        "recommended_name": "PIGR",
+        "synonyms": []
+    },
+    "28935": {
+        "recommended_name": "IGKV1-27",
+        "synonyms": [
+            "A20",
+            "IGKV127"
+        ]
+    },
+    "28938": {
+        "recommended_name": "IGKV1-16",
+        "synonyms": [
+            "IGKV116",
+            "L1"
+        ]
+    },
+    "28452": {
+        "recommended_name": "IGHV3-7",
+        "synonyms": [
+            "IGHV37",
+            "VH"
+        ]
+    },
+    "922": {
+        "recommended_name": "CD5L",
+        "synonyms": [
+            "AIM",
+            "API6",
+            "CT-2",
+            "PRO229",
+            "SP-ALPHA",
+            "Spalpha",
+            "hAIM"
+        ]
+    },
+    "7045": {
+        "recommended_name": "TGFBI",
+        "synonyms": [
+            "BIGH3",
+            "CDB1",
+            "CDG2",
+            "CDGG1",
+            "CSD",
+            "CSD1",
+            "CSD2",
+            "CSD3",
+            "EBMD",
+            "LCD1"
+        ]
+    },
+    "2192": {
+        "recommended_name": "FBLN1",
+        "synonyms": [
+            "FBLN",
+            "FIBL1"
+        ]
+    },
+    "3493": {
+        "recommended_name": "IGHA1",
+        "synonyms": [
+            "IgA1"
+        ]
+    },
+    "3959": {
+        "recommended_name": "LGALS3BP",
+        "synonyms": [
+            "90K",
+            "BTBD17B",
+            "CyCAP",
+            "M2BP",
+            "MAC-2-BP",
+            "TANGO10B",
+            "gp90"
+        ]
+    },
+    "2266": {
+        "recommended_name": "FGG",
+        "synonyms": []
+    },
+    "3818": {
+        "recommended_name": "KLKB1",
+        "synonyms": [
+            "KLK3",
+            "PKK",
+            "PKKD",
+            "PPK"
+        ]
+    },
+    "629": {
+        "recommended_name": "CFB",
+        "synonyms": [
+            "AHUS4",
+            "ARMD14",
+            "BF",
+            "BFD",
+            "CFAB",
+            "CFBD",
+            "FB",
+            "FBI12",
+            "GBG",
+            "H2-Bf",
+            "PBF2"
+        ]
+    },
+    "1370": {
+        "recommended_name": "CPN2",
+        "synonyms": [
+            "ACBP"
+        ]
+    },
+    "341": {
+        "recommended_name": "APOC1",
+        "synonyms": [
+            "Apo-CI",
+            "ApoC-I",
+            "apo-CIB",
+            "apoC-IB"
+        ]
+    },
+    "1191": {
+        "recommended_name": "CLU",
+        "synonyms": [
+            "AAG4",
+            "APO-J",
+            "APOJ",
+            "CLI",
+            "CLU1",
+            "CLU2",
+            "KUB1",
+            "NA1/NA2",
+            "SGP-2",
+            "SGP2",
+            "SP-40",
+            "TRPM-2",
+            "TRPM2"
+        ]
+    },
+    "3053": {
+        "recommended_name": "SERPIND1",
+        "synonyms": [
+            "D22S673",
+            "HC2",
+            "HCF2",
+            "HCII",
+            "HLS2",
+            "LS2",
+            "THPH10"
+        ]
+    },
+    "716": {
+        "recommended_name": "C1S",
+        "synonyms": [
+            "EDSPD2"
+        ]
+    },
+    "10894": {
+        "recommended_name": "LYVE1",
+        "synonyms": [
+            "CRSBP-1",
+            "HAR",
+            "LYVE-1",
+            "XLKD1"
+        ]
+    },
+    "28455": {
+        "recommended_name": "IGHV2-26",
+        "synonyms": [
+            "IGHV226",
+            "VH"
+        ]
+    },
+    "2517": {
+        "recommended_name": "FUCA1",
+        "synonyms": [
+            "FUCA"
+        ]
+    },
+    "28942": {
+        "recommended_name": "IGKV1-8",
+        "synonyms": [
+            "IGKV18",
+            "L9"
+        ]
+    },
+    "2161": {
+        "recommended_name": "F12",
+        "synonyms": [
+            "HAE3",
+            "HAEX",
+            "HAF"
+        ]
+    },
+    "8858": {
+        "recommended_name": "PROZ",
+        "synonyms": [
+            "PZ"
+        ]
+    },
+    "3479": {
+        "recommended_name": "IGF1",
+        "synonyms": [
+            "IGF",
+            "IGF-I",
+            "IGFI",
+            "MGF"
+        ]
+    },
+    "55937": {
+        "recommended_name": "APOM",
+        "synonyms": [
+            "G3a",
+            "HSPC336",
+            "NG20",
+            "apo-M"
+        ]
+    },
+    "5340": {
+        "recommended_name": "PLG",
+        "synonyms": [
+            "HAE4"
+        ]
+    },
+    "28913": {
+        "recommended_name": "IGKV3-15",
+        "synonyms": [
+            "IGKV315",
+            "L2"
+        ]
+    },
+    "3426": {
+        "recommended_name": "CFI",
+        "synonyms": [
+            "AHUS3",
+            "ARMD13",
+            "C3BINA",
+            "C3b-INA",
+            "FI",
+            "IF",
+            "KAF"
+        ]
+    },
+    "820": {
+        "recommended_name": "CAMP",
+        "synonyms": [
+            "CAP-18",
+            "CAP18",
+            "CRAMP",
+            "FALL-39",
+            "FALL39",
+            "HSD26",
+            "LL37"
+        ]
+    },
+    "6678": {
+        "recommended_name": "SPARC",
+        "synonyms": [
+            "BM-40",
+            "OI17",
+            "ON",
+            "ONT"
+        ]
+    },
+    "7057": {
+        "recommended_name": "THBS1",
+        "synonyms": [
+            "THBS",
+            "THBS-1",
+            "TSP",
+            "TSP-1",
+            "TSP1"
+        ]
+    },
+    "336": {
+        "recommended_name": "APOA2",
+        "synonyms": [
+            "Apo-AII",
+            "ApoA-II",
+            "apoAII"
+        ]
+    },
+    "10747": {
+        "recommended_name": "MASP2",
+        "synonyms": [
+            "MAP-2",
+            "MAP19",
+            "MASP-2",
+            "MASP1P1",
+            "sMAP"
+        ]
+    },
+    "8547": {
+        "recommended_name": "FCN3",
+        "synonyms": [
+            "FCNH",
+            "HAKA1"
+        ]
+    },
+    "718": {
+        "recommended_name": "C3",
+        "synonyms": [
+            "AHUS5",
+            "ARMD9",
+            "ASP",
+            "C3a",
+            "C3b",
+            "CPAMD1",
+            "HEL-S-62p"
+        ]
+    },
+    "2638": {
+        "recommended_name": "GC",
+        "synonyms": [
+            "DBP",
+            "DBP-maf",
+            "DBP/GC",
+            "GRD3",
+            "Gc-MAF",
+            "GcMAF",
+            "HEL-S-51",
+            "VDB",
+            "VDBG",
+            "VDBP"
+        ]
+    },
+    "722": {
+        "recommended_name": "C4BPA",
+        "synonyms": [
+            "C4BP",
+            "PRP"
+        ]
+    },
+    "5473": {
+        "recommended_name": "PPBP",
+        "synonyms": [
+            "B-TG1",
+            "Beta-TG",
+            "CTAP-III",
+            "CTAP3",
+            "CTAPIII",
+            "CXCL7",
+            "LA-PF4",
+            "LDGF",
+            "MDGF",
+            "NAP-2",
+            "PBP",
+            "SCYB7",
+            "TC1",
+            "TC2",
+            "TGB",
+            "TGB1",
+            "THBGB",
+            "THBGB1"
+        ]
+    },
+    "3700": {
+        "recommended_name": "ITIH4",
+        "synonyms": [
+            "GP120",
+            "H4P",
+            "IHRP",
+            "ITI-HC4",
+            "ITIHL1",
+            "PK-120",
+            "PK120"
+        ]
+    },
+    "735": {
+        "recommended_name": "C9",
+        "synonyms": [
+            "ARMD15",
+            "C9D"
+        ]
+    },
+    "721": {
+        "recommended_name": "C4B",
+        "synonyms": [
+            "C4B1",
+            "C4B12",
+            "C4B2",
+            "C4B3",
+            "C4B5",
+            "C4BD",
+            "C4B_2",
+            "C4F",
+            "CH",
+            "CO4",
+            "CPAMD3"
+        ]
+    },
+    "5265": {
+        "recommended_name": "SERPINA1",
+        "synonyms": [
+            "A1A",
+            "A1AT",
+            "AAT",
+            "PI",
+            "PI1",
+            "PRO2275",
+            "alpha1AT",
+            "nNIF"
+        ]
+    },
+    "173": {
+        "recommended_name": "AFM",
+        "synonyms": [
+            "ALB2",
+            "ALBA",
+            "ALF"
+        ]
+    },
+    "1361": {
+        "recommended_name": "CPB2",
+        "synonyms": [
+            "CPU",
+            "PCPB",
+            "TAFI"
+        ]
+    },
+    "2165": {
+        "recommended_name": "F13B",
+        "synonyms": [
+            "FXIIIB"
+        ]
+    },
+    "729": {
+        "recommended_name": "C6",
+        "synonyms": []
+    },
+    "51156": {
+        "recommended_name": "SERPINA10",
+        "synonyms": [
+            "PZI",
+            "ZPI"
+        ]
+    },
+    "3240": {
+        "recommended_name": "HP",
+        "synonyms": [
+            "BP",
+            "HP2ALPHA2",
+            "HPA1S"
+        ]
+    },
+    "727": {
+        "recommended_name": "C5",
+        "synonyms": [
+            "C5D",
+            "C5a",
+            "C5b",
+            "CPAMD4",
+            "ECLZB"
+        ]
+    },
+    "2155": {
+        "recommended_name": "F7",
+        "synonyms": [
+            "SPCA"
+        ]
+    },
+    "717": {
+        "recommended_name": "C2",
+        "synonyms": [
+            "ARMD14",
+            "CO2"
+        ]
+    },
+    "183": {
+        "recommended_name": "AGT",
+        "synonyms": [
+            "ANHU",
+            "SERPINA8",
+            "hFLT1"
+        ]
+    },
+    "325": {
+        "recommended_name": "APCS",
+        "synonyms": [
+            "HEL-S-92n",
+            "PTX2",
+            "SAP"
+        ]
+    },
+    "51279": {
+        "recommended_name": "C1RL",
+        "synonyms": [
+            "C1RL1",
+            "C1RLP",
+            "C1r-LP",
+            "CLSPa"
+        ]
+    },
+    "4162": {
+        "recommended_name": "MCAM",
+        "synonyms": [
+            "CD146",
+            "HEMCAM",
+            "METCAM",
+            "MUC18",
+            "MelCAM"
+        ]
+    },
+    "1003": {
+        "recommended_name": "CDH5",
+        "synonyms": [
+            "7B4",
+            "CD144"
+        ]
+    },
+    "28912": {
+        "recommended_name": "IGKV3-20",
+        "synonyms": [
+            "13K18",
+            "A27",
+            "IGKV320"
+        ]
+    },
+    "28423": {
+        "recommended_name": "IGHV3-49",
+        "synonyms": [
+            "IGHV349",
+            "VH"
+        ]
+    },
+    "28882": {
+        "recommended_name": "IGKV2D-29",
+        "synonyms": [
+            "A2a",
+            "A2c",
+            "IGKV2D29"
+        ]
+    },
+    "2202": {
+        "recommended_name": "EFEMP1",
+        "synonyms": [
+            "ARCL1D",
+            "DHRD",
+            "DRAD",
+            "FBLN3",
+            "FBNL",
+            "FIBL-3",
+            "GLC1H",
+            "MLVT",
+            "MTLV",
+            "S1-5"
+        ]
+    },
+    "9370": {
+        "recommended_name": "ADIPOQ",
+        "synonyms": [
+            "ACDC",
+            "ACRP30",
+            "ADIPQTL1",
+            "ADPN",
+            "APM-1",
+            "APM1",
+            "GBP28"
+        ]
+    },
+    "335": {
+        "recommended_name": "APOA1",
+        "synonyms": [
+            "HPALP2",
+            "apo(a)"
+        ]
+    },
+    "338": {
+        "recommended_name": "APOB",
+        "synonyms": [
+            "FCHL2",
+            "FLDB",
+            "LDLCQ4",
+            "apoB-100",
+            "apoB-48"
+        ]
+    },
+    "1280": {
+        "recommended_name": "COL2A1",
+        "synonyms": [
+            "ANFH",
+            "AOM",
+            "COL11A3",
+            "SEDC",
+            "STL1"
+        ]
+    },
+    "6346": {
+        "recommended_name": "CCL1",
+        "synonyms": [
+            "I-309",
+            "P500",
+            "SCYA1",
+            "SISe",
+            "TCA3"
+        ]
+    },
+    "6364": {
+        "recommended_name": "CCL20",
+        "synonyms": [
+            "CKb4",
+            "Exodus",
+            "LARC",
+            "MIP-3-alpha",
+            "MIP-3a",
+            "MIP3A",
+            "SCYA20",
+            "ST38"
+        ]
+    },
+    "1311": {
+        "recommended_name": "COMP",
+        "synonyms": [
+            "CTS2",
+            "EDM1",
+            "EPD1",
+            "MED",
+            "PSACH",
+            "THBS5",
+            "TSP-5",
+            "TSP5"
+        ]
+    },
+    "1401": {
+        "recommended_name": "CRP",
+        "synonyms": [
+            "PTX1"
+        ]
+    },
+    "6376": {
+        "recommended_name": "CX3CL1",
+        "synonyms": [
+            "ABCD-3",
+            "C3Xkine",
+            "CXC3",
+            "CXC3C",
+            "NTN",
+            "NTT",
+            "SCYD1",
+            "fractalkine",
+            "neurotactin"
+        ]
+    },
+    "6387": {
+        "recommended_name": "CXCL12",
+        "synonyms": [
+            "IRH",
+            "PBSF",
+            "SCYB12",
+            "SDF1",
+            "TLSF",
+            "TPAR1"
+        ]
+    },
+    "2920": {
+        "recommended_name": "CXCL2",
+        "synonyms": [
+            "CINC-2a",
+            "GRO2",
+            "GROb",
+            "MGSA-b",
+            "MIP-2a",
+            "MIP2",
+            "MIP2A",
+            "SCYB2"
+        ]
+    },
+    "6374": {
+        "recommended_name": "CXCL5",
+        "synonyms": [
+            "ENA-78",
+            "SCYB5"
+        ]
+    },
+    "2273": {
+        "recommended_name": "FHL1",
+        "synonyms": [
+            "FCMSU",
+            "FHL-1",
+            "FHL1A",
+            "FHL1B",
+            "FLH1A",
+            "KYOT",
+            "RBMX1A",
+            "RBMX1B",
+            "SLIM",
+            "SLIM-1",
+            "SLIM1",
+            "SLIMMER",
+            "XMPMA"
+        ]
+    },
+    "2934": {
+        "recommended_name": "GSN",
+        "synonyms": [
+            "ADF",
+            "AGEL"
+        ]
+    },
+    "2873": {
+        "recommended_name": "GPS1",
+        "synonyms": [
+            "COPS1",
+            "CSN1",
+            "SGN1"
+        ]
+    },
+    "8520": {
+        "recommended_name": "HAT1",
+        "synonyms": [
+            "KAT1"
+        ]
+    },
+    "3428": {
+        "recommended_name": "IFI16",
+        "synonyms": [
+            "IFNGIP1",
+            "PYHIN2"
+        ]
+    },
+    "3592": {
+        "recommended_name": "IL12A",
+        "synonyms": [
+            "CLMF",
+            "IL-12A",
+            "NFSK",
+            "NKSF1",
+            "P35"
+        ]
+    },
+    "3578": {
+        "recommended_name": "IL9",
+        "synonyms": [
+            "HP40",
+            "IL-9",
+            "P40"
+        ]
+    },
+    "3605": {
+        "recommended_name": "IL17A",
+        "synonyms": [
+            "CTLA-8",
+            "CTLA8",
+            "IL-17",
+            "IL-17A",
+            "IL17",
+            "ILA17"
+        ]
+    },
+    "27189": {
+        "recommended_name": "IL17C",
+        "synonyms": [
+            "CX2",
+            "IL-17C"
+        ]
+    },
+    "112744": {
+        "recommended_name": "IL17F",
+        "synonyms": [
+            "CANDF6",
+            "IL-17F",
+            "IL17A",
+            "ML-1",
+            "ML1"
+        ]
+    },
+    "3558": {
+        "recommended_name": "IL2",
+        "synonyms": [
+            "IL-2",
+            "TCGF",
+            "lymphokine"
+        ]
+    },
+    "149233": {
+        "recommended_name": "IL23R",
+        "synonyms": [
+            "PSORS7"
+        ]
+    },
+    "3562": {
+        "recommended_name": "IL3",
+        "synonyms": [
+            "IL-3",
+            "MCGF",
+            "MULTI-CSF"
+        ]
+    },
+    "90865": {
+        "recommended_name": "IL33",
+        "synonyms": [
+            "C9orf26",
+            "DVS27",
+            "IL1F11",
+            "NF-HEV",
+            "NFEHEV"
+        ]
+    },
+    "146433": {
+        "recommended_name": "IL34",
+        "synonyms": [
+            "C16orf77",
+            "IL-34"
+        ]
+    },
+    "10148": {
+        "recommended_name": "EBI3",
+        "synonyms": [
+            "IL-27B",
+            "IL27B",
+            "IL35B"
+        ]
+    },
+    "27179": {
+        "recommended_name": "IL36A",
+        "synonyms": [
+            "FIL1",
+            "FIL1(EPSILON)",
+            "FIL1E",
+            "IL-1F6",
+            "IL1(EPSILON)",
+            "IL1F6"
+        ]
+    },
+    "84639": {
+        "recommended_name": "IL1F10",
+        "synonyms": [
+            "FIL1-theta",
+            "FKSG75",
+            "IL-1HY2",
+            "IL-38",
+            "IL1-theta",
+            "IL1HY2"
+        ]
+    },
+    "3576": {
+        "recommended_name": "CXCL8",
+        "synonyms": [
+            "GCP-1",
+            "GCP1",
+            "IL8",
+            "LECT",
+            "LUCT",
+            "LYNAP",
+            "MDNCF",
+            "MONAP",
+            "NAF",
+            "NAP-1",
+            "NAP1",
+            "SCYB8"
+        ]
+    },
+    "3630": {
+        "recommended_name": "INS",
+        "synonyms": [
+            "IDDM",
+            "IDDM1",
+            "IDDM2",
+            "ILPR",
+            "IRDN",
+            "MODY10",
+            "PNDM4"
+        ]
+    },
+    "3669": {
+        "recommended_name": "ISG20",
+        "synonyms": [
+            "CD25",
+            "HEM45"
+        ]
+    },
+    "3693": {
+        "recommended_name": "ITGB5",
+        "synonyms": []
+    },
+    "1435": {
+        "recommended_name": "CSF1",
+        "synonyms": [
+            "CSF-1",
+            "MCSF",
+            "PG-M-CSF"
+        ]
+    },
+    "4353": {
+        "recommended_name": "MPO",
+        "synonyms": []
+    },
+    "388677": {
+        "recommended_name": "NOTCH2NLA",
+        "synonyms": [
+            "N2N",
+            "NOTCH2NL"
+        ]
+    },
+    "10631": {
+        "recommended_name": "POSTN",
+        "synonyms": [
+            "OSF-2",
+            "OSF2",
+            "PDLPOSTN",
+            "PN"
+        ]
+    },
+    "5524": {
+        "recommended_name": "PTPA",
+        "synonyms": [
+            "PARK25",
+            "PP2A",
+            "PPP2R4",
+            "PR53"
+        ]
+    },
+    "5617": {
+        "recommended_name": "PRL",
+        "synonyms": [
+            "GHA1"
+        ]
+    },
+    "8600": {
+        "recommended_name": "TNFSF11",
+        "synonyms": [
+            "CD254",
+            "ODF",
+            "OPGL",
+            "OPTB2",
+            "RANKL",
+            "TNLG6B",
+            "TRANCE",
+            "hRANKL2",
+            "sOdf"
+        ]
+    },
+    "29072": {
+        "recommended_name": "SETD2",
+        "synonyms": [
+            "HBP231",
+            "HIF-1",
+            "HIP-1",
+            "HSPC069",
+            "HYPB",
+            "KMT3A",
+            "LLS",
+            "MRD70",
+            "RAPAS",
+            "SET2",
+            "p231HBP"
+        ]
+    },
+    "3560": {
+        "recommended_name": "IL2RB",
+        "synonyms": [
+            "CD122",
+            "IL15RB",
+            "IMD63",
+            "P70-75"
+        ]
+    },
+    "3561": {
+        "recommended_name": "IL2RG",
+        "synonyms": [
+            "CD132",
+            "CIDX",
+            "IL-2RG",
+            "IMD4",
+            "P64",
+            "SCIDX",
+            "SCIDX1"
+        ]
+    },
+    "6622": {
+        "recommended_name": "SNCA",
+        "synonyms": [
+            "NACP",
+            "PARK1",
+            "PARK4",
+            "PD1"
+        ]
+    },
+    "6727": {
+        "recommended_name": "SRP14",
+        "synonyms": [
+            "ALURBP"
+        ]
+    },
+    "8406": {
+        "recommended_name": "SRPX",
+        "synonyms": [
+            "DRS",
+            "ETX1",
+            "HEL-S-83p",
+            "SRPX1"
+        ]
+    },
+    "6774": {
+        "recommended_name": "STAT3",
+        "synonyms": [
+            "ADMIO",
+            "ADMIO1",
+            "APRF",
+            "HIES"
+        ]
+    },
+    "6778": {
+        "recommended_name": "STAT6",
+        "synonyms": [
+            "D12S1644",
+            "HIES6",
+            "IL-4-STAT",
+            "STAT6B",
+            "STAT6C"
+        ]
+    },
+    "10963": {
+        "recommended_name": "STIP1",
+        "synonyms": [
+            "HEL-S-94n",
+            "HOP",
+            "IEF-SSP-3521",
+            "P60",
+            "STI1",
+            "STI1L"
+        ]
+    },
+    "6850": {
+        "recommended_name": "SYK",
+        "synonyms": [
+            "IMD82",
+            "p72-Syk"
+        ]
+    },
+    "7124": {
+        "recommended_name": "TNF",
+        "synonyms": [
+            "DIF",
+            "TNF-alpha",
+            "TNFA",
+            "TNFSF2",
+            "TNLG1F"
+        ]
+    },
+    "7415": {
+        "recommended_name": "VCP",
+        "synonyms": [
+            "CDC48",
+            "FTDALS6",
+            "TERA",
+            "p97"
+        ]
+    },
+    "2324": {
+        "recommended_name": "FLT4",
+        "synonyms": [
+            "CHTD7",
+            "FLT-4",
+            "FLT41",
+            "LMPH1A",
+            "LMPHM1",
+            "PCL",
+            "VEGFR-3",
+            "VEGFR3"
+        ]
+    },
+    "7139": {
+        "recommended_name": "TNNT2",
+        "synonyms": [
+            "CMD1D",
+            "CMH2",
+            "CMPD2",
+            "LVNC6",
+            "RCM3",
+            "TnTC",
+            "cTnT"
+        ]
+    },
+    "1471": {
+        "recommended_name": "CST3",
+        "synonyms": [
+            "ARMD11",
+            "HEL-S-2"
+        ]
+    },
+    "2277": {
+        "recommended_name": "VEGFD",
+        "synonyms": [
+            "FIGF",
+            "VEGF-D"
+        ]
+    },
+    "4255": {
+        "recommended_name": "MGMT",
+        "synonyms": []
+    },
+    "29126": {
+        "recommended_name": "CD274",
+        "synonyms": [
+            "B7-H",
+            "B7H1",
+            "PD-L1",
+            "PDCD1L1",
+            "PDCD1LG1",
+            "PDL1",
+            "hPD-L1"
+        ]
+    },
+    "7090": {
+        "recommended_name": "TLE3",
+        "synonyms": [
+            "ESG",
+            "ESG3",
+            "GRG3",
+            "HsT18976"
+        ]
+    },
+    "7150": {
+        "recommended_name": "TOP1",
+        "synonyms": [
+            "TOPI"
+        ]
+    },
+    "10381": {
+        "recommended_name": "TUBB3",
+        "synonyms": [
+            "CDCBM",
+            "CDCBM1",
+            "CFEOM3",
+            "CFEOM3A",
+            "FEOM3",
+            "TUBB4",
+            "beta-4"
+        ]
+    },
+    "8289": {
+        "recommended_name": "ARID1A",
+        "synonyms": [
+            "B120",
+            "BAF250",
+            "BAF250a",
+            "BM029",
+            "C1orf4",
+            "CSS2",
+            "ELD",
+            "MRD14",
+            "OSA1",
+            "P270",
+            "SMARCF1",
+            "hELD",
+            "hOSA1"
+        ]
+    },
+    "216": {
+        "recommended_name": "ALDH1A1",
+        "synonyms": [
+            "ALDC",
+            "ALDH-E1",
+            "ALDH1",
+            "ALDH11",
+            "HEL-9",
+            "HEL-S-53e",
+            "HEL12",
+            "PUMB1",
+            "RALDH1"
+        ]
+    },
+    "960": {
+        "recommended_name": "CD44",
+        "synonyms": [
+            "CDW44",
+            "CSPG8",
+            "ECM-III",
+            "ECMR-III",
+            "H-CAM",
+            "HCELL",
+            "HUTCH-1",
+            "HUTCH-I",
+            "Hermes-1",
+            "IN",
+            "LHR",
+            "MC56",
+            "MDU2",
+            "MDU3",
+            "MIC4",
+            "Pgp1"
+        ]
+    },
+    "5788": {
+        "recommended_name": "PTPRC",
+        "synonyms": [
+            "B220",
+            "CD45",
+            "CD45R",
+            "GP180",
+            "IMD105",
+            "L-CA",
+            "LCA",
+            "LY5",
+            "T200"
+        ]
+    },
+    "7070": {
+        "recommended_name": "THY1",
+        "synonyms": [
+            "CD90",
+            "CDw90"
+        ]
+    },
+    "2022": {
+        "recommended_name": "ENG",
+        "synonyms": [
+            "END",
+            "HHT1",
+            "ORW1"
+        ]
+    },
+    "79923": {
+        "recommended_name": "NANOG",
+        "synonyms": []
+    },
+    "6197": {
+        "recommended_name": "RPS6KA3",
+        "synonyms": [
+            "CLS",
+            "HU-3",
+            "ISPK-1",
+            "MAPKAPK1B",
+            "MRX19",
+            "RSK",
+            "RSK2",
+            "S6K-alpha3",
+            "XLID19",
+            "p90-RSK2",
+            "pp90RSK2"
+        ]
+    },
+    "2017": {
+        "recommended_name": "CTTN",
+        "synonyms": [
+            "EMS1"
+        ]
+    },
+    "4323": {
+        "recommended_name": "MMP14",
+        "synonyms": [
+            "MMP-14",
+            "MMP-X1",
+            "MT-MMP",
+            "MT-MMP 1",
+            "MT1-MMP",
+            "MT1MMP",
+            "MTMMP1",
+            "WNCHRS"
+        ]
+    },
+    "3606": {
+        "recommended_name": "IL18",
+        "synonyms": [
+            "IGIF",
+            "IL-18",
+            "IL-1g",
+            "IL1F4"
+        ]
+    },
+    "3934": {
+        "recommended_name": "LCN2",
+        "synonyms": [
+            "24p3",
+            "MSFI",
+            "NGAL",
+            "p25"
+        ]
+    },
+    "259": {
+        "recommended_name": "AMBP",
+        "synonyms": [
+            "A1M",
+            "EDC1",
+            "HCP",
+            "HI30",
+            "IATIL",
+            "ITI",
+            "ITIL",
+            "ITILC",
+            "UTI"
+        ]
+    },
+    "567": {
+        "recommended_name": "B2M",
+        "synonyms": [
+            "IMD43"
+        ]
+    },
+    "7369": {
+        "recommended_name": "UMOD",
+        "synonyms": [
+            "ADMCKD2",
+            "ADTKD1",
+            "FJHN",
+            "HNFJ",
+            "HNFJ1",
+            "MCKD2",
+            "THGP",
+            "THP"
+        ]
+    },
+    "213": {
+        "recommended_name": "ALB",
+        "synonyms": [
+            "FDAHT",
+            "HSA",
+            "PRO0883",
+            "PRO0903",
+            "PRO1341"
+        ]
+    },
+    "11113": {
+        "recommended_name": "CIT",
+        "synonyms": [
+            "CITK",
+            "CRIK",
+            "MCPH17",
+            "STK21"
+        ]
+    },
+    "5968": {
+        "recommended_name": "REG1B",
+        "synonyms": [
+            "PSPS2",
+            "REGH",
+            "REGI-BETA",
+            "REGL"
+        ]
+    },
+    "929": {
+        "recommended_name": "CD14",
+        "synonyms": []
+    },
+    "5444": {
+        "recommended_name": "PON1",
+        "synonyms": [
+            "ESA",
+            "MVCD5",
+            "PON"
+        ]
+    },
+    "5028": {
+        "recommended_name": "P2RY1",
+        "synonyms": [
+            "P2Y1",
+            "SARCC"
+        ]
+    },
+    "5243": {
+        "recommended_name": "ABCB1",
+        "synonyms": [
+            "ABC20",
+            "CD243",
+            "CLCS",
+            "GP170",
+            "MDR1",
+            "P-GP",
+            "PGY1",
+            "p-170"
+        ]
+    },
+    "6915": {
+        "recommended_name": "TBXA2R",
+        "synonyms": [
+            "BDPLT13",
+            "TXA2-R"
+        ]
+    },
+    "7941": {
+        "recommended_name": "PLA2G7",
+        "synonyms": [
+            "LDL-PLA2",
+            "LP-PLA2",
+            "PAFAD",
+            "PAFAH"
+        ]
+    },
+    "3690": {
+        "recommended_name": "ITGB3",
+        "synonyms": [
+            "BDPLT16",
+            "BDPLT2",
+            "BDPLT24",
+            "CD61",
+            "GP3A",
+            "GPIIIa",
+            "GT",
+            "GT2"
+        ]
+    },
+    "2811": {
+        "recommended_name": "GP1BA",
+        "synonyms": [
+            "BDPLT1",
+            "BDPLT3",
+            "BSS",
+            "CD42B",
+            "CD42b-alpha",
+            "DBPLT3",
+            "GP1B",
+            "GPIbA",
+            "GPIbalpha",
+            "VWDP"
+        ]
+    },
+    "5743": {
+        "recommended_name": "PTGS2",
+        "synonyms": [
+            "COX-2",
+            "COX2",
+            "GRIPGHS",
+            "PGG/HS",
+            "PGHS-2",
+            "PHS-2",
+            "hCox-2"
+        ]
+    },
+    "241": {
+        "recommended_name": "ALOX5AP",
+        "synonyms": [
+            "FLAP"
+        ]
+    },
+    "5742": {
+        "recommended_name": "PTGS1",
+        "synonyms": [
+            "COX1",
+            "COX3",
+            "PCOX1",
+            "PES-1",
+            "PGG/HS",
+            "PGHS-1",
+            "PGHS1",
+            "PHS1",
+            "PTGHS"
+        ]
+    },
+    "239": {
+        "recommended_name": "ALOX12",
+        "synonyms": [
+            "12-LOX",
+            "12S-LOX",
+            "LOG12"
+        ]
+    },
+    "3162": {
+        "recommended_name": "HMOX1",
+        "synonyms": [
+            "HMOX1D",
+            "HO-1",
+            "HSP32",
+            "bK286B10"
+        ]
+    },
+    "3565": {
+        "recommended_name": "IL4",
+        "synonyms": [
+            "BCGF-1",
+            "BCGF1",
+            "BSF-1",
+            "BSF1",
+            "IL-4"
+        ]
+    },
+    "3567": {
+        "recommended_name": "IL5",
+        "synonyms": [
+            "EDF",
+            "IL-5",
+            "TRF"
+        ]
+    },
+    "3574": {
+        "recommended_name": "IL7",
+        "synonyms": [
+            "IL-7"
+        ]
+    },
+    "5175": {
+        "recommended_name": "PECAM1",
+        "synonyms": [
+            "CD31",
+            "CD31/EndoCAM",
+            "GPIIA'",
+            "PECA1",
+            "PECAM-1",
+            "endoCAM"
+        ]
+    },
+    "5054": {
+        "recommended_name": "SERPINE1",
+        "synonyms": [
+            "PAI",
+            "PAI-1",
+            "PAI1",
+            "PLANH1"
+        ]
+    },
+    "348": {
+        "recommended_name": "APOE",
+        "synonyms": [
+            "AD2",
+            "APO-E",
+            "ApoE4",
+            "LDLCQ5",
+            "LPG"
+        ]
+    },
+    "283": {
+        "recommended_name": "ANG",
+        "synonyms": [
+            "ALS9",
+            "HEL168",
+            "RAA1",
+            "RNASE4",
+            "RNASE5"
+        ]
+    },
+    "4319": {
+        "recommended_name": "MMP10",
+        "synonyms": [
+            "SL-2",
+            "STMY2"
+        ]
+    },
+    "6356": {
+        "recommended_name": "CCL11",
+        "synonyms": [
+            "SCYA11"
+        ]
+    },
+    "6351": {
+        "recommended_name": "CCL4",
+        "synonyms": [
+            "ACT2",
+            "AT744.1",
+            "G-26",
+            "HC21",
+            "LAG-1",
+            "LAG1",
+            "MIP-1-beta",
+            "MIP1B",
+            "MIP1B1",
+            "SCYA2",
+            "SCYA4"
+        ]
+    },
+    "6352": {
+        "recommended_name": "CCL5",
+        "synonyms": [
+            "D17S136E",
+            "RANTES",
+            "SCYA5",
+            "SIS-delta",
+            "SISd",
+            "TCP228",
+            "eoCP"
+        ]
+    },
+    "7042": {
+        "recommended_name": "TGFB2",
+        "synonyms": [
+            "G-TSF",
+            "LDS4",
+            "TGF-beta2"
+        ]
+    },
+    "627": {
+        "recommended_name": "BDNF",
+        "synonyms": [
+            "ANON2",
+            "BULN2"
+        ]
+    },
+    "729230": {
+        "recommended_name": "CCR2",
+        "synonyms": [
+            "CC-CKR-2",
+            "CCR-2",
+            "CCR2A",
+            "CCR2B",
+            "CD192",
+            "CKR2",
+            "CKR2A",
+            "CKR2B",
+            "CMKBR2",
+            "MCP-1-R",
+            "PCLUD"
+        ]
+    },
+    "3458": {
+        "recommended_name": "IFNG",
+        "synonyms": [
+            "IFG",
+            "IFI",
+            "IMD69"
+        ]
+    },
+    "7040": {
+        "recommended_name": "TGFB1",
+        "synonyms": [
+            "CED",
+            "DPD1",
+            "IBDIMDE",
+            "LAP",
+            "TGF-beta1",
+            "TGFB",
+            "TGFbeta"
+        ]
+    },
+    "240": {
+        "recommended_name": "ALOX5",
+        "synonyms": [
+            "5-LO",
+            "5-LOX",
+            "5LPG",
+            "LOG5"
+        ]
+    },
+    "397": {
+        "recommended_name": "ARHGDIB",
+        "synonyms": [
+            "D4",
+            "GDIA2",
+            "GDID4",
+            "LYGDI",
+            "Ly-GDI",
+            "RAP1GN1",
+            "RhoGDI2"
+        ]
+    },
+    "6363": {
+        "recommended_name": "CCL19",
+        "synonyms": [
+            "CKb11",
+            "ELC",
+            "MIP-3b",
+            "MIP3B",
+            "SCYA19"
+        ]
+    },
+    "1236": {
+        "recommended_name": "CCR7",
+        "synonyms": [
+            "BLR2",
+            "CC-CKR-7",
+            "CCR-7",
+            "CD197",
+            "CDw197",
+            "CMKBR7",
+            "EBI1"
+        ]
+    },
+    "1440": {
+        "recommended_name": "CSF3",
+        "synonyms": [
+            "C17orf33",
+            "CSF3OS",
+            "GCSF"
+        ]
+    },
+    "7852": {
+        "recommended_name": "CXCR4",
+        "synonyms": [
+            "CD184",
+            "D2S201E",
+            "FB22",
+            "HM89",
+            "HSY3RR",
+            "LAP-3",
+            "LAP3",
+            "LCR1",
+            "LESTR",
+            "NPY3R",
+            "NPYR",
+            "NPYRL",
+            "NPYY3R",
+            "WHIM",
+            "WHIMS",
+            "WHIMS1"
+        ]
+    },
+    "114757": {
+        "recommended_name": "CYGB",
+        "synonyms": [
+            "HGB",
+            "NOD",
+            "STAP"
+        ]
+    },
+    "1977": {
+        "recommended_name": "EIF4E",
+        "synonyms": [
+            "AUTS19",
+            "CBP",
+            "EIF4E1",
+            "EIF4EL1",
+            "EIF4F",
+            "eIF-4E"
+        ]
+    },
+    "2069": {
+        "recommended_name": "EREG",
+        "synonyms": [
+            "EPR",
+            "ER",
+            "Ep"
+        ]
+    },
+    "3492": {
+        "recommended_name": "IGH",
+        "synonyms": [
+            "IGD1",
+            "IGH.1@",
+            "IGH@",
+            "IGHD@",
+            "IGHDY1",
+            "IGHJ",
+            "IGHJ@",
+            "IGHV",
+            "IGHV@"
+        ]
+    },
+    "3791": {
+        "recommended_name": "KDR",
+        "synonyms": [
+            "CD309",
+            "FLK1",
+            "VEGFR",
+            "VEGFR2"
+        ]
+    },
+    "3932": {
+        "recommended_name": "LCK",
+        "synonyms": [
+            "IMD22",
+            "LSK",
+            "YT16",
+            "p56lck",
+            "pp58lck"
+        ]
+    },
+    "3936": {
+        "recommended_name": "LCP1",
+        "synonyms": [
+            "CP64",
+            "HEL-S-37",
+            "L-PLASTIN",
+            "LC64P",
+            "LPL",
+            "PLS2"
+        ]
+    },
+    "3956": {
+        "recommended_name": "LGALS1",
+        "synonyms": [
+            "GAL1",
+            "GBP"
+        ]
+    },
+    "931": {
+        "recommended_name": "MS4A1",
+        "synonyms": [
+            "B1",
+            "Bp35",
+            "CD20",
+            "CVID5",
+            "FMC7",
+            "LEU-16",
+            "S7"
+        ]
+    },
+    "5069": {
+        "recommended_name": "PAPPA",
+        "synonyms": [
+            "ASBABP2",
+            "DIPLA1",
+            "IGFBP-4ase",
+            "PAPA",
+            "PAPP-A",
+            "PAPPA1"
+        ]
+    },
+    "5159": {
+        "recommended_name": "PDGFRB",
+        "synonyms": [
+            "CD140B",
+            "IBGC4",
+            "IMF1",
+            "JTK12",
+            "KOGS",
+            "PDGFR",
+            "PDGFR-1",
+            "PDGFR1",
+            "PENTT"
+        ]
+    },
+    "5579": {
+        "recommended_name": "PRKCB",
+        "synonyms": [
+            "PKC-beta",
+            "PKCB",
+            "PKCI(2)",
+            "PKCbeta",
+            "PRKCB1",
+            "PRKCB2"
+        ]
+    },
+    "6423": {
+        "recommended_name": "SFRP2",
+        "synonyms": [
+            "FRP-2",
+            "SARP1",
+            "SDF-5"
+        ]
+    },
+    "64220": {
+        "recommended_name": "STRA6",
+        "synonyms": [
+            "MCOPCB8",
+            "MCOPS9",
+            "PP14296"
+        ]
+    },
+    "6876": {
+        "recommended_name": "TAGLN",
+        "synonyms": [
+            "SM22",
+            "SM22-alpha",
+            "SMCC",
+            "TAGLN1",
+            "TGLN",
+            "WS3-10"
+        ]
+    },
+    "7168": {
+        "recommended_name": "TPM1",
+        "synonyms": [
+            "C15orf13",
+            "CMD1Y",
+            "CMH3",
+            "HEL-S-265",
+            "HTM-alpha",
+            "LVNC9",
+            "TMSA"
+        ]
+    },
+    "706": {
+        "recommended_name": "TSPO",
+        "synonyms": [
+            "BPBS",
+            "BZRP",
+            "DBI",
+            "IBP",
+            "MBR",
+            "PBR",
+            "PBS",
+            "PKBS",
+            "PTBR",
+            "TSPO1",
+            "mDRC",
+            "pk18"
+        ]
+    },
+    "3383": {
+        "recommended_name": "ICAM1",
+        "synonyms": [
+            "BB2",
+            "CD54",
+            "P3.58"
+        ]
+    },
+    "54209": {
+        "recommended_name": "TREM2",
+        "synonyms": [
+            "PLOSL2",
+            "TREM-2",
+            "Trem2a",
+            "Trem2b",
+            "Trem2c"
+        ]
+    },
+    "7412": {
+        "recommended_name": "VCAM1",
+        "synonyms": [
+            "CD106",
+            "INCAM-100"
+        ]
+    },
+    "2026": {
+        "recommended_name": "ENO2",
+        "synonyms": [
+            "HEL-S-279",
+            "NSE"
+        ]
+    },
+    "1436": {
+        "recommended_name": "CSF1R",
+        "synonyms": [
+            "BANDDOS",
+            "C-FMS",
+            "CD115",
+            "CSF-1R",
+            "CSFR",
+            "FIM2",
+            "FMS",
+            "GPSC",
+            "HDLS",
+            "HDLS1",
+            "M-CSF-R"
+        ]
+    },
+    "4900": {
+        "recommended_name": "NRGN",
+        "synonyms": [
+            "RC3",
+            "hng"
+        ]
+    },
+    "7447": {
+        "recommended_name": "VSNL1",
+        "synonyms": [
+            "HLP3",
+            "HPCAL3",
+            "HUVISL1",
+            "VILIP",
+            "VILIP-1"
+        ]
+    },
+    "9588": {
+        "recommended_name": "PRDX6",
+        "synonyms": [
+            "1-Cys",
+            "AOP2",
+            "HEL-S-128m",
+            "LPCAT-5",
+            "NSGPx",
+            "PRX",
+            "aiPLA2",
+            "p29"
+        ]
+    },
+    "6383": {
+        "recommended_name": "SDC2",
+        "synonyms": [
+            "CD362",
+            "HSPG",
+            "HSPG1",
+            "SYND2"
+        ]
+    },
+    "83439": {
+        "recommended_name": "TCF7L1",
+        "synonyms": [
+            "TCF-3",
+            "TCF3"
+        ]
+    },
+    "661": {
+        "recommended_name": "POLR3D",
+        "synonyms": [
+            "BN51T",
+            "C53",
+            "RPC4",
+            "RPC53",
+            "TSBN51"
+        ]
+    },
+    "952": {
+        "recommended_name": "CD38",
+        "synonyms": [
+            "ADPRC 1",
+            "ADPRC1",
+            "cADPR1"
+        ]
+    },
+    "909": {
+        "recommended_name": "CD1A",
+        "synonyms": [
+            "CD1",
+            "FCB6",
+            "HTA1",
+            "R4",
+            "T6"
+        ]
+    },
+    "1576": {
+        "recommended_name": "CYP3A4",
+        "synonyms": [
+            "CP33",
+            "CP34",
+            "CYP3A",
+            "CYP3A3",
+            "CYPIIIA3",
+            "CYPIIIA4",
+            "HLP",
+            "NF-25",
+            "P450C3",
+            "P450PCN1",
+            "VDDR3"
+        ]
+    },
+    "39": {
+        "recommended_name": "ACAT2",
+        "synonyms": []
+    },
+    "1593": {
+        "recommended_name": "CYP27A1",
+        "synonyms": [
+            "CP27",
+            "CTX",
+            "CYP27"
+        ]
+    },
+    "151056": {
+        "recommended_name": "PLB1",
+        "synonyms": [
+            "PLB",
+            "PLB/LIP"
+        ]
+    },
+    "1807": {
+        "recommended_name": "DPYS",
+        "synonyms": [
+            "DHP",
+            "DHPase"
+        ]
+    },
+    "2571": {
+        "recommended_name": "GAD1",
+        "synonyms": [
+            "CPSQ1",
+            "DEE89",
+            "GAD",
+            "SCP"
+        ]
+    },
+    "4056": {
+        "recommended_name": "LTC4S",
+        "synonyms": []
+    },
+    "586": {
+        "recommended_name": "BCAT1",
+        "synonyms": [
+            "BCATC",
+            "BCT1",
+            "ECA39",
+            "MECA39",
+            "PNAS121",
+            "PP18"
+        ]
+    },
+    "593": {
+        "recommended_name": "BCKDHA",
+        "synonyms": [
+            "BCKDE1A",
+            "MSU",
+            "MSUD1",
+            "MSUD1A",
+            "OVD1A"
+        ]
+    },
+    "594": {
+        "recommended_name": "BCKDHB",
+        "synonyms": [
+            "BCKDE1B",
+            "BCKDH E1-beta",
+            "E1B",
+            "MSUD1B",
+            "OVD1B"
+        ]
+    },
+    "87": {
+        "recommended_name": "ACTN1",
+        "synonyms": [
+            "BDPLT15"
+        ]
+    },
+    "3699": {
+        "recommended_name": "ITIH3",
+        "synonyms": [
+            "H3P",
+            "ITI-HC3",
+            "SHAP"
+        ]
+    },
+    "8542": {
+        "recommended_name": "APOL1",
+        "synonyms": [
+            "APO-L",
+            "APOL",
+            "APOL-I",
+            "FSGS4"
+        ]
+    },
+    "8312": {
+        "recommended_name": "AXIN1",
+        "synonyms": [
+            "AXIN",
+            "CMDOH",
+            "PPP1R49"
+        ]
+    },
+    "841": {
+        "recommended_name": "CASP8",
+        "synonyms": [
+            "ALPS2B",
+            "CAP4",
+            "Casp-8",
+            "FLICE",
+            "MACH",
+            "MCH5"
+        ]
+    },
+    "6368": {
+        "recommended_name": "CCL23",
+        "synonyms": [
+            "CK-BETA-8",
+            "CKb8",
+            "Ckb-8",
+            "Ckb-8-1",
+            "MIP-3",
+            "MIP3",
+            "MPIF-1",
+            "SCYA23",
+            "hmrp-2a"
+        ]
+    },
+    "958": {
+        "recommended_name": "CD40",
+        "synonyms": [
+            "Bp50",
+            "CDW40",
+            "TNFRSF5",
+            "p50"
+        ]
+    },
+    "2919": {
+        "recommended_name": "CXCL1",
+        "synonyms": [
+            "FSP",
+            "GRO1",
+            "GROa",
+            "MGSA",
+            "MGSA-a",
+            "NAP-3",
+            "SCYB1"
+        ]
+    },
+    "6372": {
+        "recommended_name": "CXCL6",
+        "synonyms": [
+            "CKA-3",
+            "GCP-2",
+            "GCP2",
+            "SCYB6"
+        ]
+    },
+    "6373": {
+        "recommended_name": "CXCL11",
+        "synonyms": [
+            "H174",
+            "I-TAC",
+            "IP-9",
+            "IP9",
+            "SCYB11",
+            "SCYB9B",
+            "b-R1"
+        ]
+    },
+    "92737": {
+        "recommended_name": "DNER",
+        "synonyms": [
+            "UNQ26",
+            "bet"
+        ]
+    },
+    "2668": {
+        "recommended_name": "GDNF",
+        "synonyms": [
+            "ATF",
+            "ATF1",
+            "ATF2",
+            "HFB1-GDNF",
+            "HSCR3"
+        ]
+    },
+    "6355": {
+        "recommended_name": "CCL8",
+        "synonyms": [
+            "HC14",
+            "MCP-2",
+            "MCP2",
+            "SCYA10",
+            "SCYA8"
+        ]
+    },
+    "6357": {
+        "recommended_name": "CCL13",
+        "synonyms": [
+            "CKb10",
+            "MCP-4",
+            "NCC-1",
+            "NCC1",
+            "SCYA13",
+            "SCYL1"
+        ]
+    },
+    "4312": {
+        "recommended_name": "MMP1",
+        "synonyms": [
+            "CLG",
+            "CLGN"
+        ]
+    },
+    "5008": {
+        "recommended_name": "OSM",
+        "synonyms": []
+    },
+    "22933": {
+        "recommended_name": "SIRT2",
+        "synonyms": [
+            "SIR2",
+            "SIR2L",
+            "SIR2L2"
+        ]
+    },
+    "10617": {
+        "recommended_name": "STAMBP",
+        "synonyms": [
+            "AMSH",
+            "MICCAP"
+        ]
+    },
+    "6817": {
+        "recommended_name": "SULT1A1",
+        "synonyms": [
+            "HAST1/HAST2",
+            "P-PST",
+            "P-PST 1",
+            "PST",
+            "ST1A1",
+            "ST1A3",
+            "STP",
+            "STP1",
+            "TSPST1",
+            "ts-PST"
+        ]
+    },
+    "8740": {
+        "recommended_name": "TNFSF14",
+        "synonyms": [
+            "CD258",
+            "HVEML",
+            "LIGHT",
+            "LTg"
+        ]
+    },
+    "8742": {
+        "recommended_name": "TNFSF12",
+        "synonyms": [
+            "APO3L",
+            "DR3LG",
+            "TNLG4A",
+            "TWEAK"
+        ]
+    },
+    "5328": {
+        "recommended_name": "PLAU",
+        "synonyms": [
+            "ATF",
+            "BDPLT5",
+            "QPD",
+            "UPA",
+            "URK",
+            "u-PA"
+        ]
+    },
+    "383": {
+        "recommended_name": "ARG1",
+        "synonyms": []
+    },
+    "4953": {
+        "recommended_name": "ODC1",
+        "synonyms": [
+            "BABS",
+            "NEDBA",
+            "NEDBIA",
+            "ODC"
+        ]
+    },
+    "6303": {
+        "recommended_name": "SAT1",
+        "synonyms": [
+            "DC21",
+            "KFSD",
+            "KFSDX",
+            "SAT",
+            "SSAT",
+            "SSAT-1"
+        ]
+    },
+    "6611": {
+        "recommended_name": "SMS",
+        "synonyms": [
+            "MRSR",
+            "MRXSSR",
+            "SPMSY",
+            "SRS",
+            "SpS"
+        ]
+    },
+    "6723": {
+        "recommended_name": "SRM",
+        "synonyms": [
+            "PAPT",
+            "SPDSY",
+            "SPS1",
+            "SRML1"
+        ]
+    },
+    "196743": {
+        "recommended_name": "PAOX",
+        "synonyms": [
+            "PAO"
+        ]
+    },
+    "5364": {
+        "recommended_name": "PLXNB1",
+        "synonyms": [
+            "PLEXIN-B1",
+            "PLXN5",
+            "SEP"
+        ]
+    },
+    "5307": {
+        "recommended_name": "PITX1",
+        "synonyms": [
+            "BFT",
+            "CCF",
+            "LBNBG",
+            "POTX",
+            "PTX1"
+        ]
+    },
+    "23138": {
+        "recommended_name": "N4BP3",
+        "synonyms": [
+            "LZTS4"
+        ]
+    },
+    "63898": {
+        "recommended_name": "SH2D4A",
+        "synonyms": [
+            "PPP1R38",
+            "SH2A"
+        ]
+    },
+    "9649": {
+        "recommended_name": "RALGPS1",
+        "synonyms": [
+            "RALGEF2",
+            "RALGPS1A"
+        ]
+    },
+    "59307": {
+        "recommended_name": "SIGIRR",
+        "synonyms": [
+            "IL-1R8",
+            "TIR8"
+        ]
+    },
+    "8495": {
+        "recommended_name": "PPFIBP2",
+        "synonyms": [
+            "Cclp1"
+        ]
+    },
+    "64788": {
+        "recommended_name": "LMF1",
+        "synonyms": [
+            "C16orf26",
+            "HMFN1876",
+            "JFP11",
+            "TMEM112",
+            "TMEM112A"
+        ]
+    },
+    "124961": {
+        "recommended_name": "ZFP3",
+        "synonyms": [
+            "ZNF752"
+        ]
+    },
+    "3131": {
+        "recommended_name": "HLF",
+        "synonyms": []
+    },
+    "79085": {
+        "recommended_name": "SLC25A23",
+        "synonyms": [
+            "APC2",
+            "MCSC2",
+            "SCAMC3",
+            "SCaMC-3"
+        ]
+    },
+    "54854": {
+        "recommended_name": "FAM83E",
+        "synonyms": []
+    },
+    "6493": {
+        "recommended_name": "SIM2",
+        "synonyms": [
+            "HMC13F06",
+            "HMC29C01",
+            "SIM",
+            "bHLHe15"
+        ]
+    },
+    "23528": {
+        "recommended_name": "ZNF281",
+        "synonyms": [
+            "GZP1",
+            "ZBP-99",
+            "ZBP99",
+            "ZNP-99"
+        ]
+    },
+    "4430": {
+        "recommended_name": "MYO1B",
+        "synonyms": [
+            "MMI-alpha",
+            "MMIa",
+            "MYH-1c",
+            "myr1"
+        ]
+    },
+    "10409": {
+        "recommended_name": "BASP1",
+        "synonyms": [
+            "CAP-23",
+            "CAP23",
+            "NAP-22",
+            "NAP22"
+        ]
+    },
+    "1437": {
+        "recommended_name": "CSF2",
+        "synonyms": [
+            "CSF",
+            "GMCSF"
+        ]
+    },
+    "29940": {
+        "recommended_name": "DSE",
+        "synonyms": [
+            "DS-epi1",
+            "DSEP",
+            "DSEPI",
+            "EDSMC2",
+            "SART-2",
+            "SART2"
+        ]
+    },
+    "57120": {
+        "recommended_name": "GOPC",
+        "synonyms": [
+            "CAL",
+            "FIG",
+            "GOPC1",
+            "PIST",
+            "dJ94G16.2"
+        ]
+    },
+    "285761": {
+        "recommended_name": "DCBLD1",
+        "synonyms": [
+            "dJ94G16.1"
+        ]
+    },
+    "11014": {
+        "recommended_name": "KDELR2",
+        "synonyms": [
+            "ELP-1",
+            "ELP1",
+            "ERD2.2",
+            "OI21"
+        ]
+    },
+    "55033": {
+        "recommended_name": "FKBP14",
+        "synonyms": [
+            "EDSKMH",
+            "EDSKSCL2",
+            "FKBP22",
+            "IPBP12"
+        ]
+    },
+    "3624": {
+        "recommended_name": "INHBA",
+        "synonyms": [
+            "EDF",
+            "FRP"
+        ]
+    },
+    "813": {
+        "recommended_name": "CALU",
+        "synonyms": []
+    },
+    "9242": {
+        "recommended_name": "MSC",
+        "synonyms": [
+            "ABF-1",
+            "ABF1",
+            "MYOR",
+            "bHLHa22"
+        ]
+    },
+    "55656": {
+        "recommended_name": "INTS8",
+        "synonyms": [
+            "C8orf52",
+            "INT8",
+            "NEDCHS"
+        ]
+    },
+    "79139": {
+        "recommended_name": "DERL1",
+        "synonyms": [
+            "DER-1",
+            "DER1",
+            "derlin-1"
+        ]
+    },
+    "10783": {
+        "recommended_name": "NEK6",
+        "synonyms": [
+            "SID6-1512"
+        ]
+    },
+    "871": {
+        "recommended_name": "SERPINH1",
+        "synonyms": [
+            "AsTP3",
+            "CBP1",
+            "CBP2",
+            "HSP47",
+            "OI10",
+            "PIG14",
+            "PPROM",
+            "RA-A47",
+            "SERPINH2",
+            "gp46"
+        ]
+    },
+    "220323": {
+        "recommended_name": "OAF",
+        "synonyms": [
+            "NS5ATP13TP2"
+        ]
+    },
+    "3678": {
+        "recommended_name": "ITGA5",
+        "synonyms": [
+            "CD49e",
+            "FNRA",
+            "VLA-5",
+            "VLA5A"
+        ]
+    },
+    "5829": {
+        "recommended_name": "PXN",
+        "synonyms": []
+    },
+    "10808": {
+        "recommended_name": "HSPH1",
+        "synonyms": [
+            "HSP105",
+            "HSP105A",
+            "HSP105B",
+            "NY-CO-25"
+        ]
+    },
+    "6617": {
+        "recommended_name": "SNAPC1",
+        "synonyms": [
+            "PTFgamma",
+            "SNAP43"
+        ]
+    },
+    "6447": {
+        "recommended_name": "SCG5",
+        "synonyms": [
+            "7B2",
+            "P7B2",
+            "SGNE1",
+            "SgV"
+        ]
+    },
+    "80790": {
+        "recommended_name": "CMIP",
+        "synonyms": [
+            "TCMIP"
+        ]
+    },
+    "5817": {
+        "recommended_name": "PVR",
+        "synonyms": [
+            "CD155",
+            "HVED",
+            "NECL5",
+            "Necl-5",
+            "PVS",
+            "TAGE4"
+        ]
+    },
+    "79649": {
+        "recommended_name": "MAP7D3",
+        "synonyms": [
+            "MDP3"
+        ]
+    },
+    "6118": {
+        "recommended_name": "RPA2",
+        "synonyms": [
+            "REPA2",
+            "RP-A p32",
+            "RP-A p34",
+            "RPA32"
+        ]
+    },
+    "57804": {
+        "recommended_name": "POLD4",
+        "synonyms": [
+            "POLDS",
+            "p12"
+        ]
+    },
+    "5599": {
+        "recommended_name": "MAPK8",
+        "synonyms": [
+            "JNK",
+            "JNK-46",
+            "JNK1",
+            "JNK1A2",
+            "JNK21B1/2",
+            "PRKM8",
+            "SAPK1",
+            "SAPK1c"
+        ]
+    },
+    "3665": {
+        "recommended_name": "IRF7",
+        "synonyms": [
+            "IMD39",
+            "IRF-7",
+            "IRF-7H",
+            "IRF7A",
+            "IRF7B",
+            "IRF7C",
+            "IRF7H"
+        ]
+    },
+    "3725": {
+        "recommended_name": "JUN",
+        "synonyms": [
+            "AP-1",
+            "AP1",
+            "c-Jun",
+            "cJUN",
+            "p39"
+        ]
+    },
+    "4790": {
+        "recommended_name": "NFKB1",
+        "synonyms": [
+            "CVID12",
+            "EBP-1",
+            "KBF1",
+            "NF-kB",
+            "NF-kB1",
+            "NF-kappa-B1",
+            "NF-kappaB",
+            "NF-kappabeta",
+            "NFKB-p105",
+            "NFKB-p50",
+            "NFkappaB"
+        ]
+    },
+    "4792": {
+        "recommended_name": "NFKBIA",
+        "synonyms": [
+            "EDAID2",
+            "IKBA",
+            "MAD-3",
+            "NFKBI"
+        ]
+    },
+    "356": {
+        "recommended_name": "FASLG",
+        "synonyms": [
+            "ALPS1B",
+            "APT1LG1",
+            "APTL",
+            "CD178",
+            "CD95-L",
+            "CD95L",
+            "FASL",
+            "TNFSF6",
+            "TNLG1A"
+        ]
+    },
+    "3977": {
+        "recommended_name": "LIFR",
+        "synonyms": [
+            "CD118",
+            "LIF-R",
+            "SJS2",
+            "STWS",
+            "SWS"
+        ]
+    },
+    "6773": {
+        "recommended_name": "STAT2",
+        "synonyms": [
+            "IMD44",
+            "ISGF-3",
+            "P113",
+            "PTORCH3",
+            "STAT113"
+        ]
+    },
+    "1230": {
+        "recommended_name": "CCR1",
+        "synonyms": [
+            "CD191",
+            "CKR-1",
+            "CKR1",
+            "CMKBR1",
+            "HM145",
+            "MIP1aR",
+            "SCYAR1"
+        ]
+    },
+    "10346": {
+        "recommended_name": "TRIM22",
+        "synonyms": [
+            "GPSTAF50",
+            "RNF94",
+            "STAF50"
+        ]
+    },
+    "1643": {
+        "recommended_name": "DDB2",
+        "synonyms": [
+            "DDBB",
+            "UV-DDB2",
+            "XPE"
+        ]
+    },
+    "1462": {
+        "recommended_name": "VCAN",
+        "synonyms": [
+            "CSPG2",
+            "ERVR",
+            "GHAP",
+            "PG-M",
+            "WGN",
+            "WGN1"
+        ]
+    },
+    "8612": {
+        "recommended_name": "PLPP2",
+        "synonyms": [
+            "LPP2",
+            "PAP-2c",
+            "PAP2-g",
+            "PPAP2C"
+        ]
+    },
+    "8842": {
+        "recommended_name": "PROM1",
+        "synonyms": [
+            "AC133",
+            "CD133",
+            "CORD12",
+            "MCDR2",
+            "MSTP061",
+            "PROML1",
+            "RP41",
+            "STGD4"
+        ]
+    },
+    "729085": {
+        "recommended_name": "GASK1A",
+        "synonyms": [
+            "C3orf41",
+            "FAM198A"
+        ]
+    },
+    "5166": {
+        "recommended_name": "PDK4",
+        "synonyms": []
+    },
+    "3600": {
+        "recommended_name": "IL15",
+        "synonyms": [
+            "IL-15"
+        ]
+    },
+    "5728": {
+        "recommended_name": "PTEN",
+        "synonyms": [
+            "10q23del",
+            "BZS",
+            "CWS1",
+            "DEC",
+            "GLM2",
+            "MHAM",
+            "MMAC1",
+            "PTEN1",
+            "PTENbeta",
+            "TEP1"
+        ]
+    },
+    "160728": {
+        "recommended_name": "SLC5A8",
+        "synonyms": [
+            "AIT",
+            "SMCT",
+            "SMCT1"
+        ]
+    },
+    "320": {
+        "recommended_name": "APBA1",
+        "synonyms": [
+            "D9S411E",
+            "LIN10",
+            "MINT1",
+            "X11",
+            "X11A",
+            "X11ALPHA"
+        ]
+    },
+    "1012": {
+        "recommended_name": "CDH13",
+        "synonyms": [
+            "CDHH",
+            "P105"
+        ]
+    },
+    "5947": {
+        "recommended_name": "RBP1",
+        "synonyms": [
+            "CRABP-I",
+            "CRBP",
+            "CRBP1",
+            "CRBPI",
+            "RBPC",
+            "hCRBP1"
+        ]
+    },
+    "864": {
+        "recommended_name": "RUNX3",
+        "synonyms": [
+            "AML2",
+            "CBFA3",
+            "PEBP2aC"
+        ]
+    },
+    "1029": {
+        "recommended_name": "CDKN2A",
+        "synonyms": [
+            "ARF",
+            "CAI2",
+            "CDK4I",
+            "CDKN2",
+            "CMM2",
+            "INK4",
+            "INK4A",
+            "MLM",
+            "MTS-1",
+            "MTS1",
+            "P14",
+            "P14ARF",
+            "P16",
+            "P16-INK4A",
+            "P16INK4",
+            "P16INK4A",
+            "P19",
+            "P19ARF",
+            "TP16"
+        ]
+    },
+    "6596": {
+        "recommended_name": "HLTF",
+        "synonyms": [
+            "HIP116",
+            "HIP116A",
+            "HLTF1",
+            "RNF80",
+            "SMARCA3",
+            "SNF2L3",
+            "ZBU1"
+        ]
+    },
+    "3676": {
+        "recommended_name": "ITGA4",
+        "synonyms": [
+            "CD49D",
+            "IA4"
+        ]
+    },
+    "100133941": {
+        "recommended_name": "CD24",
+        "synonyms": [
+            "CD24A"
+        ]
+    },
+    "3909": {
+        "recommended_name": "LAMA3",
+        "synonyms": [
+            "BM600",
+            "E170",
+            "JEB2A",
+            "JEB2B",
+            "JEB2C",
+            "LAMNA",
+            "LOCS"
+        ]
+    },
+    "8549": {
+        "recommended_name": "LGR5",
+        "synonyms": [
+            "FEX",
+            "GPR49",
+            "GPR67",
+            "GRP49",
+            "HG38"
+        ]
+    },
+    "6657": {
+        "recommended_name": "SOX2",
+        "synonyms": [
+            "ANOP3",
+            "MCOPS3"
+        ]
+    },
+    "2168": {
+        "recommended_name": "FABP1",
+        "synonyms": [
+            "FABPL",
+            "L-FABP"
+        ]
+    },
+    "55586": {
+        "recommended_name": "MIOX",
+        "synonyms": [
+            "ALDRL6"
+        ]
+    },
+    "4668": {
+        "recommended_name": "NAGA",
+        "synonyms": [
+            "D22S674",
+            "GALB"
+        ]
+    },
+    "5122": {
+        "recommended_name": "PCSK1",
+        "synonyms": [
+            "BMIQ12",
+            "NEC1",
+            "PC1",
+            "PC1/3",
+            "PC3",
+            "SPC3"
+        ]
+    },
+    "7857": {
+        "recommended_name": "SCG2",
+        "synonyms": [
+            "CHGC",
+            "EM66",
+            "SN",
+            "SgII"
+        ]
+    },
+    "9892": {
+        "recommended_name": "SNAP91",
+        "synonyms": [
+            "AP180",
+            "CALM"
+        ]
+    },
+    "3800": {
+        "recommended_name": "KIF5C",
+        "synonyms": [
+            "CDCBM2",
+            "KINN",
+            "NKHC",
+            "NKHC-2",
+            "NKHC2"
+        ]
+    },
+    "1114": {
+        "recommended_name": "CHGB",
+        "synonyms": [
+            "SCG1"
+        ]
+    },
+    "5864": {
+        "recommended_name": "RAB3A",
+        "synonyms": []
+    },
+    "1113": {
+        "recommended_name": "CHGA",
+        "synonyms": [
+            "CGA",
+            "PHE5",
+            "PHES"
+        ]
+    },
+    "796": {
+        "recommended_name": "CALCA",
+        "synonyms": [
+            "CALC1",
+            "CGRP",
+            "CGRP-I",
+            "CGRP-alpha",
+            "CGRP1",
+            "CT",
+            "KC",
+            "PCT"
+        ]
+    },
+    "5798": {
+        "recommended_name": "PTPRN",
+        "synonyms": [
+            "IA-2",
+            "IA-2/PTP",
+            "IA2",
+            "ICA512",
+            "R-PTP-N"
+        ]
+    },
+    "333": {
+        "recommended_name": "APLP1",
+        "synonyms": [
+            "APLP"
+        ]
+    },
+    "7345": {
+        "recommended_name": "UCHL1",
+        "synonyms": [
+            "HEL-117",
+            "HEL-S-53",
+            "NDGOA",
+            "PARK5",
+            "PGP 9.5",
+            "PGP9.5",
+            "PGP95",
+            "SPG79",
+            "SPG79A",
+            "UCHL-1",
+            "Uch-L1"
+        ]
+    },
+    "8941": {
+        "recommended_name": "CDK5R2",
+        "synonyms": [
+            "NCK5AI",
+            "P39",
+            "p39nck5ai"
+        ]
+    },
+    "9900": {
+        "recommended_name": "SV2A",
+        "synonyms": [
+            "DEE113",
+            "SLC22B1",
+            "SV2"
+        ]
+    },
+    "4741": {
+        "recommended_name": "NEFM",
+        "synonyms": [
+            "NEF3",
+            "NF-M",
+            "NFM"
+        ]
+    },
+    "55509": {
+        "recommended_name": "BATF3",
+        "synonyms": [
+            "JDP1",
+            "JUNDM1",
+            "SNFT"
+        ]
+    },
+    "10691": {
+        "recommended_name": "GMEB1",
+        "synonyms": [
+            "P96PIF",
+            "PIF96"
+        ]
+    },
+    "4774": {
+        "recommended_name": "NFIA",
+        "synonyms": [
+            "BRMUTD",
+            "C1DELp32p31",
+            "CTF",
+            "DEL1P32P31",
+            "NF-I/A",
+            "NF1-A",
+            "NFI-A",
+            "NFI-L"
+        ]
+    },
+    "5978": {
+        "recommended_name": "REST",
+        "synonyms": [
+            "DFNA27",
+            "GINGF5",
+            "HGF5",
+            "NRSF",
+            "WT6",
+            "XBR"
+        ]
+    },
+    "2833": {
+        "recommended_name": "CXCR3",
+        "synonyms": [
+            "CD182",
+            "CD183",
+            "CKR-L2",
+            "CMKAR3",
+            "GPR9",
+            "IP10-R",
+            "Mig-R",
+            "MigR"
+        ]
+    },
+    "1233": {
+        "recommended_name": "CCR4",
+        "synonyms": [
+            "CC-CKR-4",
+            "CD194",
+            "CKR4",
+            "CMKBR4",
+            "ChemR13",
+            "HGCN:14099",
+            "K5-5"
+        ]
+    },
+    "1235": {
+        "recommended_name": "CCR6",
+        "synonyms": [
+            "BN-1",
+            "C-C CKR-6",
+            "CC-CKR-6",
+            "CCR-6",
+            "CD196",
+            "CKR-L3",
+            "CKRL3",
+            "CMKBR6",
+            "DCR2",
+            "DRY6",
+            "GPR29",
+            "GPRCY4",
+            "STRL22"
+        ]
+    },
+    "2826": {
+        "recommended_name": "CCR10",
+        "synonyms": [
+            "GPR2"
+        ]
+    },
+    "6402": {
+        "recommended_name": "SELL",
+        "synonyms": [
+            "CD62L",
+            "LAM1",
+            "LECAM1",
+            "LEU8",
+            "LNHR",
+            "LSEL",
+            "LYAM1",
+            "PLNHR",
+            "TQ1"
+        ]
+    },
+    "1234": {
+        "recommended_name": "CCR5",
+        "synonyms": [
+            "CC-CKR-5",
+            "CCCKR5",
+            "CCR-5",
+            "CD195",
+            "CKR-5",
+            "CKR5",
+            "CMKBR5",
+            "IDDM22"
+        ]
+    },
+    "965": {
+        "recommended_name": "CD58",
+        "synonyms": [
+            "LFA-3",
+            "LFA3",
+            "ag3"
+        ]
+    },
+    "6932": {
+        "recommended_name": "TCF7",
+        "synonyms": [
+            "TCF-1"
+        ]
+    },
+    "11251": {
+        "recommended_name": "PTGDR2",
+        "synonyms": [
+            "CD294",
+            "CRTH2",
+            "DL1R",
+            "DP2",
+            "GPR44"
+        ]
+    },
+    "5468": {
+        "recommended_name": "PPARG",
+        "synonyms": [
+            "CIMT1",
+            "GLM1",
+            "NR1C3",
+            "PPARG1",
+            "PPARG2",
+            "PPARG5",
+            "PPARgamma"
+        ]
+    },
+    "3663": {
+        "recommended_name": "IRF5",
+        "synonyms": [
+            "SLEB10"
+        ]
+    },
+    "439921": {
+        "recommended_name": "MXRA7",
+        "synonyms": []
+    },
+    "3908": {
+        "recommended_name": "LAMA2",
+        "synonyms": [
+            "LAMM",
+            "MDC1A"
+        ]
+    },
+    "79026": {
+        "recommended_name": "AHNAK",
+        "synonyms": [
+            "AHNAK1",
+            "AHNAKRS",
+            "PM227"
+        ]
+    },
+    "2012": {
+        "recommended_name": "EMP1",
+        "synonyms": [
+            "CL-20",
+            "EMP-1",
+            "TMP"
+        ]
+    },
+    "4130": {
+        "recommended_name": "MAP1A",
+        "synonyms": [
+            "MAP1L",
+            "MTAP1A"
+        ]
+    },
+    "5592": {
+        "recommended_name": "PRKG1",
+        "synonyms": [
+            "AAT8",
+            "PKG",
+            "PKG1",
+            "PRKG1B",
+            "PRKGR1B",
+            "cGK",
+            "cGK 1",
+            "cGK1",
+            "cGKI",
+            "cGKI-BETA",
+            "cGKI-alpha"
+        ]
+    },
+    "6840": {
+        "recommended_name": "SVIL",
+        "synonyms": [
+            "MFM10"
+        ]
+    },
+    "55022": {
+        "recommended_name": "PID1",
+        "synonyms": [
+            "HMFN2073",
+            "NYGGF4",
+            "P-CLI1",
+            "PCLI1"
+        ]
+    },
+    "4684": {
+        "recommended_name": "NCAM1",
+        "synonyms": [
+            "CD56",
+            "MSK39",
+            "NCAM"
+        ]
+    },
+    "83700": {
+        "recommended_name": "JAM3",
+        "synonyms": [
+            "JAM-2",
+            "JAM-3",
+            "JAM-C",
+            "JAMC"
+        ]
+    },
+    "7132": {
+        "recommended_name": "TNFRSF1A",
+        "synonyms": [
+            "CD120a",
+            "FPF",
+            "TBP1",
+            "TNF-R",
+            "TNF-R-I",
+            "TNF-R55",
+            "TNFAR",
+            "TNFR1",
+            "TNFR55",
+            "TNFR60",
+            "p55",
+            "p55-R",
+            "p60"
+        ]
+    },
+    "7356": {
+        "recommended_name": "SCGB1A1",
+        "synonyms": [
+            "CC10",
+            "CC16",
+            "CCPBP",
+            "CCSP",
+            "UGB",
+            "UP-1",
+            "UP1"
+        ]
+    },
+    "1906": {
+        "recommended_name": "EDN1",
+        "synonyms": [
+            "ARCND3",
+            "ET1",
+            "HDLCQ7",
+            "PPET1",
+            "QME"
+        ]
+    },
+    "3500": {
+        "recommended_name": "IGHG1",
+        "synonyms": []
+    },
+    "3552": {
+        "recommended_name": "IL1A",
+        "synonyms": [
+            "IL-1 alpha",
+            "IL-1A",
+            "IL1",
+            "IL1-ALPHA",
+            "IL1F1"
+        ]
+    },
+    "3596": {
+        "recommended_name": "IL13",
+        "synonyms": [
+            "IL-13",
+            "P600"
+        ]
+    },
+    "4313": {
+        "recommended_name": "MMP2",
+        "synonyms": [
+            "CLG4",
+            "CLG4A",
+            "MMP-2",
+            "MMP-II",
+            "MONA",
+            "TBE-1"
+        ]
+    },
+    "1991": {
+        "recommended_name": "ELANE",
+        "synonyms": [
+            "ELA2",
+            "GE",
+            "HLE",
+            "HNE",
+            "NE",
+            "PMN-E",
+            "SCN1"
+        ]
+    },
+    "7076": {
+        "recommended_name": "TIMP1",
+        "synonyms": [
+            "CLGI",
+            "EPA",
+            "EPO",
+            "HCI",
+            "TIMP",
+            "TIMP-1"
+        ]
+    },
+    "10241": {
+        "recommended_name": "CALCOCO2",
+        "synonyms": [
+            "NDP52"
+        ]
+    },
+    "219285": {
+        "recommended_name": "SAMD9L",
+        "synonyms": [
+            "ATXPC",
+            "C7DELq",
+            "C7orf6",
+            "DEL7q",
+            "DRIF2",
+            "M7MLS1",
+            "MLSM7",
+            "SCA49",
+            "UEF1"
+        ]
+    },
+    "2633": {
+        "recommended_name": "GBP1",
+        "synonyms": [
+            "hGBP1"
+        ]
+    },
+    "10410": {
+        "recommended_name": "IFITM3",
+        "synonyms": [
+            "1-8U",
+            "DSPA2b",
+            "IP15"
+        ]
+    },
+    "3437": {
+        "recommended_name": "IFIT3",
+        "synonyms": [
+            "CIG-49",
+            "GARG-49",
+            "IFI60",
+            "IFIT4",
+            "IRG2",
+            "ISG60",
+            "P60",
+            "RIG-G",
+            "cig41"
+        ]
+    },
+    "29887": {
+        "recommended_name": "SNX10",
+        "synonyms": [
+            "OPTB8"
+        ]
     }
 }

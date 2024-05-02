@@ -3402,5 +3402,980 @@
             "P-30 antigen",
             "Semenogelase"
         ]
+    },
+    "P02787": {
+        "recommended_name": "Serotransferrin",
+        "synonyms": [
+            "Transferrin",
+            "Beta-1 metal-binding globulin",
+            "Siderophilin"
+        ]
+    },
+    "P02763": {
+        "recommended_name": "Alpha-1-acid glycoprotein 1",
+        "synonyms": [
+            "AGP 1",
+            "Orosomucoid-1",
+            "OMD 1"
+        ]
+    },
+    "P38398": {
+        "recommended_name": "Breast cancer type 1 susceptibility protein",
+        "synonyms": [
+            "RING finger protein 53",
+            "RING-type E3 ubiquitin transferase BRCA1"
+        ]
+    },
+    "P51587": {
+        "recommended_name": "Breast cancer type 2 susceptibility protein",
+        "synonyms": [
+            "Fanconi anemia group D1 protein"
+        ]
+    },
+    "P01116": {
+        "recommended_name": "GTPase KRas",
+        "synonyms": [
+            "K-Ras 2",
+            "Ki-Ras",
+            "c-K-ras",
+            "c-Ki-ras"
+        ]
+    },
+    "Q9ULP0": {
+        "recommended_name": "Protein NDRG4",
+        "synonyms": [
+            "Brain development-related molecule 1",
+            "N-myc downstream-regulated gene 4 protein",
+            "Vascular smooth muscle cell-associated protein 8",
+            "SMAP-8"
+        ]
+    },
+    "Q9Y2D5": {
+        "recommended_name": "PALM2-AKAP2 fusion protein",
+        "synonyms": [
+            "A-kinase anchor protein 2",
+            "AKAP-2",
+            "AKAP-KL",
+            "Paralemmin A kinase anchor protein",
+            "Paralemmin-2",
+            "Protein kinase A-anchoring protein 2",
+            "PRKA2"
+        ]
+    },
+    "P63010": {
+        "recommended_name": "AP-2 complex subunit beta",
+        "synonyms": [
+            "AP105B",
+            "Adaptor protein complex AP-2 subunit beta",
+            "Adaptor-related protein complex 2 subunit beta",
+            "Beta-2-adaptin",
+            "Beta-adaptin",
+            "Clathrin assembly protein complex 2 beta large chain",
+            "Plasma membrane adaptor HA2/AP2 adaptin beta subunit"
+        ]
+    },
+    "Q9BXH1": {
+        "recommended_name": "Bcl-2-binding component 3, isoforms 1/2",
+        "synonyms": [
+            "JFY-1",
+            "p53 up-regulated modulator of apoptosis"
+        ]
+    },
+    "O95388": {
+        "recommended_name": "CCN family member 4",
+        "synonyms": [
+            "WNT1-inducible-signaling pathway protein 1",
+            "WISP-1",
+            "Wnt-1-induced secreted protein"
+        ]
+    },
+    "Q9NRP2": {
+        "recommended_name": "COX assembly mitochondrial protein 2 homolog",
+        "synonyms": []
+    },
+    "P30038": {
+        "recommended_name": "Delta-1-pyrroline-5-carboxylate dehydrogenase, mitochondrial",
+        "synonyms": [
+            "P5C dehydrogenase",
+            "Aldehyde dehydrogenase family 4 member A1",
+            "L-glutamate gamma-semialdehyde dehydrogenase"
+        ]
+    },
+    "Q9NZJ0": {
+        "recommended_name": "Denticleless protein homolog",
+        "synonyms": [
+            "DDB1- and CUL4-associated factor 2",
+            "Lethal(2) denticleless protein homolog",
+            "Retinoic acid-regulated nuclear matrix-associated protein"
+        ]
+    },
+    "Q14566": {
+        "recommended_name": "DNA replication licensing factor MCM6",
+        "synonyms": [
+            "p105MCM"
+        ]
+    },
+    "Q9NQ30": {
+        "recommended_name": "Endothelial cell-specific molecule 1",
+        "synonyms": [
+            "ESM-1"
+        ]
+    },
+    "O75521": {
+        "recommended_name": "Enoyl-CoA delta isomerase 2",
+        "synonyms": [
+            "DRS-1",
+            "Delta(3),delta(2)-enoyl-CoA isomerase",
+            "D3,D2-enoyl-CoA isomerase",
+            "Diazepam-binding inhibitor-related protein 1",
+            "DBI-related protein 1",
+            "Dodecenoyl-CoA isomerase",
+            "Hepatocellular carcinoma-associated antigen 88",
+            "Peroxisomal 3,2-trans-enoyl-CoA isomerase",
+            "pECI",
+            "Renal carcinoma antigen NY-REN-1"
+        ]
+    },
+    "Q16394": {
+        "recommended_name": "Exostosin-1",
+        "synonyms": [
+            "Exostosin glycosyltransferase 1",
+            "Heparan sulfate co-polymerase subunit EXT1",
+            "Multiple exostoses protein 1",
+            "N-acetylglucosaminyl-proteoglycan 4-beta-glucuronosyltransferase"
+        ]
+    },
+    "O76093": {
+        "recommended_name": "Fibroblast growth factor 18",
+        "synonyms": [
+            "FGF-18",
+            "zFGF5"
+        ]
+    },
+    "O96020": {
+        "recommended_name": "G1/S-specific cyclin-E2",
+        "synonyms": []
+    },
+    "P21266": {
+        "recommended_name": "Glutathione S-transferase Mu 3",
+        "synonyms": [
+            "GST class-mu 3",
+            "GSTM3-3",
+            "hGSTM3-3"
+        ]
+    },
+    "P49915": {
+        "recommended_name": "GMP synthase [glutamine-hydrolyzing]",
+        "synonyms": [
+            "GMP synthetase",
+            "Glutamine amidotransferase"
+        ]
+    },
+    "P19086": {
+        "recommended_name": "Guanine nucleotide-binding protein G(z) subunit alpha",
+        "synonyms": [
+            "G(x) alpha chain",
+            "Gz-alpha"
+        ]
+    },
+    "O14777": {
+        "recommended_name": "Kinetochore protein NDC80 homolog",
+        "synonyms": [
+            "Highly expressed in cancer protein",
+            "Kinetochore protein Hec1",
+            "HsHec1",
+            "Kinetochore-associated protein 2",
+            "Retinoblastoma-associated protein HEC"
+        ]
+    },
+    "P49450": {
+        "recommended_name": "Histone H3-like centromeric protein A",
+        "synonyms": [
+            "Centromere autoantigen A",
+            "Centromere protein A",
+            "CENP-A"
+        ]
+    },
+    "P24593": {
+        "recommended_name": "Insulin-like growth factor-binding protein 5",
+        "synonyms": [
+            "IBP-5",
+            "IGF-binding protein 5",
+            "IGFBP-5"
+        ]
+    },
+    "Q14680": {
+        "recommended_name": "Maternal embryonic leucine zipper kinase",
+        "synonyms": [
+            "hMELK",
+            "Protein kinase Eg3",
+            "pEg3 kinase",
+            "Protein kinase PK38",
+            "hPK38",
+            "Tyrosine-protein kinase MELK"
+        ]
+    },
+    "P14780": {
+        "recommended_name": "Matrix metalloproteinase-9",
+        "synonyms": [
+            "MMP-9",
+            "92 kDa gelatinase",
+            "92 kDa type IV collagenase",
+            "Gelatinase B",
+            "GELB"
+        ]
+    },
+    "Q9GZW8": {
+        "recommended_name": "Membrane-spanning 4-domains subfamily A member 7",
+        "synonyms": [
+            "CD20 antigen-like 4",
+            "CD20/FC-epsilon-RI-beta family member 4",
+            "Four-span transmembrane protein 2"
+        ]
+    },
+    "Q5JRX3": {
+        "recommended_name": "Presequence protease, mitochondrial",
+        "synonyms": [
+            "hPreP",
+            "Pitrilysin metalloproteinase 1",
+            "Metalloprotease 1",
+            "hMP1"
+        ]
+    },
+    "P48645": {
+        "recommended_name": "Neuromedin-U",
+        "synonyms": []
+    },
+    "Q9Y5N6": {
+        "recommended_name": "Origin recognition complex subunit 6",
+        "synonyms": []
+    },
+    "P53816": {
+        "recommended_name": "Phospholipase A and acyltransferase 3",
+        "synonyms": [
+            "Adipose-specific phospholipase A2",
+            "AdPLA",
+            "Group XVI phospholipase A1/A2",
+            "H-rev 107 protein homolog",
+            "H-REV107",
+            "HREV107-1",
+            "HRAS-like suppressor 1",
+            "HRAS-like suppressor 3",
+            "HRSL3",
+            "HREV107-3",
+            "Renal carcinoma antigen NY-REN-65"
+        ]
+    },
+    "Q9H8V3": {
+        "recommended_name": "Protein ECT2",
+        "synonyms": [
+            "Epithelial cell-transforming sequence 2 oncogene"
+        ]
+    },
+    "O43663": {
+        "recommended_name": "Protein regulator of cytokinesis 1",
+        "synonyms": []
+    },
+    "Q9NRW1": {
+        "recommended_name": "Ras-related protein Rab-6B",
+        "synonyms": []
+    },
+    "P35249": {
+        "recommended_name": "Replication factor C subunit 4",
+        "synonyms": [
+            "Activator 1 37 kDa subunit",
+            "A1 37 kDa subunit",
+            "Activator 1 subunit 4",
+            "Replication factor C 37 kDa subunit",
+            "RF-C 37 kDa subunit",
+            "RFC37"
+        ]
+    },
+    "Q9NQ36": {
+        "recommended_name": "Signal peptide, CUB and EGF-like domain-containing protein 2",
+        "synonyms": [
+            "Protein CEGP1",
+            "Scube/You"
+        ]
+    },
+    "Q9GZT9": {
+        "recommended_name": "Egl nine homolog 1",
+        "synonyms": [
+            "Hypoxia-inducible factor prolyl hydroxylase 2",
+            "HIF-PH2",
+            "HIF-prolyl hydroxylase 2",
+            "HPH-2",
+            "Prolyl hydroxylase domain-containing protein 2",
+            "PHD2",
+            "SM-20"
+        ]
+    },
+    "O75920": {
+        "recommended_name": "Small EDRK-rich factor 1",
+        "synonyms": [
+            "Protein 4F5",
+            "h4F5",
+            "SMA modifier 1"
+        ]
+    },
+    "P11169": {
+        "recommended_name": "Solute carrier family 2, facilitated glucose transporter member 3",
+        "synonyms": [
+            "Glucose transporter type 3, brain",
+            "GLUT-3"
+        ]
+    },
+    "P55809": {
+        "recommended_name": "Succinyl-CoA:3-ketoacid coenzyme A transferase 1, mitochondrial",
+        "synonyms": [
+            "SCOT",
+            "3-oxoacid CoA-transferase 1",
+            "Somatic-type succinyl-CoA:3-oxoacid CoA-transferase",
+            "SCOT-s",
+            "Succinyl-CoA:3-oxoacid CoA transferase"
+        ]
+    },
+    "Q86VY4": {
+        "recommended_name": "Testis-specific Y-encoded-like protein 5",
+        "synonyms": [
+            "TSPY-like protein 5"
+        ]
+    },
+    "Q8IYR6": {
+        "recommended_name": "Tomoregulin-1",
+        "synonyms": [
+            "TR-1",
+            "H7365",
+            "Transmembrane protein with EGF-like and one follistatin-like domain"
+        ]
+    },
+    "Q9BQW3": {
+        "recommended_name": "Transcription factor COE4",
+        "synonyms": [
+            "Early B-cell factor 4",
+            "EBF-4",
+            "Olf-1/EBF-like 4",
+            "O/E-4",
+            "OE-4"
+        ]
+    },
+    "Q9Y5K5": {
+        "recommended_name": "Ubiquitin carboxyl-terminal hydrolase isozyme L5",
+        "synonyms": [
+            "UCH-L5",
+            "Ubiquitin C-terminal hydrolase UCH37",
+            "Ubiquitin thioesterase L5"
+        ]
+    },
+    "P17948": {
+        "recommended_name": "Vascular endothelial growth factor receptor 1",
+        "synonyms": [
+            "VEGFR-1",
+            "Fms-like tyrosine kinase 1",
+            "FLT-1",
+            "Tyrosine-protein kinase FRT",
+            "Tyrosine-protein kinase receptor FLT",
+            "FLT",
+            "Vascular permeability factor receptor"
+        ]
+    },
+    "P01111": {
+        "recommended_name": "GTPase NRas",
+        "synonyms": [
+            "Transforming protein N-Ras"
+        ]
+    },
+    "Q9UM73": {
+        "recommended_name": "ALK tyrosine kinase receptor",
+        "synonyms": [
+            "Anaplastic lymphoma kinase"
+        ]
+    },
+    "P11802": {
+        "recommended_name": "Cyclin-dependent kinase 4",
+        "synonyms": [
+            "Cell division protein kinase 4",
+            "PSK-J3"
+        ]
+    },
+    "Q16832": {
+        "recommended_name": "Discoidin domain-containing receptor 2",
+        "synonyms": [
+            "Discoidin domain receptor 2",
+            "CD167 antigen-like family member B",
+            "Discoidin domain-containing receptor tyrosine kinase 2",
+            "Neurotrophic tyrosine kinase, receptor-related 3",
+            "Receptor protein-tyrosine kinase TKT",
+            "Tyrosine-protein kinase TYRO10"
+        ]
+    },
+    "Q02750": {
+        "recommended_name": "Dual specificity mitogen-activated protein kinase kinase 1",
+        "synonyms": [
+            "MAP kinase kinase 1",
+            "MAPKK 1",
+            "MKK1",
+            "ERK activator kinase 1",
+            "MAPK/ERK kinase 1",
+            "MEK 1"
+        ]
+    },
+    "P36507": {
+        "recommended_name": "Dual specificity mitogen-activated protein kinase kinase 2",
+        "synonyms": [
+            "MAP kinase kinase 2",
+            "MAPKK 2",
+            "ERK activator kinase 2",
+            "MAPK/ERK kinase 2",
+            "MEK 2"
+        ]
+    },
+    "P01112": {
+        "recommended_name": "GTPase HRas",
+        "synonyms": [
+            "H-Ras-1",
+            "Ha-Ras",
+            "Transforming protein p21",
+            "c-H-ras",
+            "p21ras"
+        ]
+    },
+    "P10721": {
+        "recommended_name": "Mast/stem cell growth factor receptor Kit",
+        "synonyms": [
+            "SCFR",
+            "Piebald trait protein",
+            "PBT",
+            "Proto-oncogene c-Kit",
+            "Tyrosine-protein kinase Kit",
+            "p145 c-kit",
+            "v-kit Hardy-Zuckerman 4 feline sarcoma viral oncogene homolog"
+        ]
+    },
+    "P16234": {
+        "recommended_name": "Platelet-derived growth factor receptor alpha",
+        "synonyms": [
+            "PDGF-R-alpha",
+            "PDGFR-alpha",
+            "Alpha platelet-derived growth factor receptor",
+            "Alpha-type platelet-derived growth factor receptor",
+            "CD140 antigen-like family member A",
+            "CD140a antigen",
+            "Platelet-derived growth factor alpha receptor",
+            "Platelet-derived growth factor receptor 2",
+            "PDGFR-2"
+        ]
+    },
+    "P07949": {
+        "recommended_name": "Proto-oncogene tyrosine-protein kinase receptor Ret",
+        "synonyms": [
+            "Cadherin family member 12",
+            "Proto-oncogene c-Ret"
+        ]
+    },
+    "P08922": {
+        "recommended_name": "Proto-oncogene tyrosine-protein kinase ROS",
+        "synonyms": [
+            "Proto-oncogene c-Ros",
+            "Proto-oncogene c-Ros-1",
+            "Receptor tyrosine kinase c-ros oncogene 1",
+            "c-Ros receptor tyrosine kinase"
+        ]
+    },
+    "P31749": {
+        "recommended_name": "RAC-alpha serine/threonine-protein kinase",
+        "synonyms": [
+            "Protein kinase B",
+            "PKB",
+            "Protein kinase B alpha",
+            "PKB alpha",
+            "Proto-oncogene c-Akt",
+            "RAC-PK-alpha"
+        ]
+    },
+    "P04049": {
+        "recommended_name": "RAF proto-oncogene serine/threonine-protein kinase",
+        "synonyms": [
+            "Proto-oncogene c-RAF",
+            "cRaf",
+            "Raf-1"
+        ]
+    },
+    "P21860": {
+        "recommended_name": "Receptor tyrosine-protein kinase erbB-3",
+        "synonyms": [
+            "Proto-oncogene-like protein c-ErbB-3",
+            "Tyrosine kinase-type cell surface receptor HER3"
+        ]
+    },
+    "P42345": {
+        "recommended_name": "Serine/threonine-protein kinase mTOR",
+        "synonyms": [
+            "FK506-binding protein 12-rapamycin complex-associated protein 1",
+            "FKBP12-rapamycin complex-associated protein",
+            "Mammalian target of rapamycin",
+            "mTOR",
+            "Mechanistic target of rapamycin",
+            "Rapamycin and FKBP12 target 1",
+            "Rapamycin target protein 1"
+        ]
+    },
+    "Q9P1U1": {
+        "recommended_name": "Actin-related protein 3B",
+        "synonyms": [
+            "ARP3-beta",
+            "Actin-like protein 3B",
+            "Actin-related protein ARP4"
+        ]
+    },
+    "Q9NQW6": {
+        "recommended_name": "Anillin",
+        "synonyms": []
+    },
+    "P10415": {
+        "recommended_name": "Apoptosis regulator Bcl-2",
+        "synonyms": []
+    },
+    "P18440": {
+        "recommended_name": "Arylamine N-acetyltransferase 1",
+        "synonyms": [
+            "Arylamide acetylase 1",
+            "Monomorphic arylamine N-acetyltransferase",
+            "MNAT",
+            "N-acetyltransferase type 1",
+            "NAT-1"
+        ]
+    },
+    "O15392": {
+        "recommended_name": "Baculoviral IAP repeat-containing protein 5",
+        "synonyms": [
+            "Apoptosis inhibitor 4",
+            "Apoptosis inhibitor survivin"
+        ]
+    },
+    "Q99933": {
+        "recommended_name": "BAG family molecular chaperone regulator 1",
+        "synonyms": [
+            "BAG-1",
+            "Bcl-2-associated athanogene 1"
+        ]
+    },
+    "P53004": {
+        "recommended_name": "Biliverdin reductase A",
+        "synonyms": [
+            "BVR A",
+            "Biliverdin-IX alpha-reductase"
+        ]
+    },
+    "P22223": {
+        "recommended_name": "Cadherin-3",
+        "synonyms": [
+            "Placental cadherin",
+            "P-cadherin"
+        ]
+    },
+    "Q99741": {
+        "recommended_name": "Cell division control protein 6 homolog",
+        "synonyms": [
+            "CDC6-related protein",
+            "Cdc18-related protein",
+            "HsCdc18",
+            "p62(cdc6)",
+            "HsCDC6"
+        ]
+    },
+    "Q12834": {
+        "recommended_name": "Cell division cycle protein 20 homolog",
+        "synonyms": [
+            "p55CDC"
+        ]
+    },
+    "P49454": {
+        "recommended_name": "Centromere protein F",
+        "synonyms": [
+            "CENP-F",
+            "AH antigen",
+            "Kinetochore protein CENPF",
+            "Mitosin"
+        ]
+    },
+    "Q53EZ4": {
+        "recommended_name": "Centrosomal protein of 55 kDa",
+        "synonyms": [
+            "Cep55",
+            "Up-regulated in colon cancer 6"
+        ]
+    },
+    "Q7LFL8": {
+        "recommended_name": "CXXC-type zinc finger protein 5",
+        "synonyms": [
+            "CF5",
+            "Putative MAPK-activating protein PM08",
+            "Putative NF-kappa-B-activating protein 102",
+            "Retinoid-inducible nuclear factor",
+            "RINF"
+        ]
+    },
+    "O43175": {
+        "recommended_name": "D-3-phosphoglycerate dehydrogenase",
+        "synonyms": [
+            "3-PGDH",
+            "2-oxoglutarate reductase",
+            "Malate dehydrogenase"
+        ]
+    },
+    "Q00987": {
+        "recommended_name": "E3 ubiquitin-protein ligase Mdm2",
+        "synonyms": [
+            "Double minute 2 protein",
+            "Hdm2",
+            "Oncoprotein Mdm2",
+            "RING-type E3 ubiquitin transferase Mdm2",
+            "p53-binding protein Mdm2"
+        ]
+    },
+    "P03372": {
+        "recommended_name": "Estrogen receptor",
+        "synonyms": [
+            "ER",
+            "ER-alpha",
+            "Estradiol receptor",
+            "Nuclear receptor subfamily 3 group A member 1"
+        ]
+    },
+    "Q9UQ84": {
+        "recommended_name": "Exonuclease 1",
+        "synonyms": [
+            "hExo1",
+            "Exonuclease I",
+            "hExoI"
+        ]
+    },
+    "P22455": {
+        "recommended_name": "Fibroblast growth factor receptor 4",
+        "synonyms": [
+            "FGFR-4"
+        ]
+    },
+    "Q12948": {
+        "recommended_name": "Forkhead box protein C1",
+        "synonyms": [
+            "Forkhead-related protein FKHL7",
+            "Forkhead-related transcription factor 3",
+            "FREAC-3"
+        ]
+    },
+    "P24864": {
+        "recommended_name": "G1/S-specific cyclin-E1",
+        "synonyms": []
+    },
+    "P14635": {
+        "recommended_name": "G2/mitotic-specific cyclin-B1",
+        "synonyms": []
+    },
+    "Q14451": {
+        "recommended_name": "Growth factor receptor-bound protein 7",
+        "synonyms": [
+            "B47",
+            "Epidermal growth factor receptor GRB-7",
+            "GRB7 adapter protein"
+        ]
+    },
+    "P55317": {
+        "recommended_name": "Hepatocyte nuclear factor 3-alpha",
+        "synonyms": [
+            "HNF-3-alpha",
+            "HNF-3A",
+            "Forkhead box protein A1",
+            "Transcription factor 3A",
+            "TCF-3A"
+        ]
+    },
+    "P02533": {
+        "recommended_name": "Keratin, type I cytoskeletal 14",
+        "synonyms": [
+            "Cytokeratin-14",
+            "CK-14",
+            "Keratin-14",
+            "K14"
+        ]
+    },
+    "Q04695": {
+        "recommended_name": "Keratin, type I cytoskeletal 17",
+        "synonyms": [
+            "39.1",
+            "Cytokeratin-17",
+            "CK-17",
+            "Keratin-17",
+            "K17"
+        ]
+    },
+    "P13647": {
+        "recommended_name": "Keratin, type II cytoskeletal 5",
+        "synonyms": [
+            "58 kDa cytokeratin",
+            "Cytokeratin-5",
+            "CK-5",
+            "Keratin-5",
+            "K5",
+            "Type-II keratin Kb5"
+        ]
+    },
+    "Q99661": {
+        "recommended_name": "Kinesin-like protein KIF2C",
+        "synonyms": [
+            "Kinesin-like protein 6",
+            "Mitotic centromere-associated kinesin",
+            "MCAK"
+        ]
+    },
+    "Q9BZD4": {
+        "recommended_name": "Kinetochore protein Nuf2",
+        "synonyms": [
+            "hNuf2",
+            "hNuf2R",
+            "hsNuf2",
+            "Cell division cycle-associated protein 1"
+        ]
+    },
+    "Q96PC5": {
+        "recommended_name": "Melanoma inhibitory activity protein 2",
+        "synonyms": [
+            "MIA protein 2",
+            "CTAGE family member 5 ER export factor",
+            "Cutaneous T-cell lymphoma-associated antigen 5",
+            "Meningioma-expressed antigen 6/11"
+        ]
+    },
+    "Q9BV36": {
+        "recommended_name": "Melanophilin",
+        "synonyms": [
+            "Exophilin-3",
+            "Slp homolog lacking C2 domains a",
+            "SlaC2-a",
+            "Synaptotagmin-like protein 2a"
+        ]
+    },
+    "P10636": {
+        "recommended_name": "Microtubule-associated protein tau",
+        "synonyms": [
+            "Neurofibrillary tangle protein",
+            "Paired helical filament-tau",
+            "PHF-tau"
+        ]
+    },
+    "Q9BYG3": {
+        "recommended_name": "MKI67 FHA domain-interacting nucleolar phosphoprotein",
+        "synonyms": [
+            "Nucleolar phosphoprotein Nopp34",
+            "Nucleolar protein interacting with the FHA domain of pKI-67",
+            "hNIFK"
+        ]
+    },
+    "P10244": {
+        "recommended_name": "Myb-related protein B",
+        "synonyms": [
+            "B-Myb",
+            "Myb-like protein 2"
+        ]
+    },
+    "P01106": {
+        "recommended_name": "Myc proto-oncogene protein",
+        "synonyms": [
+            "Class E basic helix-loop-helix protein 39",
+            "bHLHe39",
+            "Proto-oncogene c-Myc",
+            "Transcription factor p64"
+        ]
+    },
+    "Q8H112": {
+        "recommended_name": "PGR5-like protein 1A, chloroplastic",
+        "synonyms": [
+            "Ferredoxin-plastoquinone reductase 1"
+        ]
+    },
+    "Q9UJ42": {
+        "recommended_name": "Probable G-protein coupled receptor 160",
+        "synonyms": [
+            "G-protein coupled receptor GPCR1",
+            "hGPCR1"
+        ]
+    },
+    "P31350": {
+        "recommended_name": "Ribonucleoside-diphosphate reductase subunit M2",
+        "synonyms": [
+            "Ribonucleotide reductase small chain",
+            "Ribonucleotide reductase small subunit"
+        ]
+    },
+    "Q8N474": {
+        "recommended_name": "Secreted frizzled-related protein 1",
+        "synonyms": [
+            "FRP-1",
+            "sFRP-1",
+            "Secreted apoptosis-related protein 2",
+            "SARP-2"
+        ]
+    },
+    "O95997": {
+        "recommended_name": "Securin",
+        "synonyms": [
+            "Esp1-associated protein",
+            "Pituitary tumor-transforming gene 1 protein",
+            "Tumor-transforming protein 1",
+            "hPTTG"
+        ]
+    },
+    "P24347": {
+        "recommended_name": "Stromelysin-3",
+        "synonyms": [
+            "SL-3",
+            "ST3",
+            "Matrix metalloproteinase-11",
+            "MMP-11"
+        ]
+    },
+    "Q96B21": {
+        "recommended_name": "Transmembrane protein 45B",
+        "synonyms": []
+    },
+    "O00762": {
+        "recommended_name": "Ubiquitin-conjugating enzyme E2 C",
+        "synonyms": [
+            "(E3-independent) E2 ubiquitin-conjugating enzyme C",
+            "E2 ubiquitin-conjugating enzyme C",
+            "UbcH10",
+            "Ubiquitin carrier protein C",
+            "Ubiquitin-protein ligase C"
+        ]
+    },
+    "Q9NPD8": {
+        "recommended_name": "Ubiquitin-conjugating enzyme E2 T",
+        "synonyms": [
+            "Cell proliferation-inducing gene 50 protein",
+            "E2 ubiquitin-conjugating enzyme T",
+            "Ubiquitin carrier protein T",
+            "Ubiquitin-protein ligase T"
+        ]
+    },
+    "Q13433": {
+        "recommended_name": "Zinc transporter ZIP6",
+        "synonyms": [
+            "Estrogen-regulated protein LIV-1",
+            "Solute carrier family 39 member 6",
+            "Zrt- and Irt-like protein 6",
+            "ZIP-6"
+        ]
+    },
+    "P11388": {
+        "recommended_name": "DNA topoisomerase 2-alpha",
+        "synonyms": [
+            "DNA topoisomerase II, alpha isozyme"
+        ]
+    },
+    "P22309": {
+        "recommended_name": "UDP-glucuronosyltransferase 1A1",
+        "synonyms": [
+            "UGT1A1",
+            "Bilirubin-specific UDPGT isozyme 1",
+            "hUG-BR1",
+            "UDP-glucuronosyltransferase 1-1",
+            "UDPGT 1-1",
+            "UGT1*1",
+            "UGT1-01",
+            "UGT1.1",
+            "UDP-glucuronosyltransferase 1A isoform 1"
+        ]
+    },
+    "Q9UIF7": {
+        "recommended_name": "Adenine DNA glycosylase",
+        "synonyms": [
+            "MutY homolog",
+            "hMYH"
+        ]
+    },
+    "Q99943": {
+        "recommended_name": "1-acyl-sn-glycerol-3-phosphate acyltransferase alpha",
+        "synonyms": [
+            "1-acylglycerol-3-phosphate O-acyltransferase 1",
+            "1-AGP acyltransferase 1",
+            "1-AGPAT 1",
+            "Lysophosphatidic acid acyltransferase alpha",
+            "LPAAT-alpha",
+            "Protein G15"
+        ]
+    },
+    "P61769": {
+        "recommended_name": "Beta-2-microglobulin",
+        "synonyms": []
+    },
+    "P17677": {
+        "recommended_name": "Neuromodulin",
+        "synonyms": [
+            "Axonal membrane protein GAP-43",
+            "Growth-associated protein 43",
+            "Neural phosphoprotein B-50",
+            "pp46"
+        ]
+    },
+    "P46695": {
+        "recommended_name": "Radiation-inducible immediate-early gene IEX-1",
+        "synonyms": [
+            "Differentiation-dependent gene 2 protein",
+            "Protein DIF-2",
+            "Immediate early protein GLY96",
+            "Immediate early response 3 protein",
+            "PACAP-responsive gene 1 protein",
+            "Protein PRG1"
+        ]
+    },
+    "Q8N726": {
+        "recommended_name": "Tumor suppressor ARF",
+        "synonyms": [
+            "Alternative reading frame",
+            "ARF",
+            "Cyclin-dependent kinase inhibitor 2A",
+            "p14ARF"
+        ]
+    },
+    "Q9NS64": {
+        "recommended_name": "Protein reprimo",
+        "synonyms": []
+    },
+    "Q13761": {
+        "recommended_name": "Runt-related transcription factor 3",
+        "synonyms": [
+            "Acute myeloid leukemia 2 protein",
+            "Core-binding factor subunit alpha-3",
+            "CBF-alpha-3",
+            "Oncogene AML-2",
+            "Polyomavirus enhancer-binding protein 2 alpha C subunit",
+            "PEA2-alpha C",
+            "PEBP2-alpha C",
+            "SL3-3 enhancer factor 1 alpha C subunit",
+            "SL3/AKV core-binding factor alpha C subunit"
+        ]
+    },
+    "P0DOX5": {
+        "recommended_name": "Immunoglobulin gamma-1 heavy chain",
+        "synonyms": [
+            "Immunoglobulin gamma-1 heavy chain NIE"
+        ]
+    },
+    "P68871": {
+        "recommended_name": "Hemoglobin subunit beta",
+        "synonyms": [
+            "Beta-globin",
+            "Hemoglobin beta chain"
+        ]
+    },
+    "O75556": {
+        "recommended_name": "Mammaglobin-B",
+        "synonyms": [
+            "Lacryglobin",
+            "Lipophilin-C",
+            "Mammaglobin-2",
+            "Secretoglobin family 2A member 1"
+        ]
     }
 }
