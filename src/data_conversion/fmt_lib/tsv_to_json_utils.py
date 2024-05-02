@@ -302,18 +302,19 @@ def add_citation_data(result_data: list) -> list:
     -------
     list
         The updated result data.
-    '''
-    seen_pubmed_set = set()
+    '''  
     # holds the evidence sources to build the citation entries for
     evidence_sources = []
     # get the evidence source data for each biomarker entry
     for entry_idx, entry in enumerate(result_data):
+        seen_pubmed_set = set()
         # get the evidence source data for each biomarker component entry
         for biomarker_componennt_entry in entry['biomarker_component']:
             # get each component evidence source
             for evidence_source in biomarker_componennt_entry['evidence_source']:
-                evidence_sources.append((entry_idx, evidence_source))
-                seen_pubmed_set.add(evidence_source['id'])
+                if evidence_source['id'] not in seen_pubmed_set:
+                    evidence_sources.append((entry_idx, evidence_source))
+                    seen_pubmed_set.add(evidence_source['id'])
         # get the evidence source data for the top level entry
         for evidence_source in entry['evidence_source']:
             if evidence_source['id'] not in seen_pubmed_set:
