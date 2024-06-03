@@ -10,9 +10,11 @@
     "ncit": "ncit",
     "dbsnp": "dbsnp",
     "pccid": "pubchem id",
+    "pcsid": "pubchem id",
     "pdb": "protein data bank",
     "mrb": "mirbase",
     "rnac": "rna central",
     "gtc": "glytoucan",
-    "doi": "doi"
+    "doi": "doi",
+    "omim": "online mendelian inheritance in man"
 }
