@@ -587,6 +587,20 @@
             "url": "https://pubmed.ncbi.nlm.nih.gov/32379887"
           }
         ]
+      },
+      {
+        "title": "Clinical characteristics and outcomes of cancer patients with COVID-19.",
+        "journal": "Journal of medical virology",
+        "authors": "Yang F, Shi S, Zhu J, Shi J, Dai K, Chen X",
+        "date": "2020-05-06",
+        "evidence": [],
+        "reference": [
+          {
+            "id": "32369209",
+            "type": "Pubmed",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32369209"
+          }
+        ]
       }
     ]
   }
