@@ -1,0 +1,52 @@
+Unified Biomedical Knowledge Graph (UBKG)
+Instructions for deploying the Docker neo4j v5 Distribution
+Original Instructions: https://ubkg.docs.xconsortia.org/docker/
+#Prerequisites
+- Obtain access to the Globus collection in which the distribution is stored. (Refer to the main README for details on obtaining access.)
+- Download the distribution Zip archive, using Globus Connect Personal.
+    Zip archive will be avaiable in /projects/data-distillery/Validated/Distribution/Archive/
+#Host machine
+- Install Docker on the host machine.
+- The host machine will require considerable disk space, depending on the distribution. As of December 2023, distribution sizes were around:
+    HuBMAP/SenNet: 9GB
+    Data Distillery: 20GB
+    
+#Simple Deployment
+This deployment uses default settings.
+Extract the Zip archive. The expanded distribution directory will contain:
+- a directory named Data. This directory contains the UBKG neo4j database files.
+- a script named build_container.sh. This script builds a Docker container hosting the UBKG instance of neo4j.
+- container.cfg.example. This is an annotated example of the configuration file required by build_container.sh.
+(Copy container.cfg.example to a file named container.cfg. The container.cfg file is required by the distribution scripts. The container.cfg.example file assigns default configuration values to the distribution, including the password for the neo4j user account. It is recommended that you change the password for the neo4j user account in container.cfg. Do not change password for now. Passwords must have at least 8 letters and have at least one alphabetic and one numeric character.)
+(Default settings set the neo4j instance to read only, if read-write edit access is required, uncomment the following line in container.cfg # read_mode=read-only and change read-only to read-write)
+(Default port settings can also be altered in container.cfg)
+#Start Docker Desktop.
+Open a Terminal session.
+- Move to the extracted distribution directory you downloaded from Globus
+- Execute ./build_container.sh.
+The build_container.sh will run for a short time (1-2 minutes), and will be finished when it displays a message similar to [main] INFO org.eclipse.jetty.server.Server - Started Server@16fa5e34{STARTING}[10.0.15,sto=0] @11686ms
+The first time you execute the container, it may pause at generating a new image for the neo4j instance and not start the server. To avoid this, terminate current job and re-execute ./build_container.sh
+The build_container.sh will create a Docker container with properties that it obtains from container.cfg. Following are the default properties:
+container name  ubkg-neo4j-<version>
+image name  hubmap/ubkg-neo4j
+image tag   current-release
+ports       4000:7474
+        4500:7687
+read-write  read-only
+#Open Browser Window
+- Enter http://localhost:<port>/browser/, where is the neo4j port specified in the configuration. If using default settings: http://localhost:4000/browser/
+    The neo4j browser window will appear. Enter connection information:
+    
+#Property   #Value
+Connect URL bolt://localhost:. This should load by default. However, if it does not, default use is bolt://localhost:4500
+Database name   blank (the default). Note that this field may not appear on the page.
+Authentication Type Username/Password
+Username    neo4j
+Password    password from container.cfg (abcd1234)
+*When you execute ./build_container.sh, there is lines marked in red that look like this:
+*The Neo4j web desktop UI will be available at http://localhost:4000 (THIS IS THE HTTPS PORT)
+***The neo4j/bolt interface will be available at neo4j://localhost:4500 and bolt://localhost:4500 (THIS IS THE BOLT PORT)
+- Select Connect.
+#Futher Query Instructions
+For any use of the KG database, follow: https://github.com/nih-cfde/data-distillery/blob/main/CFDE_DataDistillery_UserGuide.md
+Refer to https://ubkg.docs.xconsortia.org/docker/ for custom instructions
