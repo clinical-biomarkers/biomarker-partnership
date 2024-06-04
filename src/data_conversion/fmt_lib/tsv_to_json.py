@@ -156,18 +156,31 @@ def tsv_to_json(source_filepath: str, target_filepath: str, tsv_headers: list, u
                     if top_evidence_source[0] == existing_top_evidence:
                         add_top_evidence = False
                         break
+
                     existing_top_evidence_no_tags = {k: v for k, v in existing_top_evidence.items() if k != 'tags'}
+                    existing_top_evidence_no_tags_no_text = existing_top_evidence_no_tags.copy()
+                    existing_evidence_list = existing_top_evidence_no_tags_no_text.pop("evidence_list")
                     existing_top_tags = [tag['tag'] for tag in existing_top_evidence['tags']]
+
                     new_top_evidence_no_tags = {k: v for k, v in top_evidence_source[0].items() if k != 'tags'}
+                    new_top_evidence_no_tags_no_text = new_top_evidence_no_tags.copy()
+                    new_top_evidence_list = new_top_evidence_no_tags_no_text.pop("evidence_list")
                     new_top_tags = [tag['tag'] for tag in top_evidence_source[0]['tags']]
+
                     if existing_top_evidence_no_tags == new_top_evidence_no_tags:
                         add_top_evidence = False
-                        # handle case where evidence matches but tags do not 
-                        for tag in new_top_tags:
-                            if tag not in existing_top_tags:
-                                existing_top_evidence['tags'].append({'tag': tag})
+                    # check if evidence id is already present but the free text doesn't match
+                    elif existing_top_evidence_no_tags_no_text == new_top_evidence_no_tags_no_text:
+                        add_top_evidence = False
+                        for evidence_text_obj in new_top_evidence_list:
+                            if evidence_text_obj not in existing_top_evidence["evidence_list"]:
+                                existing_top_evidence["evidence_list"].append(evidence_text_obj)
                     else:
                         continue
+                    # handle case where evidence matches but tags do not 
+                    for tag in new_top_tags:
+                        if tag not in existing_top_tags:
+                            existing_top_evidence['tags'].append({'tag': tag})
                 if add_top_evidence:
                     result_data[existing_entry_index]['evidence_source'].append(top_evidence_source[0])
     
