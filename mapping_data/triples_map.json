@@ -1,6 +1,6 @@
 {
     "subject_objects": {
-        "biomarker_id": "<https://hivelab.biochemistry.gwu.edu/biomarker/api/id/{replace}>",
+        "biomarker_id": "<https://hivelab.biochemistry.gwu.edu/biomarker/api/biomarker/detail/{replace}>",
         "biomarker_canonical_id": "<https://hivelab.biochemistry.gwu.edu/biomarker/api/canonical_id/{replace}>",
         "uniprot": "<http://purl.uniprot.org/uniprot/{replace}>",
         "best_biomarker_role": {
