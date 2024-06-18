@@ -10,5 +10,6 @@
     "opentarget": "https://platform.opentargets.org/evidence/",
     "doi": "https://doi.org/",
     "ftcid": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpma/pma.cfm?id=",
-    "omim": "https://www.omim.org/entry/"
+    "omim": "https://www.omim.org/entry/",
+    "civic": "https://civicdb.org/molecular-profiles/"
 }
