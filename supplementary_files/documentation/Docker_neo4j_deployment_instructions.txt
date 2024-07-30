@@ -50,3 +50,5 @@ Password    password from container.cfg (abcd1234)
 #Futher Query Instructions
 For any use of the KG database, follow: https://github.com/nih-cfde/data-distillery/blob/main/CFDE_DataDistillery_UserGuide.md
 Refer to https://ubkg.docs.xconsortia.org/docker/ for custom instructions
+
+NOTE: For Users that want to use the knowledge graph available on aws.glygen.org, gwvpn is required as well as access to aws.glygen.org. Go to aws.glygen.org/neo4j if the container is already running. Contact Miguel M if docker is not running
