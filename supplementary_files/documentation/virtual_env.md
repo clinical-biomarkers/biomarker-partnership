@@ -14,7 +14,7 @@ To activate the virtual environment on Windows:
 env/Scripts/activate
 ```
 
-To start the virtual environemnt on MacOS/Linus:
+To start the virtual environemnt on MacOS/Linux:
 
 ```bash
 source env/bin/activate
