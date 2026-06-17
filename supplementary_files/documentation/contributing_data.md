@@ -26,7 +26,7 @@ In order to standardize data for unique `biomarker_id` assignment, these resouce
 | Peptide              | Protein Ontology (PRO) |
 | Protein              | Uniprot (UPKB) -> Protein Data Bank (PDB) -> Protein Ontology (PRO) -> National Cancer Institute Thesaurus (NCIt)|
 | Protein Complex      | Protein Ontology (PRO) -> Gene Ontology (GO) |
-| RNA                  | RNA Central (RNAC) |
+| RNA                  | HUGO Gene Nomenclature Committee (HGNC) -> RNA Central (RNAC) |
 | miRNA                | miRBase (MRB) |
 
 For `condition` data, our primary database is the Disease Ontology (DOID). 
